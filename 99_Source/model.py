@@ -21,13 +21,12 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
     ("R03", "Dressing alcove", 5, 11.5, 11, 17, "Master suite"),
     ("R04", "Ensuite", 5, 11.5, 17, 25, "Master suite"),
     ("R05", "Master bedroom", 11.5, 21, 11, 25, "Master suite"),
-    ("R06", "Office 1", 21, 30, 3, 11, "Work"),
-    ("R07", "Bath 2", 30, 36, 3, 11, "Service"),
+    ("R07", "Bath 2 (common)", 33, 42, 19, 25, "Service"),
     ("R08", "Hall", 21, 33, 11, 15.5, "Circulation"),
     ("R09", "Bedroom 2", 21, 33, 15.5, 25, "Private"),
     ("R10", "Dining", 33, 42, 11, 19, "Living"),
-    ("R11", "Pooja", 33, 42, 19, 25, "Living"),
-    ("R12", "Store", 36, 42, 3, 11, "Service"),
+    ("R11", "Pooja", 21, 30, 3, 11, "Living"),
+    ("R12", "Store", 30, 42, 3, 11, "Service"),
     ("R13", "Wet area (semi-open)", 42, 50, 3, 9, "Service"),
     ("R14", "Wash link", 42, 50, 9, 13, "Circulation"),
     ("R15", "Kitchen", 50, 60, 3, 13, "Service"),
@@ -39,7 +38,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
 WALLS = [
     ("X", 3, 5, 60), ("Y", 5, 3, 25), ("X", 25, 5, 54), ("Y", 60, 3, 13), ("Y", 54, 13, 25),
     ("Y", 14, 3, 11), ("X", 11, 5, 21), ("X", 17, 5, 11.5), ("Y", 11.5, 17, 25), ("Y", 21, 3, 25),
-    ("X", 11, 21, 30), ("X", 11, 30, 36), ("X", 11, 36, 42), ("Y", 30, 3, 11), ("Y", 36, 3, 11), ("X", 15.5, 21, 33), ("Y", 33, 15.5, 25),
+    ("X", 11, 21, 30), ("X", 11, 30, 42), ("Y", 30, 3, 11), ("X", 15.5, 21, 33), ("Y", 33, 15.5, 25),
     ("X", 19, 33, 42), ("Y", 42, 19, 25), ("Y", 42, 3, 11), ("X", 9, 42, 50), ("Y", 50, 3, 9),
     ("X", 13, 50, 60), ("X", 13, 44, 48),
 ]
@@ -52,7 +51,7 @@ WALL_TYPES = {
     "INT": (0.42, "100 mm AAC + plaster both faces (~5 in)"),
 }
 EXTRA_EXT_WALLS = {("X", 13, 50, 60)}  # kitchen north wall faces the open poomukham
-WET_WALLS = {("X", 17, 5, 11.5), ("Y", 36, 3, 11), ("X", 11, 30, 36)}  # ensuite basin wall, Bath 2 WC and basin walls
+WET_WALLS = {("X", 17, 5, 11.5), ("X", 19, 33, 42), ("Y", 42, 19, 25)}  # ensuite basin wall; Bath 2 basin and shower walls
 
 # Levels and heights, ft. 0 = finished ground level (FGL) around the house.
 LEVELS = {
@@ -71,7 +70,7 @@ LEVELS = {
 FLOOR_FINISH = {  # room: floor finish key
     "R08": "Red oxide / Kota stone", "R10": "Red oxide / Kota stone", "R16": "Red oxide / Kota stone",
     "R01": "Matt vitrified 2x2", "R02": "Matt vitrified 2x2", "R03": "Matt vitrified 2x2", "R05": "Matt vitrified 2x2",
-    "R06": "Matt vitrified 2x2", "R09": "Matt vitrified 2x2", "R12": "Matt vitrified 2x2",
+    "R09": "Matt vitrified 2x2", "R12": "Matt vitrified 2x2",
     "R11": "Marble / teak (pooja)", "R15": "Anti-skid matt vitrified", "R04": "Anti-skid ceramic, waterproofed",
     "R07": "Anti-skid ceramic, waterproofed", "R13": "Rough Cuddapah / Kota, falls", "R14": "Rough Cuddapah / Kota, falls",
     "R17": "Flamed granite",
@@ -80,7 +79,7 @@ ROOM_FLOOR = {"R04": -0.04, "R07": -0.04, "R13": -0.25, "R17": -0.5}  # offset f
 # ceiling: ("flat", height above FFL) or ("sloped", note)
 CEILINGS = {
     "R01": ("flat", 9.5), "R02": ("flat", 9.5), "R03": ("flat", 9.5), "R04": ("flat", 8.5), "R05": ("flat", 9.5),
-    "R06": ("flat", 9.5), "R07": ("flat", 8.5), "R08": ("flat", 9.5), "R09": ("flat", 9.5),
+    "R07": ("flat", 8.5), "R08": ("flat", 9.5), "R09": ("flat", 9.5),
     "R10": ("sloped", "open to ventilator"), "R11": ("flat", 9.5), "R12": ("flat", 9.5), "R13": ("sloped", "open truss"),
     "R14": ("sloped", "open truss"), "R15": ("flat", 9.5), "R16": ("sloped", "follows roof"), "R17": ("sloped", "exposed rafters"),
 }
@@ -124,11 +123,10 @@ DOORS = [
     ("D04", "X", 11, 17, 19.5, -1, "Walk-in wardrobe", "Flush, teak veneer"),
     ("D05", "Y", 11.5, 19, 21.5, -1, "Ensuite", "Flush, waterproof (WPC/FRP)"),
     ("D06", "Y", 21, 11.5, 14.5, -1, "Master bedroom", "Flush, teak veneer"),
-    ("D07", "X", 11, 25, 27.5, -1, "Office 1", "Solid-core, acoustic seals"),
-    ("D08", "X", 11, 30.5, 33, -1, "Bath 2", "Flush, waterproof (WPC/FRP)"),
+    ("D08", "X", 19, 33.5, 36, +1, "Bath 2 (common)", "Flush, waterproof (WPC/FRP)"),
     ("D09", "X", 11, 38, 40.5, -1, "Store", "Flush, teak veneer"),
     ("D10", "X", 15.5, 28.5, 31.5, +1, "Bedroom 2", "Flush, teak veneer"),
-    ("D11", "X", 19, 35, 37.5, +1, "Pooja", "Carved teak, double leaf"),
+    ("D11", "X", 11, 24.5, 27.5, -1, "Pooja", "Carved teak, double leaf"),
     ("D12", "Y", 50, 5.5, 8, -1, "Kitchen to wet area", "Flush, waterproof (WPC/FRP)"),
 ]
 # Vents above inner doors (7'-6" to 9'-0", above the lintel band): air moves between rooms with doors shut
@@ -138,7 +136,7 @@ TRANSOM_TYPES = {
     "louvre": "Fixed louvres angled down: air for the exhaust fan, no view in",
     "glazed": "Top-hung glazed vent with seals: open for air, closed for calls",
 }
-TRANSOMS = {"D03": "glazed", "D04": "jali", "D07": "glazed", "D09": "jali", "D11": "jali", "D12": "louvre"}
+TRANSOMS = {"D03": "glazed", "D04": "jali", "D09": "jali", "D11": "jali", "D12": "louvre"}
 # None at bedrooms (big north windows, shallow rooms; master also ventilates through Office 2) or bathrooms (door bottom louvre feeds the fan)
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
 TRANSOM_Z = (7.5, 9.0)  # sill and head above FFL
@@ -147,8 +145,8 @@ TRANSOM_Z = (7.5, 9.0)  # sill and head above FFL
 WINDOWS = [
     ("W01", "X", 3, 7, 12, 3, 7, "Office 2", "Timber jali + glazed shutters"),
     ("W02", "X", 3, 16, 19, 5, 7, "Walk-in wardrobe", "High vent, jali"),
-    ("W03", "X", 3, 23, 28, 3, 7, "Office 1", "Timber jali + glazed shutters"),
-    ("W04", "X", 3, 33.5, 35.5, 5, 7, "Bath 2", "High vent, frosted louvres"),
+    ("W03", "X", 3, 23, 28, 3, 7, "Pooja", "Timber jali + glazed shutters"),
+    ("W04", "X", 3, 33.5, 35.5, 5, 7, "Store", "High vent, jali + mesh"),
     ("W05", "X", 3, 37.5, 40.5, 5, 7, "Store", "High vent, jali + mesh"),
     ("W06", "X", 3, 44.5, 49.6, 0.4, 8, "Wet area", "Terracotta jali wall + insect mesh + MS grille"),
     ("W07", "X", 3, 52, 57, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
@@ -157,7 +155,7 @@ WINDOWS = [
     ("W10", "Y", 5, 19, 23, 5, 7, "Ensuite", "High jali vent"),
     ("W11", "X", 25, 13, 19, 3, 7, "Master bedroom", "Teak casement, glazed"),
     ("W12", "X", 25, 24, 30, 3, 7, "Bedroom 2", "Teak casement, glazed"),
-    ("W13", "X", 25, 35, 38, 4, 7, "Pooja", "Teak casement, glazed"),
+    ("W13", "X", 25, 35, 38, 5, 7, "Bath 2 (common)", "Frosted casement, top-hung vent"),
     ("W14", "X", 25, 43, 51, 2, 8, "Living", "Teak casement, tall, glazed"),
     ("W15", "Y", 54, 14, 18, 3, 7, "Living", "Teak casement onto poomukham (morning light)"),
 ]
@@ -181,22 +179,18 @@ FURNITURE = [
     ("F10", "Master bedroom", "Queen bed 5' x 6'6\" + headboard", 14.2, 20.6, 16, 21, 1, "Teak, head to east", "rect"),
     ("F11", "Master bedroom", "Bedside table", 19.3, 20.3, 14.8, 15.9, 2, "Teak", "rect"),
     ("F12", "Master bedroom", "Reading chair", 12.0, 13.4, 22.6, 24.0, 1, "Cane / upholstered", "circle"),
-    ("F13", "Office 1", "Work desk 5'6\" x 2'", 28, 29.9, 4, 9.5, 1, "Teak or ply + veneer, cable tray", "rect"),
-    ("F14", "Office 1", "Ergonomic task chair", 26.4, 27.6, 6.2, 7.4, 1, "Mesh back", "circle"),
-    ("F15", "Office 1", "Bookshelf (video backdrop)", 21.4, 22.4, 4, 10, 1, "Teak / ply", "rect"),
-    ("F16", "Bath 2", "WC (EWC)", 34.2, 35.6, 7.4, 8.6, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F17", "Bath 2", "Wash basin", 33.5, 35.5, 9.9, 10.6, 1, "Wall-hung", "rect"),
-    ("F18", "Bath 2", "Shower glass partition", 33, 35.7, 5.95, 6.15, 1, "8 mm toughened glass", "glass"),
-    ("F19", "Bath 2", "Linen cupboard (acoustic buffer)", 30.3, 32.5, 3.3, 5, 1, "Ply + laminate", "rect"),
+    ("F16", "Bath 2 (common)", "WC (EWC)", 35.6, 37.0, 23.4, 24.6, 1, "Wall-hung on the north wall, concealed cistern", "wc"),
+    ("F17", "Bath 2 (common)", "Wash basin", 36.6, 38.6, 19.3, 20.0, 1, "Wall-hung", "rect"),
+    ("F18", "Bath 2 (common)", "Shower glass partition", 38.9, 39.1, 19.4, 22.8, 1, "8 mm toughened glass", "glass"),
     ("F20", "Bedroom 2", "Queen bed 5' x 6'6\" (or 4'6\" double)", 22, 27, 15.9, 22.4, 1, "Teak, head to south", "rect"),
     ("F21", "Bedroom 2", "Bedside table", 27.2, 28.3, 16.0, 17.1, 1, "Teak", "rect"),
     ("F22", "Bedroom 2", "Study desk 3'-4\" (beside the foot of the bed)", 27.5, 30.8, 23.2, 24.6, 1, "Teak / ply", "rect"),
-    ("F23", "Bedroom 2", "Built-in wardrobe 6'", 31, 33, 19, 25, 1, "Ply + laminate, buffer to pooja", "rect"),
+    ("F23", "Bedroom 2", "Built-in wardrobe 6'", 31, 33, 19, 25, 1, "Ply + laminate, sound buffer to Bath 2", "rect"),
     ("F24", "Dining", "Dining table 5' x 3', 6-seat", 35.5, 40.5, 13.5, 16.5, 1, "Teak or rosewood", "rect"),
     ("F25", "Dining", "Dining chair", 35.8, 36.9, 12.3, 13.3, 6, "Teak + cane", "rect"),
-    ("F26", "Pooja", "Pooja mandapam / shelf (east wall)", 41, 41.6, 20.5, 23.5, 1, "Carved teak", "rect"),
-    ("F27", "Pooja", "Pooja cupboard", 33.2, 34.5, 19.4, 21, 1, "Teak", "rect"),
-    ("F28", "Store", "Shelving, L-shaped", 36.3, 41.7, 3.3, 4.8, 1, "MS or ply, 1.5 ft deep", "rect"),
+    ("F26", "Pooja", "Pooja mandapam on the west wall (idol faces east)", 21.3, 21.9, 5.0, 9.0, 1, "Carved teak", "rect"),
+    ("F27", "Pooja", "Pooja cupboard", 28.6, 29.7, 3.4, 6.4, 1, "Teak", "rect"),
+    ("F28", "Store", "Shelving, L-shaped, with suitcase loft", 30.3, 41.7, 3.3, 4.8, 1, "MS or ply, 1.5 ft deep", "rect"),
     ("F29", "Wet area", "Double-bowl utility sink counter", 45, 49, 3.4, 5.3, 1, "Kadappa / granite, SS sinks", "rect"),
     ("F30", "Wet area", "Washing machine bay 2' x 2'", 42.4, 44.3, 6.5, 8.5, 1, "Splash-proof socket, floor drain", "rect"),
     ("F31", "Wet area", "Ceiling pulley clothes airer", 45.5, 49.5, 6, 8.5, 1, "Aluminium", "glass"),
@@ -216,13 +210,13 @@ FURNITURE = [
 EXTRA_DRAW = [
     ("F11", 19.3, 20.3, 21.1, 22.2), ("F25", 37.5, 38.6, 12.3, 13.3), ("F25", 39.2, 40.3, 12.3, 13.3),
     ("F25", 35.8, 36.9, 16.7, 17.7), ("F25", 37.5, 38.6, 16.7, 17.7), ("F25", 39.2, 40.3, 16.7, 17.7),
-    ("F28", 36.3, 37.5, 5, 10.7), ("F42", 54, 58.8, 24, 25),
+    ("F28", 30.3, 31.5, 5, 10.7), ("F42", 54, 58.8, 24, 25),
 ]
 
 FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
     ("Living, dining, hall", "Red oxide (IPS) or polished Kota / Tandur stone", "4 in flush skirting in floor stone; lime-finish or mineral paint", "Sloped, follows roof, insulated board under deck", "Stone hides dust better than glossy white tile"),
     ("Bedrooms, offices, dressing, walk-in", "Matt vitrified 2x2 ft or red oxide", "4 in flush skirting; putty + washable emulsion", "False ceiling at 9'-6\", 50 mm insulation above", "Ventilated attic above false ceiling"),
-    ("Pooja", "White marble or teak", "Teak panelling behind idol; 4 in marble skirting", "Teak / board at 9'-6\"", "Idol on east wall; lamp niche with heat-proof back"),
+    ("Pooja", "White marble or teak", "Teak panelling behind idol; 4 in marble skirting", "Teak / board at 9'-6\"", "Idol on west wall facing east; lamp niche with heat-proof back"),
     ("Kitchen", "Anti-skid matt vitrified or Kota, mid-tone", "Tile / stone full height between counter and wall cabinets", "Moisture-resistant board at 9'-6\"", "Counter granite (local Ongole / Chimakurthy), 2 ft deep"),
     ("Ensuite, Bath 2", "Anti-skid ceramic (R11), falls 1:60 to drain", "Tiles to 7 ft; full height in shower; waterproofing 12 in up all walls, 7 ft in shower", "Moisture-resistant board / PVC at 8'-6\"", "12 mm step down, no raised threshold"),
     ("Wet area, wash link", "Rough Cuddapah / Kota stone, falls to drain", "4 ft stone or tile dado", "Open truss", "6 in kerb under jali wall stops rain blowing in"),
@@ -242,7 +236,7 @@ OPEN_ISSUES = [
     ("Services", "Septic and soak pit sizes; keep soak pits and gardens 6 ft+ from foundations in expansive soil", "Engineer", "Open"),
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
     ("Phase 2", "Phase 2 on the north strip will block north light and sits on the septic: plan the split now", "Architect", "Deferred by owner"),
-    ("Vastu", "Bed head east (master), NW ensuite, central dining, pooja north-centre, DB in SE-ish living wall", "Vastu consultant", "To confirm"),
+    ("Vastu", "Bed head east (master), NW ensuite, common bath at north-centre (many schools avoid toilets in the north), central dining, pooja west of centre with idol facing east, DB in SE-ish living wall", "Vastu consultant", "To confirm"),
     ("Climate", "Roof heat: insulation, ventilated attic, ventilator lantern louvres and shutters; ODU positions on shaded walls", "Architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
 ]
@@ -252,7 +246,7 @@ DECISIONS = [
     "Plot 27 ft x 70 ft, road on east; house 55 ft x 22 ft kept; owner accepts local practice on side setbacks (to be checked).",
     "RCC frame with AAC block walls: 9 in outer, 5 in inner, 7 in where plumbing is concealed.",
     "Plinth 2 ft above finished ground; poomukham 6 in lower; bathrooms 12 mm lower with no raised threshold.",
-    "AC provisions (points, sleeves, drain, outdoor-unit brackets) in both bedrooms, both offices and living; passive cooling first.",
+    "AC provisions (points, sleeves, drain, outdoor-unit brackets) in both bedrooms, the office and living; passive cooling first.",
     "Flat insulated false ceilings in bedrooms, offices, baths and kitchen; sloped ceilings in living, dining and verandah.",
     "No glass skylight: the dining gets borrowed daylight from the living, wash link and hall; a louvred ventilator lantern above it lets hot air out (no glass, so no greenhouse heat).",
     "Courtyard removed; the dining hall at plot centre keeps the Brahmasthan open, with the ventilator above.",
@@ -260,6 +254,9 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; semi-open wet area with jali; separate dry store.",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Office 1 removed after family review: one office (Office 2) inside the master suite; Bedroom 2 has its own work desk.",
+    "Common bathroom moved to the north side (old pooja spot), entered from the dining corner next to the hall.",
+    "Pooja moved west of the dining, to the old Office 1 spot off the hall, idol on the west wall facing east; store doubled to 12 x 8 ft.",
     "Hall widened to 4 ft clear (Bedroom 2 gives up 6 in); vents above the office, walk-in, store, pooja and kitchen doors; none at bedrooms or bathrooms (sound privacy).",
     "Ensuite widened by 1'-6\" into the master (about 6'-0\" x 7'-4\" clear); dressing widened by the same strip; master now 9'-6\" x 14'-0\".",
     "Roof: Mangalore clay tiles on steel truss over insulated cement-fibre deck; all edge tiles mechanically fixed.",
@@ -286,7 +283,7 @@ SPEC = [
     ("Roof", "Gutters and downpipes", "150 mm half-round gutters with leaf guard, 100 mm downpipes at 8 points, to sump filter and recharge pit", "Short heavy bursts; protects the plinth"),
     ("Openings", "Windows", "Hardwood or UPVC frames; mosquito mesh on every opening; MS grill for security", "Mosquitoes; ground-floor security"),
     ("Openings", "Sills and sunshades", "External sills sloped 1:10 with drip groove; 2 ft sunshades with drip groove; 18 in projecting drip under the jali wall", "Stops staining and water entry"),
-    ("Openings", "Vents above inner doors", "Offices: top-hung glazed flap with seals; walk-in, store, pooja: open jali; kitchen-wet area: louvres; bedrooms and bathrooms: none. 7'-6\" to 9'-0\" above the lintel band", "Air moves with doors shut where privacy allows; bedrooms rely on their north windows, fans and AC"),
+    ("Openings", "Vents above inner doors", "Office: top-hung glazed flap with seals; walk-in, store, pooja: open jali; kitchen-wet area: louvres; bedrooms and bathrooms: none. 7'-6\" to 9'-0\" above the lintel band", "Air moves with doors shut where privacy allows; bedrooms rely on their north windows, fans and AC"),
     ("Openings", "Bathroom doors", "WPC / FRP shutters on WPC or granite frame base; no wooden frame touching the wet floor", "Wood frames rot at the bottom"),
     ("Floors", "General", "4 in skirting flush with the wall plaster (groove in plaster); 3 mm epoxy grout in wet areas", "No dust ledge, no black grout lines"),
     ("Floors", "Wet rooms", "Waterproofing (polymer cementitious) floor + 12 in up walls + 7 ft in shower; flood test 48 h before tiling", "Leak into neighbouring rooms is the top complaint"),
@@ -325,22 +322,20 @@ ELECTRICAL = [
     ("S", 20.6, 21.6, "R05", "bedside, 2-way"), ("P", 20.6, 15.4, "R05", "bedside"), ("P", 20.6, 22.2, "R05", "bedside"),
     ("AC", 15.5, 11.4, "R05", "on south wall, not over the bed head"), ("ODU", 16, 25.6, "R05", "north wall, shaded"),
     ("P", 12.2, 24.6, "R05", "reading chair"),
-    # Office 1
-    ("F", 25.5, 7, "R06", ""), ("L", 25.5, 9.5, "R06", ""), ("L", 25.5, 4.5, "R06", ""), ("S", 28, 10.6, "R06", ""),
-    ("U", 29.6, 5, "R06", "desk"), ("D", 29.6, 6, "R06", "desk"), ("P", 29.6, 8, "R06", "desk"), ("AC", 21.4, 7, "R06", "above bookshelf"),
-    ("ODU", 25.5, 2.4, "R06", "south wall, high on brackets over walkway"),
-    # Bath 2
-    ("L", 33, 8, "R07", ""), ("EF", 31.5, 3.4, "R07", "out through south wall"), ("G", 35.6, 4.6, "R07", "side wall of shower"),
-    ("PC", 35.6, 10.2, "R07", ""), ("S", 33.6, 11.4, "R08", "Bath 2 switches outside"),
+    # Pooja (west of the dining)
+    ("F", 25.5, 7, "R11", "small fan"), ("L", 25.5, 9.3, "R11", ""), ("WL", 21.4, 7, "R11", "lamp niche above the idol"),
+    ("P", 29.6, 8, "R11", ""), ("S", 28.0, 10.6, "R11", "at door"),
+    # Bath 2 (common, north)
+    ("L", 37.5, 21.8, "R07", ""), ("EF", 40.5, 24.6, "R07", "out through north wall"), ("G", 41.6, 23.6, "R07", "over shower"),
+    ("PC", 38.9, 19.4, "R07", "by basin"), ("S", 36.4, 18.6, "R10", "Bath 2 switches outside, dining side"),
     # Hall, bedroom 2
     ("L", 24, 13.25, "R08", ""), ("L", 30, 13.25, "R08", ""), ("S", 22, 11.4, "R08", "2-way"),
     ("F", 27, 20.25, "R09", ""), ("L", 24, 18.5, "R09", ""), ("L", 30, 22.5, "R09", ""), ("S", 32.6, 15.9, "R09", "at door"),
     ("S", 27.9, 15.9, "R09", "bedside, 2-way"), ("P", 28.3, 15.9, "R09", "bedside"), ("P", 21.4, 16.6, "R09", "bedside"),
-    ("P", 30.2, 24.6, "R09", "study desk"), ("D", 28.6, 24.6, "R09", "study desk"), ("AC", 21.4, 21, "R09", "west wall, not over bed head"),
+    ("P", 30.2, 24.6, "R09", "work desk"), ("D", 28.6, 24.6, "R09", "work desk"), ("U", 29.4, 24.6, "R09", "work desk"), ("AC", 21.4, 21, "R09", "west wall, not over bed head"),
     ("ODU", 22.5, 25.6, "R09", "north wall, shaded"),
     # Dining, pooja, store
     ("L", 37.5, 15, "R10", "pendant"), ("WL", 33.4, 15, "R10", ""), ("P", 33.4, 12, "R10", ""), ("P", 41.6, 12, "R10", ""), ("S", 41.6, 17.8, "R10", ""),
-    ("L", 37.5, 22, "R11", ""), ("WL", 41.6, 22, "R11", "lamp niche"), ("P", 34, 19.4, "R11", ""), ("S", 38, 19.4, "R11", ""),
     ("L", 39, 7.5, "R12", ""), ("S", 40.8, 10.6, "R12", ""), ("INV", 38.5, 9.6, "R12", "ventilated, on the store's inside wall"),
     # Wet area, wash link, kitchen
     ("L", 46, 6, "R13", "weatherproof"), ("P16", 43.3, 8.6, "R13", "washing machine"), ("P", 48.6, 5.5, "R13", "utility"),
@@ -370,26 +365,27 @@ PLUMB_TYPES = {
 PLUMBING = [
     ("WC", 6.3, 19.5, "R04", "wall-hung on west (outer) wall"), ("HF", 5.4, 20.6, "R04", ""), ("BS", 9.0, 17.8, "R04", "on 7 in wet wall"),
     ("SH", 5.4, 23.6, "R04", ""), ("FT", 8.25, 24.5, "R04", "linear drain along north wall"), ("FT", 9.6, 20.2, "R04", "dry zone trap"),
-    ("WC", 34.9, 8, "R07", "on 7 in wet wall"), ("HF", 35.6, 9.0, "R07", ""), ("BS", 34.5, 10.6, "R07", ""),
-    ("SH", 34.9, 3.4, "R07", ""), ("FT", 33, 4.5, "R07", "linear drain"), ("FT", 32.2, 8, "R07", "dry zone trap"),
+    ("WC", 36.3, 24.4, "R07", "wall-hung on the north (outer) wall"), ("HF", 35.4, 24.4, "R07", ""), ("BS", 37.6, 19.6, "R07", "on 7 in wet wall"),
+    ("SH", 41.4, 22.5, "R07", "on 7 in wet wall"), ("FT", 41.2, 20.6, "R07", "linear drain along east wall"), ("FT", 37.5, 21.8, "R07", "dry zone trap"),
     ("SK", 47, 3.6, "R13", "double bowl utility sink"), ("WM", 43.3, 8.6, "R13", ""), ("FT", 46, 6.5, "R13", ""), ("TAP", 49.6, 7.5, "R13", "bucket tap, low"),
     ("BS", 43.3, 9.6, "R14", "hand-wash basin"),
     ("SK", 53.5, 3.5, "R15", "single bowl + drainboard, under window"), ("RO", 52.3, 3.5, "R15", ""), ("FT", 57, 12.5, "R15", "cleaning trap"),
     ("TAP", 62.8, 18.2, "SITE", "foot-wash tap at steps"), ("TAP", 4.4, 10, "SITE", "garden tap"), ("TAP", 64.5, 15.6, "SITE", "tulsi / garden tap"),
-    ("IC", 3.6, 19.5, "SITE", "IC-1 soil"), ("IC", 35, 1.8, "SITE", "IC-2 soil"), ("IC", 3.6, 1.8, "SITE", "IC-3 soil"), ("IC", 3.6, 11, "SITE", "IC-4 soil"),
-    ("GT", 53.5, 1.0, "SITE", "grease trap"), ("IC", 46, 1.0, "SITE", "IC-5 grey"), ("IC", 33, 1.0, "SITE", "IC-6 grey"),
-    ("IC", 4.2, 1.0, "SITE", "IC-7 grey"), ("IC", 4.2, 26.3, "SITE", "IC-8 grey"), ("IC", 9.6, 26.0, "SITE", "IC-9 ensuite grey"),
+    ("IC", 3.6, 19.5, "SITE", "IC-1 soil"), ("IC", 36.3, 26.6, "SITE", "IC-2 soil"), ("IC", 3.6, 26.6, "SITE", "IC-3 soil"), ("IC", 20, 26.6, "SITE", "IC-4 soil"),
+    ("GT", 53.5, 1.0, "SITE", "grease trap"), ("IC", 46, 1.0, "SITE", "IC-5 grey"), ("IC", 41.4, 26.0, "SITE", "IC-6 grey"),
+    ("IC", 4.2, 1.0, "SITE", "IC-7 grey"), ("IC", 4.2, 26.0, "SITE", "IC-8 grey"), ("IC", 9.6, 26.0, "SITE", "IC-9 ensuite grey"),
 ]
 # Pipe runs (schematic): kind, list of points. South walkway: grey y=1.0, soil y=1.8, supply y=2.3 (on plinth face).
 PIPES = [
     ("supply", [(1.7, 7.5), (1.7, 2.3), (59, 2.3)]),
-    ("supply", [(33.5, 2.3), (33.5, 3)]), ("supply", [(46, 2.3), (46, 3)]), ("supply", [(53.5, 2.3), (53.5, 3)]),
+    ("supply", [(46, 2.3), (46, 3)]), ("supply", [(53.5, 2.3), (53.5, 3)]),
     ("supply", [(1.7, 7.5), (4.4, 7.5), (4.4, 21), (5, 21)]),
+    ("supply", [(4.4, 21), (4.4, 25.7), (39.5, 25.7), (39.5, 25.4)]),
     ("supply", [(59, 2.3), (61, 2.3), (61, 18.2), (62.8, 18.2)]),
     ("soil", [(6.3, 19.5), (3.6, 19.5), (3.6, 27.5), (2.5, 29)]),
-    ("soil", [(34.9, 8), (34.9, 3), (35, 1.8), (3.6, 1.8), (3.6, 19.5)]),
-    ("grey", [(53.5, 3.5), (53.5, 1.0), (4.2, 1.0), (4.2, 26.3), (8.6, 30.5), (10, 32)]),
-    ("grey", [(46, 6.5), (46, 1.0)]), ("grey", [(32.2, 8), (33, 4.5), (33, 1.0)]),
+    ("soil", [(36.3, 24.4), (36.3, 26.6), (3.6, 26.6)]),
+    ("grey", [(53.5, 3.5), (53.5, 1.0), (4.2, 1.0), (4.2, 26.0), (8.6, 30.5), (10, 32)]),
+    ("grey", [(46, 6.5), (46, 1.0)]), ("grey", [(37.5, 21.8), (41.2, 20.6), (41.4, 26.0), (41.4, 29.4), (12, 29.4), (10, 32)]),
     ("grey", [(9.6, 20.2), (9.6, 26.0), (10, 32)]), ("grey", [(8.25, 24.5), (9.6, 24.5)]),
     ("rain", [(2.5, 0.5), (69.6, 0.5), (69.6, 23), (69.5, 25)]),
     ("rain", [(2.5, 27.5), (2.5, 28.2), (62.5, 28.2), (66.5, 32)]), ("rain", [(62.5, 27.5), (62.5, 28.2)]),

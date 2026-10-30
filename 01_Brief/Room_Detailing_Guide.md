@@ -157,7 +157,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.  
    *Shown on: A-105*
 45. **Avoid:** Pooja sharing a wall with a toilet.  
-   **Do:** Buffer it: here a wardrobe sits between pooja and Bedroom 2, and no toilet is adjacent.  
+   **Do:** Here the pooja sits between the walk-in and the store, off the hall, with no toilet on any side; the idol is on the west wall facing east.  
    *Shown on: A-102*
 46. **Avoid:** Polished marble floor that becomes slippery with oil.  
    **Do:** Use honed (matt) marble or teak.  
@@ -220,14 +220,14 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Home offices
+## Work spaces (Office 2 and Bedroom 2 desk)
 64. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** Put the desk side-on to the window; both offices here get south light from the side.  
+   **Do:** Put the desk side-on to the window: Office 2 gets south light from the side; in Bedroom 2 the desk sits beside the foot of the bed, by the north window.  
    *Shown on: A-103*
 65. **Avoid:** Not enough power or data.  
-   **Do:** Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk, with the router on the inverter.  
+   **Do:** Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (Office 2 and the Bedroom 2 desk), with the router on the inverter.  
    *Shown on: E-102*
-66. **Avoid:** Sound travelling between offices and into the bedroom.  
+66. **Avoid:** Sound travelling from the office into the bedroom.  
    **Do:** Use solid-core doors with seals, don't place sockets back to back on shared walls, and fill the wall cavity behind the bookshelf.  
    *Shown on: A-401*
 67. **Avoid:** Bare wall behind you on video calls.  
@@ -235,11 +235,11 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    *Shown on: A-103*
 
 ## Doors and windows
-68. **Avoid:** Solid walls and closed doors between the north bedrooms and south offices: no breeze crosses the house at night or during calls.  
+68. **Avoid:** Solid walls and closed doors between the north and south rooms: no breeze crosses the house at night or during calls.  
    **Do:** Put a vent above inner doors, 7'-6" to 9'-0": open jali for the walk-in, store and pooja; louvres between kitchen and wet area.  
    *Shown on: A-401*
 69. **Avoid:** Open vents above bedroom and bathroom doors: conversation, TV and smells carry into the hall and the next room.  
-   **Do:** No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); offices get a sealed glazed flap.  
+   **Do:** No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); the office gets a sealed glazed flap.  
    *Shown on: A-401*
 70. **Avoid:** A 3'-6" hall: two people can't pass, and furniture won't turn the corner.  
    **Do:** Make the hall at least 4'-0" clear; here Bedroom 2 gives up 6 in for it.  

@@ -141,7 +141,7 @@ def make(path):
         d.render()
     hdim(5, 60, 25, 33.5)
     vdim(3, 25, 60, 68)
-    xs = [5, 14, 21, 30, 36, 42, 50, 60]
+    xs = [5, 14, 21, 30, 42, 50, 60]
     for a, b in zip(xs, xs[1:]):
         hdim(a, b, 3, -2)
     vdim(0, 3, 5, -3); vdim(25, SITE["w"], 5, -3)

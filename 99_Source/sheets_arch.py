@@ -109,10 +109,10 @@ def sheet_plan(c):
     pl.rect(60.375, 61.2, 19, 23, lw=0.3); pl.rect(61.2, 62.0, 19, 23, lw=0.3)
     pl.text("UP", 61.2, 21, 4.5)
     pl.room_names(6, INK, sub=lambda r: "{} x {}".format(*map(fmt_ft, room_dims(r))))
-    xs = [5, 14, 21, 30, 36, 42, 50, 60]
+    xs = [5, 14, 21, 30, 42, 50, 60]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.5)
     pl.hdim(5, 60, -4.3, "55'-0\" OVERALL")
-    xn = [5, 10, 21, 33, 42, 54, 60]
+    xn = [5, 11.5, 21, 33, 42, 54, 60]
     for a, b in zip(xn, xn[1:]): pl.hdim(a, b, 28.6)
     pl.vdim(3, 25, 67.6, "22'-0\" OVERALL")
     pl.vdim(3, 11, 64.6); pl.vdim(11, 13, 64.6); pl.vdim(13, 25, 64.6)
@@ -164,7 +164,7 @@ def sheet_furniture(c):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 39, "Cross section through store, dining and pooja"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
+SECTIONS = {"A": ("X", 39, "Cross section through store, dining and common bath"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
 
 
 def sheet_working(c):
@@ -191,7 +191,7 @@ def sheet_working(c):
             pl.line(1, c0, 65, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
             for xx in (0.2, 65.8):
                 pl.circle(xx, c0, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(name, xx, c0, 6.5, "Helvetica-Bold", RED)
-    xs = [5, 10, 14, 21, 30, 33, 36, 42, 50, 54, 60]
+    xs = [5, 11.5, 14, 21, 30, 33, 42, 50, 54, 60]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.3, size=5)
     yn = [3, 11, 13, 15.5, 17, 19, 25]
     for a, b in zip(yn, yn[1:]): pl.vdim(a, b, 63.6, size=5)

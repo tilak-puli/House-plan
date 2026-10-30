@@ -10,7 +10,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Climate and ground (why the construction differs from Kerala)
 | Condition | Design response |
 |---|---|
-| Summers of 40-45 C | Insulated roof deck, ventilated attic, insulated false ceilings in bedrooms and offices, shaded south and west walls, AC provisions |
+| Summers of 40-45 C | Insulated roof deck, ventilated attic, insulated false ceilings in bedrooms and the office, shaded south and west walls, AC provisions |
 | 850-1000 mm of rain, short cyclonic bursts | 2'-6" eaves, gutters to the sump, drip grooves, raised plinth, kerbs at semi-open spaces |
 | Cyclone winds | Steel trusses bolted to an RCC ring beam; every edge tile mechanically fixed |
 | Black cotton (expansive) soil likely | Soil test first; deep footings or under-reamed piles; moorum fill; 3 ft apron; no water or big trees by the walls |
@@ -20,14 +20,14 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Brief
 - Kerala-style single-storey home, in the tropical style of Sthaayi Design Lab.
 - One master suite and one second bedroom in Phase 1.
-- Two people working from home, in two separate work rooms.
+- Two people working from home: one office (Office 2) inside the master suite, and a work desk in Bedroom 2 (decided with family, 30 Oct 2026).
 - Follow Vastu where practical (the owner has a consultant).
 - Good natural light and cross-ventilation, with AC provisions for the hottest months.
 
 ## Design strategy
 - **Zoning:** private rooms at the rear (west), living at the front (east), services along the south as a heat buffer.
-- **Light:** bedrooms, pooja and living take north light; south rooms use deep jalis and sunshades.
-- **Air:** vents above the office, walk-in, store, pooja and kitchen doors let air move with doors shut (sealed glazed flaps for the offices). Bedrooms have no door vents for sound privacy; their big north windows, fans and AC are enough. Bathrooms have none either. South-west summer and monsoon breezes enter through the south jalis and the semi-open wet area and leave through north windows; the louvred ventilator over the dining and the ridge vents let hot air out.
+- **Light:** bedrooms, the common bath and living take north light; south rooms (office, pooja, store, kitchen) use deep jalis and sunshades.
+- **Air:** vents above the office, walk-in, store, pooja and kitchen doors let air move with doors shut (a sealed glazed flap for the office). Bedrooms have no door vents for sound privacy; their big north windows, fans and AC are enough. Bathrooms have none either. South-west summer and monsoon breezes enter through the south jalis and the semi-open wet area and leave through north windows; the louvred ventilator over the dining and the ridge vents let hot air out.
 - **Centre:** the dining hall at the plot centre keeps the Brahmasthan open. It takes borrowed daylight from the living, wash link and hall, with no glass skylight; a raised ventilator above it (solid roof, louvres and mesh on all sides, closable shutters) lets hot air escape.
 
 ## Construction
@@ -44,13 +44,12 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Ensuite (NW corner) | 6'-6" x 8' | 5'-11" x 7'-4" (WC, 3'-6" vanity, walk-in shower) |
 | Walk-in wardrobe | 7' x 8' | 6'-7" x 7'-5" |
 | Office 2 (sliding glass door to master) | 9' x 8' | 8'-5" x 7'-5" |
-| Office 1 | 9' x 8' | 8'-7" x 7'-5" |
 | Bedroom 2 (built-in wardrobe) | 12' x 9'-6" | 11'-7" x 8'-11" |
-| Bath 2 (guest/common) | 6' x 8' | 5'-6" x 7'-4" |
+| Bath 2 (common, north side) | 9' x 6' | 8'-6" x 5'-4" |
 | Hall | 12' x 4'-6" | 11'-9" x 4'-0" |
 | Dining, under ventilator | 9' x 8' | 8'-9" x 7'-6" |
-| Pooja | 9' x 6' | 8'-7" x 5'-5" |
-| Store | 6' x 8' | 5'-6" x 7'-5" |
+| Pooja (west of the dining, off the hall) | 9' x 8' | 8'-7" x 7'-5" |
+| Store | 12' x 8' | 11'-7" x 7'-5" |
 | Wet area, semi-open | 8' x 6' | 7'-7" x 5'-5" |
 | Wash link (hand-wash basin, crockery) | 8' x 4' | 7'-9" x 3'-7" |
 | Kitchen (SE) | 10' x 10' | 9'-5" x 9'-3" |
@@ -61,8 +60,8 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Vastu notes (confirm with consultant)
 - Kitchen SE, cook faces east. Main entry on the east face, just north of centre.
 - SW heavy: Office 2 with full-height bookshelves and the walk-in wardrobe; overhead tank SW.
-- Toilets: NW (ensuite) and south-centre (Bath 2); none in SW or NE.
-- Pooja north-centre, idol on east wall; buffered from Bedroom 2 by a wardrobe.
+- Toilets: NW (ensuite) and north-centre (Bath 2, as the family asked; many Vastu schools avoid the north, so confirm); none in SW or NE.
+- Pooja on the west side of the house core, idol on the west wall facing east; no toilet on any side.
 - Plot centre open under the ventilator; no columns, toilets or heavy fixtures there.
 - Master bed head east; Bedroom 2 head south.
 - Sump and borewell NE; septic NW; DB on the SE side of the living room.
@@ -77,6 +76,6 @@ Revision B (pre-construction draft), 30 Oct 2026.
 - Overhead tank on an 18 ft stand in the SW rear garden, with a small pressure pump for showers; fixed ladder for roof access.
 - Septic tank (NW) and grey-water soak pit in the north strip, 6 ft+ from the house.
 - Rainwater from gutters to the sump through a filter; overflow to a recharge pit.
-- Inverter circuit for lights, fans, both offices and the router; conduit for future solar PV.
+- Inverter circuit for lights, fans, the office, the Bedroom 2 desk and the router; conduit for future solar PV.
 
 See `Room_Detailing_Guide.md` for room-by-room mistakes to avoid and how this design handles them.

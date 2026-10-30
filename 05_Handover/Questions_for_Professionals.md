@@ -24,8 +24,8 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 5. Overhead tank stand at 18 ft: design and foundation.
 
 ## Electrical
-1. Total load with five AC points, two geysers and the kitchen: what service connection and phase?
-2. DB location (SE side of the living room) and circuit list; inverter sizing for lights, fans, both offices and the router.
+1. Total load with four AC points, two geysers and the kitchen: what service connection and phase?
+2. DB location (SE side of the living room) and circuit list; inverter sizing for lights, fans, the office, the Bedroom 2 desk and the router.
 3. Earthing, surge protection and lightning; conduit for future solar PV.
 
 ## Plumbing / services
@@ -36,8 +36,8 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Vastu consultant
 1. Master bed head east (not south): acceptable?
-2. NW ensuite and Bath 2 at south-centre.
+2. NW ensuite, and the common bath (Bath 2) at north-centre as the family prefers: acceptable, or what remedies?
 3. Dining table at the plot centre under a roof ventilator.
-4. Pooja at north-centre with the idol on the east wall; wardrobe between pooja and Bedroom 2.
+4. Pooja on the west side of the house core (off the hall) with the idol on the west wall facing east.
 5. TV on the south wall of the living room; DB on the SE living wall.
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.

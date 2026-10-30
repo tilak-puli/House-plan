@@ -77,7 +77,7 @@ GUIDE = [
     ]),
     ("Pooja", [
         ("Lamp smoke blackens the ceiling and the teak panelling.", "Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.", "A-105"),
-        ("Pooja sharing a wall with a toilet.", "Buffer it: here a wardrobe sits between pooja and Bedroom 2, and no toilet is adjacent.", "A-102"),
+        ("Pooja sharing a wall with a toilet.", "Here the pooja sits between the walk-in and the store, off the hall, with no toilet on any side; the idol is on the west wall facing east.", "A-102"),
         ("Polished marble floor that becomes slippery with oil.", "Use honed (matt) marble or teak.", "A-105"),
     ]),
     ("Bedrooms", [
@@ -103,17 +103,17 @@ GUIDE = [
         ("Ensuite squeezed to 5 ft wide: about 4'-5\" clear, too tight for standard fittings.", "Widened by 1'-6\" into the master (about 6'-0\" clear): WC on the outer wall, 3'-6\" vanity on the wet wall, walk-in shower across the north end. The door opens clear of all three.", "A-103, A-104"),
         ("No backing for grab bars later.", "Fix blocking in the walls beside the WC and shower now.", "A-502/5"),
     ]),
-    ("Home offices", [
-        ("Window behind the screen (silhouette on video calls) or in front of it (glare).", "Put the desk side-on to the window; both offices here get south light from the side.", "A-103"),
-        ("Not enough power or data.", "Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk, with the router on the inverter.", "E-102"),
-        ("Sound travelling between offices and into the bedroom.", "Use solid-core doors with seals, don't place sockets back to back on shared walls, and fill the wall cavity behind the bookshelf.", "A-401"),
+    ("Work spaces (Office 2 and Bedroom 2 desk)", [
+        ("Window behind the screen (silhouette on video calls) or in front of it (glare).", "Put the desk side-on to the window: Office 2 gets south light from the side; in Bedroom 2 the desk sits beside the foot of the bed, by the north window.", "A-103"),
+        ("Not enough power or data.", "Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (Office 2 and the Bedroom 2 desk), with the router on the inverter.", "E-102"),
+        ("Sound travelling from the office into the bedroom.", "Use solid-core doors with seals, don't place sockets back to back on shared walls, and fill the wall cavity behind the bookshelf.", "A-401"),
         ("Bare wall behind you on video calls.", "Put a bookshelf behind the chair as the backdrop.", "A-103"),
     ]),
     ("Doors and windows", [
-        ("Solid walls and closed doors between the north bedrooms and south offices: no breeze crosses the house at night or during calls.",
+        ("Solid walls and closed doors between the north and south rooms: no breeze crosses the house at night or during calls.",
          "Put a vent above inner doors, 7'-6\" to 9'-0\": open jali for the walk-in, store and pooja; louvres between kitchen and wet area.", "A-401"),
         ("Open vents above bedroom and bathroom doors: conversation, TV and smells carry into the hall and the next room.",
-         "No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); offices get a sealed glazed flap.", "A-401"),
+         "No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); the office gets a sealed glazed flap.", "A-401"),
         ("A 3'-6\" hall: two people can't pass, and furniture won't turn the corner.", "Make the hall at least 4'-0\" clear; here Bedroom 2 gives up 6 in for it.", "A-104"),
         ("No drip groove under sills and sunshades: black streaks down the walls.", "Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.", "A-501/3"),
         ("Unseasoned teak that warps and jams.", "Use kiln-seasoned wood, or sal / pinkado frames and UPVC on the wet side.", "A-401"),
