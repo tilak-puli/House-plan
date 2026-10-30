@@ -20,7 +20,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Brief
 - Kerala-style single-storey home, in the tropical style of Sthaayi Design Lab.
 - One master suite and one second bedroom in Phase 1.
-- Two people working from home: an open workstation in the master suite (walls can be added later), and a work table with monitor in Bedroom 2, which doubles as a study-guest room with a sofa-cum-bed.
+- Two people working from home: an open workstation in the master suite (walls can be added later), and a work table with monitor in Bedroom 2, which doubles as a study-guest room with a queen bed.
 - Follow Vastu where practical (the owner has a consultant).
 - Good natural light and cross-ventilation, with AC provisions for the hottest months.
 
@@ -39,32 +39,32 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Room list
 | Room | Centreline | Clear (approx.) |
 |---|---|---|
-| Master bedroom | 9'-6" x 14' | 9'-1" x 13'-7" (bed head east; bed keeps 2'-6" at its foot) |
+| Master bedroom (6 ft north window) | 9'-6" x 14' | 9'-1" x 13'-7" (bed head east, both sides usable; bed keeps 2'-6" at its foot) |
 | Dressing alcove | 6'-6" x 6' | 6'-1" x 5'-6" |
 | Ensuite (NW corner) | 6'-6" x 8' | 5'-11" x 7'-4" (WC, 3'-6" vanity, walk-in shower) |
 | Master bay (open to the master; full-width wardrobe + lofts, light from the workstation window) | 7' x 8' | 6'-9" x 7'-7" |
 | Workstation (open to the master suite; walls optional later) | 9' x 8' | about 9' x 8' |
-| Bedroom 2 / study-guest room (incl. Bath 2; door from the sitting area; sofa-cum-bed, work table with monitor beside the bath, 6 ft wardrobe) | 15' x 14'-6" | 14'-7" x 13'-11" |
-| Bath 2 (Bedroom 2's private bath, north-west corner on the outer wall, window) | 5'-6" x 6' | 5'-0" x 5'-5" |
-| Dining bay (old Bath 2 spot, north window, open to dining and living) | 11' x 6' | 10'-9" x 5'-7" |
+| Bedroom 2 / study-guest room (door from the sitting area; queen bed with its head on the south wall, work table with monitor against the bath wall, 6 ft wardrobe; 6 ft north window and a high jali vent to the sitting area for cross-ventilation; its own bath in the north-west corner) | 15' x 14'-6" less 5'-6" x 6' | 14'-7" x 13'-11" less the bath (about 185 sq ft) |
+| Bath 2, attached to Bedroom 2 (in Bedroom 2's north-west corner, door opens out into Bedroom 2; WC on the north wall, shower in the north-east corner, basin on the east wet wall) | 5'-6" x 6' | 5'-0" x 5'-5" |
+| Common bath (south, beside the wet area; door on its west wall, opening out into the sitting area, not toward the dining; WC and basin on the shared wet wall, 3 x 3 ft shower in the south-west corner) | 6'-6" x 6' | 6'-0" x 5'-5" |
+| Dining bay (north window, open to dining and living) | 11' x 6' | 10'-9" x 5'-7" |
 | Dining, under ventilator (plot centre) | 11' x 8' | 10'-9" x 8'-0" |
-| Pooja (east wall of the living, just south of the main door, opening west) | 4' x 4' | 3'-5" x 3'-5" |
-| Wet area (open on the south to the walkway) | 6' x 6' | 5'-6" x 5'-7" |
-| Sitting and serving area, open to the hall (storage bench, 7 ft serving counter with a wash basin at its west end; bedrooms open off it; includes the old pooja bay) | 24' x 7'-6" | 23'-7" x 6'-11" (about 4'-11" clear in front of the counter) |
-| Kitchen (SE, 3 ft sliding entry from the living on the north; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
-| Fridge corner (part of the kitchen, below the pooja) | 4' x 3'-6" | 3'-5" x 3'-3" |
-| Living (sloped ceiling; TV wall to be decided) | 12' x 12' | 11'-4" x 11'-3" |
+| Pooja (living's south-east corner, back to back with the kitchen; doors open inward; opens west) | 4' x 4' | 3'-5" x 3'-5" |
+| Wet area (open on the south to the walkway) | 5' x 6' | 4'-6" x 5'-8" |
+| Sitting and serving area, open to the hall (storage bench, 6 ft serving counter with a wash basin at its west end; bedrooms open off it; the common bath opens off its east end) | 18'-6" x 7'-6" | 18'-1" x 6'-11" (about 4'-11" clear in front of the counter) |
+| Kitchen (SE, 3 ft sliding entry from the living on the north, plus a sliding serving door on the west straight to the dining; fridge on the north wall behind the pooja; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
+| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door to the kitchen; TV wall to be decided) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **60' x 22' = 1,320 sq ft** | **~1,200 sq ft clear** (incl. poomukham and wet area) |
 
 ## Vastu notes (confirm with consultant)
 - Kitchen SE, cook faces east. Main entry at the north end of the east face.
 - SW heavy: workstation with full-height bookshelves and the master wardrobe bay; overhead tank SW.
-- Toilets: NW (ensuite) and north-west of centre (Bath 2, inside Bedroom 2 on the north wall). No common toilet: guests use Bedroom 2's bath. None in SW or NE.
-- Pooja: on the east wall of the living, just south of the main door, with the living's south-east corner free beside the kitchen (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
+- Toilets: NW (master ensuite), Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side, south of the plot centre beside the wet area (outside the central zone). None in SW or NE.
+- Pooja: in the living's south-east corner, back to back with the kitchen, with the shoe cupboard beyond its solid north wall (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
 - Plot centre (Brahmasthan) falls in the dining, just west of the ventilator; kept open, with no toilet, column or heavy fixture there.
-- Master bed head east; Bedroom 2 sofa-cum-bed along the south wall.
-- Sump and borewell NE; septic NW; DB on the living's south wall (kitchen side), outside the pooja.
+- Master bed head east; Bedroom 2 bed head south.
+- Sump and borewell NE; septic NW; DB in the alcove between the dining and the kitchen, away from the pooja.
 
 ## Materials and look
 - Plastered AAC walls with a lime-finish or mineral paint; plinth faced with rough local stone.

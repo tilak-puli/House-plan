@@ -27,7 +27,7 @@ GUIDE = [
         ("Uneven steps (the last one different), which make people trip.", "Make all risers 6 in and treads 12 in, with 3 equal risers from ground to verandah.", "A-202, A-301"),
         ("Verandah floor at the same level as the house: wind-driven rain runs in under the main door.",
          "Set the poomukham 6 in lower, sloping out 1:100, with a raised weather bar under the main door.", "A-105, A-502/9"),
-        ("No place to wash feet or leave footwear: mud and dust come inside.", "Put a foot-wash tap with a small drain beside the steps, and use the arugu seats or a shoe niche for footwear.", "P-101, A-103"),
+        ("No place to wash feet or leave footwear: mud and dust come inside.", "Put a foot-wash tap with a small drain beside the steps, and keep a shoe cupboard just inside the main door (here between the door and the pooja wall).", "P-101, A-103"),
         ("Oonjal (swing) hung later from the roof purlins.", "Cast or bolt swing hooks into the verandah beam, rated for 200 kg, before the roof goes on.", "A-103"),
         ("Bell, CCTV and outdoor light added later with surface wiring.", "Run conduits now to the bell, camera, gate light and intercom.", "E-101, E-102"),
     ]),
@@ -36,7 +36,7 @@ GUIDE = [
         ("Too few sockets, leading to extension cords across the floor.", "Fit sockets at both sofa ends, 2 at the TV, and a router socket on the inverter circuit.", "E-102"),
         ("Fan on a short rod under a high sloped ceiling: weak breeze.", "Use a long downrod so the blades sit about 9 ft above the floor, hung from a hook fixed to the truss.", "E-101"),
         ("Large west or south glazing: the room overheats in April-May.", "Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.", "A-201"),
-        ("Main door swinging into the sofa or the DB.", "Check door swings against the furniture; put the DB on the kitchen wall, not behind the door.", "A-103, E-102"),
+        ("Main door swinging into the sofa or the DB.", "Check door swings against the furniture; put the DB away from the door and the pooja (here in the alcove between the dining and the kitchen).", "A-103, E-102"),
     ]),
     ("Dining and ventilator", [
         ("Glass skylight over the dining: a greenhouse in Guntur summers that leaks and needs constant cleaning.",
@@ -67,10 +67,10 @@ GUIDE = [
         ("Base cabinets standing on the floor: rot and termites.", "Put cabinets on 4 in legs or a granite plinth.", "A-502/6"),
         ("Gas cylinder in a closed cabinet under the hob.", "Keep the cylinder in the ventilated wet area with a fixed copper / steel line and a valve through the wall.", "A-103"),
         ("Kitchen drain without a grease trap: chokes within a year.", "Put a grease trap outside, before any junction.", "P-101"),
-        ("Fridge beside the hob or in direct sun.", "Fridge in its own corner below the pooja, beside the north entry and well away from the hob; nothing blocks the counter.", "A-103"),
+        ("Fridge beside the hob or in direct sun.", "Fridge on the kitchen's north wall behind the pooja, beside the north entry and well away from the hob; nothing blocks the counter.", "A-103"),
     ]),
     ("Wet area, storage and kitchen entry", [
-        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; the fridge corner sits beside it.", "A-102"),
+        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; a second sliding door on the west takes food straight to the dining.", "A-102"),
         ("Open wet area floods during heavy rain, or becomes a back door for intruders.", "Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.", "A-105, A-502/9"),
         ("Washing machine with no tap, drain or socket at the right height.", "Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.", "P-101, E-102"),
         ("No separate store means provisions end up on the floor.", "Use the storage-bench drawers in the sitting area, lofts above the master bay and kitchen, tall kitchen cabinets; keep rice and grain in sealed bins off the floor.", "A-103"),
@@ -78,7 +78,7 @@ GUIDE = [
     ]),
     ("Pooja", [
         ("Lamp smoke blackens the ceiling and the teak panelling.", "Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.", "A-105"),
-        ("Pooja sharing a wall with a toilet.", "Here the pooja sits on the living's east wall, just south of the main door (no toilet on any side). It opens west into the living, idols on its east wall, so the family faces east; the floor is 3 in higher.", "A-102"),
+        ("Pooja sharing a wall with a toilet.", "Here the pooja sits in the living's south-east corner, back to back with the kitchen (no toilet on any side). It opens west into the living with doors that open inward, idols on its east wall, so the family faces east; the floor is 3 in higher.", "A-102"),
         ("Polished marble floor that becomes slippery with oil.", "Use honed (matt) marble or teak.", "A-105"),
     ]),
     ("Bedrooms", [

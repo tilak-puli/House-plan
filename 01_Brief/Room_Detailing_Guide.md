@@ -49,7 +49,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Set the poomukham 6 in lower, sloping out 1:100, with a raised weather bar under the main door.  
    *Shown on: A-105, A-502/9*
 13. **Avoid:** No place to wash feet or leave footwear: mud and dust come inside.  
-   **Do:** Put a foot-wash tap with a small drain beside the steps, and use the arugu seats or a shoe niche for footwear.  
+   **Do:** Put a foot-wash tap with a small drain beside the steps, and keep a shoe cupboard just inside the main door (here between the door and the pooja wall).  
    *Shown on: P-101, A-103*
 14. **Avoid:** Oonjal (swing) hung later from the roof purlins.  
    **Do:** Cast or bolt swing hooks into the verandah beam, rated for 200 kg, before the roof goes on.  
@@ -72,7 +72,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.  
    *Shown on: A-201*
 20. **Avoid:** Main door swinging into the sofa or the DB.  
-   **Do:** Check door swings against the furniture; put the DB on the kitchen wall, not behind the door.  
+   **Do:** Check door swings against the furniture; put the DB away from the door and the pooja (here in the alcove between the dining and the kitchen).  
    *Shown on: A-103, E-102*
 
 ## Dining and ventilator
@@ -135,12 +135,12 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put a grease trap outside, before any junction.  
    *Shown on: P-101*
 39. **Avoid:** Fridge beside the hob or in direct sun.  
-   **Do:** Fridge in its own corner below the pooja, beside the north entry and well away from the hob; nothing blocks the counter.  
+   **Do:** Fridge on the kitchen's north wall behind the pooja, beside the north entry and well away from the hob; nothing blocks the counter.  
    *Shown on: A-103*
 
 ## Wet area, storage and kitchen entry
 40. **Avoid:** A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.  
-   **Do:** The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; the fridge corner sits beside it.  
+   **Do:** The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; a second sliding door on the west takes food straight to the dining.  
    *Shown on: A-102*
 41. **Avoid:** Open wet area floods during heavy rain, or becomes a back door for intruders.  
    **Do:** Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.  
@@ -160,7 +160,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.  
    *Shown on: A-105*
 46. **Avoid:** Pooja sharing a wall with a toilet.  
-   **Do:** Here the pooja sits on the living's east wall, just south of the main door (no toilet on any side). It opens west into the living, idols on its east wall, so the family faces east; the floor is 3 in higher.  
+   **Do:** Here the pooja sits in the living's south-east corner, back to back with the kitchen (no toilet on any side). It opens west into the living with doors that open inward, idols on its east wall, so the family faces east; the floor is 3 in higher.  
    *Shown on: A-102*
 47. **Avoid:** Polished marble floor that becomes slippery with oil.  
    **Do:** Use honed (matt) marble or teak.  

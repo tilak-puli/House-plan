@@ -165,7 +165,7 @@ def sheet_furniture(c):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 44, "Cross section through the sitting area, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
+SECTIONS = {"A": ("X", 44, "Cross section through the common bath, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
 
 
 def sheet_working(c):
@@ -224,7 +224,7 @@ def sheet_finishes(c):
         cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         pl.text(short_name(name), cx, cy + 0.8, 5.2, "Helvetica-Bold")
         pl.level(cx - 1.2, cy - 0.6, floor_level(rid), 5)
-    for rid, ang in (("R04", "1:60 to drain"), ("R07", "1:60 to drain"), ("R13", "1:80 to drain")):
+    for rid, ang in (("R04", "1:60 to drain"), ("R07", "1:60 to drain"), ("R08", "1:60 to drain"), ("R13", "1:80 to drain")):
         r = room_of(rid); pl.text("falls " + ang, (r[2] + r[3]) / 2, r[4] + 0.8, 4.4, color=BLUE)
     pl.level(69, 9, LEVELS["FGL"], 5); pl.text("finished ground", 69, 8, 4.5, color=GREY)
     sw = lambda fill: (lambda x, y: s.c.setFillColor(fill) or s.c.setStrokeColor(GREY) or s.c.rect(x, y, 6 * mm, 3 * mm, stroke=1, fill=1))

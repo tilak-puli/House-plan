@@ -25,7 +25,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Electrical
 1. Total load with four AC points, two geysers and the kitchen: what service connection and phase?
-2. DB location (living's south wall, beside the pooja) and circuit list; inverter sizing for lights, fans, the office, the Bedroom 2 desk and the router.
+2. DB location (alcove between the dining and the kitchen) and circuit list; inverter sizing for lights, fans, the office, the Bedroom 2 desk and the router.
 3. Earthing, surge protection and lightning; conduit for future solar PV.
 
 ## Plumbing / services
@@ -36,8 +36,8 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Vastu consultant
 1. Master bed head east (not south): acceptable?
-2. NW ensuite, and Bath 2 inside Bedroom 2 on the north wall (north-west of centre); no common toilet: acceptable?
+2. NW ensuite, Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side beside the wet area, just south of the plot centre (outside the central zone): acceptable?
 3. Plot centre in the dining, just west of the roof ventilator (open, no columns or fixtures).
-4. Pooja on the east wall of the living, just south of the main door (north end of the east face), opening west (idols face west, family faces east): acceptable? (NE is the textbook spot; SE beside the kitchen is the family's choice.)
-5. Main door at the north end of the east face; DB on the living's south wall. (TV wall still to be decided.)
+4. Pooja in the living's south-east corner, back to back with the kitchen, opening west (idols face west, family faces east), with a shoe cupboard beyond its solid north wall beside the main door: acceptable? (NE is the textbook spot; SE beside the kitchen is the family's choice.)
+5. Main door at the north end of the east face; DB in the alcove between the dining and the kitchen. (TV wall still to be decided.)
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.
