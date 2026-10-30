@@ -195,8 +195,8 @@ FURNITURE = [
     ("F51", "Bedroom 2", "Bedside table", 36.8, 37.8, 12.85, 13.85, 2, "Teak", "rect"),
     ("F22", "Bedroom 2", "Work table 4' x 2' with monitor (east wall, north of the bed; north window to the side)", 35.8, 37.8, 20.4, 24.4, 1, "Teak / ply, cable tray, monitor arm", "rect"),
     ("F23", "Bedroom 2", "Built-in wardrobe 6' with a mirror door (west wall, shared with the master: also a sound buffer)", 21.3, 23.3, 11.2, 17.2, 1, "Ply + laminate", "rect"),
-    ("F24", "Dining", "Dining table 5' x 3', 6-seat", 42.5, 47.5, 13.5, 16.5, 1, "Teak or rosewood", "rect"),
-    ("F25", "Dining", "Dining chair", 42.8, 43.9, 12.3, 13.3, 6, "Teak + cane", "rect"),
+    ("F24", "Dining", "Dining table 5' x 3', 6-seat (under the ventilator)", 42.5, 47.5, 12.75, 15.75, 1, "Teak or rosewood", "rect"),
+    ("F25", "Dining", "Dining chair", 42.8, 43.9, 11.55, 12.55, 6, "Teak + cane", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 13.5, 16.5, 1, "Carved teak", "rect"),
     ("F28", "Sitting and serving area", "Built-in bench with storage drawers below", 21.3, 22.8, 3.3, 6.1, 1, "Teak top, ply drawers, on legs", "rect"),
     ("F29", "Wet area", "Utility sink counter (on the kitchen wall)", 51.0, 52.7, 3.4, 5.9, 1, "Kadappa / granite, SS sinks", "rect"),
@@ -210,18 +210,19 @@ FURNITURE = [
     ("F35", "Kitchen", "L-counter, east run (hob centred 7'-6\" from the south wall face, on solid wall)", 64.6, 66.6, 5.4, 12.4, 1, "Granite top, cook faces east", "rect"),
     ("F36", "Kitchen", "Refrigerator space (kitchen north wall, behind the pooja, door facing south)", 57.5, 60.0, 10.2, 12.6, 1, "Double-door, 2'6\" wide", "rect"),
     ("F55", "Kitchen", "Tall pantry 4'-5\" x 2' on the north wall (provisions, rice, vessels)", 60.1, 64.5, 10.6, 12.6, 1, "Ply + laminate, full height with loft", "rect"),
-    ("F38", "Dining bay", "Three-seat sofa 6'6\" facing west to the TV", 47.0, 49.7, 18.6, 24.5, 1, "Teak frame, cotton cushions", "rect"),
+    ("F38", "Dining bay", "Sofa 5'-6\" (2-3 seats) facing west to the TV", 47.0, 49.7, 19.0, 24.5, 1, "Teak frame, cotton cushions", "rect"),
     ("F39", "Dining bay", "Coffee table 3'6\" x 2'", 43.8, 45.8, 19.8, 23.3, 1, "Teak", "rect"),
     ("F53", "Dining bay", "TV unit 4'-5\" on Bedroom 2's east wall (55-65 in TV wall-mounted above)", 38.3, 39.6, 19.8, 24.2, 1, "Teak, low, open shelves", "rect"),
-    ("F40", "Living", "Armchair by the north window", 52.8, 54.8, 22.9, 24.5, 1, "Cane / teak", "circle"),
+    ("F40", "Living", "Armchair at the west end of the window diwan", 49.9, 51.7, 20.6, 22.4, 1, "Cane / teak", "circle"),
+    ("F58", "Living", "Window diwan 6' x 2'-6\" under the north window, drawers below (guest seating, extra bed at festivals)", 51.9, 57.9, 22.0, 24.6, 1, "Teak frame, cotton mattress and bolsters", "rect"),
     ("F52", "Living", "Shoe cupboard 3'-3\" beside the main door (closed shutters, louvred for air)", 59.4, 60.6, 17.4, 20.6, 1, "Ply + laminate, 14 in deep", "rect"),
     ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\"", 62.2, 65.7, 17.4, 18.9, 1, "Teak, chains to beam", "rect"),
     ("F42", "Poomukham (verandah)", "Arugu seat (built-in, south end)", 65.8, 67, 13.8, 16.2, 1, "Laterite base, teak top", "rect"),
 ]
 # extra placements (same item, additional copies drawn on plan)
 EXTRA_DRAW = [
-    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 36.8, 37.8, 19.15, 20.15), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 12.3, 13.3), ("F25", 46.2, 47.3, 12.3, 13.3),
-    ("F25", 42.8, 43.9, 16.7, 17.7), ("F25", 44.5, 45.6, 16.7, 17.7), ("F25", 46.2, 47.3, 16.7, 17.7),
+    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 36.8, 37.8, 19.15, 20.15), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 11.55, 12.55), ("F25", 46.2, 47.3, 11.55, 12.55),
+    ("F25", 42.8, 43.9, 15.95, 16.95), ("F25", 44.5, 45.6, 15.95, 16.95), ("F25", 46.2, 47.3, 15.95, 16.95),
 ]
 
 FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
@@ -268,6 +269,7 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Twenty-first review: the open hall becomes three zones: family TV lounge in the dining bay (5'-6\" sofa facing the TV), dining under the ventilator moved 9 in south (about 2 ft behind the chairs on both sides), and guest sitting by the main door with a 6 ft window diwan and an armchair under the living's north window; a clear walk of about 4'-11\" from the main door to the dining and kitchen, pooja front kept clear.",
     "Twentieth review: Bedroom 2's bed moves to the east wall, head east, leaving an 8 x 14 ft open floor from the door to the bath and window; wardrobe to the west wall (sound buffer to the master), work table north of the bed, AC on the bath's outer wall; dresser dropped (mirror on the wardrobe).",
     "Nineteenth review: with Bedroom 2 at 17 ft, its bed turns head-south in the middle of the room (2 ft+ on both sides, under the jali); Bath 2 grows to 7' x 7' (6'-7\" x 6'-4\" clear) with a 3' x 3'-6\" wet zone, basin in the dry zone and the door on its east wall; a dresser takes the west wall; work table and wardrobe stay on the east wall.",
     "Eighteenth review: house lengthened 2 ft to 62 ft, all of it added to Bedroom 2 (now 17 ft wide; the sitting area below it also gains 2 ft); front yard 10 ft to 8 ft (check the front setback). Bedroom 2 window back to 6 ft.",
@@ -388,8 +390,8 @@ ELECTRICAL = [
     ("PC", 58, 3.5, "R15", "microwave / OTG"), ("PC", 63.5, 3.5, "R15", "mixer"), ("PC", 66.6, 5.6, "R15", ""), ("PC", 66.6, 9.6, "R15", ""),
     ("PC", 59.3, 3.5, "R15", "RO purifier, by sink"), ("S", 53.4, 9.0, "R15", "beside the entry, latch side"),
     # Living, poomukham
-    ("F", 55, 19, "R16", "long downrod"), ("L", 52, 22.5, "R16", ""), ("L", 55, 16, "R16", ""),
-    ("P", 48.2, 18.4, "R19", "floor socket, sofa end"), ("P", 52.6, 17.8, "R16", "floor socket, armchair"),
+    ("F", 55, 19, "R16", "long downrod"), ("L", 54.9, 22.8, "R16", "over the diwan"), ("L", 55, 16, "R16", ""),
+    ("P", 48.2, 18.8, "R19", "floor socket, sofa end"), ("P", 51.0, 20.3, "R16", "floor socket, armchair and diwan (lamp, charger)"),
     ("S", 60.6, 21.0, "R16", "main switch at door"), ("DB", 38.4, 12.6, "R10", "dining face of Bedroom 2's east wall, by the passage; dry wall away from the pooja and wet area"), ("U", 38.4, 14.6, "R10", "router (central)"),
     ("L", 64, 16, "R17", ""), ("L", 64, 22, "R17", ""), ("BELL", 61.4, 20.4, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 20.9, "R17", ""),
