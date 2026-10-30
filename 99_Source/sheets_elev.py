@@ -15,7 +15,7 @@ PILLAR_TOP = F + 9.3
 FACES = {
     "S": dict(line=("X", 3), u=lambda x, y: x, title="South elevation"),
     "N": dict(line=("X", 25), u=lambda x, y: SITE["l"] - x, title="North elevation"),
-    "E": dict(line=("Y", 65), u=lambda x, y: y, title="East elevation (road side)"),
+    "E": dict(line=("Y", 67), u=lambda x, y: y, title="East elevation (road side)"),
     "W": dict(line=("Y", 5), u=lambda x, y: SITE["w"] - y, title="West elevation"),
 }
 
@@ -97,7 +97,7 @@ def elevation(e, face):
     axis, c0 = f["line"]
     if face in ("S", "N"):
         _ground(e, u(-2, 0) if face == "S" else u(77, 0), u(77, 0) if face == "S" else u(-2, 0))
-        xa, xb = (5, 65)
+        xa, xb = (5, 67)
         lo, hi = sorted((u(xa - 0.375, 0), u(xb + 0.375, 0)))
         e.rect(lo, hi, 0, F, lw=0.6, fill=colors.HexColor("#B8B2A8"))
         if face == "S":
@@ -108,9 +108,9 @@ def elevation(e, face):
                 e.rect(a_, b_, LEVELS["wet_area"], F + 8, lw=0.5, fill=colors.HexColor("#5A5048"))
                 e.text("OPEN WET AREA", (a_ + b_) / 2, F + 4, 4.4, color=WHITE)
         else:
-            a, b = sorted((u(5 - 0.375, 0), u(59, 0)))
+            a, b = sorted((u(5 - 0.375, 0), u(61, 0)))
             e.rect(a, b, F, F + H, lw=0.6, fill=WALLC)
-            a, b = sorted((u(59, 0), u(65.375, 0)))
+            a, b = sorted((u(61, 0), u(67.375, 0)))
             e.rect(a, b, F, F + H, lw=0.3, fill=colors.HexColor("#E9E4DA"))  # recessed kitchen / poomukham back
             for px, py in PILLARS:
                 if py > 24:
@@ -126,9 +126,9 @@ def elevation(e, face):
                 e.rect(a, b, F - LEVELS["FFL"] + LEVELS["wet_area"], F + 7, lw=0.5, fill=colors.HexColor("#6B4A2E"))
                 e.text(d[0], (a + b) / 2, F + 7.9, 4.6, color=ACC)
         _roof_long(e, u)
-        lo2, hi2 = sorted((u(2.5, 0), u(67.5, 0)))
+        lo2, hi2 = sorted((u(2.5, 0), u(69.5, 0)))
         _levels(e, lo2 - 1.5)
-        e.hdim(lo, hi, -2.2, "60'-9\" incl. walls", 5)
+        e.hdim(lo, hi, -2.2, "62'-9\" incl. walls", 5)
     else:
         east = face == "E"
         _ground(e, u(0, -1) if east else u(0, 28), u(0, 28) if east else u(0, -1))
@@ -148,7 +148,7 @@ def elevation(e, face):
             ar = next(f for f in FURNITURE if f[0] == "F42")
             e.rect(u(0, ar[5]), u(0, ar[6]), LEVELS["poomukham"], LEVELS["poomukham"] + 1.5, lw=0.4, fill=colors.HexColor("#B8B2A8"))
             for px, py in PILLARS:
-                if px > 64:
+                if px > 66:
                     e.rect(u(0, py) - 0.33, u(0, py) + 0.33, LEVELS["poomukham"], PILLAR_TOP, lw=0.5, fill=colors.HexColor("#6B4A2E"))
             for i in range(3):
                 stp = next(f[3] for f in SITE_FEATURES if f[0] == "STEPS")
@@ -226,7 +226,7 @@ def section(e, name):
         eaves = (ROOF["hip"][0], ROOF["hip"][1])
     _ground(e, *rng)
     # foundations (indicative) and plinth fill
-    hu1, hu2 = (3, 25) if axis == "X" else (5, 65)
+    hu1, hu2 = (3, 25) if axis == "X" else (5, 67)
     e.rect(hu1, hu2, 0, F - 0.33, stroke=None, fill=colors.HexColor("#E6DDC8"))
     e.text("compacted moorum / gravel fill (no black soil)", (hu1 + hu2) / 2, F / 2 - 0.2, 4.6, color=GREY)
     for w, c in walls:
@@ -262,7 +262,7 @@ def section(e, name):
     top = [(u_, zfun(u_)) for u_ in us]
     bot = [(u_, zfun(u_) - 0.45) for u_ in reversed(us)]
     e.poly(top + bot, lw=0.6, close=True, fill=TILE)
-    wa, wb = (3, 25) if axis == "X" else (5, 65)
+    wa, wb = (3, 25) if axis == "X" else (5, 67)
     e.line(wa, F + H, wb, F + H, lw=0.5, color=BROWN)  # truss bottom chord
     k = 4
     while k < (wb - wa):

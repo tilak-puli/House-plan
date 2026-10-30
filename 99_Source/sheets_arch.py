@@ -15,7 +15,7 @@ def sheet_cover(c, index):
     carpet = sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
             ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft, + {SITE['strip']}' north strip owned (Phase 2)"),
-            ("Built footprint", "60' x 22' = 1,320 sq ft (wall centrelines)"),
+            ("Built footprint", "62' x 22' = 1,364 sq ft (wall centrelines)"),
             ("Carpet area", f"{carpet:,.0f} sq ft clear, incl. poomukham and open wet area"),
             ("Construction", "RCC frame, AAC walls, steel-truss roof with clay tiles"),
             ("Plinth", f"FFL {fmt_lvl(LEVELS['FFL'])} above finished ground")]
@@ -81,13 +81,13 @@ def sheet_site(c):
     pl.rect(5, 65, 3, 25, stroke=INK, fill=colors.HexColor("#CFCFCF"), lw=0.8)
     pl.rect(x1, x2, y1, y2, stroke=INK, lw=0.4, dash=(3, 2))
     site_features(pl)
-    pl.text("SINGLE-STOREY HOUSE, 60' x 22'", 35, 15.5, 8, "Helvetica-Bold")
+    pl.text("SINGLE-STOREY HOUSE, 62' x 22'", 35, 15.5, 8, "Helvetica-Bold")
     pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}  (dashed: roof eaves; dotted: 3 ft apron)", 35, 12.3, 6.5, color=GREY)
     pl.text(f"NORTH STRIP, {SITE['strip']}' (OPEN NOW, PHASE 2 SITE)", 35, W + 1.6, 6.5, color=GREY)
     pl.text("3' SERVICE WALKWAY", 35, 1.5, 6, color=GREY)
     pl.text("FRONT YARD", 71.5, 12.3, 6, color=GREY)
-    pl.level(69.5, 17.6, 0)
-    pl.hdim(0, 5, -3); pl.hdim(5, 65, -3); pl.hdim(65, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
+    pl.level(71, 17.6, 0)
+    pl.hdim(0, 5, -3); pl.hdim(5, 67, -3); pl.hdim(67, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
     pl.vdim(0, 3, -3); pl.vdim(3, 25, -3); pl.vdim(25, W, -3); pl.vdim(0, W, -6.5, f"{W}'-0\" PLOT"); pl.vdim(W, W + SITE["strip"], -6.5)
     pl.north(PW - 105 * mm, PH - 40 * mm)
     pl.scalebar(250 * mm, 75 * mm)
@@ -110,13 +110,13 @@ def sheet_plan(c):
     pl.rect(sx1_, (sx1_ + sx2_) / 2, sy1_, sy2_, lw=0.3); pl.rect((sx1_ + sx2_) / 2, sx2_, sy1_, sy2_, lw=0.3)
     pl.text("UP", (sx1_ + sx2_) / 2, (sy1_ + sy2_) / 2, 4.5)
     pl.room_names(6, INK, sub=lambda r: "{} x {}".format(*map(fmt_ft, room_dims(r))))
-    xs = [5, 14, 21, 41, 45, 51, 65]
+    xs = [5, 14, 21, 41.5, 48, 53, 67]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.5)
-    pl.hdim(5, 65, -4.3, "60'-0\" OVERALL")
-    xn = [5, 11.5, 21, 36, 47, 59, 65]
+    pl.hdim(5, 67, -4.3, "62'-0\" OVERALL")
+    xn = [5, 11.5, 21, 28, 38, 49, 61, 67]
     for a, b in zip(xn, xn[1:]): pl.hdim(a, b, 28.6)
-    pl.vdim(3, 25, 72.6, "22'-0\" OVERALL")
-    pl.vdim(3, 11, 69.6); pl.vdim(11, 13, 69.6); pl.vdim(13, 25, 69.6)
+    pl.vdim(3, 25, 74.3, "22'-0\" OVERALL")
+    pl.vdim(3, 11, 71.6); pl.vdim(11, 13, 71.6); pl.vdim(13, 25, 71.6)
     pl.north(PW - 105 * mm, PH - 40 * mm)
     pl.scalebar(32 * mm, 30 * mm)
     sw = lambda fill: (lambda x, y: s.c.setFillColor(fill) or s.c.rect(x, y, 6 * mm, 2 * mm, stroke=0, fill=1))
@@ -165,7 +165,7 @@ def sheet_furniture(c):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 44, "Cross section through the common bath, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
+SECTIONS = {"A": ("X", 46, "Cross section through the common bath, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
 
 
 def sheet_working(c):
@@ -189,13 +189,13 @@ def sheet_working(c):
             for yy, lab in ((-3.3, name), (29.2, name)):
                 pl.circle(c0, yy, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(lab, c0, yy, 6.5, "Helvetica-Bold", RED)
         else:
-            pl.line(1, c0, 70, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
-            for xx in (0.2, 70.8):
+            pl.line(1, c0, 72, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
+            for xx in (0.2, 72.8):
                 pl.circle(xx, c0, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(name, xx, c0, 6.5, "Helvetica-Bold", RED)
-    xs = [5, 11.5, 14, 21, 41, 45, 47, 51, 55, 59, 65]
+    xs = [5, 11.5, 14, 21, 28, 38, 41.5, 48, 53, 57, 61, 67]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.3, size=5)
     yn = [3, 10.5, 13, 15.5, 17, 19, 25]
-    for a, b in zip(yn, yn[1:]): pl.vdim(a, b, 68.6, size=5)
+    for a, b in zip(yn, yn[1:]): pl.vdim(a, b, 70.6, size=5)
     s.note("Clear sizes are wall face to wall face after plaster (green). Grid dimensions are to wall centrelines.", 24 * mm, 32 * mm, 7, GREY)
     s.note("Section A-A and B-B on A-301. Check every furniture item against the clear size before ordering.", 24 * mm, 27 * mm, 7, GREY)
     s.note("Column positions (by engineer) must avoid door swings, wardrobes and the TV wall.", 24 * mm, 22 * mm, 7, GREY)
@@ -226,7 +226,7 @@ def sheet_finishes(c):
         pl.level(cx - 1.2, cy - 0.6, floor_level(rid), 5)
     for rid, ang in (("R04", "1:60 to drain"), ("R07", "1:60 to drain"), ("R08", "1:60 to drain"), ("R13", "1:80 to drain")):
         r = room_of(rid); pl.text("falls " + ang, (r[2] + r[3]) / 2, r[4] + 0.8, 4.4, color=BLUE)
-    pl.level(69, 9, LEVELS["FGL"], 5); pl.text("finished ground", 69, 8, 4.5, color=GREY)
+    pl.level(71, 9, LEVELS["FGL"], 5); pl.text("finished ground", 71, 8, 4.5, color=GREY)
     sw = lambda fill: (lambda x, y: s.c.setFillColor(fill) or s.c.setStrokeColor(GREY) or s.c.rect(x, y, 6 * mm, 3 * mm, stroke=1, fill=1))
     s.legend([(sw(col), name) for name, col, _ in FLOOR_GROUPS], 24 * mm, 64 * mm)
     tips = [
@@ -246,7 +246,7 @@ def sheet_roof(c):
     s = Sheet(c, "A-106", "Roof plan", "1:75")
     pl = Plan(s, 75, 16 * mm, 104 * mm)
     pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
-    pl.rect(5, 60, 3, 25, stroke=GREY, lw=0.4, dash=(2, 2))
+    pl.rect(5, 62, 3, 25, stroke=GREY, lw=0.4, dash=(2, 2))
     x1, x2, y1, y2 = ROOF["hip"]
     w = (y2 - y1) / 2; yc = (y1 + y2) / 2
     pl.rect(x1, x2, y1, y2, lw=0.9)
@@ -268,7 +268,7 @@ def sheet_roof(c):
     pl.rect(sx1, sx2, sy1, sy2, lw=0.4, dash=(1.5, 1))  # louvre band under the cap
     pl.text("VENTILATOR (A-503)", (sx1 + sx2) / 2, sy2 + o + 0.7, 5, "Helvetica-Bold")
     # slope arrows
-    for ax, ay, dx, dy in ((20, 8, 0, -4), (35, 22, 0, 4), (8.5, 14, -4, 0), (63, 6, 3, 0)):
+    for ax, ay, dx, dy in ((20, 8, 0, -4), (37, 22, 0, 4), (8.5, 14, -4, 0), (65, 6, 3, 0)):
         pl.line(ax, ay, ax + dx, ay + dy, lw=0.5, color=BLUE)
         pl.circle(ax + dx, ay + dy, 0.18, lw=0.4, color=BLUE, fill=BLUE)
     pl.text(f"{ROOF['pitch']} deg", 20.8, 7, 5, color=BLUE)
@@ -278,12 +278,12 @@ def sheet_roof(c):
         pl.circle(dx, dy - 0.2 if dy < 14 else dy + 0.2, 0.35, lw=0.5, color=BLUE, fill=WHITE)
     pl.text("GUTTER + LEAF GUARD", 12, y1 - 1.2, 5, color=BLUE); pl.text("GUTTER + LEAF GUARD", 12, y2 + 1.2, 5, color=BLUE)
     pl.text("SOLAR PV ZONE (FUTURE), SOUTH SLOPE", 30, 5.5, 5.5, "Helvetica-Bold", ACC)
-    pl.rect(18, 51, 1.5, 9.5, stroke=ACC, lw=0.4, dash=(2, 2))
+    pl.rect(18, 53, 1.5, 9.5, stroke=ACC, lw=0.4, dash=(2, 2))
     pl.text(f"RIDGE {fmt_lvl(ridge_z())}", 24, yc + 0.8, 5.5, "Helvetica-Bold")
     pl.text(f"EAVES {fmt_lvl(eave_z())}", 10, y1 + 1.5, 5)
     pl.text("ridge vent with mesh", 25, yc - 0.9, 4.6, color=GREY)
     pl.text("LADDER", 1.7, 9.8, 4.6)
-    pl.hdim(x1, x2, -1.5, size=5); pl.vdim(y1, y2, 64.8, size=5)
+    pl.hdim(x1, x2, -1.5, size=5); pl.vdim(y1, y2, 66.8, size=5)
     pl.hdim(x1, 5, 29.5, "2'-6\"", 4.6)
     tips = [
         "Every tile along eaves, verges, hips and ridges clipped or screwed; every third row elsewhere. Cyclone winds lift loose tiles first at the edges.",
@@ -313,7 +313,7 @@ def sheet_schedules(c):
     dd = [["ID", "Location", "Width", "Type", "Vent above"]] + [[d[0], d[6], fmt_ft(d[4] - d[3]), d[7], TRANSOM_LABELS.get(TRANSOMS.get(d[0]), "-")] for d in DOORS]
     s.table(dd, [9, 30, 12, 42, 14], 18 * mm, top - h - 12 * mm, "Door schedule (heights 7'-0\"; vents 7'-6\" to 9'-0\")")
     wd = [["ID", "Room", "Wall", "Width", "Sill", "Head", "Type"]]
-    face = lambda w: {("X", 3): "S", ("X", 25): "N", ("Y", 5): "W", ("Y", 65): "E", ("Y", 59): "E"}.get((w[1], w[2]), "-")
+    face = lambda w: {("X", 3): "S", ("X", 25): "N", ("Y", 5): "W", ("Y", 67): "E", ("Y", 61): "E"}.get((w[1], w[2]), "-")
     wd += [[w[0], w[7], face(w), fmt_ft(w[4] - w[3]), fmt_ft(w[5]), fmt_ft(w[6]), w[8]] for w in WINDOWS]
     wd += [[o[0], "Roof", "-", "-", "-", "-", o[1]] for o in OTHER_OPENINGS]
     h2 = s.table(wd, [9, 24, 10, 12, 11, 11, 68], 136 * mm, top, "Window and vent schedule (sill/head above floor)")

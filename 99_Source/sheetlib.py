@@ -168,7 +168,7 @@ class Plan:
                     if axis == "X":
                         tx, ty = (a + b) / 2, cc + (1.25 if cc >= 25 else -1.25)
                     else:
-                        tx, ty = cc + (1.5 if cc >= 59 else -1.5), (a + b) / 2
+                        tx, ty = cc + (1.5 if cc >= 61 else -1.5), (a + b) / 2
                     self.text(rec[0], tx, ty, 5.5, color=ACC)
             else:
                 did, _, _, s0, e0, sw, *_ = rec

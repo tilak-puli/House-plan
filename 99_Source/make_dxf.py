@@ -39,7 +39,7 @@ def make(path):
     W, S = SITE["w"], SITE["strip"]
     rect(0, SITE["l"], 0, W + S, "C-PROP-SETB")
     rect(0, SITE["l"], 0, W, "C-PROP")
-    rect(5, 65, 3, 25, "C-PROP-SETB")
+    rect(5, 67, 3, 25, "C-PROP-SETB")
     rect(*ROOF["hip"], "A-ROOF-OTLN")
     text(f"PLOT {W}' x {SITE['l']}'", 35, 1.2, 150, "A-ANNO-TEXT")
     text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
@@ -81,7 +81,7 @@ def make(path):
                 tag_xy = (a + b) / 2, c + (1.2 if c >= 25 else -1.2)
             else:
                 msp.add_line(P(c, a), P(c, b), dxfattribs={"layer": "A-GLAZ"})
-                tag_xy = c + (1.4 if c >= 59 else -1.4), (a + b) / 2
+                tag_xy = c + (1.4 if c >= 61 else -1.4), (a + b) / 2
             text(rec[0], *tag_xy, 90, "A-GLAZ")
         else:
             did, _, _, s0, e0, sw, *_ = rec
@@ -142,13 +142,13 @@ def make(path):
     def vdim(a, b, x, base):
         d = msp.add_linear_dim(base=P(base, a), p1=P(x, a), p2=P(x, b), angle=90, dimstyle="EZ_MM_100_H25_CM", override=override, dxfattribs=dim)
         d.render()
-    hdim(5, 65, 25, 33.5)
-    vdim(3, 25, 65, 73)
-    xs = [5, 14, 21, 41, 45, 51, 65]
+    hdim(5, 67, 25, 33.5)
+    vdim(3, 25, 67, 74)
+    xs = [5, 14, 21, 41.5, 48, 53, 67]
     for a, b in zip(xs, xs[1:]):
         hdim(a, b, 3, -2)
     vdim(0, 3, 5, -3); vdim(25, SITE["w"], 5, -3)
-    hdim(0, 5, 3, -5); hdim(65, 75, 3, -5)
+    hdim(0, 5, 3, -5); hdim(67, 75, 3, -5)
 
     doc.saveas(path)
 

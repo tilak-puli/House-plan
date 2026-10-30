@@ -79,7 +79,7 @@ def make(path):
         ws.append([r[0], r[1], r[6], L, W, f"=D{i}*E{i}", f"=F{i}*0.092903", round(cl, 2), round(cw, 2), f"=H{i}*I{i}",
                    fmt_lvl(floor_level(r[0])), f"Flat {fmt_ft(cv)}" if ck == "flat" else f"Sloped ({cv})", notes.get(r[0], "")])
     n = ws.max_row
-    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", "Built footprint 60' x 22' = 1,320 sq ft"])
+    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", "Built footprint 62' x 22' = 1,364 sq ft"])
     style_rows(ws, 13)
     for c in ws[ws.max_row]: c.font = Font(name=F, bold=True); c.fill = TOTAL
     for row in ws.iter_rows(min_row=2, min_col=6, max_col=10):
@@ -95,7 +95,7 @@ def make(path):
         for c in row: c.fill = INPUT
 
     ws = sheet(wb, "Windows", ["ID", "Room", "Wall faces", "Width (ft)", "Sill (ft)", "Head (ft)", "Height (ft)", "Type", "Status"], [7, 18, 10, 10, 9, 9, 10, 52, 14])
-    face = {("X", 3): "South", ("X", 25): "North", ("Y", 5): "West", ("Y", 65): "East", ("Y", 59): "East (to verandah)"}
+    face = {("X", 3): "South", ("X", 25): "North", ("Y", 5): "West", ("Y", 67): "East", ("Y", 61): "East (to verandah)"}
     for i, w in enumerate(WINDOWS, start=2):
         ws.append([w[0], w[7], face.get((w[1], w[2]), ""), round(w[4] - w[3], 2), w[5], w[6], f"=F{i}-E{i}", w[8], ""])
     for o in OTHER_OPENINGS:

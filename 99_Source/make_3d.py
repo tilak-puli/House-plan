@@ -4,7 +4,7 @@ from geom import *
 
 # Short labels where the full room name will not fit in the 3D view
 LABELS = {"Workstation (open, walls optional later)": "Workstation", "Master bay (old store, open to the bedroom)": "Master bay", "Dining bay (north window)": "Dining bay", "Bath 2 (attached to Bedroom 2)": "Bath 2",  "Dressing alcove": "Dressing", "Sitting and serving area (open)": "Sitting area"}
-COVERED = {("Y", 59)}  # walls under the poomukham roof: no sunshades
+COVERED = {("Y", 61)}  # walls under the poomukham roof: no sunshades
 FULL_HEIGHT_SILL = 1.0  # windows with a lower sill are cut through the wall
 
 

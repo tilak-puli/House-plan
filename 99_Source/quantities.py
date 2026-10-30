@@ -28,7 +28,7 @@ def take_off():
     wall_len = sum(w[3] - w[2] for w in WALLS)
     q.append(("Frame", "Plinth beam / lintel band / ring beam (each, running length)", round(wall_len * 0.3048, 1), "m", "Along all walls; sizes by engineer"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
-    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (60.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls + plinth face"))
+    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (62.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls + plinth face"))
     finishes = {}
     skirting = 0
     for r in ROOMS:
@@ -50,7 +50,7 @@ def take_off():
     q.append(("Roof", "Gutters", round(2 * (x2 - x1) * 0.3048, 1), "m", "Both long eaves"))
     q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 12 ft each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
-    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((60.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
+    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((62.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(DOORS), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(WINDOWS), "no.", "See Windows tab"))
     q.append(("Openings", "Window area (for mesh and grills)", round(sum((w[4] - w[3]) * (w[6] - w[5]) for w in WINDOWS) * 0.0929, 1), "sq m", ""))
