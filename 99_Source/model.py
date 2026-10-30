@@ -124,7 +124,7 @@ DOORS = [
     ("D01", "Y", 61, 21.0, 24.0, -1, "Main entrance", "Teak panelled, double leaf"),
     ("D05", "Y", 11.5, 19, 21.5, +1, "Ensuite (opens outward)", "Flush, waterproof (WPC/FRP)"),
     ("D06", "Y", 21, 6.4, 8.9, -1, "Master suite entry, from the sitting area into the master bay", "Teak panelled, single leaf"),
-    ("D10", "X", 10.5, 33.6, 36.6, +1, "Bedroom 2 (from the sitting area, east end; open leaf screens the bed)", "Flush, teak veneer"),
+    ("D10", "X", 10.5, 33.6, 36.6, +1, "Bedroom 2 (from the sitting area, east end)", "Flush, teak veneer"),
     ("D15", "Y", 41.5, 6.2, 8.7, -1, "Common bath (from the sitting area, opens outward, hinged at the north jamb so the open leaf stays clear of the counter)", "Flush, waterproof (WPC/FRP), door closer"),
     ("D16", "Y", 28, 18.4, 20.9, +1, "Bath 2 (east wall, from Bedroom 2, opens outward)", "Flush, waterproof (WPC/FRP)"),
     ("D11", "Y", 57, 13.5, 16.5, +1, "Pooja", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
@@ -191,11 +191,10 @@ FURNITURE = [
     ("F48", "Bath 2", "WC (EWC), 15 in clear each side of its centre", 21.9, 23.1, 22.8, 24.6, 1, "Wall-hung on the north (outer) wall, concealed cistern", "wc"),
     ("F49", "Bath 2", "Wash basin (south wall, dry zone)", 21.6, 23.1, 18.3, 19.0, 1, "Wall-hung on the wet wall", "rect"),
     ("F50", "Bath 2", "Fixed glass splash panel at the south edge of the 3' x 3'-6\" wet zone (north-east)", 26.3, 27.8, 21.0, 21.15, 1, "8 mm toughened glass", "glass"),
-    ("F20", "Bedroom 2", "Queen bed 5' x 6'6\" + headboard, head to the south wall, 2 ft+ free on both sides", 26.9, 31.9, 10.9, 17.3, 1, "Teak", "rect"),
-    ("F51", "Bedroom 2", "Bedside table", 25.7, 26.7, 10.9, 12.0, 2, "Teak", "rect"),
-    ("F57", "Bedroom 2", "Dresser / chest of drawers with mirror (west wall)", 21.3, 22.8, 11.5, 15.5, 1, "Teak", "rect"),
-    ("F22", "Bedroom 2", "Work table 4' x 2' with monitor (east wall, south of the wardrobe)", 35.8, 37.8, 14.5, 18.5, 1, "Teak / ply, cable tray, monitor arm", "rect"),
-    ("F23", "Bedroom 2", "Built-in wardrobe 6' (east wall, toward the house centre)", 36, 37.8, 18.6, 24.6, 1, "Ply + laminate", "rect"),
+    ("F20", "Bedroom 2", "Queen bed 5' x 6'6\" + headboard, head to the east wall (padded headboard: TV on the other side)", 31.4, 37.75, 14.0, 19.0, 1, "Teak", "rect"),
+    ("F51", "Bedroom 2", "Bedside table", 36.8, 37.8, 12.85, 13.85, 2, "Teak", "rect"),
+    ("F22", "Bedroom 2", "Work table 4' x 2' with monitor (east wall, north of the bed; north window to the side)", 35.8, 37.8, 20.4, 24.4, 1, "Teak / ply, cable tray, monitor arm", "rect"),
+    ("F23", "Bedroom 2", "Built-in wardrobe 6' with a mirror door (west wall, shared with the master: also a sound buffer)", 21.3, 23.3, 11.2, 17.2, 1, "Ply + laminate", "rect"),
     ("F24", "Dining", "Dining table 5' x 3', 6-seat", 42.5, 47.5, 13.5, 16.5, 1, "Teak or rosewood", "rect"),
     ("F25", "Dining", "Dining chair", 42.8, 43.9, 12.3, 13.3, 6, "Teak + cane", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 13.5, 16.5, 1, "Carved teak", "rect"),
@@ -221,7 +220,7 @@ FURNITURE = [
 ]
 # extra placements (same item, additional copies drawn on plan)
 EXTRA_DRAW = [
-    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 32.1, 33.1, 10.9, 12.0), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 12.3, 13.3), ("F25", 46.2, 47.3, 12.3, 13.3),
+    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 36.8, 37.8, 19.15, 20.15), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 12.3, 13.3), ("F25", 46.2, 47.3, 12.3, 13.3),
     ("F25", 42.8, 43.9, 16.7, 17.7), ("F25", 44.5, 45.6, 16.7, 17.7), ("F25", 46.2, 47.3, 16.7, 17.7),
 ]
 
@@ -269,6 +268,7 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Twentieth review: Bedroom 2's bed moves to the east wall, head east, leaving an 8 x 14 ft open floor from the door to the bath and window; wardrobe to the west wall (sound buffer to the master), work table north of the bed, AC on the bath's outer wall; dresser dropped (mirror on the wardrobe).",
     "Nineteenth review: with Bedroom 2 at 17 ft, its bed turns head-south in the middle of the room (2 ft+ on both sides, under the jali); Bath 2 grows to 7' x 7' (6'-7\" x 6'-4\" clear) with a 3' x 3'-6\" wet zone, basin in the dry zone and the door on its east wall; a dresser takes the west wall; work table and wardrobe stay on the east wall.",
     "Eighteenth review: house lengthened 2 ft to 62 ft, all of it added to Bedroom 2 (now 17 ft wide; the sitting area below it also gains 2 ft); front yard 10 ft to 8 ft (check the front setback). Bedroom 2 window back to 6 ft.",
     "Seventeenth review: sitting area gets a 5 ft tall storage cupboard on the south wall between the bench and the window; the hand-wash basin moves to the east end of the serving counter, just outside the common bath, for washing up after meals.",
@@ -370,11 +370,11 @@ ELECTRICAL = [
     ("L", 44.7, 6.2, "R07", ""), ("EF", 46.9, 3.4, "R07", "out through the south wall"), ("G", 41.8, 4.5, "R07", "over shower, west wall (clear of the window)"),
     ("PC", 47.6, 6.0, "R07", "by basin"), ("S", 41.1, 9.2, "R14", "common bath switches outside the door"),
     # Hall, bedroom 2
-    ("F", 29.4, 15.0, "R09", "over the bed"), ("WL", 29.4, 10.9, "R09", "reading light over the bed head"), ("L", 24, 14, "R09", ""), ("L", 34, 14, "R09", ""), ("L", 33, 20.5, "R09", ""),
-    ("S", 36.8, 11.4, "R09", "at the door (latch side, on the corner return), 2-way"), ("S", 25.4, 10.9, "R09", "bedside, 2-way"), ("P", 26.0, 10.9, "R09", "bedside"), ("P", 32.4, 10.9, "R09", "bedside"), ("S", 32.9, 10.9, "R09", "bedside, 2-way"), ("P", 21.4, 13.5, "R09", "dresser"),
-    ("P", 37.6, 15.0, "R09", "work table"), ("U", 37.6, 15.8, "R09", "work table, monitor"), ("D", 37.6, 16.6, "R09", "work table"), ("U", 37.6, 17.4, "R09", "work table"), ("AC", 37.6, 18.6, "R09", "east wall, not at the work table"),
+    ("F", 34.6, 16.5, "R09", "over the bed"), ("WL", 37.6, 16.5, "R09", "reading light over the bed head"), ("L", 24, 14, "R09", ""), ("L", 34, 14, "R09", ""), ("L", 33, 20.5, "R09", ""),
+    ("S", 36.8, 11.4, "R09", "at the door (latch side, on the corner return), 2-way"), ("S", 37.6, 13.0, "R09", "bedside, 2-way"), ("P", 37.6, 13.5, "R09", "bedside"), ("P", 37.6, 19.5, "R09", "bedside"), ("S", 37.6, 19.9, "R09", "bedside, 2-way"),
+    ("P", 37.6, 20.8, "R09", "work table"), ("U", 37.6, 21.6, "R09", "work table, monitor"), ("D", 37.6, 22.4, "R09", "work table"), ("U", 37.6, 23.2, "R09", "work table"), ("AC", 28.4, 24.0, "R09", "high on the bath's east wall near the north corner, throws east toward the bed foot"),
     ("WL", 41.1, 4.4, "R14", "over basin, on the common bath wall"),
-    ("ODU", 33, 25.6, "R09", "north wall, shaded"),
+    ("ODU", 29.5, 25.6, "R09", "north wall, shaded"),
     ("L", 41.5, 21.5, "R19", ""), ("F", 45, 21.5, "R19", "long downrod, over the seating"), ("P", 48.6, 24.6, "R19", ""),
     ("TV", 38.4, 22.4, "R19", "TV wall: 2 sockets + data + HDMI conduit to the unit"), ("P", 38.4, 21.0, "R19", "TV unit"),
     ("AC", 38.4, 20.0, "R19", "above the TV unit, throws east over the seating"), ("ODU", 40.0, 25.6, "R19", "north wall, shaded"),

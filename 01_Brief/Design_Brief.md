@@ -44,7 +44,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Ensuite (NW corner) | 6'-6" x 8' | 5'-11" x 7'-4" (WC, 3'-6" vanity, walk-in shower) |
 | Master bay (open to the master; full-width wardrobe + lofts, light from the workstation window) | 7' x 8' | 6'-9" x 7'-7" |
 | Workstation (open to the master suite; walls optional later) | 9' x 8' | about 9' x 8' |
-| Bedroom 2 / study-guest room (door from the sitting area at the east end of the south wall, its open leaf screening the bed; queen bed with its head on the south wall in the middle of the room, 2 ft+ free on both sides, dresser on the west wall, work table with monitor on the east wall south of the wardrobe, 6 ft wardrobe; 6 ft north window and a high jali vent to the sitting area for cross-ventilation; its own bath in the north-west corner; south-east corner notched 1' x 1'-6" to widen the way into the sitting area to about 4'-2") | 17' x 14'-6" less 7' x 7' | 16'-7" x 13'-11" less the bath (about 181 sq ft) |
+| Bedroom 2 / study-guest room (door from the sitting area at the east end of the south wall; queen bed with its head on the east wall and bedsides both sides, open floor in the middle, 6 ft wardrobe on the west wall, work table with monitor on the east wall north of the bed; 6 ft north window and a high jali vent to the sitting area for cross-ventilation; its own bath in the north-west corner; south-east corner notched 1' x 1'-6" to widen the way into the sitting area to about 4'-2") | 17' x 14'-6" less 7' x 7' | 16'-7" x 13'-11" less the bath (about 181 sq ft) |
 | Bath 2, attached to Bedroom 2 (in Bedroom 2's north-west corner, door on its east wall opening out into Bedroom 2; WC on the north wall with 15 in each side, 3' x 3'-6" wet zone in the north-east corner for a bucket bath, basin on the south wall in the dry zone) | 7' x 7' | 6'-7" x 6'-4" |
 | Common bath (south, beside the wet area; door on its west wall, opening out into the sitting area and hinged at its north jamb, with a closer, not toward the dining; WC with 17 in to the side wall; WC and basin on the shared wet wall, 3 x 3 ft shower in the south-west corner) | 6'-6" x 6' | 6'-0" x 5'-5" |
 | Dining bay / TV lounge (north window, open to dining and living; TV on Bedroom 2's east wall, sofa facing west, AC above the TV) | 11' x 6' | 10'-9" x 5'-7" |
@@ -63,7 +63,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 - Toilets: NW (master ensuite), Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side, south of the plot centre beside the wet area (outside the central zone). None in SW or NE.
 - Pooja: in the living's south-east corner, back to back with the kitchen, with the shoe cupboard beyond its solid north wall (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
 - Plot centre (Brahmasthan) falls in the dining, just west of the ventilator; kept open, with no toilet, column or heavy fixture there.
-- Master bed head east; Bedroom 2 bed head south.
+- Master bed head east; Bedroom 2 bed head east.
 - Sump and borewell NE; septic NW; DB on the dining face of Bedroom 2's east wall, away from the pooja and the wet area.
 
 ## Materials and look
