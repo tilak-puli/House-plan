@@ -21,7 +21,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
     ("R03", "Dressing alcove", 5, 11.5, 11, 17, "Master suite"),
     ("R04", "Ensuite", 5, 11.5, 17, 25, "Master suite"),
     ("R05", "Master bedroom", 11.5, 21, 11, 25, "Master suite"),
-    ("R08", "Bath 2 (attached to Bedroom 2)", 21, 28, 19, 25, "Private"),
+    ("R08", "Bath 2 (attached to Bedroom 2)", 21, 28, 18, 25, "Private"),
     ("R07", "Common bath", 41.5, 48, 3, 9, "Service"),
     ("R09", "Bedroom 2", 21, 38, 10.5, 25, "Private"),
     ("R10", "Dining", 38, 49, 11, 19, "Living"),
@@ -39,7 +39,7 @@ WALLS = [
     ("X", 3, 5, 48), ("X", 3, 53, 67), ("Y", 5, 3, 25), ("X", 25, 5, 61), ("Y", 67, 3, 13), ("Y", 61, 13, 25),
     ("X", 17, 5, 11.5), ("Y", 11.5, 17, 25), ("Y", 21, 3, 10.5), ("Y", 21, 10.5, 25),
     ("X", 10.5, 21, 37), ("Y", 37, 10.5, 12), ("X", 12, 37, 38), ("Y", 38, 12, 25),  # 1 x 1'-6" corner notch widens the way into the sitting area
-    ("X", 19, 21, 28), ("Y", 28, 19, 25),
+    ("X", 18, 21, 28), ("Y", 28, 18, 25),
     ("Y", 41.5, 3, 9), ("X", 9, 41.5, 48), ("Y", 48, 3, 9), ("X", 9, 48, 53), ("Y", 53, 3, 13),
     ("X", 13, 53, 67), ("Y", 57, 13, 17), ("X", 17, 57, 61),
 ]
@@ -52,7 +52,7 @@ WALL_TYPES = {
     "INT": (0.42, "100 mm AAC + plaster both faces (~5 in)"),
 }
 EXTRA_EXT_WALLS = {("X", 13, 53, 67)}  # kitchen north wall faces the living, the pooja and the open poomukham
-WET_WALLS = {("X", 17, 5, 11.5), ("Y", 48, 3, 9), ("X", 9, 48, 53), ("Y", 28, 19, 25), ("X", 19, 21, 28)}  # ensuite basin; common bath WC and basin (shared with the wet area); washing machine; Bath 2 basin and shower
+WET_WALLS = {("X", 17, 5, 11.5), ("Y", 48, 3, 9), ("X", 9, 48, 53), ("Y", 28, 18, 25), ("X", 18, 21, 28)}  # ensuite basin; common bath WC and basin (shared with the wet area); washing machine; Bath 2 basin and shower
 
 # Levels and heights, ft. 0 = finished ground level (FGL) around the house.
 LEVELS = {
@@ -126,7 +126,7 @@ DOORS = [
     ("D06", "Y", 21, 6.4, 8.9, -1, "Master suite entry, from the sitting area into the master bay", "Teak panelled, single leaf"),
     ("D10", "X", 10.5, 33.6, 36.6, +1, "Bedroom 2 (from the sitting area, east end; open leaf screens the bed)", "Flush, teak veneer"),
     ("D15", "Y", 41.5, 6.2, 8.7, -1, "Common bath (from the sitting area, opens outward, hinged at the north jamb so the open leaf stays clear of the counter)", "Flush, waterproof (WPC/FRP), door closer"),
-    ("D16", "Y", 28, 19.3, 21.8, +1, "Bath 2 (east wall, from Bedroom 2, opens outward)", "Flush, waterproof (WPC/FRP)"),
+    ("D16", "Y", 28, 18.4, 20.9, +1, "Bath 2 (east wall, from Bedroom 2, opens outward)", "Flush, waterproof (WPC/FRP)"),
     ("D11", "Y", 57, 13.5, 16.5, +1, "Pooja", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
     ("D12", "Y", 53, 6.2, 8.7, +1, "Kitchen to wet area", "Steel or WPC, lockable (the wet area is open to outside)"),
     ("D17", "Y", 53, 9.4, 12.4, +1, "Kitchen entry (west, from the dining alcove; hinged at the north jamb)", "Teak frame, glazed upper panel, 3 ft (closes off cooking smoke)"),
@@ -159,7 +159,7 @@ WINDOWS = [
     ("W11", "X", 25, 13, 19, 3, 7, "Master bedroom", "Teak casement, glazed"),
     ("W12", "X", 25, 30, 36, 3, 7, "Bedroom 2", "Teak casement, glazed (6 ft)"),
     ("W13", "X", 25, 22.3, 24.5, 5, 7, "Bath 2", "Frosted casement, top-hung vent"),
-    ("W20", "X", 10.5, 29.4, 33.4, 7.5, 9, "Bedroom 2", "High jali vent to the sitting area (cross-ventilation with W12 and W03)"),
+    ("W20", "X", 10.5, 27.4, 31.4, 7.5, 9, "Bedroom 2", "High jali vent to the sitting area, above the bed head (cross-ventilation with W12 and W03)"),
     ("W18", "X", 25, 42, 48, 3, 7, "Dining bay", "Teak casement, glazed (north light for the dining)"),
     ("W14", "X", 25, 50, 58, 2, 8, "Living", "Teak casement, tall, glazed"),
     ("W16", "X", 3, 35.3, 37.8, 3.5, 7, "Basin and crockery nook", "Timber jali + glazed shutters (over the serving counter)"),
@@ -189,10 +189,11 @@ FURNITURE = [
     ("F17", "Common bath", "Wash basin", 47.0, 47.7, 4.2, 5.4, 1, "Wall-hung", "rect"),
     ("F18", "Common bath", "Shower glass partition (3 x 3 ft shower in the south-west corner)", 44.65, 44.8, 3.4, 6.0, 1, "8 mm toughened glass", "glass"),
     ("F48", "Bath 2", "WC (EWC), 15 in clear each side of its centre", 21.9, 23.1, 22.8, 24.6, 1, "Wall-hung on the north (outer) wall, concealed cistern", "wc"),
-    ("F49", "Bath 2", "Wash basin (south wall)", 23.5, 25.0, 19.3, 20.0, 1, "Wall-hung on the wet wall", "rect"),
-    ("F50", "Bath 2", "Fixed glass splash panel at the south edge of the 3' x 2'-9\" wet zone (north-east), beside the door", 26.3, 27.8, 21.8, 21.95, 1, "8 mm toughened glass", "glass"),
-    ("F20", "Bedroom 2", "Queen bed 5' x 6'6\" + headboard, head to the west wall, between the bath and the sitting area (1'-6\" each side)", 21.3, 27.7, 12.2, 17.2, 1, "Teak", "rect"),
-    ("F51", "Bedroom 2", "Bedside table", 21.3, 22.4, 10.85, 11.95, 2, "Teak", "rect"),
+    ("F49", "Bath 2", "Wash basin (south wall, dry zone)", 21.6, 23.1, 18.3, 19.0, 1, "Wall-hung on the wet wall", "rect"),
+    ("F50", "Bath 2", "Fixed glass splash panel at the south edge of the 3' x 3'-6\" wet zone (north-east)", 26.3, 27.8, 21.0, 21.15, 1, "8 mm toughened glass", "glass"),
+    ("F20", "Bedroom 2", "Queen bed 5' x 6'6\" + headboard, head to the south wall, 2 ft+ free on both sides", 26.9, 31.9, 10.9, 17.3, 1, "Teak", "rect"),
+    ("F51", "Bedroom 2", "Bedside table", 25.7, 26.7, 10.9, 12.0, 2, "Teak", "rect"),
+    ("F57", "Bedroom 2", "Dresser / chest of drawers with mirror (west wall)", 21.3, 22.8, 11.5, 15.5, 1, "Teak", "rect"),
     ("F22", "Bedroom 2", "Work table 4' x 2' with monitor (east wall, south of the wardrobe)", 35.8, 37.8, 14.5, 18.5, 1, "Teak / ply, cable tray, monitor arm", "rect"),
     ("F23", "Bedroom 2", "Built-in wardrobe 6' (east wall, toward the house centre)", 36, 37.8, 18.6, 24.6, 1, "Ply + laminate", "rect"),
     ("F24", "Dining", "Dining table 5' x 3', 6-seat", 42.5, 47.5, 13.5, 16.5, 1, "Teak or rosewood", "rect"),
@@ -220,7 +221,7 @@ FURNITURE = [
 ]
 # extra placements (same item, additional copies drawn on plan)
 EXTRA_DRAW = [
-    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 21.3, 22.4, 17.45, 18.55), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 12.3, 13.3), ("F25", 46.2, 47.3, 12.3, 13.3),
+    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 32.1, 33.1, 10.9, 12.0), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 12.3, 13.3), ("F25", 46.2, 47.3, 12.3, 13.3),
     ("F25", 42.8, 43.9, 16.7, 17.7), ("F25", 44.5, 45.6, 16.7, 17.7), ("F25", 46.2, 47.3, 16.7, 17.7),
 ]
 
@@ -268,6 +269,7 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Nineteenth review: with Bedroom 2 at 17 ft, its bed turns head-south in the middle of the room (2 ft+ on both sides, under the jali); Bath 2 grows to 7' x 7' (6'-7\" x 6'-4\" clear) with a 3' x 3'-6\" wet zone, basin in the dry zone and the door on its east wall; a dresser takes the west wall; work table and wardrobe stay on the east wall.",
     "Eighteenth review: house lengthened 2 ft to 62 ft, all of it added to Bedroom 2 (now 17 ft wide; the sitting area below it also gains 2 ft); front yard 10 ft to 8 ft (check the front setback). Bedroom 2 window back to 6 ft.",
     "Seventeenth review: sitting area gets a 5 ft tall storage cupboard on the south wall between the bench and the window; the hand-wash basin moves to the east end of the serving counter, just outside the common bath, for washing up after meals.",
     "Sixteenth review (independent Indian-architect review): Bath 2 re-planned 7' x 6' so Bedroom 2's bed (head west) has 1'-6\" on both sides, work table to the east wall. Kitchen entered only from the dining-side door (hinged, 3 ft); the north sliding door is walled up so the pooja front is quiet, and a tall pantry takes the north wall. East kitchen window cut to 2 ft so the hob and chimney sit on solid wall. Septic tank moved 6 ft+ from the house and the soak pit replaced by a soak trench. Ensuite door opens outward; common bath WC side clearance 17 in, door rehung at the north jamb with a closer, geyser and shower off the window. DB moved to the dining face of Bedroom 2's east wall.",
@@ -357,8 +359,8 @@ ELECTRICAL = [
     ("S", 20.6, 18.0, "R05", "bedside, 2-way"), ("P", 20.6, 11.6, "R05", "bedside"), ("P", 20.6, 17.6, "R05", "bedside"),
     ("AC", 11.9, 18.0, "R05", "west wall, throws along the bed, not on the head"), ("ODU", 16, 25.6, "R05", "north wall, shaded"),
     # Bath 2 (attached to Bedroom 2, in its north-west corner)
-    ("L", 24.5, 21.8, "R08", ""), ("EF", 25.6, 24.6, "R08", "out through the north wall"), ("G", 27.6, 23.6, "R08", "over shower, east wall"),
-    ("PC", 25.3, 19.4, "R08", "by basin"), ("S", 28.4, 22.2, "R09", "Bath 2 switches outside the bath door"),
+    ("L", 24.5, 21.2, "R08", ""), ("EF", 25.6, 24.6, "R08", "out through the north wall"), ("G", 27.6, 23.6, "R08", "over shower, east wall"),
+    ("PC", 23.4, 18.4, "R08", "by basin"), ("S", 28.4, 21.3, "R09", "Bath 2 switches outside the bath door"),
     ("P", 12.2, 24.6, "R05", "reading chair"),
     # Pooja (living SE corner, back to back with the kitchen)
     ("L", 59, 15, "R11", ""), ("WL", 60.4, 15, "R11", "lamp niche above the idols"), ("P", 57.4, 16.6, "R11", ""),
@@ -368,8 +370,8 @@ ELECTRICAL = [
     ("L", 44.7, 6.2, "R07", ""), ("EF", 46.9, 3.4, "R07", "out through the south wall"), ("G", 41.8, 4.5, "R07", "over shower, west wall (clear of the window)"),
     ("PC", 47.6, 6.0, "R07", "by basin"), ("S", 41.1, 9.2, "R14", "common bath switches outside the door"),
     # Hall, bedroom 2
-    ("F", 31.5, 15.5, "R09", ""), ("WL", 21.4, 14.7, "R09", "reading light over the bed head"), ("L", 33, 14, "R09", ""), ("L", 33, 20.5, "R09", ""),
-    ("S", 33.2, 10.9, "R09", "at the door, 2-way"), ("S", 21.4, 11.9, "R09", "bedside, 2-way"), ("P", 21.4, 11.2, "R09", "bedside"), ("P", 21.4, 18.0, "R09", "bedside, north"), ("S", 21.4, 18.5, "R09", "bedside, north, 2-way"),
+    ("F", 29.4, 15.0, "R09", "over the bed"), ("WL", 29.4, 10.9, "R09", "reading light over the bed head"), ("L", 24, 14, "R09", ""), ("L", 34, 14, "R09", ""), ("L", 33, 20.5, "R09", ""),
+    ("S", 36.8, 11.4, "R09", "at the door (latch side, on the corner return), 2-way"), ("S", 25.4, 10.9, "R09", "bedside, 2-way"), ("P", 26.0, 10.9, "R09", "bedside"), ("P", 32.4, 10.9, "R09", "bedside"), ("S", 32.9, 10.9, "R09", "bedside, 2-way"), ("P", 21.4, 13.5, "R09", "dresser"),
     ("P", 37.6, 15.0, "R09", "work table"), ("U", 37.6, 15.8, "R09", "work table, monitor"), ("D", 37.6, 16.6, "R09", "work table"), ("U", 37.6, 17.4, "R09", "work table"), ("AC", 37.6, 18.6, "R09", "east wall, not at the work table"),
     ("WL", 41.1, 4.4, "R14", "over basin, on the common bath wall"),
     ("ODU", 33, 25.6, "R09", "north wall, shaded"),
@@ -407,8 +409,8 @@ PLUMBING = [
     ("SH", 5.4, 23.6, "R04", ""), ("FT", 8.25, 24.5, "R04", "linear drain along north wall"), ("FT", 9.6, 20.2, "R04", "dry zone trap"),
     ("WC", 47.6, 7.35, "R07", "on the wet wall"), ("HF", 47.6, 6.5, "R07", ""), ("BS", 47.6, 4.8, "R07", "on 7 in wet wall"),
     ("SH", 41.8, 3.9, "R07", "west wall, clear of the window"), ("FT", 43.2, 3.6, "R07", "shower drain"), ("FT", 46.3, 6.0, "R07", "dry zone trap"),
-    ("WC", 22.5, 24.0, "R08", "on the north (outer) wall, 15 in clear each side"), ("HF", 21.4, 23.4, "R08", ""), ("BS", 24.25, 19.4, "R08", "on 7 in wet wall (south)"),
-    ("SH", 27.6, 24.0, "R08", "east wall"), ("FT", 26.4, 24.3, "R08", "linear drain along the north wall"), ("FT", 25.5, 20.6, "R08", "dry zone trap"),
+    ("WC", 22.5, 24.0, "R08", "on the north (outer) wall, 15 in clear each side"), ("HF", 21.4, 23.4, "R08", ""), ("BS", 22.35, 18.4, "R08", "on 7 in wet wall (south)"),
+    ("SH", 27.6, 24.0, "R08", "east wall"), ("FT", 26.3, 24.3, "R08", "linear drain along the north wall"), ("FT", 24.6, 19.7, "R08", "dry zone trap"),
     ("SK", 51.85, 4.6, "R13", "utility sink"), ("WM", 49.35, 7.85, "R13", ""), ("FT", 49.8, 3.6, "R13", "floor falls out to the walkway"), ("TAP", 52.6, 3.4, "R13", "bucket tap, low"),
     ("BS", 40.2, 4.3, "R14", "hand-wash basin outside the common bath, waste straight out to the south walkway"),
     ("SK", 60.5, 3.5, "R15", "single bowl + drainboard, under window"), ("RO", 59.3, 3.5, "R15", ""), ("FT", 64, 12.5, "R15", "cleaning trap"),
@@ -431,7 +433,7 @@ PIPES = [
     ("soil", [(47.6, 7.35), (46.8, 7.35), (46.8, 1.8), (3.6, 1.8), (3.6, 19.5)]),
     ("grey", [(60.5, 3.5), (60.5, 1.0), (4.2, 1.0), (4.2, 26.0), (4.2, 29.4), (10, 29.4), (10, 30.5), (10.6, 33.0)]),
     ("grey", [(49.8, 3.6), (49.8, 1.0)]), ("grey", [(40.2, 4.3), (40.2, 1.0)]), ("grey", [(51.85, 4.6), (49.8, 3.6)]), ("grey", [(49.35, 7.85), (49.8, 3.6)]), ("grey", [(47.6, 4.8), (47.0, 4.8), (47.0, 1.0)]), ("grey", [(46.3, 6.0), (47.0, 4.8)]), ("grey", [(43.2, 3.6), (43.2, 1.0)]),
-    ("grey", [(24.25, 19.4), (25.5, 20.6), (26.4, 24.3), (26.4, 26.0), (26.4, 29.4), (10, 29.4), (10, 30.5)]),
+    ("grey", [(22.35, 18.4), (24.6, 19.7), (26.3, 24.3), (26.4, 26.0), (26.4, 29.4), (10, 29.4), (10, 30.5)]),
     ("grey", [(9.6, 20.2), (9.6, 26.0), (9.6, 29.4)]), ("grey", [(8.25, 24.5), (9.6, 24.5)]),
     ("rain", [(2.5, 0.5), (74.6, 0.5), (74.6, 23), (74.5, 25)]),
     ("rain", [(2.5, 27.5), (2.5, 28.2), (69.5, 28.2), (71.5, 32)]), ("rain", [(69.5, 27.5), (69.5, 28.2)]),
