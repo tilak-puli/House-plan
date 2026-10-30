@@ -147,7 +147,6 @@ def elevation(e, face):
                     _window(e, u(0, w[3]), u(0, w[4]), w, shade=w[0] == "W08")
             ar = next(f for f in FURNITURE if f[0] == "F42")
             e.rect(u(0, ar[5]), u(0, ar[6]), LEVELS["poomukham"], LEVELS["poomukham"] + 1.5, lw=0.4, fill=colors.HexColor("#B8B2A8"))
-            e.rect(u(0, 23.9), u(0, 25.0), LEVELS["poomukham"], LEVELS["poomukham"] + 1.5, lw=0.4, fill=colors.HexColor("#B8B2A8"))
             for px, py in PILLARS:
                 if px > 64:
                     e.rect(u(0, py) - 0.33, u(0, py) + 0.33, LEVELS["poomukham"], PILLAR_TOP, lw=0.5, fill=colors.HexColor("#6B4A2E"))

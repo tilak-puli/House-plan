@@ -39,31 +39,32 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Room list
 | Room | Centreline | Clear (approx.) |
 |---|---|---|
-| Master bedroom | 11'-6" x 14' | 11'-1" x 13'-7" (bed head east, about 4'-8" clear at its foot) |
+| Master bedroom | 9'-6" x 14' | 9'-1" x 13'-7" (bed head east; bed keeps 2'-6" at its foot) |
 | Dressing alcove | 6'-6" x 6' | 6'-1" x 5'-6" |
 | Ensuite (NW corner) | 6'-6" x 8' | 5'-11" x 7'-4" (WC, 3'-6" vanity, walk-in shower) |
-| Master bay (open to the master; 6 ft wardrobe + lofts) | 9' x 8' | 8'-9" x 7'-7" |
+| Master bay (open to the master; full-width wardrobe + lofts, light from the workstation window) | 7' x 8' | 6'-9" x 7'-7" |
 | Workstation (open to the master suite; walls optional later) | 9' x 8' | about 9' x 8' |
-| Bedroom 2 / study-guest room (incl. Bath 2; door from the sitting area; sofa-cum-bed, work table with monitor beside the bath, 6 ft wardrobe) | 15' x 16' | 14'-7\" x 15'-5\" |
+| Bedroom 2 / study-guest room (incl. Bath 2; door from the sitting area; sofa-cum-bed, work table with monitor beside the bath, 6 ft wardrobe) | 15' x 14'-6" | 14'-7" x 13'-11" |
 | Bath 2 (Bedroom 2's private bath, north-west corner on the outer wall, window) | 5'-6" x 6' | 5'-0" x 5'-5" |
-| Dining bay (old Bath 2 spot, north window, open to dining and living) | 9' x 6' | 8'-9" x 5'-7" |
-| Dining, under ventilator | 9' x 8' | 8'-9" x 7'-6" |
-| Pooja (beside the wet area, opening west) | 4' x 6' | 3'-7" x 5'-5" |
+| Dining bay (old Bath 2 spot, north window, open to dining and living) | 11' x 6' | 10'-9" x 5'-7" |
+| Dining, under ventilator (plot centre) | 11' x 8' | 10'-9" x 8'-0" |
+| Pooja (east wall of the living, just south of the main door, opening west) | 4' x 4' | 3'-5" x 3'-5" |
 | Wet area (open on the south to the walkway) | 6' x 6' | 5'-6" x 5'-7" |
-| Sitting and serving area, open to the hall (storage bench, 7 ft serving counter with a wash basin at its west end; bedrooms open off it; where the family sits to pray) | 18' x 6' | 17'-7\" x 5'-5\" |
-| Kitchen (SE, 3 ft sliding entry from the dining) | 14' x 10' | 13'-5" x 9'-3" |
-| Living (sloped ceiling, TV on the east wall) | 12' x 12' | 11'-4" x 11'-3" |
+| Sitting and serving area, open to the hall (storage bench, 7 ft serving counter with a wash basin at its west end; bedrooms open off it; includes the old pooja bay) | 24' x 7'-6" | 23'-7" x 6'-11" (about 4'-11" clear in front of the counter) |
+| Kitchen (SE, 3 ft sliding entry from the living on the north; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
+| Fridge corner (part of the kitchen, below the pooja) | 4' x 3'-6" | 3'-5" x 3'-3" |
+| Living (sloped ceiling; TV wall to be decided) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **60' x 22' = 1,320 sq ft** | **~1,200 sq ft clear** (incl. poomukham and wet area) |
 
 ## Vastu notes (confirm with consultant)
-- Kitchen SE, cook faces east. Main entry on the east face, just north of centre.
+- Kitchen SE, cook faces east. Main entry at the north end of the east face.
 - SW heavy: workstation with full-height bookshelves and the master wardrobe bay; overhead tank SW.
 - Toilets: NW (ensuite) and north-west of centre (Bath 2, inside Bedroom 2 on the north wall). No common toilet: guests use Bedroom 2's bath. None in SW or NE.
-- Pooja: south of centre beside the open wet area, opening west, idols on its east wall facing west, so the family prays facing east from the nook and hall. Shared wall with the wet area kept dry (no pipes); pooja floor 3 in higher; no toilet on any side.
-- Plot centre (Brahmasthan) now falls inside Bedroom 2, about 6 in from its east wall, since the plot grew to 75 ft; the dining and ventilator sit about 5 ft east of it. No toilet, column or heavy fixture at the centre. Consultant to confirm.
+- Pooja: on the east wall of the living, just south of the main door, with the living's south-east corner free beside the kitchen (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
+- Plot centre (Brahmasthan) falls in the dining, just west of the ventilator; kept open, with no toilet, column or heavy fixture there.
 - Master bed head east; Bedroom 2 sofa-cum-bed along the south wall.
-- Sump and borewell NE; septic NW; DB on the SE side of the living room.
+- Sump and borewell NE; septic NW; DB on the living's south wall (kitchen side), outside the pooja.
 
 ## Materials and look
 - Plastered AAC walls with a lime-finish or mineral paint; plinth faced with rough local stone.

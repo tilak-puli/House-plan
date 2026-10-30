@@ -12,9 +12,9 @@ def model_data():
     xs = [c for a, c in EXTERIOR if a == "Y"]
     ys = [c for a, c in EXTERIOR if a == "X"]
     rooms = []
-    for _, name, x1, x2, y1, y2, _ in ROOMS:
+    for rid, name, x1, x2, y1, y2, _ in ROOMS:
         label = LABELS.get(name, re.sub(r"\s*\(.*\)", "", name))
-        rooms.append([label, (x1 + x2) / 2, (y1 + y2) / 2])
+        rooms.append([label, *ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))])
     doors = [{"id": d[0], "axis": d[1], "c": d[2], "s": d[3], "e": d[4], "sliding": d[5] == 0,
               "exterior": (d[1], d[2]) in EXTERIOR, "transom": TRANSOMS.get(d[0])} for d in DOORS]
     windows = []

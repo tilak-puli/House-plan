@@ -205,7 +205,7 @@ class Plan:
             if corner:
                 self.text(nm, x1 + 0.4, y2 - 0.7, size, color=color, anchor="l")
             else:
-                cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
+                cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
                 if rid == "R10": cy = 15.3
                 self.text(nm.upper(), cx, cy + 0.55, size, "Helvetica-Bold", color)
                 if sub: self.text(sub(r), cx, cy - 0.45, size - 0.7, color=GREY)
@@ -280,7 +280,7 @@ class Elev:
 
 def short_name(name):
     for a, b in ((" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in"),
-                 (" (open to the hall)", ""), (" (open to the walkway)", ""), ("Sitting and serving area (open)", "Sitting area"), (" (common)", ""), (" (attached to Bedroom 2)", ""), (" (open, walls optional later)", ""),  (" (old store, open to the bedroom)", ""), (" (north window)", "")):
+                 (" (open to the hall)", ""), (" (open to the walkway)", ""), ("Sitting and serving area (open)", "Sitting area"), ("Fridge corner", "Fridge"), (" (common)", ""), (" (attached to Bedroom 2)", ""), (" (open, walls optional later)", ""),  (" (old store, open to the bedroom)", ""), (" (north window)", "")):
         name = name.replace(a, b)
     return name
 

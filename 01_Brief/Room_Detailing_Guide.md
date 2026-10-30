@@ -135,12 +135,12 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put a grease trap outside, before any junction.  
    *Shown on: P-101*
 39. **Avoid:** Fridge beside the hob or in direct sun.  
-   **Do:** Fridge at the kitchen's west end, by the wet-area door, well away from the hob.  
+   **Do:** Fridge in its own corner below the pooja, beside the north entry and well away from the hob; nothing blocks the counter.  
    *Shown on: A-103*
 
 ## Wet area, storage and kitchen entry
 40. **Avoid:** A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.  
-   **Do:** The kitchen door faces the dining directly: a 3 ft sliding glass door, open when serving, closed when frying.  
+   **Do:** The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; the fridge corner sits beside it.  
    *Shown on: A-102*
 41. **Avoid:** Open wet area floods during heavy rain, or becomes a back door for intruders.  
    **Do:** Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.  
@@ -160,7 +160,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.  
    *Shown on: A-105*
 46. **Avoid:** Pooja sharing a wall with a toilet.  
-   **Do:** Here the pooja opens west onto the basin nook and hall, so the family sits facing east; idols are on its east wall. It shares a wall with the open wet area (not a toilet): that wall carries no pipes, and the pooja floor is 3 in higher.  
+   **Do:** Here the pooja sits on the living's east wall, just south of the main door (no toilet on any side). It opens west into the living, idols on its east wall, so the family faces east; the floor is 3 in higher.  
    *Shown on: A-102*
 47. **Avoid:** Polished marble floor that becomes slippery with oil.  
    **Do:** Use honed (matt) marble or teak.  

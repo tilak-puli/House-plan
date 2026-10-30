@@ -10,7 +10,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 5. Survey the plot and road levels: is a 2 ft plinth above finished ground enough?
 
 ## Architect / Sthaayi Design Lab
-1. Review the working plan (A-104): clear sizes, door widths, the ensuite (about 5'-11" clear), the 11'-6" master with its 9 ft bay, the 15 x 16 ft Bedroom 2, and the dining table size.
+1. Review the working plan (A-104): clear sizes, door widths, the ensuite (about 5'-11" clear), the 9'-6" master with its 7 ft bay, the 15 x 14'-6" Bedroom 2, the 7'-6" deep sitting area, and the dining table size.
 2. Roof: front gable plus hip massing, 30 degree pitch, valley gutters, and the ventilator over the dining (louvres, mesh, closable shutters, no glass). Is borrowed light enough for the dining and hall?
 3. Heat: is 50 mm deck insulation plus a ventilated attic enough, or should the bedroom false ceilings carry more?
 4. Can the poomukham, jalis and gable vents be detailed in your tropical style, with Guntur-available materials?
@@ -25,7 +25,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Electrical
 1. Total load with four AC points, two geysers and the kitchen: what service connection and phase?
-2. DB location (SE side of the living room) and circuit list; inverter sizing for lights, fans, the office, the Bedroom 2 desk and the router.
+2. DB location (living's south wall, beside the pooja) and circuit list; inverter sizing for lights, fans, the office, the Bedroom 2 desk and the router.
 3. Earthing, surge protection and lightning; conduit for future solar PV.
 
 ## Plumbing / services
@@ -37,7 +37,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 ## Vastu consultant
 1. Master bed head east (not south): acceptable?
 2. NW ensuite, and Bath 2 inside Bedroom 2 on the north wall (north-west of centre); no common toilet: acceptable?
-3. The plot centre now falls inside Bedroom 2, about 6 in from the Bedroom 2 / dining wall (plot lengthened to 75 ft), with the dining under the ventilator about 5 ft east of it: acceptable, or should the wall or dining move?
-4. Pooja beside the open wet area, opening west (idols face west, family faces east): acceptable with a dry shared wall and a raised floor?
-5. TV on the east wall of the living room; DB on the SE living wall.
+3. Plot centre in the dining, just west of the roof ventilator (open, no columns or fixtures).
+4. Pooja on the east wall of the living, just south of the main door (north end of the east face), opening west (idols face west, family faces east): acceptable? (NE is the textbook spot; SE beside the kitchen is the family's choice.)
+5. Main door at the north end of the east face; DB on the living's south wall. (TV wall still to be decided.)
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.

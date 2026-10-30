@@ -110,10 +110,10 @@ def sheet_plan(c):
     pl.rect(sx1_, (sx1_ + sx2_) / 2, sy1_, sy2_, lw=0.3); pl.rect((sx1_ + sx2_) / 2, sx2_, sy1_, sy2_, lw=0.3)
     pl.text("UP", (sx1_ + sx2_) / 2, (sy1_ + sy2_) / 2, 4.5)
     pl.room_names(6, INK, sub=lambda r: "{} x {}".format(*map(fmt_ft, room_dims(r))))
-    xs = [5, 14, 23, 41, 45, 51, 65]
+    xs = [5, 14, 21, 41, 45, 51, 65]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.5)
     pl.hdim(5, 65, -4.3, "60'-0\" OVERALL")
-    xn = [5, 11.5, 23, 38, 47, 59, 65]
+    xn = [5, 11.5, 21, 36, 47, 59, 65]
     for a, b in zip(xn, xn[1:]): pl.hdim(a, b, 28.6)
     pl.vdim(3, 25, 72.6, "22'-0\" OVERALL")
     pl.vdim(3, 11, 69.6); pl.vdim(11, 13, 69.6); pl.vdim(13, 25, 69.6)
@@ -165,7 +165,7 @@ def sheet_furniture(c):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 44, "Cross section through pooja, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
+SECTIONS = {"A": ("X", 44, "Cross section through the sitting area, dining and dining bay"), "B": ("Y", 21, "Long section through bedrooms, living and poomukham")}
 
 
 def sheet_working(c):
@@ -176,7 +176,7 @@ def sheet_working(c):
     pl.openings()
     for r in ROOMS:
         rid, name, x1, x2, y1, y2, _ = r
-        cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
+        cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         if rid == "R10": cy = 17.3
         L, W = clear_dims(r)
         small = (x2 - x1) <= 6
@@ -192,9 +192,9 @@ def sheet_working(c):
             pl.line(1, c0, 70, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
             for xx in (0.2, 70.8):
                 pl.circle(xx, c0, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(name, xx, c0, 6.5, "Helvetica-Bold", RED)
-    xs = [5, 11.5, 14, 23, 41, 45, 47, 51, 59, 65]
+    xs = [5, 11.5, 14, 21, 41, 45, 47, 51, 55, 59, 65]
     for a, b in zip(xs, xs[1:]): pl.hdim(a, b, -1.3, size=5)
-    yn = [3, 9, 11, 13, 15.5, 17, 19, 25]
+    yn = [3, 10.5, 13, 15.5, 17, 19, 25]
     for a, b in zip(yn, yn[1:]): pl.vdim(a, b, 68.6, size=5)
     s.note("Clear sizes are wall face to wall face after plaster (green). Grid dimensions are to wall centrelines.", 24 * mm, 32 * mm, 7, GREY)
     s.note("Section A-A and B-B on A-301. Check every furniture item against the clear size before ordering.", 24 * mm, 27 * mm, 7, GREY)
@@ -221,7 +221,7 @@ def sheet_finishes(c):
     pl.openings(tags=False)
     for r in ROOMS:
         rid, name, x1, x2, y1, y2, _ = r
-        cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
+        cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         pl.text(short_name(name), cx, cy + 0.8, 5.2, "Helvetica-Bold")
         pl.level(cx - 1.2, cy - 0.6, floor_level(rid), 5)
     for rid, ang in (("R04", "1:60 to drain"), ("R07", "1:60 to drain"), ("R13", "1:80 to drain")):

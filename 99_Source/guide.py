@@ -67,10 +67,10 @@ GUIDE = [
         ("Base cabinets standing on the floor: rot and termites.", "Put cabinets on 4 in legs or a granite plinth.", "A-502/6"),
         ("Gas cylinder in a closed cabinet under the hob.", "Keep the cylinder in the ventilated wet area with a fixed copper / steel line and a valve through the wall.", "A-103"),
         ("Kitchen drain without a grease trap: chokes within a year.", "Put a grease trap outside, before any junction.", "P-101"),
-        ("Fridge beside the hob or in direct sun.", "Fridge at the kitchen's west end, by the wet-area door, well away from the hob.", "A-103"),
+        ("Fridge beside the hob or in direct sun.", "Fridge in its own corner below the pooja, beside the north entry and well away from the hob; nothing blocks the counter.", "A-103"),
     ]),
     ("Wet area, storage and kitchen entry", [
-        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen door faces the dining directly: a 3 ft sliding glass door, open when serving, closed when frying.", "A-102"),
+        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; the fridge corner sits beside it.", "A-102"),
         ("Open wet area floods during heavy rain, or becomes a back door for intruders.", "Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.", "A-105, A-502/9"),
         ("Washing machine with no tap, drain or socket at the right height.", "Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.", "P-101, E-102"),
         ("No separate store means provisions end up on the floor.", "Use the storage-bench drawers in the sitting area, lofts above the master bay and kitchen, tall kitchen cabinets; keep rice and grain in sealed bins off the floor.", "A-103"),
@@ -78,7 +78,7 @@ GUIDE = [
     ]),
     ("Pooja", [
         ("Lamp smoke blackens the ceiling and the teak panelling.", "Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.", "A-105"),
-        ("Pooja sharing a wall with a toilet.", "Here the pooja opens west onto the basin nook and hall, so the family sits facing east; idols are on its east wall. It shares a wall with the open wet area (not a toilet): that wall carries no pipes, and the pooja floor is 3 in higher.", "A-102"),
+        ("Pooja sharing a wall with a toilet.", "Here the pooja sits on the living's east wall, just south of the main door (no toilet on any side). It opens west into the living, idols on its east wall, so the family faces east; the floor is 3 in higher.", "A-102"),
         ("Polished marble floor that becomes slippery with oil.", "Use honed (matt) marble or teak.", "A-105"),
     ]),
     ("Bedrooms", [
