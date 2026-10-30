@@ -3,8 +3,8 @@ import re
 from geom import *
 
 # Short labels where the full room name will not fit in the 3D view
-LABELS = {"Walk-in wardrobe": "Walk-in", "Dressing alcove": "Dressing", "Wash link": "Wash basin"}
-COVERED = {("Y", 54)}  # walls under the poomukham roof: no sunshades
+LABELS = {"Workstation (open, walls optional later)": "Workstation", "Master bay (old store, open to the bedroom)": "Master bay", "Dining bay (north window)": "Dining bay", "Bath 2 (attached to Bedroom 2)": "Bath 2",  "Dressing alcove": "Dressing", "Sitting and serving area (open)": "Sitting area"}
+COVERED = {("Y", 59)}  # walls under the poomukham roof: no sunshades
 FULL_HEIGHT_SILL = 1.0  # windows with a lower sill are cut through the wall
 
 
@@ -36,7 +36,7 @@ def model_data():
             "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "lift": ROOF["gable_lift"],
                      "skylight": list(ROOF["skylight"]), "lantern": round(vent_top_z(), 3), "apex": round(vent_apex_z(), 3), "ventOver": ROOF["vent_overhang"]},
             "tank": {"rect": list(feat["TANK"]), "stand": LEVELS["tank_stand"]}, "pergola": list(feat["PERGOLA"]),
-            "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2])},
+            "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"])},
             "trees": [list(t) for t in TREES]}
 
 

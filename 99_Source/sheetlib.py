@@ -145,6 +145,9 @@ class Plan:
         for axis, c, s, e in JALI_SCREENS:
             x1, x2, y1, y2 = seg_rect(axis, c, s, e)
             self.rect(x1, x2, y1 + 0.15, y2 - 0.15, stroke=INK, lw=0.4, dash=(1, 1))
+        for axis, c, s, e in FUTURE_WALLS:  # possible later wall, drawn dashed
+            x1, x2, y1, y2 = seg_rect(axis, c, s, e, WALL_TYPES["INT"][0])
+            self.rect(x1, x2, y1, y2, stroke=GREY, lw=0.5, dash=(2, 1.5))
         for x, y in PILLARS:
             self.circle(x, y, 0.36, lw=0.6, fill=WHITE)
 
@@ -165,15 +168,20 @@ class Plan:
                     if axis == "X":
                         tx, ty = (a + b) / 2, cc + (1.25 if cc >= 25 else -1.25)
                     else:
-                        tx, ty = cc + (1.5 if cc >= 54 else -1.5), (a + b) / 2
+                        tx, ty = cc + (1.5 if cc >= 59 else -1.5), (a + b) / 2
                     self.text(rec[0], tx, ty, 5.5, color=ACC)
             else:
                 did, _, _, s0, e0, sw, *_ = rec
                 w = e0 - s0
                 if sw == 0:
-                    self.line(s0, cc - 0.13, s0 + w * 0.55, cc - 0.13, lw=0.6)
-                    self.line(e0 - w * 0.55, cc + 0.13, e0, cc + 0.13, lw=0.6)
-                    if tags: self.text(did, (s0 + e0) / 2, cc - 0.9, 5.5, color=ACC)
+                    if axis == "X":
+                        self.line(s0, cc - 0.13, s0 + w * 0.55, cc - 0.13, lw=0.6)
+                        self.line(e0 - w * 0.55, cc + 0.13, e0, cc + 0.13, lw=0.6)
+                        if tags: self.text(did, (s0 + e0) / 2, cc - 0.9, 5.5, color=ACC)
+                    else:
+                        self.line(cc - 0.13, s0, cc - 0.13, s0 + w * 0.55, lw=0.6)
+                        self.line(cc + 0.13, e0 - w * 0.55, cc + 0.13, e0, lw=0.6)
+                        if tags: self.text(did, cc - 1.1, (s0 + e0) / 2, 5.5, color=ACC)
                     continue
                 c.setStrokeColor(INK); c.setLineWidth(0.25)
                 if axis == "X":
@@ -271,7 +279,8 @@ class Elev:
 
 
 def short_name(name):
-    for a, b in ((" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in")):
+    for a, b in ((" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in"),
+                 (" (open to the hall)", ""), (" (open to the walkway)", ""), ("Sitting and serving area (open)", "Sitting area"), (" (common)", ""), (" (attached to Bedroom 2)", ""), (" (open, walls optional later)", ""),  (" (old store, open to the bedroom)", ""), (" (north window)", "")):
         name = name.replace(a, b)
     return name
 

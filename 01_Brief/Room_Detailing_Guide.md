@@ -60,7 +60,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Living
 16. **Avoid:** TV on a wall facing a window, so glare washes it out.  
-   **Do:** Put the TV on the solid south wall with the windows to the side, and run a conduit to the router.  
+   **Do:** Put the TV on the east wall of the living, with the big north window to the side and no window behind or opposite the screen; run a conduit to the router.  
    *Shown on: A-103, E-102*
 17. **Avoid:** Too few sockets, leading to extension cords across the floor.  
    **Do:** Fit sockets at both sofa ends, 2 at the TV, and a router socket on the inverter circuit.  
@@ -69,7 +69,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Use a long downrod so the blades sit about 9 ft above the floor, hung from a hook fixed to the truss.  
    *Shown on: E-101*
 19. **Avoid:** Large west or south glazing: the room overheats in April-May.  
-   **Do:** Glaze to the north and east for morning light; south only through the jali screen.  
+   **Do:** Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.  
    *Shown on: A-201*
 20. **Avoid:** Main door swinging into the sofa or the DB.  
    **Do:** Check door swings against the furniture; put the DB on the kitchen wall, not behind the door.  
@@ -77,7 +77,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Dining and ventilator
 21. **Avoid:** Glass skylight over the dining: a greenhouse in Guntur summers that leaks and needs constant cleaning.  
-   **Do:** No glass. Light comes in from the living, wash link and hall; a raised ventilator with a solid insulated roof and louvres on all four sides lets the hot air rising from the house escape.  
+   **Do:** No glass. Light comes in from the living, the nook's south window and the hall; a raised ventilator with a solid insulated roof and louvres on all four sides lets the hot air rising from the house escape.  
    *Shown on: A-106, A-301*
 22. **Avoid:** Flat-topped roof ventilator: water ponds, leaves and droppings collect, and it leaks first.  
    **Do:** Give it a small hipped roof at the main roof pitch, tiled and clipped, with a 1'-6" overhang and drip edge.  
@@ -95,13 +95,13 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Line the shaft from the dining ceiling to the ventilator sill with insulated fibre-cement board.  
    *Shown on: A-503, A-301*
 27. **Avoid:** Dining and hall feel dim with no skylight.  
-   **Do:** Use light wall and ceiling colours and keep the wash-link jali screens open. If it still feels dark after move-in, a sun tube can be added later with little work.  
+   **Do:** Use light wall and ceiling colours; the dining is now open to the living, the 6 ft hall and the nook window. If it still feels dark after move-in, a sun tube can be added later with little work.  
    *Shown on: E-101*
 28. **Avoid:** Table too big for the room: chairs hit the walls.  
    **Do:** Clear size is about 8'9" x 7'6". A 6-seat 5 x 3 ft table leaves about 2'3" each side, so use a 4-seat or round table, or let it spill into the hall.  
    *Shown on: A-104*
 
-## Hand-wash basin (wash link)
+## Hand-wash basin (serving counter)
 29. **Avoid:** Painted wall behind the basin: stains and peeling.  
    **Do:** Put a stone or tile splash-back 2 ft high above the basin.  
    *Shown on: A-502/7*
@@ -135,202 +135,208 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put a grease trap outside, before any junction.  
    *Shown on: P-101*
 39. **Avoid:** Fridge beside the hob or in direct sun.  
-   **Do:** Fridge at the north end, away from the hob and the south window.  
+   **Do:** Fridge at the kitchen's west end, by the wet-area door, well away from the hob.  
    *Shown on: A-103*
 
-## Wet area and store
-40. **Avoid:** Semi-open wet area floods during heavy rain.  
-   **Do:** Set the floor 3 in below the house, sloping to a drain, with a 6 in kerb under the jali wall and a projecting drip above it.  
+## Wet area, storage and kitchen entry
+40. **Avoid:** A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.  
+   **Do:** The kitchen door faces the dining directly: a 3 ft sliding glass door, open when serving, closed when frying.  
+   *Shown on: A-102*
+41. **Avoid:** Open wet area floods during heavy rain, or becomes a back door for intruders.  
+   **Do:** Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.  
    *Shown on: A-105, A-502/9*
-41. **Avoid:** Washing machine with no tap, drain or socket at the right height.  
+42. **Avoid:** Washing machine with no tap, drain or socket at the right height.  
    **Do:** Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.  
    *Shown on: P-101, E-102*
-42. **Avoid:** Store with no ventilation: musty, with insects.  
-   **Do:** High jali vent with insect mesh; shelves on legs.  
-   *Shown on: A-401*
-43. **Avoid:** Inverter batteries in a bedroom or a closed cupboard.  
-   **Do:** Put them in the ventilated store, away from water, on a raised stand.  
+43. **Avoid:** No separate store means provisions end up on the floor.  
+   **Do:** Use the storage-bench drawers in the sitting area, lofts above the master bay and kitchen, tall kitchen cabinets; keep rice and grain in sealed bins off the floor.  
+   *Shown on: A-103*
+44. **Avoid:** Inverter batteries in a bedroom or a closed cupboard.  
+   **Do:** Use a lithium inverter battery in a ventilated cabinet under the sitting-area bench, away from water and bedrooms.  
    *Shown on: E-102*
 
 ## Pooja
-44. **Avoid:** Lamp smoke blackens the ceiling and the teak panelling.  
+45. **Avoid:** Lamp smoke blackens the ceiling and the teak panelling.  
    **Do:** Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.  
    *Shown on: A-105*
-45. **Avoid:** Pooja sharing a wall with a toilet.  
-   **Do:** Here the pooja sits between the walk-in and the store, off the hall, with no toilet on any side; the idol is on the west wall facing east.  
+46. **Avoid:** Pooja sharing a wall with a toilet.  
+   **Do:** Here the pooja opens west onto the basin nook and hall, so the family sits facing east; idols are on its east wall. It shares a wall with the open wet area (not a toilet): that wall carries no pipes, and the pooja floor is 3 in higher.  
    *Shown on: A-102*
-46. **Avoid:** Polished marble floor that becomes slippery with oil.  
+47. **Avoid:** Polished marble floor that becomes slippery with oil.  
    **Do:** Use honed (matt) marble or teak.  
    *Shown on: A-105*
 
 ## Bedrooms
-47. **Avoid:** AC indoor unit above the bed head: cold air blows on your head all night.  
+48. **Avoid:** AC indoor unit above the bed head: cold air blows on your head all night.  
    **Do:** Mount the AC on a side or opposite wall, throwing across the bed.  
    *Shown on: E-102*
-48. **Avoid:** Only one switchboard at the door.  
+49. **Avoid:** Only one switchboard at the door.  
    **Do:** Add 2-way switches at the bed for the light and fan, plus bedside sockets.  
    *Shown on: E-101, E-102*
-49. **Avoid:** Wardrobe shallower than 2 ft: hangers do not fit.  
+50. **Avoid:** Wardrobe shallower than 2 ft: hangers do not fit.  
    **Do:** Make wardrobes 2 ft deep with lofts above to the false ceiling.  
    *Shown on: A-103*
-50. **Avoid:** 2'-6" bedroom doors: a mattress or cupboard cannot go in later.  
+51. **Avoid:** 2'-6" bedroom doors: a mattress or cupboard cannot go in later.  
    **Do:** Make bedroom doors 3'-0".  
    *Shown on: A-401*
-51. **Avoid:** Curtain rods, TV brackets and fan hooks screwed into plain AAC, which pulls out.  
+52. **Avoid:** Curtain rods, TV brackets and fan hooks screwed into plain AAC, which pulls out.  
    **Do:** Fix timber grounds or use AAC-rated anchors, marked before plaster.  
    *Shown on: A-001*
-52. **Avoid:** Windows without mesh, so mosquito coils every night.  
+53. **Avoid:** Windows without mesh, so mosquito coils every night.  
    **Do:** Put insect mesh on a separate frame on every opening.  
    *Shown on: A-401*
 
-## Walk-in wardrobe and dressing
-53. **Avoid:** Dark, unventilated walk-in: clothes smell musty in the monsoon.  
-   **Do:** Add a high jali vent, a light and a socket for an iron or dehumidifier.  
+## Wardrobes and dressing
+54. **Avoid:** Dark, unventilated store: provisions smell musty in the monsoon and attract insects.  
+   **Do:** High jali vent with mesh, a jali above the door, shelves on legs, a light and a socket.  
    *Shown on: A-401, E-102*
-54. **Avoid:** Dressing mirror lit from behind.  
+55. **Avoid:** Clothes stored in a separate walk-in only one person can use, while the house has no store.  
+   **Do:** Here the old walk-in is an open wardrobe bay of the master bedroom (sliding wardrobe with lofts), plus a wardrobe in the dressing alcove.  
+   *Shown on: A-103*
+56. **Avoid:** Dressing mirror lit from behind.  
    **Do:** Mount the mirror light above or beside the mirror.  
    *Shown on: E-101*
 
 ## Bathrooms
-55. **Avoid:** Raised step at the bathroom door, which people trip on at night.  
+57. **Avoid:** Raised step at the bathroom door, which people trip on at night.  
    **Do:** Drop the bathroom 12 mm with a sloped granite threshold and no step.  
    *Shown on: A-502/5*
-56. **Avoid:** Whole floor sloped to one trap: the entire bathroom is always wet.  
+58. **Avoid:** Whole floor sloped to one trap: the entire bathroom is always wet.  
    **Do:** Separate wet and dry zones: a linear drain in the shower, the dry zone nearly flat, and a glass partition.  
    *Shown on: A-502/5*
-57. **Avoid:** No waterproofing or flood test: damp skirting in the next bedroom within a year.  
+59. **Avoid:** No waterproofing or flood test: damp skirting in the next bedroom within a year.  
    **Do:** Waterproof the floor, 12 in up the walls and 7 ft in the shower, then do a 48 h flood test before tiling.  
    *Shown on: A-502/5, A-001*
-58. **Avoid:** Wooden door frame standing in the wet floor.  
+60. **Avoid:** Wooden door frame standing in the wet floor.  
    **Do:** Use a WPC / FRP shutter with the frame on a granite or WPC block.  
    *Shown on: A-401, A-502/9*
-59. **Avoid:** Exhaust fan blowing into the false ceiling.  
+61. **Avoid:** Exhaust fan blowing into the false ceiling.  
    **Do:** Duct the exhaust fan straight out through the outer wall.  
    *Shown on: E-101*
-60. **Avoid:** Geyser hidden above the false ceiling, which can't be serviced.  
+62. **Avoid:** Geyser hidden above the false ceiling, which can't be serviced.  
    **Do:** Wall-mount it at 6'-6" with the switch outside; leave a ceiling access panel at the concealed cistern.  
    *Shown on: E-102*
-61. **Avoid:** Black or glossy tiles and chrome fittings with Guntur's hard water: white scale shows everywhere.  
+63. **Avoid:** Black or glossy tiles and chrome fittings with Guntur's hard water: white scale shows everywhere.  
    **Do:** Use light matt tiles and matt / PVD fittings, plus a softener if hardness is high.  
    *Shown on: A-105, P-101*
-62. **Avoid:** Ensuite squeezed to 5 ft wide: about 4'-5" clear, too tight for standard fittings.  
+64. **Avoid:** Ensuite squeezed to 5 ft wide: about 4'-5" clear, too tight for standard fittings.  
    **Do:** Widened by 1'-6" into the master (about 6'-0" clear): WC on the outer wall, 3'-6" vanity on the wet wall, walk-in shower across the north end. The door opens clear of all three.  
    *Shown on: A-103, A-104*
-63. **Avoid:** No backing for grab bars later.  
+65. **Avoid:** No backing for grab bars later.  
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Work spaces (Office 2 and Bedroom 2 desk)
-64. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** Put the desk side-on to the window: Office 2 gets south light from the side; in Bedroom 2 the desk sits beside the foot of the bed, by the north window.  
+## Work spaces (master-suite workstation and Bedroom 2 table)
+66. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
+   **Do:** Put the desk side-on to the window: the workstation gets south light from the side; in Bedroom 2 the table faces the bath wall with the north window to the side.  
    *Shown on: A-103*
-65. **Avoid:** Not enough power or data.  
-   **Do:** Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (Office 2 and the Bedroom 2 desk), with the router on the inverter.  
+67. **Avoid:** Not enough power or data.  
+   **Do:** Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (workstation and Bedroom 2 table), with the router on the inverter.  
    *Shown on: E-102*
-66. **Avoid:** Sound travelling from the office into the bedroom.  
-   **Do:** Use solid-core doors with seals, don't place sockets back to back on shared walls, and fill the wall cavity behind the bookshelf.  
+68. **Avoid:** An open workstation in the master suite: calls disturb whoever is resting.  
+   **Do:** Walls are left out for now and drawn dashed; if calls become a problem, add the two walls and a sliding glass door later (conduit and lintel can be provided now).  
    *Shown on: A-401*
-67. **Avoid:** Bare wall behind you on video calls.  
+69. **Avoid:** Bare wall behind you on video calls.  
    **Do:** Put a bookshelf behind the chair as the backdrop.  
    *Shown on: A-103*
 
 ## Doors and windows
-68. **Avoid:** Solid walls and closed doors between the north and south rooms: no breeze crosses the house at night or during calls.  
-   **Do:** Put a vent above inner doors, 7'-6" to 9'-0": open jali for the walk-in, store and pooja; louvres between kitchen and wet area.  
+70. **Avoid:** Solid walls and closed doors between the north and south rooms: no breeze crosses the house at night or during calls.  
+   **Do:** Put a vent above inner doors, 7'-6" to 9'-0": open jali for the pooja; none on the lockable door to the open wet area.  
    *Shown on: A-401*
-69. **Avoid:** Open vents above bedroom and bathroom doors: conversation, TV and smells carry into the hall and the next room.  
+71. **Avoid:** Open vents above bedroom and bathroom doors: conversation, TV and smells carry into the hall and the next room.  
    **Do:** No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); the office gets a sealed glazed flap.  
    *Shown on: A-401*
-70. **Avoid:** A 3'-6" hall: two people can't pass, and furniture won't turn the corner.  
-   **Do:** Make the hall at least 4'-0" clear; here Bedroom 2 gives up 6 in for it.  
+72. **Avoid:** A 3'-6" hall: two people can't pass, and furniture won't turn the corner.  
+   **Do:** Here both bedrooms open off the 15 ft sitting area instead of a narrow hall, so no corridor space is wasted.  
    *Shown on: A-104*
-71. **Avoid:** No drip groove under sills and sunshades: black streaks down the walls.  
+73. **Avoid:** No drip groove under sills and sunshades: black streaks down the walls.  
    **Do:** Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.  
    *Shown on: A-501/3*
-72. **Avoid:** Unseasoned teak that warps and jams.  
+74. **Avoid:** Unseasoned teak that warps and jams.  
    **Do:** Use kiln-seasoned wood, or sal / pinkado frames and UPVC on the wet side.  
    *Shown on: A-401*
-73. **Avoid:** Mild-steel hinges and screws that rust with humidity and hard water.  
+75. **Avoid:** Mild-steel hinges and screws that rust with humidity and hard water.  
    **Do:** Use SS 304 hardware, with magnetic stoppers on every door.  
    *Shown on: A-401*
-74. **Avoid:** Grill with no openable section: no way out in a fire.  
+76. **Avoid:** Grill with no openable section: no way out in a fire.  
    **Do:** Give each bedroom one escape window with an openable grill.  
    *Shown on: A-401*
 
 ## Floors, walls and finishes
-75. **Avoid:** Skirting stuck on top of the plaster: a dust ledge that also chips.  
+77. **Avoid:** Skirting stuck on top of the plaster: a dust ledge that also chips.  
    **Do:** Set the skirting flush with the plaster face, with a groove above it.  
    *Shown on: A-501/2*
-76. **Avoid:** Tiles laid tight to the walls: they pop up (tenting) in 45 C summers.  
+78. **Avoid:** Tiles laid tight to the walls: they pop up (tenting) in 45 C summers.  
    **Do:** Leave 5 mm gaps at walls and movement joints every 15-20 ft, hidden by the skirting.  
    *Shown on: A-501/2, A-105*
-77. **Avoid:** Cement grout in bathrooms turns black.  
+79. **Avoid:** Cement grout in bathrooms turns black.  
    **Do:** Use epoxy grout in wet areas.  
    *Shown on: A-001*
-78. **Avoid:** Exterior paint that chalks and fades in strong sun.  
+80. **Avoid:** Exterior paint that chalks and fades in strong sun.  
    **Do:** Use a waterproof plaster additive and elastomeric or UV-stable exterior paint.  
    *Shown on: A-601*
 
 ## Roof and rainwater
-79. **Avoid:** Clay tiles just resting on battens: a cyclone strips the edges first.  
+81. **Avoid:** Clay tiles just resting on battens: a cyclone strips the edges first.  
    **Do:** Clip or screw every eave, verge, hip and ridge tile, plus every third row elsewhere.  
    *Shown on: A-106, A-501/4*
-80. **Avoid:** Water creeping back under the eave tiles and into the soffit.  
+82. **Avoid:** Water creeping back under the eave tiles and into the soffit.  
    **Do:** Use a fascia with drip-edge flashing turned down into the gutter, and raise the first tile row on a tilting fillet.  
    *Shown on: A-501/4*
-81. **Avoid:** No gutters: roof water splashes the plinth and soaks the foundation.  
+83. **Avoid:** No gutters: roof water splashes the plinth and soaks the foundation.  
    **Do:** Gutters on both long eaves, downpipes into the sump filter and recharge pit.  
    *Shown on: A-106, P-101*
-82. **Avoid:** Valleys and skylight edges sealed only with mortar or sealant.  
+84. **Avoid:** Valleys and skylight edges sealed only with mortar or sealant.  
    **Do:** Use 600 mm metal valley gutters, and a 9 in upstand with flashing at the ventilator.  
    *Shown on: A-106*
-83. **Avoid:** No insulation under Mangalore tiles: rooms radiate heat until midnight.  
+85. **Avoid:** No insulation under Mangalore tiles: rooms radiate heat until midnight.  
    **Do:** Add 50 mm insulation on the deck, ventilate the attic at ridge and soffits, and fit insulated false ceilings in bedrooms.  
    *Shown on: A-301, A-501/4*
-84. **Avoid:** Birds, bats and rats nesting in the roof.  
+86. **Avoid:** Birds, bats and rats nesting in the roof.  
    **Do:** Bird stops at the eaves and mesh at ridge vents and soffits.  
    *Shown on: A-501/4*
 
 ## Electrical
-85. **Avoid:** One circuit for everything; cheap wire.  
+87. **Avoid:** One circuit for everything; cheap wire.  
    **Do:** Separate MCBs for each AC, geyser, kitchen and pump; RCCB 30 mA; FR-LSH copper wire sized per load.  
    *Shown on: E-102*
-86. **Avoid:** No inverter wiring planned, so it gets rewired later.  
+88. **Avoid:** No inverter wiring planned, so it gets rewired later.  
    **Do:** Put lights, fans, office sockets and the router on a separate inverter circuit from day one.  
    *Shown on: E-101, E-102*
-87. **Avoid:** AC drain pipe dripping down the wall and sleeves forgotten.  
+89. **Avoid:** AC drain pipe dripping down the wall and sleeves forgotten.  
    **Do:** Fit a 65 mm sleeve sloping out, a drain to a gully, and ODU brackets on shaded walls.  
    *Shown on: E-102*
-88. **Avoid:** No spare conduits for solar PV, CCTV, the sump pump and gate.  
+90. **Avoid:** No spare conduits for solar PV, CCTV, the sump pump and gate.  
    **Do:** Run empty 25 mm conduits to the DB now; it costs little at this stage.  
    *Shown on: E-102, A-106*
 
 ## Plumbing and water
-89. **Avoid:** Pipes buried under the floor slab: leaks can't be found without breaking tiles.  
+91. **Avoid:** Pipes buried under the floor slab: leaks can't be found without breaking tiles.  
    **Do:** Run supply lines along the outside walls in clamps or shallow chases, with a valve per room.  
    *Shown on: P-101*
-90. **Avoid:** Overhead tank on a short stand: showers barely run.  
+92. **Avoid:** Overhead tank on a short stand: showers barely run.  
    **Do:** Put the tank on an 18 ft stand (about 9 ft of head over the shower roses) and add a small pressure pump for the showers.  
    *Shown on: A-202, A-101*
-91. **Avoid:** All waste going into the septic tank, which overloads it.  
+93. **Avoid:** All waste going into the septic tank, which overloads it.  
    **Do:** Keep soil and grey water separate: soil to the septic, grey to a soak pit, with inspection chambers at every bend.  
    *Shown on: P-101*
-92. **Avoid:** Drinking borewell water without testing it (fluoride is common around Guntur).  
+94. **Avoid:** Drinking borewell water without testing it (fluoride is common around Guntur).  
    **Do:** Test the water; RO at the kitchen for drinking, and a softener if hardness exceeds 300 mg/l.  
    *Shown on: P-101*
-93. **Avoid:** Sump lid at ground level: surface water and insects get in.  
+95. **Avoid:** Sump lid at ground level: surface water and insects get in.  
    **Do:** Raise the sump cover 6 in above the paving with a locked, sealed lid, and keep it 20 ft+ from the septic.  
    *Shown on: A-101*
 
 ## Outside: yard, gate and garden
-94. **Avoid:** Gate swinging out onto the road, or too narrow for two-wheelers.  
+96. **Avoid:** Gate swinging out onto the road, or too narrow for two-wheelers.  
    **Do:** Use a 7 ft gate swinging inward or sliding, with the meter and bell in the pillar.  
    *Shown on: A-101*
-95. **Avoid:** Two-wheeler bay with no slope: puddles.  
+97. **Avoid:** Two-wheeler bay with no slope: puddles.  
    **Do:** Pave it sloping 1:50 toward the road drain.  
    *Shown on: A-101*
-96. **Avoid:** No outdoor drying space.  
-   **Do:** Ceiling pulley airer in the wet area, plus a fold-away line in the south walkway (sunny, private).  
+98. **Avoid:** No outdoor drying space.  
+   **Do:** A fold-away clothesline in the south walkway beside the open wet area (sunny, private).  
    *Shown on: A-103*
 
 ## Hold points: stop and inspect before work is covered up

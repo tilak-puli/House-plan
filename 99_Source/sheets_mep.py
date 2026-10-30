@@ -45,7 +45,7 @@ def _counts_table(s, codes, x, ytop, types, title):
 
 def sheet_lighting(c):
     s = Sheet(c, "E-101", "Lighting, fans and ceilings", "1:75")
-    pl = Plan(s, 75, 24 * mm, 104 * mm)
+    pl = Plan(s, 75, 16 * mm, 104 * mm)
     _base(pl, ceilings=True)
     sx1, sx2, sy1, sy2 = ROOF["skylight"]
     pl.rect(sx1, sx2, sy1, sy2, stroke=GREY, lw=0.4, dash=(2, 2))
@@ -67,7 +67,7 @@ def sheet_lighting(c):
 
 def sheet_power(c):
     s = Sheet(c, "E-102", "Power, AC and data", "1:75")
-    pl = Plan(s, 75, 24 * mm, 104 * mm)
+    pl = Plan(s, 75, 16 * mm, 104 * mm)
     _base(pl)
     for code, x, y, rid, note in ELECTRICAL:
         if code in POWER: _sym(pl, code, x, y, ECOL[code])
@@ -76,7 +76,7 @@ def sheet_power(c):
         "Separate MCB circuit for each AC, geyser, kitchen power, washing machine and pump; RCCB 30 mA on all socket circuits.",
         "AC: 16 A socket at 7'-6\", 65 mm sleeve sloping out, drain pipe to a gully (not onto the wall); ODUs on shaded north / west walls on brackets.",
         "AC indoor units never above the bed head or desk chair: cold draught on the head is the common complaint.",
-        "Offices: 2 x UPS sockets + data + 1 normal socket at desk height, plus conduit to the router; Cat6 to TV and both offices.",
+        "Work desks (Office 2, Bedroom 2): 2 x UPS sockets + data + 1 normal socket at desk height; Cat6 from the router to the TV and both desks.",
         "Kitchen: 5-6 counter sockets at 42 in, 16 A for the fridge, chimney and microwave / OTG; none within 2 ft of the sink.",
         "DB in the living wall near the entrance with 25% spare ways; meter at the gate; 2 earth pits; surge protector.",
         "Empty 25 mm conduits from the roof (solar PV), gate (CCTV, bell, intercom) and sump (pump controller) to the DB.",

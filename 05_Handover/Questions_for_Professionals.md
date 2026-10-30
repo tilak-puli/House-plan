@@ -5,12 +5,12 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 ## Land, approvals and survey
 1. The plot is agricultural land. What conversion is needed now that AP has repealed the NALA Act (2025): gram panchayat, collector, or both? What documents and fees?
 2. Which authority grants building permission for this site (panchayat, DTCP or APCRDA, via APDPMS)?
-3. What setbacks apply to a 27 ft x 70 ft plot under the AP Building Rules 2017, and what happens if we follow local practice (3 ft south, 2 ft north)?
+3. What setbacks apply to a 27 ft x 75 ft plot under the AP Building Rules 2017, and what happens if we follow local practice (3 ft south, 2 ft north)?
 4. Can the 10 ft north strip be used for the septic tank and soak pit now, and how should Phase 2 be planned around them?
 5. Survey the plot and road levels: is a 2 ft plinth above finished ground enough?
 
 ## Architect / Sthaayi Design Lab
-1. Review the working plan (A-104): clear sizes, door widths, the widened ensuite (about 5'-11" clear) and the narrower master, and the dining table size.
+1. Review the working plan (A-104): clear sizes, door widths, the ensuite (about 5'-11" clear), the 11'-6" master with its 9 ft bay, the 15 x 16 ft Bedroom 2, and the dining table size.
 2. Roof: front gable plus hip massing, 30 degree pitch, valley gutters, and the ventilator over the dining (louvres, mesh, closable shutters, no glass). Is borrowed light enough for the dining and hall?
 3. Heat: is 50 mm deck insulation plus a ventilated attic enough, or should the bedroom false ceilings carry more?
 4. Can the poomukham, jalis and gable vents be detailed in your tropical style, with Guntur-available materials?
@@ -36,8 +36,8 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Vastu consultant
 1. Master bed head east (not south): acceptable?
-2. NW ensuite, and the common bath (Bath 2) at north-centre as the family prefers: acceptable, or what remedies?
-3. Dining table at the plot centre under a roof ventilator.
-4. Pooja on the west side of the house core (off the hall) with the idol on the west wall facing east.
-5. TV on the south wall of the living room; DB on the SE living wall.
+2. NW ensuite, and Bath 2 inside Bedroom 2 on the north wall (north-west of centre); no common toilet: acceptable?
+3. The plot centre now falls inside Bedroom 2, about 6 in from the Bedroom 2 / dining wall (plot lengthened to 75 ft), with the dining under the ventilator about 5 ft east of it: acceptable, or should the wall or dining move?
+4. Pooja beside the open wet area, opening west (idols face west, family faces east): acceptable with a dry shared wall and a raised floor?
+5. TV on the east wall of the living room; DB on the SE living wall.
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.

@@ -28,7 +28,7 @@ def take_off():
     wall_len = sum(w[3] - w[2] for w in WALLS)
     q.append(("Frame", "Plinth beam / lintel band / ring beam (each, running length)", round(wall_len * 0.3048, 1), "m", "Along all walls; sizes by engineer"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
-    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (55.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls + plinth face"))
+    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (60.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls + plinth face"))
     finishes = {}
     skirting = 0
     for r in ROOMS:
@@ -43,14 +43,14 @@ def take_off():
         L, W = clear_dims(room_of(rid))
         q.append(("Wet rooms", f"Wall tiles to 7 ft, {room_of(rid)[1]}", round((2 * (L + W) * 7 - 2.5 * 7) * 0.0929, 1), "sq m", "Full height in the shower adds ~2 sq m"))
         q.append(("Wet rooms", f"Waterproofing, {room_of(rid)[1]}", round((L * W + 2 * (L + W) * 1 + 6 * 6) * 0.0929, 1), "sq m", "Floor + 12 in upturn + shower walls to 7 ft"))
-    q.append(("Kitchen", "Granite counter, 2 ft deep", round((9.2 + 7.0) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
-    q.append(("Kitchen", "Dado between counter and wall cabinets", round((9.2 + 7.0) * 2 * 0.0929, 1), "sq m", "2 ft high"))
+    q.append(("Kitchen", "Granite counter, 2 ft deep", round((10.7 + 7.0) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
+    q.append(("Kitchen", "Dado between counter and wall cabinets", round((10.7 + 7.0) * 2 * 0.0929, 1), "sq m", "2 ft high"))
     q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Hip outline / cos {ROOF['pitch']} deg; add ~8% for gable and laps"))
     x1, x2, y1, y2 = ROOF["hip"]
     q.append(("Roof", "Gutters", round(2 * (x2 - x1) * 0.3048, 1), "m", "Both long eaves"))
     q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 12 ft each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
-    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((55.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
+    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((60.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(DOORS), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(WINDOWS), "no.", "See Windows tab"))
     q.append(("Openings", "Window area (for mesh and grills)", round(sum((w[4] - w[3]) * (w[6] - w[5]) for w in WINDOWS) * 0.0929, 1), "sq m", ""))

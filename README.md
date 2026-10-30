@@ -1,7 +1,7 @@
 # Kerala Home, Phase 1: pre-construction design package
 
 Revision B (pre-construction draft), 30 Oct 2026. Prepared by the owner with Claude (AI assistant).
-This is a Kerala-style house sited in **Guntur, Andhra Pradesh**, on a 27 ft x 70 ft agricultural plot.
+This is a Kerala-style house sited in **Guntur, Andhra Pradesh**, on a 27 ft x 75 ft agricultural plot (length to be confirmed by survey).
 The package is detailed enough for an architect, a structural engineer and MEP consultants to review, mark up and sign.
 It is **not** for construction or approval until they have done so.
 
@@ -10,7 +10,7 @@ It is **not** for construction or approval until they have done so.
 | Folder | Contents | Format |
 |---|---|---|
 | 01_Brief | Design brief (Guntur climate and ground), room-by-room detailing guide (mistakes to avoid) | Markdown |
-| 02_Drawings/PDF | 18-sheet A3 drawing set (see index below); earlier revisions in `Superseded` | PDF |
+| 02_Drawings/PDF | 19-sheet A3 drawing set (see index below); earlier revisions in `Superseded` | PDF |
 | 02_Drawings/CAD | Site and ground floor in millimetres with typed walls, electrical and plumbing layers | DXF |
 | 03_Schedules | Rooms (clear sizes, levels, ceilings), doors, windows, furniture budget, finishes, specification, quantities with rate cells, electrical and plumbing points, checklist, hold points, open issues, decisions | Excel |
 | 04_3D | Interactive 3D model (open in a browser, needs internet) plus online link | HTML |
@@ -30,7 +30,7 @@ It is **not** for construction or approval until they have done so.
 | A-201 / A-202 | Elevations: north, south, east (road), west |
 | A-301 | Sections A-A and B-B |
 | A-401 | Door and window details |
-| A-501 / A-502 | Typical details: plinth and apron, flush skirting, window sill, eaves and gutter, bathroom, kitchen counter, hand-wash basin, AAC joints, thresholds |
+| A-501 to A-503 | Dining ventilator; typical details: plinth and apron, flush skirting, window sill, eaves and gutter, bathroom, kitchen counter, hand-wash basin, AAC joints, thresholds |
 | A-601 | Schedules |
 | E-101 / E-102 | Lighting, fans and ceilings; power, AC and data |
 | P-101 | Water supply and drainage |

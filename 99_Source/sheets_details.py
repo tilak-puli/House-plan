@@ -242,7 +242,7 @@ def det_threshold(d):
     d.call(-14, 1.2, "Outside floor 3-6 in lower than inside and sloping away 1:50: rain never flows in.")
     d.call(2, 2.8, "Granite threshold with a 1 in upstand / weather bar under external doors.")
     d.call(3, 9, "Wet-area door frames stand on a granite or WPC block; wood never touches a wet floor.")
-    d.call(-12, 18, "Semi-open wet area: 6 in kerb under the jali wall and a projecting drip above it keep monsoon rain out.")
+    d.call(-12, 18, "Open wet area: floor 3 in lower and sloping out to the walkway, so rain drains away from the kitchen door.")
 
 
 def det_ventilator(d):
@@ -307,7 +307,7 @@ def sheet_details_2(c):
     W1, H1, W2 = 158 * mm, 128 * mm, 104 * mm
     _place(s, det_bath, "Bathroom: wet and dry zones", 5, 14 * mm, 147 * mm, W1, H1)
     _place(s, det_kitchen, "Kitchen counter and chimney", 6, 176 * mm, 147 * mm, W1, H1)
-    _place(s, det_basin, "Hand-wash basin (wash link)", 7, 14 * mm, 15 * mm, W2, H1)
+    _place(s, det_basin, "Hand-wash basin (serving counter)", 7, 14 * mm, 15 * mm, W2, H1)
     _place(s, det_aac, "AAC wall joints and chases", 8, 122 * mm, 15 * mm, W2, H1)
     _place(s, det_threshold, "Door thresholds and rain kerbs", 9, 230 * mm, 15 * mm, W2, H1)
     c.showPage()
@@ -319,9 +319,9 @@ def sheet_details_3(c):
     x, top, w = 238 * mm, PH - 30 * mm, 90 * mm
     how = [
         "Hot air collects under the sloped ceilings of the dining and living. The ventilator is the highest opening in the house, so that air rises out through it.",
-        "Replacement air comes in low and cool through the south jalis, the wet-area jali wall and the windows.",
+        "Replacement air comes in low and cool through the south jalis, the open wet area and the windows.",
         "It works best on still, hot evenings, when there is no breeze to cross-ventilate the house.",
-        "No glass, so no direct sun or greenhouse heat on the dining table. Daylight in the dining comes from the living, the wash link and the hall.",
+        "No glass, so no direct sun or greenhouse heat on the dining table. Daylight in the dining comes from the living, the nook window and the hall.",
     ]
     h = s.bullets(how, x, top, w, 7.2, title="How it works")
     use = [

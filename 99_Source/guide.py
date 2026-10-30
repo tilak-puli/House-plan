@@ -32,15 +32,15 @@ GUIDE = [
         ("Bell, CCTV and outdoor light added later with surface wiring.", "Run conduits now to the bell, camera, gate light and intercom.", "E-101, E-102"),
     ]),
     ("Living", [
-        ("TV on a wall facing a window, so glare washes it out.", "Put the TV on the solid south wall with the windows to the side, and run a conduit to the router.", "A-103, E-102"),
+        ("TV on a wall facing a window, so glare washes it out.", "Put the TV on the east wall of the living, with the big north window to the side and no window behind or opposite the screen; run a conduit to the router.", "A-103, E-102"),
         ("Too few sockets, leading to extension cords across the floor.", "Fit sockets at both sofa ends, 2 at the TV, and a router socket on the inverter circuit.", "E-102"),
         ("Fan on a short rod under a high sloped ceiling: weak breeze.", "Use a long downrod so the blades sit about 9 ft above the floor, hung from a hook fixed to the truss.", "E-101"),
-        ("Large west or south glazing: the room overheats in April-May.", "Glaze to the north and east for morning light; south only through the jali screen.", "A-201"),
+        ("Large west or south glazing: the room overheats in April-May.", "Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.", "A-201"),
         ("Main door swinging into the sofa or the DB.", "Check door swings against the furniture; put the DB on the kitchen wall, not behind the door.", "A-103, E-102"),
     ]),
     ("Dining and ventilator", [
         ("Glass skylight over the dining: a greenhouse in Guntur summers that leaks and needs constant cleaning.",
-         "No glass. Light comes in from the living, wash link and hall; a raised ventilator with a solid insulated roof and louvres on all four sides lets the hot air rising from the house escape.", "A-106, A-301"),
+         "No glass. Light comes in from the living, the nook's south window and the hall; a raised ventilator with a solid insulated roof and louvres on all four sides lets the hot air rising from the house escape.", "A-106, A-301"),
         ("Flat-topped roof ventilator: water ponds, leaves and droppings collect, and it leaks first.",
          "Give it a small hipped roof at the main roof pitch, tiled and clipped, with a 1'-6\" overhang and drip edge.", "A-503"),
         ("Flat or shallow louvres: cyclone rain blows straight through.",
@@ -51,10 +51,10 @@ GUIDE = [
          "Inner shutters with rubber (EPDM) seals so AC air stays in, worked by a winding handle or cord at hand height.", "A-503"),
         ("Ventilator opening straight into the roof space: attic heat and dust pour into the dining.",
          "Line the shaft from the dining ceiling to the ventilator sill with insulated fibre-cement board.", "A-503, A-301"),
-        ("Dining and hall feel dim with no skylight.", "Use light wall and ceiling colours and keep the wash-link jali screens open. If it still feels dark after move-in, a sun tube can be added later with little work.", "E-101"),
+        ("Dining and hall feel dim with no skylight.", "Use light wall and ceiling colours; the dining is now open to the living, the 6 ft hall and the nook window. If it still feels dark after move-in, a sun tube can be added later with little work.", "E-101"),
         ("Table too big for the room: chairs hit the walls.", "Clear size is about 8'9\" x 7'6\". A 6-seat 5 x 3 ft table leaves about 2'3\" each side, so use a 4-seat or round table, or let it spill into the hall.", "A-104"),
     ]),
-    ("Hand-wash basin (wash link)", [
+    ("Hand-wash basin (serving counter)", [
         ("Painted wall behind the basin: stains and peeling.", "Put a stone or tile splash-back 2 ft high above the basin.", "A-502/7"),
         ("Basin too high or low, or on a pedestal that traps dirt.", "Use a wall-hung basin with the rim at 32 in and a bottle trap, so the floor stays clear.", "A-502/7"),
         ("Light behind the mirror, which leaves faces in shadow; socket next to the tap.", "Put the light above the mirror and keep the socket 2 ft from the tap at 42 in.", "A-502/7, E-101"),
@@ -67,17 +67,18 @@ GUIDE = [
         ("Base cabinets standing on the floor: rot and termites.", "Put cabinets on 4 in legs or a granite plinth.", "A-502/6"),
         ("Gas cylinder in a closed cabinet under the hob.", "Keep the cylinder in the ventilated wet area with a fixed copper / steel line and a valve through the wall.", "A-103"),
         ("Kitchen drain without a grease trap: chokes within a year.", "Put a grease trap outside, before any junction.", "P-101"),
-        ("Fridge beside the hob or in direct sun.", "Fridge at the north end, away from the hob and the south window.", "A-103"),
+        ("Fridge beside the hob or in direct sun.", "Fridge at the kitchen's west end, by the wet-area door, well away from the hob.", "A-103"),
     ]),
-    ("Wet area and store", [
-        ("Semi-open wet area floods during heavy rain.", "Set the floor 3 in below the house, sloping to a drain, with a 6 in kerb under the jali wall and a projecting drip above it.", "A-105, A-502/9"),
+    ("Wet area, storage and kitchen entry", [
+        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen door faces the dining directly: a 3 ft sliding glass door, open when serving, closed when frying.", "A-102"),
+        ("Open wet area floods during heavy rain, or becomes a back door for intruders.", "Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.", "A-105, A-502/9"),
         ("Washing machine with no tap, drain or socket at the right height.", "Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.", "P-101, E-102"),
-        ("Store with no ventilation: musty, with insects.", "High jali vent with insect mesh; shelves on legs.", "A-401"),
-        ("Inverter batteries in a bedroom or a closed cupboard.", "Put them in the ventilated store, away from water, on a raised stand.", "E-102"),
+        ("No separate store means provisions end up on the floor.", "Use the storage-bench drawers in the sitting area, lofts above the master bay and kitchen, tall kitchen cabinets; keep rice and grain in sealed bins off the floor.", "A-103"),
+        ("Inverter batteries in a bedroom or a closed cupboard.", "Use a lithium inverter battery in a ventilated cabinet under the sitting-area bench, away from water and bedrooms.", "E-102"),
     ]),
     ("Pooja", [
         ("Lamp smoke blackens the ceiling and the teak panelling.", "Fit a heat-proof granite or brass back panel behind the diya and a small high vent; use a washable ceiling finish.", "A-105"),
-        ("Pooja sharing a wall with a toilet.", "Here the pooja sits between the walk-in and the store, off the hall, with no toilet on any side; the idol is on the west wall facing east.", "A-102"),
+        ("Pooja sharing a wall with a toilet.", "Here the pooja opens west onto the basin nook and hall, so the family sits facing east; idols are on its east wall. It shares a wall with the open wet area (not a toilet): that wall carries no pipes, and the pooja floor is 3 in higher.", "A-102"),
         ("Polished marble floor that becomes slippery with oil.", "Use honed (matt) marble or teak.", "A-105"),
     ]),
     ("Bedrooms", [
@@ -88,8 +89,9 @@ GUIDE = [
         ("Curtain rods, TV brackets and fan hooks screwed into plain AAC, which pulls out.", "Fix timber grounds or use AAC-rated anchors, marked before plaster.", "A-001"),
         ("Windows without mesh, so mosquito coils every night.", "Put insect mesh on a separate frame on every opening.", "A-401"),
     ]),
-    ("Walk-in wardrobe and dressing", [
-        ("Dark, unventilated walk-in: clothes smell musty in the monsoon.", "Add a high jali vent, a light and a socket for an iron or dehumidifier.", "A-401, E-102"),
+    ("Wardrobes and dressing", [
+        ("Dark, unventilated store: provisions smell musty in the monsoon and attract insects.", "High jali vent with mesh, a jali above the door, shelves on legs, a light and a socket.", "A-401, E-102"),
+        ("Clothes stored in a separate walk-in only one person can use, while the house has no store.", "Here the old walk-in is an open wardrobe bay of the master bedroom (sliding wardrobe with lofts), plus a wardrobe in the dressing alcove.", "A-103"),
         ("Dressing mirror lit from behind.", "Mount the mirror light above or beside the mirror.", "E-101"),
     ]),
     ("Bathrooms", [
@@ -103,18 +105,18 @@ GUIDE = [
         ("Ensuite squeezed to 5 ft wide: about 4'-5\" clear, too tight for standard fittings.", "Widened by 1'-6\" into the master (about 6'-0\" clear): WC on the outer wall, 3'-6\" vanity on the wet wall, walk-in shower across the north end. The door opens clear of all three.", "A-103, A-104"),
         ("No backing for grab bars later.", "Fix blocking in the walls beside the WC and shower now.", "A-502/5"),
     ]),
-    ("Work spaces (Office 2 and Bedroom 2 desk)", [
-        ("Window behind the screen (silhouette on video calls) or in front of it (glare).", "Put the desk side-on to the window: Office 2 gets south light from the side; in Bedroom 2 the desk sits beside the foot of the bed, by the north window.", "A-103"),
-        ("Not enough power or data.", "Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (Office 2 and the Bedroom 2 desk), with the router on the inverter.", "E-102"),
-        ("Sound travelling from the office into the bedroom.", "Use solid-core doors with seals, don't place sockets back to back on shared walls, and fill the wall cavity behind the bookshelf.", "A-401"),
+    ("Work spaces (master-suite workstation and Bedroom 2 table)", [
+        ("Window behind the screen (silhouette on video calls) or in front of it (glare).", "Put the desk side-on to the window: the workstation gets south light from the side; in Bedroom 2 the table faces the bath wall with the north window to the side.", "A-103"),
+        ("Not enough power or data.", "Fit 2 UPS sockets, 1 normal socket and a Cat6 point at each desk (workstation and Bedroom 2 table), with the router on the inverter.", "E-102"),
+        ("An open workstation in the master suite: calls disturb whoever is resting.", "Walls are left out for now and drawn dashed; if calls become a problem, add the two walls and a sliding glass door later (conduit and lintel can be provided now).", "A-401"),
         ("Bare wall behind you on video calls.", "Put a bookshelf behind the chair as the backdrop.", "A-103"),
     ]),
     ("Doors and windows", [
         ("Solid walls and closed doors between the north and south rooms: no breeze crosses the house at night or during calls.",
-         "Put a vent above inner doors, 7'-6\" to 9'-0\": open jali for the walk-in, store and pooja; louvres between kitchen and wet area.", "A-401"),
+         "Put a vent above inner doors, 7'-6\" to 9'-0\": open jali for the pooja; none on the lockable door to the open wet area.", "A-401"),
         ("Open vents above bedroom and bathroom doors: conversation, TV and smells carry into the hall and the next room.",
          "No vents at bedrooms (their big north windows, ceiling fans and AC are enough for rooms this shallow) or bathrooms (the door's bottom louvre feeds the exhaust fan); the office gets a sealed glazed flap.", "A-401"),
-        ("A 3'-6\" hall: two people can't pass, and furniture won't turn the corner.", "Make the hall at least 4'-0\" clear; here Bedroom 2 gives up 6 in for it.", "A-104"),
+        ("A 3'-6\" hall: two people can't pass, and furniture won't turn the corner.", "Here both bedrooms open off the 15 ft sitting area instead of a narrow hall, so no corridor space is wasted.", "A-104"),
         ("No drip groove under sills and sunshades: black streaks down the walls.", "Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.", "A-501/3"),
         ("Unseasoned teak that warps and jams.", "Use kiln-seasoned wood, or sal / pinkado frames and UPVC on the wet side.", "A-401"),
         ("Mild-steel hinges and screws that rust with humidity and hard water.", "Use SS 304 hardware, with magnetic stoppers on every door.", "A-401"),
@@ -150,6 +152,6 @@ GUIDE = [
     ("Outside: yard, gate and garden", [
         ("Gate swinging out onto the road, or too narrow for two-wheelers.", "Use a 7 ft gate swinging inward or sliding, with the meter and bell in the pillar.", "A-101"),
         ("Two-wheeler bay with no slope: puddles.", "Pave it sloping 1:50 toward the road drain.", "A-101"),
-        ("No outdoor drying space.", "Ceiling pulley airer in the wet area, plus a fold-away line in the south walkway (sunny, private).", "A-103"),
+        ("No outdoor drying space.", "A fold-away clothesline in the south walkway beside the open wet area (sunny, private).", "A-103"),
     ]),
 ]
