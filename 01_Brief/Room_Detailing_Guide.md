@@ -72,7 +72,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.  
    *Shown on: A-201*
 20. **Avoid:** Main door swinging into the sofa or the DB.  
-   **Do:** Check door swings against the furniture; put the DB away from the door and the pooja (here in the alcove between the dining and the kitchen).  
+   **Do:** Check door swings against the furniture; put the DB away from the door and the pooja (here on the dining face of Bedroom 2's east wall).  
    *Shown on: A-103, E-102*
 
 ## Dining and ventilator
@@ -135,12 +135,12 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put a grease trap outside, before any junction.  
    *Shown on: P-101*
 39. **Avoid:** Fridge beside the hob or in direct sun.  
-   **Do:** Fridge on the kitchen's north wall behind the pooja, beside the north entry and well away from the hob; nothing blocks the counter.  
+   **Do:** Fridge on the kitchen's north wall behind the pooja, beside the tall pantry and well away from the hob; nothing blocks the counter.  
    *Shown on: A-103*
 
 ## Wet area, storage and kitchen entry
 40. **Avoid:** A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.  
-   **Do:** The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; a second sliding door on the west takes food straight to the dining.  
+   **Do:** The kitchen is entered through a 3 ft hinged door on its west side, straight off the dining alcove: one short trip for serving, and it closes off cooking smoke. The pooja front stays quiet.  
    *Shown on: A-102*
 41. **Avoid:** Open wet area floods during heavy rain, or becomes a back door for intruders.  
    **Do:** Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.  
@@ -319,7 +319,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put the tank on an 18 ft stand (about 9 ft of head over the shower roses) and add a small pressure pump for the showers.  
    *Shown on: A-202, A-101*
 93. **Avoid:** All waste going into the septic tank, which overloads it.  
-   **Do:** Keep soil and grey water separate: soil to the septic, grey to a soak pit, with inspection chambers at every bend.  
+   **Do:** Keep soil and grey water separate: soil to the septic, grey to a soak trench, with inspection chambers at every bend.  
    *Shown on: P-101*
 94. **Avoid:** Drinking borewell water without testing it (fluoride is common around Guntur).  
    **Do:** Test the water; RO at the kitchen for drinking, and a softener if hardness exceeds 300 mg/l.  

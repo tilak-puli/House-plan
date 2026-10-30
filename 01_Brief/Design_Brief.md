@@ -4,7 +4,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 
 ## Site
 - **Location:** Guntur, Andhra Pradesh. The plot is **agricultural land**; its conversion to residential use still has to be confirmed.
-- **Plot:** 27 ft x 75 ft (5 ft longer than first assumed; confirm by survey), road on the **east**. The owner also holds a 10 ft strip to the north (open garden now, Phase 2 site later). The septic tank and soak pit sit in this strip.
+- **Plot:** 27 ft x 75 ft (5 ft longer than first assumed; confirm by survey), road on the **east**. The owner also holds a 10 ft strip to the north (open garden now, Phase 2 site later). The septic tank and a grey-water soak trench sit in this strip, 6 ft+ from the house.
 - **Setbacks:** rear (west) 5 ft garden with a creeper pergola, front (east) 10 ft yard, south 3 ft service walkway, north 2 ft to the plot line. These follow local practice; the AP Building Rules figures are to be checked by the architect.
 
 ## Climate and ground (why the construction differs from Kerala)
@@ -39,21 +39,21 @@ Revision B (pre-construction draft), 30 Oct 2026.
 ## Room list
 | Room | Centreline | Clear (approx.) |
 |---|---|---|
-| Master bedroom (6 ft north window) | 9'-6" x 14' | 9'-1" x 13'-7" (bed head east, both sides usable; bed keeps 2'-6" at its foot) |
+| Master bedroom (6 ft north window) | 9'-6" x 14' | 9'-1" x 13'-7" (bed head east, set toward the bay with the dressing open at its foot; a 9 x 7 ft zone by the north window and ensuite door with a window seat and reading chair) |
 | Dressing alcove | 6'-6" x 6' | 6'-1" x 5'-6" |
 | Ensuite (NW corner) | 6'-6" x 8' | 5'-11" x 7'-4" (WC, 3'-6" vanity, walk-in shower) |
 | Master bay (open to the master; full-width wardrobe + lofts, light from the workstation window) | 7' x 8' | 6'-9" x 7'-7" |
 | Workstation (open to the master suite; walls optional later) | 9' x 8' | about 9' x 8' |
-| Bedroom 2 / study-guest room (door from the sitting area; queen bed with its head on the south wall, work table with monitor against the bath wall, 6 ft wardrobe; 6 ft north window and a high jali vent to the sitting area for cross-ventilation; its own bath in the north-west corner) | 15' x 14'-6" less 5'-6" x 6' | 14'-7" x 13'-11" less the bath (about 185 sq ft) |
-| Bath 2, attached to Bedroom 2 (in Bedroom 2's north-west corner, door opens out into Bedroom 2; WC on the north wall, shower in the north-east corner, basin on the east wet wall) | 5'-6" x 6' | 5'-0" x 5'-5" |
-| Common bath (south, beside the wet area; door on its west wall, opening out into the sitting area, not toward the dining; WC and basin on the shared wet wall, 3 x 3 ft shower in the south-west corner) | 6'-6" x 6' | 6'-0" x 5'-5" |
-| Dining bay (north window, open to dining and living) | 11' x 6' | 10'-9" x 5'-7" |
+| Bedroom 2 / study-guest room (door from the sitting area at the east end of the south wall, its open leaf screening the bed; queen bed with its head on the west wall in the strip between the bath and the sitting area, 1'-6" free on both sides of the bed, work table with monitor on the east wall south of the wardrobe, 6 ft wardrobe; 6 ft north window and a high jali vent to the sitting area for cross-ventilation; its own bath in the north-west corner; south-east corner notched 1' x 1'-6" to widen the way into the sitting area to about 4'-2") | 15' x 14'-6" less 5'-6" x 7'-6" | 14'-7" x 13'-11" less the bath (about 177 sq ft) |
+| Bath 2, attached to Bedroom 2 (in Bedroom 2's north-west corner, door on its east wall opening out into Bedroom 2; WC on the north wall with 15 in each side, 3' x 2'-9" wet zone in the north-east corner for a bucket bath, basin on the south wall) | 7' x 6' | 6'-6" x 5'-4" |
+| Common bath (south, beside the wet area; door on its west wall, opening out into the sitting area and hinged at its north jamb, with a closer, not toward the dining; WC with 17 in to the side wall; WC and basin on the shared wet wall, 3 x 3 ft shower in the south-west corner) | 6'-6" x 6' | 6'-0" x 5'-5" |
+| Dining bay / TV lounge (north window, open to dining and living; TV on Bedroom 2's east wall, sofa facing west, AC above the TV) | 11' x 6' | 10'-9" x 5'-7" |
 | Dining, under ventilator (plot centre) | 11' x 8' | 10'-9" x 8'-0" |
 | Pooja (living's south-east corner, back to back with the kitchen; doors open inward; opens west) | 4' x 4' | 3'-5" x 3'-5" |
 | Wet area (open on the south to the walkway) | 5' x 6' | 4'-6" x 5'-8" |
 | Sitting and serving area, open to the hall (storage bench, 6 ft serving counter with a wash basin at its west end; bedrooms open off it; the common bath opens off its east end) | 18'-6" x 7'-6" | 18'-1" x 6'-11" (about 4'-11" clear in front of the counter) |
-| Kitchen (SE, 3 ft sliding entry from the living on the north, plus a sliding serving door on the west straight to the dining; fridge on the north wall behind the pooja; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
-| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door to the kitchen; TV wall to be decided) | 12' x 12' | 11'-4" x 11'-3" |
+| Kitchen (SE, 3 ft hinged entry on the west straight off the dining alcove; fridge and a tall pantry on the north wall; hob and chimney on solid east wall with a 2 ft window at its north end; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
+| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door through to the dining and kitchen; armchair by the north window; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **60' x 22' = 1,320 sq ft** | **~1,200 sq ft clear** (incl. poomukham and wet area) |
 
@@ -63,8 +63,8 @@ Revision B (pre-construction draft), 30 Oct 2026.
 - Toilets: NW (master ensuite), Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side, south of the plot centre beside the wet area (outside the central zone). None in SW or NE.
 - Pooja: in the living's south-east corner, back to back with the kitchen, with the shoe cupboard beyond its solid north wall (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
 - Plot centre (Brahmasthan) falls in the dining, just west of the ventilator; kept open, with no toilet, column or heavy fixture there.
-- Master bed head east; Bedroom 2 bed head south.
-- Sump and borewell NE; septic NW; DB in the alcove between the dining and the kitchen, away from the pooja.
+- Master bed head east; Bedroom 2 bed head west (east or south preferred; west acceptable).
+- Sump and borewell NE; septic NW; DB on the dining face of Bedroom 2's east wall, away from the pooja and the wet area.
 
 ## Materials and look
 - Plastered AAC walls with a lime-finish or mineral paint; plinth faced with rough local stone.
@@ -74,7 +74,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 
 ## Services
 - Overhead tank on an 18 ft stand in the SW rear garden, with a small pressure pump for showers; fixed ladder for roof access.
-- Septic tank (NW) and grey-water soak pit in the north strip, 6 ft+ from the house.
+- Septic tank (NW, laid east-west) and a soak trench for effluent and grey water in the north strip, 6 ft+ from the house; trench length from a percolation test.
 - Rainwater from gutters to the sump through a filter; overflow to a recharge pit.
 - Inverter circuit for lights, fans, the office, the Bedroom 2 desk and the router; conduit for future solar PV.
 

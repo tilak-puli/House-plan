@@ -184,15 +184,16 @@ class Plan:
                         if tags: self.text(did, cc - 1.1, (s0 + e0) / 2, 5.5, color=ACC)
                     continue
                 c.setStrokeColor(INK); c.setLineWidth(0.25)
+                h = e0 if did in HINGE_AT_END else s0
                 if axis == "X":
-                    hx, hy = self.p(s0, cc)
-                    self.line(s0, cc, s0, cc + sw * w, lw=0.5)
-                    st = 0 if sw > 0 else 270
+                    hx, hy = self.p(h, cc)
+                    self.line(h, cc, h, cc + sw * w, lw=0.5)
+                    st = (90 if sw > 0 else 180) if h == e0 else (0 if sw > 0 else 270)
                     tx, ty = (s0 + e0) / 2, cc + sw * w * 0.4
                 else:
-                    hx, hy = self.p(cc, s0)
-                    self.line(cc, s0, cc + sw * w, s0, lw=0.5)
-                    st = 0 if sw > 0 else 90
+                    hx, hy = self.p(cc, h)
+                    self.line(cc, h, cc + sw * w, h, lw=0.5)
+                    st = (270 if sw > 0 else 180) if h == e0 else (0 if sw > 0 else 90)
                     tx, ty = cc + sw * w * 0.4, (s0 + e0) / 2
                 r = w * self.k
                 c.setDash(1.5, 1); c.arc(hx - r, hy - r, hx + r, hy + r, st, 90); c.setDash()
@@ -203,7 +204,11 @@ class Plan:
             rid, name, x1, x2, y1, y2, _ = r
             nm = short_name(name)
             if corner:
-                self.text(nm, x1 + 0.4, y2 - 0.7, size, color=color, anchor="l")
+                lx, ly = x1 + 0.4, y2 - 0.7
+                for o in ROOMS:  # a smaller room in the same corner (Bath 2 in Bedroom 2): label past it
+                    if o is not r and o[2] <= lx <= o[3] and o[4] <= ly <= o[5] and (o[3] - o[2]) * (o[5] - o[4]) < (x2 - x1) * (y2 - y1):
+                        lx = o[3] + 0.4
+                self.text(nm, lx, ly, size, color=color, anchor="l")
             else:
                 cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
                 if rid == "R10": cy = 15.3

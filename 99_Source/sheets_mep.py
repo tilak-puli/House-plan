@@ -78,7 +78,7 @@ def sheet_power(c):
         "AC indoor units never above the bed head or desk chair: cold draught on the head is the common complaint.",
         "Work desks (Office 2, Bedroom 2): 2 x UPS sockets + data + 1 normal socket at desk height; Cat6 from the router to the TV and both desks.",
         "Kitchen: 5-6 counter sockets at 42 in, 16 A for the fridge, chimney and microwave / OTG; none within 2 ft of the sink.",
-        "DB in the living wall near the entrance with 25% spare ways; meter at the gate; 2 earth pits; surge protector.",
+        "DB on the dining face of Bedroom 2's east wall (central, dry) with 25% spare ways; meter at the gate; 2 earth pits; surge protector.",
         "Empty 25 mm conduits from the roof (solar PV), gate (CCTV, bell, intercom) and sump (pump controller) to the DB.",
     ]
     s.bullets(tips, 120 * mm, 66 * mm, 205 * mm, 6.6, title="Power notes")
@@ -88,7 +88,7 @@ def sheet_power(c):
 
 PIPE_STYLE = {"supply": (BLUE, None, 0.8, "Water supply (CPVC), from overhead tank"),
               "soil": (BROWN, None, 1.0, "Soil line (uPVC 110 mm) to septic tank"),
-              "grey": (ACC, (3, 1.5), 0.9, "Grey water (uPVC 75 mm) to soak pit"),
+              "grey": (ACC, (3, 1.5), 0.9, "Grey water (uPVC 75 mm) to soak trench"),
               "rain": (colors.HexColor("#5AA0D8"), (1, 1.2), 0.8, "Rainwater to sump filter / recharge pit")}
 
 
@@ -128,7 +128,7 @@ def sheet_plumbing(c):
         "Supply pipes run on the outside of walls in clamps or shallow chases, never under the floor slab.",
         "Soil and grey water kept separate; inspection chamber at every bend and junction; 1:40 falls on 110 mm, 1:30 on 75 mm.",
         "Grease trap before the kitchen line joins anything; vent pipe from each WC stack above the eaves.",
-        "Soak pit and septic in the north strip, 6 ft+ from walls: wet black cotton soil swells and cracks the house.",
+        "Soak trench and septic in the north strip, 6 ft+ from walls: wet black cotton soil swells and cracks the house.",
         "Rain from both gutters to the sump through a first-flush filter; overflow to a recharge pit.",
         "Test the bore / supply water: RO for drinking, softener for bathrooms if hardness is high; matt or PVD fittings.",
     ]

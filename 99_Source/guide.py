@@ -36,7 +36,7 @@ GUIDE = [
         ("Too few sockets, leading to extension cords across the floor.", "Fit sockets at both sofa ends, 2 at the TV, and a router socket on the inverter circuit.", "E-102"),
         ("Fan on a short rod under a high sloped ceiling: weak breeze.", "Use a long downrod so the blades sit about 9 ft above the floor, hung from a hook fixed to the truss.", "E-101"),
         ("Large west or south glazing: the room overheats in April-May.", "Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.", "A-201"),
-        ("Main door swinging into the sofa or the DB.", "Check door swings against the furniture; put the DB away from the door and the pooja (here in the alcove between the dining and the kitchen).", "A-103, E-102"),
+        ("Main door swinging into the sofa or the DB.", "Check door swings against the furniture; put the DB away from the door and the pooja (here on the dining face of Bedroom 2's east wall).", "A-103, E-102"),
     ]),
     ("Dining and ventilator", [
         ("Glass skylight over the dining: a greenhouse in Guntur summers that leaks and needs constant cleaning.",
@@ -67,10 +67,10 @@ GUIDE = [
         ("Base cabinets standing on the floor: rot and termites.", "Put cabinets on 4 in legs or a granite plinth.", "A-502/6"),
         ("Gas cylinder in a closed cabinet under the hob.", "Keep the cylinder in the ventilated wet area with a fixed copper / steel line and a valve through the wall.", "A-103"),
         ("Kitchen drain without a grease trap: chokes within a year.", "Put a grease trap outside, before any junction.", "P-101"),
-        ("Fridge beside the hob or in direct sun.", "Fridge on the kitchen's north wall behind the pooja, beside the north entry and well away from the hob; nothing blocks the counter.", "A-103"),
+        ("Fridge beside the hob or in direct sun.", "Fridge on the kitchen's north wall behind the pooja, beside the tall pantry and well away from the hob; nothing blocks the counter.", "A-103"),
     ]),
     ("Wet area, storage and kitchen entry", [
-        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered from the living on the north through a 3 ft sliding glass door, open when serving, closed when frying; a second sliding door on the west takes food straight to the dining.", "A-102"),
+        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered through a 3 ft hinged door on its west side, straight off the dining alcove: one short trip for serving, and it closes off cooking smoke. The pooja front stays quiet.", "A-102"),
         ("Open wet area floods during heavy rain, or becomes a back door for intruders.", "Keep its floor 3 in below the house, sloping out to the walkway drain; washing machine in the covered back corner; a lockable steel or WPC door into the kitchen, and a back gate in the compound wall.", "A-105, A-502/9"),
         ("Washing machine with no tap, drain or socket at the right height.", "Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.", "P-101, E-102"),
         ("No separate store means provisions end up on the floor.", "Use the storage-bench drawers in the sitting area, lofts above the master bay and kitchen, tall kitchen cabinets; keep rice and grain in sealed bins off the floor.", "A-103"),
@@ -145,7 +145,7 @@ GUIDE = [
     ("Plumbing and water", [
         ("Pipes buried under the floor slab: leaks can't be found without breaking tiles.", "Run supply lines along the outside walls in clamps or shallow chases, with a valve per room.", "P-101"),
         ("Overhead tank on a short stand: showers barely run.", "Put the tank on an 18 ft stand (about 9 ft of head over the shower roses) and add a small pressure pump for the showers.", "A-202, A-101"),
-        ("All waste going into the septic tank, which overloads it.", "Keep soil and grey water separate: soil to the septic, grey to a soak pit, with inspection chambers at every bend.", "P-101"),
+        ("All waste going into the septic tank, which overloads it.", "Keep soil and grey water separate: soil to the septic, grey to a soak trench, with inspection chambers at every bend.", "P-101"),
         ("Drinking borewell water without testing it (fluoride is common around Guntur).", "Test the water; RO at the kitchen for drinking, and a softener if hardness exceeds 300 mg/l.", "P-101"),
         ("Sump lid at ground level: surface water and insects get in.", "Raise the sump cover 6 in above the paving with a locked, sealed lid, and keep it 20 ft+ from the septic.", "A-101"),
     ]),

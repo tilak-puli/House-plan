@@ -92,16 +92,19 @@ def make(path):
                 msp.add_line(P(e0 - w * 0.55, c + off), P(e0, c + off), dxfattribs={"layer": "A-DOOR"})
                 text(did, (s0 + e0) / 2, c - 1.0, 80, "A-DOOR")
                 continue
+            h = e0 if did in HINGE_AT_END else s0
             if axis == "X":
-                hinge = (s0, c)
-                msp.add_line(P(*hinge), P(s0, c + sw * w), dxfattribs={"layer": "A-DOOR"})
-                start, end = (0, 90) if sw > 0 else (270, 360)
+                hinge = (h, c)
+                msp.add_line(P(*hinge), P(h, c + sw * w), dxfattribs={"layer": "A-DOOR"})
+                start = (90 if sw > 0 else 180) if h == e0 else (0 if sw > 0 else 270)
+                end = start + 90
                 msp.add_arc(P(*hinge), w * MM, start, end, dxfattribs={"layer": "A-DOOR"})
                 text(did, (s0 + e0) / 2, c + sw * (w * 0.45), 80, "A-DOOR")
             else:
-                hinge = (c, s0)
-                msp.add_line(P(*hinge), P(c + sw * w, s0), dxfattribs={"layer": "A-DOOR"})
-                start, end = (0, 90) if sw > 0 else (90, 180)
+                hinge = (c, h)
+                msp.add_line(P(*hinge), P(c + sw * w, h), dxfattribs={"layer": "A-DOOR"})
+                start = (270 if sw > 0 else 180) if h == e0 else (0 if sw > 0 else 90)
+                end = start + 90
                 msp.add_arc(P(*hinge), w * MM, start, end, dxfattribs={"layer": "A-DOOR"})
                 text(did, c + sw * (w * 0.45), (s0 + e0) / 2, 80, "A-DOOR")
 
