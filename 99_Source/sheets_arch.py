@@ -1,3 +1,4 @@
+import re
 """Architectural plan sheets: cover, design basis, site, plans, finishes, roof, schedules."""
 from sheetlib import *
 
@@ -154,7 +155,8 @@ def sheet_furniture(c):
         draw(fid, x1, x2, y1, y2, False)
     pl.room_names(5, GREY, corner=True)
     st = ParagraphStyle("l", fontName="Helvetica", fontSize=5.6, leading=6.6)
-    rows = [[Paragraph(f"<b>{f[0]}</b>", st), Paragraph(f[2] + (f" (x{f[7]})" if f[7] > 1 else ""), st)] for f in FURNITURE]
+    short = lambda t: re.split(r" \(|: |; ", t)[0]  # key shows the item only; full specs are in the schedules
+    rows = [[Paragraph(f"<b>{f[0]}</b>", st), Paragraph(short(f[2]) + (f" (x{f[7]})" if f[7] > 1 else ""), st)] for f in FURNITURE]
     n = 3; per = (len(rows) + n - 1) // n
     for i in range(n):
         t = Table(rows[i * per:(i + 1) * per], colWidths=[8 * mm, 58 * mm])
