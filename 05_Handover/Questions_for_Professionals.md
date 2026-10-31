@@ -39,5 +39,5 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 2. NW ensuite, Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side beside the wet area, just south of the plot centre (outside the central zone): acceptable?
 3. Plot centre in the dining, just west of the roof ventilator (open, no columns or fixtures).
 4. Pooja in the living's south-east corner, back to back with the kitchen, opening west (idols face west, family faces east), with a shoe cupboard beyond its solid north wall beside the main door: acceptable? (NE is the textbook spot; SE beside the kitchen is the family's choice.)
-5. Main door on the east face, north of the plot centre and centred under the front gable; DB on the dining face of Bedroom 2's east wall. TV on Bedroom 2's east wall, facing the dining bay.
+5. Main door on the east face, north of the plot centre and centred under the front gable; DB on the dining face of Bedroom 2's east wall. TV lounge in the dining space at the plot centre (movable furniture only), TV on the common-bath wall facing north.
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.
