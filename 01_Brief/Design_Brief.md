@@ -53,7 +53,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Wet area (open on the south to the walkway) | 5' x 6' | 4'-6" x 5'-8" |
 | Sitting and serving area, open to the hall (storage bench, 5 ft tall storage cupboard, 6 ft serving counter, hand-wash basin at its east end just outside the common bath; bedrooms open off it; the common bath opens off its east end) | 20'-6" x 7'-6" | 20'-1" x 6'-11" (about 4'-11" clear in front of the counter) |
 | Kitchen (SE, 3 ft hinged entry on the west straight off the dining alcove; fridge and a tall pantry on the north wall; hob and chimney on solid east wall with a 2 ft window at its north end; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
-| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door through to the dining and kitchen; guest sitting with a 6 ft window diwan (drawers below, extra bed at festivals) and an armchair under the north window; clear walk of about 4'-11" from the main door to the dining; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
+| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door through to the dining and kitchen; guest sitting with a 4'-6" window diwan (drawers below, day bed), 3 ft clear of the shoe cupboard and an armchair under the north window; clear walk of about 4'-11" from the main door to the dining; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **62' x 22' = 1,364 sq ft** | **~1,240 sq ft clear** (incl. poomukham and wet area) |
 
