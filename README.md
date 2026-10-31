@@ -5,6 +5,13 @@ This is a Kerala-style house sited in **Guntur, Andhra Pradesh**, on a 27 ft x 7
 The package is detailed enough for an architect, a structural engineer and MEP consultants to review, mark up and sign.
 It is **not** for construction or approval until they have done so.
 
+## View online
+
+- **3D model:** https://tilak-puli.github.io/House-plan/ (opens the interactive model: walk in, lift the roof, change the look and the time of day)
+- **Drawing set:** https://tilak-puli.github.io/House-plan/02_Drawings/PDF/KH-P1_Drawing_Set_RevB.pdf
+
+These links work once GitHub Pages is turned on for this repository (Settings, Pages, Deploy from a branch: `main`, folder `/ (root)`).
+
 ## Folder structure
 
 | Folder | Contents | Format |
@@ -22,7 +29,7 @@ It is **not** for construction or approval until they have done so.
 | Sheet | Title |
 |---|---|
 | A-000 / A-001 | Cover and index; design basis, levels, wall types, general notes, hold points |
-| A-101 | Site plan and services (tank, septic, soak pit, sump, recharge pit, pergola, apron) |
+| A-101 | Site plan and services (tank, septic, soak pit, sump, pergola, apron) |
 | A-102 / A-103 | Ground floor plan with wall types; furniture layout |
 | A-104 | Working plan: clear room sizes, section lines |
 | A-105 | Floor finishes and levels |
