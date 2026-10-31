@@ -293,7 +293,7 @@ def short_name(name):
 def site_context(pl, light=False):
     g = GREY
     L, W, S = SITE["l"], SITE["w"], SITE["strip"]
-    pl.rect(0, L, 0, W + S, stroke=GREY, lw=0.5, dash=(3, 2))
+    if S: pl.rect(0, L, 0, W + S, stroke=GREY, lw=0.5, dash=(3, 2))
     pl.rect(0, L, 0, W, stroke=INK, lw=0.9)
     pl.rect(L, L + 3.5, -1, W + S + 1, stroke=None, fill=colors.HexColor("#EDEDED"))
     pl.text("ROAD", L + 1.75, W / 2, 6, color=g)

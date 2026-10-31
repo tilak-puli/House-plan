@@ -42,7 +42,7 @@ def model_data():
     feat = {f[0]: f[3] for f in SITE_FEATURES}
     return {"walls": [list(w) + [wall_t(w)] for w in WALLS], "doors": doors, "windows": windows,
             "jali": [list(j) for j in JALI_SCREENS], "pillars": [list(p) for p in PILLARS],
-            "furniture": furniture, "rooms": rooms, "roomRects": room_rects, "fixtures": fixtures, "elec": elec,
+            "furniture": furniture, "rooms": rooms, "roomRects": room_rects, "exterior": [[a, c] for a, c in sorted(EXTERIOR)], "fixtures": fixtures, "elec": elec,
             "F": LEVELS["FFL"], "PF": LEVELS["poomukham"], "H": LEVELS["wall_top"], "riser": LEVELS["riser"],
             "site": {"w": SITE["w"], "strip": SITE["strip"]}, "gate": list(feat["GATE"][2:]),
             "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "lift": ROOF["gable_lift"],

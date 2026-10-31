@@ -42,7 +42,7 @@ def make(path):
     rect(5, 67, 3, 25, "C-PROP-SETB")
     rect(*ROOF["hip"], "A-ROOF-OTLN")
     text(f"PLOT {W}' x {SITE['l']}'", 35, 1.2, 150, "A-ANNO-TEXT")
-    text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
+    if S: text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
     text("EAST ROAD", 81, W / 2, 200)
     for fid, label, kind, g in SITE_FEATURES:
         if kind == "rect":

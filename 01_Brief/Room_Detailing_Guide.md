@@ -17,7 +17,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fill with moorum or gravel compacted in 150 mm layers. Cart the black soil away or use it in the garden.  
    *Shown on: A-501/1*
 3. **Avoid:** Rainwater, garden beds and soak pits right next to the walls.  
-   **Do:** Lay a 3 ft paved apron sloping away, run gutters to the sump, and keep soak pits and septic 6 ft+ away (here they are in the north strip).  
+   **Do:** Lay a 3 ft paved apron sloping away, run gutters to the sump, and keep soak pits and septic 6 ft+ away where the plot allows (here a sealed septic tank and lined soak pit sit in the front yard; a road-drain outflow is better if available).  
    *Shown on: A-101, P-101*
 4. **Avoid:** Planting neem, mango or coconut trees close to the house for shade: roots dry the soil and the walls crack.  
    **Do:** Keep big trees 8 ft+ away (ideally their mature height). Shade the west wall with a creeper pergola instead.  
@@ -98,7 +98,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Use light wall and ceiling colours; the dining is now open to the living, the 6 ft hall and the nook window. If it still feels dark after move-in, a sun tube can be added later with little work.  
    *Shown on: E-101*
 28. **Avoid:** Table too big for the room: chairs hit the walls.  
-   **Do:** Clear size is about 8'9" x 7'6". A 6-seat 5 x 3 ft table leaves about 2'3" each side, so use a 4-seat or round table, or let it spill into the hall.  
+   **Do:** No table is drawn for now. If one is added later, the open space under the ventilator takes a 6-seat 5 x 3 ft table with about 2 ft behind the chairs; a 4-seat or round table is easier.  
    *Shown on: A-104*
 
 ## Hand-wash basin (serving counter)
@@ -135,7 +135,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put a grease trap outside, before any junction.  
    *Shown on: P-101*
 39. **Avoid:** Fridge beside the hob or in direct sun.  
-   **Do:** Fridge on the kitchen's north wall behind the pooja, beside the tall pantry and well away from the hob; nothing blocks the counter.  
+   **Do:** Fridge just outside the kitchen in the dining alcove, beside the kitchen door: reachable from the dining without crossing the cooking area, and well away from the hob.  
    *Shown on: A-103*
 
 ## Wet area, storage and kitchen entry
@@ -285,7 +285,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Use a fascia with drip-edge flashing turned down into the gutter, and raise the first tile row on a tilting fillet.  
    *Shown on: A-501/4*
 83. **Avoid:** No gutters: roof water splashes the plinth and soaks the foundation.  
-   **Do:** Gutters on both long eaves, downpipes into the sump filter and recharge pit.  
+   **Do:** Gutters on both long eaves, downpipes into the sump filter; overflow to the road drain (no recharge pit near the walls on this narrow plot).  
    *Shown on: A-106, P-101*
 84. **Avoid:** Valleys and skylight edges sealed only with mortar or sealant.  
    **Do:** Use 600 mm metal valley gutters, and a 9 in upstand with flashing at the ventilator.  
@@ -319,7 +319,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put the tank on an 18 ft stand (about 9 ft of head over the shower roses) and add a small pressure pump for the showers.  
    *Shown on: A-202, A-101*
 93. **Avoid:** All waste going into the septic tank, which overloads it.  
-   **Do:** Keep soil and grey water separate: soil to the septic, grey to a soak trench, with inspection chambers at every bend.  
+   **Do:** Keep soil and grey water separate: soil to the septic, grey to the soak pit or a road drain, with inspection chambers at every bend.  
    *Shown on: P-101*
 94. **Avoid:** Drinking borewell water without testing it (fluoride is common around Guntur).  
    **Do:** Test the water; RO at the kitchen for drinking, and a softener if hardness exceeds 300 mg/l.  

@@ -4,7 +4,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 
 ## Site
 - **Location:** Guntur, Andhra Pradesh. The plot is **agricultural land**; its conversion to residential use still has to be confirmed.
-- **Plot:** 27 ft x 75 ft (5 ft longer than first assumed; confirm by survey), road on the **east**. The owner also holds a 10 ft strip to the north (open garden now, Phase 2 site later). The septic tank and a grey-water soak trench sit in this strip, 6 ft+ from the house.
+- **Plot:** 27 ft x 75 ft (5 ft longer than first assumed; confirm by survey), road on the **east**. Planned on this plot alone; a 10 ft strip to the north may be added later. Roof eaves are 2 ft so the north eave stays inside the plot line.
 - **Setbacks:** rear (west) 5 ft garden with a creeper pergola, front (east) 8 ft yard (house lengthened to 62 ft; confirm the front setback), south 3 ft service walkway, north 2 ft to the plot line. These follow local practice; the AP Building Rules figures are to be checked by the architect.
 
 ## Climate and ground (why the construction differs from Kerala)
@@ -48,11 +48,11 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Bath 2, attached to Bedroom 2 (in Bedroom 2's north-west corner, door on its east wall opening out into Bedroom 2; WC on the north wall with 15 in each side, 3' x 3'-6" wet zone in the north-east corner for a bucket bath, basin on the south wall in the dry zone) | 7' x 7' | 6'-7" x 6'-4" |
 | Common bath (south, beside the wet area; door on its west wall, opening out into the sitting area and hinged at its north jamb, with a closer, not toward the dining; WC with 17 in to the side wall; WC and basin on the shared wet wall, 3 x 3 ft shower in the south-west corner) | 6'-6" x 6' | 6'-0" x 5'-5" |
 | Dining bay / family TV lounge (north window, open to dining and living; TV on Bedroom 2's east wall, 5'-6" sofa facing west with a coffee table, AC above the TV) | 11' x 6' | 10'-9" x 5'-7" |
-| Dining, under ventilator (plot centre) | 11' x 8' | 10'-9" x 8'-0" |
+| Dining space, under ventilator (plot centre; kept open, no fixed table for now) | 11' x 8' | 10'-9" x 8'-0" |
 | Pooja (living's south-east corner, back to back with the kitchen; doors open inward; opens west) | 4' x 4' | 3'-5" x 3'-5" |
 | Wet area (open on the south to the walkway) | 5' x 6' | 4'-6" x 5'-8" |
 | Sitting and serving area, open to the hall (storage bench, 5 ft tall storage cupboard, 6 ft serving counter, hand-wash basin at its east end just outside the common bath; bedrooms open off it; the common bath opens off its east end) | 20'-6" x 7'-6" | 20'-1" x 6'-11" (about 4'-11" clear in front of the counter) |
-| Kitchen (SE, 3 ft hinged entry on the west straight off the dining alcove; fridge and a tall pantry on the north wall; hob and chimney on solid east wall with a 2 ft window at its north end; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
+| Kitchen (SE, 3 ft hinged entry on the west straight off the dining alcove; fridge just outside in the dining alcove, beside the kitchen door; hob and chimney on solid east wall with a 2 ft window at its north end; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
 | Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door through to the dining and kitchen; guest sitting with a 4'-6" window diwan (drawers below, day bed), 3 ft clear of the shoe cupboard and an armchair under the north window; clear walk of about 4'-11" from the main door to the dining; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **62' x 22' = 1,364 sq ft** | **~1,240 sq ft clear** (incl. poomukham and wet area) |
@@ -74,8 +74,8 @@ Revision B (pre-construction draft), 30 Oct 2026.
 
 ## Services
 - Overhead tank on an 18 ft stand in the SW rear garden, with a small pressure pump for showers; fixed ladder for roof access.
-- Septic tank (NW, laid east-west) and a soak trench for effluent and grey water in the north strip, 6 ft+ from the house; trench length from a percolation test.
-- Rainwater from gutters to the sump through a filter; overflow to a recharge pit.
+- Sealed septic tank under the two-wheeler bay in the front yard, with a lined soak pit beside it (only about 5 ft from the house and 13 ft from the sump, so a treated outflow to a road or panchayat drain is preferred if available). All drains run along the south walkway to the front.
+- Rainwater from gutters to the sump through a filter; overflow to the road drain (no recharge pit near the walls on this plot).
 - Inverter circuit for lights, fans, the office, the Bedroom 2 desk and the router; conduit for future solar PV.
 
 See `Room_Detailing_Guide.md` for room-by-room mistakes to avoid and how this design handles them.

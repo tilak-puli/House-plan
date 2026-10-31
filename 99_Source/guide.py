@@ -8,7 +8,7 @@ GUIDE = [
         ("Filling the plinth with the black soil dug out of the foundations: the floor heaves and cracks.",
          "Fill with moorum or gravel compacted in 150 mm layers. Cart the black soil away or use it in the garden.", "A-501/1"),
         ("Rainwater, garden beds and soak pits right next to the walls.",
-         "Lay a 3 ft paved apron sloping away, run gutters to the sump, and keep soak pits and septic 6 ft+ away (here they are in the north strip).", "A-101, P-101"),
+         "Lay a 3 ft paved apron sloping away, run gutters to the sump, and keep soak pits and septic 6 ft+ away where the plot allows (here a sealed septic tank and lined soak pit sit in the front yard; a road-drain outflow is better if available).", "A-101, P-101"),
         ("Planting neem, mango or coconut trees close to the house for shade: roots dry the soil and the walls crack.",
          "Keep big trees 8 ft+ away (ideally their mature height). Shade the west wall with a creeper pergola instead.", "A-101"),
         ("Plinth set at road level on farm land: roads and neighbouring plots get raised later and rain flows in.",
@@ -52,7 +52,7 @@ GUIDE = [
         ("Ventilator opening straight into the roof space: attic heat and dust pour into the dining.",
          "Line the shaft from the dining ceiling to the ventilator sill with insulated fibre-cement board.", "A-503, A-301"),
         ("Dining and hall feel dim with no skylight.", "Use light wall and ceiling colours; the dining is now open to the living, the 6 ft hall and the nook window. If it still feels dark after move-in, a sun tube can be added later with little work.", "E-101"),
-        ("Table too big for the room: chairs hit the walls.", "Clear size is about 8'9\" x 7'6\". A 6-seat 5 x 3 ft table leaves about 2'3\" each side, so use a 4-seat or round table, or let it spill into the hall.", "A-104"),
+        ("Table too big for the room: chairs hit the walls.", "No table is drawn for now. If one is added later, the open space under the ventilator takes a 6-seat 5 x 3 ft table with about 2 ft behind the chairs; a 4-seat or round table is easier.", "A-104"),
     ]),
     ("Hand-wash basin (serving counter)", [
         ("Painted wall behind the basin: stains and peeling.", "Put a stone or tile splash-back 2 ft high above the basin.", "A-502/7"),
@@ -67,7 +67,7 @@ GUIDE = [
         ("Base cabinets standing on the floor: rot and termites.", "Put cabinets on 4 in legs or a granite plinth.", "A-502/6"),
         ("Gas cylinder in a closed cabinet under the hob.", "Keep the cylinder in the ventilated wet area with a fixed copper / steel line and a valve through the wall.", "A-103"),
         ("Kitchen drain without a grease trap: chokes within a year.", "Put a grease trap outside, before any junction.", "P-101"),
-        ("Fridge beside the hob or in direct sun.", "Fridge on the kitchen's north wall behind the pooja, beside the tall pantry and well away from the hob; nothing blocks the counter.", "A-103"),
+        ("Fridge beside the hob or in direct sun.", "Fridge just outside the kitchen in the dining alcove, beside the kitchen door: reachable from the dining without crossing the cooking area, and well away from the hob.", "A-103"),
     ]),
     ("Wet area, storage and kitchen entry", [
         ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.", "The kitchen is entered through a 3 ft hinged door on its west side, straight off the dining alcove: one short trip for serving, and it closes off cooking smoke. The pooja front stays quiet.", "A-102"),
@@ -131,7 +131,7 @@ GUIDE = [
     ("Roof and rainwater", [
         ("Clay tiles just resting on battens: a cyclone strips the edges first.", "Clip or screw every eave, verge, hip and ridge tile, plus every third row elsewhere.", "A-106, A-501/4"),
         ("Water creeping back under the eave tiles and into the soffit.", "Use a fascia with drip-edge flashing turned down into the gutter, and raise the first tile row on a tilting fillet.", "A-501/4"),
-        ("No gutters: roof water splashes the plinth and soaks the foundation.", "Gutters on both long eaves, downpipes into the sump filter and recharge pit.", "A-106, P-101"),
+        ("No gutters: roof water splashes the plinth and soaks the foundation.", "Gutters on both long eaves, downpipes into the sump filter; overflow to the road drain (no recharge pit near the walls on this narrow plot).", "A-106, P-101"),
         ("Valleys and skylight edges sealed only with mortar or sealant.", "Use 600 mm metal valley gutters, and a 9 in upstand with flashing at the ventilator.", "A-106"),
         ("No insulation under Mangalore tiles: rooms radiate heat until midnight.", "Add 50 mm insulation on the deck, ventilate the attic at ridge and soffits, and fit insulated false ceilings in bedrooms.", "A-301, A-501/4"),
         ("Birds, bats and rats nesting in the roof.", "Bird stops at the eaves and mesh at ridge vents and soffits.", "A-501/4"),
@@ -145,7 +145,7 @@ GUIDE = [
     ("Plumbing and water", [
         ("Pipes buried under the floor slab: leaks can't be found without breaking tiles.", "Run supply lines along the outside walls in clamps or shallow chases, with a valve per room.", "P-101"),
         ("Overhead tank on a short stand: showers barely run.", "Put the tank on an 18 ft stand (about 9 ft of head over the shower roses) and add a small pressure pump for the showers.", "A-202, A-101"),
-        ("All waste going into the septic tank, which overloads it.", "Keep soil and grey water separate: soil to the septic, grey to a soak trench, with inspection chambers at every bend.", "P-101"),
+        ("All waste going into the septic tank, which overloads it.", "Keep soil and grey water separate: soil to the septic, grey to the soak pit or a road drain, with inspection chambers at every bend.", "P-101"),
         ("Drinking borewell water without testing it (fluoride is common around Guntur).", "Test the water; RO at the kitchen for drinking, and a softener if hardness exceeds 300 mg/l.", "P-101"),
         ("Sump lid at ground level: surface water and insects get in.", "Raise the sump cover 6 in above the paving with a locked, sealed lid, and keep it 20 ft+ from the septic.", "A-101"),
     ]),

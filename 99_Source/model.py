@@ -1,18 +1,18 @@
 """Kerala home, Phase 1: single data model used for every drawing and schedule.
-Plan coordinates in feet: x = from west boundary (0-70), y = from south boundary (0-27 plot, 27-37 north strip).
+Plan coordinates in feet: x = from west boundary (0-70), y = from south boundary (0-27 plot).
 Site: Guntur, Andhra Pradesh. Hot-dry summers (42-45 C), ~850-1000 mm rain (Jun-Oct, cyclonic bursts Oct-Nov),
 likely expansive black cotton soil, hard / high-fluoride groundwater, seismic zone III, high cyclone wind speeds.
 """
 PROJECT = {
     "name": "Kerala Home, Phase 1",
     "stage": "Draft for professional review",
-    "plot": "27 ft x 70 ft (+10 ft north strip owned, Phase 2)",
+    "plot": "27 ft x 75 ft (planned on this plot alone; more land may come later)",
     "location": "Guntur, Andhra Pradesh (agricultural land: conversion to be confirmed)",
     "road": "East",
     "rev": "B (pre-construction draft)",
     "date": "30 Oct 2026",
 }
-SITE = {"w": 27, "l": 75, "strip": 10}  # plot width (N-S), length (E-W), owned north strip, ft
+SITE = {"w": 27, "l": 75, "strip": 0}  # plot width (N-S), length (E-W), north strip (none for now), ft
 T = 0.75  # outer wall thickness, ft (9 in finished)
 
 ROOMS = [  # id, name, x1, x2, y1, y2, zone
@@ -87,25 +87,24 @@ CEILINGS = {
 }
 ROOF = {
     "pitch": 30,          # degrees
-    "overhang": 2.5,      # eaves beyond the outer wall centreline
-    "hip": (2.5, 69.5, 0.5, 27.5),     # eaves outline x1, x2, y1, y2
-    "gable": (59, 69.5, 11.5, 26.5),   # front mukhappu gable outline over the poomukham, ridge E-W
+    "overhang": 2.0,      # eaves beyond the outer wall centreline (2 ft keeps the north eave inside the 27 ft plot)
+    "hip": (3.0, 69.0, 1.0, 27.0),     # eaves outline x1, x2, y1, y2
+    "gable": (59, 69.0, 11.5, 26.5),   # front mukhappu gable outline over the poomukham, ridge E-W
     "gable_lift": 0.24,   # gable eaves sit just above the hip eaves
     "skylight": (42, 47, 12, 17),      # dining ventilator footprint (no glass)
     "vent_sill": 0.75,    # ventilator sill (top of upstand) above the ridge: 9 in minimum
     "vent_louvre": 2.0,   # louvre band height, all four sides (about 20 sq ft free vent area)
     "vent_overhang": 1.5, # hipped cap overhang beyond the louvres
-    "downpipes": [(2.5, 0.5), (27, 0.5), (49, 0.5), (69.5, 0.5), (2.5, 27.5), (27, 27.5), (49, 27.5), (69.5, 27.5)],
+    "downpipes": [(3.0, 1.0), (27, 1.0), (49, 1.0), (69.0, 1.0), (3.0, 26.9), (27, 26.9), (49, 26.9), (69.0, 26.9)],
 }
 
 # Site features: id, label, kind ("rect"/"circle"), geometry (x1, x2, y1, y2) or (x, y, r)
 SITE_FEATURES = [
     ("TANK", "Overhead tank on 18 ft stand (SW), ladder to roof", "rect", (0.4, 3.0, 6, 9)),
-    ("SEPTIC", "Septic tank, 2 chambers, laid east-west (NW, in north strip, 6 ft+ from the house)", "rect", (2.0, 9.0, 31.5, 35.0)),
-    ("SOAK", "Soak trench for septic effluent and grey water, 14 ft x 2 ft (length from a percolation test), 7 ft+ from the house", "rect", (10.0, 24.0, 33.0, 35.0)),
+    ("SEPTIC", "Septic tank, 2 chambers, sealed RCC, under the two-wheeler bay (front yard, SE), heavy-duty covers", "rect", (69.5, 74.3, 3.4, 6.6)),
+    ("SOAK", "Lined soak pit for septic effluent and grey water, front yard SE, as far from the house and sump as the plot allows (or treated outflow to a road drain)", "circle", (72.6, 9.6, 1.5)),
     ("SUMP", "Sump (NE)", "rect", (71, 74.5, 23.5, 26.5)),
     ("BORE", "Borewell (if any), NE", "circle", (70, 25.6, 0.5)),
-    ("RWH", "Rainwater recharge pit (sump overflow)", "circle", (71.5, 32, 1.5)),
     ("PERGOLA", "Creeper pergola for west shade (no big trees near walls)", "rect", (0.3, 4.2, 10.5, 24)),
     ("TULSI", "Tulsi thara", "circle", (71.2, 20.5, 0.6)),
     ("BAY", "Two-wheeler bay", "rect", (68, 74, 3, 11)),
@@ -115,7 +114,7 @@ SITE_FEATURES = [
     ("WSTEP", "Steps from the open wet area down to the walkway (4 risers of about 5 in, along the wall)", "rect", (48.6, 52.4, 0.5, 2.5)),
     ("APRON", "Plinth protection apron 3 ft, sloped away", "apron", (2, 70, 0, 28)),
 ]
-TREES = [(47, 33.5, 3), (61, 34.5, 2), (27, 34, 2.5), (37, 34.5, 2)]  # kept 8 ft+ from walls: roots dry out black cotton soil
+TREES = []  # kept 8 ft+ from walls: roots dry out black cotton soil
 JALI_SCREENS = []  # free-standing timber jali screens (none: living opens to the dining)
 FUTURE_WALLS = [("X", 11, 5, 14), ("Y", 14, 3, 11)]  # workstation walls: left out for now, can be built later
 
@@ -195,8 +194,6 @@ FURNITURE = [
     ("F51", "Bedroom 2", "Bedside table", 36.8, 37.8, 12.85, 13.85, 2, "Teak", "rect"),
     ("F22", "Bedroom 2", "Work table 4' x 2' with monitor (east wall, north of the bed; north window to the side)", 35.8, 37.8, 20.4, 24.4, 1, "Teak / ply, cable tray, monitor arm", "rect"),
     ("F23", "Bedroom 2", "Built-in wardrobe 6' with a mirror door (west wall, shared with the master: also a sound buffer)", 21.3, 23.3, 11.2, 17.2, 1, "Ply + laminate", "rect"),
-    ("F24", "Dining", "Dining table 5' x 3', 6-seat (under the ventilator)", 42.5, 47.5, 12.75, 15.75, 1, "Teak or rosewood", "rect"),
-    ("F25", "Dining", "Dining chair", 42.8, 43.9, 11.55, 12.55, 6, "Teak + cane", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 13.5, 16.5, 1, "Carved teak", "rect"),
     ("F28", "Sitting and serving area", "Built-in bench with storage drawers below", 21.3, 22.8, 3.3, 6.1, 1, "Teak top, ply drawers, on legs", "rect"),
     ("F29", "Wet area", "Utility sink counter (on the kitchen wall)", 51.0, 52.7, 3.4, 5.9, 1, "Kadappa / granite, SS sinks", "rect"),
@@ -208,8 +205,7 @@ FURNITURE = [
     ("F56", "Sitting and serving area", "Tall storage cupboard 5' x 2' (bedding, suitcases, festival vessels), loft above", 23.0, 28.0, 3.4, 5.4, 1, "Ply + laminate, full height", "rect"),
     ("F34", "Kitchen", "L-counter, south run", 53.4, 66.6, 3.4, 5.4, 1, "Granite top, ply carcass", "rect"),
     ("F35", "Kitchen", "L-counter, east run (hob centred 7'-6\" from the south wall face, on solid wall)", 64.6, 66.6, 5.4, 12.4, 1, "Granite top, cook faces east", "rect"),
-    ("F36", "Kitchen", "Refrigerator space (kitchen north wall, behind the pooja, door facing south)", 57.5, 60.0, 10.2, 12.6, 1, "Double-door, 2'6\" wide", "rect"),
-    ("F55", "Kitchen", "Tall pantry 4'-5\" x 2' on the north wall (provisions, rice, vessels)", 60.1, 64.5, 10.6, 12.6, 1, "Ply + laminate, full height with loft", "rect"),
+    ("F36", "Dining", "Refrigerator space (dining alcove beside the kitchen door, against the wet-area wall, door facing north)", 48.3, 50.8, 9.35, 11.75, 1, "Double-door, 2'6\" wide", "rect"),
     ("F38", "Dining bay", "Sofa 5'-6\" (2-3 seats) facing west to the TV", 47.0, 49.7, 19.0, 24.5, 1, "Teak frame, cotton cushions", "rect"),
     ("F39", "Dining bay", "Coffee table 3'6\" x 2'", 43.8, 45.8, 19.8, 23.3, 1, "Teak", "rect"),
     ("F53", "Dining bay", "TV unit 4'-5\" on Bedroom 2's east wall (55-65 in TV wall-mounted above)", 38.3, 39.6, 19.8, 24.2, 1, "Teak, low, open shelves", "rect"),
@@ -221,8 +217,7 @@ FURNITURE = [
 ]
 # extra placements (same item, additional copies drawn on plan)
 EXTRA_DRAW = [
-    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 36.8, 37.8, 19.15, 20.15), ("F18", 41.8, 42.95, 6.0, 6.15), ("F25", 44.5, 45.6, 11.55, 12.55), ("F25", 46.2, 47.3, 11.55, 12.55),
-    ("F25", 42.8, 43.9, 15.95, 16.95), ("F25", 44.5, 45.6, 15.95, 16.95), ("F25", 46.2, 47.3, 15.95, 16.95),
+    ("F11", 19.3, 20.3, 17.3, 18.3), ("F51", 36.8, 37.8, 19.15, 20.15), ("F18", 41.8, 42.95, 6.0, 6.15),
 ]
 
 FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
@@ -239,18 +234,20 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
 ]
 
 OPEN_ISSUES = [
+    ("Finishes", "Colour and material scheme to choose: five looks to compare in the 3D model (As drawn, Classic Kerala refined, Chettinad ochre, Modern tropical, Lime and green); decide before ordering floor tiles, paint and door finishes", "Owner", "Open"),
     ("Land", "Front yard is now 8 ft (house 62 ft long): confirm the front setback allowed for this plot and road width before finalising; fall back to a 60 ft house if 10 ft is required", "Architect", "Open"),
     ("Layout", "TV on Bedroom 2's east wall facing the dining bay: confirm screen size (55-65 in at about 9 ft) and a concealed HDMI/data conduit from the unit", "Owner", "Open"),
     ("Land", "Agricultural land: confirm conversion to non-agricultural use with the gram panchayat / collector (AP repealed the NALA Act in 2025; new process to be confirmed)", "Owner / surveyor", "Open"),
     ("Land", "Building permission route (panchayat vs DTCP / APCRDA via APDPMS) and setbacks under AP Building Rules 2017", "Architect", "Open"),
-    ("Land", "Plot 27 ft x 75 ft (length to confirm by survey): north wall is 2 ft from the plot line and eaves overhang the owned north strip; septic and soak trench sit in the strip", "Architect", "Open"),
+    ("Land", "Plot 27 ft x 75 ft (length to confirm by survey), planned without the north strip: north wall 2 ft from the plot line, eaves cut to 2 ft so they stay inside the plot (gutters both sides); septic tank and soak pit in the front yard", "Architect", "Open"),
     ("Soil", "Soil test (bore holes to 3 m min): black cotton soil is common in Guntur. Foundation type (isolated footings below active zone, under-reamed piles, or soil replacement) depends on it", "Structural engineer", "Open"),
     ("Structure", "RCC frame with AAC infill: columns, plinth beam, lintel band, ring beam; steel truss with cyclone tie-downs", "Structural engineer", "Open"),
     ("Security", "Wet area is open to the walkway: lockable steel/WPC kitchen-to-wet-area door, compound wall and gate at the back; optional MS grille shutter across the wet area opening", "Owner / architect", "Open"),
     ("Services", "Groundwater: test TDS, hardness, fluoride. Plan RO for drinking and a softener for bathrooms if hardness is high", "Plumber / owner", "Open"),
-    ("Services", "Septic tank size and soak trench length (percolation test); keep soak trenches and gardens 6 ft+ from foundations in expansive soil", "Engineer", "Open"),
+    ("Services", "Septic tank size and soak pit size (percolation test); keep soak pits and gardens as far from foundations as the plot allows in expansive soil", "Engineer", "Open"),
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
-    ("Phase 2", "Phase 2 on the north strip will block north light and sits on the septic: plan the split now", "Architect", "Deferred by owner"),
+    ("Future land", "If the 10 ft north strip is bought later: move the soak pit there (6 ft+ from the house), and plan any Phase 2 so the north windows keep their light", "Owner / architect", "Deferred by owner"),
+    ("Services", "Soak pit in the front yard is only about 5 ft from the house and 13 ft from the sump in black cotton soil: prefer a sealed septic tank with treated outflow to a road or panchayat drain, or a bio-digester tank; confirm with the engineer and the panchayat", "Engineer / panchayat", "Open"),
     ("Vastu", "Bed head east (master), NW ensuite, Bedroom 2's attached bath in its north-west corner on the north wall (north-west of the plot centre), common bath south of the plot centre beside the wet area (outside the central zone), dining at the plot centre, pooja in the living's south-east corner back to back with the kitchen, opening west (devotees face east), shoe cupboard between the pooja and the main door (behind the pooja's solid north wall), DB on the dining face of Bedroom 2's east wall", "Vastu consultant", "To confirm"),
     ("Climate", "Roof heat: insulation, ventilated attic, ventilator lantern louvres and shutters; ODU positions on shaded walls", "Architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
@@ -269,6 +266,9 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Twenty-fourth review: planned on the 27 ft plot alone (north strip dropped for now): roof eaves cut from 2'-6\" to 2'-0\" so the north eave stays inside the plot line, septic tank moved under the two-wheeler bay in the front yard with a lined soak pit beside it, all drains rerouted along the south walkway to the front, rainwater to the sump with overflow to the road; north-strip trees and recharge pit removed.",
+    "Twenty-third review: the fridge moves out of the kitchen into the dining alcove beside the kitchen door, against the wet-area wall; the kitchen's north wall is now free.",
+    "Twenty-second review: the kitchen's tall pantry and the dining table and chairs are removed at the owner's request; the dining space under the ventilator stays open (the pendant light and points stay for a table later).",
     "Twenty-first review: the open hall becomes three zones: family TV lounge in the dining bay (5'-6\" sofa facing the TV), dining under the ventilator moved 9 in south (about 2 ft behind the chairs on both sides), and guest sitting by the main door with a 4'-6\" window diwan (shortened after the walk-through showed a 1'-6\" pinch at the shoe cupboard) and an armchair under the living's north window; a clear walk of about 4'-11\" from the main door to the dining and kitchen, pooja front kept clear.",
     "Twentieth review: Bedroom 2's bed moves to the east wall, head east, leaving an 8 x 14 ft open floor from the door to the bath and window; wardrobe to the west wall (sound buffer to the master), work table north of the bed, AC on the bath's outer wall; dresser dropped (mirror on the wardrobe).",
     "Nineteenth review: with Bedroom 2 at 17 ft, its bed turns head-south in the middle of the room (2 ft+ on both sides, under the jali); Bath 2 grows to 7' x 7' (6'-7\" x 6'-4\" clear) with a 3' x 3'-6\" wet zone, basin in the dry zone and the door on its east wall; a dresser takes the west wall; work table and wardrobe stay on the east wall.",
@@ -319,7 +319,7 @@ SPEC = [
     ("Roof", "Tile fixing", "Clip or screw every tile at eaves, verges, ridges and hips, and every 3rd row elsewhere; ridges bedded and pointed", "Loose tiles fly in cyclones"),
     ("Roof", "Ventilation", "Ridge / gable vents with bird and insect mesh; soffit vents at eaves", "Flushes hot air from the attic"),
     ("Roof", "Dining ventilator", "Steel frame bolted to the truss; hipped tiled cap at 30 deg, 1'-6\" overhang; 45 deg timber or aluminium louvres with 4 in lap; SS 304 mesh about 1.2 mm (18 x 16) in a sealed continuous frame; inner shutters with EPDM seals and a winding opener at 5 ft; 9 in upstand with flashing; fibre-cement lined, insulated shaft", "Lets hot air out, keeps out rain, mosquitoes and attic dust, and closes for AC"),
-    ("Roof", "Gutters and downpipes", "150 mm half-round gutters with leaf guard, 100 mm downpipes at 8 points, to sump filter and recharge pit", "Short heavy bursts; protects the plinth"),
+    ("Roof", "Gutters and downpipes", "150 mm half-round gutters with leaf guard, 100 mm downpipes at 8 points, to the sump filter, overflow to the road drain", "Short heavy bursts; protects the plinth"),
     ("Openings", "Windows", "Hardwood or UPVC frames; mosquito mesh on every opening; MS grill for security", "Mosquitoes; ground-floor security"),
     ("Openings", "Sills and sunshades", "External sills sloped 1:10 with drip groove; 2 ft sunshades with drip groove; 18 in projecting drip under the jali wall", "Stops staining and water entry"),
     ("Openings", "Vents above inner doors", "Pooja: open jali; bedrooms and bathrooms: none (the workstation has no door for now). 7'-6\" to 9'-0\" above the lintel band", "Air moves with doors shut where privacy allows; bedrooms rely on their north windows, fans and AC"),
@@ -386,13 +386,13 @@ ELECTRICAL = [
     # Wet area, wash link, kitchen
     ("L", 50, 5.5, "R13", "weatherproof"), ("P16", 48.5, 8.7, "R13", "washing machine"), ("P", 52.6, 6.0, "R13", "utility, weatherproof"),
     ("L", 62, 8, "R15", ""), ("WL", 61, 3.5, "R15", "under-cabinet"), ("WL", 66.5, 9.6, "R15", "under-cabinet"),
-    ("CH", 66.6, 7.5, "R15", "3 ft chimney on solid wall, duct out through the east wall"), ("P16", 58.75, 12.7, "R15", "refrigerator, behind the fridge"), ("PC", 54.5, 3.5, "R15", ""),
+    ("CH", 66.6, 7.5, "R15", "3 ft chimney on solid wall, duct out through the east wall"),  ("PC", 54.5, 3.5, "R15", ""),
     ("PC", 58, 3.5, "R15", "microwave / OTG"), ("PC", 63.5, 3.5, "R15", "mixer"), ("PC", 66.6, 5.6, "R15", ""), ("PC", 66.6, 9.6, "R15", ""),
     ("PC", 59.3, 3.5, "R15", "RO purifier, by sink"), ("S", 53.4, 9.0, "R15", "beside the entry, latch side"),
     # Living, poomukham
     ("F", 55, 19, "R16", "long downrod"), ("L", 54.2, 22.8, "R16", "over the diwan"), ("L", 55, 16, "R16", ""),
     ("P", 48.2, 18.8, "R19", "floor socket, sofa end"), ("P", 51.0, 20.3, "R16", "floor socket, armchair and diwan (lamp, charger)"),
-    ("S", 60.6, 21.0, "R16", "main switch at door"), ("DB", 38.4, 12.6, "R10", "dining face of Bedroom 2's east wall, by the passage; dry wall away from the pooja and wet area"), ("U", 38.4, 14.6, "R10", "router (central)"),
+    ("S", 60.6, 21.0, "R16", "main switch at door"), ("DB", 38.4, 12.6, "R10", "dining face of Bedroom 2's east wall, by the passage; dry wall away from the pooja and wet area"), ("P16", 49.55, 9.4, "R10", "refrigerator, behind the fridge (dining alcove)"), ("U", 38.4, 14.6, "R10", "router (central)"),
     ("L", 64, 16, "R17", ""), ("L", 64, 22, "R17", ""), ("BELL", 61.4, 20.4, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 20.9, "R17", ""),
     # Site
@@ -418,7 +418,7 @@ PLUMBING = [
     ("SK", 60.5, 3.5, "R15", "single bowl + drainboard, under window"), ("RO", 59.3, 3.5, "R15", ""), ("FT", 64, 12.5, "R15", "cleaning trap"),
     ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 4.4, 10, "SITE", "garden tap"), ("TAP", 71.2, 22.0, "SITE", "tulsi / garden tap"),
     ("IC", 3.6, 19.5, "SITE", "IC-1 soil"), ("IC", 46.8, 1.8, "SITE", "IC-2 soil"), ("IC", 3.6, 26.6, "SITE", "IC-3 soil"), ("IC", 12, 26.6, "SITE", "IC-4 soil"),
-    ("GT", 60.5, 1.0, "SITE", "grease trap"), ("IC", 49.8, 1.0, "SITE", "IC-5 grey"), ("IC", 3.6, 1.8, "SITE", "IC-6 soil bend"),
+    ("GT", 60.5, 1.0, "SITE", "grease trap"), ("IC", 49.8, 1.0, "SITE", "IC-5 grey"), ("IC", 3.6, 1.8, "SITE", "IC-6 soil bend"), ("IC", 68.6, 1.8, "SITE", "IC-12 soil, to the septic tank"), ("IC", 73.2, 1.0, "SITE", "IC-13 grey, to the soak pit"),
     ("IC", 4.2, 1.0, "SITE", "IC-7 grey"), ("IC", 4.2, 26.0, "SITE", "IC-8 grey"), ("IC", 9.6, 26.0, "SITE", "IC-9 ensuite grey"),
     ("IC", 22.5, 26.6, "SITE", "IC-10 Bath 2 soil"), ("IC", 26.4, 26.0, "SITE", "IC-11 Bath 2 grey"),
 ]
@@ -430,16 +430,17 @@ PIPES = [
     ("supply", [(4.4, 21), (4.4, 25.7), (27.0, 25.7), (27.0, 25.4)]),
     ("supply", [(47.0, 2.3), (47.0, 3)]), ("supply", [(41.9, 2.3), (41.9, 3)]),
     ("supply", [(66, 2.3), (68, 2.3), (68, 13.6), (69.6, 13.6)]),
-    ("soil", [(6.3, 19.5), (3.6, 19.5), (3.6, 31.5)]), ("soil", [(9.0, 33.5), (10.0, 33.5)]),
-    ("soil", [(22.5, 24.0), (22.5, 26.6), (3.6, 26.6)]),
-    ("soil", [(47.6, 7.35), (46.8, 7.35), (46.8, 1.8), (3.6, 1.8), (3.6, 19.5)]),
-    ("grey", [(60.5, 3.5), (60.5, 1.0), (4.2, 1.0), (4.2, 26.0), (4.2, 29.4), (10, 29.4), (10, 30.5), (10.6, 33.0)]),
+    ("soil", [(6.3, 19.5), (3.6, 19.5), (3.6, 1.8)]),
+    ("soil", [(22.5, 24.0), (22.5, 26.6), (3.6, 26.6), (3.6, 19.5)]),
+    ("soil", [(47.6, 7.35), (46.8, 7.35), (46.8, 1.8)]),
+    ("soil", [(3.6, 1.8), (68.6, 1.8), (70.2, 3.4)]), ("soil", [(72.0, 6.6), (72.3, 8.1)]),
+    ("grey", [(60.5, 3.5), (60.5, 1.0)]), ("grey", [(4.2, 26.0), (4.2, 1.0), (73.2, 1.0), (73.2, 8.2)]),
     ("grey", [(49.8, 3.6), (49.8, 1.0)]), ("grey", [(40.2, 4.3), (40.2, 1.0)]), ("grey", [(51.85, 4.6), (49.8, 3.6)]), ("grey", [(49.35, 7.85), (49.8, 3.6)]), ("grey", [(47.6, 4.8), (47.0, 4.8), (47.0, 1.0)]), ("grey", [(46.3, 6.0), (47.0, 4.8)]), ("grey", [(43.2, 3.6), (43.2, 1.0)]),
-    ("grey", [(22.35, 18.4), (24.6, 19.7), (26.3, 24.3), (26.4, 26.0), (26.4, 29.4), (10, 29.4), (10, 30.5)]),
-    ("grey", [(9.6, 20.2), (9.6, 26.0), (9.6, 29.4)]), ("grey", [(8.25, 24.5), (9.6, 24.5)]),
-    ("rain", [(2.5, 0.5), (74.6, 0.5), (74.6, 23), (74.5, 25)]),
-    ("rain", [(2.5, 27.5), (2.5, 28.2), (69.5, 28.2), (71.5, 32)]), ("rain", [(69.5, 27.5), (69.5, 28.2)]),
-    ("rain", [(71, 26.5), (71.5, 30.5)]),
+    ("grey", [(22.35, 18.4), (24.6, 19.7), (26.3, 24.3), (26.4, 26.0), (4.2, 26.0)]),
+    ("grey", [(9.6, 20.2), (9.6, 26.0)]), ("grey", [(8.25, 24.5), (9.6, 24.5)]),
+    ("rain", [(3.0, 0.5), (74.6, 0.5), (74.6, 23), (74.5, 25)]),
+    ("rain", [(3.0, 26.9), (70.5, 26.9), (71.2, 26.2)]),
+    ("rain", [(74.5, 24.0), (75.3, 24.0)]),
 ]
 
 # Hold points: inspections before work is covered up. stage, check, who signs off

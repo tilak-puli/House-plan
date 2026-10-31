@@ -14,7 +14,7 @@ def sheet_cover(c, index):
     s.note("Project data", 20 * mm, y, 12, INK, "Helvetica-Bold"); y -= 7 * mm
     carpet = sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
-            ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft, + {SITE['strip']}' north strip owned (Phase 2)"),
+            ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft (planned on this plot alone)"),
             ("Built footprint", "62' x 22' = 1,364 sq ft (wall centrelines)"),
             ("Carpet area", f"{carpet:,.0f} sq ft clear, incl. poomukham and open wet area"),
             ("Construction", "RCC frame, AAC walls, steel-truss roof with clay tiles"),
@@ -83,12 +83,13 @@ def sheet_site(c):
     site_features(pl)
     pl.text("SINGLE-STOREY HOUSE, 62' x 22'", 35, 15.5, 8, "Helvetica-Bold")
     pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}  (dashed: roof eaves; dotted: 3 ft apron)", 35, 12.3, 6.5, color=GREY)
-    pl.text(f"NORTH STRIP, {SITE['strip']}' (OPEN NOW, PHASE 2 SITE)", 35, W + 1.6, 6.5, color=GREY)
+    if SITE["strip"]: pl.text(f"NORTH STRIP, {SITE['strip']}' (OPEN NOW, PHASE 2 SITE)", 35, W + 1.6, 6.5, color=GREY)
     pl.text("3' SERVICE WALKWAY", 35, 1.5, 6, color=GREY)
     pl.text("FRONT YARD", 71.5, 12.3, 6, color=GREY)
     pl.level(71, 17.6, 0)
     pl.hdim(0, 5, -3); pl.hdim(5, 67, -3); pl.hdim(67, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
-    pl.vdim(0, 3, -3); pl.vdim(3, 25, -3); pl.vdim(25, W, -3); pl.vdim(0, W, -6.5, f"{W}'-0\" PLOT"); pl.vdim(W, W + SITE["strip"], -6.5)
+    pl.vdim(0, 3, -3); pl.vdim(3, 25, -3); pl.vdim(25, W, -3); pl.vdim(0, W, -6.5, f"{W}'-0\" PLOT")
+    if SITE["strip"]: pl.vdim(W, W + SITE["strip"], -6.5)
     pl.north(PW - 105 * mm, PH - 40 * mm)
     pl.scalebar(250 * mm, 75 * mm)
     notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES]
@@ -284,12 +285,12 @@ def sheet_roof(c):
     pl.text("ridge vent with mesh", 25, yc - 0.9, 4.6, color=GREY)
     pl.text("LADDER", 1.7, 9.8, 4.6)
     pl.hdim(x1, x2, -1.5, size=5); pl.vdim(y1, y2, 66.8, size=5)
-    pl.hdim(x1, 5, 29.5, "2'-6\"", 4.6)
+    pl.hdim(x1, 5, 28.5, "2'-0\"", 4.6)
     tips = [
         "Every tile along eaves, verges, hips and ridges clipped or screwed; every third row elsewhere. Cyclone winds lift loose tiles first at the edges.",
         "Trusses bolted to the RCC ring beam with holding-down bolts; purlins cleated, not just welded tacks.",
-        "Eaves 2'-6\" beyond the wall line with a drip edge so water falls clear of the wall and windows.",
-        "Gutters at both long eaves, downpipes at 8 points into the sump filter and recharge pit; none discharging onto bare soil by the walls.",
+        "Eaves 2'-0\" beyond the wall line (kept inside the 27 ft plot on the north) with a drip edge and gutters, so water falls clear of the wall and windows.",
+        "Gutters at both long eaves, downpipes at 8 points into the sump filter, overflow to the road drain; none discharging onto bare soil by the walls.",
         "Ventilator: hipped tiled cap, 45 deg louvres with mesh, sealed inner shutters, 9 in upstand with flashing (detail on A-503).",
         "Valleys at the front gable: 600 mm wide GI / aluminium valley gutter under the tiles.",
         "Attic vented at the ridge and soffits with insect mesh; 50 mm insulation on the deck.",

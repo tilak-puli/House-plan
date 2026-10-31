@@ -6,7 +6,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 1. The plot is agricultural land. What conversion is needed now that AP has repealed the NALA Act (2025): gram panchayat, collector, or both? What documents and fees?
 2. Which authority grants building permission for this site (panchayat, DTCP or APCRDA, via APDPMS)?
 3. What setbacks apply to a 27 ft x 75 ft plot under the AP Building Rules 2017, and what happens if we follow local practice (3 ft south, 2 ft north)?
-4. Can the 10 ft north strip be used for the septic tank and soak pit now, and how should Phase 2 be planned around them?
+4. With no north strip, the septic tank and soak pit sit in the 8 ft front yard: is a sealed tank with treated outflow to a road or panchayat drain allowed here, or a bio-digester, instead of a soak pit near the house?
 5. Survey the plot and road levels: is a 2 ft plinth above finished ground enough?
 
 ## Architect / Sthaayi Design Lab
@@ -14,7 +14,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 2. Roof: front gable plus hip massing, 30 degree pitch, valley gutters, and the ventilator over the dining (louvres, mesh, closable shutters, no glass). Is borrowed light enough for the dining and hall?
 3. Heat: is 50 mm deck insulation plus a ventilated attic enough, or should the bedroom false ceilings carry more?
 4. Can the poomukham, jalis and gable vents be detailed in your tropical style, with Guntur-available materials?
-5. How should Phase 2 sit so the Phase 1 north windows keep their light?
+5. If more land is added to the north later, how should a Phase 2 sit so the Phase 1 north windows keep their light?
 
 ## Structural engineer
 1. Soil test scope (bore holes, swell test). Foundation type for black cotton soil: footing depth, under-reamed piles, or soil replacement?
@@ -32,7 +32,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 1. Septic and soak pit sizes and distances; is a separate grey-water soak pit right for this soil?
 2. Drain routes and inspection chambers as drawn on P-101; vent pipes.
 3. Water test results: RO and softener sizing; pressure pump for showers.
-4. Rainwater: sump filter, overflow to the recharge pit, and AP rainwater-harvesting requirements.
+4. Rainwater: sump filter, overflow to the road drain, and AP rainwater-harvesting requirements (can a recharge pit go in the front yard, or is the road drain acceptable?).
 
 ## Vastu consultant
 1. Master bed head east (not south): acceptable?

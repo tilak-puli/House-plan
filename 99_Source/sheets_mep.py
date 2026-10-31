@@ -88,8 +88,8 @@ def sheet_power(c):
 
 PIPE_STYLE = {"supply": (BLUE, None, 0.8, "Water supply (CPVC), from overhead tank"),
               "soil": (BROWN, None, 1.0, "Soil line (uPVC 110 mm) to septic tank"),
-              "grey": (ACC, (3, 1.5), 0.9, "Grey water (uPVC 75 mm) to soak trench"),
-              "rain": (colors.HexColor("#5AA0D8"), (1, 1.2), 0.8, "Rainwater to sump filter / recharge pit")}
+              "grey": (ACC, (3, 1.5), 0.9, "Grey water (uPVC 75 mm) to the soak pit"),
+              "rain": (colors.HexColor("#5AA0D8"), (1, 1.2), 0.8, "Rainwater to sump filter, overflow to road")}
 
 
 def sheet_plumbing(c):
@@ -128,8 +128,8 @@ def sheet_plumbing(c):
         "Supply pipes run on the outside of walls in clamps or shallow chases, never under the floor slab.",
         "Soil and grey water kept separate; inspection chamber at every bend and junction; 1:40 falls on 110 mm, 1:30 on 75 mm.",
         "Grease trap before the kitchen line joins anything; vent pipe from each WC stack above the eaves.",
-        "Soak trench and septic in the north strip, 6 ft+ from walls: wet black cotton soil swells and cracks the house.",
-        "Rain from both gutters to the sump through a first-flush filter; overflow to a recharge pit.",
+        "Septic tank (sealed) and a lined soak pit in the front yard, as far from the house and sump as the plot allows; wet black cotton soil swells and cracks the house, so prefer treated outflow to a road drain if one is available.",
+        "Rain from both gutters to the sump through a first-flush filter; overflow to the road drain.",
         "Test the bore / supply water: RO for drinking, softener for bathrooms if hardness is high; matt or PVD fittings.",
     ]
     s.bullets(tips, 205 * mm, 74 * mm, 125 * mm, 6.4, title="Plumbing notes")
