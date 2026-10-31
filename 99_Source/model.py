@@ -109,7 +109,7 @@ SITE_FEATURES = [
     ("TULSI", "Tulsi thara", "circle", (71.2, 20.5, 0.6)),
     ("BAY", "Two-wheeler bay", "rect", (68, 74, 3, 11)),
     ("GATE", "Gate", "rect", (75, 75.5, 15, 22)),
-    ("STEPS", "Entrance steps (3 risers), between the pillars, SS handrail one side", "rect", (67.375, 69.0, 20.8, 24.0)),
+    ("STEPS", "Entrance steps (3 risers), between the pillars, SS handrail one side", "rect", (67.375, 69.0, 17.3, 20.9)),
     ("FEET", "Foot-wash tap + drain", "circle", (69.6, 13.6, 0.35)),
     ("WSTEP", "Steps from the open wet area down to the walkway (4 risers of about 5 in, along the wall)", "rect", (48.6, 52.4, 0.5, 2.5)),
     ("APRON", "Plinth protection apron 3 ft, sloped away", "apron", (2, 70, 0, 28)),
@@ -120,7 +120,7 @@ FUTURE_WALLS = [("X", 11, 5, 14), ("Y", 14, 3, 11)]  # workstation walls: left o
 
 # Doors: id, axis, c, s, e, swing (+1 toward +y/+x, -1 toward -y/-x, 0 = sliding), name, type
 DOORS = [
-    ("D01", "Y", 61, 21.0, 24.0, -1, "Main entrance", "Teak panelled, double leaf"),
+    ("D01", "Y", 61, 17.6, 20.6, -1, "Main entrance (centred under the front gable)", "Teak panelled, double leaf"),
     ("D05", "Y", 11.5, 19, 21.5, +1, "Ensuite (opens outward)", "Flush, waterproof (WPC/FRP)"),
     ("D06", "Y", 21, 6.4, 8.9, -1, "Master suite entry, from the sitting area into the master bay", "Teak panelled, single leaf"),
     ("D10", "X", 10.5, 33.6, 36.6, +1, "Bedroom 2 (from the sitting area, east end)", "Flush, teak veneer"),
@@ -167,7 +167,7 @@ OTHER_OPENINGS = [
     ("SK1", "Ventilator over dining, 5 x 5 ft, no glass: hipped tiled cap at 30 deg with 1'-6\" overhang; 2 ft band of 45 deg louvres on all four sides; SS insect mesh behind; sealed inner shutters on a winding opener; 9 in upstand; lined shaft to the dining ceiling (see A-503)"),
     ("GV1-3", "Three glazed/jali vents in front gable (mukhappu), morning light into living"),
 ]
-PILLARS = [(66.4, 13.6), (66.4, 17.0), (66.4, 20.4), (66.4, 24.4), (63.5, 24.4), (61.6, 24.4)]
+PILLARS = [(66.4, 13.6), (66.4, 16.4), (66.4, 21.8), (66.4, 24.4), (63.5, 24.4), (61.6, 24.4)]
 
 # Furniture: id, room, item, x1, x2, y1, y2, qty, material / spec, shape ("rect"|"circle"|"wc"|"glass")
 FURNITURE = [
@@ -210,9 +210,9 @@ FURNITURE = [
     ("F39", "Dining bay", "Coffee table 3'6\" x 2'", 43.8, 45.8, 19.8, 23.3, 1, "Teak", "rect"),
     ("F53", "Dining bay", "TV unit 4'-5\" on Bedroom 2's east wall (55-65 in TV wall-mounted above)", 38.3, 39.6, 19.8, 24.2, 1, "Teak, low, open shelves", "rect"),
     ("F40", "Living", "Armchair at the west end of the window diwan", 49.9, 51.7, 20.6, 22.4, 1, "Cane / teak", "circle"),
-    ("F58", "Living", "Window diwan 4'-6\" x 2'-6\" under the north window, drawers below (guest seating, day bed); stops 3 ft short of the shoe cupboard so the way in from the main door stays clear", 51.9, 56.4, 22.0, 24.6, 1, "Teak frame, cotton mattress and bolsters", "rect"),
-    ("F52", "Living", "Shoe cupboard 3'-3\" beside the main door (closed shutters, louvred for air)", 59.4, 60.6, 17.4, 20.6, 1, "Ply + laminate, 14 in deep", "rect"),
-    ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\"", 62.2, 65.7, 17.4, 18.9, 1, "Teak, chains to beam", "rect"),
+    ("F58", "Living", "Window diwan 6' x 2'-6\" under the north window, drawers below (guest seating, day bed); out of the line of the main door", 51.9, 57.9, 22.0, 24.6, 1, "Teak frame, cotton mattress and bolsters", "rect"),
+    ("F52", "Living", "Shoe cupboard 3'-3\" on the east wall just north of the main door (closed shutters, louvred for air)", 59.4, 60.6, 21.2, 24.4, 1, "Ply + laminate, 14 in deep", "rect"),
+    ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, clear of the entrance", 62.2, 65.7, 21.9, 23.4, 1, "Teak, chains to beam", "rect"),
     ("F42", "Poomukham (verandah)", "Arugu seat (built-in, south end)", 65.8, 67, 13.8, 16.2, 1, "Laterite base, teak top", "rect"),
 ]
 # extra placements (same item, additional copies drawn on plan)
@@ -248,7 +248,7 @@ OPEN_ISSUES = [
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
     ("Future land", "If the 10 ft north strip is bought later: move the soak pit there (6 ft+ from the house), and plan any Phase 2 so the north windows keep their light", "Owner / architect", "Deferred by owner"),
     ("Services", "Soak pit in the front yard is only about 5 ft from the house and 13 ft from the sump in black cotton soil: prefer a sealed septic tank with treated outflow to a road or panchayat drain, or a bio-digester tank; confirm with the engineer and the panchayat", "Engineer / panchayat", "Open"),
-    ("Vastu", "Bed head east (master), NW ensuite, Bedroom 2's attached bath in its north-west corner on the north wall (north-west of the plot centre), common bath south of the plot centre beside the wet area (outside the central zone), dining at the plot centre, pooja in the living's south-east corner back to back with the kitchen, opening west (devotees face east), shoe cupboard between the pooja and the main door (behind the pooja's solid north wall), DB on the dining face of Bedroom 2's east wall", "Vastu consultant", "To confirm"),
+    ("Vastu", "Bed head east (master), NW ensuite, Bedroom 2's attached bath in its north-west corner on the north wall (north-west of the plot centre), common bath south of the plot centre beside the wet area (outside the central zone), dining at the plot centre, pooja in the living's south-east corner back to back with the kitchen, opening west (devotees face east), shoe cupboard on the east wall north of the main door, DB on the dining face of Bedroom 2's east wall", "Vastu consultant", "To confirm"),
     ("Climate", "Roof heat: insulation, ventilated attic, ventilator lantern louvres and shutters; ODU positions on shaded walls", "Architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
 ]
@@ -266,6 +266,7 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Twenty-fifth review: main door moved 3'-4\" south (y 17'-7\" to 20'-7\"), centred under the front gable and opening straight onto the 5 ft walk between the pooja and the diwan; shoe cupboard to its north on the east wall; window diwan back to 6 ft along the north window, out of the door's line; steps, middle verandah pillars and the swing realigned.",
     "Twenty-fourth review: planned on the 27 ft plot alone (north strip dropped for now): roof eaves cut from 2'-6\" to 2'-0\" so the north eave stays inside the plot line, septic tank moved under the two-wheeler bay in the front yard with a lined soak pit beside it, all drains rerouted along the south walkway to the front, rainwater to the sump with overflow to the road; north-strip trees and recharge pit removed.",
     "Twenty-third review: the fridge moves out of the kitchen into the dining alcove beside the kitchen door, against the wet-area wall; the kitchen's north wall is now free.",
     "Twenty-second review: the kitchen's tall pantry and the dining table and chairs are removed at the owner's request; the dining space under the ventilator stays open (the pendant light and points stay for a table later).",
@@ -390,11 +391,11 @@ ELECTRICAL = [
     ("PC", 58, 3.5, "R15", "microwave / OTG"), ("PC", 63.5, 3.5, "R15", "mixer"), ("PC", 66.6, 5.6, "R15", ""), ("PC", 66.6, 9.6, "R15", ""),
     ("PC", 59.3, 3.5, "R15", "RO purifier, by sink"), ("S", 53.4, 9.0, "R15", "beside the entry, latch side"),
     # Living, poomukham
-    ("F", 55, 19, "R16", "long downrod"), ("L", 54.2, 22.8, "R16", "over the diwan"), ("L", 55, 16, "R16", ""),
+    ("F", 55, 19, "R16", "long downrod"), ("L", 54.9, 22.8, "R16", "over the diwan"), ("L", 55, 16, "R16", ""),
     ("P", 48.2, 18.8, "R19", "floor socket, sofa end"), ("P", 51.0, 20.3, "R16", "floor socket, armchair and diwan (lamp, charger)"),
     ("S", 60.6, 21.0, "R16", "main switch at door"), ("DB", 38.4, 12.6, "R10", "dining face of Bedroom 2's east wall, by the passage; dry wall away from the pooja and wet area"), ("P16", 49.55, 9.4, "R10", "refrigerator, behind the fridge (dining alcove)"), ("U", 38.4, 14.6, "R10", "router (central)"),
-    ("L", 64, 16, "R17", ""), ("L", 64, 22, "R17", ""), ("BELL", 61.4, 20.4, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
-    ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 20.9, "R17", ""),
+    ("L", 64, 16, "R17", ""), ("L", 64, 22, "R17", ""), ("BELL", 61.4, 21.0, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
+    ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 21.5, "R17", ""),
     # Site
     ("MTR", 74.6, 23.0, "SITE", "meter in compound wall by gate"), ("GL", 74.6, 14.5, "SITE", "gate light"),
     ("EP", 68.2, 1.5, "SITE", "earth pit 1"), ("EP", 73.5, 1.5, "SITE", "earth pit 2"), ("GL", 2.5, 8, "SITE", "rear garden"),

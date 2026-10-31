@@ -53,12 +53,12 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Wet area (open on the south to the walkway) | 5' x 6' | 4'-6" x 5'-8" |
 | Sitting and serving area, open to the hall (storage bench, 5 ft tall storage cupboard, 6 ft serving counter, hand-wash basin at its east end just outside the common bath; bedrooms open off it; the common bath opens off its east end) | 20'-6" x 7'-6" | 20'-1" x 6'-11" (about 4'-11" clear in front of the counter) |
 | Kitchen (SE, 3 ft hinged entry on the west straight off the dining alcove; fridge just outside in the dining alcove, beside the kitchen door; hob and chimney on solid east wall with a 2 ft window at its north end; south counter runs the full length) | 14' x 10' | 13'-5" x 9'-3" |
-| Living (sloped ceiling; shoe cupboard beside the main door, 3 ft clear walk from the door through to the dining and kitchen; guest sitting with a 4'-6" window diwan (drawers below, day bed), 3 ft clear of the shoe cupboard and an armchair under the north window; clear walk of about 4'-11" from the main door to the dining; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
+| Living (sloped ceiling; main door opens straight onto a 5 ft walk between the pooja and the diwan to the dining and kitchen; shoe cupboard on the east wall just north of the door; guest sitting with a 6 ft window diwan (drawers below, day bed) and an armchair along the north window, out of the door's line; the TV is in the dining bay) | 12' x 12' | 11'-4" x 11'-3" |
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **62' x 22' = 1,364 sq ft** | **~1,240 sq ft clear** (incl. poomukham and wet area) |
 
 ## Vastu notes (confirm with consultant)
-- Kitchen SE, cook faces east. Main entry at the north end of the east face.
+- Kitchen SE, cook faces east. Main entry on the east face, north of the plot centre, centred under the front gable.
 - SW heavy: workstation with full-height bookshelves and the master wardrobe bay; overhead tank SW.
 - Toilets: NW (master ensuite), Bedroom 2's attached bath on the north wall north-west of the plot centre (in Bedroom 2's north-west corner), and a common bath on the south side, south of the plot centre beside the wet area (outside the central zone). None in SW or NE.
 - Pooja: in the living's south-east corner, back to back with the kitchen, with the shoe cupboard beyond its solid north wall (no toilet on any side). Opens west; idols on its east wall face west, so the family prays facing east from the living. Floor 3 in higher.
