@@ -171,8 +171,8 @@ def _floor(msp, rect, text, fl):
     for a, b in zip(xs, xs[1:]):
         hdim(a, b, ys[0], ys[0] - 2)
     if fl == "G":
-        vdim(0, 3, 23, 19.5); vdim(25, SITE["w"], 23, 19.5)
-        hdim(SITE["trial"], 23, 3, -5); hdim(67, 75, 3, -5)
+        vdim(0, 3, 17, 13.5); vdim(25, SITE["w"], 17, 13.5)
+        hdim(SITE["trial"], 17, 3, -5); hdim(67, 75, 3, -5)
 
 
 if __name__ == "__main__":

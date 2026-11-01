@@ -36,7 +36,7 @@ def take_off():
     q.append(("Frame", "Galvanised steel posts for the terrace roof (about 100 mm SHS, 9 ft)", len(TERRACE_POSTS), "no.", "On RCC column stubs; trusses over the terrace in steel"))
     q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for _, _, s, e in RAILS_F1) * 0.3048, 1), "m", "Terrace open sides and stair well"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
-    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (44.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the 20 ft walls"))
+    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (50.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the 20 ft walls"))
     finishes = {}
     skirting = 0
     for fl in ("G", "F1"):
@@ -67,7 +67,7 @@ def take_off():
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
     feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
     q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gate"))
-    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((44.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
+    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((50.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(both("DOORS")), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(both("WINDOWS")), "no.", "See Windows tab"))
     q.append(("Openings", "Window area (for mesh and grills)", round(sum((w[4] - w[3]) * (w[6] - w[5]) for w in both("WINDOWS")) * 0.0929, 1), "sq m", ""))

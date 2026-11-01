@@ -36,7 +36,7 @@ class Sheet:
         c.setFont("Helvetica", 8.5); c.setFillColor(GREY)
         c.drawString(x0 + 5 * mm, y - 6 * mm, "Kerala-style two-storey residence (duplex option)")
         c.drawString(x0 + 5 * mm, y - 11 * mm, "Guntur, Andhra Pradesh")
-        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {SITE['w']}' x {SITE['l']}' (front 55' used), road on east")
+        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {SITE['w']}' x {SITE['l']}' (front 61' used), road on east")
         rows = [("Stage", PROJECT["stage"]), ("Drawing", self.title), ("Sheet", self.num), ("Scale", self.scale + (" at A3" if ":" in self.scale else "")),
                 ("Revision", PROJECT["rev"]), ("Date", PROJECT["date"]), ("Units", "Feet-inches; levels from finished ground")]
         yy = 60 * mm
@@ -379,7 +379,7 @@ def site_features(pl, labels=True, size=5):
             x1, x2, y1, y2 = g
             if fid == "SPARE":
                 pl.rect(x1, x2, y1, y2, stroke=None, fill=colors.HexColor("#EEF3E8"))
-                if labels: pl.text("SPARE LAND (BACK 20 FT)", (x1 + x2) / 2, y2 - 2.2, size + 0.5, "Helvetica-Bold", GREY)
+                if labels: pl.text("SPARE LAND (BACK 14 FT)", (x1 + x2) / 2, y2 - 2.2, size + 0.5, "Helvetica-Bold", GREY)
                 continue
             pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid == "PERGOLA" else None)
             if labels and fid not in ("GATE", "STEPS", "HEDGE3"):

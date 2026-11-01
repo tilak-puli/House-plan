@@ -3,16 +3,16 @@
 Revision B (pre-construction draft), 30 Oct 2026. **Branch `feature/duplex`: duplex option study, 1 Nov 2026.**
 
 ## Duplex option (this branch)
-This branch tests a two-level house on the **front 55 ft** of the same plot; the back 20 ft stays spare land. The drawings, schedules and 3D model on this branch show the duplex. The sections below that describe the single-storey plan (room list, sizes, the 62 ft house) belong to the `main` branch, except where this section changes them. Full spec: [Duplex_Design_Spec.md](Duplex_Design_Spec.md).
+This branch tests a two-level house on the **front 61 ft** of the same plot; the back 14 ft stays spare land. The drawings, schedules and 3D model on this branch show the duplex. The sections below that describe the single-storey plan (room list, sizes, the 62 ft house) belong to the `main` branch, except where this section changes them. Full spec: [Duplex_Design_Spec.md](Duplex_Design_Spec.md).
 
-- **House:** 44 x 22 ft (x 23-67). Ground floor 968 sq ft; first floor about 445 sq ft enclosed plus the covered terrace. Front yard 8 ft, 3 ft gap at the back of the trial plot.
+- **House:** 50 x 22 ft (x 17-67), lengthened from 44 ft so the bedrooms are 14 ft wide and all three baths about 6 x 6'-5" clear. Ground floor 1,100 sq ft; first floor about 505 sq ft enclosed plus a 17 x 22 ft covered terrace. Front yard 8 ft, 3 ft gap at the back of the trial plot.
 - **Front half, ground floor:** living, dining, kitchen, pooja, store and wet area with flat ceilings at about 9'-5" under the first-floor slab (no double height); poomukham and main door as before.
-- **Back half, ground floor:** master bedroom with its bath (south-west, bed head south), small bedroom (12 x 9'-6"), common bath, lobby, and a **dog-leg stair** (17 risers of about 7 in) seen from the living through a timber jali.
-- **First floor:** upper master (12 x 12'-6") with a dressing room and its own bath, a **sitting and study zone** on the north side (part-divided by the wardrobe), a landing, a passage with a reading shelf, and a **16 x 22 ft covered terrace** over the front half, off the landing, with railings on three sides.
+- **Back half, ground floor:** master bedroom (14 x 12'-6") with its bath (south-west, bed head south), small bedroom (14 x 9'-6"), common bath, lobby, and a **dog-leg stair** (17 risers of about 7 in) seen from the living through a timber jali.
+- **First floor:** upper master (14 x 12'-6") with a dressing room and its own bath, a **sitting and study zone** on the north side (part-divided by the wardrobe), a landing, a passage with a reading shelf, and a **16 x 22 ft covered terrace** over the front half, off the landing, with railings on three sides.
 - **Roof:** a hipped clay-tile roof over the two-storey block, carried on galvanised steel posts and trusses over the terrace, and a wide front gable (mukhappu) over the single-storey front: a two-tier Kerala roof, not a box.
 - **No ridge ventilator:** the terrace is open on three sides, so hot air under the roof escapes at its edges; the attic over the upper rooms has meshed ridge and soffit vents.
 - **Services:** all four bath fittings stack in the south band (the upper bath over the common bath); septic tank and soak pit in the spare rear land; a 1,000 L loft tank over the upper bath with a pressure pump (no tank stand).
-- **Trade-offs to weigh:** stairs every day for the upper master; the dining on its own is small (the table spills into the living); the common bath is a slim 4'-6"; two storeys cost more per sq ft (frame, slab, stair, scaffolding) but use 20 ft less land.
+- **Trade-offs to weigh:** stairs every day for the upper master; the dining on its own is small (the table spills into the living); two storeys cost more per sq ft (frame, slab, stair, scaffolding) but use 20 ft less land.
 
 ## Site
 - **Location:** Guntur, Andhra Pradesh. The plot is **agricultural land**; its conversion to residential use still has to be confirmed.

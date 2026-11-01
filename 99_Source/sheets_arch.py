@@ -18,8 +18,8 @@ def sheet_cover(c, index):
         with on_floor(fl):
             carpet += sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
-            ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft; duplex planned on the front 55' (back 20' spare)"),
-            ("Built footprint", "44' x 22' = 968 sq ft ground floor; about 445 sq ft enclosed + 350 sq ft covered terrace on the first floor"),
+            ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft; duplex planned on the front 61' (back 14' spare)"),
+            ("Built footprint", "50' x 22' = 1,100 sq ft ground floor; about 505 sq ft enclosed + 375 sq ft covered terrace on the first floor"),
             ("Carpet area", f"{carpet:,.0f} sq ft clear, both floors, incl. poomukham and terrace"),
             ("Construction", "Two-storey RCC frame, AAC walls, first-floor slab over the back half, steel-truss roofs with clay tiles"),
             ("Plinth", f"FFL {fmt_lvl(LEVELS['FFL'])} above finished ground")]
@@ -85,27 +85,27 @@ def sheet_site(c):
     W = SITE["w"]
     x1, x2, y1, y2 = ROOF["hip"]
     pl.rect(x1 - 0.5, x2 + 0.5, -0, y2 + 0.5, stroke=GREY, lw=0.3, dash=(1, 1))  # apron edge (approx.)
-    pl.rect(23, 61, 3, 25, stroke=INK, fill=colors.HexColor("#BDBDBD"), lw=0.8)
+    pl.rect(17, 61, 3, 25, stroke=INK, fill=colors.HexColor("#BDBDBD"), lw=0.8)
     pl.rect(61, 67, 3, 25, stroke=INK, fill=colors.HexColor("#DADADA"), lw=0.6)
     pl.rect(x1, x2, y1, y2, stroke=INK, lw=0.4, dash=(3, 2))
     site_features(pl)
-    pl.text("TWO-STOREY BLOCK", 42, 16.5, 8, "Helvetica-Bold")
-    pl.text("(covered terrace over the front half)", 42, 14.6, 6, color=INK)
+    pl.text("TWO-STOREY BLOCK", 39, 16.5, 8, "Helvetica-Bold")
+    pl.text("(covered terrace over the front half)", 39, 14.6, 6, color=INK)
     pl.text("1-STOREY", 64, 9.0, 5.5, "Helvetica-Bold")
-    pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}  (dashed: roof eaves; dotted: 3 ft apron)", 42, 11.0, 6, color=GREY)
+    pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}  (dashed: roof eaves; dotted: 3 ft apron)", 39, 11.0, 6, color=GREY)
     if SITE["strip"]: pl.text(f"NORTH STRIP, {SITE['strip']}' (OPEN NOW, PHASE 2 SITE)", 35, W + 1.6, 6.5, color=GREY)
-    pl.text("3' SERVICE WALKWAY", 42, 1.5, 6, color=GREY)
-    pl.text("55' TRIAL PLOT", 47.5, -1.2, 5.5, color=GREY)
+    pl.text("3' SERVICE WALKWAY", 39, 1.5, 6, color=GREY)
+    pl.text("61' TRIAL PLOT", 44.5, -1.2, 5.5, color=GREY)
     pl.text("FRONT YARD", 71.5, 12.3, 6, color=GREY)
     pl.level(71, 17.6, 0)
-    pl.hdim(0, 20, -3, "20'-0\" SPARE"); pl.hdim(20, 23, -3); pl.hdim(23, 67, -3); pl.hdim(67, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
+    pl.hdim(0, 14, -3, "14'-0\" SPARE"); pl.hdim(14, 17, -3); pl.hdim(17, 67, -3); pl.hdim(67, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
     pl.vdim(0, 3, -3); pl.vdim(3, 25, -3); pl.vdim(25, W, -3); pl.vdim(0, W, -6.5, f"{W}'-0\" PLOT")
     if SITE["strip"]: pl.vdim(W, W + SITE["strip"], -6.5)
     pl.north(PW - 105 * mm, PH - 40 * mm)
     pl.scalebar(250 * mm, 75 * mm)
     notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES]
     s.bullets(notes[:7], 45 * mm, 62 * mm, 120 * mm, 6.3)
-    s.bullets(notes[7:] + ["Site drains: finished ground falls 1:100 away from the house to the road side.", "Compound wall: precast RCC post-and-panel, 5 ft, set just inside the plot line; panels lift out, so a run can move later (including across the 55 ft line)."], 175 * mm, 62 * mm, 150 * mm, 6.3)
+    s.bullets(notes[7:] + ["Site drains: finished ground falls 1:100 away from the house to the road side.", "Compound wall: precast RCC post-and-panel, 5 ft, set just inside the plot line; panels lift out, so a run can move later (including across the 61 ft line)."], 175 * mm, 62 * mm, 150 * mm, 6.3)
     c.showPage()
 
 
@@ -174,7 +174,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 47.5, "Cross section through the store, dining, living and the covered terrace above"),
+SECTIONS = {"A": ("X", 46.5, "Cross section through the store, dining, living and the covered terrace above"),
             "B": ("Y", 18, "Long section through the small bedroom and the master's sitting zone above, the stair, the living with the covered terrace above, and the poomukham")}
 
 
@@ -199,8 +199,8 @@ def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes
             for yy, lab in ((-3.3, name), (29.2, name)):
                 pl.circle(c0, yy, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(lab, c0, yy, 6.5, "Helvetica-Bold", RED)
         else:
-            pl.line(19, c0, 72, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
-            for xx in (18.2, 72.8):
+            pl.line(13, c0, 72, c0, lw=0.7, color=RED, dash=(6, 2, 1, 2))
+            for xx in (12.2, 72.8):
                 pl.circle(xx, c0, 0.8, lw=0.6, color=RED, fill=WHITE); pl.text(name, xx, c0, 6.5, "Helvetica-Bold", RED)
     pl.auto_dims(5)
     s.note("Clear sizes are wall face to wall face after plaster (green). Grid dimensions are to wall centrelines.", 24 * mm, 32 * mm, 7, GREY)
@@ -259,7 +259,7 @@ def sheet_roof(c):
     pl = Plan(s, 75, 16 * mm, 104 * mm)
     pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
     pl.line(SITE["trial"], 0, SITE["trial"], SITE["w"], lw=0.5, color=GREY, dash=(4, 2))
-    pl.rect(23, 67, 3, 25, stroke=GREY, lw=0.4, dash=(2, 2))
+    pl.rect(17, 67, 3, 25, stroke=GREY, lw=0.4, dash=(2, 2))
     x1, x2, y1, y2 = ROOF["hip"]
     w = (y2 - y1) / 2; yc = (y1 + y2) / 2
     gx1, gx2, ya, yb = ROOF["gable"]
@@ -289,9 +289,9 @@ def sheet_roof(c):
     pl.rect(31, 52, 1.6, 8.6, stroke=ACC, lw=0.4, dash=(2, 2))
     pl.text(f"RIDGE {fmt_lvl(ridge_z())}", 40, yc - 1.0, 5.5, "Helvetica-Bold")
     pl.text(f"EAVES {fmt_lvl(eave_z())}", 26, y1 + 1.5, 5)
-    pl.text("LOFT TANK BELOW (OVER THE UPPER BATH)", 42.7, 8.8, 4.4, color=GREY)
+    pl.text("LOFT TANK BELOW (OVER THE UPPER BATH)", 40.7, 8.8, 4.4, color=GREY)
     pl.hdim(x1, x2, -1.5, size=5); pl.hdim(gx1, gx2, -1.5, size=5); pl.vdim(y1, y2, 71.8, size=5)
-    pl.hdim(x1, 23, 28.5, "2'-0\"", 4.6)
+    pl.hdim(x1, 17, 28.5, "2'-0\"", 4.6)
     tips = [
         "Every tile along eaves, verges, hips and ridges clipped or screwed; every third row elsewhere. Cyclone winds lift loose tiles first at the edges, and the main roof is now 20 ft up.",
         "Main roof trusses bolted to the first-floor ring beam; front gable trusses to the ground-floor ring beam; purlins cleated, not just welded tacks.",
@@ -322,7 +322,7 @@ def sheet_schedules(c):
     dd = [["ID", "Location", "Width", "Type", "Vent above"]] + [[d[0], d[6], fmt_ft(d[4] - d[3]), d[7], TRANSOM_LABELS.get(TRANSOMS.get(d[0]), "-")] for d in both("DOORS")]
     s.table(dd, [9, 30, 12, 42, 14], 18 * mm, top - h - 12 * mm, "Door schedule (heights 7'-0\"; vents 7'-6\" to 9'-0\")")
     wd = [["ID", "Room", "Wall", "Width", "Sill", "Head", "Type"]]
-    face = lambda w: {("X", 3): "S", ("X", 25): "N", ("Y", 23): "W", ("Y", 67): "E", ("Y", 61): "E"}.get((w[1], w[2]), "In")
+    face = lambda w: {("X", 3): "S", ("X", 25): "N", ("Y", 17): "W", ("Y", 67): "E", ("Y", 61): "E"}.get((w[1], w[2]), "In")
     upper = {w[0] for w in WINDOWS_F1}
     wd += [[w[0], w[7] + (" (1st)" if w[0] in upper else ""), face(w), fmt_ft(w[4] - w[3]), fmt_ft(w[5]), fmt_ft(w[6]), w[8]] for w in both("WINDOWS")]
     wd += [[o[0], "Roof", "-", "-", "-", "-", o[1]] for o in OTHER_OPENINGS]

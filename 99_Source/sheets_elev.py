@@ -23,7 +23,7 @@ FACES = {
     "S": dict(line=("X", 3), u=lambda x, y: x, title="South elevation"),
     "N": dict(line=("X", 25), u=lambda x, y: SITE["l"] - x, title="North elevation"),
     "E": dict(line=("Y", 67), u=lambda x, y: y, title="East elevation (road side)"),
-    "W": dict(line=("Y", 23), u=lambda x, y: SITE["w"] - y, title="West elevation"),
+    "W": dict(line=("Y", 17), u=lambda x, y: SITE["w"] - y, title="West elevation"),
 }
 
 
@@ -137,8 +137,8 @@ def elevation(e, face):
     u = f["u"]
     axis, c0 = f["line"]
     if face in ("S", "N"):
-        _ground(e, u(17, 0) if face == "S" else u(77, 0), u(77, 0) if face == "S" else u(17, 0))
-        lo, hi = sorted((u(23 - 0.375, 0), u(67 + 0.375, 0)))
+        _ground(e, u(11, 0) if face == "S" else u(77, 0), u(77, 0) if face == "S" else u(11, 0))
+        lo, hi = sorted((u(17 - 0.375, 0), u(67 + 0.375, 0)))
         e.rect(lo, hi, 0, F, lw=0.6, fill=PLINTH)
         g = _wall_span("G", axis, c0); up = _wall_span("F1", axis, c0)
         ga, gb = sorted((u(g[0] - 0.375, 0), u(g[1] + 0.375, 0)))
@@ -152,7 +152,7 @@ def elevation(e, face):
         ua, ub = sorted((u(up[0] - 0.375, 0), u(up[1] + 0.375, 0)))
         e.rect(ua, ub, U, UT, lw=0.6, fill=WALLC)
         if face in ("S", "N"):  # back wall of the covered terrace, seen through the open front half
-            a, b = sorted((u(45.375, 0), u(61, 0)))
+            a, b = sorted((u(44.375, 0), u(61, 0)))
             e.rect(a, b, U, UT - 0.75, lw=0.3, fill=DARK)
         e.line(min(ga, ua), F + H, max(gb, ub), F + H, lw=0.4, color=GREY)  # band at first-floor level
         with on_floor("F1"):
@@ -161,11 +161,11 @@ def elevation(e, face):
                     a, b = sorted((u(s_ - (0.375 if s_ < 40 else 0), 0), u(e_ + (0.4 if e_ > 60 else 0), 0)))
                     _rail_band(e, a, b, U, UT - 0.75)
         _posts(e, lambda x, y: u(x, 0), [p for p in TERRACE_POSTS if abs(p[1] - c0) < 0.5])
-        e.rect(*sorted((u(45.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
+        e.rect(*sorted((u(44.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
         _openings_on(face, u, True)
         _roof_long(e, u)
-        _levels(e, min(u(19, 0), u(71, 0)) - 1.0)
-        e.hdim(lo, hi, -2.4, "44'-9\" incl. walls", 5)
+        _levels(e, min(u(13, 0), u(71, 0)) - 1.0)
+        e.hdim(lo, hi, -2.4, "50'-9\" incl. walls", 5)
     else:
         east = face == "E"
         _ground(e, u(0, -1) if east else u(0, 28), u(0, 28) if east else u(0, -1))
@@ -198,12 +198,12 @@ def elevation(e, face):
             _front_gable(e, u)
         else:
             e.rect(lo, hi, F, F + H, lw=0.6, fill=WALLC)
-            up = _wall_span("F1", "Y", 23)
+            up = _wall_span("F1", "Y", 17)
             a, b = sorted((u(0, up[0] - 0.375), u(0, up[1] + 0.375)))
             e.rect(a, b, U, UT, lw=0.6, fill=WALLC)
             with on_floor("F1"):
                 for ax, cc, s_, e_ in RAILS:
-                    if (ax, cc) == ("Y", 23):
+                    if (ax, cc) == ("Y", 17):
                         a, b = sorted((u(0, s_), u(0, e_ + 0.375)))
                         _rail_band(e, a, b, U, UT - 0.75)
             _openings_on(face, u, False)
@@ -271,12 +271,12 @@ def section(e, name):
         eaves = (ROOF["hip"][2], ROOF["hip"][3])
         hu1, hu2 = 3, 25
     else:
-        rng = (17.0, SITE["l"] - 3)
+        rng = (11.0, SITE["l"] - 3)
         zfun = lambda u_: roof_z(u_, c0)
         span = lambda r: (r[2], r[3])
         inside = lambda r: r[4] <= c0 <= r[5]
         eaves = (ROOF["hip"][0], ROOF["gable"][1])
-        hu1, hu2 = 23, 67
+        hu1, hu2 = 17, 67
     _ground(e, *rng)
     e.rect(hu1, hu2, 0, F - 0.33, stroke=None, fill=colors.HexColor("#E6DDC8"))
     e.text("compacted moorum / gravel fill (no black soil)", (hu1 + hu2) / 2, F / 2 - 0.2, 4.4, color=GREY)
@@ -343,7 +343,7 @@ def section(e, name):
     us = [eaves[0] + (eaves[1] - eaves[0]) * i / n for i in range(n + 1)]
     pts = [(u_, zfun(u_)) for u_ in us if zfun(u_) is not None]
     e.poly(pts + [(p, z - 0.45) for p, z in reversed(pts)], lw=0.6, close=True, fill=TILE)
-    blocks = [((3, 25) if axis == "X" else (23, 61), UT)]
+    blocks = [((3, 25) if axis == "X" else (17, 61), UT)]
     if axis == "Y":
         blocks.append(((61, 67), F + H))
     for (wa, wb), zc in blocks:
@@ -378,7 +378,7 @@ SECTION_NOTES = [
 
 def sheet_sections(c):
     s = Sheet(c, "A-301", "Sections A-A and B-B", "1:100")
-    e = Elev(s, 100, 0 * mm, 158 * mm)
+    e = Elev(s, 100, 14 * mm, 158 * mm)
     section(e, "B")
     s.note("SECTION B-B: " + SECTIONS["B"][2].upper(), 32 * mm, 272 * mm, 8, INK, "Helvetica-Bold")
     e = Elev(s, 100, 40 * mm, 36 * mm)

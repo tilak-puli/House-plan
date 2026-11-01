@@ -44,7 +44,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Duplex option (branch `feature/duplex`)
 - Architect: what front, side and rear setbacks apply to a two-storey house on this plot and road width, and is there a height limit? Does the 8 ft front yard still work?
-- Architect: is 55 ft of plot enough for this duplex in practice, or should we keep the 62 ft single-storey plan on the full 75 ft?
+- Architect: is 61 ft of plot (a 50 ft house) right for this duplex, or should we keep the 62 ft single-storey plan on the full 75 ft?
 - Structural engineer: footing and column sizes for two floors on black cotton soil; the first-floor slab over the whole block and its edge beam round the terrace; RCC stubs and base plates for the steel posts that carry the roof over the terrace.
 - Structural engineer: stair design (waist slab, landing beam) and whether the loft water tank can sit on the truss or needs a platform off the slab.
 - Plumber: the upper WC stack inside the wet wall between the common bath and the store, its vent above the main roof, and waterproofing the slabs under the upper bath and the terrace, and the terrace drain to a downpipe.

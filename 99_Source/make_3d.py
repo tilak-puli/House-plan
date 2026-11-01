@@ -55,7 +55,7 @@ def model_data():
     return {**g, "f1": f1, "jali": [list(j) for j in JALI_SCREENS], "pillars": [list(p) for p in PILLARS],
             "F": LEVELS["FFL"], "PF": LEVELS["poomukham"], "H": LEVELS["wall_top"], "H1": LEVELS["upper_wall_top"], "riser": LEVELS["riser"],
             "slabT": LEVELS["slab"], "slab": [list(s) for s in SLAB_F1], "stair": STAIR, "posts": [list(p) for p in TERRACE_POSTS],
-            "house": {"x1": 23, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [23, 61]},
+            "house": {"x1": 17, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [17, 61]},
             "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"]}, "gate": list(feat["GATE"][2:]),
             "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3)},
             "pergola": list(feat["PERGOLA"]),
