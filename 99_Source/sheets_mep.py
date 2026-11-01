@@ -125,7 +125,7 @@ def sheet_plumbing(c):
     s.table(rows, [11, 46, 8], 120 * mm, 70 * mm, "Fixtures and points", 6)
     tips = [
         "Overhead tank feeds by gravity; isolation valve for each bathroom and the kitchen, outside the room.",
-        "Supply pipes run on the outside of walls in clamps or shallow chases, never under the floor slab.",
+        "Supply pipes run in wall chases or behind one service panel (no exposed pipes on the facades), never under the floor slab.",
         "Soil and grey water kept separate; inspection chamber at every bend and junction; 1:40 falls on 110 mm, 1:30 on 75 mm.",
         "Grease trap before the kitchen line joins anything; vent pipe from each WC stack above the eaves.",
         "Septic tank (sealed) and a lined soak pit in the front yard, as far from the house and sump as the plot allows; wet black cotton soil swells and cracks the house, so prefer treated outflow to a road drain if one is available.",

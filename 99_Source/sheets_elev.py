@@ -119,7 +119,7 @@ def elevation(e, face):
         for w in WINDOWS:
             if (w[1], w[2]) == (axis, c0):
                 a, b = sorted((u(w[3], 0), u(w[4], 0)))
-                _window(e, a, b, w)
+                _window(e, a, b, w, shade=c0 != 25)
         for d in DOORS:
             if (d[1], d[2]) == (axis, c0):
                 a, b = sorted((u(d[3], 0), u(d[4], 0)))
@@ -178,7 +178,7 @@ def sheet_elev_long(c):
         e = Elev(s, 75, 40 * mm, (178 - i * 118) * mm)
         elevation(e, face)
         s.note(FACES[face]["title"].upper(), 40 * mm, (178 - i * 118 + 92) * mm, 9, INK, "Helvetica-Bold")
-    s.note("Brown line at the eaves = fascia with gutter. Every window has a sunshade (chajja) with a drip groove; sills slope out 1:10.", 40 * mm, 20 * mm, 7, GREY)
+    s.note("Brown line at the eaves = fascia with gutter. Sunshades (chajjas) only on the sunny south, east and west windows; the eaves shade the north. Window heads all at 7 ft; sills slope out 1:10.", 40 * mm, 20 * mm, 7, GREY)
     c.showPage()
 
 

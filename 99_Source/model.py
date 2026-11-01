@@ -72,8 +72,8 @@ FLOOR_FINISH = {  # room: floor finish key
     "R10": "Red oxide / Kota stone", "R16": "Red oxide / Kota stone",
     "R01": "Matt vitrified 2x2", "R02": "Matt vitrified 2x2", "R03": "Matt vitrified 2x2", "R05": "Matt vitrified 2x2",
     "R09": "Matt vitrified 2x2", "R19": "Red oxide / Kota stone",
-    "R11": "Marble / teak (pooja)", "R15": "Anti-skid matt vitrified", "R04": "Anti-skid ceramic, waterproofed",
-    "R07": "Anti-skid ceramic, waterproofed", "R08": "Anti-skid ceramic, waterproofed", "R13": "Rough Cuddapah / Kota, falls", "R14": "Red oxide / Kota stone",
+    "R11": "Red oxide / Kota stone", "R15": "Anti-skid ceramic, waterproofed", "R04": "Anti-skid ceramic, waterproofed",
+    "R07": "Anti-skid ceramic, waterproofed", "R08": "Anti-skid ceramic, waterproofed", "R13": "Anti-skid ceramic, waterproofed", "R14": "Red oxide / Kota stone",
     "R17": "Flamed granite",
 }
 ROOM_LABEL_AT = {"R09": (33.5, 16.8), "R11": (59.7, 14.5), "R16": (53.5, 21.8), "R17": (64, 22.6)}  # label points for rooms whose centre is crowded (the pooja sits in the living rectangle)
@@ -106,9 +106,12 @@ SITE_FEATURES = [
     ("SUMP", "Sump (NE)", "rect", (71, 74.5, 23.5, 26.5)),
     ("BORE", "Borewell (if any), NE", "circle", (70, 25.6, 0.5)),
     ("PERGOLA", "Creeper pergola for west shade (no big trees near walls)", "rect", (0.3, 4.2, 10.5, 24)),
-    ("TULSI", "Tulsi thara", "circle", (71.2, 20.5, 0.6)),
+    ("TULSI", "Tulsi thara at the centre of the forecourt, on the door axis", "circle", (72.4, 19.1, 0.6)),
+    ("PATH", "Stone-paved forecourt 6 ft wide on the door axis, gate to steps, around the tulsi thara", "rect", (69.8, 75.0, 16.1, 22.1)),
+    ("HEDGE1", "Low hedge screening the two-wheeler bay (access left open by the gate)", "rect", (68.0, 71.0, 11.2, 11.8)),
+    ("HEDGE2", "Low hedge screening the sump", "rect", (70.6, 74.6, 22.8, 23.3)),
     ("BAY", "Two-wheeler bay", "rect", (68, 74, 3, 11)),
-    ("GATE", "Gate", "rect", (75, 75.5, 15, 22)),
+    ("GATE", "Gate 7 ft, centred on the main door", "rect", (75, 75.5, 15.6, 22.6)),
     ("STEPS", "Entrance steps (3 risers), between the pillars, SS handrail one side", "rect", (67.375, 69.0, 17.3, 20.9)),
     ("FEET", "Foot-wash tap + drain", "circle", (69.6, 13.6, 0.35)),
     ("WSTEP", "Steps from the open wet area down to the walkway (4 risers of about 5 in, along the wall)", "rect", (48.6, 52.4, 0.5, 2.5)),
@@ -145,23 +148,22 @@ TRANSOM_Z = (7.5, 9.0)  # sill and head above FFL
 
 # Windows: id, axis, c, s, e, sill, head, room, type
 WINDOWS = [
-    ("W01", "X", 3, 7, 12, 3, 7, "Workstation", "Timber jali + glazed shutters"),
-    ("W03", "X", 3, 30, 35, 3, 7, "Sitting and serving area", "Timber jali + glazed shutters"),
-    ("W04", "X", 3, 38.4, 40.9, 3.5, 7, "Basin and crockery nook", "Timber jali + glazed shutters (over the serving counter)"),
+    ("W01", "X", 3, 6.5, 12.5, 3, 7, "Workstation", "Timber jali + glazed shutters"),
+    ("W03", "X", 3, 28, 34, 3.5, 7, "Sitting and serving area", "Timber jali + glazed shutters"),
     ("W17", "Y", 61, 13.6, 16.4, 5.5, 7, "Pooja", "High vent to the poomukham, jali + mesh (lamp smoke out)"),
-    ("W19", "X", 3, 42.2, 44.4, 5, 7, "Common bath", "Frosted casement, top-hung vent"),
+    ("W19", "X", 3, 42.4, 44.4, 5, 7, "Common bath", "Frosted casement, top-hung vent"),
     ("W05", "X", 3, 54.5, 57.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
-    ("W07", "X", 3, 59, 64, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
-    ("W08", "Y", 67, 10.4, 12.4, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (2 ft, north end; hob wall kept solid)"),
-    ("W09", "X", 25, 6, 9, 5, 7, "Ensuite", "Frosted casement"),
-    ("W10", "Y", 5, 19, 23, 5, 7, "Ensuite", "High jali vent"),
+    ("W07", "X", 3, 58.5, 64.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
+    ("W08", "Y", 67, 9.5, 12.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (3 ft, north end; hob wall kept solid)"),
+    ("W09", "X", 25, 7, 9, 5, 7, "Ensuite", "Frosted casement"),
+    ("W10", "Y", 5, 20, 22, 5, 7, "Ensuite", "High jali vent"),
     ("W11", "X", 25, 13, 19, 3, 7, "Master bedroom", "Teak casement, glazed"),
     ("W12", "X", 25, 30, 36, 3, 7, "Bedroom 2", "Teak casement, glazed (6 ft)"),
-    ("W13", "X", 25, 22.3, 24.5, 5, 7, "Bath 2", "Frosted casement, top-hung vent"),
+    ("W13", "X", 25, 22.4, 24.4, 5, 7, "Bath 2", "Frosted casement, top-hung vent"),
     ("W20", "X", 10.5, 27.4, 31.4, 7.5, 9, "Bedroom 2", "High jali vent to the sitting area, above the bed head (cross-ventilation with W12 and W03)"),
     ("W18", "X", 25, 42, 48, 3, 7, "Dining bay", "Teak casement, glazed (north light for the dining)"),
-    ("W14", "X", 25, 50, 58, 2, 8, "Living", "Teak casement, tall, glazed"),
-    ("W16", "X", 3, 35.3, 37.8, 3.5, 7, "Basin and crockery nook", "Timber jali + glazed shutters (over the serving counter)"),
+    ("W14", "X", 25, 51, 57, 3, 7, "Living", "Teak casement, glazed (6 ft)"),
+    ("W16", "X", 3, 35, 41, 3.5, 7, "Serving counter and hand-wash basin", "Timber jali + glazed shutters (6 ft, over the counter)"),
 ]
 OTHER_OPENINGS = [
     ("SK1", "Ventilator over dining, 5 x 5 ft, no glass: hipped tiled cap at 30 deg with 1'-6\" overhang; 2 ft band of 45 deg louvres on all four sides; SS insect mesh behind; sealed inner shutters on a winding opener; 9 in upstand; lined shaft to the dining ceiling (see A-503)"),
@@ -209,7 +211,7 @@ FURNITURE = [
     ("F33", "Sitting and serving area", "Serving counter with crockery cabinets above, 6 ft", 33.2, 39.2, 3.3, 5.3, 1, "Granite top, teak + glass shutters", "rect"),
     ("F56", "Sitting and serving area", "Tall storage cupboard 5' x 2' (bedding, suitcases, festival vessels), loft above", 23.0, 28.0, 3.4, 5.4, 1, "Ply + laminate, full height", "rect"),
     ("F34", "Kitchen", "L-counter, south run: deep drawers for vessels instead of shutters", 53.4, 66.6, 3.4, 5.4, 1, "Granite top, ply carcass", "rect"),
-    ("F60", "Kitchen", "Utensil rail with hooks beside the hob (ladles, tongs, strainers)", 64.2, 66.4, 3.4, 3.55, 1, "SS rail and S-hooks", "glass"),
+    ("F60", "Kitchen", "Utensil rail with hooks beside the hob (ladles, tongs, strainers)", 64.7, 66.4, 3.4, 3.55, 1, "SS rail and S-hooks", "glass"),
     ("F35", "Kitchen", "L-counter, east run (hob centred 7'-6\" from the south wall face, on solid wall; pull-out masala drawer beside the hob)", 64.6, 66.6, 5.4, 12.4, 1, "Granite top, cook faces east", "rect"),
     ("F36", "Dining", "Refrigerator space (dining alcove beside the kitchen door, against the wet-area wall, door facing north)", 48.3, 50.8, 9.35, 11.75, 1, "Double-door, 2'6\" wide", "rect"),
     ("F38", "Dining", "Sofa 5'-6\" (2-3 seats) facing south to the TV about 8 ft away; behind it a 3 ft walk and the window-seat enclave; main door in side view", 42.0, 47.5, 16.9, 19.6, 1, "Teak frame, cotton cushions", "rect"),
@@ -221,8 +223,9 @@ FURNITURE = [
     ("F58", "Living", "Window diwan 6' x 2'-6\" under the north window, drawers below (guest seating, day bed); out of the line of the main door", 51.9, 57.9, 22.0, 24.6, 1, "Teak frame, cotton mattress and bolsters", "rect"),
     ("F52", "Living", "Shoe bench 3'-3\" (Japanese genkan idea): sit to take shoes off, louvred shoe shelves below, hooks and a keys niche above, small cabinet over", 59.4, 60.6, 21.2, 24.4, 1, "Teak top, ply + laminate, 14 in deep", "rect"),
     ("F59", "Living", "Vilakku madam: carved teak lamp niche with a light inside, on the wall facing the main door", 38.21, 38.55, 16.4, 18.2, 1, "Carved teak, brass lamp", "glass"),
-    ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, clear of the entrance", 62.2, 65.7, 21.9, 23.4, 1, "Teak, chains to beam", "rect"),
-    ("F42", "Poomukham (verandah)", "Arugu seat (built-in, south end)", 65.8, 67, 13.8, 16.2, 1, "Laterite base, teak top", "rect"),
+    ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, clear of the entrance", 62.0, 65.3, 21.9, 23.4, 1, "Teak, chains to beam", "rect"),
+    ("F42", "Poomukham (verandah)", "Charupadi: built-in teak seat with a sloping backrest between the pillars, south of the steps", 65.6, 66.9, 13.95, 16.05, 1, "Laterite base, teak seat and backrest", "rect"),
+    ("F69", "Poomukham (verandah)", "Charupadi: built-in teak seat with a sloping backrest between the pillars, north of the steps", 65.6, 66.9, 22.15, 24.05, 1, "Laterite base, teak seat and backrest", "rect"),
 ]
 # extra placements (same item, additional copies drawn on plan)
 EXTRA_DRAW = [
@@ -275,6 +278,8 @@ DECISIONS = [
     "Service band on south (heat buffer); bedrooms and living get north light.",
     "Kitchen in SE; stove on east wall; open wet area onto the walkway; provisions in bench drawers, kitchen cabinets and lofts (no separate store).",
     "Bedroom doors widened to 3 ft; bathroom, office and store doors 2 ft 6 in.",
+    "Thirty-first review (front facade): gate re-centred on the main door with a 6 ft stone forecourt and the tulsi thara on the axis (gate, tulsi, steps, door, hall, lamp niche in one line); charupadi seats with sloping backrests between the verandah pillars, flanking the steps; carved teak barge boards and a brass kalasham finial on the front gable; the kitchen front clad in exposed laterite with a deep projecting teak frame to its window; carved teak main door with brass studs, a stone surround and a nameplate niche; warm uplights at the pillars, a lantern by the door and gate-post lights; low hedges screening the sump and the two-wheeler bay; a pair of potted palms beside the steps.",
+    "Thirtieth review (proportion clean-up): windows standardised to three sizes (6 ft rooms, 3 ft small, 2 ft baths) with every head at 7 ft and three sill levels (3 ft rooms, 3'-6\" over counters, 5 ft baths); sunshades only on the sunny south, east and west walls (the eaves shade the north); floors cut to three families plus the verandah (red oxide in all public rooms and the pooja, vitrified in bedrooms, anti-skid ceramic in kitchen, baths and wet area, granite on the verandah); services hidden (pipes in chases, outdoor units grouped behind jali on the north wall), switchboards aligned, warm layered lighting, handle-less built-in fronts.",
     "Twenty-ninth review: compound wall made as thin as practical: precast RCC post-and-panel (2 in panels in 4 in posts) set just inside the plot line, so the side strips stay walkable and the north run can be lifted and moved if more land is bought.",
     "Twenty-eighth review: TV lounge reworked: sofa brought forward to about 8 ft from the TV, a 3 ft walk behind it, and a built-in window seat (charupadi-style enclave) under the dining-bay window, so the sofa backs onto a quiet seating nook rather than the entrance and nobody walks in front of the TV.",
     "Twenty-seventh review: TV lounge moves to the open dining space under the ventilator: TV on the north face of the common-bath wall, sofa facing south with its back to the north window, so the main door is in side view, not behind (commanding position) and the TV no longer faces the main door; the dining bay becomes a reading / dining nook with a chair by the window.",
@@ -382,7 +387,7 @@ ELECTRICAL = [
     # Pooja (living SE corner, back to back with the kitchen)
     ("L", 59, 15, "R11", ""), ("WL", 60.4, 15, "R11", "lamp niche above the idols"), ("P", 57.4, 16.6, "R11", ""),
     ("S", 56.6, 16.9, "R16", "pooja switches outside, living side"),
-    ("L", 39, 6.5, "R14", ""), ("PC", 35.15, 3.4, "R14", "serving counter"), ("PC", 38.1, 3.4, "R14", "serving counter"),
+    ("L", 39, 6.5, "R14", ""), ("PC", 34.5, 3.4, "R14", "serving counter, on the pier between the windows"),
     # Common bath (south, beside the wet area)
     ("L", 44.7, 6.2, "R07", ""), ("EF", 46.9, 3.4, "R07", "out through the south wall"), ("G", 41.8, 4.5, "R07", "over shower, west wall (clear of the window)"),
     ("PC", 47.6, 6.0, "R07", "by basin"), ("S", 41.1, 9.2, "R14", "common bath switches outside the door"),
@@ -401,9 +406,9 @@ ELECTRICAL = [
     # Wet area, wash link, kitchen
     ("L", 50, 5.5, "R13", "weatherproof"), ("P16", 48.5, 8.7, "R13", "washing machine"), ("P", 52.6, 6.0, "R13", "utility, weatherproof"),
     ("L", 62, 8, "R15", ""), ("WL", 61, 3.5, "R15", "under-cabinet"), ("WL", 66.5, 9.6, "R15", "under-cabinet"),
-    ("CH", 66.6, 7.5, "R15", "3 ft chimney on solid wall, duct out through the east wall"),  ("PC", 54.5, 3.5, "R15", ""),
-    ("PC", 58, 3.5, "R15", "microwave / OTG"), ("PC", 63.5, 3.5, "R15", "mixer"), ("PC", 66.6, 5.6, "R15", ""), ("PC", 66.6, 9.6, "R15", ""),
-    ("PC", 59.3, 3.5, "R15", "RO purifier, by sink"), ("S", 53.4, 9.0, "R15", "beside the entry, latch side"),
+    ("CH", 66.6, 7.5, "R15", "3 ft chimney on solid wall, duct out through the east wall"),  ("PC", 54.0, 3.5, "R15", ""),
+    ("PC", 57.8, 3.5, "R15", "microwave / OTG"), ("PC", 65.3, 3.5, "R15", "mixer"), ("PC", 66.6, 5.6, "R15", ""), ("PC", 66.6, 9.6, "R15", ""),
+    ("PC", 58.2, 3.5, "R15", "RO purifier, by sink"), ("S", 53.4, 9.0, "R15", "beside the entry, latch side"),
     # Living, poomukham
     ("F", 55, 19, "R16", "long downrod"), ("L", 54.9, 22.8, "R16", "over the diwan"), ("L", 55, 16, "R16", ""),
     ("P", 47.9, 18.0, "R10", "floor socket, sofa end"), ("P", 51.0, 20.3, "R16", "floor socket, armchair and diwan (lamp, charger)"),
@@ -411,7 +416,8 @@ ELECTRICAL = [
     ("L", 64, 16, "R17", ""), ("L", 64, 22, "R17", ""), ("BELL", 61.4, 21.0, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 21.5, "R17", ""),
     # Site
-    ("MTR", 74.6, 23.0, "SITE", "meter in compound wall by gate"), ("GL", 74.6, 14.5, "SITE", "gate light"),
+    ("MTR", 74.6, 23.2, "SITE", "meter in compound wall by gate"), ("GL", 74.7, 15.3, "SITE", "gate post light"), ("GL", 74.7, 22.9, "SITE", "gate post light"),
+    ("GL", 66.4, 16.4, "R17", "uplight at the pillar base"), ("GL", 66.4, 21.8, "R17", "uplight at the pillar base"), ("WL", 61.4, 17.1, "R17", "warm lantern beside the main door"),
     ("EP", 68.2, 1.5, "SITE", "earth pit 1"), ("EP", 73.5, 1.5, "SITE", "earth pit 2"), ("GL", 2.5, 8, "SITE", "rear garden"),
 ]
 
@@ -431,7 +437,7 @@ PLUMBING = [
     ("SK", 51.85, 4.6, "R13", "utility sink"), ("WM", 49.35, 7.85, "R13", ""), ("FT", 49.8, 3.6, "R13", "floor falls out to the walkway"), ("TAP", 52.6, 3.4, "R13", "bucket tap, low"),
     ("BS", 40.2, 4.3, "R14", "hand-wash basin outside the common bath, waste straight out to the south walkway"),
     ("SK", 60.5, 3.5, "R15", "single bowl + drainboard, under window"), ("RO", 59.3, 3.5, "R15", ""), ("FT", 64, 12.5, "R15", "cleaning trap"),
-    ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 4.4, 10, "SITE", "garden tap"), ("TAP", 71.2, 22.0, "SITE", "tulsi / garden tap"),
+    ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 4.4, 10, "SITE", "garden tap"), ("TAP", 74.0, 21.6, "SITE", "tulsi / garden tap"),
     ("IC", 3.6, 19.5, "SITE", "IC-1 soil"), ("IC", 46.8, 1.8, "SITE", "IC-2 soil"), ("IC", 3.6, 26.6, "SITE", "IC-3 soil"), ("IC", 12, 26.6, "SITE", "IC-4 soil"),
     ("GT", 60.5, 1.0, "SITE", "grease trap"), ("IC", 49.8, 1.0, "SITE", "IC-5 grey"), ("IC", 3.6, 1.8, "SITE", "IC-6 soil bend"), ("IC", 68.6, 1.8, "SITE", "IC-12 soil, to the septic tank"), ("IC", 73.2, 1.0, "SITE", "IC-13 grey, to the soak pit"),
     ("IC", 4.2, 1.0, "SITE", "IC-7 grey"), ("IC", 4.2, 26.0, "SITE", "IC-8 grey"), ("IC", 9.6, 26.0, "SITE", "IC-9 ensuite grey"),

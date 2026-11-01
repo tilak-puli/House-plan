@@ -58,6 +58,24 @@ Revision B (pre-construction draft), 30 Oct 2026.
 | Poomukham | 6' x 12' | 5'-8" x 11'-7" |
 | **Built footprint** | **62' x 22' = 1,364 sq ft** | **~1,240 sq ft clear** (incl. poomukham and wet area) |
 
+## Front of the house
+- **One axis:** a 7 ft gate centred on the main door, a 6 ft stone forecourt with the tulsi thara at its centre, the steps, the door, the hall and the lamp niche all in one line.
+- **Poomukham:** charupadi (built-in teak seats with sloping backrests) between the pillars on either side of the steps; turned teak pillars; swing on the north side.
+- **Gable:** carved or scalloped teak barge boards and a small brass kalasham at the apex; the gable jali vents stay.
+- **Kitchen front:** exposed laterite cladding to match the plinth, its window set in a deep projecting teak frame, so it reads as a solid block beside the open verandah.
+- **Main door:** carved teak double door with brass studs, a simple stone surround and a nameplate niche.
+- **Lighting:** warm uplights at the pillar bases, a lantern beside the door, lights on the gate posts.
+- **Yard:** low hedges screening the sump and the two-wheeler bay; a pair of potted palms beside the steps.
+
+## Proportion and restraint (premium without costly items)
+- **Windows:** three sizes only (6 ft rooms, 3 ft small spaces, 2 ft baths); every head at 7 ft, in line with the doors; sills at 3 ft (rooms), 3'-6" (over counters), 5 ft (baths).
+- **Sunshades:** only on the sunny south, east and west windows; the roof eaves shade the north, so that facade stays clean.
+- **Floors:** one continuous red oxide through all public rooms and the pooja, vitrified in bedrooms, anti-skid ceramic in the kitchen, baths and wet area, granite on the verandah.
+- **Services hidden:** pipes in chases or behind one service panel, AC outdoor units grouped on the north wall behind a teak jali screen, downpipes lined up with the window rhythm.
+- **Switches:** every switchboard at 4 ft, the same distance from door frames, flush plates in one colour.
+- **Lighting:** warm 2700-3000K, layered: wall washers on the laterite and textured walls, the lamp niche, under-cabinet strips in the kitchen.
+- **Built-ins:** plain handle-less fronts (J-profile or push latches) so storage reads as wall.
+
 ## Built-in ideas, borrowed and adapted
 Rule: borrow the function, not the style; build it in Kerala materials (teak, lime plaster, laterite, granite, the chosen tiles); prefer the Indian version where one exists; one answer per need.
 - **Baths:** recessed, tiled shower niche with a sloped sill (in the thicker outer or 7 in wet walls); mirror cabinet over each basin; towel and clothes hooks at the dry end.

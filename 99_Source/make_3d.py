@@ -24,7 +24,7 @@ def model_data():
         lo = min(ys) if axis == "X" else min(xs)
         windows.append({"id": w[0], "axis": axis, "c": c, "s": w[3], "e": w[4], "sill": w[5], "head": w[6],
                         "dir": -1 if c == lo else 1, "cut": w[5] < FULL_HEIGHT_SILL,
-                        "shade": (axis, c) not in COVERED,
+                        "shade": (axis, c) not in COVERED and not (axis == "X" and c == max(ys)),
                         "mat": "win" if axis == "X" and c == max(ys) else "jali"})
     floor_keys = (("Red oxide", "redoxide"), ("Matt vitrified 2x2", "vitrified"), ("Marble", "marble"), ("Anti-skid matt", "antiskid"),
                   ("Anti-skid ceramic", "ceramic"), ("Cuddapah", "cuddapah"), ("Flamed granite", "granite"))
@@ -48,7 +48,8 @@ def model_data():
             "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "lift": ROOF["gable_lift"],
                      "skylight": list(ROOF["skylight"]), "lantern": round(vent_top_z(), 3), "apex": round(vent_apex_z(), 3), "ventOver": ROOF["vent_overhang"]},
             "tank": {"rect": list(feat["TANK"]), "stand": LEVELS["tank_stand"]}, "pergola": list(feat["PERGOLA"]),
-            "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"])},
+            "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
+                         **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2") if k in feat}},
             "trees": [list(t) for t in TREES]}
 
 

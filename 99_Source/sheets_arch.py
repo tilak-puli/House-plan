@@ -207,9 +207,7 @@ def sheet_working(c):
     c.showPage()
 
 
-FLOOR_COLOURS = {"Red oxide / Kota stone": "#E8C9B8", "Matt vitrified 2x2": "#E5E1D6", "Marble / teak (pooja)": "#F4F1E8",
-                 "Anti-skid matt vitrified": "#D8E3D4", "Anti-skid ceramic, waterproofed": "#CFE0EC",
-                 "Rough Cuddapah / Kota, falls": "#D4D9DE", "Flamed granite": "#DCD2C4"}
+FLOOR_COLOURS = {"Red oxide / Kota stone": "#E8C9B8", "Matt vitrified 2x2": "#E5E1D6", "Anti-skid ceramic, waterproofed": "#CFE0EC", "Flamed granite": "#DCD2C4"}
 FLOOR_GROUPS = [(k, colors.HexColor(v), [r for r, f in FLOOR_FINISH.items() if f == k]) for k, v in FLOOR_COLOURS.items()]
 
 
