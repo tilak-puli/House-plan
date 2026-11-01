@@ -6,6 +6,7 @@ Revision B (pre-construction draft), 30 Oct 2026.
 - **Location:** Guntur, Andhra Pradesh. The plot is **agricultural land**; its conversion to residential use still has to be confirmed.
 - **Plot:** 27 ft x 75 ft (5 ft longer than first assumed; confirm by survey), road on the **east**. Planned on this plot alone; a 10 ft strip to the north may be added later. Roof eaves are 2 ft so the north eave stays inside the plot line.
 - **Setbacks:** rear (west) 5 ft garden with a creeper pergola, front (east) 8 ft yard (house lengthened to 62 ft; confirm the front setback), south 3 ft service walkway, north 2 ft to the plot line. These follow local practice; the AP Building Rules figures are to be checked by the architect.
+- **Compound wall:** precast RCC post-and-panel, 5 ft high (2 in panels in 4 in posts), set just inside the plot line so the 2 ft north gap and the 3 ft south walkway stay walkable; the panels lift out, so the north run can move if the north strip is bought.
 
 ## Climate and ground (why the construction differs from Kerala)
 | Condition | Design response |

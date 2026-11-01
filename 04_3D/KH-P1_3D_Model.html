@@ -282,9 +282,11 @@ tileUV(box(0,75,0,SL,-0.12,0,mat.grassT,site),6);
 if(SL>SW+0.1)tileUV(box(0,75,SW,SL,0,0.02,mat.grassT,site),6);
 tileUV(box(2,70,0,28,0,0.05,mat.paveT,site),4);              /* 3 ft apron and paths */
 tileUV(box(67,75,0,SW,0,0.05,mat.paveT,site),4);
-/* laterite compound wall with a concrete coping, MS gate */
-[[0,75,-0.25,0.25],[0,75,SL-0.25,SL+0.25],[-0.25,0.25,0,SL],[74.75,75.25,0,MODEL.gate[0]],[74.75,75.25,MODEL.gate[1],SL]].forEach(([a,b,c,d])=>{
-  tileUV(box(a,b,c,d,0,4,mat.compound,site),4);box(a-0.08,b+0.08,c-0.08,d+0.08,4,4.25,mat.concrete,site);});
+/* compound wall: precast post-and-panel (2 in panels, 5 in posts) set just inside the plot line */
+[['X',0.165,0,75],['X',SL-0.165,0,75],['Y',0.165,0,SL],['Y',74.835,0,MODEL.gate[0]],['Y',74.835,MODEL.gate[1],SL]].forEach(([ax,c,s,e])=>{
+  const pnl=ax==='X'?box(s,e,c-0.085,c+0.085,0.2,5,mat.compound,site):box(c-0.085,c+0.085,s,e,0.2,5,mat.compound,site);tileUV(pnl,4);
+  const n=Math.max(1,Math.round((e-s)/7));for(let i=0;i<=n;i++){const q=Math.min(Math.max(s+i*(e-s)/n,s+0.165),e-0.165);
+    ax==='X'?box(q-0.165,q+0.165,c-0.165,c+0.165,0,5.2,mat.concrete,site):box(c-0.165,c+0.165,q-0.165,q+0.165,0,5.2,mat.concrete,site);}});
 (function(){const [g1,g2]=MODEL.gate,mid=(g1+g2)/2;[[g1+0.1,mid-0.05],[mid+0.05,g2-0.1]].forEach(([a,b])=>{
   box(74.9,75.1,a,b,0.3,0.45,mat.metal,site);box(74.9,75.1,a,b,3.9,4.05,mat.metal,site);box(74.9,75.1,a,a+0.12,0.3,4.05,mat.metal,site);box(74.9,75.1,b-0.12,b,0.3,4.05,mat.metal,site);
   for(let y=a+0.4;y<b-0.2;y+=0.4)box(74.96,75.04,y-0.03,y+0.03,0.45,3.9,mat.metal,site);});})();

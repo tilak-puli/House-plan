@@ -95,7 +95,7 @@ def sheet_site(c):
     pl.scalebar(250 * mm, 75 * mm)
     notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES]
     s.bullets(notes[:7], 45 * mm, 62 * mm, 120 * mm, 6.3)
-    s.bullets(notes[7:] + ["Site drains: finished ground falls 1:100 away from the house to the road side."], 175 * mm, 62 * mm, 150 * mm, 6.3)
+    s.bullets(notes[7:] + ["Site drains: finished ground falls 1:100 away from the house to the road side.", "Compound wall: precast RCC post-and-panel, 5 ft, set just inside the plot line; panels lift out so the north run can move later."], 175 * mm, 62 * mm, 150 * mm, 6.3)
     c.showPage()
 
 

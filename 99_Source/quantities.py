@@ -50,6 +50,8 @@ def take_off():
     q.append(("Roof", "Gutters", round(2 * (x2 - x1) * 0.3048, 1), "m", "Both long eaves"))
     q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 12 ft each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
+    feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
+    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gate"))
     q.append(("Site", "Plinth protection apron, 3 ft wide", round(((62.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(DOORS), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(WINDOWS), "no.", "See Windows tab"))
