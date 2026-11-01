@@ -70,16 +70,18 @@ def make(path):
 
     ws = sheet(wb, "Rooms", ["ID", "Room", "Zone", "E-W (ft)", "N-S (ft)", "Area (sq ft)", "Area (sq m)", "Clear E-W (ft)", "Clear N-S (ft)", "Clear area (sq ft)", "Floor level", "Ceiling", "Notes"],
                [7, 24, 14, 9, 9, 11, 11, 10, 10, 11, 11, 16, 34])
-    notes = {"R10": "Under the ventilator lantern, at plot centre", "R13": "Semi-open, jali on south wall", "R17": "Open verandah", "R09": "Includes 2' x 6' built-in wardrobe",
-             "R04": "Widened 1'-6\" into the master: WC, 3'-6\" vanity, walk-in shower"}
-    for i, r in enumerate(ROOMS, start=2):
+    notes = {"R10": "Open to the living", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts, railings on three sides",
+             "R06": "Dog-leg stair, jali to the living", "R36": "Covered by the main roof, railings on two sides", "R33": "Over the common bath"}
+    upper = {r[0] for r in ROOMS_F1}
+    for i, r in enumerate(both("ROOMS"), start=2):
         L, W = room_dims(r)
-        cl, cw = clear_dims(r)
+        with on_floor("F1" if r[0] in upper else "G"):
+            cl, cw = clear_dims(r)
         ck, cv = CEILINGS[r[0]]
-        ws.append([r[0], r[1], r[6], L, W, f"=D{i}*E{i}", f"=F{i}*0.092903", round(cl, 2), round(cw, 2), f"=H{i}*I{i}",
+        ws.append([r[0], r[1] + (" (1st floor)" if r[0] in upper else ""), r[6], L, W, f"=D{i}*E{i}", f"=F{i}*0.092903", round(cl, 2), round(cw, 2), f"=H{i}*I{i}",
                    fmt_lvl(floor_level(r[0])), f"Flat {fmt_ft(cv)}" if ck == "flat" else f"Sloped ({cv})", notes.get(r[0], "")])
     n = ws.max_row
-    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", "Built footprint 62' x 22' = 1,364 sq ft"])
+    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", "Footprint 44' x 22' = 968 sq ft (ground); first floor about 330 sq ft enclosed + lounge"])
     style_rows(ws, 13)
     for c in ws[ws.max_row]: c.font = Font(name=F, bold=True); c.fill = TOTAL
     for row in ws.iter_rows(min_row=2, min_col=6, max_col=10):
@@ -87,7 +89,7 @@ def make(path):
     ws.cell(1, 7).comment = Comment("1 sq ft = 0.092903 sq m", "Claude")
 
     ws = sheet(wb, "Doors", ["ID", "Location", "Width (ft)", "Height (ft)", "Operation", "Type / material", "Vent above (7'-6\" to 9'-0\")", "Chosen product", "Status"], [7, 26, 10, 10, 14, 40, 44, 26, 14])
-    for d in DOORS:
+    for d in both("DOORS"):
         op = "Sliding" if d[5] == 0 else "Hinged, single" if "double" not in d[7] else "Hinged, double"
         ws.append([d[0], d[6], round(d[4] - d[3], 2), 7, op, d[7], TRANSOM_TYPES[TRANSOMS[d[0]]] if d[0] in TRANSOMS else "-", "", ""])
     style_rows(ws, 9)
@@ -95,9 +97,10 @@ def make(path):
         for c in row: c.fill = INPUT
 
     ws = sheet(wb, "Windows", ["ID", "Room", "Wall faces", "Width (ft)", "Sill (ft)", "Head (ft)", "Height (ft)", "Type", "Status"], [7, 18, 10, 10, 9, 9, 10, 52, 14])
-    face = {("X", 3): "South", ("X", 25): "North", ("Y", 5): "West", ("Y", 67): "East", ("Y", 61): "East (to verandah)"}
-    for i, w in enumerate(WINDOWS, start=2):
-        ws.append([w[0], w[7], face.get((w[1], w[2]), ""), round(w[4] - w[3], 2), w[5], w[6], f"=F{i}-E{i}", w[8], ""])
+    face = {("X", 3): "South", ("X", 25): "North", ("Y", 23): "West", ("Y", 67): "East", ("Y", 61): "East"}
+    upper_w = {w[0] for w in WINDOWS_F1}
+    for i, w in enumerate(both("WINDOWS"), start=2):
+        ws.append([w[0], w[7] + (" (1st floor)" if w[0] in upper_w else ""), face.get((w[1], w[2]), "Inside"), round(w[4] - w[3], 2), w[5], w[6], f"=F{i}-E{i}", w[8], ""])
     for o in OTHER_OPENINGS:
         ws.append([o[0], "Roof", "Up", "", "", "", "", o[1], ""])
     style_rows(ws, 9)
@@ -108,7 +111,7 @@ def make(path):
 
     ws = sheet(wb, "Furniture", ["ID", "Room", "Item", "Category", "E-W (ft)", "N-S (ft)", "Qty", "Material / spec", "Est. unit cost (Rs)", "Line total (Rs)", "Chosen product / vendor", "Status"],
                [7, 18, 34, 18, 9, 9, 6, 34, 14, 14, 26, 12])
-    for i, f in enumerate(FURNITURE, start=2):
+    for i, f in enumerate(both("FURNITURE"), start=2):
         ws.append([f[0], f[1], f[2], kind(f[2]), round(f[4] - f[3], 2), round(f[6] - f[5], 2), f[7], f[8], None, f"=G{i}*I{i}", "", ""])
     n = ws.max_row
     ws.append(["", "", "Total", "", "", "", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", ""])
@@ -145,13 +148,13 @@ def make(path):
     ws.cell(1, 6).comment = Comment("Fill from local contractor or supplier quotes. Quantities are approximate take-offs from the model.", "Claude")
 
     ws = sheet(wb, "Electrical", ["Code", "Item", "Mounting height", "Room", "X (ft)", "Y (ft)", "Note"], [7, 34, 14, 22, 8, 8, 40])
-    rooms = {r[0]: r[1] for r in ROOMS} | {"SITE": "Site"}
-    for code, x, y, rid, note in ELECTRICAL:
+    rooms = {r[0]: r[1] for r in both("ROOMS")} | {"SITE": "Site"}
+    for code, x, y, rid, note in both("ELECTRICAL"):
         ws.append([code, ELEC_TYPES[code][0], ELEC_TYPES[code][1], rooms[rid], x, y, note])
     style_rows(ws, 7)
 
     ws = sheet(wb, "Plumbing", ["Code", "Item", "Room", "X (ft)", "Y (ft)", "Note"], [7, 34, 22, 8, 8, 40])
-    for code, x, y, rid, note in PLUMBING:
+    for code, x, y, rid, note in both("PLUMBING"):
         ws.append([code, PLUMB_TYPES[code], rooms[rid], x, y, note])
     style_rows(ws, 6)
 

@@ -105,12 +105,23 @@ def room_of(rid):
 
 
 def floor_level(rid):
-    return LEVELS["FFL"] + ROOM_FLOOR.get(rid, 0)
+    return LEVELS["FFL"] + (LEVELS["upper_ffl"] if rid in F1_ROOM_IDS else 0) + ROOM_FLOOR.get(rid, 0)
+
+
+def upper_wall_top_z():
+    """Top of the first-floor walls (main roof ring beam) above finished ground."""
+    return LEVELS["FFL"] + LEVELS["upper_ffl"] + LEVELS["upper_wall_top"]
 
 
 # ---- roof: heights above finished ground (FGL = 0) ----
 def eave_z():
-    return LEVELS["FFL"] + LEVELS["wall_top"] - ROOF["overhang"] * TAN
+    """Main (hipped) roof eaves, over the two-storey block."""
+    return upper_wall_top_z() - ROOF["overhang"] * TAN
+
+
+def gable_eave_z():
+    """Front gable eaves, over the single-storey front."""
+    return LEVELS["FFL"] + LEVELS["wall_top"] - ROOF["overhang"] * TAN + ROOF["gable_lift"]
 
 
 def hip_z(x, y):
@@ -123,7 +134,7 @@ def gable_z(x, y):
     gx1, gx2, ya, yb = ROOF["gable"]
     if not (gx1 <= x <= gx2 and ya <= y <= yb):
         return None
-    return eave_z() + ROOF["gable_lift"] + min(y - ya, yb - y) * TAN
+    return gable_eave_z() + min(y - ya, yb - y) * TAN
 
 
 def roof_z(x, y):
@@ -138,35 +149,14 @@ def ridge_z():
 
 def gable_ridge_z():
     gx1, gx2, ya, yb = ROOF["gable"]
-    return eave_z() + ROOF["gable_lift"] + (yb - ya) / 2 * TAN
-
-
-def _bisect(f, a, b, n=60):
-    fa = f(a)
-    for _ in range(n):
-        m = (a + b) / 2
-        if (f(m) > 0) == (fa > 0):
-            a, fa = m, f(m)
-        else:
-            b = m
-    return (a + b) / 2
-
-
-def gable_valleys():
-    """Valley lines where the front gable meets the hip roof, as ((x,y),(x,y)) pairs."""
-    gx1, gx2, ya, yb = ROOF["gable"]
-    yc = (ya + yb) / 2
-    diff = lambda y: (lambda x: gable_z(x, y) - hip_z(x, y))
-    xr = _bisect(diff(yc), gx1, gx2)
-    xs = _bisect(diff(ya + 1e-6), gx1, gx2)
-    xn = _bisect(diff(yb - 1e-6), gx1, gx2)
-    return [((xs, ya), (xr, yc)), ((xn, yb), (xr, yc))], (xr, yc)
+    return gable_eave_z() + (yb - ya) / 2 * TAN
 
 
 def roof_area():
-    """Sloped roof area (sq ft): plan area of the hip outline divided by cos(pitch)."""
+    """Sloped roof area (sq ft): plan area of the main hip and the front gable (beyond the hip) divided by cos(pitch)."""
     x1, x2, y1, y2 = ROOF["hip"]
-    return (x2 - x1) * (y2 - y1) / math.cos(math.radians(ROOF["pitch"]))
+    gx1, gx2, ya, yb = ROOF["gable"]
+    return ((x2 - x1) * (y2 - y1) + (gx2 - max(gx1, x2)) * (yb - ya)) / math.cos(math.radians(ROOF["pitch"]))
 
 
 # ---- dining ventilator ----

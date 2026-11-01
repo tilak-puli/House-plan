@@ -252,7 +252,7 @@ def det_ventilator(d):
         xs = [sgn * 33, sgn * 82]
         d.l([(xs[0], roof(xs[0]) + 2), (xs[1], roof(xs[1]) + 2), (xs[1], roof(xs[1]) - 6), (xs[0], roof(xs[0]) - 6)], fill=colors.HexColor("#E7E2D5"), close=True)
         d.l([(xs[0], roof(xs[0]) + 2), (xs[1], roof(xs[1]) + 2), (xs[1], roof(xs[1]) + 4), (xs[0], roof(xs[0]) + 4)], fill=colors.HexColor("#C98B6B"), close=True)
-        d.l([(sgn * 30, roof(30) - 12), (sgn * 82, roof(82) - 12)], lw=0.5, color=BLUE, dash=(2, 1))      # dining ceiling under the roof
+        d.l([(sgn * 30, roof(30) - 12), (sgn * 82, roof(82) - 12)], lw=0.5, color=BLUE, dash=(2, 1))      # living ceiling under the roof
         d.r(*sorted((sgn * 30, sgn * 33)), roof(30) - 6, 9, fill=AAC)                                        # upstand / curb
         d.l([(sgn * 33, roof(33) + 4), (sgn * 33, roof(33) + 13), (sgn * 34, roof(33) + 13)], lw=1.2, color=WATERP)  # flashing
         d.l([(sgn * 30, 9), (sgn * 37, 8.3), (sgn * 37, 7.3), (sgn * 30, 8)], fill=STONE, close=True)        # sill sloped out
@@ -276,9 +276,9 @@ def det_ventilator(d):
     d.call(-26.3, 28, "Inner shutters with EPDM rubber seals: closed for AC, cool nights and dust storms. Opening them gives access to clean the mesh.")
     d.call(-35, 7.5, "Sill sloped out 1:10 with a drip; any water that gets past the louvres runs back out.")
     d.call(-34, -14, "9 in minimum upstand above the tiles with lead / membrane flashing and counter-flashing.")
-    d.call(-29.8, -25, "Shaft lined with insulated fibre-cement board down to the dining ceiling: attic heat and dust stay out.")
-    d.call(-25.5, -52, "Winding opener (or cord and pulley) with the handle 5 ft above the dining floor; no ladder needed.")
-    d.call(3, -10, "Hot air from the dining and living rises up the shaft and leaves through the louvres; fresh air enters low through south jalis and windows.")
+    d.call(-29.8, -25, "Open to the covered terrace below: hot air gathering under the tiles rises out through the louvres.")
+    d.call(-25.5, -52, "No shutters needed: the terrace below is open-sided. Bird mesh behind the louvres.")
+    d.call(3, -10, "Hot air under the roof rises to the ridge and leaves through the louvres; the terrace stays cooler and the slab over the living stays shaded.")
 
 
 BOUNDS = {det_plinth: (-8, 62, -31, 62), det_skirting: (-2, 42, -3, 42), det_sill: (-24, 16, -2, 80),
@@ -314,14 +314,14 @@ def sheet_details_2(c):
 
 
 def sheet_details_3(c):
-    s = Sheet(c, "A-503", "Typical details 3: dining ventilator", "NTS")
-    _place(s, det_ventilator, "Dining ventilator: section", 10, 14 * mm, 15 * mm, 215 * mm, 262 * mm, notes_h=58)
+    s = Sheet(c, "A-503", "Typical details 3: ridge ventilator", "NTS")
+    _place(s, det_ventilator, "Ridge ventilator: section", 10, 14 * mm, 15 * mm, 215 * mm, 262 * mm, notes_h=58)
     x, top, w = 238 * mm, PH - 30 * mm, 90 * mm
     how = [
-        "Hot air collects under the sloped ceilings of the dining and living. The ventilator is the highest opening in the house, so that air rises out through it.",
+        "Hot air collects under the tiles over the covered terrace. The ventilator is the highest opening, so that air rises out through it.",
         "Replacement air comes in low and cool through the south jalis, the open wet area and the windows.",
         "It works best on still, hot evenings, when there is no breeze to cross-ventilate the house.",
-        "No glass, so no direct sun or greenhouse heat on the dining table. Daylight in the dining comes from the living, the nook window and the hall.",
+        "No glass, so no sun or greenhouse heat on the terrace below.",
     ]
     h = s.bullets(how, x, top, w, 7.2, title="How it works")
     use = [
@@ -334,7 +334,7 @@ def sheet_details_3(c):
     h2 = s.bullets(use, x, top - h - 8 * mm, w, 7.2, title="Using it")
     checks = [
         "Engineer to frame the ventilator into the trusses and check cyclone uplift on the cap.",
-        "Water-test the louvres and flashing with a hose before the dining ceiling is closed.",
+        "Water-test the louvres and flashing with a hose before the terrace is tiled.",
         "Check the mesh frame for gaps with a torch from inside before the shutters are fitted.",
         "Size: 5 x 5 ft louvre box, 2 ft louvre band, about 20 sq ft of free vent area.",
     ]

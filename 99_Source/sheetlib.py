@@ -34,9 +34,9 @@ class Sheet:
         c.setFillColor(INK); c.setFont("Helvetica-Bold", 13)
         c.drawString(x0 + 5 * mm, y, PROJECT["name"])
         c.setFont("Helvetica", 8.5); c.setFillColor(GREY)
-        c.drawString(x0 + 5 * mm, y - 6 * mm, "Kerala-style single-storey residence")
+        c.drawString(x0 + 5 * mm, y - 6 * mm, "Kerala-style two-storey residence (duplex option)")
         c.drawString(x0 + 5 * mm, y - 11 * mm, "Guntur, Andhra Pradesh")
-        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {SITE['w']}' x {SITE['l']}', road on east")
+        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {SITE['w']}' x {SITE['l']}' (front 55' used), road on east")
         rows = [("Stage", PROJECT["stage"]), ("Drawing", self.title), ("Sheet", self.num), ("Scale", self.scale + (" at A3" if ":" in self.scale else "")),
                 ("Revision", PROJECT["rev"]), ("Date", PROJECT["date"]), ("Units", "Feet-inches; levels from finished ground")]
         yy = 60 * mm
@@ -211,9 +211,72 @@ class Plan:
                 self.text(nm, lx, ly, size, color=color, anchor="l")
             else:
                 cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
-                if rid == "R10": cy = 15.3
                 self.text(nm.upper(), cx, cy + 0.55, size, "Helvetica-Bold", color)
                 if sub: self.text(sub(r), cx, cy - 0.45, size - 0.7, color=GREY)
+
+    def rails(self):
+        """First-floor railings: two thin lines."""
+        for axis, c0, a, b in RAILS:
+            if axis == "X":
+                self.line(a, c0 - 0.12, b, c0 - 0.12, lw=0.5); self.line(a, c0 + 0.12, b, c0 + 0.12, lw=0.5)
+            else:
+                self.line(c0 - 0.12, a, c0 - 0.12, b, lw=0.5); self.line(c0 + 0.12, a, c0 + 0.12, b, lw=0.5)
+
+    def stair(self):
+        """Dog-leg stair: treads of both flights, the half landing, the core wall and an UP / DN arrow."""
+        st = STAIR
+        x1, x2, y1, y2, n1 = st["flight1"]
+        for i in range(n1):
+            yy = y1 + i * st["tread"]
+            if yy <= y2 + 1e-6: self.line(x1, yy, x2, yy, lw=0.3)
+        u1, u2, v1, v2, n2 = st["flight2"]
+        for i in range(n2):
+            yy = v2 - i * st["tread"]
+            if yy >= v1 - 1e-6: self.line(u1, yy, u2, yy, lw=0.3)
+        lx1, lx2, ly1, ly2 = st["landing"]
+        self.rect(lx1, lx2, ly1, ly2, lw=0.3)
+        cx1, cx2, cy1, cy2 = st["core"]
+        self.rect(cx1, cx2, cy1, cy2, stroke=None, fill=WALL_FILL["INT"])
+        ground = FLOOR[0] == "G"
+        mx = (x1 + x2) / 2
+        if ground:  # flight 1 from the lobby, cut line part way up
+            self.poly([(mx, y1 + 0.3), (mx, y2 - 0.6)], lw=0.5)
+            self.poly([(mx - 0.3, y2 - 1.0), (mx, y2 - 0.6), (mx + 0.3, y2 - 1.0)], lw=0.5)
+            self.text("UP", mx, y1 + 0.9, 4.6, "Helvetica-Bold")
+            self.line(u1, y1 + 3.2, x2, y1 + 4.4, lw=0.5, dash=(3, 1.5))
+        else:
+            ux = (u1 + u2) / 2
+            self.poly([(ux, v1 + 0.6), (ux, v2 - 0.3)], lw=0.5)
+            self.poly([(ux - 0.3, v1 + 1.0), (ux, v1 + 0.6), (ux + 0.3, v1 + 1.0)], lw=0.5)
+            self.text("DN", ux, v1 + 1.6, 4.6, "Helvetica-Bold")
+
+    def void(self, x1, x2, y1, y2, label=None, size=5):
+        """Open to below: light cross and a label."""
+        self.line(x1, y1, x2, y2, lw=0.3, color=GREY, dash=(2, 2)); self.line(x1, y2, x2, y1, lw=0.3, color=GREY, dash=(2, 2))
+        if label: self.text(label, (x1 + x2) / 2, (y1 + y2) / 2 + 1.0, size, "Helvetica-Bold", GREY)
+
+    def floor_extras(self):
+        """Stair everywhere; on the first floor also the railings, the terrace posts and the roof below."""
+        self.stair()
+        if FLOOR[0] == "F1":
+            self.rails()
+            for x, y in TERRACE_POSTS:
+                self.rect(x - 0.17, x + 0.17, y - 0.17, y + 0.17, stroke=INK, fill=INK, lw=0.3)
+            self.text("STEEL POSTS CARRY THE ROOF OVER THE TERRACE", 53, 23.3, 4.4, color=GREY)
+            gx1, gx2, ya, yb = ROOF["gable"]
+            self.rect(61.4, gx2, ya, yb, stroke=GREY, lw=0.4, dash=(3, 2))
+            self.text("FRONT GABLE ROOF BELOW", (61.4 + gx2) / 2, (ya + yb) / 2, 4.6, color=GREY)
+
+    def auto_dims(self, size=5.5):
+        """Dimension chains from the wall grid: below the plan (x) and to its right (y)."""
+        xs = sorted({round(w[1], 3) for w in WALLS if w[0] == "Y"})
+        ys = sorted({round(w[1], 3) for w in WALLS if w[0] == "X"})
+        lo_x, hi_x, lo_y, hi_y = xs[0], xs[-1], ys[0], ys[-1]
+        for a, b in zip(xs, xs[1:]): self.hdim(a, b, lo_y - 1.5, size=size)
+        self.hdim(lo_x, hi_x, lo_y - 4.3, f"{fmt_ft(hi_x - lo_x)} OVERALL")
+        xr = max(hi_x, 67) + 4.6
+        for a, b in zip(ys, ys[1:]): self.vdim(a, b, xr, size=size)
+        self.vdim(lo_y, hi_y, xr + 2.7, f"{fmt_ft(hi_y - lo_y)} OVERALL")
 
     def north(self, x, y):
         c = self.c
@@ -284,15 +347,24 @@ class Elev:
 
 
 def short_name(name):
-    for a, b in ((" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in"),
+    for a, b in ((" (double height)", ""), (" (covered)", ""), (" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in"),
                  (" (open to the hall)", ""), (" (open to the walkway)", ""), ("Sitting and serving area (open)", "Sitting area"), ("Fridge corner", "Fridge"), (" (common)", ""), (" (attached to Bedroom 2)", ""), (" (open, walls optional later)", ""),  (" (old store, open to the bedroom)", ""), (" (north window)", "")):
         name = name.replace(a, b)
     return name
 
 
+def floor_sheet(fn, floor, num, title):
+    """Run a plan sheet function for one floor (the model's lists are swapped while it draws)."""
+    def run(c):
+        with on_floor(floor):
+            fn(c, num, title)
+    return run
+
+
 def site_context(pl, light=False):
     g = GREY
     L, W, S = SITE["l"], SITE["w"], SITE["strip"]
+    pl.line(SITE["trial"], 0, SITE["trial"], W, lw=0.5, color=GREY, dash=(4, 2))
     if S: pl.rect(0, L, 0, W + S, stroke=GREY, lw=0.5, dash=(3, 2))
     pl.rect(0, L, 0, W, stroke=INK, lw=0.9)
     pl.rect(L, L + 3.5, -1, W + S + 1, stroke=None, fill=colors.HexColor("#EDEDED"))
@@ -305,8 +377,12 @@ def site_features(pl, labels=True, size=5):
     for fid, label, kind, g in SITE_FEATURES:
         if kind == "rect":
             x1, x2, y1, y2 = g
+            if fid == "SPARE":
+                pl.rect(x1, x2, y1, y2, stroke=None, fill=colors.HexColor("#EEF3E8"))
+                if labels: pl.text("SPARE LAND (BACK 20 FT)", (x1 + x2) / 2, y2 - 2.2, size + 0.5, "Helvetica-Bold", GREY)
+                continue
             pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid == "PERGOLA" else None)
-            if labels and fid not in ("GATE", "STEPS"):
+            if labels and fid not in ("GATE", "STEPS", "HEDGE3"):
                 pl.text(fid if fid != "PERGOLA" else "PERGOLA", (x1 + x2) / 2, (y1 + y2) / 2, size)
         elif kind == "circle":
             x, y, r = g

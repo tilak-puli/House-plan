@@ -72,28 +72,24 @@ def _window(pl, x, w_rec):
     return w
 
 
-def sheet_doors_windows(c):
-    s = Sheet(c, "A-401", "Door and window details", "1:60")
-    k = 304.8 / 60 * mm
-    st = ParagraphStyle("d", fontName="Helvetica", fontSize=5.2, leading=6)
-    # doors
-    pl = Plan(s, 60, 18 * mm, 206 * mm)
-    s.note("DOORS (viewed from the side the door swings into; vents above inner doors, 7'-6\" to 9'-0\"; none at bedrooms or bathrooms)", 18 * mm, 266 * mm, 9, INK, "Helvetica-Bold")
-    x = 0.5
-    for d in DOORS:
-        w = _door(pl, x, d)
-        pl.text(d[0], x + w / 2, 9.6, 6.5, "Helvetica-Bold", ACC)
-        pl.text(f"{fmt_ft(w)} x 7'-0\"", x + w / 2, -0.9, 5.2)
-        p = Paragraph(DOOR_NOTES.get(d[0], d[7]) + (f"<br/><i>Above: {TRANSOM_LABELS[TRANSOMS[d[0]]].lower()}</i>" if d[0] in TRANSOMS else ("<br/><i>No vent above</i>" if (d[1], d[2]) not in EXTERIOR else "")), st); pw, ph = p.wrap(max(w, 2.8) * k + 5 * mm, 30 * mm)
-        p.drawOn(c, pl.p(x - 0.4, 0)[0], pl.p(0, -1.6)[1] - ph)
-        x += max(w, 2.8) + 1.7
-    # windows
-    rows = [WINDOWS[:8], WINDOWS[8:]]
+def WINDOWS_G_LIST():
+    with on_floor("G"):
+        return list(WINDOWS)
+
+
+def _window_rows(s, c, st, k, wins, oys, title):
+    rows, cur, used = [], [], 0
+    for w_rec in wins:
+        step = max(w_rec[4] - w_rec[3], 3) + 2.6
+        if used + step > 66 and cur:
+            rows.append(cur); cur, used = [], 0
+        cur.append(w_rec); used += step
+    rows.append(cur)
     for ri, row in enumerate(rows):
-        oy = (126 - ri * 66) * mm
-        pl = Plan(s, 60, 18 * mm, oy)
+        oy = oys[ri] * mm
+        pl = Plan(s, 75, 18 * mm, oy)
         if ri == 0:
-            s.note("WINDOWS (viewed from inside; sill and head heights above floor)", 18 * mm, oy + 52 * mm, 9, INK, "Helvetica-Bold")
+            s.note(title, 18 * mm, oy + 46 * mm, 9, INK, "Helvetica-Bold")
         x = 1.0
         for w_rec in row:
             w = _window(pl, x, w_rec)
@@ -102,6 +98,41 @@ def sheet_doors_windows(c):
             p = Paragraph(w_rec[8], st); pw, ph = p.wrap(max(w, 3) * k + 5 * mm, 30 * mm)
             p.drawOn(c, pl.p(x - 0.5, 0)[0], pl.p(0, -1.6)[1] - ph)
             x += max(w, 3) + 2.6
+
+
+def sheet_windows_f1(c):
+    s = Sheet(c, "A-402", "Window details, first floor", "1:75")
+    k = 304.8 / 75 * mm
+    st = ParagraphStyle("d", fontName="Helvetica", fontSize=5.2, leading=6)
+    with on_floor("F1"):
+        wins = list(WINDOWS)
+    _window_rows(s, c, st, k, wins, (196, 122), "WINDOWS, FIRST FLOOR (viewed from inside; sill and head heights above the first floor)")
+    notes = [
+        "The stair-well jali (W40) faces the covered terrace: light and air for the stair, no glass to clean.",
+        "The terrace door (D36) off the landing is glazed teak, opening outward with a weather bar.",
+        "Upper windows sit under the main roof's 2 ft eave; sunshades only on the south windows.",
+    ]
+    s.bullets(notes, 18 * mm, 70 * mm, 300 * mm, 6.4)
+    c.showPage()
+
+
+def sheet_doors_windows(c):
+    s = Sheet(c, "A-401", "Door details and ground-floor windows", "1:75")
+    k = 304.8 / 75 * mm
+    st = ParagraphStyle("d", fontName="Helvetica", fontSize=5.2, leading=6)
+    # doors
+    pl = Plan(s, 75, 18 * mm, 222 * mm)
+    s.note("DOORS (viewed from the side the door swings into; vents above inner doors, 7'-6\" to 9'-0\"; none at bedrooms or bathrooms)", 18 * mm, 268 * mm, 9, INK, "Helvetica-Bold")
+    x = 0.5
+    for d in both("DOORS"):
+        w = _door(pl, x, d)
+        pl.text(d[0], x + w / 2, 9.6, 6.5, "Helvetica-Bold", ACC)
+        pl.text(f"{fmt_ft(w)} x 7'-0\"", x + w / 2, -0.9, 5.2)
+        p = Paragraph(DOOR_NOTES.get(d[0], d[7]) + (f"<br/><i>Above: {TRANSOM_LABELS[TRANSOMS[d[0]]].lower()}</i>" if d[0] in TRANSOMS else ""), st); pw, ph = p.wrap(max(w, 2.8) * k + 5 * mm, 30 * mm)
+        p.drawOn(c, pl.p(x - 0.4, 0)[0], pl.p(0, -1.6)[1] - ph)
+        x += max(w, 2.8) + 1.7
+    # windows
+    _window_rows(s, c, st, k, WINDOWS_G_LIST(), (152, 90), "WINDOWS, GROUND FLOOR (viewed from inside; sill and head heights above the floor)")
     notes = [
         "All windows: insect mesh (SS or fibreglass) on a separate openable or sliding frame, so glass can be cleaned.",
         "MS safety grill inside the shutters on every ground-floor window; one escape window per bedroom with an openable grill section.",
@@ -110,5 +141,5 @@ def sheet_doors_windows(c):
         "Hardware: SS 304 hinges and screws (hard water and humidity rust MS); magnetic door stoppers on every door.",
         "Sunshade (chajja) over every window projects 1'-6\" to 2'-0\" with a drip groove under the front edge.",
     ]
-    s.bullets(notes, 18 * mm, 37 * mm, 300 * mm, 6.0)
+    s.bullets(notes, 18 * mm, 26 * mm, 300 * mm, 5.6)
     c.showPage()

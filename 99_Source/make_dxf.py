@@ -4,10 +4,11 @@ from ezdxf import units
 from geom import *
 
 MM = 304.8  # mm per ft
+OFF = [0.0]  # north offset of the floor being drawn (first floor is drawn 40 ft north of the ground floor)
 
 
 def P(x, y):
-    return (x * MM, y * MM)
+    return (x * MM, (y + OFF[0]) * MM)
 
 
 def make(path):
@@ -39,8 +40,9 @@ def make(path):
     W, S = SITE["w"], SITE["strip"]
     rect(0, SITE["l"], 0, W + S, "C-PROP-SETB")
     rect(0, SITE["l"], 0, W, "C-PROP")
-    rect(5, 67, 3, 25, "C-PROP-SETB")
+    rect(SITE["trial"], SITE["l"], 0, W, "C-PROP-SETB")
     rect(*ROOF["hip"], "A-ROOF-OTLN")
+    rect(*ROOF["gable"], "A-ROOF-OTLN")
     text(f"PLOT {W}' x {SITE['l']}'", 35, 1.2, 150, "A-ANNO-TEXT")
     if S: text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
     text("EAST ROAD", 81, W / 2, 200)
@@ -52,6 +54,18 @@ def make(path):
     for x, y, r in TREES:
         msp.add_circle(P(x, y), r * MM, dxfattribs={"layer": "L-PLNT"})
 
+    for fl, dy in (("G", 0.0), ("F1", 40.0)):
+        OFF[0] = dy
+        with on_floor(fl):
+            _floor(msp, rect, text, fl)
+    OFF[0] = 0.0
+    doc.saveas(path)
+
+
+def _floor(msp, rect, text, fl):
+    if fl == "F1":
+        text("FIRST FLOOR PLAN (drawn 40 ft north of the ground floor)", 45, -2.5, 220)
+        rect(0, SITE["l"], 0, SITE["w"], "C-PROP-SETB")
     # services (schematic points and runs)
     for code, x, y, rid, note in ELECTRICAL:
         msp.add_circle(P(x, y), 0.3 * MM, dxfattribs={"layer": "E-POWR" if code not in ("L", "WL", "F", "EF", "S", "GL") else "E-LITE"})
@@ -71,6 +85,16 @@ def make(path):
         rect(x1, x2, y1 + 0.2, y2 - 0.2, "A-JALI")
     for x, y in PILLARS:
         msp.add_circle(P(x, y), 0.36 * MM, dxfattribs={"layer": "A-COLS"})
+    for axis, c, s, e in RAILS:
+        rect(*seg_rect(axis, c, s, e, 0.25), "A-WALL-INT")
+    st = STAIR
+    for key in ("flight1", "flight2"):
+        x1, x2, y1, y2, n = st[key]
+        rect(x1, x2, y1, y2, "A-FLOR-FIXT")
+        for i in range(1, n - 1):
+            yy = y1 + i * st["tread"] if key == "flight1" else y2 - i * st["tread"]
+            msp.add_line(P(x1, yy), P(x2, yy), dxfattribs={"layer": "A-FLOR-FIXT"})
+    rect(*st["landing"], "A-FLOR-FIXT")
 
     # openings
     for (x1, x2, y1, y2), kind, rec, axis, c, a, b in opening_rects():
@@ -126,9 +150,7 @@ def make(path):
     # room tags
     for r in ROOMS:
         rid, name, x1, x2, y1, y2, _ = r
-        cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
-        if rid == "R10":
-            cy = 18.2
+        cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         text(name.upper(), cx, cy + 0.45, 110, "A-AREA-IDEN")
         L, W = clear_dims(r)
         text(f"{fmt_ft(L)} x {fmt_ft(W)} clear", cx, cy - 0.35, 80, "A-AREA-IDEN")
@@ -142,15 +164,15 @@ def make(path):
     def vdim(a, b, x, base):
         d = msp.add_linear_dim(base=P(base, a), p1=P(x, a), p2=P(x, b), angle=90, dimstyle="EZ_MM_100_H25_CM", override=override, dxfattribs=dim)
         d.render()
-    hdim(5, 67, 25, 33.5)
-    vdim(3, 25, 67, 74)
-    xs = [5, 14, 21, 41.5, 48, 53, 67]
+    xs = sorted({w[1] for w in WALLS if w[0] == "Y"})
+    ys = sorted({w[1] for w in WALLS if w[0] == "X"})
+    hdim(xs[0], xs[-1], ys[-1], ys[-1] + 4.5)
+    vdim(ys[0], ys[-1], xs[-1], xs[-1] + 5)
     for a, b in zip(xs, xs[1:]):
-        hdim(a, b, 3, -2)
-    vdim(0, 3, 5, -3); vdim(25, SITE["w"], 5, -3)
-    hdim(0, 5, 3, -5); hdim(67, 75, 3, -5)
-
-    doc.saveas(path)
+        hdim(a, b, ys[0], ys[0] - 2)
+    if fl == "G":
+        vdim(0, 3, 23, 19.5); vdim(25, SITE["w"], 23, 19.5)
+        hdim(SITE["trial"], 23, 3, -5); hdim(67, 75, 3, -5)
 
 
 if __name__ == "__main__":

@@ -41,3 +41,15 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 4. Pooja in the living's south-east corner, back to back with the kitchen, opening west (idols face west, family faces east), with a shoe cupboard beyond its solid north wall beside the main door: acceptable? (NE is the textbook spot; SE beside the kitchen is the family's choice.)
 5. Main door on the east face, north of the plot centre and centred under the front gable; DB on the dining face of Bedroom 2's east wall. TV on the west wall of the hall (Bedroom 2's east wall), in the dining bay.
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.
+
+## Duplex option (branch `feature/duplex`)
+- Architect: what front, side and rear setbacks apply to a two-storey house on this plot and road width, and is there a height limit? Does the 8 ft front yard still work?
+- Architect: is 55 ft of plot enough for this duplex in practice, or should we keep the 62 ft single-storey plan on the full 75 ft?
+- Structural engineer: footing and column sizes for two floors on black cotton soil; the first-floor slab over the whole block and its edge beam round the terrace; RCC stubs and base plates for the steel posts that carry the roof over the terrace.
+- Structural engineer: stair design (waist slab, landing beam) and whether the loft water tank can sit on the truss or needs a platform off the slab.
+- Plumber: the upper WC stack inside the wet wall between the common bath and the store, its vent above the main roof, and waterproofing the slabs under the upper bath, the lounge and the terrace, and the terrace drain to a downpipe.
+- Electrician: a sub-board for the first floor, 2-way switching between the lobby and the landing, wet-rated lights and fan on the covered terrace.
+- Vastu consultant: the stair in the north-west quarter rising clockwise; the upper master over the ground master in the south-west; the Brahmasthan in the living (kept free of walls and columns) with the covered terrace above.
+- Architect / contractor: roof over the terrace in clay tiles on steel trusses (drawn) or an insulated metal-sheet roof on the same frame: cost, heat and look.
+- Contractor: rate difference between a two-storey and a single-storey house of similar area in the village (frame, slab, stair, steel terrace frame).
+
