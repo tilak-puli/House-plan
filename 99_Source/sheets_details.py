@@ -245,46 +245,9 @@ def det_threshold(d):
     d.call(-12, 18, "Open wet area: floor 3 in lower and sloping out to the walkway, so rain drains away from the kitchen door.")
 
 
-def det_ventilator(d):
-    t = 0.577
-    roof = lambda x: -abs(x) * t
-    for sgn in (-1, 1):
-        xs = [sgn * 33, sgn * 82]
-        d.l([(xs[0], roof(xs[0]) + 2), (xs[1], roof(xs[1]) + 2), (xs[1], roof(xs[1]) - 6), (xs[0], roof(xs[0]) - 6)], fill=colors.HexColor("#E7E2D5"), close=True)
-        d.l([(xs[0], roof(xs[0]) + 2), (xs[1], roof(xs[1]) + 2), (xs[1], roof(xs[1]) + 4), (xs[0], roof(xs[0]) + 4)], fill=colors.HexColor("#C98B6B"), close=True)
-        d.l([(sgn * 30, roof(30) - 12), (sgn * 82, roof(82) - 12)], lw=0.5, color=BLUE, dash=(2, 1))      # living ceiling under the roof
-        d.r(*sorted((sgn * 30, sgn * 33)), roof(30) - 6, 9, fill=AAC)                                        # upstand / curb
-        d.l([(sgn * 33, roof(33) + 4), (sgn * 33, roof(33) + 13), (sgn * 34, roof(33) + 13)], lw=1.2, color=WATERP)  # flashing
-        d.l([(sgn * 30, 9), (sgn * 37, 8.3), (sgn * 37, 7.3), (sgn * 30, 8)], fill=STONE, close=True)        # sill sloped out
-        for y in range(13, 34, 4):                                                                          # 45 deg louvre blades
-            d.l([(sgn * 31, y), (sgn * 37, y - 6)], lw=1.4, color=WOOD)
-        d.l([(sgn * 29.4, 9), (sgn * 29.4, 33)], lw=0.6, color=BLUE, dash=(0.8, 0.6))                       # insect mesh
-        d.r(*sorted((sgn * 25.5, sgn * 27)), 10, 32, fill=colors.HexColor("#EFE7DA"))                     # inner shutter
-        d.l([(sgn * 29.8, roof(30) - 12), (sgn * 29.8, 9)], lw=0.8, color=GREY)                             # shaft lining
-    d.l([(-49, 33), (49, 33), (0, 33 + 49 * t)], fill=colors.HexColor("#C98B6B"), close=True)                # hipped cap
-    d.l([(-49, 33), (-49, 31.5)], lw=1.2); d.l([(49, 33), (49, 31.5)], lw=1.2)
-    d.l([(-40, 30), (40, 30)], lw=0.6)
-    d.l([(-25.5, 21), (-25.5, -58)], lw=0.4, dash=(1, 1))
-    d.r(-28, -23, -60, -57, fill=colors.HexColor("#555555"))
-    d.l([(0, -40), (0, 18), (34, 26)], lw=1.0, color=RED, dash=(2, 1))
-    d.l([(34, 26), (31, 27.5), (32, 24.2), (34, 26)], lw=0.6, color=RED, fill=RED, close=True)
-    d.t("ATTIC (roof space)", -70, -60, 5.5, GREY); d.t("DINING BELOW", 0, -50, 6, GREY, "c"); d.t("OUT", -76, 18, 6, GREY)
-    d.call(0, 48, "Hipped cap at the main roof pitch (30 deg), clay tiles clipped, insulated board under: sheds rain, nothing ponds.")
-    d.call(-46, 31, "Cap overhangs the louvres by 1'-6\" with a drip edge, so rain falls well clear of them.")
-    d.call(-34, 23, "Louvre blades at 45 deg sloping down and out with a 4 in lap: no straight line through for wind-driven rain.")
-    d.call(-29.4, 15, "SS 304 insect mesh about 1.2 mm (18 x 16) in a continuous frame, sealed at every corner: this is what stops mosquitoes.")
-    d.call(-26.3, 28, "Inner shutters with EPDM rubber seals: closed for AC, cool nights and dust storms. Opening them gives access to clean the mesh.")
-    d.call(-35, 7.5, "Sill sloped out 1:10 with a drip; any water that gets past the louvres runs back out.")
-    d.call(-34, -14, "9 in minimum upstand above the tiles with lead / membrane flashing and counter-flashing.")
-    d.call(-29.8, -25, "Open to the covered terrace below: hot air gathering under the tiles rises out through the louvres.")
-    d.call(-25.5, -52, "No shutters needed: the terrace below is open-sided. Bird mesh behind the louvres.")
-    d.call(3, -10, "Hot air under the roof rises to the ridge and leaves through the louvres; the terrace stays cooler and the slab over the living stays shaded.")
-
-
 BOUNDS = {det_plinth: (-8, 62, -31, 62), det_skirting: (-2, 42, -3, 42), det_sill: (-24, 16, -2, 80),
           det_eaves: (-10, 64, -2, 76), det_bath: (-16, 104, -4, 86), det_kitchen: (-10, 42, -6, 98),
-          det_basin: (-8, 42, -2, 86), det_aac: (-2, 62, -2, 68), det_threshold: (-32, 38, -8, 62),
-          det_ventilator: (-84, 84, -62, 64)}
+          det_basin: (-8, 42, -2, 86), det_aac: (-2, 62, -2, 68), det_threshold: (-32, 38, -8, 62)}
 
 
 def _place(s, fn, title, num, x, y, w, h, notes_h=34):
@@ -310,33 +273,4 @@ def sheet_details_2(c):
     _place(s, det_basin, "Hand-wash basin (serving counter)", 7, 14 * mm, 15 * mm, W2, H1)
     _place(s, det_aac, "AAC wall joints and chases", 8, 122 * mm, 15 * mm, W2, H1)
     _place(s, det_threshold, "Door thresholds and rain kerbs", 9, 230 * mm, 15 * mm, W2, H1)
-    c.showPage()
-
-
-def sheet_details_3(c):
-    s = Sheet(c, "A-503", "Typical details 3: ridge ventilator", "NTS")
-    _place(s, det_ventilator, "Ridge ventilator: section", 10, 14 * mm, 15 * mm, 215 * mm, 262 * mm, notes_h=58)
-    x, top, w = 238 * mm, PH - 30 * mm, 90 * mm
-    how = [
-        "Hot air collects under the tiles over the covered terrace. The ventilator is the highest opening, so that air rises out through it.",
-        "Replacement air comes in low and cool through the south jalis, the open wet area and the windows.",
-        "It works best on still, hot evenings, when there is no breeze to cross-ventilate the house.",
-        "No glass, so no sun or greenhouse heat on the terrace below.",
-    ]
-    h = s.bullets(how, x, top, w, 7.2, title="How it works")
-    use = [
-        "Summer days and evenings: shutters open.",
-        "AC running in the living: shutters closed, or the cool air leaves through the roof.",
-        "Monsoon storms and cyclone warnings: shutters closed.",
-        "Dust storms or winter nights: shutters closed.",
-        "Twice a year: open the shutters and brush or vacuum the mesh.",
-    ]
-    h2 = s.bullets(use, x, top - h - 8 * mm, w, 7.2, title="Using it")
-    checks = [
-        "Engineer to frame the ventilator into the trusses and check cyclone uplift on the cap.",
-        "Water-test the louvres and flashing with a hose before the terrace is tiled.",
-        "Check the mesh frame for gaps with a torch from inside before the shutters are fitted.",
-        "Size: 5 x 5 ft louvre box, 2 ft louvre band, about 20 sq ft of free vent area.",
-    ]
-    s.bullets(checks, x, top - h - h2 - 16 * mm, w, 7.2, title="Before it is closed up")
     c.showPage()

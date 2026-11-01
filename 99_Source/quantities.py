@@ -34,7 +34,7 @@ def take_off():
     q.append(("Frame", "First-floor RCC slab (about 5 in)", round(slab * 0.0929, 1), "sq m", "Over the back half, less the stair well"))
     q.append(("Frame", "RCC dog-leg stair", STAIR["risers"], "risers", "3'-6\" flights, half landing 7'-6\" x 5'-8\""))
     q.append(("Frame", "Galvanised steel posts for the terrace roof (about 100 mm SHS, 9 ft)", len(TERRACE_POSTS), "no.", "On RCC column stubs; trusses over the terrace in steel"))
-    q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for _, _, s, e in RAILS_F1) * 0.3048, 1), "m", "Lounge open sides and stair well"))
+    q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for _, _, s, e in RAILS_F1) * 0.3048, 1), "m", "Terrace open sides and stair well"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
     q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (44.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the 20 ft walls"))
     finishes = {}
@@ -44,7 +44,7 @@ def take_off():
             for r in ROOMS:
                 L, W = clear_dims(r)
                 finishes[FLOOR_FINISH[r[0]]] = finishes.get(FLOOR_FINISH[r[0]], 0) + L * W
-                if r[0] not in ("R02", "R03", "R33", "R13", "R17", "R36", "R06"):
+                if r[0] not in ("R02", "R03", "R33", "R13", "R17", "R37", "R06"):
                     skirting += 2 * (L + W)
     for k, v in finishes.items():
         q.append(("Floors", k, round(v * 0.0929, 1), "sq m", "Clear room areas; add 5-8% wastage"))
@@ -55,8 +55,8 @@ def take_off():
         q.append(("Wet rooms", f"Wall tiles to 7 ft, {nm}", round((2 * (L + W) * 7 - 2.5 * 7) * 0.0929, 1), "sq m", "Full height in the shower adds ~2 sq m"))
         q.append(("Wet rooms", f"Waterproofing, {nm}", round((L * W + 2 * (L + W) * 1 + 6 * 6) * 0.0929, 1), "sq m", "Floor + 12 in upturn + shower walls to 7 ft"))
     with on_floor("F1"):
-        L, W = clear_dims(room_of("R36"))
-    q.append(("Wet rooms", "Waterproofing, outdoor lounge slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
+        L, W = clear_dims(room_of("R37"))
+    q.append(("Wet rooms", "Waterproofing, covered terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
     q.append(("Kitchen", "Granite counter, 2 ft deep", round((11.2 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
     q.append(("Kitchen", "Dado between counter and wall cabinets", round((11.2 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
     q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable / cos {ROOF['pitch']} deg; add ~8% for laps"))

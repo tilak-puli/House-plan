@@ -3,7 +3,7 @@ import re
 from geom import *
 
 # Short labels where the full room name will not fit in the 3D view
-LABELS = {"Stair and passage": "Stair", "Outdoor lounge (covered)": "Outdoor lounge", "Upper master bedroom": "Upper master", "Covered terrace": "Covered terrace"}
+LABELS = {"Stair and passage": "Stair", "Sitting and study (upper master)": "Sitting and study", "Upper master bedroom": "Upper master", "Covered terrace": "Covered terrace"}
 COVERED = {("Y", 61)}  # walls under the poomukham roof (and, upstairs, above the front gable): no sunshades
 FULL_HEIGHT_SILL = 1.0  # windows with a lower sill are cut through the wall
 
@@ -57,8 +57,7 @@ def model_data():
             "slabT": LEVELS["slab"], "slab": [list(s) for s in SLAB_F1], "stair": STAIR, "posts": [list(p) for p in TERRACE_POSTS],
             "house": {"x1": 23, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [23, 61]},
             "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"]}, "gate": list(feat["GATE"][2:]),
-            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3),
-                     "skylight": list(ROOF["skylight"]), "lantern": round(vent_top_z(), 3), "apex": round(vent_apex_z(), 3), "ventOver": ROOF["vent_overhang"]},
+            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3)},
             "pergola": list(feat["PERGOLA"]),
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
                          "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2", "HEDGE3") if k in feat}},

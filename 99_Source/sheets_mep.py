@@ -49,9 +49,6 @@ def sheet_lighting(c, num="E-101", title="Lighting, fans and ceilings"):
     s = Sheet(c, num, title, "1:75")
     pl = Plan(s, 75, 16 * mm, 104 * mm)
     _base(pl, ceilings=True)
-    if FLOOR[0] == "F1":
-        sx1, sx2, sy1, sy2 = ROOF["skylight"]
-        pl.rect(sx1, sx2, sy1, sy2, stroke=GREY, lw=0.4, dash=(2, 2))
     for code, x, y, rid, note in ELECTRICAL:
         if code in LIGHTING: _sym(pl, code, x, y, ECOL[code])
     _counts_table(s, LIGHTING, 24 * mm, 66 * mm, ELEC_TYPES, "Lighting schedule")

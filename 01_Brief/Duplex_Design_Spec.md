@@ -9,7 +9,7 @@ Branch `feature/duplex`. A trial to see how much plot length a two-level house a
 - Same plot and road (east), but the house and its yards use only the front **55 ft** (x 20–75). The back 20 ft (x 0–20) stays spare land (kitchen garden, utility, future).
 - 3 bedrooms:
   - **Ground floor:** a master bedroom with an attached bath, and a small bedroom that uses the common bath.
-  - **First floor:** a second master bedroom with its own bath, plus a covered outdoor lounge.
+  - **First floor:** a second master suite with its own bath, dressing room and a sitting and study zone, plus the covered terrace.
 - **Ground floor:** living, dining, kitchen, pooja, store and wet area at the front; bedrooms, baths, lobby and stair at the back. All have normal-height flat ceilings.
 - **First floor:** rooms over the back half, and a covered terrace over the front half.
 
@@ -22,8 +22,7 @@ Branch `feature/duplex`. A trial to see how much plot length a two-level house a
 | Rear gap (west, inside the 55 ft) | 3 ft |
 | Side walkways | 3 ft south, 2 ft north (as now) |
 | Ground floor | 968 sq ft |
-| First floor, enclosed | about 330 sq ft (master, bath, dressing, landing, stair) |
-| First floor, covered lounge | about 115 sq ft |
+| First floor, enclosed | about 445 sq ft (master suite with sitting zone, bath, dressing, landing, stair) |
 | First floor, covered terrace | 16 x 22 ft, about 350 sq ft |
 
 ## Ground floor
@@ -57,7 +56,7 @@ x: 23          35     40.5  45                 55     61      67
 | Master bedroom | 23–35 × 3–15.5 | 12 × 12.5 | single |
 | Master bath | 35–40.5 × 3–10 | 5.5 × 7 | single |
 | Common bath | 40.5–45 × 3–10 | 4.5 × 7 | single, door from the lobby |
-| Small bedroom | 23–35 × 15.5–25 | 12 × 9.5 | single; reached by a 2'-6" passage beside the stair |
+| Small bedroom | 23–35 × 15.5–25 | 12 × 9.5 | single; reached from the lobby through the open space under the upper flight (7 ft+ headroom), then a 2'-6" passage |
 | Stair | 37.5–45 × 13.5–25 | dog-leg | the stair's side wall to the living is a timber jali |
 
 ## First floor (floor level +10 ft)
@@ -68,7 +67,7 @@ x: 23          35     40.5  45                 55     61      67
 | Upper master bath | 35–40.5 × 3–10 | 5.5 × 7 | stacked over the ground-floor baths |
 | Dressing / linen | 40.5–45 × 3–10 | 4.5 × 7 | off the upper master |
 | Landing | 35–45 × 10–14 | 10 × 4 | glazed door out to the covered terrace |
-| Outdoor lounge | 23–35 × 15.5–25 | 12 × 9.5 | **north side**, under the main roof, railings on the north and west |
+| Sitting and study (part of the upper master) | 23–35 × 15.5–25 | 12 × 9.5 | **north side**, 6 ft north window, desk on the west wall, window diwan; a 6 ft wardrobe part-divides it from the bed (the outdoor lounge was merged in once the terrace was added) |
 | Covered terrace | 45–61 × 3–25 | 16 × 22 | under the main roof on galvanised steel posts and trusses; railings on the north, south and east; diwan, chairs, drying rails, planters |
 
 ## Levels and stair
@@ -84,7 +83,7 @@ x: 23          35     40.5  45                 55     61      67
 
 - **Main roof:** one hipped clay-tile roof over the whole two-storey block (x 21–63 at the eaves). It sits on the walls over the back rooms and on a light steel frame over the terrace.
 - **Front gable:** a lower gable over the single-storey poomukham and kitchen front, facing the road, so the house reads as a two-tier Kerala roof.
-- **Ridge ventilator:** over the terrace, it lets the hot air under the tiles out.
+- **No ridge ventilator:** with the terrace open on three sides, hot air under the roof escapes at its open edges; the attic over the upper rooms has meshed ridge and soffit vents.
 - **Option:** the terrace part of the roof could use an insulated metal sheet on the same steel frame to save cost.
 - **Eaves:** 2 ft overhang throughout. Rainwater goes to the sump, as now.
 

@@ -4,7 +4,7 @@ from sheets_arch import (sheet_cover, sheet_basis, sheet_site, sheet_plan, sheet
                          sheet_finishes, sheet_roof, sheet_schedules)
 from sheets_elev import sheet_elev_long, sheet_elev_short, sheet_sections
 from sheets_dw import sheet_doors_windows, sheet_windows_f1
-from sheets_details import sheet_details_1, sheet_details_2, sheet_details_3
+from sheets_details import sheet_details_1, sheet_details_2
 from sheets_mep import sheet_lighting, sheet_power, sheet_plumbing
 
 SHEETS = [  # number, title, scale, function
@@ -26,7 +26,6 @@ SHEETS = [  # number, title, scale, function
     ("A-402", "Window details, first floor", "1:75", sheet_windows_f1),
     ("A-501", "Typical details 1: plinth, floor, window, eaves", "NTS", sheet_details_1),
     ("A-502", "Typical details 2: bath, kitchen, basin, AAC", "NTS", sheet_details_2),
-    ("A-503", "Typical details 3: ridge ventilator", "NTS", sheet_details_3),
     ("A-601", "Schedules", "-", sheet_schedules),
     ("E-101", "Lighting, fans and ceilings, ground floor", "1:75", floor_sheet(sheet_lighting, "G", "E-101", "Lighting, fans and ceilings, ground floor")),
     ("E-102", "Lighting, fans and ceilings, first floor", "1:75", floor_sheet(sheet_lighting, "F1", "E-102", "Lighting, fans and ceilings, first floor")),

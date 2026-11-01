@@ -40,7 +40,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
 WALLS = [
     ("X", 3, 23, 67), ("Y", 23, 3, 25), ("X", 25, 23, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
     ("X", 15.5, 23, 35), ("Y", 35, 3, 10), ("Y", 35, 10, 25), ("X", 10, 35, 45), ("Y", 40.5, 3, 10),
-    ("Y", 45, 3, 10), ("Y", 37.5, 13.5, 25), ("Y", 45, 13.5, 25),
+    ("Y", 45, 3, 10), ("Y", 37.5, 15.7, 25), ("Y", 45, 13.5, 25),  # under the upper flight left open where there is 7 ft headroom
     ("X", 7.5, 45, 55), ("Y", 49, 3, 7.5), ("Y", 55, 3, 12.5), ("X", 12.5, 55, 67),
     ("Y", 57, 12.5, 16.5), ("X", 16.5, 57, 61),
 ]
@@ -77,11 +77,11 @@ FLOOR_FINISH = {  # room: floor finish key
     "R01": "Matt vitrified 2x2", "R04": "Matt vitrified 2x2", "R31": "Matt vitrified 2x2", "R32": "Matt vitrified 2x2",
     "R02": "Anti-skid ceramic, waterproofed", "R03": "Anti-skid ceramic, waterproofed", "R33": "Anti-skid ceramic, waterproofed",
     "R13": "Anti-skid ceramic, waterproofed", "R15": "Anti-skid ceramic, waterproofed",
-    "R17": "Flamed granite", "R36": "Terracotta anti-skid tile, waterproofed", "R37": "Terracotta anti-skid tile, waterproofed",
+    "R17": "Flamed granite", "R36": "Matt vitrified 2x2", "R37": "Terracotta anti-skid tile, waterproofed",
 }
 ROOM_LABEL_AT = {"R06": (41.3, 22.4), "R11": (59.0, 14.5), "R16": (52.0, 16.6), "R17": (64, 19.0), "R10": (50, 10.2),
                  "R34": (40.5, 12.0), "R35": (36.25, 17.0), "R36": (29, 18.6), "R37": (53, 14.0)}  # label points for rooms whose centre is crowded
-ROOM_FLOOR = {"R02": -0.04, "R03": -0.04, "R33": -0.04, "R11": 0.25, "R13": -0.25, "R17": -0.5, "R36": -0.25, "R37": -0.25}  # offset from the floor level
+ROOM_FLOOR = {"R02": -0.04, "R03": -0.04, "R33": -0.04, "R11": 0.25, "R13": -0.25, "R17": -0.5, "R37": -0.25}  # offset from the floor level
 # ceiling: ("flat", height above the room's floor level) or ("sloped", note)
 CEILINGS = {
     "R01": ("flat", 9.4), "R04": ("flat", 9.4), "R05": ("flat", 9.4), "R02": ("flat", 8.5), "R03": ("flat", 8.5),
@@ -89,7 +89,7 @@ CEILINGS = {
     "R10": ("flat", 9.4), "R16": ("flat", 9.4), "R11": ("flat", 9.0),
     "R17": ("sloped", "exposed rafters"),
     "R31": ("flat", 9.5), "R32": ("flat", 9.5), "R33": ("flat", 8.5), "R34": ("sloped", "follows roof"),
-    "R35": ("sloped", "follows roof"), "R36": ("sloped", "exposed rafters"), "R37": ("sloped", "steel trusses, tiled roof above"),
+    "R35": ("sloped", "follows roof"), "R36": ("flat", 9.5), "R37": ("sloped", "steel trusses, tiled roof above"),
 }
 ROOF = {
     "pitch": 30,          # degrees
@@ -97,10 +97,6 @@ ROOF = {
     "hip": (21.0, 63.0, 1.0, 27.0),    # main hipped roof over the two-storey block: eaves outline x1, x2, y1, y2
     "gable": (61.0, 69.0, 1.0, 27.0),  # front mukhappu gable over the single-storey front (poomukham + kitchen front), ridge E-W
     "gable_lift": 0.24,   # gable eaves sit just above a plain eave line at ground-floor wall top
-    "skylight": (45.5, 50.0, 11.75, 16.25),  # ventilator on the main ridge, over the covered terrace (no glass)
-    "vent_sill": 0.75,    # ventilator sill (top of upstand) above the ridge: 9 in minimum
-    "vent_louvre": 2.0,   # louvre band height, all four sides
-    "vent_overhang": 1.5, # hipped cap overhang beyond the louvres
     "downpipes": [(21.0, 1.0), (42.0, 1.0), (69.0, 1.0), (21.0, 26.9), (42.0, 26.9), (69.0, 26.9)],
 }
 
@@ -170,7 +166,6 @@ WINDOWS = [
     ("W17", "Y", 61, 13.6, 16.4, 5.5, 7, "Pooja", "High vent to the poomukham, jali + mesh (lamp smoke out)"),
 ]
 OTHER_OPENINGS = [
-    ("SK1", "Ventilator on the main ridge over the covered terrace, 4'-6\" square, no glass: hipped tiled cap at 30 deg with 1'-6\" overhang; 2 ft band of 45 deg louvres on all four sides; SS bird mesh behind; 9 in upstand (see A-503). Lets the hot air under the tiles out"),
     ("GV1-3", "Three jali vents in the front gable (mukhappu): air for the roof space over the verandah and the kitchen front"),
 ]
 PILLARS = [(66.4, 13.1), (66.4, 16.4), (66.4, 21.8), (66.4, 24.4), (63.5, 24.4), (61.6, 24.4)]
@@ -193,7 +188,7 @@ FURNITURE = [
     ("F51", "Small bedroom", "Floating bedside shelf with a drawer, reading light and charging point above", 33.6, 34.6, 19.3, 20.3, 1, "Teak, wall-hung", "rect"),
     ("F23", "Small bedroom", "Built-in wardrobe 5' with a mirror door (west wall)", 23.4, 25.4, 15.9, 20.9, 1, "Ply + laminate", "rect"),
     ("F22", "Small bedroom", "Study table 4' x 2' (south wall)", 26.0, 30.0, 15.9, 17.9, 1, "Teak / ply, cable tray", "rect"),
-    ("F57", "Stair and passage", "Under-stair cupboard (DB, inverter, brooms), opens to the lobby", 37.6, 41.0, 13.6, 15.0, 1, "Ply + laminate, ventilated", "rect"),
+    ("F57", "Stair and passage", "Under-stair cupboard where the stair drops below 7 ft (DB, inverter, brooms), doors facing the lobby", 37.6, 41.0, 15.8, 17.6, 1, "Ply + laminate, ventilated", "rect"),
     ("F56", "Stair and passage", "Linen cupboard at the end of the passage, loft above", 35.3, 37.3, 22.6, 24.6, 1, "Ply + laminate, full height", "rect"),
     ("F44", "Store", "Racks, full height (provisions, vessels, festival items)", 45.3, 48.7, 3.3, 4.6, 1, "Steel / ply racks", "rect"),
     ("F29", "Wet area", "Utility sink counter on the south wall, where vessels are washed", 52.8, 54.7, 3.4, 5.3, 1, "Kadappa / granite, SS sink", "rect"),
@@ -225,17 +220,17 @@ ROOMS_F1 = [
     ("R33", "Upper master bath", 40.5, 45, 3, 10, "Upper suite"),
     ("R34", "Landing", 35, 45, 10, 14, "Circulation"),
     ("R35", "Upper passage", 35, 37.5, 14, 25, "Circulation"),
-    ("R36", "Outdoor lounge (covered)", 23, 35, 15.5, 25, "Upper suite"),
+    ("R36", "Sitting and study (upper master)", 23, 35, 15.5, 25, "Upper suite"),
     ("R37", "Covered terrace", 45, 61, 3, 25, "Terrace"),
 ]
 WALLS_F1 = [
-    ("X", 3, 23, 45), ("X", 25, 35, 45), ("Y", 23, 3, 15.5), ("Y", 45, 3, 25),
-    ("X", 15.5, 23, 35), ("Y", 35, 3, 10), ("Y", 35, 10, 15.5), ("Y", 35, 15.5, 25), ("X", 10, 35, 45), ("Y", 40.5, 3, 10),
+    ("X", 3, 23, 45), ("X", 25, 23, 45), ("Y", 23, 3, 25), ("Y", 45, 3, 25),
+    ("Y", 35, 3, 10), ("Y", 35, 10, 15.5), ("Y", 35, 15.5, 25), ("X", 10, 35, 45), ("Y", 40.5, 3, 10),
 ]
 EXTERIOR_F1 = {("X", 3), ("Y", 23), ("X", 25), ("Y", 45)}
 WET_WALLS_F1 = {("Y", 40.5, 3, 10)}
-# Railings at the first floor (axis, c, s, e): open sides of the lounge and the terrace, edges of the stair well. 3'-6" high.
-RAILS_F1 = [("X", 25, 23, 35), ("Y", 23, 15.5, 25), ("X", 14, 41, 45), ("Y", 37.5, 12.67, 25),
+# Railings at the first floor (axis, c, s, e): open sides of the terrace, edges of the stair well. 3'-6" high.
+RAILS_F1 = [("X", 14, 41, 45), ("Y", 37.5, 12.67, 25),
             ("X", 3, 45, 61), ("X", 25, 45, 61), ("Y", 61, 3, 25)]
 # Steel posts carrying the main roof over the covered terrace (galvanised SHS on RCC column stubs)
 TERRACE_POSTS = [(53.0, 3.0), (61.0, 3.0), (61.0, 10.3), (61.0, 17.7), (61.0, 25.0), (53.0, 25.0)]
@@ -255,15 +250,14 @@ DOORS_F1 = [
     ("D31", "Y", 35, 10.6, 13.4, -1, "Upper master bedroom (from the landing)", "Flush, teak veneer"),
     ("D32", "Y", 35, 5.0, 7.5, 0, "Dressing (sliding, from the upper master)", "Sliding, teak veneer"),
     ("D33", "Y", 40.5, 3.4, 5.9, -1, "Upper master bath (from the dressing, opens outward; hinged at the north jamb)", "Flush, waterproof (WPC/FRP)"),
-    ("D34", "Y", 35, 16.0, 19.0, -1, "Outdoor lounge (from the upper passage)", "Teak frame, glazed, 3 ft"),
-    ("D35", "X", 15.5, 31.0, 34.0, -1, "Upper master to the outdoor lounge", "Teak frame, glazed, 3 ft"),
     ("D36", "Y", 45, 10.6, 13.4, +1, "Covered terrace (from the landing, opens outward)", "Teak frame, glazed, 3 ft"),
 ]
 WINDOWS_F1 = [
     ("W31", "X", 3, 25.5, 31.5, 3, 7, "Upper master bedroom", "Timber jali + glazed shutters"),
     ("W32", "X", 3, 36.7, 38.7, 5, 7, "Dressing", "Frosted casement"),
     ("W33", "X", 3, 42.0, 44.0, 5, 7, "Upper master bath", "Frosted casement, top-hung vent"),
-    ("W34", "X", 15.5, 25.0, 29.0, 3, 7, "Upper master bedroom", "Teak casement, glazed (opens onto the lounge)"),
+    ("W34", "X", 25, 26.0, 32.0, 3, 7, "Sitting and study (upper master)", "Teak casement, glazed (6 ft, north light for the desk and reading)"),
+    ("W41", "Y", 23, 19.0, 21.0, 5, 7, "Sitting and study (upper master)", "High jali vent (west, cross-ventilation)"),
     ("W40", "Y", 45, 15.0, 24.5, 1, 8, "Stair", "Timber jali screen between the stair well and the covered terrace (light and air for the stair)"),
 ]
 FURNITURE_F1 = [
@@ -275,9 +269,11 @@ FURNITURE_F1 = [
     ("F77", "Upper master bath", "WC (EWC) on the east wall", 43.1, 44.7, 4.0, 5.2, 1, "Wall-hung, concealed cistern", "wc"),
     ("F78", "Upper master bath", "Wash basin with a mirror cabinet above", 44.0, 44.7, 5.8, 7.0, 1, "Wall-hung", "rect"),
     ("F79", "Upper master bath", "Shower glass partition (shower across the north end)", 40.8, 42.8, 7.55, 7.7, 1, "8 mm toughened glass", "glass"),
-    ("F80", "Outdoor lounge (covered)", "Built-in diwan 6' along the north rail (cushions, bolsters)", 24.0, 30.0, 22.9, 24.6, 1, "Teak, weatherproof cushions", "rect"),
-    ("F81", "Outdoor lounge (covered)", "Cane armchair", 31.4, 33.2, 22.6, 24.4, 1, "Cane", "circle"),
-    ("F82", "Outdoor lounge (covered)", "Low coffee table", 26.0, 29.0, 19.8, 21.6, 1, "Teak", "rect"),
+    ("F90", "Sitting and study (upper master)", "Built-in wardrobe 6' as a part divider between the sleeping and sitting zones, lofts above", 23.4, 29.4, 14.6, 16.6, 1, "Ply + laminate, 2 ft deep", "rect"),
+    ("F91", "Sitting and study (upper master)", "Work desk 4' x 2' on the west wall (north window to the side)", 23.4, 25.4, 18.0, 22.0, 1, "Teak / ply, cable tray", "rect"),
+    ("F94", "Sitting and study (upper master)", "Window diwan 5' under the north window, drawers below", 26.5, 31.5, 22.9, 24.6, 1, "Teak, cotton cushions", "rect"),
+    ("F93", "Sitting and study (upper master)", "Reading chair", 31.8, 33.6, 22.6, 24.4, 1, "Cane / upholstered", "circle"),
+    ("F95", "Sitting and study (upper master)", "Open bookshelf on the passage wall", 33.6, 34.8, 17.0, 21.0, 1, "Teak / ply, open shelves", "rect"),
     ("F83", "Upper passage", "Open bookshelf at the end of the passage (reading nook)", 35.3, 36.5, 20.0, 24.6, 1, "Teak / ply, open shelves", "rect"),
     ("F84", "Covered terrace", "Built-in diwan 6' against the stair wall (cushions, bolsters, storage below)", 45.4, 47.4, 16.0, 22.0, 1, "Teak, weatherproof cushions", "rect"),
     ("F85", "Covered terrace", "Low coffee table", 49.0, 51.5, 17.5, 20.5, 1, "Teak", "rect"),
@@ -297,7 +293,7 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
     ("Wet area", "Rough Cuddapah / Kota stone, falls to drain", "4 ft stone or tile dado", "Board at 9'-6\"", "Service door to the walkway with a 6 in kerb"),
     ("Stair", "Granite or Kota treads with a rounded nosing and anti-slip grooves, 10 in treads, 7 in risers", "Teak handrail at 3 ft on the open side, timber jali to the living", "Open to the roof", "Light at the half landing and at the top; 2-way switches"),
     ("Store, lobby, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
-    ("Outdoor lounge and covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "Railing 3'-6\" on the open sides (teak cap, MS or teak balusters); bamboo chiks on the west and south", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: both sit over bedrooms and the living"),
+    ("Covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "Railing 3'-6\" on the open sides (teak cap, MS or teak balusters); bamboo chiks on the south and east", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: it sits over the living, dining and kitchen"),
     ("Poomukham, steps", "Flamed / leather-finish granite (not polished)", "Granite skirting; plinth face clad 2 ft (splash zone)", "Exposed rafters + board", "Polished stone is slippery when wet"),
     ("Exterior", "Plinth apron: PCC 3 ft wide sloped away", "AAC + 20 mm plaster with waterproof additive; elastomeric paint", "-", "Drip grooves under every sill and sunshade"),
     ("Roof (all)", "Mangalore clay tiles, every edge tile clipped / screwed", "Membrane + 50 mm insulation on cement-fibre deck", "Steel truss on RCC ring beams (first-floor walls for the main roof, ground-floor walls for the front gable)", "Cyclone winds: tie trusses down with holding-down bolts"),
@@ -317,16 +313,17 @@ OPEN_ISSUES = [
     ("Services", "Water tank: 1,000 L loft tank in the roof space over the upper bath, filled from the sump by pump, with a pressure pump for showers; confirm the truss carries it or put it on a steel platform off the slab", "Plumber / engineer", "Open"),
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
     ("Vastu", "Master bedroom in the south-west with the bed head south; second master above it; kitchen in the south-east, stove on the east wall; pooja in the living's south-east corner back to back with the kitchen, opening west; stair in the north-west quarter rising clockwise; baths in the south band; living and main door on the east; the centre of the plot (Brahmasthan) falls in the living, kept free of walls and columns", "Vastu consultant", "To confirm"),
-    ("Climate", "Covered terrace and lounge: deep shade from the main roof keeps the slab over the living cool; the upper master's west wall stays solid; chiks on the open west and south sides", "Architect", "Open"),
+    ("Climate", "Covered terrace: deep shade from the main roof keeps the slab over the living cool; the upper master's west wall has only a small high vent; chiks on the terrace's south and east sides", "Architect", "Open"),
     ("Roof", "Covered terrace roof: tiles on steel trusses (drawn, matches the rest of the roof) or a cheaper insulated metal-sheet roof on the same steel frame; decide before the roof is ordered", "Owner / architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
 ]
 
 DUPLEX_DECISIONS = [
-    "Duplex option (branch feature/duplex): the house is planned on the front 55 ft of the plot (the back 20 ft stays spare land) as a 44 ft x 22 ft two-level house, 968 sq ft on the ground floor and about 330 sq ft enclosed on the first floor plus a covered outdoor lounge and a 16 x 22 ft covered terrace.",
+    "Duplex option (branch feature/duplex): the house is planned on the front 55 ft of the plot (the back 20 ft stays spare land) as a 44 ft x 22 ft two-level house, 968 sq ft on the ground floor and about 445 sq ft enclosed on the first floor plus a 16 x 22 ft covered terrace.",
     "No double height (changed after review): a slab covers the whole two-storey block, so the living, dining, kitchen, pooja, store and wet area all have flat ceilings at about 9'-5\" and no dead space above the kitchen. Over the front half the first floor is a covered terrace, opening off the landing, with railings on three sides.",
-    "Ground floor: master bedroom with its bath (south-west), small bedroom, common bath, lobby and a dog-leg stair seen from the living through a timber jali. First floor: upper master with a dressing room and bath, a landing, a passage, a covered outdoor lounge on the north side and the covered terrace.",
+    "Ground floor: master bedroom with its bath (south-west), small bedroom, common bath, lobby and a dog-leg stair seen from the living through a timber jali. First floor: upper master with a dressing room and bath, a landing, a passage and the covered terrace; the upper master has a sitting and study zone on the north side (the outdoor lounge was merged into it once the terrace was added).",
     "Roof: one hipped clay-tile roof over the two-storey block, carried on walls over the back rooms and on a light galvanised steel frame (posts and trusses) over the terrace, and a wide front gable (mukhappu) over the single-storey poomukham and kitchen front, so the house reads as a two-tier Kerala roof.",
+    "No ridge ventilator (removed after review): with the terrace open on three sides, hot air under the main roof escapes at its open edges; the attic over the first-floor rooms is vented by meshed ridge and soffit vents.",
     "All four bath fittings stack in the south band (two baths over two); the septic tank and soak pit move to the spare rear land behind the baths, freeing the front yard; the water tank goes into the roof space (no tank stand).",
 ]
 
@@ -408,7 +405,6 @@ SPEC = [
     ("Roof", "Deck and insulation", "Cement-fibre board deck + 50 mm PIR/XPS or reflective insulation + membrane, then battens and Mangalore tiles", "Cuts attic heat in 45 C summers"),
     ("Roof", "Tile fixing", "Clip or screw every tile at eaves, verges, ridges and hips, and every 3rd row elsewhere; ridges bedded and pointed", "Loose tiles fly in cyclones"),
     ("Roof", "Ventilation", "Ridge / gable vents with bird and insect mesh; soffit vents at eaves", "Flushes hot air from the attic"),
-    ("Roof", "Ridge ventilator", "Steel frame bolted to the truss on the main ridge; hipped tiled cap at 30 deg, 1'-6\" overhang; 45 deg timber or aluminium louvres with 4 in lap; SS 304 mesh about 1.2 mm (18 x 16) in a sealed continuous frame; 9 in upstand with flashing (no shutters needed: it vents the roof over the open terrace)", "Lets hot air out, keeps out rain, mosquitoes and attic dust, and closes for AC"),
     ("Roof", "Gutters and downpipes", "150 mm half-round gutters with leaf guard on the main and front roofs, 100 mm downpipes at 6 points, to the sump filter, overflow to the road drain", "Short heavy bursts; protects the plinth"),
     ("Openings", "Windows", "Hardwood or UPVC frames; mosquito mesh on every opening; MS grill for security", "Mosquitoes; ground-floor security"),
     ("Openings", "Sills and sunshades", "External sills sloped 1:10 with drip groove; 2 ft sunshades with drip groove; 18 in projecting drip under the jali wall", "Stops staining and water entry"),
@@ -455,8 +451,8 @@ ELECTRICAL = [
     ("AC", 23.4, 23.0, "R04", "west wall, throws east toward the bed foot"), ("ODU", 22.6, 22.5, "R04", "west wall, under the eave"),
     # Lobby, stair, under-stair cupboard
     ("L", 40.0, 11.8, "R05", ""), ("S", 44.6, 13.6, "R05", "lobby and stair, 2-way with the landing"),
-    ("DB", 39.0, 13.7, "R05", "in the under-stair cupboard, lobby side (central, dry)"), ("U", 38.0, 13.7, "R05", "router (central)"),
-    ("INV", 40.4, 14.4, "R06", "lithium inverter in the ventilated under-stair cupboard"),
+    ("DB", 39.0, 15.9, "R06", "in the under-stair cupboard, facing the lobby (central, dry)"), ("U", 38.0, 15.9, "R06", "router (central)"),
+    ("INV", 40.4, 16.8, "R06", "lithium inverter in the ventilated under-stair cupboard"),
     ("WL", 41.2, 24.6, "R06", "at the half landing"), ("L", 36.25, 15.5, "R06", "passage"),
     # Store, wet area, dining
     ("L", 47.0, 5.8, "R12", ""), ("S", 48.6, 7.9, "R10", "store light, outside the door"),
@@ -487,16 +483,16 @@ ELECTRICAL_F1 = [
     ("F", 28.0, 8.5, "R31", "clear of the bed head"), ("L", 25.5, 13.6, "R31", ""), ("L", 32.5, 7.0, "R31", ""),
     ("S", 34.6, 13.9, "R31", "at the door, latch side, 2-way"), ("S", 23.4, 12.9, "R31", "bedside, 2-way"),
     ("P", 23.4, 4.2, "R31", "bedside"), ("P", 23.4, 12.0, "R31", "bedside"), ("P", 33.0, 3.4, "R31", "reading chair"),
-    ("AC", 34.6, 8.0, "R31", "east wall, throws west toward the bed foot"), ("ODU", 30.0, 2.4, "R31", "south wall, under the eave"),
+    ("AC", 34.6, 8.0, "R31", "east wall, throws west toward the bed foot; 1.5 ton for the whole suite"), ("ODU", 30.0, 2.4, "R31", "south wall, under the eave"),
     # Dressing and upper bath
     ("L", 37.7, 6.5, "R32", ""), ("S", 34.6, 4.6, "R31", "dressing light"), ("P", 38.8, 4.2, "R32", "dresser"),
     ("L", 42.7, 6.0, "R33", ""), ("EF", 44.7, 3.4, "R33", "out through the south wall"), ("G", 44.6, 8.6, "R33", "over shower, east wall"),
     ("PC", 44.6, 6.6, "R33", "by basin"), ("S", 40.1, 6.4, "R32", "bath switches outside the door"),
-    # Landing, passage, lounge
+    # Landing, passage, sitting and study
     ("L", 40.0, 12.0, "R34", ""), ("S", 36.0, 10.4, "R34", "landing and stair, 2-way with the lobby"),
     ("L", 36.25, 19.5, "R35", ""), ("WL", 36.25, 24.6, "R35", "reading light over the bookshelf"),
-    ("F", 29.0, 20.5, "R36", "wet-rated, under the roof"), ("L", 26.0, 18.5, "R36", "wet-rated"), ("L", 32.0, 23.0, "R36", "wet-rated"),
-    ("P", 34.6, 21.0, "R36", "weatherproof"), ("S", 35.4, 19.4, "R35", "lounge switches by the door"),
+    ("F", 29.5, 20.0, "R36", ""), ("L", 26.0, 19.0, "R36", ""), ("L", 32.0, 23.0, "R36", ""), ("S", 30.0, 16.8, "R36", "sitting zone, at the wardrobe end"),
+    ("P", 23.4, 18.4, "R36", "desk"), ("U", 23.4, 19.4, "R36", "desk"), ("D", 23.4, 20.4, "R36", "desk"), ("P", 31.6, 24.6, "R36", "reading chair"),
     ("F", 51.0, 19.0, "R37", "wet-rated, hung from the steel truss"), ("L", 49.0, 9.0, "R37", "wet-rated"), ("L", 56.0, 9.0, "R37", "wet-rated"),
     ("L", 56.0, 21.0, "R37", "wet-rated"), ("P", 45.4, 15.2, "R37", "weatherproof"), ("P", 45.4, 5.0, "R37", "weatherproof"),
     ("S", 44.6, 14.0, "R34", "terrace switches by the door, landing side"),
@@ -546,7 +542,7 @@ HOLD_POINTS = [
     ("Plinth", "Anti-termite treatment (certificate), fill compaction, DPC laid and cured", "Supervisor"),
     ("Before plaster", "Conduits, pipes, AC sleeves, mesh over AAC joints; photos with a tape measure in view", "Owner, supervisor"),
     ("Wet rooms", "Waterproofing coats, upturns, 48 h flood test passed before any tile is laid", "Owner, plumber"),
-    ("Roof", "Truss holding-down bolts, membrane and insulation, edge tiles clipped, flashings at the ventilator and valleys", "Engineer, owner"),
+    ("Roof", "Truss holding-down bolts, membrane and insulation, edge tiles clipped, flashing where the front gable meets the two-storey wall", "Engineer, owner"),
     ("Before handover", "Water test on every floor slope and sill, plumbing pressure test, electrical insulation and earth test", "Owner, MEP"),
 ]
 

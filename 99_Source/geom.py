@@ -157,18 +157,3 @@ def roof_area():
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, ya, yb = ROOF["gable"]
     return ((x2 - x1) * (y2 - y1) + (gx2 - max(gx1, x2)) * (yb - ya)) / math.cos(math.radians(ROOF["pitch"]))
-
-
-# ---- dining ventilator ----
-def vent_sill_z():
-    return ridge_z() + ROOF["vent_sill"]
-
-
-def vent_top_z():
-    """Top of the louvre band = eaves of the hipped cap."""
-    return vent_sill_z() + ROOF["vent_louvre"]
-
-
-def vent_apex_z():
-    x1, x2, y1, y2 = ROOF["skylight"]
-    return vent_top_z() + ((min(x2 - x1, y2 - y1)) / 2 + ROOF["vent_overhang"]) * TAN

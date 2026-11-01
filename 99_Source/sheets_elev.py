@@ -15,7 +15,6 @@ DARK = colors.HexColor("#5A5048")
 TEAK = colors.HexColor("#6B4A2E")
 HATCH = colors.HexColor("#BDBDBD")
 PLINTH = colors.HexColor("#B8B2A8")
-LANTERN_TOP = vent_top_z()
 PILLAR_TOP = F + 9.3
 FLOORS = (("G", F), ("F1", U))
 
@@ -73,7 +72,7 @@ def _wall_span(fl, axis, c0):
 
 
 def _rail_band(e, a, b, base, top):
-    """Open side of the lounge: dark opening above a railing."""
+    """Open side of the terrace: dark opening above a railing."""
     e.rect(a, b, base, top, lw=0.4, fill=DARK)
     e.rect(a, b, base, base + 3.5, lw=0.5, fill=WALLC)
     n = max(2, int((b - a) / 0.5))
@@ -88,17 +87,6 @@ def _posts(e, uf, posts):
         e.rect(uu - 0.17, uu + 0.17, U, UT - 0.75, lw=0.4, fill=colors.HexColor("#8C9196"))
 
 
-def _ventilator(e, a, b):
-    """Ventilator seen from the side: upstand, louvre band, hipped cap."""
-    rz, sz = ridge_z(), vent_sill_z()
-    e.rect(a, b, rz - 0.3, sz, lw=0.5, fill=GABLE)
-    e.rect(a, b, sz, LANTERN_TOP, lw=0.5, fill=colors.HexColor("#8E6B4E"))
-    n = 7
-    for i in range(1, n): e.line(a, sz + i * (LANTERN_TOP - sz) / n, b, sz + i * (LANTERN_TOP - sz) / n, lw=0.3, color=WHITE)
-    o = ROOF["vent_overhang"]
-    _poly(e, [(a - o, LANTERN_TOP), (b + o, LANTERN_TOP), ((a + b) / 2, vent_apex_z())], TILE, lw=0.6)
-
-
 def _roof_long(e, u):
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, ya, yb = ROOF["gable"]
@@ -110,8 +98,6 @@ def _roof_long(e, u):
         e.line(u(gx1, 0), zz, u(gx2, 0), zz, lw=0.25, color=BROWN)
     e.line(u(gx1, 0), gz, u(gx2, 0), gz, lw=1.0, color=BROWN)
     _poly(e, [(u(x1, 0), ez), (u(x2, 0), ez), (u(x2 - w, 0), rz), (u(x1 + w, 0), rz)], TILE)
-    sx1, sx2, _, _ = ROOF["skylight"]
-    _ventilator(e, *sorted((u(sx1, 0), u(sx2, 0))))
     e.line(u(x1, 0), ez, u(x2, 0), ez, lw=1.2, color=BROWN)  # fascia + gutter
 
 
@@ -119,8 +105,6 @@ def _roof_end(e, u, east):
     x1, x2, y1, y2 = ROOF["hip"]
     ez, rz = eave_z(), ridge_z()
     _poly(e, [(u(0, y1), ez), (u(0, y2), ez), (u(0, (y1 + y2) / 2), rz)], TILE)
-    _, _, sy1, sy2 = ROOF["skylight"]
-    _ventilator(e, *sorted((u(0, sy1), u(0, sy2))))
     e.line(u(0, y1), ez, u(0, y2), ez, lw=1.2, color=BROWN)
 
 
@@ -252,7 +236,7 @@ def sheet_elev_short(c):
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
     tips = ["Front gable (mukhappu) over the verandah and kitchen front; the covered terrace sits 6 ft back behind it, open behind a railing under the main roof on slim steel posts.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
-            "West wall: the upper master's west wall is solid (afternoon sun); the lounge above the small bedroom is open behind a railing, shaded with bamboo chiks. The creeper pergola shades the ground floor.",
+            "West wall: the upper master's west wall is solid (afternoon sun); the room above the small bedroom has only a small high vent on the west. The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
     s.bullets(tips, 40 * mm, 80 * mm, 285 * mm, 7)
     c.showPage()
@@ -372,10 +356,6 @@ def section(e, name):
                 e.line(uu, zc, uu, zt - 0.45, lw=0.3, color=BROWN)
             k += 4
     if axis == "X":
-        sx1, sx2, sy1, sy2 = ROOF["skylight"]
-        if sx1 <= c0 <= sx2:
-            _ventilator(e, sy1, sy2)
-            e.text("ventilator (A-503)", sy2 + 3.2, LANTERN_TOP, 4.4, anchor="l")
         e.text("steel frame over the terrace", 14, UT + 1.2, 4.2, color=GREY)
     else:
         e.text("steel frame over the terrace", 53, UT + 1.2, 4.2, color=GREY)
@@ -389,7 +369,7 @@ SECTION_NOTES = [
     "Main roof trusses bolted to the first-floor ring beam; front gable trusses to the ground-floor ring beam (cyclone uplift).",
     "First-floor RCC slab over the whole two-storey block; over the front half it is the covered terrace, waterproofed, under the main roof on galvanised steel posts and steel trusses.",
     "RCC lintel band at door-head level on both floors (seismic zone III). AAC walls in an RCC frame; mesh over every block-to-concrete joint.",
-    "Ground-floor rooms have a plastered slab soffit at about 9'-5\" (blue); first-floor rooms have insulated false ceilings; the stair, lounge and terrace are open to the roof.",
+    "Ground-floor rooms have a plastered slab soffit at about 9'-5\" (blue); first-floor rooms have insulated false ceilings; the stair and terrace are open to the roof.",
     "Dog-leg stair, 17 risers of about 7 in; teak handrail; timber jali to the living and to the terrace.",
     "Plinth beam with DPC; plinth fill of compacted moorum, never black soil; anti-termite treatment at every layer.",
     "Footings dashed and indicative only: type and depth by the engineer after the soil test (two-storey loads).",

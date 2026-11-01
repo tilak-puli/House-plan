@@ -19,8 +19,8 @@ def sheet_cover(c, index):
             carpet += sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
             ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft; duplex planned on the front 55' (back 20' spare)"),
-            ("Built footprint", "44' x 22' = 968 sq ft ground floor; about 330 sq ft enclosed + 115 sq ft covered lounge on the first floor"),
-            ("Carpet area", f"{carpet:,.0f} sq ft clear, both floors, incl. poomukham and lounge"),
+            ("Built footprint", "44' x 22' = 968 sq ft ground floor; about 445 sq ft enclosed + 350 sq ft covered terrace on the first floor"),
+            ("Carpet area", f"{carpet:,.0f} sq ft clear, both floors, incl. poomukham and terrace"),
             ("Construction", "Two-storey RCC frame, AAC walls, first-floor slab over the back half, steel-truss roofs with clay tiles"),
             ("Plinth", f"FFL {fmt_lvl(LEVELS['FFL'])} above finished ground")]
     for k, v in data:
@@ -174,8 +174,8 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
     c.showPage()
 
 
-SECTIONS = {"A": ("X", 47.5, "Cross section through the store, dining, living and the covered terrace above (ventilator)"),
-            "B": ("Y", 18, "Long section through the small bedroom and lounge, the stair, the living with the covered terrace above, and the poomukham")}
+SECTIONS = {"A": ("X", 47.5, "Cross section through the store, dining, living and the covered terrace above"),
+            "B": ("Y", 18, "Long section through the small bedroom and the master's sitting zone above, the stair, the living with the covered terrace above, and the poomukham")}
 
 
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):
@@ -233,7 +233,7 @@ def sheet_finishes(c, num="A-105", title="Floor finishes and levels, ground floo
         cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         pl.text(short_name(name), cx, cy + 0.8, 5.2, "Helvetica-Bold")
         pl.level(cx - 1.2, cy - 0.6, floor_level(rid), 5)
-    for rid, ang in (("R02", "1:60 to drain"), ("R03", "1:60 to drain"), ("R33", "1:60 to drain"), ("R13", "1:80 to drain"), ("R36", "1:80 to spout")):
+    for rid, ang in (("R02", "1:60 to drain"), ("R03", "1:60 to drain"), ("R33", "1:60 to drain"), ("R13", "1:80 to drain"), ("R37", "1:80 to spout")):
         if rid in ids:
             r = room_of(rid); pl.text("falls " + ang, (r[2] + r[3]) / 2, r[4] + 0.8, 4.4, color=BLUE)
     if FLOOR[0] == "G":
@@ -243,7 +243,7 @@ def sheet_finishes(c, num="A-105", title="Floor finishes and levels, ground floo
     tips = [
         "Skirting 4 in high, set flush with the plaster face (plaster stops in a groove above it), so no ledge collects dust.",
         "Bathrooms 12 mm below the bedroom floor with a sloped granite threshold: no raised step to trip on, water stays in.",
-        "First floor: the upper bath and the outdoor lounge sit on the slab over ground-floor rooms: waterproof, flood-test 48 h, then tile.",
+        "First floor: the upper bath and the covered terrace sit on the slab over ground-floor rooms: waterproof, flood-test 48 h, then tile.",
         "Shower zone: linear drain at the far end, floor falls 1:60 only inside the wet zone; dry zone floor nearly flat.",
         "Poomukham and steps: flamed or leather-finish stone. Polished granite is slippery when wet.",
         "Kitchen: mid-tone matt floor; white glossy tile shows every stain and is slippery with oil.",
@@ -274,13 +274,6 @@ def sheet_roof(c):
     for cx, cy, rx in ((x1, y1, x1 + w), (x1, y2, x1 + w), (x2, y1, x2 - w), (x2, y2, x2 - w)):
         pl.line(cx, cy, rx, yc, lw=0.7)
     pl.text("MAIN HIPPED ROOF OVER THE TWO-STOREY BLOCK", (x1 + x2) / 2 - 4, yc + 4.5, 5.5, "Helvetica-Bold")
-    sx1, sx2, sy1, sy2 = ROOF["skylight"]
-    o = ROOF["vent_overhang"]
-    pl.rect(sx1 - o, sx2 + o, sy1 - o, sy2 + o, lw=0.5, fill=WHITE)
-    for cx, cy in ((sx1 - o, sy1 - o), (sx2 + o, sy1 - o), (sx1 - o, sy2 + o), (sx2 + o, sy2 + o)):
-        pl.line(cx, cy, (sx1 + sx2) / 2, (sy1 + sy2) / 2, lw=0.4)
-    pl.rect(sx1, sx2, sy1, sy2, lw=0.4, dash=(1.5, 1))  # louvre band under the cap
-    pl.text("VENTILATOR (A-503)", (sx1 + sx2) / 2, sy2 + o + 0.7, 5, "Helvetica-Bold")
     # slope arrows
     for ax, ay, dx, dy in ((30, 8, 0, -4), (30, 20, 0, 4), (27, 14, -4, 0), (65, 6, 0, -3), (65, 22, 0, 3)):
         pl.line(ax, ay, ax + dx, ay + dy, lw=0.5, color=BLUE)
@@ -304,7 +297,7 @@ def sheet_roof(c):
         "Main roof trusses bolted to the first-floor ring beam; front gable trusses to the ground-floor ring beam; purlins cleated, not just welded tacks.",
         "Where the front gable meets the east wall of the two-storey block: GI / aluminium apron flashing chased into the wall, with a counter-flashing; the main roof's east eave overhangs it by 2 ft.",
         "Eaves 2'-0\" beyond the wall line (kept inside the 27 ft plot on the north) with drip edges and gutters on both roofs; downpipes at 6 points into the sump filter, overflow to the road drain.",
-        "Over the covered terrace the main roof sits on galvanised steel posts and steel trusses instead of walls; same tiles and fixings. Ventilator on the ridge above it: hipped tiled cap, 45 deg louvres with bird mesh (detail on A-503).",
+        "Over the covered terrace the main roof sits on galvanised steel posts and steel trusses instead of walls; same tiles and fixings. No ridge ventilator: hot air under the roof escapes at the terrace's open sides.",
         "Attic over the first-floor rooms vented at the ridge and soffits with insect mesh; 50 mm insulation on the deck. Loft water tank on a steel platform over the upper bath.",
         "Leave a 25 mm conduit from roof to DB now for future solar PV on the south slope.",
     ]
