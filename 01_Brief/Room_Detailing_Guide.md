@@ -86,7 +86,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** 17 equal risers of about 7 in, 10 in treads, 3'-6" flights and a half landing about 7'-6" x 5'-8"; check a mattress and a wardrobe panel can turn on it.  
    *Shown on: A-102, A-301*
 24. **Avoid:** Low headroom where the upper flight passes over the lobby.  
-   **Do:** Keep 7 ft clear wherever people walk: under the upper flight the first 2 ft is left open as part of the lobby (about 6 ft wide in front of the small bedroom), and only the low part beyond is a cupboard.  
+   **Do:** Keep 7 ft clear wherever people walk: under the upper flight the first 2 ft is left open as part of the lobby, and only the low part beyond is a cupboard.  
    *Shown on: A-301*
 25. **Avoid:** Open stair edges and a terrace rail children can climb.  
    **Do:** Railings 3'-6" high with vertical members at 4 in gaps, no horizontal rails to climb.  
@@ -131,8 +131,8 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    *Shown on: A-104*
 
 ## Wet area, store and kitchen entry
-38. **Avoid:** A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.  
-   **Do:** The kitchen is entered through a 3 ft hinged door on its west side, straight off the dining; the wet area opens off the kitchen through a sliding door.  
+38. **Avoid:** Serving from a closed kitchen through a single door: every dish crosses the doorway.  
+   **Do:** The kitchen opens to the dining over a granite serving hatch with glazed sliding shutters, and is entered by a 2'-6" glazed sliding door from the living; the wet area opens off the kitchen through a sliding door.  
    *Shown on: A-102*
 39. **Avoid:** Wet area that floods in heavy rain, or a service door that becomes a back door for intruders.  
    **Do:** Floor 3 in below the house sloping to its trap; a lockable steel service door to the walkway with a kerb.  
@@ -180,7 +180,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Wardrobes and dressing
 52. **Avoid:** Clothes stored in a walk-in only one person can use.  
-   **Do:** The upper master has a dressing room between the bedroom and its bath; the ground master and small bedroom have built-in wardrobes with lofts.  
+   **Do:** The upper master has a dressing room between the bedroom and its bath; the ground master has a wardrobe in its entry and another on its west wall, and the second bedroom a walk-in wardrobe alcove.  
    *Shown on: A-108*
 53. **Avoid:** Dressing mirror lit from behind.  
    **Do:** Mount the mirror light above or beside the mirror.  
@@ -215,12 +215,12 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Study table (small bedroom)
+## Study desk (second bedroom alcove)
 63. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** The study table sits on the south wall with the north window to the side.  
+   **Do:** The study desk sits in the walk-in alcove under its own south window, side-on to the light.  
    *Shown on: A-104*
 64. **Avoid:** Not enough power or data.  
-   **Do:** Fit a UPS socket, a normal socket and a Cat6 point at the table, with the router on the inverter.  
+   **Do:** Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.  
    *Shown on: E-103*
 
 ## Doors and windows
@@ -231,7 +231,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** No vents at bedrooms (windows, fans and AC are enough) or bathrooms (the door's bottom louvre feeds the exhaust fan).  
    *Shown on: A-401*
 67. **Avoid:** A long corridor that wastes area.  
-   **Do:** Here the lobby opens into the space under the upper flight, so the way to the small bedroom is about 6 ft wide at first, narrowing to a short 2'-6" passage that also serves the linen cupboard.  
+   **Do:** There is no corridor: the old passage beside the stair became the ground master's entry (with a wardrobe) and its attached bath, and every room opens straight off the short lobby.  
    *Shown on: A-106*
 68. **Avoid:** No drip groove under sills and sunshades: black streaks down the walls.  
    **Do:** Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.  

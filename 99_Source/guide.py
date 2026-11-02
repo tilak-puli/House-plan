@@ -56,7 +56,7 @@ GUIDE = [
         ('Uneven risers or a short landing: people trip, furniture cannot go up.',
          '17 equal risers of about 7 in, 10 in treads, 3\'-6" flights and a half landing about 7\'-6" x 5\'-8"; check a mattress and a wardrobe panel can turn on it.', 'A-102, A-301'),
         ('Low headroom where the upper flight passes over the lobby.',
-         'Keep 7 ft clear wherever people walk: under the upper flight the first 2 ft is left open as part of the lobby (about 6 ft wide in front of the small bedroom), and only the low part beyond is a cupboard.', 'A-301'),
+         'Keep 7 ft clear wherever people walk: under the upper flight the first 2 ft is left open as part of the lobby, and only the low part beyond is a cupboard.', 'A-301'),
         ('Open stair edges and a terrace rail children can climb.',
          'Railings 3\'-6" high with vertical members at 4 in gaps, no horizontal rails to climb.', 'A-103'),
         ('West sun on the upper floor.',
@@ -87,8 +87,8 @@ GUIDE = [
          "Fridge on the kitchen's north wall, clear of the entry door and away from the hob.", 'A-104'),
     ]),
     ('Wet area, store and kitchen entry', [
-        ("A narrow kitchen entry squeezed past a TV wall: two people can't pass and serving is awkward.",
-         'The kitchen is entered through a 3 ft hinged door on its west side, straight off the dining; the wet area opens off the kitchen through a sliding door.', 'A-102'),
+        ("Serving from a closed kitchen through a single door: every dish crosses the doorway.",
+         'The kitchen opens to the dining over a granite serving hatch with glazed sliding shutters, and is entered by a 2\'-6" glazed sliding door from the living; the wet area opens off the kitchen through a sliding door.', 'A-102'),
         ('Wet area that floods in heavy rain, or a service door that becomes a back door for intruders.',
          'Floor 3 in below the house sloping to its trap; a lockable steel service door to the walkway with a kerb.', 'A-102, A-108'),
         ('Washing machine with no tap, drain or socket at the right height.',
@@ -122,7 +122,7 @@ GUIDE = [
     ]),
     ('Wardrobes and dressing', [
         ('Clothes stored in a walk-in only one person can use.',
-         'The upper master has a dressing room between the bedroom and its bath; the ground master and small bedroom have built-in wardrobes with lofts.', 'A-108'),
+         'The upper master has a dressing room between the bedroom and its bath; the ground master has a wardrobe in its entry and another on its west wall, and the second bedroom a walk-in wardrobe alcove.', 'A-108'),
         ('Dressing mirror lit from behind.',
          'Mount the mirror light above or beside the mirror.', 'E-101, E-102'),
     ]),
@@ -146,11 +146,11 @@ GUIDE = [
         ('No backing for grab bars later.',
          'Fix blocking in the walls beside the WC and shower now.', 'A-502/5'),
     ]),
-    ('Study table (small bedroom)', [
+    ('Study desk (second bedroom alcove)', [
         ('Window behind the screen (silhouette on video calls) or in front of it (glare).',
-         'The study table sits on the south wall with the north window to the side.', 'A-104'),
+         'The study desk sits in the walk-in alcove under its own south window, side-on to the light.', 'A-104'),
         ('Not enough power or data.',
-         'Fit a UPS socket, a normal socket and a Cat6 point at the table, with the router on the inverter.', 'E-103'),
+         'Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.', 'E-103'),
     ]),
     ('Doors and windows', [
         ('Solid walls and closed doors between rooms: no breeze crosses the house at night.',
@@ -158,7 +158,7 @@ GUIDE = [
         ('Open vents above bedroom and bathroom doors: conversation, TV and smells carry.',
          "No vents at bedrooms (windows, fans and AC are enough) or bathrooms (the door's bottom louvre feeds the exhaust fan).", 'A-401'),
         ('A long corridor that wastes area.',
-         'Here the lobby opens into the space under the upper flight, so the way to the small bedroom is about 6 ft wide at first, narrowing to a short 2\'-6" passage that also serves the linen cupboard.', 'A-106'),
+         'There is no corridor: the old passage beside the stair became the ground master\'s entry (with a wardrobe) and its attached bath, and every room opens straight off the short lobby.', 'A-106'),
         ('No drip groove under sills and sunshades: black streaks down the walls.',
          'Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.', 'A-501/3'),
         ('Unseasoned teak that warps and jams.',

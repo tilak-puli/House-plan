@@ -236,7 +236,7 @@ def sheet_elev_short(c):
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
     tips = ["Front gable (mukhappu) over the verandah and kitchen front; the covered terrace sits 6 ft back behind it, open behind a railing under the main roof on slim steel posts.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
-            "West wall: the upper master's west wall is solid (afternoon sun); the room above the small bedroom has only a small high vent on the west. The creeper pergola shades the ground floor.",
+            "West wall: the upper master's west wall is solid (afternoon sun); the sitting zone above the ground master has only a small high vent on the west. The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
     s.bullets(tips, 40 * mm, 80 * mm, 285 * mm, 7)
     c.showPage()

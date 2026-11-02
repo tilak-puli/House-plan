@@ -50,6 +50,7 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 - Plumber: the upper WC stack inside the wet wall between the common bath and the store, its vent above the main roof, and waterproofing the slabs under the upper bath and the terrace, and the terrace drain to a downpipe.
 - Electrician: a sub-board for the first floor, 2-way switching between the lobby and the landing, wet-rated lights and fan on the covered terrace.
 - Vastu consultant: which boundary sets the plot centre? On the full 75 ft plot it falls in the lobby at the foot of the stair, beside the common bath; on the 64 ft trial plot it falls in the living.
+- Vastu consultant: the main master upstairs in the south-west, the ground master in the north-west and the second bedroom in the south-west below the upper master: confirm, and say which room suits elders if they live downstairs.
 - Vastu consultant: the stair in the north-west quarter rising clockwise; the upper master over the ground master in the south-west; the Brahmasthan in the living (kept free of walls and columns) with the covered terrace above.
 - Architect / contractor: roof over the terrace in clay tiles on steel trusses (drawn) or an insulated metal-sheet roof on the same frame: cost, heat and look.
 - Contractor: rate difference between a two-storey and a single-storey house of similar area in the village (frame, slab, stair, steel terrace frame).

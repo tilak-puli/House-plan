@@ -175,7 +175,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
 
 
 SECTIONS = {"A": ("X", 44.5, "Cross section through the dining nook, dining, living and the covered terrace above"),
-            "B": ("Y", 18, "Long section through the small bedroom and the master's sitting zone above, the stair, the living with the covered terrace above, and the poomukham")}
+            "B": ("Y", 18, "Long section through the ground master and the upper sitting zone above, the stair, the living with the covered terrace above, and the poomukham")}
 
 
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):
