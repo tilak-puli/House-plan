@@ -51,60 +51,64 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 Plan sketch, not to scale. West is on the left, the road (east) on the right, north at the top.
 
 ```
-x: 14            28       35      42                 53     61      67
-   ┌─────────────┬───────────────┬─────────────────────────┬───────┐ y 25
-   │ Master      │ C.bath │ Stair │   LIVING                │       │
-   │             │        │dogleg │                   ┌─────┤ POOM- │
-   ├─────────────┤ (open under    │                   │Pooja│ UKHAM │◄ main door
-   │             │  the stair)    │                   └─────┤       │
-   │ (sitting /  ├────────────────┤   (wide opening)        ├───────┤ y 12.5
-   │             │     Lobby      │   DINING     ┌──────────┴───────┤
-   │             ├───────┬────────┘      ┌───────┤  KITCHEN         │
-   │             │ Small │ C.bath │nook │  Wet  │                  │
-   └─────────────┴───────┴────────┴──────┴───────┴──────────────────┘ y 3
+x: 14            28       34.5    42                 53  57   61      67
+   ┌─────────────┬────────┬───────┬──────────────────────┬────┬───────┐ y 25
+   │ Guest room /│ G.bath │ Stair │   LIVING             │Pooj│       │
+   │ den         │        │dogleg │                      ├────┤ POOM- │
+   │             ├────────┤ clock-│                      │Gen-│ UKHAM │◄ main door
+   ├──door───────┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
+   │ Master      │        ├───────┤   (opening)          │    │       │
+   │ bedroom     ├─vest.──┬──────┤ DINING [light well]  ├────┴───────┤ y 12.5
+   │ (bed, head  │ M.bath │C.bath├──────────────────────┤  KITCHEN   │ y 11.5 / 7.5
+   │  south)     │        │      │  Utility (wet area)  │            │
+   └─────────────┴─────────┴──────┴──────────────────────┴────────────┘ y 3
 ```
 
 | Room | Extent (x × y) | Size | Clear | Notes |
 |---|---|---|---|---|
-| Master bedroom | 14–28 × 3–25 (south part 14–26) | 14 × 22 | 13'-4" × 21'-3" | sleeping zone (north, next to the master bath): king bed against the back of a 6 ft divider wardrobe (head south), north window ahead; sitting zone (south): day bed under the high south window, sofa facing a TV on the west wall, west window; door from the lobby |
-| Small room | 26–36 × 3–12 | 10 × 9 | 9'-5" × 8'-5" | wide single bed (4 × 6'-6") under a 3 ft south window, 3 ft wardrobe on the east wall; door from the lobby |
-| Common bath | 36–42 × 3–12 | 6 × 9 | 5'-5" × 8'-4" | WC and a 2'-10" × 3'-3" shower side by side at the south end, basin north; door from the hall by the stair, opening inward; under the upper toilet (one stack) |
-| Master bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door from the master's sitting zone; north window; drains along the north walkway |
-| Lobby | 28–34.5 × 12–18 | 6.5 × 6 | | doors to the master bedroom and the small room; coat, shoe and linen cupboard on the north wall; open to the stair hall |
-| Stair hall | 34.5–42 × 12–15.67 | 7.5 × 3'-8" | | passage from the dining and living to the lobby, in front of the stair foot; common bath door |
-| Stair | 34.5–42 × 15.67–25 | | | dog-leg stair behind a timber jali to the living; the space under the upper flight is open where headroom allows, then a cupboard (DB, inverter) |
-| Dining nook | 42–46 × 3–7.5 | 4 × 4.5 | | crockery unit under a 3 ft south window |
-| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 3'-9" table with the bench on the south side and a chair at each end, so no chair backs sit in the living path; 9 in granite serving ledge under the kitchen hatch; open to the living |
-| Wet area | 46–53 × 3–7.5 | 7 × 4.5 | | utility sink, washing machine, airer; service door to the walkway |
-| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (11 ft south run, clear of the wet-area door) with a prep sink under the south window and a clear prep run to the blind SE corner, hob on the east wall, fridge and a tall pantry together on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
-| Living | 42–61 × 12.5–25 | 19 × 12.5 | 18'-5" × 12'-1" | TV on the stair wall, sofa facing west with the coffee table 1'-6" from it and two armchairs facing north (a square seating group), shoe bench by the door |
-| Pooja | 57–61 × 12.5–16.5 | 4 × 4 | | back to back with the kitchen, opens west |
-| Poomukham | 61–67 × 12.5–25 | 6 × 12.5 | | swing, charupadi seats, main door |
+| Master bedroom | 14–28 × 3–14 | 14 × 11 | 13'-5" × 10'-5" | the true south-west: king bed head south between two 3 ft south windows (stacked under Bedroom 2's bed and windows); 8 ft sliding wardrobe on the north wall; entered from its vestibule through a pocket door; a connecting door to the den |
+| Master vestibule | 28–36 × 8.75–11.5 | 8 × 2.75 | about 2'-6" clear | door from the lobby (opens out); pocket door to the bedroom, door to the bath; linen cupboard |
+| Master bath | 28–36 × 3–8.75 | 8 × 5.75 | 7'-7" × 5'-2" | WC on the x 36 wet wall, back to back with the common bath WC (one stack); 3 × 3 shower in the south-west corner on the bedroom wall; basin under the frosted south window; the door leaf screens the WC |
+| Guest room / den | 14–28 × 14–25 | 14 × 11 | 13'-5" × 10'-5" | the parents' sitting / TV room most days (connecting door to the master); shut that door and it is a guest suite with its own bath: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby |
+| Common bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-10" | three bands: shower across the south end (5'-5" × 3'), WC mid-wall on the west wet wall with 3'-6" clear in front, basin opposite; door from the stair hall opening inward so its leaf screens the WC; under Bedroom 2's bath (one stack) |
+| Guest bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | the old master bath, now off the den, opening inward; shower about 3 × 3; north window centred on the shower; drains along the north walkway |
+| Lobby | 28–34.5 × 11.5–18 | 6.5 × 6.5 | | doors to the master suite and the den; a 3'-4" coat, shoe and linen cupboard on the north wall clear of the den door; open to the stair hall |
+| Stair hall | 34.5–42 × 11.5–15.67 | 7.5 × 4'-2" | | passage from the dining and living to the lobby, in front of the stair foot; common bath door; opening to the living as wide as the hall |
+| Stair | 34.5–42 × 15.67–25 | | | dog-leg stair rising clockwise, behind a full-height timber jali to the living; under the high end of the east flight a bench nook seen through the jali, then a cupboard (DB, inverter); drawers under the west flight |
+| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 5'-6" extending table under a 5 × 4'-6" light well (to the covered terrace; jali grating and a glazed lid), built-in bench on the straight south wall, a chair at each end; 9 in granite serving ledge under the kitchen hatch; open to the living |
+| Wet area (utility) | 42–53 × 3–7.5 | 11 × 4.5 | | the old dining nook folded in: crockery unit under the 3 ft south window, washing machine on the north wall clear of the service door, utility sink, airer; service door to the walkway |
+| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter: prep sink centred under the south window W07 with a 6 ft prep run to a full-height corner unit; hob at y 8.2 on the east wall with about 2 ft landing each side; fridge and a tall pantry (microwave inside) grouped at the north end against the east run; serving hatch with glazed sliding shutters; sliding entry from the living |
+| Living | 42–57 × 12.5–25 | 15 × 12.5 | | TV on the stair wall, sofa facing west with the coffee table 1'-6" from it and two armchairs facing north; lamp niche on the entry axis; clerestory W47 on the north wall |
+| Genkan (shoe-off foyer) | 57–61 × 12.5–21 | 4 × 8.5 | | inside the 4 ft main door, one step (6 in) below the living; shoe bench with a window to the poomukham; groceries go straight on to the kitchen door |
+| Pooja | 57–61 × 21–25 | 4 × 4 | | north-east corner of the living, opens west (family faces east) |
+| Poomukham | 61–67 × 12.5–25 | 6 × 12.5 | | swing (clear of the pillars; the north-edge pillars dropped for a teak beam), charupadi seats of equal length, main door; entry axis y 18.75 from the gate to the lamp niche |
 
 ## First floor (floor level +10 ft)
 
 | Room | Extent | Size | Clear | Notes |
 |---|---|---|---|---|
-| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows; 8 ft sliding wardrobe on the north wall, centred on the bed (sound buffer to the study); high west window stacked over the master window below; entered through its alcove so the bed is out of sight from the door |
-| Bedroom 2 wardrobe alcove | 28–36 × 3–11.5 | 8 × 8.5 | | door from the landing; 4 ft wardrobe, dresser, 2'-6" south window; bath door |
-| Bedroom 2 bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-11" | over the common bath (one stack); south window |
-| Study | 14–28 × 14–25 | 14 × 11 | 13'-4" × 10'-5" | closable home office: two desks 9 ft apart (west and east walls), sofa-cum-bed for guests under the 6 ft north window; coolest room by day |
+| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows; entered from its vestibule through a pocket door; high west window stacked over the master window below; AC on solid wall |
+| Bedroom 2 vestibule and closet | 28–36 × 3–11.5 | 8 × 8.5 | | door from the landing into a vestibule linking bedroom (pocket door), bath and closet; a 5 ft hanging run on the bedroom wall and a drawer / dresser run opposite, the aisle ending at the south window |
+| Bedroom 2 bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-11" | the same three bands as the common bath below (one stack); door opens inward, its leaf screening the WC; south window centred on the shower |
+| Study | 14–28 × 14–25 | 14 × 11 | 13'-4" × 10'-5" | closable home office: one 9 ft two-station desk under the 6 ft north window, a full-height library wall on the south (call backdrop, sound buffer), sofa-cum-bed for guests in front of it; glazed door; coolest room by day |
 | Toilet lobby | 28–34.5 × 15.67–18 | 6.5 × 2'-4" | | part of the landing in front of the toilet and study doors |
-| Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door at the east end of the toilet lobby, opening inward; the basin is beside the door and the WC on the west wall, so the WC is never the first view; for the study, the terrace and guests; WC over the master bath WC (one stack); north window |
-| Landing | 28–42 × 11.5–15.67 | 14 × 4'-2" | | the stair head, no corridor: Bedroom 2 door on its south wall, study and toilet doors beside it, terrace door on its east wall; a lit teak lamp shelf on the wall you face at the top of the stair |
-| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts and trusses; closed teak jali parapets on the north and south (neighbours close by), an open railing on the road side; diwan and chairs on the north, drying rails on the south, planters |
+| Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door at the east end of the toilet lobby, opening inward; the WC is never the first view; shower about 3 × 3 with the north window centred on it; WC over the master bath WC (one stack) |
+| Landing | 28–42 × 11.5–15.67 | 14 × 4'-2" | | the stair arrives on the east side beside the 3'-6" terrace door; a lit teak lamp shelf on the wall you face at the top; Bedroom 2, study and toilet doors to the west |
+| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts set on wall corners below (x 53 and 61); closed teak jali parapets on the north and south, an open railing on the road side; zoned: laundry and drying in the south-west, lounge in the north-west (diwan facing the view, chairs either side), festival floor in the middle, planters along the whole east edge; the light well with its rail between laundry and lounge |
 
 ## Levels and stair
 
 - Ground FFL +2 ft above ground. Floor-to-floor height 10 ft, so the first floor is at +12 ft above ground.
-- **Stair:** dog-leg, 3'-6" flights, 16 risers of 7.5 in, 10 in treads, 8 + 8 risers with a 3'-6" half landing at the north end (7'-6" x 9'-4" overall); a 7 × 5'-8" stair hall in front of it. The foot is at the lobby.
+- **Stair:** dog-leg, 3'-6" flights, 16 risers of 7.5 in, 10 in treads, 8 + 8 risers with a 3'-6" half landing at the north end (7'-6" x 9'-4" overall), rising clockwise (up the west flight, right turn, up the east flight); a 7 × 3'-8" stair hall in front of it. A clerestory W45 over the stair well opens as the hot-air outlet.
 - **Terrace:** waterproofed slab falling 1:80 to a drain in the south-east corner. Steel posts stand on RCC stubs 6 in above the tiles.
 
 ## Roof
 
 - **Main roof:** one hipped clay-tile roof over the whole two-storey block (x 12–63 at the eaves). It sits on walls over the back rooms and on a light steel frame over the terrace.
 - **Front gable:** a lower gable over the single-storey poomukham only, centred on the main door (y 18.75), facing the road. A still lower hipped wing covers the kitchen front beside it, with a valley gutter between the two. The gable marks the way in; together the three read as a stepped Kerala roof.
-- **No ridge ventilator:** hot air under the roof escapes at the terrace's open sides. The attic over the upper rooms has meshed ridge and soffit vents.
+- **Gablets:** both ends of the main hip end in a small Kerala gablet (3'-6" high, teak jali), so the hot air under the roof has a way out.
+- **Chaipu:** low tiled lean-to roofs run along the south and west walls with eaves at +11'-1", level with the front gable and the kitchen wing. They give the long sides a second tier, keep sun and monsoon rain off the ground-floor walls and windows, and cover the walkway and the den's garden door. The main-roof downpipes pass through them with collars.
+- **Front:** the gable face is teak boarding with one 4 ft jali panel over the main door; the kitchen front is exposed local brick wrapped round the corner; a jali screen closes the poomukham's north side.
 - **Option:** the terrace part of the roof could use an insulated metal sheet on the same steel frame, to save cost.
 - **Eaves:** 2 ft overhang, gutters on all roofs, 7 downpipes to the sump (one for the valley).
 - **Front gable junction (to detail):** with the gable over the poomukham only, its ridge (+15'-10") is about 3'-10" above the terrace floor (+12'), so its back end meets the terrace's east edge as a low triangle just above the railing.

@@ -10,7 +10,8 @@ TILE = colors.HexColor("#C98B6B")
 GABLE = colors.HexColor("#F1E9DA")
 WALLC = colors.HexColor("#F7F4EE")
 BACKC = colors.HexColor("#E9E4DA")   # walls set back behind the verandah
-LAT = colors.HexColor("#B9785A")     # laterite kitchen front
+LAT = colors.HexColor("#B4613F")     # exposed brick kitchen front
+JALI = colors.HexColor("#8E6B4E")
 DARK = colors.HexColor("#5A5048")
 TEAK = colors.HexColor("#6B4A2E")
 HATCH = colors.HexColor("#BDBDBD")
@@ -53,7 +54,7 @@ def _openings_on(face, u, along_x, shade=True):
             for w in WINDOWS:
                 if (w[1], w[2]) == (axis, c0):
                     a, b = sorted((u(w[3], 0), u(w[4], 0)) if along_x else (u(0, w[3]), u(0, w[4])))
-                    _window(e_cur[0], a, b, w, base, shade and not (face == "N"))
+                    _window(e_cur[0], a, b, w, base, shade and ((face == "N" and fl == "G") or (face in ("S", "W") and fl == "F1") or face == "E"))
             for d in DOORS:
                 if (d[1], d[2]) == (axis, c0):
                     a, b = sorted((u(d[3], 0), u(d[4], 0)) if along_x else (u(0, d[3]), u(0, d[4])))
@@ -111,15 +112,41 @@ def _roof_long(e, u, face="N"):
     # the nearer of the two front roofs is drawn last: the wing on the south face, the gable on the north
     for f in ((gable_side, wing_side) if face == "S" else (wing_side, gable_side)):
         f()
-    _poly(e, [(u(x1, 0), ez), (u(x2, 0), ez), (u(x2 - w, 0), rz), (u(x1 + w, 0), rz)], TILE)
+    d, zg = gablet_d(), rz - ROOF["gablet"]
+    _poly(e, [(u(x1, 0), ez), (u(x2, 0), ez), (u(x2 - d, 0), zg), (u(x2 - d, 0), rz), (u(x1 + d, 0), rz), (u(x1 + d, 0), zg)], TILE)
     e.line(u(x1, 0), ez, u(x2, 0), ez, lw=1.2, color=BROWN)  # fascia + gutter
+    _chaipu_long(e, u, face)
+
+
+def _chaipu_long(e, u, face):
+    """Low lean-to roofs seen from the south (the long one) or the north (the west one, end on)."""
+    cz = gable_eave_z()
+    for x1, x2, y1, y2, side in ROOF["chaipu"]:
+        top = cz + (y2 - y1 if side == "S" else x2 - x1) * TAN
+        if side == "S" and face == "S":
+            _poly(e, [(u(x1, 0), cz), (u(x2, 0), cz), (u(x2, 0), top), (u(x1 + (y2 - y1), 0), top)], TILE, lw=0.5)
+            e.line(u(x1, 0), cz, u(x2, 0), cz, lw=1.0, color=BROWN)
+        elif side == "W":
+            _poly(e, [(u(x1, 0), cz), (u(x2, 0), top), (u(x2, 0), cz)], TILE, lw=0.5)
 
 
 def _roof_end(e, u, east):
     x1, x2, y1, y2 = ROOF["hip"]
     ez, rz = eave_z(), ridge_z()
-    _poly(e, [(u(0, y1), ez), (u(0, y2), ez), (u(0, (y1 + y2) / 2), rz)], TILE)
+    d, zg, yc = gablet_d(), rz - ROOF["gablet"], (y1 + y2) / 2
+    _poly(e, [(u(0, y1), ez), (u(0, y2), ez), (u(0, y2 - d), zg), (u(0, y1 + d), zg)], TILE)
+    _poly(e, [(u(0, y1 + d), zg), (u(0, y2 - d), zg), (u(0, yc), rz)], JALI, lw=0.6)  # gablet: a teak jali lets the roof air out
+    for k in range(1, 6):
+        zz = zg + k * (rz - zg) / 6; half = (rz - zz) / TAN
+        e.line(u(0, yc - half), zz, u(0, yc + half), zz, lw=0.25, color=WALLC)
     e.line(u(0, y1), ez, u(0, y2), ez, lw=1.2, color=BROWN)
+    if not east:  # the west chaipu, seen face on
+        cz = gable_eave_z()
+        for cx1, cx2, cy1, cy2, side in ROOF["chaipu"]:
+            if side == "W":
+                top = cz + (cx2 - cx1) * TAN
+                _poly(e, [(u(0, cy1), cz), (u(0, cy2), cz), (u(0, cy2), top), (u(0, cy1 + (cx2 - cx1)), top)], TILE, lw=0.5)
+                e.line(u(0, cy1), cz, u(0, cy2), cz, lw=1.0, color=BROWN)
 
 
 def _front_gable(e, u):
@@ -129,11 +156,15 @@ def _front_gable(e, u):
     e.line(u(0, wa), wz, u(0, wb), wz, lw=1.0, color=BROWN)
     gx1, gx2, ya, yb = ROOF["gable"]
     gz, gr = gable_eave_z(), gable_ridge_z()
-    _poly(e, [(u(0, ya), gz), (u(0, yb), gz), (u(0, (ya + yb) / 2), gr)], GABLE, lw=0.8)
+    _poly(e, [(u(0, ya), gz), (u(0, yb), gz), (u(0, (ya + yb) / 2), gr)], colors.HexColor("#A0764F"), lw=0.8)  # teak-boarded gable face
     e.poly([(u(0, ya - 0.3), gz - 0.15), (u(0, (ya + yb) / 2), gr + 0.35), (u(0, yb + 0.3), gz - 0.15)], lw=1.4, color=BROWN)  # barge boards
-    for c0 in (-1.6, 0, 1.6):
-        yc = (ya + yb) / 2 + c0
-        e.rect(u(0, yc - 0.55), u(0, yc + 0.55), gz + 2.0, gz + 3.4 - abs(c0) * 0.3, lw=0.4, fill=colors.HexColor("#8E6B4E"))
+    yc = (ya + yb) / 2
+    a, b = sorted((u(0, yc - 2.0), u(0, yc + 2.0)))
+    e.rect(a, b, gz + 1.0, gz + 3.2, lw=0.5, fill=JALI)  # 4 ft jali panel over the main door
+    for k in range(1, 8):
+        e.line(a + k * (b - a) / 8, gz + 1.0, a + k * (b - a) / 8, gz + 3.2, lw=0.25, color=WALLC)
+    for k in range(1, 4):
+        e.line(a, gz + 1.0 + k * 0.55, b, gz + 1.0 + k * 0.55, lw=0.25, color=WALLC)
 
 
 def _ground(e, u1, u2):
@@ -161,6 +192,8 @@ def elevation(e, face):
         g = _wall_span("G", axis, c0); up = _wall_span("F1", axis, c0)
         ga, gb = sorted((u(g[0] - 0.375, 0), u(g[1] + 0.375, 0)))
         e.rect(ga, gb, F, F + H, lw=0.6, fill=WALLC)
+        if face == "S":  # exposed brick kitchen front, wrapped round the corner
+            e.rect(*sorted((u(61, 0), u(67.375, 0))), F, F + H, lw=0.6, fill=LAT)
         if face == "N":  # verandah and kitchen front, set back
             a, b = sorted((u(61, 0), u(67.375, 0)))
             e.rect(a, b, F, F + H, lw=0.3, fill=BACKC)
@@ -202,7 +235,7 @@ def elevation(e, face):
                 if d[0] == "D01":
                     e.rect(u(0, d[3]), u(0, d[4]), F, F + 7, lw=0.5, fill=TEAK); e.text("D01", u(0, (d[3] + d[4]) / 2), F + 7.7, 4.2, color=ACC)
             for w in WINDOWS:
-                if w[0] in ("W08", "W17"):
+                if w[0] in ("W08", "W17", "W46"):
                     _window(e, *sorted((u(0, w[3]), u(0, w[4]))), w, F, shade=w[0] == "W08")
             for fid in ("F42", "F69"):
                 ar = next(x for x in FURNITURE if x[0] == fid)

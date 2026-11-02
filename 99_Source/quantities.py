@@ -45,12 +45,12 @@ def take_off():
             for r in ROOMS:
                 L, W = clear_dims(r)
                 finishes[FLOOR_FINISH[r[0]]] = finishes.get(FLOOR_FINISH[r[0]], 0) + L * W
-                if r[0] not in ("R08", "R07", "R33", "R39", "R13", "R17", "R37", "R06"):
+                if r[0] not in ("R08", "R07", "R40", "R33", "R39", "R13", "R17", "R37", "R06"):
                     skirting += 2 * (L + W)
     for k, v in finishes.items():
         q.append(("Floors", k, round(v * 0.0929, 1), "sq m", "Clear room areas; add 5-8% wastage"))
     q.append(("Floors", "Flush skirting, 4 in", round(skirting * 0.3048, 1), "m", "Room perimeters (dry rooms), doors not deducted"))
-    for rid in ("R08", "R07", "R33", "R39"):
+    for rid in ("R08", "R07", "R40", "R33", "R39"):
         with on_floor("F1" if rid in F1_ROOM_IDS else "G"):
             L, W = clear_dims(room_of(rid)); nm = room_of(rid)[1]
         q.append(("Wet rooms", f"Wall tiles to 7 ft, {nm}", round((2 * (L + W) * 7 - 2.5 * 7) * 0.0929, 1), "sq m", "Full height in the shower adds ~2 sq m"))
@@ -60,16 +60,17 @@ def take_off():
     q.append(("Wet rooms", "Waterproofing, covered terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
     q.append(("Kitchen", "Granite counter, 2 ft deep", round((11.0 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
     q.append(("Kitchen", "Dado between counter and wall cabinets", round((11.0 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
-    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable + kitchen wing / cos {ROOF['pitch']} deg; add ~8% for laps"))
+    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable + kitchen wing + chaipu / cos {ROOF['pitch']} deg; add ~8% for laps"))
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, _, _ = ROOF["gable"]
     wx1, wx2, wa, wb = ROOF["wing"]
     q.append(("Roof", "Gutters", round((2 * ((x2 - x1) + (gx2 - x2)) + (wb - wa)) * 0.3048, 1), "m", "Both long eaves of the main roof and the front roofs, plus the wing's east eave"))
+    q.append(("Roof", "Chaipu gutters (low south and west roofs)", round(sum(c[1] - c[0] if c[4] == "S" else c[3] - c[2] for c in ROOF["chaipu"]) * 0.3048, 1), "m", "Eaves at +11'-1\"; main-roof downpipes pass through with collars"))
     q.append(("Roof", "Valley gutter, GI / aluminium, 12 in wide", round((wx2 - x2) * 0.3048, 1), "m", "Where the kitchen wing meets the front gable, draining east"))
     q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 22 ft (main roof) or 12 ft (front roofs) each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
     feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
-    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gate"))
+    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gates; the road face in exposed brick or local stone to match the kitchen front"))
     q.append(("Site", "Plinth protection apron, 3 ft wide", round(((53.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(both("DOORS")), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(both("WINDOWS")), "no.", "See Windows tab"))

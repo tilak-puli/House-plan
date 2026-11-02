@@ -261,6 +261,14 @@ class Plan:
     def floor_extras(self):
         """Stair everywhere; on the first floor also the railings, the terrace posts and the roof below."""
         self.stair()
+        lx1, lx2, ly1, ly2 = LIGHT_WELL
+        if FLOOR[0] == "F1":
+            self.line(lx1, ly1, lx2, ly2, lw=0.3, color=GREY); self.line(lx1, ly2, lx2, ly1, lw=0.3, color=GREY)
+            self.text("LIGHT WELL", (lx1 + lx2) / 2, (ly1 + ly2) / 2 + 0.9, 4.4, "Helvetica-Bold", GREY)
+            self.text("jali grating, glazed lid", (lx1 + lx2) / 2, (ly1 + ly2) / 2 - 1.1, 4.0, color=GREY)
+        else:
+            self.rect(lx1, lx2, ly1, ly2, stroke=GREY, lw=0.4, dash=(3, 2))
+            self.text("LIGHT WELL ABOVE", (lx1 + lx2) / 2, ly2 - 0.6, 4.0, color=GREY)
         if FLOOR[0] == "F1":
             self.rails()
             for x, y in TERRACE_POSTS:

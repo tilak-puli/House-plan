@@ -8,6 +8,16 @@ COVERED = {("Y", 61)}  # walls under the poomukham roof (and, upstairs, above th
 FULL_HEIGHT_SILL = 1.0  # windows with a lower sill are cut through the wall
 
 
+def _minus(r, hole):
+    """Rectangle r less a rectangular hole inside it, as up to four pieces."""
+    x1, x2, y1, y2 = r
+    if not hole or hole[0] >= x2 or hole[1] <= x1 or hole[2] >= y2 or hole[3] <= y1:
+        return [r]
+    hx1, hx2, hy1, hy2 = max(hole[0], x1), min(hole[1], x2), max(hole[2], y1), min(hole[3], y2)
+    parts = [(x1, x2, y1, hy1), (x1, x2, hy2, y2), (x1, hx1, hy1, hy2), (hx2, x2, hy1, hy2)]
+    return [p for p in parts if p[1] - p[0] > 0.01 and p[3] - p[2] > 0.01]
+
+
 def floor_data():
     """Walls, openings, rooms, fittings and furniture of the floor currently swapped in."""
     xs = [c for a, c in EXTERIOR if a == "Y"]
@@ -26,17 +36,20 @@ def floor_data():
         ext = (axis, c) in EXTERIOR
         windows.append({"id": w[0], "axis": axis, "c": c, "s": w[3], "e": w[4], "sill": w[5], "head": w[6],
                         "dir": -1 if c == lo else 1, "cut": w[5] < FULL_HEIGHT_SILL,
-                        "shade": ext and (axis, c) not in COVERED and not (axis == "X" and c == max(ys)) and "clerestory" not in w[7].lower(),
+                        "shade": ext and (axis, c) not in COVERED and "clerestory" not in w[7].lower() and w[5] < 6
+                                 and ((axis == "X" and c == max(ys)) == (FLOOR[0] == "G") or (axis, c) == ("Y", 67)),  # ground: north hoods (the chaipu covers south and west); upstairs: south and west (the eave covers north)
                         "mat": "win" if (axis == "X" and c == max(ys)) or "glazed clerestory" in w[8].lower() or ("glazed" in w[8].lower() and "jali" not in w[8].lower() and not ext) else "jali"})
     floor_keys = (("Red oxide", "redoxide"), ("Matt vitrified 2x2", "vitrified"), ("Marble", "marble"), ("Anti-skid matt", "antiskid"),
                   ("Anti-skid ceramic", "ceramic"), ("Cuddapah", "cuddapah"), ("Flamed granite", "granite"), ("Terracotta", "antiskid"))
     room_rects = []
+    lw = LIGHT_WELL if floor_base() > LEVELS["FFL"] + 1 else None  # upstairs: the floor stops at the light well
     for rid, name, x1, x2, y1, y2, _ in ROOMS:
         fin = FLOOR_FINISH.get(rid, "Red oxide")
         key = next((k for t, k in floor_keys if t in fin), "redoxide")
         ceil = CEILINGS.get(rid)
-        room_rects.append({"id": rid, "x1": x1, "x2": x2, "y1": y1, "y2": y2, "floor": key, "fo": ROOM_FLOOR.get(rid, 0),
-                           "ceil": ceil[1] if ceil and ceil[0] == "flat" else None})
+        for a, b, c, d in _minus((x1, x2, y1, y2), lw):
+            room_rects.append({"id": rid, "x1": a, "x2": b, "y1": c, "y2": d, "floor": key, "fo": ROOM_FLOOR.get(rid, 0),
+                               "ceil": ceil[1] if ceil and ceil[0] == "flat" else None})
     fixtures = [[p[0], p[1], p[2]] for p in PLUMBING if p[3] != "SITE"]
     elec = [[e[0], e[1], e[2], e[3]] for e in ELECTRICAL if e[0] in ("F", "L", "WL") and e[3] != "SITE"]
     furniture = [{"id": f[0], "x1": f[3], "x2": f[4], "y1": f[5], "y2": f[6]} for f in FURNITURE]
@@ -57,10 +70,11 @@ def model_data():
             "slabT": LEVELS["slab"], "slab": [list(s) for s in SLAB_F1], "stair": STAIR, "posts": [list(p) for p in TERRACE_POSTS],
             "house": {"x1": 14, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [14, 61]},
             "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"]}, "gate": list(feat["GATE"][2:]),
-            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "wing": list(ROOF["wing"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3), "weave": round(wing_eave_z(), 3)},
+            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "wing": list(ROOF["wing"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3), "weave": round(wing_eave_z(), 3), "gabletD": round(gablet_d(), 3), "gabletH": ROOF["gablet"], "chaipu": [list(c[:4]) + [c[4]] for c in ROOF["chaipu"]]},
             "pergola": list(feat["PERGOLA"]),
+            "gate2": list(feat["GATE2"][2:]) if "GATE2" in feat else None,
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
-                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2", "HEDGE3") if k in feat}},
+                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2", "HEDGE3", "HEDGE4", "OTTA", "GSTEP") if k in feat}},
             "trees": [list(t) for t in TREES]}
 
 

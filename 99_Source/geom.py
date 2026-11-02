@@ -124,10 +124,27 @@ def gable_eave_z():
     return LEVELS["FFL"] + LEVELS["wall_top"] - ROOF["overhang"] * TAN + ROOF["gable_lift"]
 
 
+def gablet_d():
+    """How far in from each hip-end eave the gablet's jali triangle stands (ft)."""
+    return (ridge_z() - ROOF["gablet"] - eave_z()) / TAN
+
+
 def hip_z(x, y):
+    """Main roof: hipped, with a gablet at each end (the ridge runs on to the gablets)."""
     x1, x2, y1, y2 = ROOF["hip"]
-    d = min(x - x1, x2 - x, y - y1, y2 - y)
-    return eave_z() + d * TAN if d >= 0 else None
+    dx, dy = min(x - x1, x2 - x), min(y - y1, y2 - y)
+    if min(dx, dy) < 0:
+        return None
+    return eave_z() + (dy if dx >= gablet_d() else min(dx, dy)) * TAN
+
+
+def chaipu_z(x, y):
+    """Low lean-to roofs (chaipu) along the south and west walls; a hip where they meet."""
+    zs = []
+    for x1, x2, y1, y2, side in ROOF["chaipu"]:
+        if x1 <= x <= x2 and y1 <= y <= y2:
+            zs.append(gable_eave_z() + ((y - y1) if side == "S" else (x - x1)) * TAN)
+    return min(zs) if zs else None
 
 
 def gable_z(x, y):
@@ -156,7 +173,7 @@ def wing_ridge_z():
 
 
 def roof_z(x, y):
-    zs = [z for z in (hip_z(x, y), gable_z(x, y), wing_z(x, y)) if z is not None]
+    zs = [z for z in (hip_z(x, y), gable_z(x, y), wing_z(x, y), chaipu_z(x, y)) if z is not None]
     return max(zs) if zs else None
 
 
@@ -174,4 +191,5 @@ def roof_area():
     """Sloped roof area (sq ft): plan area of the main hip, the front gable and the kitchen wing (beyond the hip) divided by cos(pitch)."""
     x1, x2, y1, y2 = ROOF["hip"]
     front = sum((r[1] - max(r[0], x2)) * (r[3] - r[2]) for r in (ROOF["gable"], ROOF["wing"]))
-    return ((x2 - x1) * (y2 - y1) + front) / math.cos(math.radians(ROOF["pitch"]))
+    low = sum((c[1] - c[0]) * (c[3] - c[2]) for c in ROOF["chaipu"]) - 2 * 2  # less the shared corner
+    return ((x2 - x1) * (y2 - y1) + front + low) / math.cos(math.radians(ROOF["pitch"]))

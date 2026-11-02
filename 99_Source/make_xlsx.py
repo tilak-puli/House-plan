@@ -70,8 +70,9 @@ def make(path):
 
     ws = sheet(wb, "Rooms", ["ID", "Room", "Zone", "E-W (ft)", "N-S (ft)", "Area (sq ft)", "Area (sq m)", "Clear E-W (ft)", "Clear N-S (ft)", "Clear area (sq ft)", "Floor level", "Ceiling", "Notes"],
                [7, 24, 14, 9, 9, 11, 11, 10, 10, 11, 11, 16, 34])
-    notes = {"R10": "Open to the living", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts, railings on three sides",
-             "R06": "Dog-leg stair, jali to the living", "R01": "Sleeping zone south, sitting zone north, part-divided by a wardrobe", "R31": "Sleeping zone north, sitting/study zone south, part-divided by a wardrobe", "R33": "Over the common bath, for the terrace"}
+    notes = {"R10": "Open to the living; light well above the table", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts; jali parapets north and south, railing on the road side",
+             "R06": "Dog-leg stair rising clockwise, jali to the living", "R01": "Master suite: entered through its vestibule, bath beside it, connecting door to the den", "R42": "Parents' sitting room / guest room with its own bath (shut the connecting door)",
+             "R31": "Entered through its vestibule (pocket door)", "R33": "Over the common bath (one stack)", "R40": "On the south stack, back to back with the common bath; Bedroom 2's dry alcove is above it", "R18": "One step below the living, shoes off"}
     upper = {r[0] for r in ROOMS_F1}
     for i, r in enumerate(both("ROOMS"), start=2):
         L, W = room_dims(r)

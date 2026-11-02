@@ -320,9 +320,14 @@ def sheet_roof(c):
     for i, t_ in enumerate(("FRONT GABLE", "(MUKHAPPU)", f"ridge {fmt_lvl(gable_ridge_z())}", f"eaves {fmt_lvl(gable_eave_z())}")):
         pl.text(t_, (x2 + gx2) / 2, (ya + yb) / 2 + 4.6 - i * 1.0, 5 if i < 2 else 4.4, "Helvetica-Bold" if i < 2 else "Helvetica")
     pl.rect(x1, x2, y1, y2, lw=0.9, fill=WHITE)
-    pl.line(x1 + w, yc, x2 - w, yc, lw=1.0)
-    for cx, cy, rx in ((x1, y1, x1 + w), (x1, y2, x1 + w), (x2, y1, x2 - w), (x2, y2, x2 - w)):
-        pl.line(cx, cy, rx, yc, lw=0.7)
+    d = gablet_d()
+    pl.line(x1 + d, yc, x2 - d, yc, lw=1.0)
+    for cx, cy, gx, gy in ((x1, y1, x1 + d, y1 + d), (x1, y2, x1 + d, y2 - d), (x2, y1, x2 - d, y1 + d), (x2, y2, x2 - d, y2 - d)):
+        pl.line(cx, cy, gx, gy, lw=0.7)
+    for gx in (x1 + d, x2 - d):  # gablets: jali triangles at both hip ends
+        pl.line(gx, y1 + d, gx, y2 - d, lw=1.2, color=ACC)
+    pl.text("GABLET (JALI)", x1 + d - 1.6, yc + 2.2, 4.4, color=ACC); pl.text("GABLET (JALI)", x2 - d + 1.6, yc + 2.2, 4.4, color=ACC)
+    pl.text("LOW CHAIPU ROOF ON THE SOUTH AND WEST WALLS, UNDER THIS EAVE", (x1 + x2) / 2 - 4, y1 + 0.55, 4.0, color=GREY)
     pl.text("MAIN HIPPED ROOF OVER THE TWO-STOREY BLOCK", (x1 + x2) / 2 - 4, yc + 4.5, 5.5, "Helvetica-Bold")
     # slope arrows
     for ax, ay, dx, dy in ((30, 8, 0, -4), (30, 20, 0, 4), (27, 14, -4, 0), (65, 6, 0, -3), (65, 22, 0, 3)):
