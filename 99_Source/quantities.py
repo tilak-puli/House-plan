@@ -44,12 +44,12 @@ def take_off():
             for r in ROOMS:
                 L, W = clear_dims(r)
                 finishes[FLOOR_FINISH[r[0]]] = finishes.get(FLOOR_FINISH[r[0]], 0) + L * W
-                if r[0] not in ("R02", "R03", "R33", "R13", "R17", "R37", "R06"):
+                if r[0] not in ("R03", "R07", "R33", "R13", "R17", "R37", "R06"):
                     skirting += 2 * (L + W)
     for k, v in finishes.items():
         q.append(("Floors", k, round(v * 0.0929, 1), "sq m", "Clear room areas; add 5-8% wastage"))
     q.append(("Floors", "Flush skirting, 4 in", round(skirting * 0.3048, 1), "m", "Room perimeters (dry rooms), doors not deducted"))
-    for rid in ("R02", "R03", "R33"):
+    for rid in ("R03", "R07", "R33"):
         with on_floor("F1" if rid in F1_ROOM_IDS else "G"):
             L, W = clear_dims(room_of(rid)); nm = room_of(rid)[1]
         q.append(("Wet rooms", f"Wall tiles to 7 ft, {nm}", round((2 * (L + W) * 7 - 2.5 * 7) * 0.0929, 1), "sq m", "Full height in the shower adds ~2 sq m"))

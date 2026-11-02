@@ -180,7 +180,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Wardrobes and dressing
 52. **Avoid:** Clothes stored in a walk-in only one person can use.  
-   **Do:** The upper master has a dressing room between the bedroom and its bath; the ground master has a wardrobe in its entry and another on its west wall, and the second bedroom a walk-in wardrobe alcove.  
+   **Do:** The upper master has a 6 ft divider wardrobe and another on its east wall; the ground master has a wardrobe in its entry and another on its west wall; the second bedroom a 6 ft wardrobe on its west wall.  
    *Shown on: A-108*
 53. **Avoid:** Dressing mirror lit from behind.  
    **Do:** Mount the mirror light above or beside the mirror.  
@@ -215,9 +215,9 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Study desk (second bedroom alcove)
+## Study (first floor, off the landing)
 63. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** The study desk sits in the walk-in alcove under its own south window, side-on to the light.  
+   **Do:** The study desk sits under its own south window, side-on to the light, in a small room with a door: quiet for calls.  
    *Shown on: A-104*
 64. **Avoid:** Not enough power or data.  
    **Do:** Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.  

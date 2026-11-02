@@ -122,7 +122,7 @@ GUIDE = [
     ]),
     ('Wardrobes and dressing', [
         ('Clothes stored in a walk-in only one person can use.',
-         'The upper master has a dressing room between the bedroom and its bath; the ground master has a wardrobe in its entry and another on its west wall, and the second bedroom a walk-in wardrobe alcove.', 'A-108'),
+         'The upper master has a 6 ft divider wardrobe and another on its east wall; the ground master has a wardrobe in its entry and another on its west wall; the second bedroom a 6 ft wardrobe on its west wall.', 'A-108'),
         ('Dressing mirror lit from behind.',
          'Mount the mirror light above or beside the mirror.', 'E-101, E-102'),
     ]),
@@ -146,9 +146,9 @@ GUIDE = [
         ('No backing for grab bars later.',
          'Fix blocking in the walls beside the WC and shower now.', 'A-502/5'),
     ]),
-    ('Study desk (second bedroom alcove)', [
+    ('Study (first floor, off the landing)', [
         ('Window behind the screen (silhouette on video calls) or in front of it (glare).',
-         'The study desk sits in the walk-in alcove under its own south window, side-on to the light.', 'A-104'),
+         'The study desk sits under its own south window, side-on to the light, in a small room with a door: quiet for calls.', 'A-104'),
         ('Not enough power or data.',
          'Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.', 'E-103'),
     ]),
