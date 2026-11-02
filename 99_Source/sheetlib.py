@@ -215,9 +215,12 @@ class Plan:
                 if sub: self.text(sub(r), cx, cy - 0.45, size - 0.7, color=GREY)
 
     def rails(self):
-        """First-floor railings: two thin lines."""
+        """First-floor railings: two thin lines; jali parapets drawn solid."""
         for axis, c0, a, b in RAILS:
-            if axis == "X":
+            if (axis, c0) in JALI_RAILS:
+                r = (a, b, c0 - 0.17, c0 + 0.17) if axis == "X" else (c0 - 0.17, c0 + 0.17, a, b)
+                self.rect(*r, stroke=INK, lw=0.5, fill=colors.HexColor("#C8A97E"))
+            elif axis == "X":
                 self.line(a, c0 - 0.12, b, c0 - 0.12, lw=0.5); self.line(a, c0 + 0.12, b, c0 + 0.12, lw=0.5)
             else:
                 self.line(c0 - 0.12, a, c0 - 0.12, b, lw=0.5); self.line(c0 + 0.12, a, c0 + 0.12, b, lw=0.5)
@@ -263,9 +266,10 @@ class Plan:
             for x, y in TERRACE_POSTS:
                 self.rect(x - 0.17, x + 0.17, y - 0.17, y + 0.17, stroke=INK, fill=INK, lw=0.3)
             self.text("STEEL POSTS CARRY THE ROOF OVER THE TERRACE", 53, 23.3, 4.4, color=GREY)
-            gx1, gx2, ya, yb = ROOF["gable"]
-            self.rect(61.4, gx2, ya, yb, stroke=GREY, lw=0.4, dash=(3, 2))
-            self.text("FRONT GABLE ROOF BELOW", (61.4 + gx2) / 2, (ya + yb) / 2, 4.6, color=GREY)
+            for key, label in (("gable", "FRONT GABLE ROOF BELOW"), ("wing", "KITCHEN WING ROOF BELOW")):
+                gx1, gx2, ya, yb = ROOF[key]
+                self.rect(61.4, gx2, ya, yb, stroke=GREY, lw=0.4, dash=(3, 2))
+                self.text(label, (61.4 + gx2) / 2, (ya + yb) / 2, 4.6, color=GREY)
 
     def auto_dims(self, size=5.5):
         """Dimension chains from the wall grid: below the plan (x) and to its right (y)."""

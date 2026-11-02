@@ -137,8 +137,26 @@ def gable_z(x, y):
     return gable_eave_z() + min(y - ya, yb - y) * TAN
 
 
+def wing_eave_z():
+    """Kitchen-front wing eaves: the plain eave line at ground-floor wall top, just under the gable's."""
+    return gable_eave_z() - ROOF["gable_lift"]
+
+
+def wing_z(x, y):
+    """Low hipped wing over the kitchen front: slopes east, north and south; its west end stops against the house wall."""
+    wx1, wx2, ya, yb = ROOF["wing"]
+    if not (wx1 <= x <= wx2 and ya <= y <= yb):
+        return None
+    return wing_eave_z() + min(wx2 - x, y - ya, yb - y) * TAN
+
+
+def wing_ridge_z():
+    wx1, wx2, ya, yb = ROOF["wing"]
+    return wing_eave_z() + (yb - ya) / 2 * TAN
+
+
 def roof_z(x, y):
-    zs = [z for z in (hip_z(x, y), gable_z(x, y)) if z is not None]
+    zs = [z for z in (hip_z(x, y), gable_z(x, y), wing_z(x, y)) if z is not None]
     return max(zs) if zs else None
 
 
@@ -153,7 +171,7 @@ def gable_ridge_z():
 
 
 def roof_area():
-    """Sloped roof area (sq ft): plan area of the main hip and the front gable (beyond the hip) divided by cos(pitch)."""
+    """Sloped roof area (sq ft): plan area of the main hip, the front gable and the kitchen wing (beyond the hip) divided by cos(pitch)."""
     x1, x2, y1, y2 = ROOF["hip"]
-    gx1, gx2, ya, yb = ROOF["gable"]
-    return ((x2 - x1) * (y2 - y1) + (gx2 - max(gx1, x2)) * (yb - ya)) / math.cos(math.radians(ROOF["pitch"]))
+    front = sum((r[1] - max(r[0], x2)) * (r[3] - r[2]) for r in (ROOF["gable"], ROOF["wing"]))
+    return ((x2 - x1) * (y2 - y1) + front) / math.cos(math.radians(ROOF["pitch"]))

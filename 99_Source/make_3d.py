@@ -43,7 +43,7 @@ def floor_data():
     furniture += [{"id": e[0], "x1": e[1], "x2": e[2], "y1": e[3], "y2": e[4]} for e in EXTRA_DRAW]
     return {"walls": [list(w) + [wall_t(w)] for w in WALLS], "doors": doors, "windows": windows, "furniture": furniture, "rooms": rooms,
             "roomRects": room_rects, "exterior": [[a, c] for a, c in sorted(EXTERIOR)], "fixtures": fixtures, "elec": elec,
-            "rails": [list(r) for r in RAILS], "z": floor_base() }
+            "rails": [list(r) + ([1] if (r[0], r[1]) in JALI_RAILS else []) for r in RAILS], "z": floor_base() }
 
 
 def model_data():
@@ -57,7 +57,7 @@ def model_data():
             "slabT": LEVELS["slab"], "slab": [list(s) for s in SLAB_F1], "stair": STAIR, "posts": [list(p) for p in TERRACE_POSTS],
             "house": {"x1": 14, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [14, 61]},
             "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"]}, "gate": list(feat["GATE"][2:]),
-            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3)},
+            "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "wing": list(ROOF["wing"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3), "weave": round(wing_eave_z(), 3)},
             "pergola": list(feat["PERGOLA"]),
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
                          "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2", "HEDGE3") if k in feat}},

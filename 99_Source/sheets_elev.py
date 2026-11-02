@@ -71,12 +71,14 @@ def _wall_span(fl, axis, c0):
     return (min(s for s, _ in segs), max(e for _, e in segs)) if segs else None
 
 
-def _rail_band(e, a, b, base, top):
-    """Open side of the terrace: dark opening above a railing."""
+def _rail_band(e, a, b, base, top, jali=False):
+    """Open side of the terrace: dark opening above a railing (or a closed teak jali parapet)."""
     e.rect(a, b, base, top, lw=0.4, fill=DARK)
-    e.rect(a, b, base, base + 3.5, lw=0.5, fill=WALLC)
-    n = max(2, int((b - a) / 0.5))
+    e.rect(a, b, base, base + 3.5, lw=0.5, fill=colors.HexColor("#C8A97E") if jali else WALLC)
+    n = max(2, int((b - a) / (0.35 if jali else 0.5)))
     for i in range(1, n): e.line(a + i * (b - a) / n, base + 0.3, a + i * (b - a) / n, base + 3.2, lw=0.25, color=TEAK)
+    if jali:
+        for k in range(1, 6): e.line(a, base + 0.3 + k * 0.5, b, base + 0.3 + k * 0.5, lw=0.25, color=TEAK)
     e.line(a, base + 3.5, b, base + 3.5, lw=1.0, color=TEAK)
 
 
@@ -87,16 +89,28 @@ def _posts(e, uf, posts):
         e.rect(uu - 0.17, uu + 0.17, U, UT - 0.75, lw=0.4, fill=colors.HexColor("#8C9196"))
 
 
-def _roof_long(e, u):
+def _roof_long(e, u, face="N"):
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, ya, yb = ROOF["gable"]
+    wx1, wx2, wa, wb = ROOF["wing"]
     w = (y2 - y1) / 2
     ez, rz, gz, gr = eave_z(), ridge_z(), gable_eave_z(), gable_ridge_z()
-    _poly(e, [(u(gx1, 0), gz), (u(gx2, 0), gz), (u(gx2, 0), gr), (u(gx1, 0), gr)], TILE, lw=0.5)   # front gable slope, seen side-on
-    for i in range(1, 6):
-        zz = gz + i * (gr - gz) / 6
-        e.line(u(gx1, 0), zz, u(gx2, 0), zz, lw=0.25, color=BROWN)
-    e.line(u(gx1, 0), gz, u(gx2, 0), gz, lw=1.0, color=BROWN)
+
+    def gable_side():  # front gable slope, seen side-on
+        _poly(e, [(u(gx1, 0), gz), (u(gx2, 0), gz), (u(gx2, 0), gr), (u(gx1, 0), gr)], TILE, lw=0.5)
+        for i in range(1, 6):
+            zz = gz + i * (gr - gz) / 6
+            e.line(u(gx1, 0), zz, u(gx2, 0), zz, lw=0.25, color=BROWN)
+        e.line(u(gx1, 0), gz, u(gx2, 0), gz, lw=1.0, color=BROWN)
+
+    def wing_side():  # kitchen wing: its long slope with the hip to the east
+        wz, wr = wing_eave_z(), wing_ridge_z()
+        _poly(e, [(u(wx1, 0), wz), (u(wx2, 0), wz), (u(wx2 - (wb - wa) / 2, 0), wr), (u(wx1, 0), wr)], TILE, lw=0.5)
+        e.line(u(wx1, 0), wz, u(wx2, 0), wz, lw=1.0, color=BROWN)
+
+    # the nearer of the two front roofs is drawn last: the wing on the south face, the gable on the north
+    for f in ((gable_side, wing_side) if face == "S" else (wing_side, gable_side)):
+        f()
     _poly(e, [(u(x1, 0), ez), (u(x2, 0), ez), (u(x2 - w, 0), rz), (u(x1 + w, 0), rz)], TILE)
     e.line(u(x1, 0), ez, u(x2, 0), ez, lw=1.2, color=BROWN)  # fascia + gutter
 
@@ -109,6 +123,10 @@ def _roof_end(e, u, east):
 
 
 def _front_gable(e, u):
+    wx1, wx2, wa, wb = ROOF["wing"]
+    wz, wr = wing_eave_z(), wing_ridge_z()
+    _poly(e, [(u(0, wa), wz), (u(0, wb), wz), (u(0, (wa + wb) / 2), wr)], TILE, lw=0.6)  # kitchen wing, hip end
+    e.line(u(0, wa), wz, u(0, wb), wz, lw=1.0, color=BROWN)
     gx1, gx2, ya, yb = ROOF["gable"]
     gz, gr = gable_eave_z(), gable_ridge_z()
     _poly(e, [(u(0, ya), gz), (u(0, yb), gz), (u(0, (ya + yb) / 2), gr)], GABLE, lw=0.8)
@@ -159,11 +177,11 @@ def elevation(e, face):
             for ax, cc, s_, e_ in RAILS:
                 if (ax, cc) == (axis, c0):
                     a, b = sorted((u(s_ - (0.375 if s_ < 40 else 0), 0), u(e_ + (0.4 if e_ > 60 else 0), 0)))
-                    _rail_band(e, a, b, U, UT - 0.75)
+                    _rail_band(e, a, b, U, UT - 0.75, (ax, cc) in JALI_RAILS)
         _posts(e, lambda x, y: u(x, 0), [p for p in TERRACE_POSTS if abs(p[1] - c0) < 0.5])
         e.rect(*sorted((u(42.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
         _openings_on(face, u, True)
-        _roof_long(e, u)
+        _roof_long(e, u, face)
         _levels(e, min(u(10, 0), u(71, 0)) - 1.0)
         e.hdim(lo, hi, -2.4, "53'-9\" incl. walls", 5)
     else:
@@ -224,7 +242,7 @@ def sheet_elev_long(c):
         e = Elev(s, 100, 22 * mm, (166 - i * 128) * mm)
         elevation(e, face)
         s.note(FACES[face]["title"].upper(), 22 * mm, (166 - i * 128 + 106) * mm, 9, INK, "Helvetica-Bold")
-    s.note("Two-tier roof: the main hipped roof over the two-storey block (on steel posts over the covered terrace), the low front gable over the verandah and kitchen front. Brown line = fascia with gutter.", 22 * mm, 20 * mm, 7, GREY)
+    s.note("Two-tier roof: the main hipped roof over the two-storey block (on steel posts over the covered terrace), the low front gable over the verandah (centred on the main door) and a lower hipped wing over the kitchen front. Brown line = fascia with gutter.", 22 * mm, 20 * mm, 7, GREY)
     c.showPage()
 
 
@@ -234,7 +252,7 @@ def sheet_elev_short(c):
         e = Elev(s, 100, (60 + i * 140) * mm, 112 * mm)
         elevation(e, face)
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
-    tips = ["Front gable (mukhappu) over the verandah and kitchen front; the covered terrace sits 6 ft back behind it, open behind a railing under the main roof on slim steel posts.",
+    tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. The covered terrace sits 6 ft back behind them, open to the road behind a railing, with closed jali parapets on the north and south sides.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
             "West wall: the first floor has only small high windows on the west (afternoon sun). The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
@@ -366,7 +384,7 @@ def section(e, name):
 
 SECTION_NOTES = [
     "Clay tiles on battens, membrane, 50 mm insulation, cement-fibre deck on purlins (attic over the first-floor rooms ventilated at ridge and soffit).",
-    "Main roof trusses bolted to the first-floor ring beam; front gable trusses to the ground-floor ring beam (cyclone uplift).",
+    "Main roof trusses bolted to the first-floor ring beam; front gable and kitchen wing trusses to the ground-floor ring beam (cyclone uplift).",
     "First-floor RCC slab over the whole two-storey block; over the front half it is the covered terrace, waterproofed, under the main roof on galvanised steel posts and steel trusses.",
     "RCC lintel band at door-head level on both floors (seismic zone III). AAC walls in an RCC frame; mesh over every block-to-concrete joint.",
     "Ground-floor rooms have a plastered slab soffit at about 9'-5\" (blue); first-floor rooms have insulated false ceilings; the stair and terrace are open to the roof.",

@@ -74,10 +74,10 @@ x: 14            28       35      42                 53     61      67
 | Stair hall | 34.5–42 × 12–15.67 | 7.5 × 3'-8" | | passage from the dining and living to the lobby, in front of the stair foot; common bath door |
 | Stair | 34.5–42 × 15.67–25 | | | dog-leg stair behind a timber jali to the living; the space under the upper flight is open where headroom allows, then a cupboard (DB, inverter) |
 | Dining nook | 42–46 × 3–7.5 | 4 × 4.5 | | crockery unit under a 3 ft south window |
-| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 4 ft table (2 chairs + bench) beside the granite serving ledge under the kitchen hatch; open to the living |
+| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 3'-9" table with the bench on the south side and a chair at each end, so no chair backs sit in the living path; 9 in granite serving ledge under the kitchen hatch; open to the living |
 | Wet area | 46–53 × 3–7.5 | 7 × 4.5 | | utility sink, washing machine, airer; service door to the walkway |
-| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (11 ft south run, clear of the wet-area door), hob on the east wall, fridge on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
-| Living | 42–61 × 12.5–25 | 19 × 12.5 | 18'-5" × 12'-1" | TV on the stair wall, sofa facing west, shoe bench by the door |
+| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (11 ft south run, clear of the wet-area door) with a prep sink under the south window and a clear prep run to the blind SE corner, hob on the east wall, fridge and a tall pantry together on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
+| Living | 42–61 × 12.5–25 | 19 × 12.5 | 18'-5" × 12'-1" | TV on the stair wall, sofa facing west with the coffee table 1'-6" from it and two armchairs facing north (a square seating group), shoe bench by the door |
 | Pooja | 57–61 × 12.5–16.5 | 4 × 4 | | back to back with the kitchen, opens west |
 | Poomukham | 61–67 × 12.5–25 | 6 × 12.5 | | swing, charupadi seats, main door |
 
@@ -85,14 +85,14 @@ x: 14            28       35      42                 53     61      67
 
 | Room | Extent | Size | Clear | Notes |
 |---|---|---|---|---|
-| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows; 8 ft sliding wardrobe on the north wall (sound buffer to the study); high west window; entered through its alcove so the bed is out of sight from the door |
+| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows; 8 ft sliding wardrobe on the north wall, centred on the bed (sound buffer to the study); high west window stacked over the master window below; entered through its alcove so the bed is out of sight from the door |
 | Bedroom 2 wardrobe alcove | 28–36 × 3–11.5 | 8 × 8.5 | | door from the landing; 4 ft wardrobe, dresser, 2'-6" south window; bath door |
 | Bedroom 2 bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-11" | over the common bath (one stack); south window |
 | Study | 14–28 × 14–25 | 14 × 11 | 13'-4" × 10'-5" | closable home office: two desks 9 ft apart (west and east walls), sofa-cum-bed for guests under the 6 ft north window; coolest room by day |
 | Toilet lobby | 28–34.5 × 15.67–18 | 6.5 × 2'-4" | | part of the landing in front of the toilet and study doors |
-| Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door from the landing; for the study, the terrace and guests; over the master bath (one stack); north window |
-| Landing | 28–42 × 11.5–15.67 | 14 × 4'-2" | | the stair head, no corridor: Bedroom 2 door on its south wall, study and toilet doors beside it, terrace door on its east wall |
-| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts and trusses; railings on the north, south and east; diwan, chairs, drying rails, planters |
+| Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door at the east end of the toilet lobby, opening inward; the basin is beside the door and the WC on the west wall, so the WC is never the first view; for the study, the terrace and guests; WC over the master bath WC (one stack); north window |
+| Landing | 28–42 × 11.5–15.67 | 14 × 4'-2" | | the stair head, no corridor: Bedroom 2 door on its south wall, study and toilet doors beside it, terrace door on its east wall; a lit teak lamp shelf on the wall you face at the top of the stair |
+| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts and trusses; closed teak jali parapets on the north and south (neighbours close by), an open railing on the road side; diwan and chairs on the north, drying rails on the south, planters |
 
 ## Levels and stair
 
@@ -103,14 +103,15 @@ x: 14            28       35      42                 53     61      67
 ## Roof
 
 - **Main roof:** one hipped clay-tile roof over the whole two-storey block (x 12–63 at the eaves). It sits on walls over the back rooms and on a light steel frame over the terrace.
-- **Front gable:** a lower gable over the single-storey poomukham and kitchen front, facing the road. Together they read as a two-tier Kerala roof.
+- **Front gable:** a lower gable over the single-storey poomukham only, centred on the main door (y 18.75), facing the road. A still lower hipped wing covers the kitchen front beside it, with a valley gutter between the two. The gable marks the way in; together the three read as a stepped Kerala roof.
 - **No ridge ventilator:** hot air under the roof escapes at the terrace's open sides. The attic over the upper rooms has meshed ridge and soffit vents.
 - **Option:** the terrace part of the roof could use an insulated metal sheet on the same steel frame, to save cost.
-- **Eaves:** 2 ft overhang, gutters on both roofs, 6 downpipes to the sump.
-- **Front gable junction (to detail):** the gable's ridge (+18'-7") is higher than the terrace floor (+12'), so its back end meets the terrace's east edge as a triangle about 6'-6" high.
-  1. Close the triangle with a **timber jali** on the terrace edge beam: it seals the roof space, keeps air and some view, and the railing stops against it.
-  2. **Flash** the line where the gable roof meets the terrace edge, over a small RCC upstand, so gable rain cannot run under the slab or into the kitchen ceiling (the main leak risk).
-  3. Add a **gutter on the main roof's front eave** over the gable, so monsoon run-off does not pour onto the gable tiles.
+- **Eaves:** 2 ft overhang, gutters on all roofs, 7 downpipes to the sump (one for the valley).
+- **Front gable junction (to detail):** with the gable over the poomukham only, its ridge (+15'-10") is about 3'-10" above the terrace floor (+12'), so its back end meets the terrace's east edge as a low triangle just above the railing.
+  1. Close the triangle with a **timber jali** on the terrace edge beam; the railing stops against it.
+  2. **Flash** the line where the gable and the kitchen wing meet the terrace edge, over a small RCC upstand, so rain cannot run under the slab or into the kitchen ceiling (the main leak risk).
+  3. Add a **gutter on the main roof's front eave**, so monsoon run-off does not pour onto the front tiles.
+  4. Line the **valley** between the gable and the kitchen wing with a 12 in GI / aluminium valley gutter, draining east to its own downpipe.
 
 ## Services
 

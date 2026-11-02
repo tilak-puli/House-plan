@@ -331,5 +331,5 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 | Plinth | Anti-termite treatment (certificate), fill compaction, DPC laid and cured | Supervisor |
 | Before plaster | Conduits, pipes, AC sleeves, mesh over AAC joints; photos with a tape measure in view | Owner, supervisor |
 | Wet rooms | Waterproofing coats, upturns, 48 h flood test passed before any tile is laid | Owner, plumber |
-| Roof | Truss holding-down bolts, membrane and insulation, edge tiles clipped, flashing where the front gable meets the two-storey wall | Engineer, owner |
+| Roof | Truss holding-down bolts, membrane and insulation, edge tiles clipped, flashing where the front gable and the kitchen wing meet the two-storey wall, valley gutter between them | Engineer, owner |
 | Before handover | Water test on every floor slope and sill, plumbing pressure test, electrical insulation and earth test | Owner, MEP |

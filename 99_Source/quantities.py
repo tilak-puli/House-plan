@@ -34,7 +34,8 @@ def take_off():
     q.append(("Frame", "First-floor RCC slab (about 5 in)", round(slab * 0.0929, 1), "sq m", "Over the back half, less the stair well"))
     q.append(("Frame", "RCC dog-leg stair", STAIR["risers"], "risers", "3'-6\" flights, half landing 7'-6\" x 3'-6\", 16 risers of 7.5 in"))
     q.append(("Frame", "Galvanised steel posts for the terrace roof (about 100 mm SHS, 9 ft)", len(TERRACE_POSTS), "no.", "On RCC column stubs; trusses over the terrace in steel"))
-    q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for _, _, s, e in RAILS_F1) * 0.3048, 1), "m", "Terrace open sides and stair well"))
+    q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) not in JALI_RAILS) * 0.3048, 1), "m", "Terrace road side and stair well"))
+    q.append(("Frame", "Teak jali parapet panels, 3'-6\" high, on a low RCC upstand", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) in JALI_RAILS) * 0.3048, 1), "m", "Terrace north and south sides (neighbours close by)"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
     q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (53.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the 20 ft walls"))
     finishes = {}
@@ -59,11 +60,13 @@ def take_off():
     q.append(("Wet rooms", "Waterproofing, covered terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
     q.append(("Kitchen", "Granite counter, 2 ft deep", round((11.0 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
     q.append(("Kitchen", "Dado between counter and wall cabinets", round((11.0 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
-    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable / cos {ROOF['pitch']} deg; add ~8% for laps"))
+    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable + kitchen wing / cos {ROOF['pitch']} deg; add ~8% for laps"))
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, _, _ = ROOF["gable"]
-    q.append(("Roof", "Gutters", round(2 * ((x2 - x1) + (gx2 - x2)) * 0.3048, 1), "m", "Both long eaves of the main roof and the front gable"))
-    q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 22 ft (main roof) or 12 ft (front gable) each"))
+    wx1, wx2, wa, wb = ROOF["wing"]
+    q.append(("Roof", "Gutters", round((2 * ((x2 - x1) + (gx2 - x2)) + (wb - wa)) * 0.3048, 1), "m", "Both long eaves of the main roof and the front roofs, plus the wing's east eave"))
+    q.append(("Roof", "Valley gutter, GI / aluminium, 12 in wide", round((wx2 - x2) * 0.3048, 1), "m", "Where the kitchen wing meets the front gable, draining east"))
+    q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 22 ft (main roof) or 12 ft (front roofs) each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
     feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
     q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gate"))

@@ -307,6 +307,16 @@ def sheet_roof(c):
     pl.rect(gx1, gx2, ya, yb, lw=0.8, fill=colors.HexColor("#F6EFE6"))
     pl.line(gx1, (ya + yb) / 2, gx2, (ya + yb) / 2, lw=1.0)
     pl.line(gx2, ya, gx2, yb, lw=1.2)
+    wx1, wx2, wa, wb = ROOF["wing"]
+    ww = (wb - wa) / 2; wc = (wa + wb) / 2
+    pl.rect(wx1, wx2, wa, wb, lw=0.8, fill=colors.HexColor("#F6EFE6"))
+    pl.line(wx1, wc, wx2 - ww, wc, lw=1.0)
+    for cy in (wa, wb):
+        pl.line(wx2, cy, wx2 - ww, wc, lw=0.7)
+    pl.line(wx1, wb, wx2, wb, lw=1.0, color=BLUE, dash=(3, 1.5))
+    pl.text("valley gutter", (x2 + wx2) / 2, wb - 0.6, 4.2, color=BLUE)
+    for i, t_ in enumerate(("KITCHEN WING", f"ridge {fmt_lvl(wing_ridge_z())}")):
+        pl.text(t_, (x2 + wx2) / 2 + 0.6, wc + 1.8 - i * 1.0, 5 if i < 1 else 4.4, "Helvetica-Bold" if i < 1 else "Helvetica")
     for i, t_ in enumerate(("FRONT GABLE", "(MUKHAPPU)", f"ridge {fmt_lvl(gable_ridge_z())}", f"eaves {fmt_lvl(gable_eave_z())}")):
         pl.text(t_, (x2 + gx2) / 2, (ya + yb) / 2 + 4.6 - i * 1.0, 5 if i < 2 else 4.4, "Helvetica-Bold" if i < 2 else "Helvetica")
     pl.rect(x1, x2, y1, y2, lw=0.9, fill=WHITE)
@@ -334,8 +344,8 @@ def sheet_roof(c):
     pl.hdim(x1, 14, 28.5, "2'-0\"", 4.6)
     tips = [
         "Every tile along eaves, verges, hips and ridges clipped or screwed; every third row elsewhere. Cyclone winds lift loose tiles first at the edges, and the main roof is now 20 ft up.",
-        "Main roof trusses bolted to the first-floor ring beam; front gable trusses to the ground-floor ring beam; purlins cleated, not just welded tacks.",
-        "Where the front gable meets the east wall of the two-storey block: GI / aluminium apron flashing chased into the wall, with a counter-flashing; the main roof's east eave overhangs it by 2 ft.",
+        "Main roof trusses bolted to the first-floor ring beam; front gable and kitchen wing trusses to the ground-floor ring beam; purlins cleated, not just welded tacks.",
+        "Where the front gable meets the east wall of the two-storey block: GI / aluminium apron flashing chased into the wall, with a counter-flashing; the main roof's east eave overhangs it by 2 ft. The valley between the gable and the kitchen wing gets a 12 in valley gutter draining east to its own downpipe.",
         "Eaves 2'-0\" beyond the wall line (kept inside the 27 ft plot on the north) with drip edges and gutters on both roofs; downpipes at 6 points into the sump filter, overflow to the road drain.",
         "Over the covered terrace the main roof sits on galvanised steel posts and steel trusses instead of walls; same tiles and fixings. No ridge ventilator: hot air under the roof escapes at the terrace's open sides.",
         "Attic over the first-floor rooms vented at the ridge and soffits with insect mesh; 50 mm insulation on the deck. Loft water tank on a steel platform over the upper bath.",

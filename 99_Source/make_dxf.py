@@ -43,6 +43,7 @@ def make(path):
     rect(SITE["trial"], SITE["l"], 0, W, "C-PROP-SETB")
     rect(*ROOF["hip"], "A-ROOF-OTLN")
     rect(*ROOF["gable"], "A-ROOF-OTLN")
+    rect(*ROOF["wing"], "A-ROOF-OTLN")
     text(f"PLOT {W}' x {SITE['l']}'", 35, 1.2, 150, "A-ANNO-TEXT")
     if S: text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
     text("EAST ROAD", 81, W / 2, 200)
