@@ -107,6 +107,10 @@ x: 14            28       35      42                 53     61      67
 - **No ridge ventilator:** hot air under the roof escapes at the terrace's open sides. The attic over the upper rooms has meshed ridge and soffit vents.
 - **Option:** the terrace part of the roof could use an insulated metal sheet on the same steel frame, to save cost.
 - **Eaves:** 2 ft overhang, gutters on both roofs, 6 downpipes to the sump.
+- **Front gable junction (to detail):** the gable's ridge (+18'-7") is higher than the terrace floor (+12'), so its back end meets the terrace's east edge as a triangle about 6'-6" high.
+  1. Close the triangle with a **timber jali** on the terrace edge beam: it seals the roof space, keeps air and some view, and the railing stops against it.
+  2. **Flash** the line where the gable roof meets the terrace edge, over a small RCC upstand, so gable rain cannot run under the slab or into the kitchen ceiling (the main leak risk).
+  3. Add a **gutter on the main roof's front eave** over the gable, so monsoon run-off does not pour onto the gable tiles.
 
 ## Services
 

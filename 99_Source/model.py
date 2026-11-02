@@ -315,6 +315,7 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
 ]
 
 OPEN_ISSUES = [
+    ("Roof", "Front gable junction: " + 'the front gable\'s ridge (+18\'-7") stands higher than the terrace floor (+12\'), so its back end meets the terrace\'s east edge as a triangle about 6\'-6" high. (1) Close that triangle with a timber jali on the terrace edge beam (seals the roof space, keeps air and some view; the railing stops against it). (2) Flash the line where the gable roof meets the terrace edge, over a small RCC upstand, so gable rain cannot run under the slab or into the kitchen ceiling. (3) Put a gutter on the main roof\'s front eave over the gable so monsoon run-off does not pour onto the gable tiles', "Architect / contractor", "Open"),
     ("Option", "Duplex trial on the front 64 ft of the plot (house 53 ft), back 11 ft spare: decide between this and the single-storey 62 ft plan (main branch) before structural design", "Owner", "Open"),
     ("Finishes", "Colour and material scheme to choose: five looks to compare in the 3D model (As drawn, Classic Kerala refined, Chettinad ochre, Modern tropical, Lime and green); decide before ordering floor tiles, paint and door finishes", "Owner", "Open"),
     ("Land", "Front yard 8 ft: confirm the front setback allowed for this plot and road width before finalising; a two-storey house may need larger setbacks than a single storey", "Architect", "Open"),
