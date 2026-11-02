@@ -126,7 +126,7 @@ All seven points were applied to the duplex model on `feature/duplex`.
 2. **Front gable.** It now covers only the poomukham (y 10.5–27 at the eaves) and is centred on the main door.
    - A lower hipped wing covers the kitchen front.
    - A valley gutter and its own downpipe sit between the two.
-   - The gable ridge drops from +18'-7" to +15'-10", and the wing ridge is +13'-7".
+   - The gable ridge drops from +18'-7" to +15'-10". The wing's eaves are level with the gable's (+11'-1"), so one eave line runs across the front; its ridge is +13'-10" and it stays plain.
 3. **Kitchen.**
    - Prep sink F65 is centred under window W07.
    - Tall pantry F37 sits beside the fridge.

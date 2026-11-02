@@ -138,8 +138,8 @@ def gable_z(x, y):
 
 
 def wing_eave_z():
-    """Kitchen-front wing eaves: the plain eave line at ground-floor wall top, just under the gable's."""
-    return gable_eave_z() - ROOF["gable_lift"]
+    """Kitchen-front wing eaves: level with the gable's, so one eave line runs across the whole front (and the tiles clear the wall tops)."""
+    return gable_eave_z()
 
 
 def wing_z(x, y):
