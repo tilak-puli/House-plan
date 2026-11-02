@@ -76,7 +76,7 @@ x: 14            28       35      42                 53     61      67
 | Dining nook | 42–46 × 3–7.5 | 4 × 4.5 | | crockery unit under a 3 ft south window |
 | Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 4 ft table (2 chairs + bench) beside the granite serving ledge under the kitchen hatch; open to the living |
 | Wet area | 46–53 × 3–7.5 | 7 × 4.5 | | utility sink, washing machine, airer; service door to the walkway |
-| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (13 ft south run), hob on the east wall, fridge on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
+| Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (11 ft south run, clear of the wet-area door), hob on the east wall, fridge on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
 | Living | 42–61 × 12.5–25 | 19 × 12.5 | 18'-5" × 12'-1" | TV on the stair wall, sofa facing west, shoe bench by the door |
 | Pooja | 57–61 × 12.5–16.5 | 4 × 4 | | back to back with the kitchen, opens west |
 | Poomukham | 61–67 × 12.5–25 | 6 × 12.5 | | swing, charupadi seats, main door |

@@ -57,8 +57,8 @@ def take_off():
     with on_floor("F1"):
         L, W = clear_dims(room_of("R37"))
     q.append(("Wet rooms", "Waterproofing, covered terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
-    q.append(("Kitchen", "Granite counter, 2 ft deep", round((13.2 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
-    q.append(("Kitchen", "Dado between counter and wall cabinets", round((13.2 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
+    q.append(("Kitchen", "Granite counter, 2 ft deep", round((11.0 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
+    q.append(("Kitchen", "Dado between counter and wall cabinets", round((11.0 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
     q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable / cos {ROOF['pitch']} deg; add ~8% for laps"))
     x1, x2, y1, y2 = ROOF["hip"]
     gx1, gx2, _, _ = ROOF["gable"]

@@ -42,7 +42,8 @@ WALLS = [
     ("X", 3, 14, 67), ("Y", 14, 3, 25), ("X", 25, 14, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
     ("Y", 26, 3, 12), ("Y", 28, 12, 18), ("Y", 28, 18, 25), ("X", 12, 26, 36), ("Y", 36, 3, 12), ("X", 12, 36, 42), ("Y", 42, 3, 12),
     ("Y", 34.5, 15.67, 25), ("Y", 42, 15.5, 25), ("X", 18, 28, 34.5),  # lobby takes in the old vestibule; stair side wall
-    ("X", 7.5, 46, 53), ("Y", 46, 3, 7.5),  # old store folded into the dining as a nook ("Y", 55, 3, 12.5), ("X", 12.5, 55, 67),
+    ("X", 7.5, 46, 53), ("Y", 46, 3, 7.5),  # old store folded into the dining as a nook
+    ("Y", 53, 3, 12.5), ("X", 12.5, 53, 67),  # kitchen: west wall (wet-area door, serving hatch) and north wall (living door, poomukham side)
     ("Y", 57, 12.5, 16.5), ("X", 16.5, 57, 61),
 ]
 EXTERIOR = {("X", 3), ("Y", 14), ("X", 25), ("Y", 67), ("Y", 61)}
@@ -133,7 +134,7 @@ DOORS = [
     ("D08", "X", 12, 37.0, 39.5, -1, "Common bath (from the hall by the stair, opens inward)", "Flush, waterproof (WPC/FRP), door closer"),
     ("D07", "Y", 28, 18.4, 20.9, -1, "Master bath (from the sitting zone, opens outward)", "Flush, waterproof (WPC/FRP)"),
     ("D11", "Y", 57, 13.0, 16.0, 1, "Pooja", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
-    ("D12", "Y", 53, 4.0, 6.5, 0, "Kitchen to wet area (sliding)", "Steel or WPC sliding, lockable"),
+    ("D12", "Y", 53, 4.6, 7.1, 0, "Kitchen to wet area (sliding)", "Steel or WPC sliding, lockable"),
     ("D17", "X", 12.5, 53.6, 56.1, 0, "Kitchen entry from the living (sliding)", "Teak frame, glazed sliding door, 2'-6\" (closes off cooking smoke)"),
     ("D18", "X", 3, 46.8, 49.3, 1, "Wet area service door to the south walkway (opens inward)", "Steel, lockable, louvred top"),
 ]
@@ -160,7 +161,7 @@ WINDOWS = [
     ("W10", "Y", 42, 15.9, 17.6, 1, 7, "Stair", "Timber jali screen between the stair foot and the living"),
     ("W11", "X", 3, 42.5, 45.5, 3.5, 7, "Dining nook", "Timber jali + glazed shutters (3 ft, over the crockery unit)"),
     ("W14", "X", 3, 19.5, 22.5, 5.5, 7, "Master bedroom", "High jali + glazed shutters above the bed head (morning light, cross-breeze with the west window)"),
-    ("W12", "X", 3, 50.9, 52.6, 4.5, 7, "Wet area", "Jali vent over the utility sink"),
+    ("W12", "X", 3, 50.1, 51.8, 4.5, 7, "Wet area", "Jali vent over the utility sink"),
     ("W07", "X", 3, 58.5, 64.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
     ("W08", "Y", 67, 9.5, 12.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (3 ft, north end; hob wall kept solid)"),
     ("W09", "X", 25, 44.5, 50.5, 3, 7, "Living", "Teak casement, glazed (6 ft)"),
@@ -199,12 +200,12 @@ FURNITURE = [
     ("F28", "Dining", "Bench along the wet-area wall, storage below", 44.6, 48.2, 7.85, 8.85, 1, "Teak, cushion", "rect"),
     ("F33", "Dining", "Granite serving ledge under the kitchen hatch (dining side)", 51.6, 52.75, 7.9, 12.1, 1, "Granite top on brackets", "rect"),
     ("F44", "Dining nook", "Crockery unit under the south window, glass shutters", 42.3, 45.7, 3.3, 4.6, 1, "Teak + glass", "rect"),
-    ("F29", "Wet area", "Utility sink counter on the south wall, where vessels are washed", 50.8, 52.7, 3.4, 5.3, 1, "Kadappa / granite, SS sink", "rect"),
-    ("F62", "Wet area", "Dish-drying rack over the utility sink: steel rods, drip tray draining into the sink", 50.9, 52.6, 3.45, 4.2, 1, "SS 304", "glass"),
+    ("F29", "Wet area", "Utility sink counter on the south wall, where vessels are washed (clear of both doors)", 50.0, 51.9, 3.4, 5.3, 1, "Kadappa / granite, SS sink", "rect"),
+    ("F62", "Wet area", "Dish-drying rack over the utility sink: steel rods, drip tray draining into the sink", 50.1, 51.8, 3.45, 4.2, 1, "SS 304", "glass"),
     ("F30", "Wet area", "Washing machine bay 2' x 2' (on the store wall)", 46.3, 48.2, 5.6, 7.3, 1, "Splash-proof socket, floor drain", "rect"),
     ("F61", "Wet area", "Ceiling clothes airer on pulleys (lower to load, raise to dry)", 46.6, 52.4, 5.8, 7.1, 1, "Aluminium rails, nylon rope, cleat on the wall", "glass"),
     ("F31", "Wet area", "Fold-away clothesline in the south walkway behind the master", 15.0, 25.0, 0.6, 2.4, 1, "SS wire, wall brackets", "glass"),
-    ("F34", "Kitchen", "L-counter, south run: deep drawers for vessels instead of shutters", 53.4, 66.6, 3.4, 5.4, 1, "Granite top, ply carcass", "rect"),
+    ("F34", "Kitchen", "L-counter, south run: deep drawers for vessels instead of shutters (stops clear of the wet-area door)", 55.6, 66.6, 3.4, 5.4, 1, "Granite top, ply carcass", "rect"),
     ("F60", "Kitchen", "Utensil rail with hooks beside the hob (ladles, tongs, strainers)", 64.7, 66.4, 3.4, 3.55, 1, "SS rail and S-hooks", "glass"),
     ("F35", "Kitchen", "L-counter, east run (hob centred 7'-6\" from the south wall face, on solid wall; pull-out masala drawer beside the hob)", 64.6, 66.6, 5.4, 11.9, 1, "Granite top, cook faces east", "rect"),
     ("F36", "Kitchen", "Refrigerator space on the north wall, clear of the entry door", 58.4, 60.9, 9.9, 12.1, 1, "Double-door, 2'6\" wide", "rect"),
@@ -344,6 +345,7 @@ DUPLEX_DECISIONS = [
     "Review (2 Nov 2026, no wasted space): the passage beside the stair becomes the small bedroom's entry with a wardrobe and an attached Bath 2 (6'-6\" x 7 ft, north window), entered straight from the lobby; the kitchen opens to the dining over a granite serving hatch with glazed sliding shutters, with its entry moved to a sliding door from the living, so the dining strip takes a 4-seat table and the nook a crockery unit.",
     "Review (2 Nov 2026, two baths on the ground floor): the north-west bedroom becomes the ground master (14 x 12'-6\", its own entry with a wardrobe and an attached bath); the south-west room becomes the second bedroom (14 x 9'-6\") and uses the common bath; the old master bath becomes its walk-in wardrobe and study alcove with a south window, entered from the lobby. Vastu: the upstairs south-west suite stays the main master; toilets now sit in the north-west and south only.",
     "Review (2 Nov 2026, dining and doors): the common bath moves west into the old walk-in alcove, so the old bath and the nook become a real dining room (11 x 7 ft with a 4 ft south window, open to the lobby and the serving side) with a 5 x 3 ft table; the second bedroom gets its own door from the lobby (bedroom split at 10'-6\" / 11'-6\"); the master bath door moves to its west wall, straight from the bedroom (beds now head south in both ground bedrooms); upstairs the bath moves over the common bath (one soil stack) and the old dressing becomes a study off the landing with a south window.",
+    "Kitchen walls restored (2 Nov 2026): the kitchen's west wall (wet-area door, serving hatch) and north wall (sliding door to the living, solid on the poomukham side) had dropped out of the duplex model. With them back, the south counter now stops 2'-2\" short of the west wall and the utility sink moves west, so the wet-area door is clear on both sides.",
     "Roof-first phasing in three stages (2 Nov 2026): stage 1 (about Rs 30-34 lakh) is the ground floor with basic finishes under the full two-storey structure, roof and covered terrace, with upstairs an open, gated deck; stage 2 (Rs 7-11 lakh) adds the upstairs outer walls and windows, kitchen cabinets, wardrobes, ceilings and final finishes; stage 3 (Rs 7-10 lakh) fits out the first floor. Structure, waterproofing, the roof and buried services are never deferred (sheet A-002).",
     "Bedroom and study split (2 Nov 2026, from a fresh review): one huge room made the bedroom do three jobs and left two home workers with one corner desk. The west block now splits into Bedroom 2 in the south-west (bed head south between two 3 ft windows, an 8 ft sliding wardrobe on the north wall, entered through a wardrobe alcove so the bed is out of sight, its bath over the common bath) and a closable 14 x 11 study in the north-west (two desks 9 ft apart, sofa-cum-bed for guests, even north light, coolest room by day). The bath over the master bath becomes a toilet off the landing for the study, the terrace and guests. The terrace stays 19 x 22. Beams under the new walls at y 11.5 and y 14.",
     "Upper master opened up (2 Nov 2026): no dressing room and no inner walls. One open L-shaped room: sleeping zone north-west (king bed against the 6 ft divider wardrobe, wardrobe on the bath wall), sitting zone south-west (sofa under the south window, reading chair), a study corner in the south-east wing (desk on the east wall, window to the side, dresser by the window) and an entry zone off the top step with a 5 ft wardrobe screening the study. Only the bath and the landing toilet are walled.",
@@ -489,7 +491,7 @@ ELECTRICAL = [
     ("PC", 33.6, 18.4, "R07", "by basin"),
     # Store, wet area, dining
     ("L", 44.0, 5.5, "R12", "over the crockery unit"),
-    ("L", 50.0, 5.0, "R13", ""), ("P16", 46.3, 7.2, "R13", "washing machine"), ("P", 52.6, 5.6, "R13", "utility, weatherproof"),
+    ("L", 50.0, 5.0, "R13", ""), ("P16", 46.3, 7.2, "R13", "washing machine"), ("P", 52.4, 3.4, "R13", "utility, weatherproof"),
     ("L", 46.4, 10.2, "R10", "pendant over the table"), ("S", 42.4, 9.4, "R10", "dining and wet area"),
     # Kitchen
     ("L", 61.0, 8.0, "R15", ""), ("WL", 60.5, 3.5, "R15", "under-cabinet"), ("WL", 66.5, 9.6, "R15", "under-cabinet"),
@@ -545,7 +547,7 @@ PLUMBING = [
     ("SH", 41.6, 4.2, "R08", "east wall"), ("FT", 40.3, 3.6, "R08", "shower drain"), ("FT", 38.6, 7.0, "R08", "dry zone trap"),
     ("WC", 29.1, 21.6, "R07", "on the bedroom wall"), ("HF", 28.4, 22.4, "R07", ""), ("BS", 33.0, 18.4, "R07", ""),
     ("SH", 34.2, 23.4, "R07", "east wall"), ("FT", 32.8, 24.4, "R07", "shower drain"), ("FT", 30.6, 19.6, "R07", "dry zone trap"),
-    ("SK", 51.75, 4.3, "R13", "utility sink"), ("WM", 47.25, 6.4, "R13", ""), ("FT", 48.5, 3.6, "R13", "floor falls to the trap"), ("TAP", 52.6, 3.4, "R13", "bucket tap, low"),
+    ("SK", 50.95, 4.3, "R13", "utility sink"), ("WM", 47.25, 6.4, "R13", ""), ("FT", 48.5, 3.6, "R13", "floor falls to the trap"), ("TAP", 49.8, 3.4, "R13", "bucket tap, low"),
     ("SK", 61.5, 3.5, "R15", "single bowl + drainboard, under window"), ("RO", 60.2, 3.5, "R15", ""), ("FT", 63.0, 12.0, "R15", "cleaning trap"),
     ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 9.0, 10.0, "SITE", "kitchen garden tap (spare land)"), ("TAP", 74.0, 21.6, "SITE", "tulsi / garden tap"),
     ("IC", 37.1, 1.8, "SITE", "IC-1 soil, common bath and the upper WC stack"), ("IC", 12.6, 1.8, "SITE", "IC-3 soil bend at the 64 ft line"),
