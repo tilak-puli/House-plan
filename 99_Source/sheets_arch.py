@@ -19,7 +19,7 @@ def sheet_cover(c, index):
             carpet += sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
             ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft; duplex planned on the front 64' (back 11' spare)"),
-            ("Built footprint", "53' x 22' = 1,166 sq ft ground floor; about 525 sq ft enclosed + 420 sq ft covered terrace on the first floor"),
+            ("Built footprint", "53' x 22' = 1,166 sq ft ground floor; about 615 sq ft enclosed + 420 sq ft covered terrace on the first floor"),
             ("Carpet area", f"{carpet:,.0f} sq ft clear, both floors, incl. poomukham and terrace"),
             ("Construction", "Two-storey RCC frame, AAC walls, first-floor slab over the back half, steel-truss roofs with clay tiles"),
             ("Plinth", f"FFL {fmt_lvl(LEVELS['FFL'])} above finished ground")]
@@ -75,6 +75,46 @@ def sheet_basis(c):
     s.bullets(gen, x3, top, w, title="General notes")
     rows = [["Stage", "Check before it is covered up", "Who"]] + [list(h) for h in HOLD_POINTS]
     s.table(rows, [40, 190, 50], x1, 128 * mm, "Hold points (stop and inspect)", 7)
+    c.showPage()
+
+
+def sheet_phasing(c):
+    s = Sheet(c, "A-002", "Construction phasing (roof first, three stages)", "1:100")
+    pale = colors.HexColor("#E3EFE8"); mid = colors.HexColor("#9A9A9A")
+    with on_floor("F1"):
+        pl = Plan(s, 100, 20 * mm - 11 * 0.3048 * 1000 / 100 * mm, 172 * mm)
+        for r in ROOMS:
+            if r[0] in PHASE2_ROOMS:
+                pl.rect(r[2], r[3], r[4], r[5], stroke=None, fill=pale)
+        for (x1, x2, y1, y2), wt in wall_rects(with_type=True):
+            if x1 < 34.6 < x2 and x2 - x1 < 1 and y1 > 15:  # stair wall
+                pl.rect(x1, x2, y1, y2, stroke=None, fill=INK)
+            elif wt == "EXT":
+                pl.rect(x1, x2, y1, y2, stroke=INK, fill=mid, lw=0.3)
+            else:
+                pl.rect(x1, x2, y1, y2, stroke=ACC, fill=WHITE, lw=0.6, dash=(1.5, 1))
+        pl.openings(tags=False)
+        pl.floor_extras()
+        pl.room_names(5.2, INK)
+        pl.text("STAGE 3 FIT-OUT (shaded)", 24, 9.0, 5, "Helvetica-Bold", ACC)
+        pl.line(34.6, 15.9, 38.0, 15.9, lw=1.2, color=RED)
+        pl.text("GRILLE GATE", 36.3, 14.7, 4.2, "Helvetica-Bold", RED)
+        pl.north(218 * mm, 180 * mm)
+    s.note("First floor through the stages: stair, frame, slab, roof and terrace in stage 1; outer walls (grey) in stage 2; inner walls and fit-out (green) in stage 3.", 20 * mm, 160 * mm, 7, GREY)
+    def sw(fill, stroke=None, dash=None):
+        def f(x, y):
+            s.c.setFillColor(fill or WHITE); s.c.setStrokeColor(stroke or INK); s.c.setLineWidth(0.6)
+            if dash: s.c.setDash(*dash)
+            s.c.rect(x, y, 6 * mm, 2 * mm, stroke=1 if stroke else 0, fill=1); s.c.setDash()
+        return f
+    s.legend([(sw(INK), "Stage 1: stair walls (frame, slab, roof, terrace also stage 1)"), (sw(mid, INK), "Stage 2: outer walls and windows"),
+              (sw(WHITE, ACC, (1.5, 1)), "Stage 3: inner walls and baths"), (sw(pale), "Stage 3 fit-out area"),
+              (sw(RED), "Stage 1: grille gate at the stair head; temporary railings on open edges")], 20 * mm, 152 * mm)
+    rows = [["Stage", "Scope", "Rough cost"]] + [[name, "<br/>".join("&bull; " + i for i in items), cost] for name, items, cost in PHASES]
+    s.table(rows, [28, 72, 20], 205 * mm, 262 * mm, "Three stages, roof first")
+    s.bullets(PHASE1_PROVISIONS, 20 * mm, 120 * mm, 150 * mm, 7, title="Build in stage 1 so the later stages are easy")
+    s.bullets(PHASE1_LIVING, 180 * mm, 120 * mm, 145 * mm, 7, title="Living with stage 1")
+    s.note("Rates are rough 2026 village rates around Guntur; get contractor quotes on the Quantities sheet. Structure, beams and sleeves by the structural engineer.", 20 * mm, 18 * mm, 7, GREY)
     c.showPage()
 
 

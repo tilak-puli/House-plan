@@ -54,4 +54,6 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 - Vastu consultant: the stair in the north-west quarter rising clockwise; Bedroom 2 over the master in the south-west; the Brahmasthan in the living (kept free of walls and columns) with the covered terrace above.
 - Architect / contractor: roof over the terrace in clay tiles on steel trusses (drawn) or an insulated metal-sheet roof on the same frame: cost, heat and look.
 - Contractor: rate difference between a two-storey and a single-storey house of similar area in the village (frame, slab, stair, steel terrace frame).
-
+- Structural engineer (phasing, sheet A-002): design the frame to roof level, the roof and the terrace frame in stage 1 with the first floor as an open, covered deck (outer walls in stage 2); size the beams under the future upstairs walls (y 11.5 and y 14) and the slab sleeves for the upper bath and toilet.
+- Contractor (phasing): quote the three stages separately (stage 1: ground floor with basic finishes, structure, roof and terrace; stage 2: upstairs outer walls and the upgrades; stage 3: first-floor fit-out), and say what it costs to come back one to three years later.
+- Panchayat / approving authority: approve the full two-storey plan now, built in stages; confirm no fresh approval is needed for stages 2 and 3 and whether occupancy can be given after stage 1.

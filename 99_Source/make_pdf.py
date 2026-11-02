@@ -1,6 +1,6 @@
 from reportlab.pdfgen import canvas
 from sheetlib import PW, PH, PROJECT, floor_sheet
-from sheets_arch import (sheet_cover, sheet_basis, sheet_site, sheet_plan, sheet_furniture, sheet_working,
+from sheets_arch import (sheet_cover, sheet_basis, sheet_phasing, sheet_site, sheet_plan, sheet_furniture, sheet_working,
                          sheet_finishes, sheet_roof, sheet_schedules)
 from sheets_elev import sheet_elev_long, sheet_elev_short, sheet_sections
 from sheets_dw import sheet_doors_windows, sheet_windows_f1
@@ -9,6 +9,7 @@ from sheets_mep import sheet_lighting, sheet_power, sheet_plumbing
 
 SHEETS = [  # number, title, scale, function
     ("A-001", "Design basis and general notes", "-", sheet_basis),
+    ("A-002", "Construction phasing (roof first, three stages)", "1:100", sheet_phasing),
     ("A-101", "Site plan and services", "1:100", sheet_site),
     ("A-102", "Ground floor plan", "1:75", floor_sheet(sheet_plan, "G", "A-102", "Ground floor plan")),
     ("A-103", "First floor plan", "1:75", floor_sheet(sheet_plan, "F1", "A-103", "First floor plan")),

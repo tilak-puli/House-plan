@@ -179,6 +179,16 @@ def make(path):
     for row in ws.iter_rows(min_row=2, min_col=5, max_col=5):
         for c in row: c.fill = INPUT
 
+    ws = sheet(wb, "Phasing", ["Stage", "Item", "Rough cost / notes"], [40, 96, 20])
+    for name, items, cost in PHASES:
+        for k, it in enumerate(items):
+            ws.append([name if k == 0 else "", it, cost if k == 0 else ""])
+    for it in PHASE1_PROVISIONS:
+        ws.append(["Do in stage 1 for later stages", it, ""])
+    for it in PHASE1_LIVING:
+        ws.append(["Living with stage 1", it, ""])
+    style_rows(ws, 3)
+
     ws = sheet(wb, "Decisions", ["#", "Decision (agreed in concept stage)"], [5, 110])
     for i, d in enumerate(DECISIONS, 1): ws.append([i, d])
     style_rows(ws, 2)

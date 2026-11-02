@@ -347,7 +347,7 @@ class Elev:
 
 
 def short_name(name):
-    for a, b in ((" (double height)", ""), (" (covered)", ""), (" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Walk-in wardrobe", "Walk-in"),
+    for a, b in ((" (double height)", ""), (" (covered)", ""), (" (verandah)", ""), (" (semi-open)", ""), (" (skylit)", ""), ("Dressing alcove", "Dressing"), ("Bedroom 2 wardrobe alcove", "Alcove"), ("Bedroom 2 bath", "Bath 2"), ("Walk-in wardrobe", "Walk-in"),
                  (" (open to the hall)", ""), (" (open to the walkway)", ""), ("Sitting and serving area (open)", "Sitting area"), ("Fridge corner", "Fridge"), (" (common)", ""), (" (attached to Bedroom 2)", ""), (" (open, walls optional later)", ""),  (" (old store, open to the bedroom)", ""), (" (north window)", "")):
         name = name.replace(a, b)
     return name

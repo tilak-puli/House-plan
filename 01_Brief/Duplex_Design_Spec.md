@@ -115,6 +115,27 @@ x: 14            28       35      42                 53     61      67
 - **Water tank:** a 1,000 L loft tank over the upper bath, filled from the sump, with a pressure pump.
 - **AC:** the three bedrooms (the upper suite takes 1.5 ton). The living can take one later.
 
+## Phasing (roof first, three stages, sheet A-002)
+
+Rough 2026 village rates around Guntur. Built in one go the house is about Rs 43-51 lakh before the compound wall, borewell, ACs and loose furniture; three stages add about Rs 2-4 lakh overall.
+
+| Stage | Scope | Rough cost |
+|---|---|---|
+| 1. Move in | Ground floor with basic finishes (vitrified tiles, one coat of paint, granite counter with open shelves, ceilings only in baths); footings, columns, slab and stair for two floors; frame to roof level; tiled roof, front gable and covered terrace; whole first-floor slab waterproofed; upstairs an open covered deck with temporary railings and a grille gate at the stair head; site works | Rs 30-34 lakh |
+| 2. Upstairs shell and upgrades (1-2 years later) | First-floor outer walls and windows; kitchen cabinets, wardrobes, jali screens; room ceilings, final paint, floor upgrades | Rs 7-11 lakh |
+| 3. First-floor fit-out | Inner walls (Bedroom 2, alcove, bath, study, toilet), doors, wet-room waterproofing and fittings, floors, plaster and paint, ceilings, wiring, ACs, wardrobes, desks | Rs 7-10 lakh |
+
+Build in stage 1 so the later stages are easy:
+- Plan approval for the full two-storey house.
+- Beams under the future upstairs walls (y 11.5 and y 14) cast with the slab.
+- Sleeves for WC soil pipes, floor traps and shower drains cast into the slab at the upper bath and toilet; stacks run to roof level and capped.
+- Conduits for first-floor lights and fans in the slab; conduit to the first-floor sub-board position.
+- Capped water branches upstairs; overhead tank on its final stand.
+- The whole first-floor slab waterproofed, with a drip edge.
+- Columns, ring beam and lintel band set for the stage-2 outer walls and windows; plumbing, sockets and hold-fasts ready for the stage-2 kitchen cabinets and wardrobes.
+
+Never defer: structure, anti-termite treatment, plinth, waterproofing, the roof, or pipes and conduits buried in walls and slabs.
+
 ## What stays from the single-storey design
 
 - The front elevation: gable, pillars, charupadi seats, swing, laterite kitchen front.

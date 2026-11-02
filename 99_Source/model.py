@@ -344,6 +344,7 @@ DUPLEX_DECISIONS = [
     "Review (2 Nov 2026, no wasted space): the passage beside the stair becomes the small bedroom's entry with a wardrobe and an attached Bath 2 (6'-6\" x 7 ft, north window), entered straight from the lobby; the kitchen opens to the dining over a granite serving hatch with glazed sliding shutters, with its entry moved to a sliding door from the living, so the dining strip takes a 4-seat table and the nook a crockery unit.",
     "Review (2 Nov 2026, two baths on the ground floor): the north-west bedroom becomes the ground master (14 x 12'-6\", its own entry with a wardrobe and an attached bath); the south-west room becomes the second bedroom (14 x 9'-6\") and uses the common bath; the old master bath becomes its walk-in wardrobe and study alcove with a south window, entered from the lobby. Vastu: the upstairs south-west suite stays the main master; toilets now sit in the north-west and south only.",
     "Review (2 Nov 2026, dining and doors): the common bath moves west into the old walk-in alcove, so the old bath and the nook become a real dining room (11 x 7 ft with a 4 ft south window, open to the lobby and the serving side) with a 5 x 3 ft table; the second bedroom gets its own door from the lobby (bedroom split at 10'-6\" / 11'-6\"); the master bath door moves to its west wall, straight from the bedroom (beds now head south in both ground bedrooms); upstairs the bath moves over the common bath (one soil stack) and the old dressing becomes a study off the landing with a south window.",
+    "Roof-first phasing in three stages (2 Nov 2026): stage 1 (about Rs 30-34 lakh) is the ground floor with basic finishes under the full two-storey structure, roof and covered terrace, with upstairs an open, gated deck; stage 2 (Rs 7-11 lakh) adds the upstairs outer walls and windows, kitchen cabinets, wardrobes, ceilings and final finishes; stage 3 (Rs 7-10 lakh) fits out the first floor. Structure, waterproofing, the roof and buried services are never deferred (sheet A-002).",
     "Bedroom and study split (2 Nov 2026, from a fresh review): one huge room made the bedroom do three jobs and left two home workers with one corner desk. The west block now splits into Bedroom 2 in the south-west (bed head south between two 3 ft windows, an 8 ft sliding wardrobe on the north wall, entered through a wardrobe alcove so the bed is out of sight, its bath over the common bath) and a closable 14 x 11 study in the north-west (two desks 9 ft apart, sofa-cum-bed for guests, even north light, coolest room by day). The bath over the master bath becomes a toilet off the landing for the study, the terrace and guests. The terrace stays 19 x 22. Beams under the new walls at y 11.5 and y 14.",
     "Upper master opened up (2 Nov 2026): no dressing room and no inner walls. One open L-shaped room: sleeping zone north-west (king bed against the 6 ft divider wardrobe, wardrobe on the bath wall), sitting zone south-west (sofa under the south window, reading chair), a study corner in the south-east wing (desk on the east wall, window to the side, dresser by the window) and an entry zone off the top step with a 5 ft wardrobe screening the study. Only the bath and the landing toilet are walled.",
     "One room upstairs (2 Nov 2026): three bedrooms are enough (ground master, small room, one upstairs), so the first floor becomes a single upper master suite over the ground master: one 14 x 22 ft room with a sleeping zone north (king bed against a 6 ft divider wardrobe, as below) and a sitting/study zone south (desk under the south window, sofa, reading chair); a foyer straight off the top step with a linen cupboard; the bath over the master bath; the dressing with its south window. The old upstairs bath becomes a toilet off the landing for the terrace. The landing stays just the stair head (suite, toilet and terrace doors).",
@@ -571,6 +572,45 @@ PIPES = [
     ("rain", [(12.0, 26.9), (70.5, 26.9), (71.2, 26.2)]),
     ("rain", [(74.5, 24.0), (75.3, 24.0)]),
 ]
+
+# Construction phasing: roof first, in three stages. Stage 1 is a lived-in ground floor with basic finishes under the full
+# two-storey structure and roof; stage 2 adds the upstairs shell and the upgrades; stage 3 fits out the first floor.
+# Costs are rough 2026 village rates around Guntur.
+PHASES = [
+    ("Stage 1: move in", [
+        "Whole ground floor with basic finishes: vitrified tiles, one coat of paint, granite kitchen counter with open shelves, ceilings only in the baths.",
+        "Footings, columns, first-floor slab and stair designed and built for two floors; RCC frame and ring beam up to roof level.",
+        "Tiled hip roof, front gable and the steel-framed covered terrace with railings; the whole first-floor slab waterproofed, with drains.",
+        "Upstairs left as an open, covered deck: temporary railings on the open edges and a lockable grille gate at the stair head.",
+        "Site works: sump, septic tank, drains, water and power connections; temporary fence."], "Rs 30-34 lakh"),
+    ("Stage 2: upstairs shell and upgrades (1-2 years later)", [
+        "First-floor outer walls with window frames, grilles and shutters: a dry, lockable shell.",
+        "Kitchen cabinets, built-in wardrobes and the timber jali screens.",
+        "False ceilings in the rooms; final paint and any floor upgrades.",
+        "Compound wall, poomukham finishes and landscaping (outside the estimate)."], "Rs 7-11 lakh"),
+    ("Stage 3: first-floor fit-out", [
+        "Inner walls upstairs: Bedroom 2, its alcove and bath, the study and the toilet.",
+        "Doors, wet-room waterproofing and fittings, floors, inside plaster and paint, false ceilings.",
+        "Wiring and lights from the sub-board, ACs, wardrobes and desks."], "Rs 7-10 lakh"),
+]
+PHASE1_PROVISIONS = [
+    "Plan approval for the full two-storey house now.",
+    "Beams under the future upstairs walls (y 11.5 and y 14 over the ground master) cast with the slab.",
+    "Sleeves for the WC soil pipes, floor traps and shower drains cast into the slab at the upper bath and toilet; soil and vent stacks run to roof level and capped.",
+    "Conduits for first-floor lights and fans cast into the slab; conduit from the main DB to the first-floor sub-board position.",
+    "Water supply branches to the upper bath and toilet, capped; overhead tank on its final stand.",
+    "Whole first-floor slab waterproofed in stage 1, with a drip edge all round.",
+    "Columns, ring beam and lintel band set so the stage-2 outer walls and windows drop in; AC sleeves marked.",
+    "Kitchen and wardrobe walls finished with the plumbing, sockets and hold-fasts for the stage-2 cabinets already in.",
+]
+PHASE1_LIVING = [
+    "Upstairs is a shaded, covered deck behind a grille gate: storage, drying clothes, a sit-out (no water use until stage 3).",
+    "The ground floor stays cool from day one: it has the roof's shade and attic over it, not a bare slab.",
+    "Stages 2 and 3 are dry, light work under cover: no roofing over an occupied house; materials up the stair and the terrace; a dust curtain at the stair hall.",
+    "Splitting into three stages costs about Rs 2-4 lakh more overall (coming back, price rises, some repainting).",
+    "Never defer: structure, anti-termite treatment, plinth, waterproofing, the roof, or pipes and conduits buried in walls and slabs.",
+]
+PHASE2_ROOMS = ("R31", "R32", "R33", "R36", "R38", "R39")
 
 HOLD_POINTS = [
     ("Before design freeze", "Soil test report, level survey of plot and road, water quality test (TDS, hardness, fluoride)", "Owner, engineer"),
