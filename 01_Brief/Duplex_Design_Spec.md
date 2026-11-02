@@ -8,6 +8,7 @@ Current version, 2 Nov 2026, after these reviews:
 - The space under the stair was opened to the lobby.
 - The ridge ventilator was removed.
 - The house was lengthened from 44 to 50 ft.
+- Review fixes: the store became a dining nook with a south window; windows were added at the upper passage and above the ground master bed; the common bath door now opens inward.
 
 ## Brief
 
@@ -51,22 +52,22 @@ x: 17            31      37.5    44                 55     61      67
    │             │  the stair)    │                   └─────┤       │
    │  Master     ├────────────────┤   (wide opening)        ├───────┤ y 12.5
    │             │     Lobby      │   DINING     ┌──────────┴───────┤
-   │             ├───────┬────────┼──────┬───────┤  KITCHEN         │
-   │             │M. bath│C. bath │Store │  Wet  │                  │
+   │             ├───────┬────────┤      ┌───────┤  KITCHEN         │
+   │             │M. bath│C. bath │ nook │  Wet  │                  │
    └─────────────┴───────┴────────┴──────┴───────┴──────────────────┘ y 3
 ```
 
 | Room | Extent (x × y) | Size | Clear | Notes |
 |---|---|---|---|---|
-| Master bedroom | 17–31 × 3–15.5 | 14 × 12.5 | 13'-4" × 11'-11" | queen bed, head south; 6 ft wardrobe and dresser on the north wall; west window behind the pergola |
+| Master bedroom | 17–31 × 3–15.5 | 14 × 12.5 | 13'-4" × 11'-11" | queen bed, head south with a high window above it; 6 ft wardrobe and dresser on the north wall; west window behind the pergola |
 | Master bath | 31–37.5 × 3–10 | 6.5 × 7 | 5'-11" × 6'-4" | shower in the south-west corner, WC on the partition, vanity on the lobby wall |
-| Common bath | 37.5–44 × 3–10 | 6.5 × 7 | 5'-11" × 6'-4" | WC back to back with the master WC; door from the lobby |
+| Common bath | 37.5–44 × 3–10 | 6.5 × 7 | 5'-11" × 6'-4" | WC back to back with the master WC; door from the lobby, opening inward |
 | Small bedroom | 17–31 × 15.5–25 | 14 × 9.5 | 13'-5" × 8'-11" | double bed, head east; wardrobe; study table |
 | Lobby | 31–44 × 10–13.5 | 13 × 3.5 | | opens into the living; flows into the open space under the upper flight |
 | Stair and passage | 31–44 × 13.5–25 | | | passage 5'-6" to the small bedroom; dog-leg stair behind a timber jali to the living; cupboard (DB, inverter) where the stair is low |
-| Store | 44–48 × 3–7.5 | 4 × 4.5 | | racks; jali vent |
+| Dining nook | 44–48 × 3–7.5 | 4 × 4.5 | | the old store, now part of the dining, with a 3 ft south window |
 | Wet area | 48–55 × 3–7.5 | 7 × 4.5 | | utility sink, washing machine, airer; service door to the walkway |
-| Dining | 44–55 × 7.5–12.5 | 11 × 5 | | open to the living (a table spills into the living) |
+| Dining | 44–55 × 7.5–12.5 | 11 × 5 | | with the nook, an L-shaped dining about 11 × 9'-6" with its own south light; open to the living |
 | Kitchen | 55–67 × 3–12.5 | 12 × 9.5 | 11'-5" × 8'-9" | L-counter, hob on the east wall, fridge on the north wall |
 | Living | 44–61 × 12.5–25 | 17 × 12.5 | 16'-5" × 11'-9" | TV on the stair wall, sofa facing west, shoe bench by the door |
 | Pooja | 57–61 × 12.5–16.5 | 4 × 4 | | back to back with the kitchen, opens west |
@@ -78,10 +79,10 @@ x: 17            31      37.5    44                 55     61      67
 |---|---|---|---|---|
 | Upper master, sleeping zone | 17–31 × 3–15.5 | 14 × 12.5 | 13'-5" × 12'-1" | king bed, head to the solid west wall; south window; reading chair |
 | Upper master, sitting and study | 17–31 × 15.5–25 | 14 × 9.5 | 13'-5" × 9'-1" | 6 ft north window over a diwan, desk on the west wall, bookshelf; a 6 ft wardrobe part-divides it from the bed |
-| Dressing | 31–37.5 × 3–10 | 6.5 × 7 | 6'-0" × 6'-5" | 5'-10" of wardrobes with lofts, dresser; sliding door from the bedroom |
+| Dressing | 31–37.5 × 3–10 | 6.5 × 7 | 6'-0" × 6'-5" | 5'-10" of wardrobes with lofts, 2'-6" dresser; sliding door from the bedroom |
 | Upper master bath | 37.5–44 × 3–10 | 6.5 × 7 | 5'-10" × 6'-5" | over the common bath; door from the dressing |
 | Landing | 31–44 × 10–14 | 13 × 4 | | glazed door out to the terrace |
-| Upper passage | 31–36.5 × 14–25 | 5.5 wide | | reading nook with a bookshelf |
+| Upper passage | 31–36.5 × 14–25 | 5.5 wide | | reading nook with a bookshelf and a 3 ft north window |
 | Covered terrace | 44–61 × 3–25 | 17 × 22 | | under the main roof on galvanised steel posts and trusses; railings on the north, south and east; diwan, chairs, drying rails, planters |
 
 ## Levels and stair

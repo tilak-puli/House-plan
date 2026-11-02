@@ -27,7 +27,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
     ("R04", "Small bedroom", 17, 31, 15.5, 25, "Private"),
     ("R05", "Lobby", 31, 44, 10, 13.5, "Circulation"),
     ("R06", "Stair and passage", 31, 44, 13.5, 25, "Circulation"),
-    ("R12", "Store", 44, 48, 3, 7.5, "Service"),
+    ("R12", "Dining nook", 44, 48, 3, 7.5, "Living"),
     ("R13", "Wet area", 48, 55, 3, 7.5, "Service"),
     ("R10", "Dining", 44, 55, 7.5, 12.5, "Living"),
     ("R15", "Kitchen", 55, 67, 3, 12.5, "Service"),
@@ -41,7 +41,7 @@ WALLS = [
     ("X", 3, 17, 67), ("Y", 17, 3, 25), ("X", 25, 17, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
     ("X", 15.5, 17, 31), ("Y", 31, 3, 10), ("Y", 31, 10, 25), ("X", 10, 31, 44), ("Y", 37.5, 3, 10),
     ("Y", 44, 3, 10), ("Y", 36.5, 15.7, 25), ("Y", 44, 13.5, 25),  # under the upper flight left open where there is 7 ft headroom
-    ("X", 7.5, 44, 55), ("Y", 48, 3, 7.5), ("Y", 55, 3, 12.5), ("X", 12.5, 55, 67),
+    ("X", 7.5, 48, 55), ("Y", 48, 3, 7.5),  # old store folded into the dining as a nook ("Y", 55, 3, 12.5), ("X", 12.5, 55, 67),
     ("Y", 57, 12.5, 16.5), ("X", 16.5, 57, 61),
 ]
 EXTERIOR = {("X", 3), ("Y", 17), ("X", 25), ("Y", 67), ("Y", 61)}
@@ -129,13 +129,12 @@ DOORS = [
     ("D01", "Y", 61, 17.6, 20.6, -1, "Main entrance (centred under the front gable)", "Teak panelled, double leaf"),
     ("D02", "Y", 31, 10.6, 13.4, -1, "Master bedroom (from the lobby)", "Flush, teak veneer"),
     ("D03", "Y", 31, 7.0, 9.5, -1, "Master bath (from the master bedroom, opens outward)", "Flush, waterproof (WPC/FRP)"),
-    ("D04", "X", 10, 40.4, 42.9, 1, "Common bath (from the lobby, opens outward)", "Flush, waterproof (WPC/FRP), door closer"),
+    ("D04", "X", 10, 40.4, 42.9, -1, "Common bath (from the lobby, opens inward so it never blocks the lobby)", "Flush, waterproof (WPC/FRP), door closer"),
     ("D05", "Y", 31, 16.0, 18.6, -1, "Small bedroom (from the passage beside the stair)", "Flush, teak veneer"),
     ("D11", "Y", 57, 13.0, 16.0, 1, "Pooja", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
     ("D12", "Y", 55, 4.0, 6.5, 0, "Kitchen to wet area (sliding)", "Steel or WPC sliding, lockable"),
     ("D17", "Y", 55, 8.6, 11.6, 1, "Kitchen entry (west, from the dining; hinged at the north jamb)", "Teak frame, glazed upper panel, 3 ft (closes off cooking smoke)"),
     ("D18", "X", 3, 48.8, 51.3, 1, "Wet area service door to the south walkway (opens inward)", "Steel, lockable, louvred top"),
-    ("D19", "X", 7.5, 44.8, 47.3, -1, "Store (from the dining)", "Flush, teak veneer"),
 ]
 # Vents above inner doors (7'-6" to 9'-0", above the lintel band): air moves between rooms with doors shut
 TRANSOM_TYPES = {
@@ -144,7 +143,7 @@ TRANSOM_TYPES = {
     "louvre": "Fixed louvres angled down: air for the exhaust fan, no view in",
     "glazed": "Top-hung glazed vent with seals: open for air, closed for calls",
 }
-TRANSOMS = {"D11": "jali", "D19": "jali"}
+TRANSOMS = {"D11": "jali"}
 HINGE_AT_END = {"D17", "D33"}  # doors hinged at their far (e) jamb
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
 TRANSOM_Z = (7.5, 9.0)  # sill and head above the floor
@@ -158,7 +157,8 @@ WINDOWS = [
     ("W13", "Y", 17, 19.0, 21.0, 5, 7, "Small bedroom", "High jali vent (west, cross-ventilation)"),
     ("W05", "X", 25, 38.5, 42.5, 6, 9.5, "Stair", "Glazed casement at the half landing"),
     ("W10", "Y", 44, 14.0, 17.4, 1, 7, "Stair", "Timber jali screen between the stair foot and the living"),
-    ("W11", "X", 3, 45.0, 47.0, 5, 7, "Store", "High jali vent"),
+    ("W11", "X", 3, 44.5, 47.5, 3.5, 7, "Dining nook", "Timber jali + glazed shutters (3 ft, south light for the dining)"),
+    ("W14", "X", 3, 22.5, 25.5, 5.5, 7, "Master bedroom", "High jali + glazed shutters above the bed head (morning light, cross-breeze with the west window)"),
     ("W12", "X", 3, 52.9, 54.6, 4.5, 7, "Wet area", "Jali vent over the utility sink"),
     ("W07", "X", 3, 58.5, 64.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters"),
     ("W08", "Y", 67, 9.5, 12.5, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (3 ft, north end; hob wall kept solid)"),
@@ -190,7 +190,6 @@ FURNITURE = [
     ("F22", "Small bedroom", "Study table 4' x 2' (south wall)", 20.0, 24.0, 15.9, 17.9, 1, "Teak / ply, cable tray", "rect"),
     ("F57", "Stair and passage", "Under-stair cupboard where the stair drops below 7 ft (DB, inverter, brooms), doors facing the lobby", 36.6, 40.0, 15.8, 17.6, 1, "Ply + laminate, ventilated", "rect"),
     ("F56", "Stair and passage", "Linen cupboard at the end of the passage, loft above", 31.3, 36.3, 22.6, 24.6, 1, "Ply + laminate, full height", "rect"),
-    ("F44", "Store", "Racks, full height (provisions, vessels, festival items)", 44.3, 47.7, 3.3, 4.6, 1, "Steel / ply racks", "rect"),
     ("F29", "Wet area", "Utility sink counter on the south wall, where vessels are washed", 52.8, 54.7, 3.4, 5.3, 1, "Kadappa / granite, SS sink", "rect"),
     ("F62", "Wet area", "Dish-drying rack over the utility sink: steel rods, drip tray draining into the sink", 52.9, 54.6, 3.45, 4.2, 1, "SS 304", "glass"),
     ("F30", "Wet area", "Washing machine bay 2' x 2' (on the store wall)", 48.3, 50.2, 5.6, 7.3, 1, "Splash-proof socket, floor drain", "rect"),
@@ -259,13 +258,14 @@ WINDOWS_F1 = [
     ("W34", "X", 25, 21.0, 27.0, 3, 7, "Sitting and study (upper master)", "Teak casement, glazed (6 ft, north light for the desk and reading)"),
     ("W41", "Y", 17, 19.0, 21.0, 5, 7, "Sitting and study (upper master)", "High jali vent (west, cross-ventilation)"),
     ("W40", "Y", 44, 15.0, 24.5, 1, 8, "Stair", "Timber jali screen between the stair well and the covered terrace (light and air for the stair)"),
+    ("W42", "X", 25, 32.6, 35.6, 3.5, 7, "Upper passage", "Teak casement, glazed (3 ft, north light for the reading nook)"),
 ]
 FURNITURE_F1 = [
     ("F71", "Upper master bedroom", "King bed 6' x 6'6\" + headboard, head to the west wall (kept solid against the afternoon sun)", 17.4, 24.0, 5.5, 11.5, 1, "Teak", "rect"),
     ("F72", "Upper master bedroom", "Floating bedside shelf with a drawer, reading light and charging point above", 17.4, 18.4, 4.4, 5.4, 2, "Teak, wall-hung", "rect"),
     ("F73", "Upper master bedroom", "Reading chair by the south window", 28.0, 29.8, 4.0, 5.8, 1, "Cane / upholstered", "circle"),
     ("F75", "Dressing", "Built-in wardrobes 5'-10\", full height, lofts above (north wall)", 31.4, 37.2, 8.0, 9.7, 1, "Ply + laminate", "rect"),
-    ("F76", "Dressing", "Dresser with drawers (south wall, under the high window)", 32.2, 35.2, 3.4, 4.2, 1, "Teak", "rect"),
+    ("F76", "Dressing", "Dresser with drawers 2'-6\" (south wall, under the high window, clear of the bath door)", 32.2, 34.6, 3.4, 4.2, 1, "Teak", "rect"),
     ("F77", "Upper master bath", "WC (EWC) on the east wall", 42.1, 43.7, 4.0, 5.2, 1, "Wall-hung, concealed cistern", "wc"),
     ("F78", "Upper master bath", "Wash basin with a mirror cabinet above", 43.0, 43.7, 5.8, 7.0, 1, "Wall-hung", "rect"),
     ("F79", "Upper master bath", "Shower glass partition (shower across the north end)", 37.8, 40.3, 7.55, 7.7, 1, "8 mm toughened glass", "glass"),
@@ -289,10 +289,10 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
     ("Bedrooms, dressing", "Matt vitrified 2x2 ft or red oxide", "4 in flush skirting; putty + washable emulsion", "Ground floor: RCC slab soffit at 9'-5\", plastered; first floor: false ceiling at 9'-6\", 50 mm insulation above", "First-floor rooms sit under the roof: ventilated attic above the false ceiling"),
     ("Pooja", "White marble or teak", "Teak panelling behind idol; 4 in marble skirting", "Teak / board at 9'-6\"", "Idols on the east wall facing west (family faces east); lamp niche with heat-proof back"),
     ("Kitchen", "Anti-skid matt vitrified or Kota, mid-tone", "Tile / stone full height between counter and wall cabinets", "Moisture-resistant board at 9'-6\", storage loft above", "Counter granite (local Ongole / Chimakurthy), 2 ft deep; deep drawers for vessels, pull-out masala drawer by the hob, utensil rail on the wall beside it"),
-    ("Master bath, common bath, upper bath", "Anti-skid ceramic (R11), falls 1:60 to drain", "Tiles to 7 ft; full height in shower; waterproofing 12 in up all walls, 7 ft in shower", "Moisture-resistant board / PVC at 8'-6\"", "Recessed tiled shower niche with a sloped sill; mirror cabinet over the basin; towel and clothes hooks at the dry end; 12 mm step down, no raised threshold; doors open outward; SS grab bars by the WC and in the shower. The upper bath sits over the common bath: waterproof the slab and flood-test it before tiling"),
+    ("Master bath, common bath, upper bath", "Anti-skid ceramic (R11), falls 1:60 to drain", "Tiles to 7 ft; full height in shower; waterproofing 12 in up all walls, 7 ft in shower", "Moisture-resistant board / PVC at 8'-6\"", "Recessed tiled shower niche with a sloped sill; mirror cabinet over the basin; towel and clothes hooks at the dry end; 12 mm step down, no raised threshold; doors open outward (the common bath door opens inward so it never blocks the narrow lobby); SS grab bars by the WC and in the shower. The upper bath sits over the common bath: waterproof the slab and flood-test it before tiling"),
     ("Wet area", "Rough Cuddapah / Kota stone, falls to drain", "4 ft stone or tile dado", "Board at 9'-6\"", "Service door to the walkway with a 6 in kerb"),
     ("Stair", "Granite or Kota treads with a rounded nosing and anti-slip grooves, 10 in treads, 7 in risers", "Teak handrail at 3 ft on the open side, timber jali to the living", "Open to the roof", "Light at the half landing and at the top; 2-way switches"),
-    ("Store, lobby, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
+    ("Lobby, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
     ("Covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "Railing 3'-6\" on the open sides (teak cap, MS or teak balusters); bamboo chiks on the south and east", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: it sits over the living, dining and kitchen"),
     ("Poomukham, steps", "Flamed / leather-finish granite (not polished)", "Granite skirting; plinth face clad 2 ft (splash zone)", "Exposed rafters + board", "Polished stone is slippery when wet"),
     ("Exterior", "Plinth apron: PCC 3 ft wide sloped away", "AAC + 20 mm plaster with waterproof additive; elastomeric paint", "-", "Drip grooves under every sill and sunshade"),
@@ -312,7 +312,7 @@ OPEN_ISSUES = [
     ("Services", "Septic tank and soak pit in the spare rear land (percolation test for the soak pit size); if the back 14 ft is ever sold, move them or switch to a bio-digester with treated outflow", "Engineer", "Open"),
     ("Services", "Water tank: 1,000 L loft tank in the roof space over the upper bath, filled from the sump by pump, with a pressure pump for showers; confirm the truss carries it or put it on a steel platform off the slab", "Plumber / engineer", "Open"),
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
-    ("Vastu", "Master bedroom in the south-west with the bed head south; second master above it; kitchen in the south-east, stove on the east wall; pooja in the living's south-east corner back to back with the kitchen, opening west; stair in the north-west quarter rising clockwise; baths in the south band; living and main door on the east; the centre of the plot (Brahmasthan) falls in the living, kept free of walls and columns", "Vastu consultant", "To confirm"),
+    ("Vastu", "Master bedroom in the south-west with the bed head south; second master above it; kitchen in the south-east, stove on the east wall; pooja in the living's south-east corner back to back with the kitchen, opening west; stair in the north-west quarter rising clockwise; baths in the south band; living and main door on the east. Plot centre: on the full 75 ft plot it falls in the lobby at the foot of the stair, beside the common bath; on the 61 ft trial plot it falls in the living (kept free of walls and columns). Confirm which boundary the consultant uses", "Vastu consultant", "To confirm"),
     ("Climate", "Covered terrace: deep shade from the main roof keeps the slab over the living cool; the upper master's west wall has only a small high vent; chiks on the terrace's south and east sides", "Architect", "Open"),
     ("Roof", "Covered terrace roof: tiles on steel trusses (drawn, matches the rest of the roof) or a cheaper insulated metal-sheet roof on the same steel frame; decide before the roof is ordered", "Owner / architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
@@ -325,6 +325,7 @@ DUPLEX_DECISIONS = [
     "Ground floor: master bedroom with its bath (south-west), small bedroom, common bath, lobby and a dog-leg stair seen from the living through a timber jali. First floor: upper master with a dressing room and bath, a landing, a passage and the covered terrace; the upper master has a sitting and study zone on the north side (the outdoor lounge was merged into it once the terrace was added).",
     "Roof: one hipped clay-tile roof over the two-storey block, carried on walls over the back rooms and on a light galvanised steel frame (posts and trusses) over the terrace, and a wide front gable (mukhappu) over the single-storey poomukham and kitchen front, so the house reads as a two-tier Kerala roof.",
     "No ridge ventilator (removed after review): with the terrace open on three sides, hot air under the main roof escapes at its open edges; the attic over the first-floor rooms is vented by meshed ridge and soffit vents.",
+    "Review (2 Nov 2026): the store is folded into the dining as a nook with a 3 ft south window, so the dining has its own daylight (provisions go to the under-stair cupboard and a kitchen loft); a 3 ft window lights the end of the upper passage; a high south window above the ground master's bed head gives morning light and cross-breeze; the common bath door opens inward so it never blocks the lobby; the dresser is shortened clear of the upper bath door.",
     "All four bath fittings stack in the south band (two baths over two); the septic tank and soak pit move to the spare rear land behind the baths, freeing the front yard; the water tank goes into the roof space (no tank stand).",
 ]
 
@@ -456,7 +457,7 @@ ELECTRICAL = [
     ("INV", 39.4, 16.8, "R06", "lithium inverter in the ventilated under-stair cupboard"),
     ("WL", 40.2, 24.6, "R06", "at the half landing"), ("L", 32.25, 15.5, "R06", "passage"),
     # Store, wet area, dining
-    ("L", 46.0, 5.8, "R12", ""), ("S", 47.6, 7.9, "R10", "store light, outside the door"),
+    ("L", 46.0, 5.5, "R12", "pendant over the nook"), ("S", 44.4, 6.8, "R12", "dining nook light"),
     ("L", 52.0, 5.0, "R13", ""), ("P16", 48.3, 7.2, "R13", "washing machine"), ("P", 54.6, 5.6, "R13", "utility, weatherproof"),
     ("L", 49.0, 10.0, "R10", "pendant over a future dining table"), ("S", 44.4, 9.4, "R10", "dining and wet area"),
     # Kitchen

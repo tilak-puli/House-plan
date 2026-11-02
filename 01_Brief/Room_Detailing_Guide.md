@@ -140,8 +140,8 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 40. **Avoid:** Washing machine with no tap, drain or socket at the right height.  
    **Do:** Provide a tap at 3 ft, a floor drain behind the machine and a splash-proof 16 A socket at 4 ft.  
    *Shown on: P-101, E-103*
-41. **Avoid:** No store, so provisions end up on the floor.  
-   **Do:** A 4 x 4'-6" store off the dining with full-height racks, a high jali vent and a jali above the door; lofts over the kitchen.  
+41. **Avoid:** No place for provisions, so they end up on the floor.  
+   **Do:** Provisions go in the under-stair cupboard and a loft over the kitchen counters; the old store became a dining nook with a south window, because a dark dining was the bigger problem.  
    *Shown on: A-104*
 42. **Avoid:** Inverter batteries in a bedroom or a closed cupboard.  
    **Do:** Lithium inverter in the ventilated under-stair cupboard, away from water and bedrooms.  
