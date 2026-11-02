@@ -44,12 +44,12 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 
 ## Duplex option (branch `feature/duplex`)
 - Architect: what front, side and rear setbacks apply to a two-storey house on this plot and road width, and is there a height limit? Does the 8 ft front yard still work?
-- Architect: is 61 ft of plot (a 50 ft house) right for this duplex, or should we keep the 62 ft single-storey plan on the full 75 ft?
+- Architect: is 64 ft of plot (a 53 ft house) right for this duplex, or should we keep the 62 ft single-storey plan on the full 75 ft?
 - Structural engineer: footing and column sizes for two floors on black cotton soil; the first-floor slab over the whole block and its edge beam round the terrace; RCC stubs and base plates for the steel posts that carry the roof over the terrace.
 - Structural engineer: stair design (waist slab, landing beam) and whether the loft water tank can sit on the truss or needs a platform off the slab.
 - Plumber: the upper WC stack inside the wet wall between the common bath and the store, its vent above the main roof, and waterproofing the slabs under the upper bath and the terrace, and the terrace drain to a downpipe.
 - Electrician: a sub-board for the first floor, 2-way switching between the lobby and the landing, wet-rated lights and fan on the covered terrace.
-- Vastu consultant: which boundary sets the plot centre? On the full 75 ft plot it falls in the lobby at the foot of the stair, beside the common bath; on the 61 ft trial plot it falls in the living.
+- Vastu consultant: which boundary sets the plot centre? On the full 75 ft plot it falls in the lobby at the foot of the stair, beside the common bath; on the 64 ft trial plot it falls in the living.
 - Vastu consultant: the stair in the north-west quarter rising clockwise; the upper master over the ground master in the south-west; the Brahmasthan in the living (kept free of walls and columns) with the covered terrace above.
 - Architect / contractor: roof over the terrace in clay tiles on steel trusses (drawn) or an insulated metal-sheet roof on the same frame: cost, heat and look.
 - Contractor: rate difference between a two-storey and a single-storey house of similar area in the village (frame, slab, stair, steel terrace frame).
