@@ -175,7 +175,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
 
 
 SECTIONS = {"A": ("X", 44.5, "Cross section through the dining nook, dining, living and the covered terrace above"),
-            "B": ("Y", 18, "Long section through the ground master and the upper sitting zone above, the stair, the living with the covered terrace above, and the poomukham")}
+            "B": ("Y", 18, "Long section through the master suites on both floors, the stair, the living with the covered terrace above, and the poomukham")}
 
 
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):
@@ -233,7 +233,7 @@ def sheet_finishes(c, num="A-105", title="Floor finishes and levels, ground floo
         cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
         pl.text(short_name(name), cx, cy + 0.8, 5.2, "Helvetica-Bold")
         pl.level(cx - 1.2, cy - 0.6, floor_level(rid), 5)
-    for rid, ang in (("R07", "1:60 to drain"), ("R03", "1:60 to drain"), ("R33", "1:60 to drain"), ("R13", "1:80 to drain"), ("R37", "1:80 to spout")):
+    for rid, ang in (("R07", "1:60 to drain"), ("R08", "1:60 to drain"), ("R33", "1:60 to drain"), ("R39", "1:60 to drain"), ("R13", "1:80 to drain"), ("R37", "1:80 to spout")):
         if rid in ids:
             r = room_of(rid); pl.text("falls " + ang, (r[2] + r[3]) / 2, r[4] + 0.8, 4.4, color=BLUE)
     if FLOOR[0] == "G":

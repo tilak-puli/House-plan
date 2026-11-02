@@ -2,9 +2,9 @@
 
 Branch `feature/duplex`. A trial to see how much plot length a two-level house actually needs. Main keeps the single-storey design for comparison.
 
-Current version, 2 Nov 2026, after these reviews:
+Current version, 2 Nov 2026: a clean redesign on the same wall grid, master downstairs (full depth of the west bay), two bedrooms up, after these reviews:
 - Double height dropped; a covered terrace was added over the front half.
-- The outdoor lounge was merged into the upper master.
+- The outdoor lounge was dropped; the first floor became Bedroom 2 and a study.
 - The space under the stair was opened to the lobby.
 - The ridge ventilator was removed.
 - The house was lengthened from 44 to 50 ft, then to 53 ft, and the bedroom depths were re-split.
@@ -19,9 +19,9 @@ Current version, 2 Nov 2026, after these reviews:
 ## Brief
 
 - Same plot and road (east). The house and its yards use the front **64 ft** (x 11–75). The back 11 ft (x 0–11) stays spare land: kitchen garden, septic tank and soak pit.
-- 3 bedrooms:
-  - **Ground floor:** a master bedroom (north-west) with its entry and attached bath, and a second bedroom (south-west) using the common bath; a proper dining room.
-  - **First floor:** the main master suite (south-west, the Vastu master) with its own bath and a sitting and study zone, plus a separate study off the landing.
+- 3 bedrooms (two down, one up):
+  - **Ground floor:** the master bedroom across the full depth of the west bay (14 × 22) with its bath off the sitting zone; a small single-bed room; the common bath beside the stair hall; dining by the kitchen hatch.
+  - **First floor:** Bedroom 2 in the south-west (wardrobe alcove, bath), a closable study in the north-west and a toilet off the landing.
 - **First floor, front half:** a covered terrace under the main roof, carried on a light steel frame.
 - No double height. A slab covers the whole two-storey block, so every ground-floor room has a flat ceiling at about 9'-5".
 
@@ -53,28 +53,28 @@ Plan sketch, not to scale. West is on the left, the road (east) on the right, no
 ```
 x: 14            28       35      42                 53     61      67
    ┌─────────────┬───────────────┬─────────────────────────┬───────┐ y 25
-   │ Small bed   │ passage│ Stair │   LIVING                │       │
+   │ Master      │ C.bath │ Stair │   LIVING                │       │
    │             │        │dogleg │                   ┌─────┤ POOM- │
    ├─────────────┤ (open under    │                   │Pooja│ UKHAM │◄ main door
    │             │  the stair)    │                   └─────┤       │
-   │  Master     ├────────────────┤   (wide opening)        ├───────┤ y 12.5
+   │ (sitting /  ├────────────────┤   (wide opening)        ├───────┤ y 12.5
    │             │     Lobby      │   DINING     ┌──────────┴───────┤
    │             ├───────┬────────┘      ┌───────┤  KITCHEN         │
-   │             │C. bath│  DINING       │  Wet  │                  │
+   │             │ Small │ C.bath │nook │  Wet  │                  │
    └─────────────┴───────┴────────┴──────┴───────┴──────────────────┘ y 3
 ```
 
 | Room | Extent (x × y) | Size | Clear | Notes |
 |---|---|---|---|---|
-| Second bedroom | 14–28 × 3–13.5 | 14 × 10.5 | 13'-4" × 9'-11" | queen bed, head south, high window above it; 6 ft wardrobe on the west wall; west window; own door from the lobby |
-| Common bath | 28–35 × 3–10 | 7 × 7 | 6'-5" × 6'-4" | for the second bedroom and guests; WC on the bedroom wall under the upper WC (one stack); door from the lobby, opening inward |
-| Master bedroom | 14–28 × 13.5–25 | 14 × 11.5 | 13'-4" × 10'-11" | queen bed, head south; 6 ft wardrobe on the west wall; dresser; 6 ft north window |
-| Master entry | 28–34.5 × 14–18 | 6.5 × 4 | | entered from the lobby; 4 ft wardrobe for linen and suitcases |
-| Master bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door on its west wall, straight from the bedroom; WC, basin, shower in the north-east corner, north window; drains along the north walkway |
-| Lobby | 28–35 × 10–13.5 | 7 × 3.5 | | doors to the second bedroom, common bath and master entry; open to the dining and the stair foot |
-| Stair | 34.5–42 × 13.5–25 | | | dog-leg stair behind a timber jali to the living; the space under the upper flight is open where headroom allows, then a cupboard (DB, inverter) |
-| Dining | 35–46 × 3–10 | 11 × 7 | 10'-5" × 6'-8" | 5 × 3 ft table (2 chairs + bench), crockery unit, 4 ft and 3 ft south windows; open to the lobby, the serving side and the living |
-| Dining (serving side) | 42–53 × 7.5–12.5 | 11 × 5 | | granite serving ledge under the kitchen hatch |
+| Master bedroom | 14–28 × 3–25 (south part 14–26) | 14 × 22 | 13'-4" × 21'-3" | sleeping zone (north, next to the master bath): king bed against the back of a 6 ft divider wardrobe (head south), north window ahead; sitting zone (south): day bed under the high south window, sofa facing a TV on the west wall, west window; door from the lobby |
+| Small room | 26–36 × 3–12 | 10 × 9 | 9'-5" × 8'-5" | wide single bed (4 × 6'-6") under a 3 ft south window, 3 ft wardrobe on the east wall; door from the lobby |
+| Common bath | 36–42 × 3–12 | 6 × 9 | 5'-5" × 8'-4" | WC and a 2'-10" × 3'-3" shower side by side at the south end, basin north; door from the hall by the stair, opening inward; under the upper toilet (one stack) |
+| Master bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door from the master's sitting zone; north window; drains along the north walkway |
+| Lobby | 28–34.5 × 12–18 | 6.5 × 6 | | doors to the master bedroom and the small room; coat, shoe and linen cupboard on the north wall; open to the stair hall |
+| Stair hall | 34.5–42 × 12–15.67 | 7.5 × 3'-8" | | passage from the dining and living to the lobby, in front of the stair foot; common bath door |
+| Stair | 34.5–42 × 15.67–25 | | | dog-leg stair behind a timber jali to the living; the space under the upper flight is open where headroom allows, then a cupboard (DB, inverter) |
+| Dining nook | 42–46 × 3–7.5 | 4 × 4.5 | | crockery unit under a 3 ft south window |
+| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 4 ft table (2 chairs + bench) beside the granite serving ledge under the kitchen hatch; open to the living |
 | Wet area | 46–53 × 3–7.5 | 7 × 4.5 | | utility sink, washing machine, airer; service door to the walkway |
 | Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter (13 ft south run), hob on the east wall, fridge on the north wall; serving hatch with glazed sliding shutters; sliding entry from the living |
 | Living | 42–61 × 12.5–25 | 19 × 12.5 | 18'-5" × 12'-1" | TV on the stair wall, sofa facing west, shoe bench by the door |
@@ -85,18 +85,19 @@ x: 14            28       35      42                 53     61      67
 
 | Room | Extent | Size | Clear | Notes |
 |---|---|---|---|---|
-| Upper master, sleeping zone | 14–28 × 3–14.5 | 14 × 11.5 | 13'-4" × 11'-1" | king bed, head to the solid west wall; south window; wardrobe on the east wall; reading chair |
-| Upper master, sitting and study | 14–28 × 14.5–25 | 14 × 10.5 | 13'-4" × 10'-1" | 6 ft north window over a diwan, desk on the west wall, bookshelf; a 6 ft wardrobe part-divides it from the bed |
-| Upper master bath | 28–35 × 3–10 | 7 × 7 | 6'-5" × 6'-5" | door straight from the bedroom; directly over the common bath (one soil stack) |
-| Study | 35–42 × 3–10 | 7 × 7 | 6'-4" × 6'-5" | off the landing, with a door; desk under a 3 ft south window, bookshelf: a quiet work-from-home room |
-| Landing | 28–42 × 10–14 | 14 × 4 | | glazed door out to the terrace |
-| Upper passage | 28–34.5 × 14–25 | 6.5 wide | | reading nook with a bookshelf and a 3 ft north window |
+| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows; 8 ft sliding wardrobe on the north wall (sound buffer to the study); high west window; entered through its alcove so the bed is out of sight from the door |
+| Bedroom 2 wardrobe alcove | 28–36 × 3–11.5 | 8 × 8.5 | | door from the landing; 4 ft wardrobe, dresser, 2'-6" south window; bath door |
+| Bedroom 2 bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-11" | over the common bath (one stack); south window |
+| Study | 14–28 × 14–25 | 14 × 11 | 13'-4" × 10'-5" | closable home office: two desks 9 ft apart (west and east walls), sofa-cum-bed for guests under the 6 ft north window; coolest room by day |
+| Toilet lobby | 28–34.5 × 15.67–18 | 6.5 × 2'-4" | | part of the landing in front of the toilet and study doors |
+| Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door from the landing; for the study, the terrace and guests; over the master bath (one stack); north window |
+| Landing | 28–42 × 11.5–15.67 | 14 × 4'-2" | | the stair head, no corridor: Bedroom 2 door on its south wall, study and toilet doors beside it, terrace door on its east wall |
 | Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts and trusses; railings on the north, south and east; diwan, chairs, drying rails, planters |
 
 ## Levels and stair
 
 - Ground FFL +2 ft above ground. Floor-to-floor height 10 ft, so the first floor is at +12 ft above ground.
-- **Stair:** dog-leg, 3'-6" flights, 17 risers of about 7 in, 10 in treads, 9 + 8 risers with a half landing at the north end. The foot is at the lobby.
+- **Stair:** dog-leg, 3'-6" flights, 16 risers of 7.5 in, 10 in treads, 8 + 8 risers with a 3'-6" half landing at the north end (7'-6" x 9'-4" overall); a 7 × 5'-8" stair hall in front of it. The foot is at the lobby.
 - **Terrace:** waterproofed slab falling 1:80 to a drain in the south-east corner. Steel posts stand on RCC stubs 6 in above the tiles.
 
 ## Roof
@@ -109,7 +110,7 @@ x: 14            28       35      42                 53     61      67
 
 ## Services
 
-- **Wet rooms:** two baths on the ground floor (the master bath on the north side, draining along the north walkway; the common bath in the south band) and the upper bath directly over the common bath, sharing one soil stack. The upper bath stacks over the common bath, and its WC stack runs down the wet wall by the dining nook.
+- **Wet rooms:** two stacks. South: the common bath with Bedroom 2's bath above. North: the master bath with the upper toilet above, draining along the north walkway. No bath sits over a living room. The upper bath stacks over the common bath, and its WC stack runs down the wet wall by the dining nook.
 - **Septic tank and soak pit:** in the spare rear land, about 9 ft from the house and far from the sump.
 - **Water tank:** a 1,000 L loft tank over the upper bath, filled from the sump, with a pressure pump.
 - **AC:** the three bedrooms (the upper suite takes 1.5 ton). The living can take one later.

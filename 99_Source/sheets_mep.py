@@ -76,7 +76,7 @@ def sheet_power(c, num="E-103", title="Power, AC and data"):
         "Separate MCB circuit for each AC, geyser, kitchen power, washing machine and pump; RCCB 30 mA on all socket circuits.",
         "AC: 16 A socket at 7'-6\", 65 mm sleeve sloping out, drain pipe to a gully (not onto the wall); ODUs on shaded north / west walls on brackets.",
         "AC indoor units never above the bed head or desk chair: cold draught on the head is the common complaint.",
-        "Study (first floor) and the upper master desk: UPS socket + data + 1 normal socket at desk height; Cat6 from the router to the TV and both desks; Wi-Fi access point on the landing for the first floor.",
+        "Study desks (two): UPS socket + data + 1 normal socket at desk height; Cat6 from the router to the TV and both desks; Wi-Fi access point on the landing for the first floor.",
         "Kitchen: 5-6 counter sockets at 42 in, 16 A for the fridge, chimney and microwave / OTG; none within 2 ft of the sink.",
         "DB in the under-stair cupboard off the lobby (central, dry) with 25% spare ways and a sub-board for the first floor; meter at the gate; 2 earth pits; surge protector.",
         "Empty 25 mm conduits from the roof (solar PV), gate (CCTV, bell, intercom) and sump (pump controller) to the DB.",

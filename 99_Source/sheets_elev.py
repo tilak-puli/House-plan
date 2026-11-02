@@ -236,7 +236,7 @@ def sheet_elev_short(c):
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
     tips = ["Front gable (mukhappu) over the verandah and kitchen front; the covered terrace sits 6 ft back behind it, open behind a railing under the main roof on slim steel posts.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
-            "West wall: the upper master's west wall is solid (afternoon sun); the sitting zone above the ground master has only a small high vent on the west. The creeper pergola shades the ground floor.",
+            "West wall: the first floor has only small high windows on the west (afternoon sun). The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
     s.bullets(tips, 40 * mm, 80 * mm, 285 * mm, 7)
     c.showPage()
@@ -370,7 +370,7 @@ SECTION_NOTES = [
     "First-floor RCC slab over the whole two-storey block; over the front half it is the covered terrace, waterproofed, under the main roof on galvanised steel posts and steel trusses.",
     "RCC lintel band at door-head level on both floors (seismic zone III). AAC walls in an RCC frame; mesh over every block-to-concrete joint.",
     "Ground-floor rooms have a plastered slab soffit at about 9'-5\" (blue); first-floor rooms have insulated false ceilings; the stair and terrace are open to the roof.",
-    "Dog-leg stair, 17 risers of about 7 in; teak handrail; timber jali to the living and to the terrace.",
+    "Dog-leg stair, 16 risers of 7.5 in; teak handrail; timber jali to the living and to the terrace.",
     "Plinth beam with DPC; plinth fill of compacted moorum, never black soil; anti-termite treatment at every layer.",
     "Footings dashed and indicative only: type and depth by the engineer after the soil test (two-storey loads).",
 ]

@@ -32,7 +32,7 @@ def take_off():
     q.append(("Frame", "Lintel band / ring beam (each, running length, both floors)", round(wall_len * 0.3048, 1), "m", "Along all walls; sizes by engineer"))
     slab = sum((x2 - x1) * (y2 - y1) for x1, x2, y1, y2 in SLAB_F1)
     q.append(("Frame", "First-floor RCC slab (about 5 in)", round(slab * 0.0929, 1), "sq m", "Over the back half, less the stair well"))
-    q.append(("Frame", "RCC dog-leg stair", STAIR["risers"], "risers", "3'-6\" flights, half landing 7'-6\" x 5'-8\""))
+    q.append(("Frame", "RCC dog-leg stair", STAIR["risers"], "risers", "3'-6\" flights, half landing 7'-6\" x 3'-6\", 16 risers of 7.5 in"))
     q.append(("Frame", "Galvanised steel posts for the terrace roof (about 100 mm SHS, 9 ft)", len(TERRACE_POSTS), "no.", "On RCC column stubs; trusses over the terrace in steel"))
     q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for _, _, s, e in RAILS_F1) * 0.3048, 1), "m", "Terrace open sides and stair well"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
@@ -44,12 +44,12 @@ def take_off():
             for r in ROOMS:
                 L, W = clear_dims(r)
                 finishes[FLOOR_FINISH[r[0]]] = finishes.get(FLOOR_FINISH[r[0]], 0) + L * W
-                if r[0] not in ("R03", "R07", "R33", "R13", "R17", "R37", "R06"):
+                if r[0] not in ("R08", "R07", "R33", "R39", "R13", "R17", "R37", "R06"):
                     skirting += 2 * (L + W)
     for k, v in finishes.items():
         q.append(("Floors", k, round(v * 0.0929, 1), "sq m", "Clear room areas; add 5-8% wastage"))
     q.append(("Floors", "Flush skirting, 4 in", round(skirting * 0.3048, 1), "m", "Room perimeters (dry rooms), doors not deducted"))
-    for rid in ("R03", "R07", "R33"):
+    for rid in ("R08", "R07", "R33", "R39"):
         with on_floor("F1" if rid in F1_ROOM_IDS else "G"):
             L, W = clear_dims(room_of(rid)); nm = room_of(rid)[1]
         q.append(("Wet rooms", f"Wall tiles to 7 ft, {nm}", round((2 * (L + W) * 7 - 2.5 * 7) * 0.0929, 1), "sq m", "Full height in the shower adds ~2 sq m"))

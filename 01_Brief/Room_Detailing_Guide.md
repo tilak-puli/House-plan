@@ -83,7 +83,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Stair and first floor
 23. **Avoid:** Uneven risers or a short landing: people trip, furniture cannot go up.  
-   **Do:** 17 equal risers of about 7 in, 10 in treads, 3'-6" flights and a half landing about 7'-6" x 5'-8"; check a mattress and a wardrobe panel can turn on it.  
+   **Do:** 16 equal risers of 7.5 in (the code maximum), 10 in treads, 3'-6" flights and a 3'-6" half landing; check a mattress and a wardrobe panel can turn on it before the landing is cast.  
    *Shown on: A-102, A-301*
 24. **Avoid:** Low headroom where the upper flight passes over the lobby.  
    **Do:** Keep 7 ft clear wherever people walk: under the upper flight the first 2 ft is left open as part of the lobby, and only the low part beyond is a cupboard.  
@@ -92,7 +92,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Railings 3'-6" high with vertical members at 4 in gaps, no horizontal rails to climb.  
    *Shown on: A-103*
 26. **Avoid:** West sun on the upper floor.  
-   **Do:** The upper master suite's west wall has only a small high vent; the main roof's 2 ft eave shades the walls; chiks on the terrace's south and east sides.  
+   **Do:** the first floor's west wall has only small high windows; the main roof's 2 ft eave shades the walls; chiks on the terrace's south and east sides.  
    *Shown on: A-202*
 27. **Avoid:** Covered terrace leaking into the living below.  
    **Do:** Waterproof the whole terrace slab with upturns at the walls and posts, fall 1:80 to the drain in the south-east corner, flood-test 48 h, then tile.  
@@ -180,7 +180,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Wardrobes and dressing
 52. **Avoid:** Clothes stored in a walk-in only one person can use.  
-   **Do:** The upper master has a 6 ft divider wardrobe and another on its east wall; the ground master has a wardrobe in its entry and another on its west wall; the second bedroom a 6 ft wardrobe on its west wall.  
+   **Do:** The ground master has a 6 ft divider wardrobe between its sleeping and sitting zones; the small room a 3 ft wardrobe on its east wall; Bedroom 2 has an 8 ft sliding wardrobe on its north wall and a 4 ft one in its alcove; the lobby downstairs has a coat, shoe and linen cupboard.  
    *Shown on: A-108*
 53. **Avoid:** Dressing mirror lit from behind.  
    **Do:** Mount the mirror light above or beside the mirror.  
@@ -215,9 +215,9 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Study (first floor, off the landing)
+## Study (first floor)
 63. **Avoid:** Window behind the screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** The study desk sits under its own south window, side-on to the light, in a small room with a door: quiet for calls.  
+   **Do:** The study faces north: even daylight, no glare; desks on the side walls so neither screen faces the window.  
    *Shown on: A-104*
 64. **Avoid:** Not enough power or data.  
    **Do:** Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.  
@@ -231,7 +231,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** No vents at bedrooms (windows, fans and AC are enough) or bathrooms (the door's bottom louvre feeds the exhaust fan).  
    *Shown on: A-401*
 67. **Avoid:** A long corridor that wastes area.  
-   **Do:** There is no corridor: the old passage beside the stair became the ground master's entry (with a wardrobe) and its attached bath, and every room opens straight off the short lobby.  
+   **Do:** There is no corridor: the lobby (with a coat, shoe and linen cupboard) and the stair hall form one short hall, and every room opens straight off it.  
    *Shown on: A-106*
 68. **Avoid:** No drip groove under sills and sunshades: black streaks down the walls.  
    **Do:** Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.  

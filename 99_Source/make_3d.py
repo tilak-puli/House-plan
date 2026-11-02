@@ -3,7 +3,7 @@ import re
 from geom import *
 
 # Short labels where the full room name will not fit in the 3D view
-LABELS = {"Stair and passage": "Stair", "Sitting and study (upper master)": "Sitting and study", "Upper master bedroom": "Upper master", "Covered terrace": "Covered terrace"}
+LABELS = {"Stair and passage": "Stair", "Master bedroom": "Master", "Covered terrace": "Covered terrace"}
 COVERED = {("Y", 61)}  # walls under the poomukham roof (and, upstairs, above the front gable): no sunshades
 FULL_HEIGHT_SILL = 1.0  # windows with a lower sill are cut through the wall
 
