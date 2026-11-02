@@ -280,3 +280,12 @@ In the same pass, the master vestibule was deepened so its pocket door fits.
 - The master is entered straight from the lobby.
 - The old vestibule becomes an open dressing bay in front of the bath.
 - The dressing bay was then merged into the master bath, making one 8 × 8.5 ft bath with a dry zone (basin and cupboard) at its north end, entered from the bedroom.
+
+**Owner ideas (see [owner_ideas.md](owner_ideas.md)):** removing the wet area and the common bath, and moving the stair west, were both declined after Noah's review. His smaller version 1N is applied instead:
+- the utility is 4 ft shorter (46–53);
+- its west end (42–46) is an open wash-and-water alcove for the dining, with a hand-wash basin, the RO and crockery counter, and the south window W11;
+- the washer is in the terrace laundry corner.
+
+To keep the way into the alcove clear, the dining's west-end chair is dropped. The owner will decide after seeing it whether to also make the common bath a powder room (option 2).
+
+**Owner decision:** the common bath is now a powder room (WC and basin, no shower); guests who need a bath use the guest room's bath. Its south end is a small store off the dining wash alcove (Noah's option 2, with a store).
