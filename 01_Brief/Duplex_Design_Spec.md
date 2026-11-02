@@ -56,7 +56,7 @@ x: 14            28       34.5    42                 53  57   61      67
    │ Guest room /│ G.bath │ Stair │   LIVING             │Pooj│       │
    │ den         │        │dogleg │                      ├────┤ POOM- │
    │             ├────────┤ clock-│                      │Gen-│ UKHAM │◄ main door
-   ├──door───────┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
+   ├─pocket door─┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
    │ Master      │        ├───────┤   (opening)          │    │       │
    │ bedroom     ├─vest.──┬──────┤ DINING [light well]  ├────┴───────┤ y 12.5
    │ (bed, head  │ M.bath │C.bath├──────────────────────┤  KITCHEN   │ y 11.5 / 7.5
@@ -66,10 +66,9 @@ x: 14            28       34.5    42                 53  57   61      67
 
 | Room | Extent (x × y) | Size | Clear | Notes |
 |---|---|---|---|---|
-| Master bedroom | 14–28 × 3–14 | 14 × 11 | 13'-5" × 10'-5" | the true south-west: king bed head south between two 3 ft south windows (stacked under Bedroom 2's bed and windows); 8 ft sliding wardrobe on the north wall; entered from its vestibule through a pocket door; a connecting door to the den |
-| Master vestibule | 28–36 × 8.75–11.5 | 8 × 2.75 | about 2'-6" clear | door from the lobby (opens out); pocket door to the bedroom, door to the bath; linen cupboard |
-| Master bath | 28–36 × 3–8.75 | 8 × 5.75 | 7'-7" × 5'-2" | WC on the x 36 wet wall, back to back with the common bath WC (one stack); 3 × 3 shower in the south-west corner on the bedroom wall; basin under the frosted south window; the door leaf screens the WC |
-| Guest room / den | 14–28 × 14–25 | 14 × 11 | 13'-5" × 10'-5" | the parents' sitting / TV room most days (connecting door to the master); shut that door and it is a guest suite with its own bath: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby |
+| Master bedroom | 14–28 × 3–15 | 14 × 12 | 13'-5" × 11'-5" | the largest bedroom, in the true south-west (vastu): king bed head south between two windows stacked under Bedroom 2's; 8 ft sliding wardrobe on the north wall; dressing table on the east wall; door straight from the lobby; a pocket door to the den; its bath (with a dry dressing zone) to the east |
+| Master bath | 28–36 × 3–11.5 | 8 × 8.5 | 7'-7" × 7'-11" | one room with a dry zone at the north end (basin with a mirror cabinet, tall linen and dressing cupboard, the first view from the door) and the wet zone to the south: WC on the x 36 wet wall back to back with the common bath WC (one stack), 3 × 3 shower in the south-west corner under the frosted window; entered from the bedroom, the door leaf screening the WC and shower |
+| Guest room / den | 14–28 × 15–25 | 14 × 10 | 13'-5" × 9'-5" | the parents' sitting / TV room most days (pocket door to the master); shut it and it is a guest suite with its own bath: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby; garden door to the back sit-out |
 | Common bath | 36–42 × 3–11.5 | 6 × 8.5 | 5'-5" × 7'-10" | three bands: shower across the south end (5'-5" × 3'), WC mid-wall on the west wet wall with 3'-6" clear in front, basin opposite; door from the stair hall opening inward so its leaf screens the WC; under Bedroom 2's bath (one stack) |
 | Guest bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | the old master bath, now off the den, opening inward; shower about 3 × 3; north window centred on the shower; drains along the north walkway |
 | Lobby | 28–34.5 × 11.5–18 | 6.5 × 6.5 | | doors to the master suite and the den; a 3'-4" coat, shoe and linen cupboard on the north wall clear of the den door; open to the stair hall |

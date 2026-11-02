@@ -274,3 +274,9 @@ In the same pass, the master vestibule was deepened so its pocket door fits.
 **Left for the owner:**
 - B5 (laundry upstairs);
 - B9 (closing the road side of the terrace).
+
+**Owner change afterwards:** the master vestibule is dropped, because at about 2'-6" deep it was too small to do what Noah intends.
+- The master grows north to y 15 (14 × 12 ft, the largest bedroom, as vastu prefers), and the den is 14 × 10 ft.
+- The master is entered straight from the lobby.
+- The old vestibule becomes an open dressing bay in front of the bath.
+- The dressing bay was then merged into the master bath, making one 8 × 8.5 ft bath with a dry zone (basin and cupboard) at its north end, entered from the bedroom.
