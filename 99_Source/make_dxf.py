@@ -57,6 +57,8 @@ def make(path):
             msp.add_circle(P(g[0], g[1]), g[2] * MM, dxfattribs={"layer": "A-SITE"}); text(fid, g[0], g[1] + g[2] + 0.5, 70)
     for x, y, r in TREES:
         msp.add_circle(P(x, y), r * MM, dxfattribs={"layer": "L-PLNT"})
+    for x, y, r, k in FOOD_TREES:
+        msp.add_circle(P(x, y), r * MM, dxfattribs={"layer": "L-PLNT"})
 
     for fl, dy in (("G", 0.0), ("F1", 40.0)):
         OFF[0] = dy

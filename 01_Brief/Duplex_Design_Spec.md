@@ -30,7 +30,7 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 | | Value |
 |---|---|
 | House | 53 × 22 ft (x 14–67, y 3–25) |
-| Front land (east) | 109 ft to the road: forecourt, car porch, drive, vegetable garden, workshop |
+| Front land (east) | 109 ft to the road: forecourt, car porch, drive, permaculture food garden, workshop |
 | Back garden (west) | 8 ft: herb beds, clothes line, the den's garden sit-out under the pergola |
 | Side walkways | 3 ft south; 2'-3" to 4'-2" north (the boundary slants) |
 | Ground floor | 1,166 sq ft |
@@ -45,12 +45,16 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 | House | 14–67 (steps to 69) | as drawn |
 | Forecourt | 69–82 | stone paving round the tulsi thara on the door axis; a stone path from its north-east corner to the car porch, under the neem; two coconut palms to its south |
 | Septic tank | 84–90, north side | in the plot's north-west quadrant between the forecourt and the car porch, behind a hedge; the tanker reaches it from the car porch |
-| Car porch | 91–109, north side | 18 × 10 ft under a steel pergola with creepers, at the end of the drive; two-wheelers alongside |
+| Car porch | 91–109, north side | 18 × 10 ft under a steel pergola grown with vegetable creepers (bottle, ridge and bitter gourd, flat beans), at the end of the drive; two-wheelers alongside |
 | Drive | 109–176, north side | 10 ft wide, hugging the slanted north boundary from the gate. Vastu: the way in for cars is on the right as you face the house from the road |
 | Gate | 176, north-east | 12 ft sliding gate with a 3 ft wicket; house meter in its pillar |
-| Soak pit | 90, south side | about 23 ft from the house and 60 ft from the borewell |
-| Vegetable garden | 110–135, south side | four raised beds 4 ft wide on 6 ft centres running north–south in full sun; a row of fruit trees along the drive to the north; taps on the south edge; the plot centre (about x 97, y 16) stays open |
-| Compost | 102–105, south side | two shaded pits |
+| Kitchen garden | 69.5–81.5, south side | permaculture zone 1, a few steps from the kitchen: a herb spiral (curry leaf, mint, coriander, tulsi, lemongrass, chilli) and daily greens (gongura, thotakura, palak, methi) under the coconut palms |
+| Banana circle | 86, south side | banana, papaya and colocasia round a mulch pit fed by the kitchen's grey water through a grease trap (no septic effluent) |
+| Soak pit | 90, south side | septic effluent and bath grey water; about 23 ft from the house and 60 ft from the borewell |
+| Fruit guilds | 91.5–109, south side | permaculture zone 2: guava, sapota, lemon, pomegranate, custard apple and a drumstick tree, each ringed with pigeon pea, chilli, brinjal, sweet potato or pumpkin and turmeric; mulched, on drip; the plot centre stays an open clearing |
+| Vegetable garden | 110–135, south side | four raised beds 4 ft wide on 6 ft centres running north–south in full sun, built up with compost, red soil and sand over the black cotton soil, straw-mulched, on drip from the sump (which takes the roof rain), crops rotated; a 35–50% shade net over them in April–May; a row of fruit trees along the drive to the north; the plot centre (about x 97, y 16) stays open |
+| Compost | 102–108, south side | two shaded pits and a worm bin among the fruit guilds |
+| Living fence | 69.5–135.5, south boundary | gliricidia and pigeon pea inside the compound wall, cut back for mulch and nitrogen; shelters the beds from the hot west wind |
 | Carpentry workshop | 136–152, south side | 16 × 12 ft demountable kit; its 4 ft covered verandah faces north to the drive for unloading timber; 3-phase power; machine noise about 70 ft from the house |
 | Shared toilet | 153–157.5, south side | one ready-made FRP cabin for the workshop and the shops, door to the north, a sealed pipe to the main septic tank |
 | Sump, borewell, recharge pit | 147–160, beside the drive | in the north-east quadrant; tanker access from the drive |
@@ -88,7 +92,7 @@ x: 14            28       34.5    42                 53  57   61      67
    │             ├────────┤ clock-│                      │Gen-│ UKHAM │◄ main door
    ├─pocket door─┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
    │ Master      │        ├───────┤   (opening)          │    │       │
-   │ bedroom     ├─vest.──┬──────┤ DINING [light well]  ├────┴───────┤ y 12.5
+   │ bedroom     ├─vest.──┬──────┤ DINING               ├────┴───────┤ y 12.5
    │ (bed, head  │ M.bath │C.bath├──────────────────────┤  KITCHEN   │ y 11.5 / 7.5
    │  south)     │        │      │  Utility (wet area)  │            │
    └─────────────┴─────────┴──────┴──────────────────────┴────────────┘ y 3
@@ -100,12 +104,12 @@ x: 14            28       34.5    42                 53  57   61      67
 | Master bath | 28–34.5 × 3–11.5 | 6.5 × 8.5 | 6'-1" × 7'-11" | entered from the bedroom (door opens inward, its leaf screening the WC); 3 × 3'-4" shower in the south-west corner under the frosted window, WC on the x 34.5 wet wall under Bath 2's WC (one stack), basin with a mirror cabinet on the north wall |
 | Guest room / den | 14–28 × 15–25 | 14 × 10 | 13'-5" × 9'-5" | the parents' sitting / TV room most days (pocket door to the master); shut it and it is a guest suite with its own bath: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby; garden door to the back sit-out |
 | Powder room | 34.5–39.5 × 18–25 | 5 × 7 | 4'-6" × 6'-6" | WC and basin, no shower (anyone who needs a bath uses the guest room's bath); its south wall on the guest bath's line (y 18); door from the stair hall opening inward; basin and a feature tile wall on the east wall past the door swing, WC at the far end on the wet wall back to back with the guest bath shower; frosted north window W51 |
-| TV bay | 39.5–42 × 18–25 | 2.5 × 7 | | the living's focal wall: a 7 ft bay on the powder room and guest bath line, its back wall lined in teak slats with a concealed LED wash; a 5 ft floating console at 1'-3" (set-top box and router inside, floor clear below) and a 65 in TV centred on the sofa about 10'-9" away; a slim lamp niche at the end of the entry axis |
+| TV bay | 39.5–42 × 18–25 | 2.5 × 7 | | the living's focal wall: a 7 ft bay on the powder room and guest bath line, its back wall a plain matt mid-tone (no slats or pattern around the screen) with a dim bias light behind the TV; a 5 ft floating console at 1'-3" (set-top box and router inside, floor clear below) and a 65 in TV centred on the sofa about 10'-9" away; a slim lamp niche at the end of the entry axis |
 | Guest bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | the old master bath, now off the den, opening inward; shower about 3 × 3; north window centred on the shower; drains along the north walkway |
 | Hall | 28–34.5 × 11.5–18 | 6.5 × 6.5 | | the bedroom end of one open hall (no lobby or wing door): the master and den doors open off it; it runs straight on into the stair hall |
-| Stair hall | 34.5–42 × 12.33–18 | 7.5 × 5'-8" | | the stair end of the open hall, in front of the stair foot and open to the living for 5'-8"; the powder room door; a cupboard under the high end of the upper flight (DB, inverter, router) faces it |
+| Stair hall | 34.5–42 × 12.33–18 | 7.5 × 5'-8" | | the stair end of the open hall, in front of the stair foot; open to the living through a 2'-7" way beside a tall teak display unit (2'-11" x 1'-5", 7 ft, open niches to the living) that screens the bedroom doors from the main door; the powder room door; a cupboard under the high end of the upper flight (DB, inverter, router) faces it |
 | Stair | 34.5–42 × 3–12.33 | 7.5 × 9'-4" | | in the middle of the south side (vastu: the stair in the south): dog-leg rising clockwise, up the east flight going south, a right turn on the half landing against the south wall, up the west flight going north; a timber jali W10 to the dining; a window over the half landing |
-| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 5'-6" extending table under a 5 × 4'-6" light well (to the covered terrace; jali grating and a glazed lid); built-in bench on the south wall and a chair at the east end (4 daily; the west end stays open as the way to the wash alcove; 8 at festivals with the table extended west); 9 in granite serving ledge under the kitchen hatch; open to the living |
+| Dining | 42–53 × 7.5–12.5 | 11 × 5 | | 5'-6" extending table, daylight from the wash alcove's south window and the stair jali (the light well was dropped); built-in bench on the south wall and a chair at the east end (4 daily; the west end stays open as the way to the wash alcove; 8 at festivals with the table extended west); 9 in granite serving ledge under the kitchen hatch; open to the living |
 | Dining wash alcove | 42–46 × 3–7.5 | 4 × 4.5 | | open to the dining: hand-wash basin with a mirror on the east wall (plumbed from the utility side), water / RO and crockery counter under the south window W11, which gives the dining daylight |
 | Wet area (utility) | 46–53 × 3–7.5 | 7 × 4.5 | | utility sink with a low bucket tap and floor trap, dish rack, ceiling airer; service door to the walkway; door to the kitchen (the washing machine is in the terrace laundry corner) |
 | Kitchen | 53–67 × 3–12.5 | 14 × 9.5 | 13'-7" × 9'-1" | L-counter: prep sink centred under the south window W07 with a 6 ft prep run to a full-height corner unit; hob at y 8.2 on the east wall with about 2 ft landing each side; fridge and a tall pantry (microwave inside) grouped at the north end against the east run; serving hatch with glazed sliding shutters; sliding entry from the living |
@@ -125,7 +129,7 @@ x: 14            28       34.5    42                 53  57   61      67
 | Landing | 28–34.5 × 10.5–18 | 6.5 × 7.5 | | west of the stair head: doors to Bedroom 2, the study and the upper toilet |
 | Stair head | 34.5–42 × 12.33–16 | 7.5 × 3'-8" | | the stair arrives here facing north to a lit teak lamp shelf; the 3'-6" terrace door to the east, the box room door to the north |
 | Box room | 34.5–42 × 16–25 | 7.5 × 9 | | linen, suitcases and festival things on open shelving; north window W45; a spare socket so it can take the washer later (over the powder room: wet over wet if it ever becomes a laundry) |
-| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts set on wall corners below (x 53 and 61); closed teak jali parapets on the north and south, an open railing on the road side; zoned: laundry in the south-west (washing machine against the stair wall, with its points cast in stage 1, and the drying rails beside it), lounge in the north-west (diwan facing the view, chairs either side), festival floor in the middle, planters along the whole east edge; the light well with its rail between laundry and lounge |
+| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts set on wall corners below (x 53 and 61); closed teak jali parapets on the north and south, an open railing on the road side; zoned: laundry in the south-west (washing machine against the stair wall, with its points cast in stage 1, and the drying rails beside it), lounge in the north-west (diwan facing the view, chairs either side), festival floor in the middle, planters along the whole east edge |
 
 ## Levels and stair
 

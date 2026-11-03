@@ -269,12 +269,13 @@ class Plan:
     def floor_extras(self):
         """Stair everywhere; on the first floor also the railings, the terrace posts and the roof below."""
         self.stair()
-        lx1, lx2, ly1, ly2 = LIGHT_WELL
-        if FLOOR[0] == "F1":
+        if LIGHT_WELL:
+            lx1, lx2, ly1, ly2 = LIGHT_WELL
+        if LIGHT_WELL and FLOOR[0] == "F1":
             self.line(lx1, ly1, lx2, ly2, lw=0.3, color=GREY); self.line(lx1, ly2, lx2, ly1, lw=0.3, color=GREY)
             self.text("LIGHT WELL", (lx1 + lx2) / 2, (ly1 + ly2) / 2 + 0.9, 4.4, "Helvetica-Bold", GREY)
             self.text("jali grating, glazed lid", (lx1 + lx2) / 2, (ly1 + ly2) / 2 - 1.1, 4.0, color=GREY)
-        else:
+        elif LIGHT_WELL:
             self.rect(lx1, lx2, ly1, ly2, stroke=GREY, lw=0.4, dash=(3, 2))
             self.text("LIGHT WELL ABOVE", (lx1 + lx2) / 2, ly2 - 0.6, 4.0, color=GREY)
         if FLOOR[0] == "F1":
@@ -429,16 +430,20 @@ def site_features(pl, labels=True, size=5, x_end=None):
                         pl.rect(b[0], min(b[1], x_end), b[2], b[3], lw=0.3, fill=colors.HexColor("#EEF3E8"))
                 if labels: pl.text("VEGETABLE GARDEN", (x1 + x2) / 2, 13.6, size + 1, "Helvetica-Bold", colors.HexColor("#4F6E34"))
                 continue
-            fill = {"DRIVE": colors.HexColor("#F1EEE8"), "CARPORT": colors.HexColor("#F1EEE8"), "WORKSHOP": colors.HexColor("#DADADA"), "SHOP1": colors.HexColor("#E4DCCB"), "SHOP2": colors.HexColor("#E4DCCB")}.get(fid)
+            fill = {"HERBS": colors.HexColor("#EEF3E8"), "GUILD": colors.HexColor("#EEF3E8"), "FENCE": colors.HexColor("#B9CF9A"), "WORM": colors.HexColor("#E4DCCB"), "DRIVE": colors.HexColor("#F1EEE8"), "CARPORT": colors.HexColor("#F1EEE8"), "WORKSHOP": colors.HexColor("#DADADA"), "SHOP1": colors.HexColor("#E4DCCB"), "SHOP2": colors.HexColor("#E4DCCB")}.get(fid)
             if fid == "SHOPS":
                 pts = SHOP_WALL
                 for (a, b), (c_, d) in zip(pts, pts[1:]):
                     pl.line(a, b, c_, d, lw=1.4)  # short road wall north of the shops
                 if labels: pl.text("2 RENTAL SHOPS (BUILD WHEN WANTED)", (x1 + x2) / 2, y1 - 1.2, size, "Helvetica-Bold", ACC)
                 continue
-            pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid in ("PERGOLA", "CARPORT", "WVERANDAH", "SHOPBACK") else None, fill=fill, stroke=INK)
+            pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid in ("PERGOLA", "CARPORT", "WVERANDAH", "SHOPBACK", "RAINTANK") else None, fill=fill, stroke=INK)
             if labels and fid not in ("GATE", "STEPS", "HEDGE1", "APRON") and x2 - x1 > 2.5:
-                pl.text({"WVERANDAH": "VERANDAH", "CARPORT": "CAR PORCH", "PATH": "FORECOURT", "PATH2": "", "SHOP1": "SHOP 1", "SHOP2": "SHOP 2", "SITEWC": "WC"}.get(fid, fid), (x1 + x2) / 2, (y1 + y2) / 2, size)
+                pl.text({"WVERANDAH": "VERANDAH", "CARPORT": "CAR PORCH", "PATH": "FORECOURT", "PATH2": "", "SHOP1": "SHOP 1", "SHOP2": "SHOP 2", "SITEWC": "WC", "HERBS": "", "GUILD": "", "FENCE": "", "WORM": ""}.get(fid, fid), (x1 + x2) / 2, y2 + 0.8 if fid == "COMPOST" else (y1 + y2) / 2, size)
+            if labels and fid == "HERBS":
+                pl.text("KITCHEN GARDEN", (x1 + x2) / 2 + 1.5, y2 - 1.0, size, "Helvetica-Bold", colors.HexColor("#4F6E34"))
+            if labels and fid == "GUILD":
+                pl.text("FRUIT GUILDS", (x1 + x2) / 2, y2 - 0.9, size + 1, "Helvetica-Bold", colors.HexColor("#4F6E34"))
         elif kind == "poly" and fid == "DRIVE":
             pts = [(x, y) for x, y in drive_poly() if x <= x_end]
             if len(pts) > 2:
@@ -448,5 +453,11 @@ def site_features(pl, labels=True, size=5, x_end=None):
             x, y, r = g
             if x - r >= x_end:
                 continue
-            pl.circle(x, y, r, lw=0.4)
-            if labels: pl.text(fid, x, y + r + 0.6, size)
+            pl.circle(x, y, r, lw=0.4, fill=colors.HexColor("#DCE8CC") if fid == "SPIRAL" else None)
+            if labels: pl.text({"SPIRAL": "HERB SPIRAL", "BANANA": ""}.get(fid, fid), x + (1.0 if fid == "SPIRAL" else 0), y - r - 1.4 if fid in ("SPIRAL", "SOAK") else y if fid == "BANANA" else y + r + 0.6, size)
+    for x, y, r, k in FOOD_TREES:
+        if x - r < x_end:
+            pl.circle(x, y, r, lw=0.3, color=colors.HexColor("#6F8E4A"), fill=colors.HexColor("#DCE8CC") if k in ("banana", "papaya") else None)
+    bc = next((f[3] for f in SITE_FEATURES if f[0] == "BANANA"), None)
+    if labels and bc and bc[0] < x_end:
+        pl.text("BANANAS", bc[0], bc[1], size)

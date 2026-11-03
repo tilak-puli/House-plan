@@ -70,7 +70,7 @@ def make(path):
 
     ws = sheet(wb, "Rooms", ["ID", "Room", "Zone", "E-W (ft)", "N-S (ft)", "Area (sq ft)", "Area (sq m)", "Clear E-W (ft)", "Clear N-S (ft)", "Clear area (sq ft)", "Floor level", "Ceiling", "Notes"],
                [7, 24, 14, 9, 9, 11, 11, 10, 10, 11, 11, 16, 34])
-    notes = {"R10": "Open to the living; light well above the table", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts; jali parapets north and south, railing on the road side",
+    notes = {"R10": "Open to the living; daylight from the wash alcove window", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts; jali parapets north and south, railing on the road side",
              "R06": "Dog-leg stair in the middle of the south side, rising clockwise, jali to the dining", "R01": "Master suite: entered through its vestibule, bath beside it, connecting door to the den", "R42": "Parents' sitting room / guest room with its own bath (shut the connecting door)",
              "R31": "Entered through its vestibule (pocket door)", "R33": "Over the master bath (one stack)", "R40": "On the south stack, under Bedroom 2's bath", "R18": "One step below the living, shoes off"}
     upper = {r[0] for r in ROOMS_F1}

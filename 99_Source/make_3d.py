@@ -74,8 +74,8 @@ def model_data():
             "pergola": list(feat["PERGOLA"]),
             "gate2": list(feat["GATE2"][2:]) if "GATE2" in feat else None,
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
-                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "PATH2", "HEDGE1", "OTTA", "GSTEP", "CARPORT", "WORKSHOP", "WVERANDAH", "COMPOST", "RECHARGE", "BORE", "SHOP1", "SHOP2", "SITEWC") if k in feat}},
-            "trees": [list(t) for t in TREES]}
+                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "PATH2", "HEDGE1", "OTTA", "GSTEP", "CARPORT", "WORKSHOP", "WVERANDAH", "COMPOST", "RECHARGE", "BORE", "SHOP1", "SHOP2", "SITEWC", "HERBS", "SPIRAL", "BANANA", "GUILD", "WORM", "FENCE", "RAINTANK") if k in feat}},
+            "trees": [list(t) for t in TREES], "food": [list(t) for t in FOOD_TREES]}
 
 
 def make(path):

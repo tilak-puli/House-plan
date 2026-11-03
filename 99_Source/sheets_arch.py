@@ -130,18 +130,21 @@ def sheet_site(c):
     pl.text("HOUSE", 40.5, 15.5, 7, "Helvetica-Bold")
     pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}", 40.5, 11.5, 5, color=GREY)
     for x, y, rr in TREES:
-        pl.text("neem" if rr > 3 else "coconut" if rr < 2 else "fruit tree", x, y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
+        pl.text("neem" if rr > 3 else "coconut" if rr < 2 else "fruit tree", x, y + rr + 0.5 if rr < 2 or rr > 3 else y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
+    for x, y, rr, k in FOOD_TREES:
+        if k not in ("banana", "papaya"):
+            pl.text(k, x, y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
     yN = lambda x: plot_north(x)
     pl.hdim(PLOT_X1, 14, -3, "8'", 5); pl.hdim(14, 67, -3, "53' HOUSE", 5); pl.hdim(67, PLOT_X2, -3, f"{PLOT_X2 - 67:.0f}' FRONT LAND", 5)
     pl.hdim(PLOT_X1, PLOT_X2, -7, f"{PLOT_X2 - PLOT_X1:.0f}'-0\" PLOT (WEST BOUNDARY TO THE EAST ROAD)", 5.5)
     pl.vdim(0, yN(PLOT_X1), PLOT_X1 - 3, "27'", 5); pl.vdim(0, yN(91), 91, "30' (half-way)", 5); pl.vdim(0, yN(PLOT_X2), PLOT_X2 + 6, "40'", 5)
     pl.north(PW - 105 * mm, PH - 40 * mm)
-    pl.scalebar(250 * mm, 118 * mm)
+    pl.scalebar(250 * mm, 128 * mm)
     notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES if f[0] not in ("APRON", "STEPS", "GSTEP", "FEET", "WSTEP")]
     half = (len(notes) + 1) // 2
-    s.bullets(notes[:half], 22 * mm, 92 * mm, 150 * mm, 6.0)
+    s.bullets(notes[:half], 22 * mm, 116 * mm, 150 * mm, 6.0)
     s.bullets(notes[half:] + [f"Plot area about {plot_area():,.0f} sq ft; compound wall about {plot_perimeter():.0f} ft, the road face in exposed brick or local stone, the rest precast post-and-panel 5 ft.",
-                              "Ground falls 1:100 away from the house and down the drive to the road; roof water to the recharge pit."], 178 * mm, 92 * mm, 150 * mm, 6.0)
+                              "Ground falls 1:100 away from the house and down the drive to the road; roof water to the recharge pit."], 178 * mm, 116 * mm, 150 * mm, 6.0)
     c.showPage()
 
 
@@ -211,7 +214,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
 
 
 SECTIONS = {"A": ("X", 44.5, "Cross section through the dining nook, dining, living and the covered terrace above"),
-            "B": ("Y", 9.5, "Long section through the master suites and baths on both floors, the stair, the dining under the light well with the covered terrace above, and the kitchen")}
+            "B": ("Y", 9.5, "Long section through the master suites and baths on both floors, the stair, the dining with the covered terrace above, and the kitchen")}
 
 
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):

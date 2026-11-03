@@ -117,7 +117,7 @@ ROOM_FLOOR = {"R08": -0.04, "R07": -0.04, "R40": -0.04, "R39": -0.04, "R33": -0.
 CEILINGS = {
     "R01": ("flat", 9.4), "R04": ("flat", 9.4), "R05": ("flat", 9.4), "R40": ("flat", 8.5), "R42": ("flat", 9.4), "R08": ("flat", 8.5), "R20": ("flat", 9.4),
     "R06": ("sloped", "open to the roof (stair)"), "R09": ("flat", 9.4), "R07": ("flat", 8.5), "R38": ("flat", 9.5), "R39": ("flat", 8.5), "R13": ("flat", 9.4), "R19": ("flat", 9.4), "R15": ("flat", 9.4),
-    "R10": ("sloped", "slab soffit at 9'-5\", open over the table to the light well"), "R18": ("flat", 9.4), "R16": ("flat", 9.4), "R11": ("flat", 9.0),
+    "R10": ("flat", 9.4), "R18": ("flat", 9.4), "R16": ("flat", 9.4), "R11": ("flat", 9.0),
     "R17": ("sloped", "exposed rafters"),
     "R31": ("flat", 9.5), "R32": ("flat", 9.5), "R33": ("flat", 8.5), "R34": ("sloped", "follows roof"), "R41": ("sloped", "follows roof"),
     "R35": ("flat", 9.5), "R36": ("flat", 9.5), "R37": ("sloped", "steel trusses, tiled roof above"),
@@ -142,16 +142,22 @@ SITE_FEATURES = [
     ("PERGOLA", "Creeper pergola along the west wall (shades the master window; no big trees near walls)", "rect", (11.4, 13.4, 4.5, 24.0)),
     ("TULSI", "Tulsi thara on the door axis in the forecourt", "circle", (72.4, 18.75, 0.6)),
     ("PATH", "Stone-paved forecourt in front of the poomukham, round the tulsi thara; a stone path from its north-east corner to the car porch", "rect", (69.0, 82.0, 11.0, 26.5)),
-    ("CARPORT", "Car porch 18 x 10 ft at the end of the drive on the north side, under a steel pergola with creepers (two-wheelers alongside)", "rect", (91.0, 109.0, 19.8, 29.6)),
+    ("CARPORT", "Car porch 18 x 10 ft at the end of the drive on the north side, under a steel pergola grown with vegetable creepers (bottle, ridge and bitter gourd, flat beans) for shade and food (two-wheelers alongside)", "rect", (91.0, 109.0, 19.8, 29.6)),
     ("PATH2", "Stone path from the forecourt to the car porch, under the neem", "rect", (82.0, 91.0, 17.5, 20.5)),
     ("DRIVE", "Drive 10 ft wide along the slanted north boundary, from the road gate in the north-east to the car porch (vastu: the way in on the right as you face the house), gravel with paver wheel strips", "poly", (109.0, 176.0)),
     ("GATE", "Sliding gate 12 ft at the north-east of the road front with a 3 ft wicket for people", "rect", (176.0, 176.5, 27.6, 39.6)),
     ("SEPTIC", "Septic tank, 2 chambers, sealed RCC, in the plot's north-west quadrant between the forecourt and the car porch behind a hedge; the tanker reaches it from the car porch", "rect", (84.0, 90.0, 22.5, 28.5)),
-    ("SOAK", "Lined soak pit for septic effluent and grey water, on the south side about 23 ft from the house and 60 ft from the borewell", "circle", (90.0, 6.0, 1.6)),
+    ("SOAK", "Lined soak pit for septic effluent and bath grey water (the kitchen's grey water goes to the banana circle), on the south side about 23 ft from the house and 60 ft from the borewell", "circle", (90.0, 6.0, 1.6)),
     ("HEDGE1", "Hedge screening the septic tank from the forecourt", "rect", (82.6, 83.2, 20.5, 29.0)),
     ("RECHARGE", "Rainwater recharge pit (roof run-off), between the workshop verandah and the drive", "rect", (147.5, 152.5, 18.5, 23.5)),
-    ("VEG", "Vegetable garden on the sunny south side: raised beds 4 ft wide on 6 ft centres with 2 ft paths, taps along the south edge; a row of fruit trees along the drive to the north", "rect", (110.0, 135.0, 1.0, 20.0)),
-    ("COMPOST", "Two compost pits, shaded, south of the car porch", "rect", (102.0, 105.0, 2.0, 5.5)),
+    ("HERBS", "Kitchen garden (permaculture zone 1) south of the forecourt, a few steps from the kitchen: daily greens (gongura, thotakura, palak, methi) in a mulched bed under the two coconut palms, round a herb spiral", "rect", (69.5, 81.5, 1.0, 10.0)),
+    ("SPIRAL", "Herb spiral, 5 ft across and 3 ft high, laterite rubble and soil: curry leaf, mint, coriander, tulsi, lemongrass, chilli (dry-loving herbs at the top, mint at the wet foot)", "circle", (72.0, 5.8, 2.2)),
+    ("BANANA", "Banana circle on the kitchen's grey water (a grease trap, then a pipe to a 3 ft mulch pit filled with straw and leaves): banana, papaya and colocasia round it; no septic effluent", "circle", (86.0, 8.6, 2.8)),
+    ("GUILD", "Fruit guilds (permaculture zone 2) south of the car porch: guava, sapota, lemon, pomegranate, custard apple and a drumstick tree, each ringed with pigeon pea, chilli and brinjal, sweet potato or pumpkin as ground cover and turmeric and ginger in the shade; mulched and on drip; the plot centre (about x 97, y 16) is left as an open clearing (vastu); no big-rooted trees (mango, jamun) near the house or the septic tank", "rect", (91.5, 109.0, 1.0, 19.0)),
+    ("VEG", "Vegetable garden (permaculture zone 2) on the sunny south side: raised beds 4 ft wide on 6 ft centres with 2 ft paths, built up with compost, red soil and sand over the black cotton soil (never dug in), a thick straw mulch and drip lines fed from the sump (roof rain); crops rotated (tomato, okra, beans, onion, greens); a 35-50% shade net on GI hoops over the beds in April-May; a row of fruit trees along the drive to the north", "rect", (110.0, 135.0, 1.0, 20.0)),
+    ("COMPOST", "Two compost pits, shaded by the fruit guilds, south of the car porch: kitchen scraps, leaves and the living-fence cuttings go back to the beds", "rect", (102.0, 105.0, 2.0, 5.5)),
+    ("WORM", "Worm bin (vermicompost), shaded, beside the compost pits", "rect", (105.5, 108.0, 2.0, 4.5)),
+    ("FENCE", "Living fence along the south boundary inside the compound wall: gliricidia and pigeon pea, cut back three or four times a year and the cuttings dropped on the beds as mulch and nitrogen; shelters the beds from the hot west wind", "rect", (69.5, 135.5, 0.2, 0.9)),
     ("WORKSHOP", "Carpentry workshop 16 x 12 ft, built cheap and demountable: bolted steel frame (galvanised SHS posts on pad footings with anchor bolts), precast RCC post-and-panel walls (the compound-wall system: panels lift out), an insulated metal sandwich roof screwed to steel purlins, a PCC floor on compacted fill; every part unbolts or lifts out for reuse; 3-phase power on a surface-run sub-board, 8 ft double doors on the steel frame, dust extraction, a lockable timber store at the west end", "rect", (136.0, 152.0, 1.0, 13.0)),
     ("WVERANDAH", "Covered work verandah 16 x 4 ft on the north side facing the drive, for unloading and working timber; the roof sheet carried on to extra steel posts, a paver floor (lifts out)", "rect", (136.0, 152.0, 13.0, 17.0)),
     ("SUMP", "Sump in the north-east quadrant beside the drive (tanker access from the drive), filled from the road main", "rect", (154.5, 159.5, 19.5, 24.5)),
@@ -165,6 +171,10 @@ SITE_FEATURES = [
     ("WSTEP", "Landing at the wet-area service door, then 3 steps down along the wall (4 risers of about 5 in), 1'-3\" deep so a clear strip of the walkway stays beside them", "rect", (46.5, 51.7, 1.35, 2.6)),
     ("APRON", "Plinth protection apron 3 ft, sloped away", "apron", (11, 70, 0, 27)),
 ]
+# Fruit guild trees and bananas (x, y, canopy radius, kind), kept 25 ft+ from the house, 9 ft+ from the septic tank and 4 ft+ clear of the plot centre (97, 16)
+FOOD_TREES = [(93.5, 11.5, 2.0, "guava"), (103.5, 16.3, 2.4, "sapota"), (107.5, 14.0, 1.5, "lemon"), (95.0, 6.0, 1.5, "pomegranate"),
+              (98.5, 10.5, 1.6, "custard apple"), (107.5, 10.0, 1.3, "drumstick")] + [(round(86.0 + 2.8 * c, 2), round(8.6 + 2.8 * s, 2), 1.1, k) for c, s, k in
+              ((1, 0, "banana"), (0, 1, "banana"), (-1, 0, "papaya"), (0.6, -0.8, "banana"), (-0.6, 0.8, "banana"))]
 TREES = [(float(x), round(plot_north(x) - 12.8, 2), 2.2) for x in (113, 120, 127, 134)] + [(86.5, 16.0, 3.2), (77.0, 3.2, 1.8), (83.0, 3.2, 1.8)]  # a fruit-tree row along the drive (it shades the drive, not the beds); a neem by the forecourt; two coconut palms south of the forecourt, 9 ft+ from the house  # fruit trees on the north boundary, far from the house
 JALI_SCREENS = [("X", 24.9, 61.4, 66.0)]  # free-standing timber jali screens: the poomukham's open north side (the neighbour is 2 ft away)
 FUTURE_WALLS = []
@@ -193,7 +203,7 @@ TRANSOM_TYPES = {
 }
 TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D43": "jali_closable", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
             "D31": "jali_closable", "D35": "jali_closable", "D33": "louvre", "D39": "louvre", "D36": "jali"}  # rooms breathe into the stair well with doors shut
-HINGE_AT_END = {"D36"}  # D36 hinged at its north jamb so its leaf clears the light-well rail  # doors hinged at their far (e) jamb
+HINGE_AT_END = {"D36"}  # D36 hinged at its north jamb so the open leaf lies along the wall  # doors hinged at their far (e) jamb
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
 TRANSOM_Z = (7.5, 9.0)  # sill and head above the floor
 
@@ -244,7 +254,7 @@ FURNITURE = [
     ("F48", "Guest bath", "WC (EWC) on the bedroom wall", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
     ("F49", "Guest bath", "Wash basin with a mirror cabinet above", 32.3, 33.8, 18.3, 19.0, 1, "Wall-hung", "rect"),
     ("F50", "Guest bath", "Shower glass partition (shower in the north-east corner, about 3' x 3')", 31.2, 34.2, 21.4, 21.55, 1, "8 mm toughened glass", "glass"),
-    ("F24", "Dining", "Dining table 5'-6\" x 2'-6\" under the light well (4 daily: the bench and a chair at the east end; its west end stays open as the way to the wash alcove; extends west to about 7'-6\" with stools for festivals, 8 seats)", 44.5, 50.0, 9.0, 11.5, 1, "Teak, extending", "rect"),
+    ("F24", "Dining", "Dining table 5'-6\" x 2'-6\" (4 daily: the bench and a chair at the east end; its west end stays open as the way to the wash alcove; extends west to about 7'-6\" with stools for festivals, 8 seats)", 44.5, 50.0, 9.0, 11.5, 1, "Teak, extending", "rect"),
     ("F27", "Dining", "Dining chair at the east end of the table", 50.1, 51.5, 9.55, 10.95, 1, "Teak, cane seat", "rect"),
     ("F28", "Dining", "Built-in bench on the dining's south wall, storage below (the table extends west into the alcove opening for festivals)", 46.2, 50.0, 7.85, 8.85, 1, "Teak, cushion", "rect"),
     ("F33", "Dining", "Granite serving ledge 9 in deep under the kitchen hatch (dining side)", 52.0, 52.75, 7.9, 12.1, 1, "Granite top on brackets", "rect"),
@@ -261,13 +271,13 @@ FURNITURE = [
     ("F65", "Kitchen", "Prep sink, single bowl + drainboard, centred under the window (washes vegetables; vessels go to the wet area)", 56.7, 58.5, 3.6, 5.2, 1, "SS 304, under-mount", "rect"),
     ("F37", "Kitchen", "Tall pantry unit 2', microwave inside, against the east run (tall storage grouped at the north end)", 62.5, 64.5, 10.1, 12.1, 1, "Ply + laminate, full height, pull-outs", "rect"),
     ("F36", "Kitchen", "Refrigerator on the north wall, grouped with the pantry, clear of the sliding entry", 60.0, 62.5, 10.1, 12.1, 1, "Double-door, 2'6\" wide", "rect"),
-    ("F53", "TV bay", "Floating TV console 5' x 1'-4\" wall-hung at 1'-3\" (set-top box and router inside, the floor below clear), the TV (65 in) above it centred on the sofa, on a teak-slatted back wall with a concealed LED wash; HDMI and power in a conduit behind", 39.75, 41.05, 19.6, 24.6, 1, "Teak veneer console, teak slats on the wall", "rect"),
+    ("F53", "TV bay", "Floating TV console 5' x 1'-4\" wall-hung at 1'-3\" (set-top box and router inside, the floor below clear), the TV (65 in) above it centred on the sofa, on a plain matt back wall in a soft mid-tone (nothing patterned or shiny around the screen), a dim bias light behind the TV; HDMI and power in a conduit behind", 39.75, 41.05, 19.6, 24.6, 1, "Teak veneer console, matt wall", "rect"),
     ("F38", "Living", "Sofa 5' (2-3 seats) facing west to the TV about 6'-6\" away", 50.5, 53.2, 19.6, 24.6, 1, "Teak frame, cotton cushions", "rect"),
     ("F39", "Living", "Coffee table 3'2\" x 2', 1'-6\" from the sofa", 47.0, 49.0, 20.6, 23.8, 1, "Teak", "rect"),
     ("F45", "Living", "Armchair facing north to the sofa group (with F46, a soft edge to the seating, not a sofa back)", 44.8, 46.6, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F46", "Living", "Armchair facing north to the sofa group", 47.4, 49.2, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
-    ("F47", "TV bay", "Teak slat lining on the bay's back wall behind the TV (vertical battens on a dark backing, the LED wash from the top)", 39.71, 39.86, 19.35, 24.75, 1, "Teak battens", "glass"),
     ("F59", "TV bay", "Vilakku madam: slim carved teak lamp niche with a light inside on the bay's back wall, at the end of the entry axis (facing the main door)", 39.71, 40.05, 18.3, 19.2, 1, "Carved teak, brass lamp", "glass"),
+    ("F54", "Stair hall", "Tall teak display unit 2'-11\" x 1'-5\", 7 ft high, standing beside the TV bay at the hall mouth: open niches for lamps, brass and books facing the living, a closed back to the hall; it screens the bedroom doors from the main door and leaves a 2'-7\" way into the hall (a door's width)", 40.6, 42.0, 15.1, 18.0, 1, "Teak, oiled, fixed to the floor and the TV bay wall", "rect"),
     ("F52", "Genkan (shoe-off foyer)", "Shoe bench 3'-3\" in the genkan (sit to take shoes off), louvred shoe shelves below, hooks and a keys niche above", 59.4, 60.6, 13.0, 16.3, 1, "Teak top, ply + laminate, 14 in deep", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 21.6, 24.4, 1, "Carved teak", "rect"),
     ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, hung from the gable beam, its arc clear of the entrance walk and the pillars", 62.0, 65.3, 22.2, 23.7, 1, "Teak, chains to beam", "rect"),
@@ -296,8 +306,7 @@ EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42)}
 WET_WALLS_F1 = {("Y", 34.5, 3, 10.5), ("X", 10.5, 28, 34.5), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}
 # Railings at the first floor (axis, c, s, e): open sides of the terrace, edges of the stair well. 3'-6" high.
 RAILS_F1 = [("X", 12.33, 38, 42), ("Y", 34.5, 10.5, 12.33),
-            ("X", 3, 42, 61), ("X", 25, 42, 61), ("Y", 61, 3, 25),
-            ("X", 8, 44.75, 49.75), ("X", 12.5, 44.75, 49.75), ("Y", 44.75, 8, 12.5), ("Y", 49.75, 8, 12.5)]  # last four: around the light well
+            ("X", 3, 42, 61), ("X", 25, 42, 61), ("Y", 61, 3, 25)]
 # Terrace sides that face the neighbours a few feet away: closed teak jali parapets 3'-6" high (privacy, breeze), not open balusters.
 # The road side stays an open railing behind the front gable.
 JALI_RAILS = {("X", 3), ("X", 25)}
@@ -314,9 +323,9 @@ STAIR = {
     "core": (38.0, 38.5, 6.5, 12.33),          # wall between the flights
 }
 # First-floor slab outline (pieces) and the voids it leaves
-SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 8), (42, 44.75, 8, 12.5), (49.75, 61, 8, 12.5), (42, 61, 12.5, 25)]
+SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 25)]
 # Light well over the dining table (slab void): rail round it, walk-on jali grating and a closable glazed lid for AC and monsoon
-LIGHT_WELL = (44.75, 49.75, 8, 12.5)  # 5 x 4'-6", centred on the dining table
+LIGHT_WELL = None  # the light well over the dining was dropped (the dining has its own south window)
 
 DOORS_F1 = [
     ("D31", "Y", 28, 11.0, 13.5, -1, "Bedroom 2 (from the landing)", "Flush, teak veneer"),
@@ -396,14 +405,17 @@ OPEN_ISSUES = [
     ("Services", "Septic tank and soak pit in the spare rear land (percolation test for the soak pit size); if the back 11 ft is ever sold, move them or switch to a bio-digester with treated outflow", "Engineer", "Open"),
     ("Services", "Water tank: 1,000 L loft tank in the roof space over the upper bath, filled from the sump by pump, with a pressure pump for showers; confirm the truss carries it or put it on a steel platform off the slab", "Plumber / engineer", "Open"),
     ("Services", "Electrical load (with ACs), service connection size, earthing, inverter / solar PV", "Electrical engineer", "Open"),
-    ("Vastu", "Master bedroom on the ground floor in the true south-west, bed head south, its bath just east of it in the south band (x 28-34.5; ask the consultant), and a guest room / den in the north-west with the guest bath; Bedroom 2 above it (bed head south) and a study in the north-west (north light); kitchen in the south-east, stove on the east wall; pooja in the north-east corner of the living, opening west (family faces east); stair in the middle of the south side, rising clockwise; baths in the south band (master bath and Bath 2 stacked) and the guest bath north-west, the powder room north of the stair hall; main door on the east. Plot centre: on the 64 ft trial plot it falls in the living (kept free of walls and columns). Confirm which boundary the consultant uses, and whether the light well over the dining (south of the centre) is acceptable", "Vastu consultant", "To confirm"),
+    ("Vastu", "Master bedroom on the ground floor in the true south-west, bed head south, its bath just east of it in the south band (x 28-34.5; ask the consultant), and a guest room / den in the north-west with the guest bath; Bedroom 2 above it (bed head south) and a study in the north-west (north light); kitchen in the south-east, stove on the east wall; pooja in the north-east corner of the living, opening west (family faces east); stair in the middle of the south side, rising clockwise; baths in the south band (master bath and Bath 2 stacked) and the guest bath north-west, the powder room north of the stair hall; main door on the east. Plot centre: on the 64 ft trial plot it falls in the living (kept free of walls and columns). Confirm which boundary the consultant uses", "Vastu consultant", "To confirm"),
     ("Climate", "Covered terrace: deep shade from the main roof keeps the slab over the living cool; the first floor's west wall has only small high windows; chiks on the terrace's south and east sides", "Architect", "Open"),
     ("Roof", "Covered terrace roof: tiles on steel trusses (drawn, matches the rest of the roof) or a cheaper insulated metal-sheet roof on the same steel frame; decide before the roof is ordered", "Owner / architect", "Open"),
     ("Levels", "Survey road and field levels; plinth at 2 ft above finished ground (raise if site floods)", "Surveyor / architect", "Open"),
 ]
 
 DUPLEX_DECISIONS = [
-    "TV bay with a floating console (3 Nov 2026, owner: the TV is the most important thing in the living): the storage wall goes; the west side of the living becomes a 7 ft wide, 2'-6\" deep TV bay on the powder room and guest bath line (y 18 to 25), its back wall lined in teak slats with a concealed LED wash, a 5 ft wall-hung console at 1'-3\" and a 65 in TV centred on the sofa about 10'-9\" away; the slim lamp niche stays at the end of the entry axis. The 2 ft of wall that ran past the powder room into the hall goes, so the hall opens to the living for 5'-8\" (y 12.33 to 18).",
+    "Permaculture food system on the front land (3 Nov 2026, owner): zone 1 is a kitchen garden south of the forecourt (a herb spiral and daily greens under the coconut palms) with a banana circle fed by the kitchen's grey water; zone 2 is fruit guilds south of the car porch (guava, sapota, lemon, pomegranate, custard apple, drumstick, each with pigeon pea, vegetables, ground cover and turmeric under it) round the compost pits and a worm bin, and the four raised beds, now mulched, on drip and under a shade net in April-May; vegetable creepers on the car porch pergola; a gliricidia and pigeon-pea living fence along the south boundary; the drip lines run from the sump, which already takes the roof rain through a first-flush filter (rainwater spares the greens the hard, high-fluoride bore water). About 800-900 sq ft of growing space and ten fruit trees; roughly Rs 40,000-70,000 to set up.",
+    "No light well (3 Nov 2026, owner): the dining now has daylight from the wash alcove's south window and the stair jali, so the 5 x 4'-6\" light well over the dining table is dropped; the terrace floor is one unbroken waterproofed slab and the dining a flat 9'-5\" ceiling.",
+    "Screen at the hall mouth (3 Nov 2026, owner): a tall teak display unit (2'-11\" x 1'-5\", 7 ft high) stands beside the TV bay at the hall mouth, open niches to the living and a closed back to the hall, so someone coming in at the main door does not look straight down the hall at the bedroom doors; a 2'-7\" way into the hall (a door's width) stays beside it.",
+    "TV bay with a floating console (3 Nov 2026, owner: the TV is the most important thing in the living): the storage wall goes; the west side of the living becomes a 7 ft wide, 2'-6\" deep TV bay on the powder room and guest bath line (y 18 to 25), its back wall a plain matt mid-tone (no slats or pattern around the screen) with a dim bias light behind the TV, a 5 ft wall-hung console at 1'-3\" and a 65 in TV centred on the sofa about 10'-9\" away; the slim lamp niche stays at the end of the entry axis. The 2 ft of wall that ran past the powder room into the hall goes, so the hall opens to the living for 5'-8\" (y 12.33 to 18).",
     "Open hall (3 Nov 2026, owner): the lobby in front of the bedrooms and its wing door go; the lobby and the stair hall become one open hall, 14 ft from the den and master doors to the stair foot, with the powder room door off it. The master and the den keep their own doors.",
     "Shorter powder room, no lobby cupboard (3 Nov 2026, owner): the powder room is cut to 5 x 7 ft with its south wall on the guest bath's line (y 18), so the two rooms read as one row; the freed 5 x 2 ft joins the stair hall in front of the powder door. The coat, shoe and linen cupboard in the lobby goes, so the lobby is an open 6'-6\" square.",
     "Teak storage wall instead of the walk-in store (3 Nov 2026, owner): a 3'-9\" wide store with a 2 ft aisle was hard to use. The powder room widens to 5 x 9 ft (about 4'-6\" clear); the rest of the strip becomes a 9 ft teak storage wall 2 ft deep opening straight into the living: full-height cupboards in the south bay with the lamp niche set into their face on the entry axis, and a 4'-8\" TV alcove in the north bay with drawers below, cupboards above and the media wiring behind a lift-off panel. The lobby, the den's own bath and the bedroom-wing door stay. Grain bins go in the low store under the half landing.",
@@ -585,7 +597,7 @@ ELECTRICAL = [
     # Store, wet area, dining
     ("L", 44.0, 5.0, "R19", ""), ("WL", 45.7, 6.15, "R19", "mirror light over the hand-wash basin"), ("PC", 45.6, 3.4, "R19", "RO purifier"),
     ("L", 50.0, 5.0, "R13", ""), ("P", 52.4, 3.4, "R13", "utility, weatherproof"),
-    ("L", 47.25, 10.2, "R10", "pendant over the table, centred on it, hung below the light well"), ("S", 42.4, 9.4, "R10", "dining and wet area"),
+    ("L", 47.25, 10.2, "R10", "pendant over the table, centred on it"), ("S", 42.4, 9.4, "R10", "dining and wet area"),
     # Kitchen
     ("L", 60.0, 8.0, "R15", ""), ("WL", 62.5, 3.5, "R15", "under-cabinet, on solid wall beside the window"), ("WL", 66.5, 10.6, "R15", "under-cabinet"),
     ("CH", 66.6, 8.6, "R15", "3 ft chimney on solid wall, duct out through the east wall"), ("PC", 55.9, 3.5, "R15", ""),
@@ -598,7 +610,7 @@ ELECTRICAL = [
     # Living
     ("F", 50.0, 18.0, "R16", ""), ("L", 46.5, 22.0, "R16", "pendant"), ("L", 54.5, 16.0, "R16", "pendant"),
     ("WL", 39.9, 18.75, "R20", "inside the lamp niche"), ("TV", 39.9, 23.6, "R20", "TV: 2 sockets + data + HDMI conduit at TV height, hidden behind the screen"),
-    ("P", 39.9, 20.4, "R20", "inside the console (set-top box, router)"), ("L", 40.2, 22.1, "R20", "concealed warm LED wash down the teak slat wall"), ("P", 53.4, 19.4, "R16", "floor socket, sofa end"), ("P", 44.6, 17.6, "R16", "lamp socket by the armchairs"),
+    ("P", 39.9, 20.4, "R20", "inside the console (set-top box, router)"), ("L", 40.2, 22.1, "R20", "dim warm bias light behind the TV (easier on the eyes in the evening)"), ("P", 53.4, 19.4, "R16", "floor socket, sofa end"), ("P", 44.6, 17.6, "R16", "lamp socket by the armchairs"),
     # Poomukham
     ("L", 64, 15.0, "R17", ""), ("L", 64, 21.0, "R17", ""), ("BELL", 61.4, 21.2, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 21.5, "R17", ""),
