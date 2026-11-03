@@ -84,6 +84,7 @@ nav button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);
   <button id="roofBtn" aria-pressed="false">Lift roof</button>
   <button id="upperBtn" aria-pressed="false">Hide upper floor</button>
   <button id="walkBtn" aria-pressed="false">Walk in</button>
+  <button id="roadWalkBtn" aria-pressed="false">Walk from the road</button>
   <label class="sunctl">Look <select id="lookSel" aria-label="Colour and material scheme"><option value="now">As drawn</option><option value="classic">Classic Kerala, refined</option><option value="chettinad">Chettinad ochre</option><option value="modern">Modern tropical</option><option value="green">Lime and green</option></select></label>
   <label class="sunctl">Sun <input id="sunIn" type="range" min="6" max="18" step="0.25" value="9.5" aria-label="Time of day"><output id="sunOut">9:30 am</output></label>
 </nav>
@@ -298,9 +299,10 @@ tileUV(box(HS.x1-3,70,0,27,0,0.05,mat.paveT,site),4);         /* 3 ft apron roun
   const road=(Math.abs(a[0]-b[0])<0.01&&a[0]>SX2-1)||(MODEL.site.shopWall&&a[0]===MODEL.site.shopWall[0][0]&&a[1]===MODEL.site.shopWall[0][1]),cm=road?mat.brick:mat.compound,len=Math.hypot(b[0]-a[0],b[1]-a[1]);if(len<0.3)return;
   const pnl=beam([a[0],a[1],2.6],[b[0],b[1],2.6],road?0.5:0.17,4.8,cm,site);pnl.castShadow=true;
   const n=Math.max(1,Math.round(len/7));for(let i=0;i<=n;i++){const x=a[0]+(b[0]-a[0])*i/n,y=a[1]+(b[1]-a[1])*i/n;box(x-0.165,x+0.165,y-0.165,y+0.165,0,5.2,mat.concrete,site);}});
+const gateG=new THREE.Group();site.add(gateG);   /* gate leaves: slid open while walking */
 (MODEL.gate2?[MODEL.gate,MODEL.gate2]:[MODEL.gate]).forEach(([g1,g2])=>{const mid=g1+(g2-g1)*0.75,gx=SX2-0.1;[[g1+0.1,mid-0.05],[mid+0.05,g2-0.1]].forEach(([a,b])=>{   /* sliding gate + wicket */
-  box(gx-0.1,gx+0.1,a,b,0.3,0.45,mat.metal,site);box(gx-0.1,gx+0.1,a,b,3.9,4.05,mat.metal,site);box(gx-0.1,gx+0.1,a,a+0.12,0.3,4.05,mat.metal,site);box(gx-0.1,gx+0.1,b-0.12,b,0.3,4.05,mat.metal,site);
-  for(let y=a+0.4;y<b-0.2;y+=0.4)box(gx-0.04,gx+0.04,y-0.03,y+0.03,0.45,3.9,mat.metal,site);});
+  box(gx-0.1,gx+0.1,a,b,0.3,0.45,mat.metal,gateG);box(gx-0.1,gx+0.1,a,b,3.9,4.05,mat.metal,gateG);box(gx-0.1,gx+0.1,a,a+0.12,0.3,4.05,mat.metal,gateG);box(gx-0.1,gx+0.1,b-0.12,b,0.3,4.05,mat.metal,gateG);
+  for(let y=a+0.4;y<b-0.2;y+=0.4)box(gx-0.04,gx+0.04,y-0.03,y+0.03,0.45,3.9,mat.metal,gateG);});
   [g1-0.6,g2].forEach(y=>box(SX2-0.6,SX2,y,y+0.6,0,5.6,mat.brick,site));});
 /* front land: drive, car porch with a creeper pergola, vegetable beds, compost, carpentry workshop with its verandah */
 const SHEET=new THREE.MeshStandardMaterial({color:0x9C4630,roughness:0.55,metalness:0.25,side:THREE.DoubleSide});   /* insulated metal sandwich roof, terracotta colour */
@@ -800,6 +802,10 @@ FL.forEach(({L,base,top},lv)=>L.walls.forEach(([axis,c,s,e,th])=>{const h2=(th||
   split(s-h2,e+h2,gaps).forEach(([a,b,g])=>{if(!g)solids.push(axis==='X'?[a,b,c-h2,c+h2,lv?base:0,top,lv]:[c-h2,c+h2,a,b,lv?base:0,top,lv]);});}));
 MODEL.f1.rails.forEach(([axis,c,s,e])=>solids.push(axis==='X'?[s,e,c-0.15,c+0.15,U,U+3.5,1]:[c-0.15,c+0.15,s,e,U,U+3.5,1]));
 const NWALL=solids.length;
+(function(){const g=MODEL.features,sw=MODEL.site.shopWall;
+  if(sw)sw.slice(1).forEach((b,i)=>{const a=sw[i];solids.push([Math.min(a[0],b[0])-0.15,Math.max(a[0],b[0])+0.15,Math.min(a[1],b[1])-0.15,Math.max(a[1],b[1])+0.15,-1,8,0]);});
+  ['WORKSHOP','SHOPWC'].forEach(k=>{if(g[k])solids.push([g[k][0],g[k][1],g[k][2],g[k][3],-1,12,0]);});
+  if(g.SHOP1&&g.SHOP2)solids.push([g.SHOP1[0],g.SHOP1[1],g.SHOP1[2],g.SHOP2[3],-1,12,0]);})();   /* the workshop, shops and the wall behind them */
 (function(){const st=MODEL.stair,[c1,c2,cy1,cy2]=st.core,f2=st.flight2,ld=st.landing,f1=st.flight1;
   solids.push([c1,c2,cy1,cy2,F,U,0]);                              /* wall between the flights */
   solids.push([f2[0],f1[0],18.5,ld[2],F-1,F+4.2,0]);                /* under the upper flight, where it drops below 7 ft */
@@ -808,7 +814,9 @@ MODEL.pillars.forEach(([x,y])=>solids.push([x-0.45,x+0.45,y-0.45,y+0.45,0,F+10,0
 MODEL.posts.forEach(([x,y])=>solids.push([x-0.3,x+0.3,y-0.3,y+0.3,U,U+H1,1]));
 FL.forEach(({L,base},lv)=>L.furniture.forEach(f=>{const k=KIND[f.id];if(f.id==='F31'||f.id==='F57'||f.id==='F58'||(k&&['glass','niche','lampniche','rail','airer','dishrack','bedshelf','none'].includes(k[0])))return;solids.push([f.x1,f.x2,f.y1,f.y2,base-0.5,base+6,lv]);}));
 function blocked(x,y,feet){
-  if(x<SX1+0.6||x>SX2-0.6||y<0.6||y>plotN(x)-0.6)return true;
+  if(x>SX2-0.6){if(x>SX2+20||y<-12||y>52)return true;                                  /* the east road is walkable */
+    if(x<SX2+0.6&&!(y>MODEL.gate[0]+0.6&&y<MODEL.gate[1]-0.6))return true;}          /* into the plot only through the gate */
+  else if(x<SX1+0.6||y<0.6||y>plotN(x)-0.6)return true;
   for(const r of solids)if(x>r[0]-RAD&&x<r[1]+RAD&&y>r[2]-RAD&&y<r[3]+RAD&&feet+0.35<r[5]&&feet+EYE>r[4])return true;
   return false;
 }
@@ -831,17 +839,19 @@ function floorAt(x,y,cur){
 }
 const START_Y=(MODEL.features.STEPS[2]+MODEL.features.STEPS[3])/2;  /* in line with the steps and the main door */
 const walk={on:false,x:73.5,y:START_Y,head:Math.PI,pitch:-0.04,h:EYE,keys:{},moves:{},drag:null};
-function setWalk(on){
-  walk.on=on;controls.enabled=!on;pad.hidden=!on;walkHint.hidden=!on;mini.hidden=!on;
-  walkBtn.setAttribute('aria-pressed',String(on));walkBtn.textContent=on?'Exit walk':'Walk in';
-  always.visible=!on;syncLabels();hemi.intensity=on?0.55:0.75;
+function setWalk(on,from){
+  walk.on=on;controls.enabled=!on;pad.hidden=!on;walkHint.hidden=!on;mini.hidden=!on||from==='road';
+  walkBtn.setAttribute('aria-pressed',String(on&&from!=='road'));walkBtn.textContent=on&&from!=='road'?'Exit walk':'Walk in';
+  roadWalkBtn.setAttribute('aria-pressed',String(on&&from==='road'));roadWalkBtn.textContent=on&&from==='road'?'Exit walk':'Walk from the road';
+  always.visible=!on;syncLabels();gateG.visible=!on;hemi.intensity=on?0.55:0.75;
   camera.fov=on?68:45;camera.near=on?0.1:0.5;camera.updateProjectionMatrix();
   if(on){if(!roof.visible)roofBtn.click();if(!upper.visible)upperBtn.click();  /* walk inside the whole house */
-    anim=null;walk.x=73.5;walk.y=START_Y;walk.head=Math.PI;walk.pitch=-0.04;walk.h=floorAt(walk.x,walk.y,0)+EYE;
+    anim=null;walk.x=from==='road'?SX2+12:73.5;walk.y=from==='road'?(MODEL.gate[0]+MODEL.gate[1])/2+3:START_Y;walk.head=from==='road'?Math.PI+0.12:Math.PI;walk.pitch=-0.04;walk.h=floorAt(walk.x,walk.y,0)+EYE;
     document.querySelectorAll('nav [data-view]').forEach(b=>b.setAttribute('aria-pressed','false'));}
   else goTo('hero');
 }
 walkBtn.addEventListener('click',()=>setWalk(!walk.on));
+const roadWalkBtn=document.getElementById('roadWalkBtn');roadWalkBtn.addEventListener('click',()=>setWalk(!walk.on,'road'));
 document.querySelectorAll('nav [data-view]').forEach(b=>b.addEventListener('click',()=>{if(walk.on)setWalk(false);},true));
 const cv=renderer.domElement;
 cv.addEventListener('pointerdown',e=>{if(!walk.on)return;walk.drag={x:e.clientX,y:e.clientY,id:e.pointerId};cv.setPointerCapture(e.pointerId);});
