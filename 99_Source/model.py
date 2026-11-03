@@ -51,7 +51,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
     ("R40", "Master bath", 28, 34.5, 3, 11.5, "Master suite"),
     ("R42", "Guest room / den", 14, 28, 15, 25, "Private"),
     ("R08", "Powder room", 34.5, 39.5, 18, 25, "Service"),
-    ("R20", "Teak storage wall", 39.5, 42, 18, 25, "Living"),
+    ("R20", "TV bay", 39.5, 42, 18, 25, "Living"),
     ("R05", "Hall", 28, 34.5, 11.5, 18, "Circulation"),
     ("R07", "Guest bath", 28, 34.5, 18, 25, "Service"),
     ("R09", "Stair hall", 34.5, 42, 12.33, 18, "Circulation"),
@@ -70,7 +70,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
 WALLS = [
     ("X", 3, 14, 67), ("Y", 14, 3, 25), ("X", 25, 14, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
     ("Y", 28, 3, 11.5), ("Y", 28, 11.5, 18), ("Y", 28, 18, 25), ("X", 11.5, 28, 34.5), ("X", 15, 14, 28),  # master grows north to y 15; master bath 6'-6" x 8'-6"
-    ("Y", 34.5, 3, 12.33), ("Y", 34.5, 18, 25), ("Y", 42, 3, 12.33), ("X", 18, 34.5, 39.5), ("Y", 39.5, 16, 25), ("X", 18, 28, 34.5),  # stair in the south band (vastu); powder room north of the stair hall on the guest bath's line (y 18), a teak storage wall open to the living beside it; hall opening to the living = the hall's width
+    ("Y", 34.5, 3, 12.33), ("Y", 34.5, 18, 25), ("Y", 42, 3, 12.33), ("X", 18, 34.5, 42), ("Y", 39.5, 18, 25), ("X", 18, 28, 34.5),  # stair in the south band (vastu); powder room north of the stair hall on the guest bath's line (y 18), a 7 ft TV bay open to the living beside it; hall opening to the living = the hall's width
     ("X", 7.5, 46, 53), ("Y", 46, 3, 7.5),  # utility 46-53; the dining's wash alcove 42-46, open to the dining
     ("Y", 53, 3, 12.5), ("X", 12.5, 53, 67),  # kitchen: west wall (wet-area door, serving hatch) and north wall (living door, poomukham side)
     ("Y", 57, 21, 25), ("X", 21, 57, 61),  # pooja in the north-east corner of the living
@@ -235,7 +235,6 @@ FURNITURE = [
     ("F06", "Master bedroom", "Built-in sliding wardrobe 8' on the north wall (y 15) from the west wall, doors facing the bed, lofts above", 14.5, 22.5, 13.1, 14.8, 1, "Ply + laminate, sliding shutters", "rect"),
     ("F16", "Powder room", "WC (EWC) on the west wet wall at the far end, back to back with the guest bath shower", 34.8, 36.4, 22.4, 23.6, 1, "Wall-hung on the wet wall, concealed cistern", "wc"),
     ("F17", "Powder room", "Wash basin with a mirror and a feature tile wall on the east wall, past the door swing", 38.6, 39.25, 20.9, 22.1, 1, "Wall-hung", "rect"),
-    ("F22", "Teak storage wall", "Storage wall, south bay: full-height cupboards 2 ft deep with shutters to the living (vessels, linen, files), the lamp niche set into its face on the entry axis", 39.75, 42.0, 16.2, 20.1, 1, "Teak frame, veneer shutters, adjustable shelves", "rect"),
     ("F20", "Guest room / den", "Sofa-cum-bed 6'-6\" x 3' under the north window W04 (guest bed), facing the TV, drawers below", 17.75, 24.25, 21.6, 24.6, 1, "Teak, cotton mattress and bolsters", "rect"),
     ("F67", "Guest room / den", "Armchair facing the TV", 14.7, 17.2, 15.9, 18.15, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F66", "Guest room / den", "Coffee table 2' x 1'-6\"", 20.0, 22.0, 18.8, 20.3, 1, "Teak", "rect"),
@@ -262,12 +261,13 @@ FURNITURE = [
     ("F65", "Kitchen", "Prep sink, single bowl + drainboard, centred under the window (washes vegetables; vessels go to the wet area)", 56.7, 58.5, 3.6, 5.2, 1, "SS 304, under-mount", "rect"),
     ("F37", "Kitchen", "Tall pantry unit 2', microwave inside, against the east run (tall storage grouped at the north end)", 62.5, 64.5, 10.1, 12.1, 1, "Ply + laminate, full height, pull-outs", "rect"),
     ("F36", "Kitchen", "Refrigerator on the north wall, grouped with the pantry, clear of the sliding entry", 60.0, 62.5, 10.1, 12.1, 1, "Double-door, 2'6\" wide", "rect"),
-    ("F53", "Teak storage wall", "Storage wall, TV bay: a 4'-8\" teak-framed alcove 2 ft deep with the TV (55-65 in, about 10'-9\" from the sofa) on its back panel, drawers below and cupboards above 7 ft; the set-top box, router and wiring behind a lift-off panel", 39.75, 42.0, 20.1, 24.8, 1, "Teak frame, veneer, open shelf", "rect"),
+    ("F53", "TV bay", "Floating TV console 5' x 1'-4\" wall-hung at 1'-3\" (set-top box and router inside, the floor below clear), the TV (65 in) above it centred on the sofa, on a teak-slatted back wall with a concealed LED wash; HDMI and power in a conduit behind", 39.75, 41.05, 19.6, 24.6, 1, "Teak veneer console, teak slats on the wall", "rect"),
     ("F38", "Living", "Sofa 5' (2-3 seats) facing west to the TV about 6'-6\" away", 50.5, 53.2, 19.6, 24.6, 1, "Teak frame, cotton cushions", "rect"),
     ("F39", "Living", "Coffee table 3'2\" x 2', 1'-6\" from the sofa", 47.0, 49.0, 20.6, 23.8, 1, "Teak", "rect"),
     ("F45", "Living", "Armchair facing north to the sofa group (with F46, a soft edge to the seating, not a sofa back)", 44.8, 46.6, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F46", "Living", "Armchair facing north to the sofa group", 47.4, 49.2, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
-    ("F59", "Living", "Vilakku madam: carved teak lamp niche with a light inside, set into the storage wall's face on the entry axis (facing the main door)", 41.75, 42.1, 17.85, 19.65, 1, "Carved teak, brass lamp", "glass"),
+    ("F47", "TV bay", "Teak slat lining on the bay's back wall behind the TV (vertical battens on a dark backing, the LED wash from the top)", 39.71, 39.86, 19.35, 24.75, 1, "Teak battens", "glass"),
+    ("F59", "TV bay", "Vilakku madam: slim carved teak lamp niche with a light inside on the bay's back wall, at the end of the entry axis (facing the main door)", 39.71, 40.05, 18.3, 19.2, 1, "Carved teak, brass lamp", "glass"),
     ("F52", "Genkan (shoe-off foyer)", "Shoe bench 3'-3\" in the genkan (sit to take shoes off), louvred shoe shelves below, hooks and a keys niche above", 59.4, 60.6, 13.0, 16.3, 1, "Teak top, ply + laminate, 14 in deep", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 21.6, 24.4, 1, "Carved teak", "rect"),
     ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, hung from the gable beam, its arc clear of the entrance walk and the pillars", 62.0, 65.3, 22.2, 23.7, 1, "Teak, chains to beam", "rect"),
@@ -388,7 +388,7 @@ OPEN_ISSUES = [
     ("Site", "Future rental shops on the road front: commercial setback and permission, separate meters, a shared toilet; decide whether to cast their plinth and service sleeves with the compound wall", "Architect / panchayat", "Open"),
     ("Site", "Septic tank in the plot's north-west quadrant between the forecourt and the car porch (tanker access from the porch), the soak pit on the south side 60 ft from the borewell; the plot centre (about x 97, y 16) stays open in the vegetable garden; the vastu consultant to confirm the septic position for the whole plot", "Vastu consultant / engineer", "Open"),
     ("Structure", "Two-storey RCC frame: columns, footings and the first-floor slab sized for two floors; the stair well; RCC column stubs at the terrace edge for the steel posts that carry the roof over the terrace", "Structural engineer", "Open"),
-    ("Layout", "TV in the 4'-8\" alcove of the teak storage wall on the living's west side, sofa facing west about 10'-9\" away: confirm screen size (55-65 in) and a concealed HDMI/data conduit", "Owner", "Open"),
+    ("Layout", "TV in the 7 ft TV bay on the living's west side on a floating console, sofa facing west about 10'-9\" away: confirm screen size (65 in suggested; 75 in fits) and a concealed HDMI/data conduit", "Owner", "Open"),
     ("Land", "Agricultural land: confirm conversion to non-agricultural use with the gram panchayat / collector (AP repealed the NALA Act in 2025; new process to be confirmed)", "Owner / surveyor", "Open"),
     ("Land", "Building permission route (panchayat vs DTCP / APCRDA via APDPMS) and setbacks under AP Building Rules 2017, including any height rule for two storeys", "Architect", "Open"),
     ("Soil", "Soil test (bore holes to 3 m min): black cotton soil is common in Guntur. Foundation type (isolated footings below active zone, under-reamed piles, or soil replacement) depends on it; two storeys raise the column loads", "Structural engineer", "Open"),
@@ -403,6 +403,7 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "TV bay with a floating console (3 Nov 2026, owner: the TV is the most important thing in the living): the storage wall goes; the west side of the living becomes a 7 ft wide, 2'-6\" deep TV bay on the powder room and guest bath line (y 18 to 25), its back wall lined in teak slats with a concealed LED wash, a 5 ft wall-hung console at 1'-3\" and a 65 in TV centred on the sofa about 10'-9\" away; the slim lamp niche stays at the end of the entry axis. The 2 ft of wall that ran past the powder room into the hall goes, so the hall opens to the living for 5'-8\" (y 12.33 to 18).",
     "Open hall (3 Nov 2026, owner): the lobby in front of the bedrooms and its wing door go; the lobby and the stair hall become one open hall, 14 ft from the den and master doors to the stair foot, with the powder room door off it. The master and the den keep their own doors.",
     "Shorter powder room, no lobby cupboard (3 Nov 2026, owner): the powder room is cut to 5 x 7 ft with its south wall on the guest bath's line (y 18), so the two rooms read as one row; the freed 5 x 2 ft joins the stair hall in front of the powder door. The coat, shoe and linen cupboard in the lobby goes, so the lobby is an open 6'-6\" square.",
     "Teak storage wall instead of the walk-in store (3 Nov 2026, owner): a 3'-9\" wide store with a 2 ft aisle was hard to use. The powder room widens to 5 x 9 ft (about 4'-6\" clear); the rest of the strip becomes a 9 ft teak storage wall 2 ft deep opening straight into the living: full-height cupboards in the south bay with the lamp niche set into their face on the entry axis, and a 4'-8\" TV alcove in the north bay with drawers below, cupboards above and the media wiring behind a lift-off panel. The lobby, the den's own bath and the bedroom-wing door stay. Grain bins go in the low store under the half landing.",
@@ -596,8 +597,8 @@ ELECTRICAL = [
     ("L", 59.0, 17.0, "R18", ""), ("S", 60.6, 16.3, "R18", "main switch at the door"),
     # Living
     ("F", 50.0, 18.0, "R16", ""), ("L", 46.5, 22.0, "R16", "pendant"), ("L", 54.5, 16.0, "R16", "pendant"),
-    ("WL", 42.4, 18.75, "R16", "inside the lamp niche"), ("TV", 39.9, 22.4, "R20", "TV alcove: 2 sockets + data + HDMI conduit behind the lift-off panel"),
-    ("P", 39.9, 21.0, "R20", "TV bay drawers"), ("L", 41.0, 18.0, "R20", "LED strip inside the storage wall's top shelf, warm"), ("P", 53.4, 19.4, "R16", "floor socket, sofa end"), ("P", 44.6, 17.6, "R16", "lamp socket by the armchairs"),
+    ("WL", 39.9, 18.75, "R20", "inside the lamp niche"), ("TV", 39.9, 23.6, "R20", "TV: 2 sockets + data + HDMI conduit at TV height, hidden behind the screen"),
+    ("P", 39.9, 20.4, "R20", "inside the console (set-top box, router)"), ("L", 40.2, 22.1, "R20", "concealed warm LED wash down the teak slat wall"), ("P", 53.4, 19.4, "R16", "floor socket, sofa end"), ("P", 44.6, 17.6, "R16", "lamp socket by the armchairs"),
     # Poomukham
     ("L", 64, 15.0, "R17", ""), ("L", 64, 21.0, "R17", ""), ("BELL", 61.4, 21.2, "R17", ""), ("CAM", 66.5, 24.6, "R17", "covers gate and door"),
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 21.5, "R17", ""),
