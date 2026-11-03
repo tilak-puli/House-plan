@@ -49,12 +49,19 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 | Septic tank and soak pit | 84–90 and 95, north side | in the plot's north-west quadrant, a tanker reaches it from the drive; 75 ft from the borewell |
 | Vegetable garden | 98–128 | five raised beds 4 ft wide on 6 ft centres running north–south; fruit trees along the north boundary; taps every 25 ft; the plot centre (about x 97, y 16) stays open here |
 | Compost | 130–133 | two shaded pits |
-| Carpentry workshop | 136–152 | 16 × 12 ft, AAC walls and a tiled roof, 3-phase power on its own sub-board, 8 ft double doors onto a 4 ft covered verandah on the drive, dust extraction, a lockable timber store; machine noise about 70 ft from the house |
+| Carpentry workshop | 136–152 | 16 × 12 ft, built as a cheap demountable kit (see below); 3-phase power on a surface-run sub-board, 8 ft double doors onto a 4 ft covered verandah on the drive, dust extraction, a lockable timber store; machine noise about 70 ft from the house |
 | Sump, borewell, recharge pit | 137–155, north side | in the north-east quadrant just behind the shops; the roof water goes to the recharge pit |
-| Rental shops | 156–176, north of the gate | two shops of 12 × 14'-6" facing the east road under a 1'-6" canopy, rolling shutters, signboards, a tiled roof; a 4 ft back passage with a shared toilet and rear doors; own meters. The house land's wall runs behind them (from the gate's north post west to x 156, then north), so the shops front the road directly |
+| Rental shops | 156–176, north of the gate | two shops of 12 × 14'-6" facing the east road, built as the same demountable kit: rolling shutters bolted to the steel frame under a 1'-6" sheet canopy, signboards, rear doors to a 4 ft back passage with a ready-made toilet cabin; own meters. The house land's wall runs behind them (from the gate's north post west to x 156, then north), so the shops front the road directly |
 | Trees | north boundary and forecourt | six fruit trees along the north boundary and a neem between the forecourt and the garden, shading the car porch; all well clear of the house walls and the plot centre |
 | Gate | 176 | 12 ft sliding gate with a 3 ft wicket; meter in the gate pillar |
 
+- **Workshop and shops: tight budget, demountable.** Every part bolts or lifts out, so they can be moved, enlarged or taken down without waste:
+  - frame: galvanised steel SHS posts and beams, bolted to anchor bolts in small pad footings, with wind bracing for cyclone gusts;
+  - walls: precast RCC post-and-panel, the same system as the compound wall (panels slide into slotted posts and lift out);
+  - roof: insulated metal sandwich sheet in terracotta colour, screwed to steel purlins (cooler than plain sheet in Guntur heat, and reusable);
+  - floor: PCC on compacted fill, pavers on the verandah;
+  - services surface-run in conduit; the shops' toilet is a ready-made FRP or precast cabin on flexible connections;
+  - rough cost: about Rs 1.5–2 lakh for the workshop and Rs 3.5–5 lakh for both shops (to be priced).
 - Compound wall about 408 ft: the road face in exposed brick or local stone, the rest precast post-and-panel 5 ft.
 - The ground falls 1:100 away from the house and down the drive to the road.
 
