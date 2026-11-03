@@ -81,7 +81,7 @@ def _window_rows(s, c, st, k, wins, oys, title):
     rows, cur, used = [], [], 0
     for w_rec in wins:
         step = max(w_rec[4] - w_rec[3], 3) + 2.6
-        if used + step > 66 and cur:
+        if used + step > 72 and cur:
             rows.append(cur); cur, used = [], 0
         cur.append(w_rec); used += step
     rows.append(cur)

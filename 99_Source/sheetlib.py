@@ -204,6 +204,7 @@ class Plan:
             rid, name, x1, x2, y1, y2, _ = r
             nm = short_name(name)
             if corner:
+                if x2 - x1 < 3: continue  # a strip (the storage wall): its furniture tags say what it is
                 lx, ly = x1 + 0.4, y2 - 0.7
                 for o in ROOMS:  # a smaller room in the same corner (Bath 2 in Bedroom 2): label past it
                     if o is not r and o[2] <= lx <= o[3] and o[4] <= ly <= o[5] and (o[3] - o[2]) * (o[5] - o[4]) < (x2 - x1) * (y2 - y1):
@@ -211,6 +212,10 @@ class Plan:
                 self.text(nm, lx, ly, size, color=color, anchor="l")
             else:
                 cx, cy = ROOM_LABEL_AT.get(rid, ((x1 + x2) / 2, (y1 + y2) / 2))
+                if x2 - x1 < 3:  # a strip (the storage wall): label it along its length
+                    px, py = self.p(cx, cy); c = self.c; c.saveState(); c.translate(px, py); c.rotate(90)
+                    c.setFillColor(color); c.setFont("Helvetica-Bold", size - 0.8); c.drawCentredString(0, -size * 0.3, nm.upper()); c.restoreState()
+                    continue
                 self.text(nm.upper(), cx, cy + 0.55, size, "Helvetica-Bold", color)
                 if sub: self.text(sub(r), cx, cy - 0.45, size - 0.7, color=GREY)
 
@@ -228,14 +233,17 @@ class Plan:
     def stair(self):
         """Dog-leg stair: treads of both flights, the half landing, the core wall and an UP / DN arrow."""
         st = STAIR
+        d = st.get("dir", 1)
         x1, x2, y1, y2, n1 = st["flight1"]
+        h1, e1 = (y1, y2) if d > 0 else (y2, y1)  # stair-hall end, landing end
         for i in range(n1):
-            yy = y1 + i * st["tread"]
-            if yy <= y2 + 1e-6: self.line(x1, yy, x2, yy, lw=0.3)
+            yy = h1 + d * i * st["tread"]
+            if min(y1, y2) - 1e-6 <= yy <= max(y1, y2) + 1e-6: self.line(x1, yy, x2, yy, lw=0.3)
         u1, u2, v1, v2, n2 = st["flight2"]
+        h2, e2 = (v1, v2) if d > 0 else (v2, v1)
         for i in range(n2):
-            yy = v2 - i * st["tread"]
-            if yy >= v1 - 1e-6: self.line(u1, yy, u2, yy, lw=0.3)
+            yy = e2 - d * i * st["tread"]
+            if min(v1, v2) - 1e-6 <= yy <= max(v1, v2) + 1e-6: self.line(u1, yy, u2, yy, lw=0.3)
         lx1, lx2, ly1, ly2 = st["landing"]
         self.rect(lx1, lx2, ly1, ly2, lw=0.3)
         cx1, cx2, cy1, cy2 = st["core"]
@@ -243,15 +251,15 @@ class Plan:
         ground = FLOOR[0] == "G"
         mx = (x1 + x2) / 2
         if ground:  # flight 1 from the lobby, cut line part way up
-            self.poly([(mx, y1 + 0.3), (mx, y2 - 0.6)], lw=0.5)
-            self.poly([(mx - 0.3, y2 - 1.0), (mx, y2 - 0.6), (mx + 0.3, y2 - 1.0)], lw=0.5)
-            self.text("UP", mx, y1 + 0.9, 4.6, "Helvetica-Bold")
-            self.line(u1, y1 + 3.2, x2, y1 + 4.4, lw=0.5, dash=(3, 1.5))
+            self.poly([(mx, h1 + d * 0.3), (mx, e1 - d * 0.6)], lw=0.5)
+            self.poly([(mx - 0.3, e1 - d * 1.0), (mx, e1 - d * 0.6), (mx + 0.3, e1 - d * 1.0)], lw=0.5)
+            self.text("UP", mx, h1 + d * 0.9 - (0.35 if d < 0 else 0), 4.6, "Helvetica-Bold")
+            self.line(min(u1, x1), h1 + d * 3.2, max(u2, x2), h1 + d * 4.4, lw=0.5, dash=(3, 1.5))
         else:
             ux = (u1 + u2) / 2
-            self.poly([(ux, v1 + 0.6), (ux, v2 - 0.3)], lw=0.5)
-            self.poly([(ux - 0.3, v1 + 1.0), (ux, v1 + 0.6), (ux + 0.3, v1 + 1.0)], lw=0.5)
-            self.text("DN", ux, v1 + 1.6, 4.6, "Helvetica-Bold")
+            self.poly([(ux, h2 + d * 0.6), (ux, e2 - d * 0.3)], lw=0.5)
+            self.poly([(ux - 0.3, h2 + d * 1.0), (ux, h2 + d * 0.6), (ux + 0.3, h2 + d * 1.0)], lw=0.5)
+            self.text("DN", ux, h2 + d * 1.6 - (0.35 if d < 0 else 0), 4.6, "Helvetica-Bold")
 
     def void(self, x1, x2, y1, y2, label=None, size=5):
         """Open to below: light cross and a label."""

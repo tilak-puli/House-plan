@@ -87,7 +87,7 @@ def sheet_phasing(c):
             if r[0] in PHASE2_ROOMS:
                 pl.rect(r[2], r[3], r[4], r[5], stroke=None, fill=pale)
         for (x1, x2, y1, y2), wt in wall_rects(with_type=True):
-            if x1 < 34.6 < x2 and x2 - x1 < 1 and y1 > 15:  # stair wall
+            if x1 < 34.6 < x2 and x2 - x1 < 1 and y2 < 11:  # stair wall
                 pl.rect(x1, x2, y1, y2, stroke=None, fill=INK)
             elif wt == "EXT":
                 pl.rect(x1, x2, y1, y2, stroke=INK, fill=mid, lw=0.3)
@@ -97,7 +97,7 @@ def sheet_phasing(c):
         pl.floor_extras()
         pl.room_names(5.2, INK)
         pl.text("STAGE 3 FIT-OUT (shaded)", 24, 9.0, 5, "Helvetica-Bold", ACC)
-        pl.line(34.6, 15.9, 38.0, 15.9, lw=1.2, color=RED)
+        pl.line(34.6, 12.45, 38.0, 12.45, lw=1.2, color=RED)
         pl.text("GRILLE GATE", 36.3, 14.7, 4.2, "Helvetica-Bold", RED)
         pl.north(218 * mm, 180 * mm)
     s.note("First floor through the stages: stair, frame, slab, roof and terrace in stage 1; outer walls (grey) in stage 2; inner walls and fit-out (green) in stage 3.", 20 * mm, 160 * mm, 7, GREY)
@@ -211,7 +211,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
 
 
 SECTIONS = {"A": ("X", 44.5, "Cross section through the dining nook, dining, living and the covered terrace above"),
-            "B": ("Y", 18, "Long section through the master suites on both floors, the stair, the living with the covered terrace above, and the poomukham")}
+            "B": ("Y", 9.5, "Long section through the master suites and baths on both floors, the stair, the dining under the light well with the covered terrace above, and the kitchen")}
 
 
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):

@@ -63,7 +63,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Living
 17. **Avoid:** TV on a wall facing a window, so glare washes it out.  
-   **Do:** TV on the stair wall (west) of the living, the north window to the side, nothing bright behind or opposite the screen; conduit to the router under the stair.  
+   **Do:** TV on the west wall of the living, the north window to the side, nothing bright behind or opposite the screen; conduit to the router under the stair.  
    *Shown on: A-104, E-103*
 18. **Avoid:** Too few sockets, leading to extension cords across the floor.  
    **Do:** Fit sockets at the sofa end and 2 at the TV, and the router socket on the inverter circuit.  
@@ -72,13 +72,13 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** The slab over the living is the covered terrace, shaded by the main roof, so it stays cool; insulate under the terrace tiles if the terrace is ever left open to the sky.  
    *Shown on: A-301, A-109*
 20. **Avoid:** A dark living with only one outside wall to the north.  
-   **Do:** Light from the north window, the main door and the poomukham, borrowed light through the stair jali; light wall and ceiling colours.  
+   **Do:** Light from the north window, the main door and the poomukham; light wall and ceiling colours.  
    *Shown on: A-102*
 21. **Avoid:** Large west or south glazing: the room overheats in April-May.  
    **Do:** Glaze to the north; light from the east comes in through the main door and poomukham; south only through jalis and sunshaded windows.  
    *Shown on: A-201*
 22. **Avoid:** Main door swinging into the sofa or the DB.  
-   **Do:** Check door swings against the furniture; the DB is in the under-stair cupboard off the lobby, away from the door and the pooja.  
+   **Do:** Check door swings against the furniture; the DB is in the under-stair cupboard off the stair hall, away from the door and the pooja.  
    *Shown on: A-104, E-103*
 
 ## Stair and first floor
@@ -180,7 +180,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
 
 ## Wardrobes and dressing
 52. **Avoid:** Clothes stored in a walk-in only one person can use.  
-   **Do:** The ground master has a 6 ft divider wardrobe between its sleeping and sitting zones; the small room a 3 ft wardrobe on its east wall; Bedroom 2 has an 8 ft sliding wardrobe on its north wall and a 4 ft one in its alcove; the lobby downstairs has a coat, shoe and linen cupboard.  
+   **Do:** The ground master has a 6 ft divider wardrobe between its sleeping and sitting zones; the small room a 3 ft wardrobe on its east wall; Bedroom 2 has an 8 ft sliding wardrobe on its north wall; coats and shoes go in the genkan shoe bench.  
    *Shown on: A-108*
 53. **Avoid:** Dressing mirror lit from behind.  
    **Do:** Mount the mirror light above or beside the mirror.  
@@ -231,7 +231,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** No vents at bedrooms (windows, fans and AC are enough) or bathrooms (the door's bottom louvre feeds the exhaust fan).  
    *Shown on: A-401*
 67. **Avoid:** A long corridor that wastes area.  
-   **Do:** There is no corridor: the lobby (with a coat, shoe and linen cupboard) and the stair hall form one short hall, and every room opens straight off it.  
+   **Do:** There is no corridor: the lobby and the stair hall form one short hall, and every room opens straight off it.  
    *Shown on: A-106*
 68. **Avoid:** No drip groove under sills and sunshades: black streaks down the walls.  
    **Do:** Slope every external sill 1:10 with a drip groove, and give every chajja a drip groove under its edge.  

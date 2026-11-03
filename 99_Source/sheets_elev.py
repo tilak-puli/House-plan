@@ -301,13 +301,13 @@ def _cut_walls(axis_cut, c0):
 
 def _stair_z(y, flight):
     """Height above FFL of a flight's walking line at plan y (stepped)."""
-    st = STAIR; rz = LEVELS["upper_ffl"] / st["risers"]
+    st = STAIR; rz = LEVELS["upper_ffl"] / st["risers"]; d = st.get("dir", 1)
     if flight == 1:
-        y1 = st["flight1"][2]
-        k = min(st["flight1"][4] - 1, max(0, int((y - y1) / st["tread"])))
+        f = st["flight1"]; hall = f[2] if d > 0 else f[3]
+        k = min(f[4] - 1, max(0, int(d * (y - hall) / st["tread"])))
         return (k + 1) * rz
-    y2 = st["flight2"][3]
-    k = min(st["flight2"][4] - 1, max(0, int((y2 - y) / st["tread"])))
+    f = st["flight2"]; land = f[3] if d > 0 else f[2]
+    k = min(f[4] - 1, max(0, int(d * (land - y) / st["tread"])))
     return st["flight1"][4] * rz + (k + 1) * rz
 
 
@@ -421,7 +421,7 @@ SECTION_NOTES = [
     "First-floor RCC slab over the whole two-storey block; over the front half it is the covered terrace, waterproofed, under the main roof on galvanised steel posts and steel trusses.",
     "RCC lintel band at door-head level on both floors (seismic zone III). AAC walls in an RCC frame; mesh over every block-to-concrete joint.",
     "Ground-floor rooms have a plastered slab soffit at about 9'-5\" (blue); first-floor rooms have insulated false ceilings; the stair and terrace are open to the roof.",
-    "Dog-leg stair, 16 risers of 7.5 in; teak handrail; timber jali to the living and to the terrace.",
+    "Dog-leg stair, 16 risers of 7.5 in; teak handrail; timber jali to the dining and to the terrace.",
     "Plinth beam with DPC; plinth fill of compacted moorum, never black soil; anti-termite treatment at every layer.",
     "Footings dashed and indicative only: type and depth by the engineer after the soil test (two-storey loads).",
 ]

@@ -92,11 +92,13 @@ def _floor(msp, rect, text, fl):
     for axis, c, s, e in RAILS:
         rect(*seg_rect(axis, c, s, e, 0.25), "A-WALL-INT")
     st = STAIR
+    d = st.get("dir", 1)
     for key in ("flight1", "flight2"):
         x1, x2, y1, y2, n = st[key]
         rect(x1, x2, y1, y2, "A-FLOR-FIXT")
+        hall, land = (y1, y2) if d > 0 else (y2, y1)
         for i in range(1, n - 1):
-            yy = y1 + i * st["tread"] if key == "flight1" else y2 - i * st["tread"]
+            yy = hall + d * i * st["tread"] if key == "flight1" else land - d * i * st["tread"]
             msp.add_line(P(x1, yy), P(x2, yy), dxfattribs={"layer": "A-FLOR-FIXT"})
     rect(*st["landing"], "A-FLOR-FIXT")
 
