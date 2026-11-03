@@ -52,7 +52,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
     ("R42", "Guest room / den", 14, 28, 15, 25, "Private"),
     ("R08", "Powder room", 34.5, 39.5, 18, 25, "Service"),
     ("R20", "Teak storage wall", 39.5, 42, 18, 25, "Living"),
-    ("R05", "Lobby", 28, 34.5, 11.5, 18, "Circulation"),
+    ("R05", "Hall", 28, 34.5, 11.5, 18, "Circulation"),
     ("R07", "Guest bath", 28, 34.5, 18, 25, "Service"),
     ("R09", "Stair hall", 34.5, 42, 12.33, 18, "Circulation"),
     ("R06", "Stair", 34.5, 42, 3, 12.33, "Circulation"),
@@ -70,7 +70,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
 WALLS = [
     ("X", 3, 14, 67), ("Y", 14, 3, 25), ("X", 25, 14, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
     ("Y", 28, 3, 11.5), ("Y", 28, 11.5, 18), ("Y", 28, 18, 25), ("X", 11.5, 28, 34.5), ("X", 15, 14, 28),  # master grows north to y 15; master bath 6'-6" x 8'-6"
-    ("Y", 34.5, 3, 11.5), ("Y", 34.5, 11.5, 25), ("Y", 42, 3, 12.33), ("X", 18, 34.5, 39.5), ("Y", 39.5, 16, 25), ("X", 18, 28, 34.5),  # stair in the south band (vastu); powder room north of the stair hall on the guest bath's line (y 18), a teak storage wall open to the living beside it; hall opening to the living = the hall's width
+    ("Y", 34.5, 3, 12.33), ("Y", 34.5, 18, 25), ("Y", 42, 3, 12.33), ("X", 18, 34.5, 39.5), ("Y", 39.5, 16, 25), ("X", 18, 28, 34.5),  # stair in the south band (vastu); powder room north of the stair hall on the guest bath's line (y 18), a teak storage wall open to the living beside it; hall opening to the living = the hall's width
     ("X", 7.5, 46, 53), ("Y", 46, 3, 7.5),  # utility 46-53; the dining's wash alcove 42-46, open to the dining
     ("Y", 53, 3, 12.5), ("X", 12.5, 53, 67),  # kitchen: west wall (wet-area door, serving hatch) and north wall (living door, poomukham side)
     ("Y", 57, 21, 25), ("X", 21, 57, 61),  # pooja in the north-east corner of the living
@@ -84,7 +84,7 @@ WALL_TYPES = {
     "INT": (0.42, "100 mm AAC + plaster both faces (~5 in)"),
 }
 EXTRA_EXT_WALLS = {("X", 12.5, 53, 67)}  # kitchen north wall faces the living, the pooja and the open poomukham
-WET_WALLS = {("Y", 28, 3, 11.5), ("X", 11.5, 28, 34.5), ("Y", 34.5, 3, 11.5), ("Y", 34.5, 11.5, 25), ("X", 7.5, 46, 53), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}  # bath WCs, basins and showers; washing machine
+WET_WALLS = {("Y", 28, 3, 11.5), ("X", 11.5, 28, 34.5), ("Y", 34.5, 3, 12.33), ("Y", 34.5, 18, 25), ("X", 7.5, 46, 53), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}  # bath WCs, basins and showers; washing machine
 
 # Levels and heights, ft. 0 = finished ground level (FGL) around the house.
 LEVELS = {
@@ -172,9 +172,8 @@ FUTURE_WALLS = []
 # Doors: id, axis, c, s, e, swing (+1 toward +y/+x, -1 toward -y/-x, 0 = sliding), name, type
 DOORS = [
     ("D01", "Y", 61, 16.75, 20.75, -1, "Main entrance, 4 ft (on the entry axis y 18.75: gable, door, steps, path, tulsi and gate on one line)", "Teak panelled, double leaf, jali panel above: the widest and tallest threshold in the house"),
-    ("D02", "Y", 28, 15.3, 17.6, -1, "Guest room / den (from the lobby)", "Flush, teak veneer"),
-    ("D04", "Y", 28, 12.0, 14.5, -1, "Master bedroom (from the lobby)", "Flush, teak veneer"),
-    ("D44", "Y", 34.5, 12.4, 14.9, 1, "Bedroom wing (from the stair hall): shut it and the master suite, the den and the guest bath are private", "Teak panelled, jali panel above"),
+    ("D02", "Y", 28, 15.3, 17.6, -1, "Guest room / den (from the hall)", "Flush, teak veneer"),
+    ("D04", "Y", 28, 12.0, 14.5, -1, "Master bedroom (from the hall)", "Flush, teak veneer"),
     ("D45", "Y", 14, 18.25, 20.75, 1, "Garden door from the den to the back garden sit-out (opens inward)", "Teak frame, glazed upper half, steel grille shutter outside"),
     ("D42", "Y", 28, 8.9, 11.2, 1, "Master bath (from the bedroom into its dry zone, opens inward; the leaf screens the WC and shower)", "Flush, waterproof (WPC/FRP)"),
     ("D43", "X", 15, 24.2, 26.5, 0, "Connecting door, master bedroom to the den, a pocket door (shut it and the den is a guest suite)", "Teak veneer pocket door, acoustic seals"),
@@ -192,7 +191,7 @@ TRANSOM_TYPES = {
     "louvre": "Fixed louvres angled down: air for the exhaust fan, no view in",
     "glazed": "Top-hung glazed vent with seals: open for air, closed for calls",
 }
-TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D43": "jali_closable", "D44": "jali", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
+TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D43": "jali_closable", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
             "D31": "jali_closable", "D35": "jali_closable", "D33": "louvre", "D39": "louvre", "D36": "jali"}  # rooms breathe into the stair well with doors shut
 HINGE_AT_END = {"D36"}  # D36 hinged at its north jamb so its leaf clears the light-well rail  # doors hinged at their far (e) jamb
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
@@ -373,7 +372,7 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
     ("Master bath, guest bath, upper baths, powder room", "Anti-skid ceramic (R11), falls 1:60 to drain", "Tiles to 7 ft; full height in shower; waterproofing 12 in up all walls, 7 ft in shower", "Moisture-resistant board / PVC at 8'-6\"", "Recessed tiled shower niche with a sloped sill; mirror cabinet over the basin; towel and clothes hooks at the dry end; 12 mm step down, no raised threshold; doors open outward (the common bath door opens inward so it never blocks the narrow lobby); SS grab bars by the WC and in the shower. The upper bath sits over the common bath: waterproof the slab and flood-test it before tiling"),
     ("Wet area", "Rough Cuddapah / Kota stone, falls to drain", "4 ft stone or tile dado", "Board at 9'-6\"", "Service door to the walkway with a 6 in kerb"),
     ("Stair", "Granite or Kota treads with a rounded nosing and anti-slip grooves, 10 in treads, 7 in risers", "Teak handrail at 3 ft on the open side, timber jali to the dining", "Open to the roof", "Light at the half landing and at the top; 2-way switches"),
-    ("Lobby, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
+    ("Hall, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
     ("Covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "Teak jali parapets 3'-6\" on the north and south sides (neighbours close by); an open railing on the road side (teak cap, MS or teak balusters); bamboo chiks on the south and east", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: it sits over the living, dining and kitchen"),
     ("Poomukham, steps", "Flamed / leather-finish granite (not polished)", "Granite skirting; plinth face clad 2 ft (splash zone)", "Exposed rafters + board", "Polished stone is slippery when wet"),
     ("Exterior", "Plinth apron: PCC 3 ft wide sloped away", "AAC + 20 mm plaster with waterproof additive; elastomeric paint", "-", "Drip grooves under every sill and sunshade"),
@@ -404,6 +403,7 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "Open hall (3 Nov 2026, owner): the lobby in front of the bedrooms and its wing door go; the lobby and the stair hall become one open hall, 14 ft from the den and master doors to the stair foot, with the powder room door off it. The master and the den keep their own doors.",
     "Shorter powder room, no lobby cupboard (3 Nov 2026, owner): the powder room is cut to 5 x 7 ft with its south wall on the guest bath's line (y 18), so the two rooms read as one row; the freed 5 x 2 ft joins the stair hall in front of the powder door. The coat, shoe and linen cupboard in the lobby goes, so the lobby is an open 6'-6\" square.",
     "Teak storage wall instead of the walk-in store (3 Nov 2026, owner): a 3'-9\" wide store with a 2 ft aisle was hard to use. The powder room widens to 5 x 9 ft (about 4'-6\" clear); the rest of the strip becomes a 9 ft teak storage wall 2 ft deep opening straight into the living: full-height cupboards in the south bay with the lamp niche set into their face on the entry axis, and a 4'-8\" TV alcove in the north bay with drawers below, cupboards above and the media wiring behind a lift-off panel. The lobby, the den's own bath and the bedroom-wing door stay. Grain bins go in the low store under the half landing.",
     "Stair to the south (3 Nov 2026, owner, for vastu: the stair is preferred in the south, west or south-west): the stair moves from the north side of the middle band to the middle of the south side (x 34.5-42 x 3-12.33), still rising clockwise, up the east flight going south to a half landing on the south wall and up the west flight going north. The stair hall in front of it (y 12.33-16) stays open to the living and keeps the bedroom-wing door. The powder room (3'-9\" x 9 ft) and the store (3'-9\" x 9 ft, sliding door, 2 ft aisle) move north of the hall. The master bath narrows to 6'-6\" x 8'-6\" (no dry zone or tall cupboard). Upstairs, Bedroom 2's bath moves over the master bath (every fitting stacked), the wardrobe alcove goes (an 8 ft wardrobe on the bedroom's north wall and a dresser on its east wall instead), the landing and toilet lobby become one landing west of the stair head, and the old stair well becomes a box room facing north. The stair jali now looks into the dining; the living's west wall is solid (TV, lamp niche). The stair-chimney clerestory is on the south wall under the main eave; section B now cuts the stair at y 9.5. The master bedroom, den, kitchen, living and terrace are unchanged.",
@@ -574,8 +574,8 @@ ELECTRICAL = [
     ("S", 27.4, 15.3, "R42", "at the door, on the cross wall"), ("S", 27.6, 21.3, "R42", "guest bath switches outside the door"), ("TV", 21.0, 15.3, "R42", "TV and data"),
     ("P", 19.0, 24.6, "R42", "reading light by the sofa-bed"), ("S", 26.9, 15.3, "R42", "by the connecting door"),
     ("AC", 14.4, 16.6, "R42", "west wall, on solid wall south of the garden door"), ("ODU", 13.6, 16.6, "R42", "west wall, under the eave (one stacked column with the study unit)"),
-    # Lobby, stair, under-stair cupboard
-    ("L", 38.25, 14.2, "R09", ""), ("S", 41.6, 13.6, "R09", "lobby and stair, 2-way with the landing"),
+    # Hall, stair, under-stair cupboard
+    ("L", 38.25, 14.2, "R09", ""), ("S", 41.6, 13.6, "R09", "hall and stair, 2-way with the landing"),
     ("DB", 36.2, 12.0, "R06", "in the cupboard under the upper flight, facing the stair hall (central, dry)"), ("U", 35.3, 12.0, "R06", "router (central)"),
     ("INV", 37.2, 11.0, "R06", "lithium inverter in the ventilated under-stair cupboard"),
     ("WL", 38.25, 3.4, "R06", "at the half landing"),
