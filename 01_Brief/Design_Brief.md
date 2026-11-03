@@ -3,7 +3,7 @@
 Revision B (pre-construction draft), 30 Oct 2026. **Branch `feature/duplex`: duplex option study, 1 Nov 2026.**
 
 ## Duplex option (this branch)
-This branch tests a two-level house on the **front 64 ft** of the same plot; the back 11 ft stays spare land. The drawings, schedules and 3D model on this branch show the duplex. The sections below that describe the single-storey plan (room list, sizes, the 62 ft house) belong to the `main` branch, except where this section changes them. Full spec: [Duplex_Design_Spec.md](Duplex_Design_Spec.md).
+This branch tests a two-level house on the full plot: 170 ft deep to the east road, 27 ft wide at the back to 40 ft at the road. The house keeps 8 ft behind it, and the 109 ft of front land holds the forecourt, car porch and drive, a vegetable garden and a carpentry workshop by the road. The drawings, schedules and 3D model on this branch show the duplex. The sections below that describe the single-storey plan (room list, sizes, the 62 ft house) belong to the `main` branch, except where this section changes them. Full spec: [Duplex_Design_Spec.md](Duplex_Design_Spec.md).
 
 - **House:** 53 x 22 ft (x 14-67), lengthened from 44 ft. Ground floor 1,166 sq ft; first floor about 525 sq ft enclosed plus a 19 x 22 ft covered terrace.
 - **Front half, ground floor:** living, dining (4-seat table, nook with a south window, serving hatch to the kitchen), kitchen, pooja and wet area with flat ceilings at about 9'-5" under the first-floor slab (no double height); poomukham and main door as before.

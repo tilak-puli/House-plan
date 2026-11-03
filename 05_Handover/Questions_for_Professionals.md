@@ -43,13 +43,14 @@ Bring the Rev B drawing set, the schedules workbook and the room detailing guide
 6. Main door position on the east face; sump and borewell NE, septic NW, overhead tank SW.
 
 ## Duplex option (branch `feature/duplex`)
-- Architect: what front, side and rear setbacks apply to a two-storey house on this plot and road width, and is there a height limit? Does the 8 ft front yard still work?
-- Architect: is 64 ft of plot (a 53 ft house) right for this duplex, or should we keep the 62 ft single-storey plan on the full 75 ft?
+- Architect / surveyor: survey the plot (170 ft deep, 27 / 30 / 40 ft wide). What side and rear setbacks apply to a two-storey house, and is there a height limit? The house keeps 8 ft at the back and 2-4 ft at the sides.
+- Architect: the front land layout (forecourt, car porch, 10 ft drive, vegetable garden, a 16 x 12 ft carpentry workshop by the road): does the workshop need its own permission, and should it have a separate meter?
+- Architect / panchayat: two small rental shops (about 12 x 16 ft each) reserved on the road front north of the gate, to be built later: front setback for commercial frontage on this road, commercial-use permission on converted farm land, separate meters, and whether to build the plinth and a shared toilet now.
 - Structural engineer: footing and column sizes for two floors on black cotton soil; the first-floor slab over the whole block and its edge beam round the terrace; RCC stubs and base plates for the steel posts that carry the roof over the terrace.
 - Structural engineer: stair design (waist slab, landing beam) and whether the loft water tank can sit on the truss or needs a platform off the slab.
 - Plumber: the upper WC stack inside the wet wall between the common bath and the store, its vent above the main roof, and waterproofing the slabs under the upper bath and the terrace, and the terrace drain to a downpipe.
 - Electrician: a sub-board for the first floor, 2-way switching between the lobby and the landing, wet-rated lights and fan on the covered terrace.
-- Vastu consultant: which boundary sets the plot centre? On the full 75 ft plot it falls in the lobby at the foot of the stair, beside the common bath; on the 64 ft trial plot it falls in the living.
+- Vastu consultant: on the full 170 ft plot the centre falls at about x 97, y 16, open ground in the vegetable garden. Confirm the septic tank and soak pit in the plot's north-west quadrant beside the forecourt, the workshop in the south-east by the road, and the sump, borewell and recharge pit in the north-east.
 - Vastu consultant: the master on the ground floor across the west bay (sleeping zone in the south-west, sitting zone north-west), Bedroom 2 above it in the south-west and a study in the north-west upstairs: confirm, and confirm the baths (master bath in the north-west, common bath south of the centre beside the stair).
 - Vastu consultant: the stair in the north-west quarter rising clockwise; Bedroom 2 over the master in the south-west; the Brahmasthan in the living (kept free of walls and columns) with the covered terrace above.
 - Architect / contractor: roof over the terrace in clay tiles on steel trusses (drawn) or an insulated metal-sheet roof on the same frame: cost, heat and look.

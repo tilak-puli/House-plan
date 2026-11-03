@@ -37,18 +37,16 @@ def make(path):
         return t
 
     # site
-    W, S = SITE["w"], SITE["strip"]
-    rect(0, SITE["l"], 0, W + S, "C-PROP-SETB")
-    rect(0, SITE["l"], 0, W, "C-PROP")
-    rect(SITE["trial"], SITE["l"], 0, W, "C-PROP-SETB")
+    msp.add_lwpolyline([P(x, y) for x, y in PLOT], close=True, dxfattribs={"layer": "C-PROP"})
     rect(*ROOF["hip"], "A-ROOF-OTLN")
     rect(*ROOF["gable"], "A-ROOF-OTLN")
     rect(*ROOF["wing"], "A-ROOF-OTLN")
     for c in ROOF["chaipu"]:
         rect(*c[:4], "A-ROOF-OTLN")
-    text(f"PLOT {W}' x {SITE['l']}'", 35, 1.2, 150, "A-ANNO-TEXT")
-    if S: text(f"NORTH STRIP {S}' x {SITE['l']}' (PHASE 2 SITE)", 35, W + 1.5, 150)
-    text("EAST ROAD", 81, W / 2, 200)
+    text(f"PLOT {PLOT_X2 - PLOT_X1:.0f}' DEEP, 27' TO 40' WIDE", 90, 1.2, 150, "A-ANNO-TEXT")
+    text("EAST ROAD", PLOT_X2 + 4, 20, 200)
+    for b in GARDEN_BEDS:
+        rect(*b, "L-PLNT")
     for fid, label, kind, g in SITE_FEATURES:
         if kind == "rect":
             rect(*g, "A-SITE"); text(fid, (g[0] + g[1]) / 2, (g[2] + g[3]) / 2, 70)
@@ -68,7 +66,7 @@ def make(path):
 def _floor(msp, rect, text, fl):
     if fl == "F1":
         text("FIRST FLOOR PLAN (drawn 40 ft north of the ground floor)", 45, -2.5, 220)
-        rect(0, SITE["l"], 0, SITE["w"], "C-PROP-SETB")
+        msp.add_lwpolyline([P(x, y) for x, y in PLOT], close=True, dxfattribs={"layer": "C-PROP-SETB"})
     # services (schematic points and runs)
     for code, x, y, rid, note in ELECTRICAL:
         msp.add_circle(P(x, y), 0.3 * MM, dxfattribs={"layer": "E-POWR" if code not in ("L", "WL", "F", "EF", "S", "GL") else "E-LITE"})
@@ -174,8 +172,8 @@ def _floor(msp, rect, text, fl):
     for a, b in zip(xs, xs[1:]):
         hdim(a, b, ys[0], ys[0] - 2)
     if fl == "G":
-        vdim(0, 3, 14, 10.5); vdim(25, SITE["w"], 14, 10.5)
-        hdim(SITE["trial"], 14, 3, -5); hdim(67, 75, 3, -5)
+        vdim(0, 3, 14, 10.5); vdim(25, plot_north(14), 14, 10.5)
+        hdim(PLOT_X1, 14, 3, -5); hdim(67, PLOT_X2, 3, -5)
 
 
 if __name__ == "__main__":

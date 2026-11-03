@@ -104,6 +104,17 @@ def room_of(rid):
     return next(r for r in ROOMS if r[0] == rid)
 
 
+def plot_area():
+    """Plot area (sq ft), from the boundary polygon."""
+    pts = PLOT + PLOT[:1]
+    return abs(sum(a[0] * b[1] - b[0] * a[1] for a, b in zip(pts, pts[1:]))) / 2
+
+
+def plot_perimeter():
+    pts = PLOT + PLOT[:1]
+    return sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(pts, pts[1:]))
+
+
 def floor_level(rid):
     return LEVELS["FFL"] + (LEVELS["upper_ffl"] if rid in F1_ROOM_IDS else 0) + ROOM_FLOOR.get(rid, 0)
 

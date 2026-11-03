@@ -18,7 +18,7 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 
 ## Brief
 
-- Same plot and road (east). The house and its yards use the front **64 ft** (x 11–75). The back 11 ft (x 0–11) stays spare land: kitchen garden, septic tank and soak pit.
+- **The whole plot:** 170 ft deep from the back (west) boundary to the east road, 27 ft wide at the back, 30 ft half-way and 40 ft at the road (the south side is straight, the north side slants); about 5,400 sq ft. The house keeps 8 ft behind it; the 109 ft of front land holds the forecourt, the car porch and drive, a vegetable garden, a carpentry workshop, and a reserve for two rental shops on the road front. A compound wall runs right round. See **Site** below and sheet A-101.
 - 3 bedrooms (two down, one up):
   - **Ground floor:** the master bedroom across the full depth of the west bay (14 × 22) with its bath off the sitting zone; a small single-bed room; the common bath beside the stair hall; dining by the kitchen hatch.
   - **First floor:** Bedroom 2 in the south-west (wardrobe alcove, bath), a closable study in the north-west and a toilet off the landing.
@@ -30,12 +30,33 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 | | Value |
 |---|---|
 | House | 53 × 22 ft (x 14–67, y 3–25) |
-| Front yard (east) | 8 ft: porch steps, forecourt, two-wheeler bay |
-| Rear gap (west, inside the 64 ft) | 3 ft |
-| Side walkways | 3 ft south, 2 ft north |
+| Front land (east) | 109 ft to the road: forecourt, car porch, drive, vegetable garden, workshop |
+| Back garden (west) | 8 ft: herb beds, clothes line, the den's garden sit-out under the pergola |
+| Side walkways | 3 ft south; 2'-3" to 4'-2" north (the boundary slants) |
 | Ground floor | 1,166 sq ft |
 | First floor, enclosed | about 525 sq ft (master suite with sitting zone, bath, study, landing, passage, stair) |
 | First floor, covered terrace | 19 × 22 ft, about 420 sq ft |
+
+## Site (sheet A-101)
+
+| Zone | Extent (x) | What is there |
+|---|---|---|
+| Back garden | 6–14 | herb and kitchen beds, clothes line, the den's garden door onto a stone sit-out under the creeper pergola |
+| House | 14–67 (steps to 69) | as drawn |
+| Forecourt | 69–82 | stone paving round the tulsi thara on the door axis; a hedge screens the septic tank beyond |
+| Car porch | 69–88, south side | 19 × 10 ft under a steel pergola with creepers; two-wheelers alongside |
+| Drive | 88–176, south side | 10 ft wide along the straight south boundary, gravel with paver wheel strips |
+| Septic tank and soak pit | 84–90 and 95, north side | in the plot's north-west quadrant, a tanker reaches it from the drive; 75 ft from the borewell |
+| Vegetable garden | 98–128 | five raised beds 4 ft wide on 6 ft centres running north–south; fruit trees along the north boundary; taps every 25 ft; the plot centre (about x 97, y 16) stays open here |
+| Compost | 130–133 | two shaded pits |
+| Carpentry workshop | 136–152 | 16 × 12 ft, AAC walls and a tiled roof, 3-phase power on its own sub-board, 8 ft double doors onto a 4 ft covered verandah on the drive, dust extraction, a lockable timber store; machine noise about 70 ft from the house |
+| Sump, borewell, recharge pit | 137–155, north side | in the north-east quadrant just behind the shops; the roof water goes to the recharge pit |
+| Rental shops | 156–176, north of the gate | two shops of 12 × 14'-6" facing the east road under a 1'-6" canopy, rolling shutters, signboards, a tiled roof; a 4 ft back passage with a shared toilet and rear doors; own meters. The house land's wall runs behind them (from the gate's north post west to x 156, then north), so the shops front the road directly |
+| Trees | north boundary and forecourt | six fruit trees along the north boundary and a neem between the forecourt and the garden, shading the car porch; all well clear of the house walls and the plot centre |
+| Gate | 176 | 12 ft sliding gate with a 3 ft wicket; meter in the gate pillar |
+
+- Compound wall about 408 ft: the road face in exposed brick or local stone, the rest precast post-and-panel 5 ft.
+- The ground falls 1:100 away from the house and down the drive to the road.
 
 ## How the house grew (44 to 53 ft) and the depth re-split
 

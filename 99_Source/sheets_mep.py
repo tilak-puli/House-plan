@@ -25,7 +25,7 @@ def _sym(pl, code, x, y, col):
 
 
 def _base(pl, ceilings=False):
-    pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
+    plot_outline(pl, SITE["l"] + 3, color=LIGHT, lw=0.5)
     if ceilings:
         for r in ROOMS:
             kind, v = CEILINGS[r[0]]

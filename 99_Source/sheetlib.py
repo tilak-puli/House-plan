@@ -36,7 +36,7 @@ class Sheet:
         c.setFont("Helvetica", 8.5); c.setFillColor(GREY)
         c.drawString(x0 + 5 * mm, y - 6 * mm, "Kerala-style two-storey residence (duplex option)")
         c.drawString(x0 + 5 * mm, y - 11 * mm, "Guntur, Andhra Pradesh")
-        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {SITE['w']}' x {SITE['l']}' (front 64' used), road on east")
+        c.drawString(x0 + 5 * mm, y - 16 * mm, f"Plot {PLOT_X2 - PLOT_X1:.0f}' deep, 27' to 40' wide, road on east")
         rows = [("Stage", PROJECT["stage"]), ("Drawing", self.title), ("Sheet", self.num), ("Scale", self.scale + (" at A3" if ":" in self.scale else "")),
                 ("Revision", PROJECT["rev"]), ("Date", PROJECT["date"]), ("Units", "Feet-inches; levels from finished ground")]
         yy = 60 * mm
@@ -373,30 +373,67 @@ def floor_sheet(fn, floor, num, title):
     return run
 
 
-def site_context(pl, light=False):
+def plot_outline(pl, x_end=None, color=INK, lw=0.9):
+    """The plot boundary, cut off at x_end on the house sheets (the plot runs on to the road)."""
+    x_end = min(x_end or PLOT_X2, PLOT_X2)
+    north = [(x, plot_north(x)) for x in (PLOT_X1, 91.0, x_end) if x <= x_end]
+    if north[-1][0] < x_end:
+        north.append((x_end, plot_north(x_end)))
+    pl.line(PLOT_X1, 0, x_end, 0, lw=lw, color=color)
+    pl.line(PLOT_X1, 0, PLOT_X1, plot_north(PLOT_X1), lw=lw, color=color)
+    for (a, b), (c_, d) in zip(north, north[1:]):
+        pl.line(a, b, c_, d, lw=lw, color=color)
+    if x_end < PLOT_X2:
+        pl.line(x_end, -0.5, x_end, plot_north(x_end) + 0.5, lw=0.4, color=GREY, dash=(1.5, 1.5))
+    else:
+        pl.line(PLOT_X2, 0, PLOT_X2, plot_north(PLOT_X2), lw=lw, color=color)
+    return x_end
+
+
+def site_context(pl, light=False, x_end=None):
     g = GREY
-    L, W, S = SITE["l"], SITE["w"], SITE["strip"]
-    pl.line(SITE["trial"], 0, SITE["trial"], W, lw=0.5, color=GREY, dash=(4, 2))
-    if S: pl.rect(0, L, 0, W + S, stroke=GREY, lw=0.5, dash=(3, 2))
-    pl.rect(0, L, 0, W, stroke=INK, lw=0.9)
-    pl.rect(L, L + 3.5, -1, W + S + 1, stroke=None, fill=colors.HexColor("#EDEDED"))
-    pl.text("ROAD", L + 1.75, W / 2, 6, color=g)
+    x_end = plot_outline(pl, x_end or SITE["l"] + 3)
+    if x_end < PLOT_X2:
+        pl.text(f"PLOT RUNS ON {PLOT_X2 - x_end:.0f} FT TO THE ROAD", x_end - 1.0, plot_north(x_end) + 1.4, 5.5, color=g, anchor="r")
+    else:
+        pl.rect(PLOT_X2, PLOT_X2 + 4, -1, plot_north(PLOT_X2) + 1, stroke=None, fill=colors.HexColor("#EDEDED"))
+        pl.text("ROAD", PLOT_X2 + 2, plot_north(PLOT_X2) / 2, 6, color=g)
     for x, y, r in TREES:
-        pl.circle(x, y, r, lw=0.3, color=colors.HexColor("#6F8E4A"))
+        if x - r < x_end:
+            pl.circle(x, y, r, lw=0.3, color=colors.HexColor("#6F8E4A"))
 
 
-def site_features(pl, labels=True, size=5):
+def site_features(pl, labels=True, size=5, x_end=None):
+    x_end = x_end or SITE["l"] + 3
     for fid, label, kind, g in SITE_FEATURES:
         if kind == "rect":
             x1, x2, y1, y2 = g
+            if x1 >= x_end:
+                continue
+            x2 = min(x2, x_end)
             if fid == "SPARE":
                 pl.rect(x1, x2, y1, y2, stroke=None, fill=colors.HexColor("#EEF3E8"))
-                if labels: pl.text("SPARE LAND (BACK 11 FT)", (x1 + x2) / 2, y2 - 2.2, size + 0.5, "Helvetica-Bold", GREY)
+                if labels: pl.text("BACK GARDEN (8 FT)", (x1 + x2) / 2 + 1.0, y2 - 2.2, size + 0.5, "Helvetica-Bold", GREY)
                 continue
-            pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid == "PERGOLA" else None)
-            if labels and fid not in ("GATE", "STEPS", "HEDGE3"):
-                pl.text(fid if fid != "PERGOLA" else "PERGOLA", (x1 + x2) / 2, (y1 + y2) / 2, size)
+            if fid == "VEG":
+                for b in GARDEN_BEDS:
+                    if b[0] < x_end:
+                        pl.rect(b[0], min(b[1], x_end), b[2], b[3], lw=0.3, fill=colors.HexColor("#EEF3E8"))
+                if labels: pl.text("VEGETABLE GARDEN", (x1 + x2) / 2, 13.6, size + 1, "Helvetica-Bold", colors.HexColor("#4F6E34"))
+                continue
+            fill = {"DRIVE": colors.HexColor("#F1EEE8"), "CARPORT": colors.HexColor("#F1EEE8"), "WORKSHOP": colors.HexColor("#DADADA"), "SHOP1": colors.HexColor("#E4DCCB"), "SHOP2": colors.HexColor("#E4DCCB")}.get(fid)
+            if fid == "SHOPS":
+                pts = SHOP_WALL
+                for (a, b), (c_, d) in zip(pts, pts[1:]):
+                    pl.line(a, b, c_, d, lw=1.4)  # the house land's wall, behind the shops
+                if labels: pl.text("2 RENTAL SHOPS (BUILD WHEN WANTED)", (x1 + x2) / 2, y1 - 1.2, size, "Helvetica-Bold", ACC)
+                continue
+            pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid in ("PERGOLA", "CARPORT", "WVERANDAH", "SHOPBACK") else None, fill=fill, stroke=INK)
+            if labels and fid not in ("GATE", "STEPS", "HEDGE1", "APRON") and x2 - x1 > 2.5:
+                pl.text({"WVERANDAH": "VERANDAH", "CARPORT": "CAR PORCH", "PATH": "FORECOURT", "SHOP1": "SHOP 1", "SHOP2": "SHOP 2", "SHOPBACK": "", "SHOPWC": "WC"}.get(fid, fid), (x1 + x2) / 2, (y1 + y2) / 2, size)
         elif kind == "circle":
             x, y, r = g
+            if x - r >= x_end:
+                continue
             pl.circle(x, y, r, lw=0.4)
             if labels: pl.text(fid, x, y + r + 0.6, size)

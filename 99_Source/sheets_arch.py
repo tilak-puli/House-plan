@@ -18,7 +18,7 @@ def sheet_cover(c, index):
         with on_floor(fl):
             carpet += sum(clear_dims(r)[0] * clear_dims(r)[1] for r in ROOMS)
     data = [("Site", "Guntur, Andhra Pradesh; agricultural land (conversion to confirm)"),
-            ("Plot", f"{SITE['w']}' x {SITE['l']}' = {SITE['w'] * SITE['l']:,} sq ft; duplex planned on the front 64' (back 11' spare)"),
+            ("Plot", f"{PLOT_X2 - PLOT_X1:.0f}' deep (west to the east road), 27' wide at the back, 30' half-way, 40' at the road: about {plot_area():,.0f} sq ft; 8' kept behind the house, 109' of front land (forecourt, car porch, drive, vegetable garden, carpentry workshop)"),
             ("Built footprint", "53' x 22' = 1,166 sq ft ground floor; about 615 sq ft enclosed + 420 sq ft covered terrace on the first floor"),
             ("Carpet area", f"{carpet:,.0f} sq ft clear, both floors, incl. poomukham and terrace"),
             ("Construction", "Two-storey RCC frame, AAC walls, first-floor slab over the back half, steel-truss roofs with clay tiles"),
@@ -119,33 +119,29 @@ def sheet_phasing(c):
 
 
 def sheet_site(c):
-    s = Sheet(c, "A-101", "Site plan and services", "1:100")
-    pl = Plan(s, 100, 45 * mm, 128 * mm)
-    site_context(pl)
-    W = SITE["w"]
+    s = Sheet(c, "A-101", "Site plan: the whole plot", "1:200")
+    pl = Plan(s, 200, 30 * mm - PLOT_X1 * 304.8 / 200 * mm, 150 * mm)
+    site_context(pl, x_end=PLOT_X2)
     x1, x2, y1, y2 = ROOF["hip"]
-    pl.rect(x1 - 0.5, x2 + 0.5, -0, y2 + 0.5, stroke=GREY, lw=0.3, dash=(1, 1))  # apron edge (approx.)
     pl.rect(14, 61, 3, 25, stroke=INK, fill=colors.HexColor("#BDBDBD"), lw=0.8)
     pl.rect(61, 67, 3, 25, stroke=INK, fill=colors.HexColor("#DADADA"), lw=0.6)
-    pl.rect(x1, x2, y1, y2, stroke=INK, lw=0.4, dash=(3, 2))
-    site_features(pl)
-    pl.text("TWO-STOREY BLOCK", 37.5, 16.5, 8, "Helvetica-Bold")
-    pl.text("(covered terrace over the front half)", 37.5, 14.6, 6, color=INK)
-    pl.text("1-STOREY", 64, 9.0, 5.5, "Helvetica-Bold")
-    pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}  (dashed: roof eaves; dotted: 3 ft apron)", 37.5, 11.0, 6, color=GREY)
-    if SITE["strip"]: pl.text(f"NORTH STRIP, {SITE['strip']}' (OPEN NOW, PHASE 2 SITE)", 35, W + 1.6, 6.5, color=GREY)
-    pl.text("3' SERVICE WALKWAY", 37.5, 1.5, 6, color=GREY)
-    pl.text("64' TRIAL PLOT", 43, -1.2, 5.5, color=GREY)
-    pl.text("FRONT YARD", 71.5, 12.3, 6, color=GREY)
-    pl.level(71, 17.6, 0)
-    pl.hdim(0, 11, -3, "11'-0\" SPARE"); pl.hdim(11, 14, -3); pl.hdim(14, 67, -3); pl.hdim(67, 75, -3); pl.hdim(0, 75, -6.5, f"{SITE['l']}'-0\" PLOT")
-    pl.vdim(0, 3, -3); pl.vdim(3, 25, -3); pl.vdim(25, W, -3); pl.vdim(0, W, -6.5, f"{W}'-0\" PLOT")
-    if SITE["strip"]: pl.vdim(W, W + SITE["strip"], -6.5)
+    pl.rect(x1, ROOF["gable"][1], y1, y2, stroke=INK, lw=0.3, dash=(3, 2))
+    site_features(pl, size=4.4, x_end=PLOT_X2)
+    pl.text("HOUSE", 40.5, 15.5, 7, "Helvetica-Bold")
+    pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}", 40.5, 11.5, 5, color=GREY)
+    for x, y, rr in TREES:
+        pl.text("neem" if rr > 3 else "fruit tree", x, y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
+    yN = lambda x: plot_north(x)
+    pl.hdim(PLOT_X1, 14, -3, "8'", 5); pl.hdim(14, 67, -3, "53' HOUSE", 5); pl.hdim(67, PLOT_X2, -3, f"{PLOT_X2 - 67:.0f}' FRONT LAND", 5)
+    pl.hdim(PLOT_X1, PLOT_X2, -7, f"{PLOT_X2 - PLOT_X1:.0f}'-0\" PLOT (WEST BOUNDARY TO THE EAST ROAD)", 5.5)
+    pl.vdim(0, yN(PLOT_X1), PLOT_X1 - 3, "27'", 5); pl.vdim(0, yN(91), 91, "30' (half-way)", 5); pl.vdim(0, yN(PLOT_X2), PLOT_X2 + 6, "40'", 5)
     pl.north(PW - 105 * mm, PH - 40 * mm)
-    pl.scalebar(250 * mm, 75 * mm)
-    notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES]
-    s.bullets(notes[:7], 45 * mm, 62 * mm, 120 * mm, 6.3)
-    s.bullets(notes[7:] + ["Site drains: finished ground falls 1:100 away from the house to the road side.", "Compound wall: precast RCC post-and-panel, 5 ft, set just inside the plot line; panels lift out, so a run can move later (including across the 64 ft line)."], 175 * mm, 62 * mm, 150 * mm, 6.3)
+    pl.scalebar(250 * mm, 118 * mm)
+    notes = [f"{f[0]}: {f[1]}" for f in SITE_FEATURES if f[0] not in ("APRON", "STEPS", "GSTEP", "FEET", "WSTEP")]
+    half = (len(notes) + 1) // 2
+    s.bullets(notes[:half], 22 * mm, 92 * mm, 150 * mm, 6.0)
+    s.bullets(notes[half:] + [f"Plot area about {plot_area():,.0f} sq ft; compound wall about {plot_perimeter():.0f} ft, the road face in exposed brick or local stone, the rest precast post-and-panel 5 ft.",
+                              "Ground falls 1:100 away from the house and down the drive to the road; roof water to the recharge pit."], 178 * mm, 92 * mm, 150 * mm, 6.0)
     c.showPage()
 
 
@@ -221,7 +217,7 @@ SECTIONS = {"A": ("X", 44.5, "Cross section through the dining nook, dining, liv
 def sheet_working(c, num="A-104", title="Working plan, ground floor: clear sizes and sections"):
     s = Sheet(c, num, title, "1:75")
     pl = Plan(s, 75, 16 * mm, 104 * mm)
-    pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
+    plot_outline(pl, SITE["l"] + 3, color=LIGHT, lw=0.5)
     pl.walls()
     pl.openings()
     pl.floor_extras()
@@ -259,7 +255,7 @@ FLOOR_GROUPS = [(k, colors.HexColor(v), [r for r, f in FLOOR_FINISH.items() if f
 def sheet_finishes(c, num="A-105", title="Floor finishes and levels, ground floor"):
     s = Sheet(c, num, title, "1:75")
     pl = Plan(s, 75, 16 * mm, 104 * mm)
-    pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
+    plot_outline(pl, SITE["l"] + 3, color=LIGHT, lw=0.5)
     ids = {r[0] for r in ROOMS}
     for _, col, rooms in FLOOR_GROUPS:
         for rid in rooms:
@@ -297,8 +293,7 @@ def sheet_finishes(c, num="A-105", title="Floor finishes and levels, ground floo
 def sheet_roof(c):
     s = Sheet(c, "A-110", "Roof plan", "1:75")
     pl = Plan(s, 75, 16 * mm, 104 * mm)
-    pl.rect(0, SITE["l"], 0, SITE["w"], stroke=LIGHT, lw=0.5)
-    pl.line(SITE["trial"], 0, SITE["trial"], SITE["w"], lw=0.5, color=GREY, dash=(4, 2))
+    plot_outline(pl, SITE["l"] + 3, color=LIGHT, lw=0.5)
     pl.rect(14, 67, 3, 25, stroke=GREY, lw=0.4, dash=(2, 2))
     x1, x2, y1, y2 = ROOF["hip"]
     w = (y2 - y1) / 2; yc = (y1 + y2) / 2

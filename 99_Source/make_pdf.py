@@ -10,7 +10,7 @@ from sheets_mep import sheet_lighting, sheet_power, sheet_plumbing
 SHEETS = [  # number, title, scale, function
     ("A-001", "Design basis and general notes", "-", sheet_basis),
     ("A-002", "Construction phasing (roof first, three stages)", "1:100", sheet_phasing),
-    ("A-101", "Site plan and services", "1:100", sheet_site),
+    ("A-101", "Site plan: the whole plot", "1:200", sheet_site),
     ("A-102", "Ground floor plan", "1:75", floor_sheet(sheet_plan, "G", "A-102", "Ground floor plan")),
     ("A-103", "First floor plan", "1:75", floor_sheet(sheet_plan, "F1", "A-103", "First floor plan")),
     ("A-104", "Furniture layout, ground floor", "1:75", floor_sheet(sheet_furniture, "G", "A-104", "Furniture layout, ground floor")),

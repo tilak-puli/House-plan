@@ -69,12 +69,12 @@ def model_data():
             "F": LEVELS["FFL"], "PF": LEVELS["poomukham"], "H": LEVELS["wall_top"], "H1": LEVELS["upper_wall_top"], "riser": LEVELS["riser"],
             "slabT": LEVELS["slab"], "slab": [list(s) for s in SLAB_F1], "stair": STAIR, "posts": [list(p) for p in TERRACE_POSTS],
             "house": {"x1": 14, "x2": 67, "y1": 3, "y2": 25, "porch": [61, 67, 12.5, 25], "block": [14, 61]},
-            "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"]}, "gate": list(feat["GATE"][2:]),
+            "site": {"w": SITE["w"], "strip": SITE["strip"], "trial": SITE["trial"], "plot": [list(p) for p in PLOT], "x1": PLOT_X1, "x2": PLOT_X2, "shopWall": [list(p) for p in SHOP_WALL]}, "beds": [list(b) for b in GARDEN_BEDS], "gate": list(feat["GATE"][2:]),
             "roof": {"hip": list(ROOF["hip"]), "gable": list(ROOF["gable"]), "wing": list(ROOF["wing"]), "eave": round(eave_z(), 3), "geave": round(gable_eave_z(), 3), "weave": round(wing_eave_z(), 3), "gabletD": round(gablet_d(), 3), "gabletH": ROOF["gablet"], "chaipu": [list(c[:4]) + [c[4]] for c in ROOF["chaipu"]]},
             "pergola": list(feat["PERGOLA"]),
             "gate2": list(feat["GATE2"][2:]) if "GATE2" in feat else None,
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
-                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "HEDGE2", "HEDGE3", "HEDGE4", "OTTA", "GSTEP") if k in feat}},
+                         "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "HEDGE1", "OTTA", "GSTEP", "CARPORT", "DRIVE", "WORKSHOP", "WVERANDAH", "COMPOST", "RECHARGE", "BORE", "SHOP1", "SHOP2", "SHOPBACK", "SHOPWC") if k in feat}},
             "trees": [list(t) for t in TREES]}
 
 

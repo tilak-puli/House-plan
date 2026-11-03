@@ -70,7 +70,7 @@ def take_off():
     q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 22 ft (main roof) or 12 ft (front roofs) each"))
     q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
     feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
-    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((2 * SITE["l"] + 2 * SITE["w"] - (feat_gate[1] - feat_gate[0])) * 0.3048, 1), "m", "Plot perimeter less the gates; the road face in exposed brick or local stone to match the kitchen front"))
+    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((plot_perimeter() - (feat_gate[1] - feat_gate[0]) - (plot_north(PLOT_X2) - SHOP_WALL[0][1]) + sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(SHOP_WALL, SHOP_WALL[1:]))) * 0.3048, 1), "m", "Plot perimeter less the gate and the shop frontage, plus the wall behind the shops; the road face in exposed brick or local stone to match the kitchen front"))
     q.append(("Site", "Plinth protection apron, 3 ft wide", round(((53.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(both("DOORS")), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(both("WINDOWS")), "no.", "See Windows tab"))
