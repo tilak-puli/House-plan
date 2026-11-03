@@ -425,12 +425,17 @@ def site_features(pl, labels=True, size=5, x_end=None):
             if fid == "SHOPS":
                 pts = SHOP_WALL
                 for (a, b), (c_, d) in zip(pts, pts[1:]):
-                    pl.line(a, b, c_, d, lw=1.4)  # the house land's wall, behind the shops
+                    pl.line(a, b, c_, d, lw=1.4)  # short road wall north of the shops
                 if labels: pl.text("2 RENTAL SHOPS (BUILD WHEN WANTED)", (x1 + x2) / 2, y1 - 1.2, size, "Helvetica-Bold", ACC)
                 continue
             pl.rect(x1, x2, y1, y2, lw=0.4, dash=(2, 1) if fid in ("PERGOLA", "CARPORT", "WVERANDAH", "SHOPBACK") else None, fill=fill, stroke=INK)
             if labels and fid not in ("GATE", "STEPS", "HEDGE1", "APRON") and x2 - x1 > 2.5:
-                pl.text({"WVERANDAH": "VERANDAH", "CARPORT": "CAR PORCH", "PATH": "FORECOURT", "SHOP1": "SHOP 1", "SHOP2": "SHOP 2", "SHOPBACK": "", "SHOPWC": "WC"}.get(fid, fid), (x1 + x2) / 2, (y1 + y2) / 2, size)
+                pl.text({"WVERANDAH": "VERANDAH", "CARPORT": "CAR PORCH", "PATH": "FORECOURT", "PATH2": "", "SHOP1": "SHOP 1", "SHOP2": "SHOP 2", "SITEWC": "WC"}.get(fid, fid), (x1 + x2) / 2, (y1 + y2) / 2, size)
+        elif kind == "poly" and fid == "DRIVE":
+            pts = [(x, y) for x, y in drive_poly() if x <= x_end]
+            if len(pts) > 2:
+                pl.poly(pts, lw=0.4, close=True, fill=colors.HexColor("#F1EEE8"))
+                if labels: pl.text("DRIVE", (g[0] + g[1]) / 2, plot_north((g[0] + g[1]) / 2) - 5.4, size)
         elif kind == "circle":
             x, y, r = g
             if x - r >= x_end:

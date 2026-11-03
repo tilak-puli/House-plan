@@ -130,7 +130,7 @@ def sheet_site(c):
     pl.text("HOUSE", 40.5, 15.5, 7, "Helvetica-Bold")
     pl.text(f"FFL {fmt_lvl(LEVELS['FFL'])}", 40.5, 11.5, 5, color=GREY)
     for x, y, rr in TREES:
-        pl.text("neem" if rr > 3 else "fruit tree", x, y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
+        pl.text("neem" if rr > 3 else "coconut" if rr < 2 else "fruit tree", x, y - rr - 0.9, 3.8, color=colors.HexColor("#4F6E34"))
     yN = lambda x: plot_north(x)
     pl.hdim(PLOT_X1, 14, -3, "8'", 5); pl.hdim(14, 67, -3, "53' HOUSE", 5); pl.hdim(67, PLOT_X2, -3, f"{PLOT_X2 - 67:.0f}' FRONT LAND", 5)
     pl.hdim(PLOT_X1, PLOT_X2, -7, f"{PLOT_X2 - PLOT_X1:.0f}'-0\" PLOT (WEST BOUNDARY TO THE EAST ROAD)", 5.5)

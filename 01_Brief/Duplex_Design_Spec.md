@@ -18,7 +18,7 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 
 ## Brief
 
-- **The whole plot:** 170 ft deep from the back (west) boundary to the east road, 27 ft wide at the back, 30 ft half-way and 40 ft at the road (the south side is straight, the north side slants); about 5,400 sq ft. The house keeps 8 ft behind it; the 109 ft of front land holds the forecourt, the car porch and drive, a vegetable garden, a carpentry workshop, and a reserve for two rental shops on the road front. A compound wall runs right round. See **Site** below and sheet A-101.
+- **The whole plot:** 170 ft deep from the back (west) boundary to the east road, 27 ft wide at the back, 30 ft half-way and 40 ft at the road (the south side is straight, the north side slants); about 5,400 sq ft. The house keeps 8 ft behind it; the 109 ft of front land holds the forecourt, a car porch and drive on the north side (vastu: the way in on the right as you face the house), a vegetable garden, a carpentry workshop and two rental shops on the road front. A compound wall runs right round. See **Site** below and sheet A-101.
 - 3 bedrooms (two down, one up):
   - **Ground floor:** the master bedroom across the full depth of the west bay (14 × 22) with its bath off the sitting zone; a small single-bed room; the common bath beside the stair hall; dining by the kitchen hatch.
   - **First floor:** Bedroom 2 in the south-west (wardrobe alcove, bath), a closable study in the north-west and a toilet off the landing.
@@ -43,24 +43,26 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 |---|---|---|
 | Back garden | 6–14 | herb and kitchen beds, clothes line, the den's garden door onto a stone sit-out under the creeper pergola |
 | House | 14–67 (steps to 69) | as drawn |
-| Forecourt | 69–82 | stone paving round the tulsi thara on the door axis; a hedge screens the septic tank beyond |
-| Car porch | 69–88, south side | 19 × 10 ft under a steel pergola with creepers; two-wheelers alongside |
-| Drive | 88–176, south side | 10 ft wide along the straight south boundary, gravel with paver wheel strips |
-| Septic tank and soak pit | 84–90 and 95, north side | in the plot's north-west quadrant, a tanker reaches it from the drive; 75 ft from the borewell |
-| Vegetable garden | 98–128 | five raised beds 4 ft wide on 6 ft centres running north–south; fruit trees along the north boundary; taps every 25 ft; the plot centre (about x 97, y 16) stays open here |
-| Compost | 130–133 | two shaded pits |
-| Carpentry workshop | 136–152 | 16 × 12 ft, built as a cheap demountable kit (see below); 3-phase power on a surface-run sub-board, 8 ft double doors onto a 4 ft covered verandah on the drive, dust extraction, a lockable timber store; machine noise about 70 ft from the house |
-| Sump, borewell, recharge pit | 137–155, north side | in the north-east quadrant just behind the shops; the roof water goes to the recharge pit |
-| Rental shops | 156–176, north of the gate | two shops of 12 × 14'-6" facing the east road, built as the same demountable kit: rolling shutters bolted to the steel frame under a 1'-6" sheet canopy, signboards, rear doors to a 4 ft back passage with a ready-made toilet cabin; own meters. The house land's wall runs behind them (from the gate's north post west to x 156, then north), so the shops front the road directly |
-| Trees | north boundary and forecourt | six fruit trees along the north boundary and a neem between the forecourt and the garden, shading the car porch; all well clear of the house walls and the plot centre |
-| Gate | 176 | 12 ft sliding gate with a 3 ft wicket; meter in the gate pillar |
+| Forecourt | 69–82 | stone paving round the tulsi thara on the door axis; a stone path from its north-east corner to the car porch, under the neem; two coconut palms to its south |
+| Septic tank | 84–90, north side | in the plot's north-west quadrant between the forecourt and the car porch, behind a hedge; the tanker reaches it from the car porch |
+| Car porch | 91–109, north side | 18 × 10 ft under a steel pergola with creepers, at the end of the drive; two-wheelers alongside |
+| Drive | 109–176, north side | 10 ft wide, hugging the slanted north boundary from the gate. Vastu: the way in for cars is on the right as you face the house from the road |
+| Gate | 176, north-east | 12 ft sliding gate with a 3 ft wicket; house meter in its pillar |
+| Soak pit | 90, south side | about 23 ft from the house and 60 ft from the borewell |
+| Vegetable garden | 110–135, south side | four raised beds 4 ft wide on 6 ft centres running north–south in full sun; a row of fruit trees along the drive to the north; taps on the south edge; the plot centre (about x 97, y 16) stays open |
+| Compost | 102–105, south side | two shaded pits |
+| Carpentry workshop | 136–152, south side | 16 × 12 ft demountable kit; its 4 ft covered verandah faces north to the drive for unloading timber; 3-phase power; machine noise about 70 ft from the house |
+| Shared toilet | 153–157.5, south side | one ready-made FRP cabin for the workshop and the shops, door to the north, a sealed pipe to the main septic tank |
+| Sump, borewell, recharge pit | 147–160, beside the drive | in the north-east quadrant; tanker access from the drive |
+| Rental shops | 160–176, south-east | two shops of 12 × 14'-6" facing the east road, south of the gate, as the same demountable kit (rolling shutters, sheet canopy, signboards); rear doors to the yard they share with the workshop; own meters; no wall round them |
+| Trees | along the drive and by the forecourt | four fruit trees along the drive (they shade the drive, not the beds), a neem by the forecourt, two coconut palms south of it; all well clear of the house walls and the plot centre |
 
 - **Workshop and shops: tight budget, demountable.** Every part bolts or lifts out, so they can be moved, enlarged or taken down without waste:
   - frame: galvanised steel SHS posts and beams, bolted to anchor bolts in small pad footings, with wind bracing for cyclone gusts;
   - walls: precast RCC post-and-panel, the same system as the compound wall (panels slide into slotted posts and lift out);
   - roof: insulated metal sandwich sheet in terracotta colour, screwed to steel purlins (cooler than plain sheet in Guntur heat, and reusable);
   - floor: PCC on compacted fill, pavers on the verandah;
-  - services surface-run in conduit; the shops' toilet is a ready-made FRP or precast cabin on flexible connections;
+  - services surface-run in conduit; one ready-made FRP toilet cabin, shared by the workshop and the shops, on flexible connections;
   - rough cost: about Rs 1.5–2 lakh for the workshop and Rs 3.5–5 lakh for both shops (to be priced).
 - Compound wall about 408 ft: the road face in exposed brick or local stone, the rest precast post-and-panel 5 ft.
 - The ground falls 1:100 away from the house and down the drive to the road.

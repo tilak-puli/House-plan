@@ -47,9 +47,12 @@ def make(path):
     text("EAST ROAD", PLOT_X2 + 4, 20, 200)
     for b in GARDEN_BEDS:
         rect(*b, "L-PLNT")
+    msp.add_lwpolyline([P(x, y) for x, y in drive_poly()], close=True, dxfattribs={"layer": "A-SITE"})
     for fid, label, kind, g in SITE_FEATURES:
         if kind == "rect":
             rect(*g, "A-SITE"); text(fid, (g[0] + g[1]) / 2, (g[2] + g[3]) / 2, 70)
+        elif kind == "poly":
+            continue
         elif kind == "circle":
             msp.add_circle(P(g[0], g[1]), g[2] * MM, dxfattribs={"layer": "A-SITE"}); text(fid, g[0], g[1] + g[2] + 0.5, 70)
     for x, y, r in TREES:

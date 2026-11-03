@@ -21,8 +21,10 @@ SITE = {"w": 27, "l": 75, "strip": 0, "trial": 6}  # frame of the house sheets (
 # The south boundary is straight; the north boundary is the slanted one. 8 ft is kept behind the house.
 PLOT = [(6.0, 0.0), (176.0, 0.0), (176.0, 40.0), (91.0, 30.0), (6.0, 27.0)]
 PLOT_X1, PLOT_X2 = 6.0, 176.0
-# The house land's wall on the road side runs behind the shops: from the gate's north post west, then north to the boundary
-SHOP_WALL = [(176.0, 12.6), (156.0, 12.6), (156.0, 37.65)]
+# Vastu: the gate and the way for cars on the right-hand (north) side as you face the house from the road.
+# The shops make the road frontage south of the gate; only a short wall closes the road side between them and the gate.
+SHOP_WALL = [(176.0, 25.0), (176.0, 27.6)]
+DRIVE = {"x1": 109.0, "x2": 176.0, "off": (0.4, 10.4)}  # 10 ft drive hugging the slanted north boundary, from the gate to the car porch
 
 
 def plot_north(x):
@@ -33,7 +35,14 @@ def plot_north(x):
 
 
 # Vegetable beds (raised, 4 ft wide, running north-south for even sun) and fruit trees on the north side of the front land
-GARDEN_BEDS = [(x, x + 4.0, 12.5, round(plot_north(x + 4.0) - 6.0, 2)) for x in range(100, 126, 6)]  # a 6 ft strip left on the north for the fruit trees
+GARDEN_BEDS = [(x, x + 4.0, 1.5, round(plot_north(x + 4.0) - 15.6, 2)) for x in range(112, 131, 6)]  # on the sunny south side, below the drive and its tree row
+
+
+def drive_poly():
+    """Outline of the drive: its north edge follows the boundary, 10 ft wide."""
+    xs = [DRIVE["x1"], 120.0, 140.0, 160.0, DRIVE["x2"]]
+    a, b = DRIVE["off"]
+    return [(x, plot_north(x) - a) for x in xs] + [(x, plot_north(x) - b) for x in reversed(xs)]  # a 6 ft strip left on the north for the fruit trees
 T = 0.75  # outer wall thickness, ft (9 in finished)
 
 # ---------- ground floor ----------
@@ -132,31 +141,31 @@ SITE_FEATURES = [
     ("GSTEP", "Stone steps from the den's garden door down to the sit-out (4 risers along the wall)", "rect", (12.4, 13.6, 18.25, 20.75)),
     ("PERGOLA", "Creeper pergola along the west wall (shades the master window; no big trees near walls)", "rect", (11.4, 13.4, 4.5, 24.0)),
     ("TULSI", "Tulsi thara on the door axis in the forecourt", "circle", (72.4, 18.75, 0.6)),
-    ("PATH", "Stone-paved forecourt in front of the poomukham, round the tulsi thara, joining the car porch", "rect", (69.0, 82.0, 11.0, 26.5)),
-    ("CARPORT", "Car porch 19 x 10 ft at the end of the drive, under a steel pergola with creepers (two-wheelers alongside)", "rect", (69.0, 88.0, 0.6, 10.6)),
-    ("DRIVE", "Drive 10 ft wide along the straight south boundary, gravel with paver wheel strips", "rect", (88.0, 176.0, 0.6, 10.6)),
-    ("GATE", "Sliding gate 12 ft at the road with a 3 ft wicket for people", "rect", (176.0, 176.5, 0.6, 12.6)),
-    ("SEPTIC", "Septic tank, 2 chambers, sealed RCC, in the plot's north-west quadrant beside the forecourt behind a hedge; a desludging tanker reaches it from the drive", "rect", (84.0, 90.0, 22.5, 28.5)),
-    ("SOAK", "Lined soak pit for septic effluent and grey water, about 25 ft from the house and 75 ft from the borewell", "circle", (95.0, 26.6, 1.6)),
+    ("PATH", "Stone-paved forecourt in front of the poomukham, round the tulsi thara; a stone path from its north-east corner to the car porch", "rect", (69.0, 82.0, 11.0, 26.5)),
+    ("CARPORT", "Car porch 18 x 10 ft at the end of the drive on the north side, under a steel pergola with creepers (two-wheelers alongside)", "rect", (91.0, 109.0, 19.8, 29.6)),
+    ("PATH2", "Stone path from the forecourt to the car porch, under the neem", "rect", (82.0, 91.0, 17.5, 20.5)),
+    ("DRIVE", "Drive 10 ft wide along the slanted north boundary, from the road gate in the north-east to the car porch (vastu: the way in on the right as you face the house), gravel with paver wheel strips", "poly", (109.0, 176.0)),
+    ("GATE", "Sliding gate 12 ft at the north-east of the road front with a 3 ft wicket for people", "rect", (176.0, 176.5, 27.6, 39.6)),
+    ("SEPTIC", "Septic tank, 2 chambers, sealed RCC, in the plot's north-west quadrant between the forecourt and the car porch behind a hedge; the tanker reaches it from the car porch", "rect", (84.0, 90.0, 22.5, 28.5)),
+    ("SOAK", "Lined soak pit for septic effluent and grey water, on the south side about 23 ft from the house and 60 ft from the borewell", "circle", (90.0, 6.0, 1.6)),
     ("HEDGE1", "Hedge screening the septic tank from the forecourt", "rect", (82.6, 83.2, 20.5, 29.0)),
-    ("RECHARGE", "Rainwater recharge pit (roof run-off), north of the workshop (the plot centre stays open)", "rect", (137.5, 142.5, 29.5, 33.5)),
-    ("VEG", "Vegetable garden: raised beds 4 ft wide on 6 ft centres with 2 ft paths, a tap every 25 ft; fruit trees (coconut, moringa, banana, curry leaf, guava) along the north boundary", "rect", (98.0, 128.0, 11.5, 33.0)),
-    ("COMPOST", "Two compost pits, shaded, between the garden and the workshop", "rect", (130.0, 133.0, 12.5, 16.0)),
-    ("WORKSHOP", "Carpentry workshop 16 x 12 ft, built cheap and demountable: bolted steel frame (galvanised SHS posts on pad footings with anchor bolts), precast RCC post-and-panel walls (the compound-wall system: panels lift out), an insulated metal sandwich roof screwed to steel purlins, a PCC floor on compacted fill; every part unbolts or lifts out for reuse; 3-phase power on a surface-run sub-board, 8 ft double doors on the steel frame, dust extraction, a lockable timber store at the west end", "rect", (136.0, 152.0, 15.0, 27.0)),
-    ("WVERANDAH", "Covered work verandah 16 x 4 ft on the drive side, the roof sheet carried on to two extra steel posts, a paver floor (lifts out)", "rect", (136.0, 152.0, 11.0, 15.0)),
-    ("SUMP", "Sump in the north-east quadrant, inside the house land just behind the shops, filled from the road main and by tanker through the gate", "rect", (150.0, 155.0, 30.5, 35.5)),
-    ("BORE", "Borewell (if any), north-east quadrant, about 52 ft from the soak pit", "circle", (146.5, 34.9, 0.5)),
-    ("SHOPS", "Two small rental shops on the road front, built cheap and demountable (bolted steel frame (galvanised SHS posts on pad footings with anchor bolts), precast RCC post-and-panel walls (the compound-wall system: panels lift out), an insulated metal sandwich roof screwed to steel purlins, a PCC floor on compacted fill; every part unbolts or lifts out for reuse); they face the road directly and the house land's wall runs behind them; own meters, a shared toilet cabin in the back passage", "rect", (156.0, 176.0, 12.6, 38.2)),
-    ("SHOP1", "Rental shop 1, 12 x 14'-6\", a rolling shutter bolted to the steel frame under a 1'-6\" sheet canopy, a rear door to the back passage", "rect", (160.0, 174.5, 13.2, 25.2)),
-    ("SHOP2", "Rental shop 2, 12 x 14'-6\", a rolling shutter bolted to the steel frame under a 1'-6\" sheet canopy, a rear door to the back passage", "rect", (160.0, 174.5, 25.2, 37.2)),
-    ("SHOPBACK", "Back passage 4 ft behind the shops, shared toilet at its north end; a lockable door in the dividing wall for the owner", "rect", (156.0, 160.0, 13.2, 37.4)),
-    ("SHOPWC", "Shared toilet for the shops: a ready-made FRP / precast toilet cabin (WC and basin) on a PCC pad, plumbed with flexible connections so it can be lifted out and reused", "rect", (156.4, 159.8, 32.4, 36.9)),
+    ("RECHARGE", "Rainwater recharge pit (roof run-off), between the workshop verandah and the drive", "rect", (147.5, 152.5, 18.5, 23.5)),
+    ("VEG", "Vegetable garden on the sunny south side: raised beds 4 ft wide on 6 ft centres with 2 ft paths, taps along the south edge; a row of fruit trees along the drive to the north", "rect", (110.0, 135.0, 1.0, 20.0)),
+    ("COMPOST", "Two compost pits, shaded, south of the car porch", "rect", (102.0, 105.0, 2.0, 5.5)),
+    ("WORKSHOP", "Carpentry workshop 16 x 12 ft, built cheap and demountable: bolted steel frame (galvanised SHS posts on pad footings with anchor bolts), precast RCC post-and-panel walls (the compound-wall system: panels lift out), an insulated metal sandwich roof screwed to steel purlins, a PCC floor on compacted fill; every part unbolts or lifts out for reuse; 3-phase power on a surface-run sub-board, 8 ft double doors on the steel frame, dust extraction, a lockable timber store at the west end", "rect", (136.0, 152.0, 1.0, 13.0)),
+    ("WVERANDAH", "Covered work verandah 16 x 4 ft on the north side facing the drive, for unloading and working timber; the roof sheet carried on to extra steel posts, a paver floor (lifts out)", "rect", (136.0, 152.0, 13.0, 17.0)),
+    ("SUMP", "Sump in the north-east quadrant beside the drive (tanker access from the drive), filled from the road main", "rect", (154.5, 159.5, 19.5, 24.5)),
+    ("BORE", "Borewell (if any), north-east quadrant beside the drive, about 60 ft from the soak pit", "circle", (153.0, 25.8, 0.5)),
+    ("SHOPS", "Two small rental shops on the road front south of the gate (the south-east), built cheap and demountable (bolted steel frame, precast post-and-panel walls, an insulated sheet roof); they face the road directly and their rear doors open to the yard they share with the workshop; own meters; the toilet is shared with the workshop", "rect", (159.5, 176.0, 0.5, 25.6)),
+    ("SHOP1", "Rental shop 1, 12 x 14'-6\", a rolling shutter bolted to the steel frame under a 1'-6\" sheet canopy, a rear door to the work yard", "rect", (160.0, 174.5, 1.0, 13.0)),
+    ("SHOP2", "Rental shop 2, 12 x 14'-6\", a rolling shutter bolted to the steel frame under a 1'-6\" sheet canopy, a rear door to the work yard", "rect", (160.0, 174.5, 13.0, 25.0)),
+    ("SITEWC", "Shared toilet for the workshop and the shops: a ready-made FRP cabin (WC and basin) in the yard between them, door to the north (the drive side); a sealed pipe to the main septic tank; it lifts out for reuse", "rect", (153.0, 157.5, 6.0, 11.0)),
     ("STEPS", "Entrance steps (3 risers), between the pillars, SS handrail one side", "rect", (67.375, 69.0, 16.95, 20.55)),
     ("FEET", "Foot-wash tap + drain", "circle", (69.6, 13.6, 0.35)),
     ("WSTEP", "Landing at the wet-area service door, then 3 steps down along the wall (4 risers of about 5 in), 1'-3\" deep so a clear strip of the walkway stays beside them", "rect", (46.5, 51.7, 1.35, 2.6)),
     ("APRON", "Plinth protection apron 3 ft, sloped away", "apron", (11, 70, 0, 27)),
 ]
-TREES = [(float(x), round(plot_north(x) - 2.8, 2), 2.2) for x in (101, 108, 115, 122, 129, 134)] + [(86.5, 16.0, 3.2)]  # fruit trees on the north boundary; a neem shading the forecourt and car porch (19 ft from the house, clear of the plot centre)  # fruit trees on the north boundary, far from the house
+TREES = [(float(x), round(plot_north(x) - 12.8, 2), 2.2) for x in (113, 120, 127, 134)] + [(86.5, 16.0, 3.2), (77.0, 3.2, 1.8), (83.0, 3.2, 1.8)]  # a fruit-tree row along the drive (it shades the drive, not the beds); a neem by the forecourt; two coconut palms south of the forecourt, 9 ft+ from the house  # fruit trees on the north boundary, far from the house
 JALI_SCREENS = [("X", 24.9, 61.4, 66.0)]  # free-standing timber jali screens: the poomukham's open north side (the neighbour is 2 ft away)
 FUTURE_WALLS = []
 
@@ -378,9 +387,9 @@ OPEN_ISSUES = [
     ("Option", "Duplex on the full plot (8 ft behind the house, 109 ft of front land): decide between this and the single-storey plan (main branch) before structural design", "Owner", "Open"),
     ("Finishes", "Colour and material scheme to choose: five looks to compare in the 3D model (As drawn, Classic Kerala refined, Chettinad ochre, Modern tropical, Lime and green); decide before ordering floor tiles, paint and door finishes", "Owner", "Open"),
     ("Land", "Survey the plot (170 ft deep, 27 / 30 / 40 ft wide) and confirm the setbacks for a two-storey house: 8 ft at the back and 2-4 ft at the sides are tight; the front setback is ample (109 ft)", "Architect / surveyor", "Open"),
-    ("Site", "Workshop and shops as a demountable kit (bolted steel frame, precast post-and-panel walls, insulated sheet roof, toilet cabin): confirm the panel supplier (the same as the compound wall), the anchor-bolt footings and the wind bracing for cyclone gusts; rough cost Rs 1.5-2 L for the workshop and Rs 3.5-5 L for both shops", "Engineer / owner", "Open"),
+    ("Site", "Workshop and shops as a demountable kit (bolted steel frame, precast post-and-panel walls, insulated sheet roof, a shared toilet cabin): confirm the panel supplier (the same as the compound wall), the anchor-bolt footings and the wind bracing for cyclone gusts; rough cost Rs 1.5-2 L for the workshop and Rs 3.5-5 L for both shops", "Engineer / owner", "Open"),
     ("Site", "Future rental shops on the road front: commercial setback and permission, separate meters, a shared toilet; decide whether to cast their plinth and service sleeves with the compound wall", "Architect / panchayat", "Open"),
-    ("Site", "Septic tank and soak pit in the plot's north-west quadrant beside the forecourt (tanker access from the drive), 75 ft from the borewell; the plot centre (about x 97, y 16) stays open in the vegetable garden; the vastu consultant to confirm the septic position for the whole plot", "Vastu consultant / engineer", "Open"),
+    ("Site", "Septic tank in the plot's north-west quadrant between the forecourt and the car porch (tanker access from the porch), the soak pit on the south side 60 ft from the borewell; the plot centre (about x 97, y 16) stays open in the vegetable garden; the vastu consultant to confirm the septic position for the whole plot", "Vastu consultant / engineer", "Open"),
     ("Structure", "Two-storey RCC frame: columns, footings and the first-floor slab sized for two floors; the stair well; RCC column stubs at the terrace edge for the steel posts that carry the roof over the terrace", "Structural engineer", "Open"),
     ("Layout", "TV on the stair wall of the living (west), sofa facing west about 6'-6\" away: confirm screen size (50 in) and a concealed HDMI/data conduit", "Owner", "Open"),
     ("Land", "Agricultural land: confirm conversion to non-agricultural use with the gram panchayat / collector (AP repealed the NALA Act in 2025; new process to be confirmed)", "Owner / surveyor", "Open"),
@@ -397,7 +406,9 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
-    "Workshop and shops on a tight budget and demountable (3 Nov 2026): a bolted galvanised steel frame on anchor-bolt pad footings, precast RCC post-and-panel walls (the same system as the compound wall, so panels lift out and can be reused or moved), insulated metal sandwich roofs on steel purlins, PCC or paver floors, rolling shutters bolted to the frame, and a ready-made toilet cabin for the shops. No brick, plaster or RCC slab, so nothing is wasted if they move or come down.",
+    "Vastu: the way for cars on the right (north) as you face the house from the road (3 Nov 2026). The gate moves to the north-east of the road front and a 10 ft drive hugs the slanted north boundary to a car porch beside the forecourt (x 91-109); a stone path under the neem joins it to the forecourt. The shops move to the road front south of the gate (the south-east), the workshop and the shared toilet to the south side with the workshop verandah facing the drive, the vegetable beds to the sunny south side with a fruit-tree row along the drive, the soak pit to the south side, and the sump, borewell and recharge pit beside the drive in the north-east. The septic tank stays in the plot's north-west quadrant.",
+    "No separate wall round the shops (3 Nov 2026): the shops make the road frontage north of the gate, with a short wall north of them; their rear doors open to the yard they share with the workshop. One toilet cabin, shared by the workshop and the shops, stands in that yard (x 153-157.5) with its door to the drive, draining by a sealed pipe to the main septic tank. The back passage and the dividing wall are gone.",
+    "Workshop and shops on a tight budget and demountable (3 Nov 2026): a bolted galvanised steel frame on anchor-bolt pad footings, precast RCC post-and-panel walls (the same system as the compound wall, so panels lift out and can be reused or moved), insulated metal sandwich roofs on steel purlins, PCC or paver floors, rolling shutters bolted to the frame, and a ready-made toilet cabin shared by the workshop and the shops. No brick, plaster or RCC slab, so nothing is wasted if they move or come down.",
     "Rental shops drawn (3 Nov 2026): two shops of 12 x 14'-6\" on the road front north of the gate, facing the road directly under a canopy, with rolling shutters, signboards and a tiled roof; a 4 ft back passage with a shared toilet. The house land's wall now runs behind them (gate post west to x 156, then north to the boundary) instead of along the road. The sump, borewell and recharge pit shift west behind the shops; six fruit trees on the north boundary and a neem shading the forecourt and car porch.",
     "Road frontage reserved for two small rental shops (3 Nov 2026): x 158-176 north of the gate, two shops of about 12 x 16 ft facing the east road, built later. To make room the workshop moves west to x 136-152 (about 70 ft from the house), the compost to 130-133, the sump, borewell and recharge pit to the north side behind the shops, and the vegetable garden to five beds (x 100-128).",
     "The whole plot planned (3 Nov 2026): 170 ft deep from the back boundary to the east road, 27 ft wide at the back, 30 ft half-way and 40 ft at the road (south side straight, north side slanting). 8 ft kept behind the house as a back garden. The 109 ft of front land: a stone forecourt with the tulsi thara; a car porch under a creeper pergola at the end of a 10 ft drive along the south boundary; the septic tank and soak pit in the plot's north-west quadrant beside the forecourt; a vegetable garden of eight raised beds with fruit trees on the north; compost pits; a 16 x 12 ft carpentry workshop with a covered verandah by the road gate (noise and deliveries away from the house); the sump, borewell and recharge pit in the north-east; a 12 ft sliding gate with a wicket; a compound wall right round, brick or stone on the road face. The old front gate, the scooter gate and the 64 ft trial-plot line are gone.",
@@ -591,7 +602,7 @@ ELECTRICAL = [
     ("P", 61.4, 24.0, "R17", "outdoor, weatherproof"), ("S", 61.4, 21.5, "R17", ""),
     ("GL", 66.4, 16.05, "R17", "uplight at the pillar base"), ("GL", 66.4, 21.45, "R17", "uplight at the pillar base"), ("WL", 61.4, 16.3, "R17", "warm lantern beside the main door"),
     # Site
-    ("MTR", 175.6, 12.0, "SITE", "house meter in the gate pillar"), ("MTR", 175.0, 19.2, "SITE", "shop 1 meter"), ("MTR", 175.0, 31.2, "SITE", "shop 2 meter"), ("GL", 175.8, 0.4, "SITE", "gate post light"), ("GL", 175.8, 13.0, "SITE", "gate post light"), ("GL", 88.0, 10.9, "SITE", "car porch light"), ("GL", 144.0, 13.0, "SITE", "workshop verandah light"), ("DB", 137.0, 20.0, "SITE", "workshop sub-board, 3-phase"),
+    ("MTR", 175.6, 27.2, "SITE", "house meter in the gate pillar"), ("MTR", 175.0, 7.0, "SITE", "shop 1 meter"), ("MTR", 175.0, 19.0, "SITE", "shop 2 meter"), ("GL", 175.8, 27.4, "SITE", "gate post light"), ("GL", 175.8, 39.6, "SITE", "gate post light"), ("GL", 100.0, 19.6, "SITE", "car porch light"), ("GL", 144.0, 17.0, "SITE", "workshop verandah light"), ("DB", 137.0, 7.0, "SITE", "workshop sub-board, 3-phase"),
     ("EP", 68.2, 1.5, "SITE", "earth pit 1"), ("EP", 73.5, 1.5, "SITE", "earth pit 2"), ("GL", 10.0, 8.0, "SITE", "back garden"),
 ]
 ELECTRICAL_F1 = [
@@ -632,7 +643,7 @@ PLUMBING = [
     ("SH", 34.2, 23.4, "R07", "east wall"), ("FT", 32.8, 24.4, "R07", "shower drain"), ("FT", 30.6, 19.6, "R07", "dry zone trap"),
     ("SK", 50.95, 4.3, "R13", "utility sink"), ("BS", 45.7, 6.15, "R19", "hand-wash basin, plumbed from the utility side"), ("RO", 45.0, 3.5, "R19", ""), ("FT", 48.5, 3.6, "R13", "floor falls to the trap"), ("TAP", 49.8, 3.4, "R13", "bucket tap, low"),
     ("SK", 57.6, 3.5, "R15", "single bowl + drainboard, centred under the window"), ("RO", 59.0, 3.5, "R15", ""), ("FT", 63.0, 12.0, "R15", "cleaning trap"),
-    ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 9.0, 10.0, "SITE", "herb beds tap (back garden)"), ("TAP", 105.0, 12.2, "SITE", "vegetable garden tap"), ("TAP", 130.0, 12.2, "SITE", "vegetable garden tap"), ("TAP", 139.0, 13.5, "SITE", "workshop verandah tap"), ("TAP", 74.0, 21.6, "SITE", "tulsi / garden tap"),
+    ("TAP", 69.6, 13.6, "SITE", "foot-wash tap at steps"), ("TAP", 9.0, 10.0, "SITE", "herb beds tap (back garden)"), ("TAP", 117.0, 1.0, "SITE", "vegetable garden tap"), ("TAP", 129.0, 1.0, "SITE", "vegetable garden tap"), ("TAP", 139.0, 13.4, "SITE", "workshop verandah tap"), ("TAP", 74.0, 21.6, "SITE", "tulsi / garden tap"),
     ("IC", 37.1, 1.8, "SITE", "IC-1 soil, powder room, master bath and the upper WC stack"), ("IC", 12.6, 1.8, "SITE", "IC-3 soil bend at the 64 ft line"),
     ("GT", 57.6, 1.0, "SITE", "grease trap"), ("IC", 48.5, 1.0, "SITE", "IC-4 grey"), ("IC", 39.0, 1.0, "SITE", "IC-5 grey"), ("IC", 12.6, 26.0, "SITE", "IC-7 soil bend to the north side"), ("IC", 83.8, 26.0, "SITE", "IC-8 at the septic tank inlet"), ("IC", 12.0, 1.0, "SITE", "IC-6 grey, to the soak pit"),
 ]
@@ -645,16 +656,17 @@ PLUMBING_F1 = [
 ]
 # Pipe runs (schematic): kind, list of points. South walkway: grey y=1.0, soil y=1.8, supply y=2.3 (on plinth face).
 PIPES = [
-    ("supply", [(152.5, 30.5), (152.5, 11.4), (68.2, 11.4), (68.2, 2.3), (42.3, 2.3), (42.3, 3.0)]),
+    ("supply", [(157.0, 19.5), (157.0, 17.6), (84.0, 17.6), (68.2, 13.6), (68.2, 2.3), (42.3, 2.3), (42.3, 3.0)]),
     ("supply", [(68.2, 13.6), (69.6, 13.6)]), ("supply", [(57.6, 2.3), (57.6, 3.0)]), ("supply", [(51.75, 2.3), (51.75, 3.0)]),
-    ("supply", [(42.3, 2.3), (38.5, 2.3), (38.5, 3.0)]), ("supply", [(38.5, 2.3), (30.0, 2.3), (30.0, 3.0)]),
+    ("supply", [(42.3, 2.3), (38.5, 2.3), (38.5, 3.0)]), ("supply", [(38.5, 2.3), (30.0, 2.3), (30.0, 3.0)]), ("supply", [(157.0, 17.6), (155.2, 11.0)]),
     ("soil", [(37.1, 8.9), (37.1, 1.8), (12.6, 1.8), (12.6, 26.0), (83.8, 26.0)]), ("soil", [(35.2, 7.8), (35.2, 1.8)]),
-    ("soil", [(29.1, 21.6), (29.1, 26.0)]), ("soil", [(90.0, 26.0), (93.4, 26.4)]),
-    ("grey", [(57.6, 3.5), (57.6, 1.0), (12.0, 1.0), (12.0, 26.4), (93.4, 26.6)]),
+    ("soil", [(29.1, 21.6), (29.1, 26.0)]), ("soil", [(87.0, 22.5), (89.0, 7.6)]),
+    ("soil", [(155.2, 11.0), (155.2, 18.0), (92.0, 18.0), (92.0, 25.5), (90.0, 25.5)]),  # the shared site toilet to the septic tank
+    ("grey", [(57.6, 3.5), (57.6, 1.0), (88.4, 1.0), (89.2, 4.5)]), ("grey", [(12.0, 26.4), (12.0, 1.0), (57.6, 1.0)]),
     ("grey", [(48.5, 3.6), (48.5, 1.0)]), ("grey", [(51.75, 4.3), (48.5, 3.6)]), ("grey", [(45.7, 6.15), (45.7, 1.0)]),
     ("grey", [(39.5, 10.0), (39.0, 1.0)]), ("grey", [(29.7, 4.9), (29.7, 1.0)]),
-    ("grey", [(32.8, 24.4), (32.8, 26.4)]),
-    ("rain", [(12.0, 0.4), (68.5, 0.4), (68.5, 11.2), (134.5, 11.2), (134.5, 29.0), (137.5, 31.5)]),
+    ("grey", [(32.8, 24.4), (32.8, 26.4), (12.0, 26.4)]),
+    ("rain", [(12.0, 0.4), (68.5, 0.4), (68.5, 11.2), (82.0, 17.2), (147.5, 17.6), (150.0, 21.0)]),
     ("rain", [(12.0, 26.8), (66.0, 26.8), (68.5, 26.0), (68.5, 11.2)]),
 ]
 
