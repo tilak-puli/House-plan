@@ -87,7 +87,7 @@ def sheet_phasing(c):
             if r[0] in PHASE2_ROOMS:
                 pl.rect(r[2], r[3], r[4], r[5], stroke=None, fill=pale)
         for (x1, x2, y1, y2), wt in wall_rects(with_type=True):
-            if x1 < 34.6 < x2 and x2 - x1 < 1 and y2 < 11:  # stair wall
+            if (x1 < 34.6 < x2 and x2 - x1 < 1 and y2 < 11) or (x1 > 34.3 and x2 < 38.3 and y2 - y1 < 1 and abs((y1 + y2) / 2 - 12.33) < 0.1):  # stair walls (and the stair door's frame)
                 pl.rect(x1, x2, y1, y2, stroke=None, fill=INK)
             elif wt == "EXT":
                 pl.rect(x1, x2, y1, y2, stroke=INK, fill=mid, lw=0.3)
@@ -98,7 +98,7 @@ def sheet_phasing(c):
         pl.room_names(5.2, INK)
         pl.text("STAGE 3 FIT-OUT (shaded)", 24, 9.0, 5, "Helvetica-Bold", ACC)
         pl.line(34.6, 12.45, 38.0, 12.45, lw=1.2, color=RED)
-        pl.text("GRILLE GATE", 36.3, 14.7, 4.2, "Helvetica-Bold", RED)
+        pl.text("TEAK JALI DOOR", 36.3, 13.0, 4.2, "Helvetica-Bold", RED)
         pl.north(218 * mm, 180 * mm)
     s.note("First floor through the stages: stair, frame, slab, roof and terrace in stage 1; outer walls (grey) in stage 2; inner walls and fit-out (green) in stage 3.", 20 * mm, 160 * mm, 7, GREY)
     def sw(fill, stroke=None, dash=None):
@@ -109,7 +109,7 @@ def sheet_phasing(c):
         return f
     s.legend([(sw(INK), "Stage 1: stair walls (frame, slab, roof, terrace also stage 1)"), (sw(mid, INK), "Stage 2: outer walls and windows"),
               (sw(WHITE, ACC, (1.5, 1)), "Stage 3: inner walls and baths"), (sw(pale), "Stage 3 fit-out area"),
-              (sw(RED), "Stage 1: grille gate at the stair head; temporary railings on open edges")], 20 * mm, 152 * mm)
+              (sw(RED), "Stage 1: teak jali door at the top of the stair (permanent); temporary railings on open edges")], 20 * mm, 152 * mm)
     rows = [["Stage", "Scope", "Rough cost"]] + [[name, "<br/>".join("&bull; " + i for i in items), cost] for name, items, cost in PHASES]
     s.table(rows, [28, 72, 20], 205 * mm, 262 * mm, "Three stages, roof first")
     s.bullets(PHASE1_PROVISIONS, 20 * mm, 120 * mm, 150 * mm, 7, title="Build in stage 1 so the later stages are easy")

@@ -200,7 +200,7 @@ TRANSOM_TYPES = {
     "louvre": "Fixed louvres angled down: air for the exhaust fan, no view in",
     "glazed": "Top-hung glazed vent with seals: open for air, closed for calls",
 }
-TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
+TRANSOMS = {"D50": "jali", "D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
             "D31": "jali_closable", "D35": "jali_closable", "D33": "louvre", "D39": "louvre", "D36": "jali"}  # rooms breathe into the stair well with doors shut
 HINGE_AT_END = {"D36"}  # D36 hinged at its north jamb so the open leaf lies along the wall  # doors hinged at their far (e) jamb
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
@@ -302,7 +302,7 @@ ROOMS_F1 = [
 ]
 WALLS_F1 = [
     ("X", 3, 14, 42), ("X", 25, 14, 42), ("Y", 14, 3, 25), ("Y", 42, 3, 25),
-    ("X", 15, 14, 19.6), ("X", 15, 25.3, 28), ("Y", 28, 3, 25), ("X", 3, 42, 61), ("Y", 61, 3, 16), ("X", 16, 42, 61), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
+    ("X", 15, 14, 19.6), ("X", 15, 25.3, 28), ("Y", 28, 3, 25), ("X", 12.33, 34.5, 38), ("X", 3, 42, 61), ("Y", 61, 3, 16), ("X", 16, 42, 61), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
 ]
 EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42), ("Y", 61)}
 WET_WALLS_F1 = {("Y", 34.5, 3, 10.5), ("X", 10.5, 28, 34.5), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}
@@ -339,6 +339,7 @@ DOORS_F1 = [
     ("D37", "X", 16, 38.9, 41.3, 1, "Box room (from the stair head, opens inward)", "Flush, teak veneer, louvred top"),
     ("D35", "Y", 28, 15.35, 17.95, -1, "Fun room (from the landing)", "Teak frame, glazed upper panel (frosted), acoustic seals"),
     ("D39", "X", 18, 31.6, 34.0, 1, "Upper toilet (from the landing, east end, opens inward; the leaf screens the WC: the first view is the shower, never the WC)", "Flush, waterproof (WPC/FRP)"),
+    ("D50", "X", 12.33, 34.6, 37.9, 1, "Stair door at the top of the stair (from the stair into the stair head; opens away from the steps), lockable", "Teak frame with a carved teak jali leaf, a fixed jali panel above it up to the ceiling and a mortice lock: built in stage 1, it closes the house off from the open upstairs deck while air still rises through it from the stair well; it stays as a permanent feature (AC and child safety)"),
     ("D36", "Y", 42, 12.4, 15.9, 1, "Family lounge (from the stair head, opens into it; the main threshold upstairs)", "Teak frame, glazed, 3'-6\", jali vent above"),
     ("D49", "X", 16, 46.0, 55.0, 0, "Covered terrace (from the family lounge)", "Teak-framed glazed sliding doors, four panels, 9 ft, with a sliding mesh shutter; the terrace is a step of 3 in down"),
 ]
@@ -430,6 +431,7 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "Teak jali door at the top of the stair (22 Nov 2026, owner): in place of the temporary grille gate, a lockable teak jali door with a fixed jali panel above it closes the stair at the stair head (x 34.5-38 on y 12.33) from stage 1. Until the first floor is built the house lives on the ground floor with the upstairs closed off but breathing: air rises from the house up the stair well and out through the jali onto the open deck. It stays afterwards as a feature door for AC zoning and child safety.",
     "Storage wall between the master and the den (22 Nov 2026, owner): with the pocket door gone, the wall between them becomes a storage wall for 6 ft (x 17.5-23.5): the master's wardrobe grows to 9 ft and stands back to back with the den's media wall (a 50 in TV in a niche between two full-height flush cupboards), a mineral-wool board between them for sound. The upstairs wall is no longer over a masonry wall here, which is fine in the RCC frame (it is light and the floor beam carries it).",
     "No connecting door between the master and the den (22 Nov 2026, owner): the pocket door is removed and the wall between them is solid; both rooms open only from the hall, so the den is a separate guest room with its own bath and the master gets a quieter, fully private wall.",
     "Cupboards into the walls and a slimmer display unit (22 Nov 2026, owner): upstairs, the wall between Bedroom 2 and the fun room becomes a storage wall for 5'-8\": Bedroom 2's 8 ft wardrobe and a full-height 1 ft cupboard in the fun room stand back to back in the wall line (a mineral-wool board between them), so neither sticks into its room as before and the fun room gains about 7 in. All four bathroom mirror cabinets are recessed 4 in into 9 in walls. Full wardrobes cannot go inside 6-9 in walls, and the ground-floor wall between the master and the den keeps its masonry for the pocket door and the den's TV. The display unit at the hall mouth slims from 2'-11\" x 1'-5\" to 2'-5\" x 10\", widening the way into the hall from 2'-7\" to 3'-1\"; the den's door stays screened from the main door (the master's door was always partly visible through the way in).",
@@ -722,7 +724,7 @@ PHASES = [
         "Whole ground floor with basic finishes: vitrified tiles, one coat of paint, granite kitchen counter with open shelves, ceilings only in the baths.",
         "Footings, columns, first-floor slab and stair designed and built for two floors; RCC frame and ring beam up to roof level.",
         "Tiled hip roof, front gable, kitchen wing and the steel-framed covered terrace with railings and side jali parapets; the whole first-floor slab waterproofed, with drains.",
-        "Upstairs left as an open, covered deck: temporary railings on the open edges and a lockable grille gate at the stair head.",
+        "Upstairs left as an open, covered deck: temporary railings on the open edges and the permanent teak jali door at the top of the stair, locked, so the ground floor is secure while air still flows up the stair.",
         "Site works: sump, septic tank, drains, water and power connections; temporary fence."], "Rs 30-34 lakh"),
     ("Stage 2: upstairs shell and upgrades (1-2 years later)", [
         "First-floor outer walls with window frames, grilles and shutters: a dry, lockable shell.",
@@ -730,7 +732,7 @@ PHASES = [
         "False ceilings in the rooms; final paint and any floor upgrades.",
         "Compound wall, poomukham finishes and landscaping (outside the estimate)."], "Rs 7-11 lakh"),
     ("Stage 3: first-floor fit-out", [
-        "Inner walls upstairs: Bedroom 2 and its bath, the fun room, the toilet and the box room.",
+        "Inner walls upstairs: Bedroom 2 and its bath, the fun room, the toilet and the laundry.",
         "Doors, wet-room waterproofing and fittings, floors, inside plaster and paint, false ceilings.",
         "Wiring and lights from the sub-board, ACs, wardrobes and desks."], "Rs 7-10 lakh"),
 ]
@@ -745,7 +747,7 @@ PHASE1_PROVISIONS = [
     "Kitchen and wardrobe walls finished with the plumbing, sockets and hold-fasts for the stage-2 cabinets already in.",
 ]
 PHASE1_LIVING = [
-    "Upstairs is a shaded, covered deck behind a grille gate: storage, drying clothes, a sit-out (no water use until stage 3).",
+    "Upstairs is a shaded, covered deck behind the locked teak jali door at the top of the stair: storage, drying clothes, a sit-out (no water use until stage 3).",
     "The ground floor stays cool from day one: it has the roof's shade and attic over it, not a bare slab.",
     "Stages 2 and 3 are dry, light work under cover: no roofing over an occupied house; materials up the stair and the terrace; a dust curtain at the stair hall.",
     "Splitting into three stages costs about Rs 2-4 lakh more overall (coming back, price rises, some repainting).",
