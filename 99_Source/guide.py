@@ -146,9 +146,11 @@ GUIDE = [
         ('No backing for grab bars later.',
          'Fix blocking in the walls beside the WC and shower now.', 'A-502/5'),
     ]),
-    ('Study (first floor)', [
-        ('Window behind the screen (silhouette on video calls) or in front of it (glare).',
-         'The study faces north: even daylight, no glare; desks on the side walls so neither screen faces the window.', 'A-104'),
+    ('Fun room (first floor)', [
+        ('A TV room that is too bright to watch in the day.',
+         'Blackout blinds on the north window and the high west window, a dimmer at the door, and the screen on the solid east wall so no window faces it.', 'A-104'),
+        ('Window behind the desk screen (silhouette on video calls) or in front of it (glare).',
+         'The desk sits under the north window, so screens face the room and get even daylight without glare.', 'A-104'),
         ('Not enough power or data.',
          'Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.', 'E-103'),
     ]),

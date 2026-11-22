@@ -292,7 +292,7 @@ class Plan:
                 c.setFillColor(INK); c.setFont("Helvetica-Bold", 4.6); c.drawCentredString(0, 0, "BALCONY"); c.restoreState()
             for x, y in TERRACE_POSTS:
                 self.rect(x - 0.17, x + 0.17, y - 0.17, y + 0.17, stroke=INK, fill=INK, lw=0.3)
-            self.text("STEEL POSTS CARRY THE ROOF OVER THE TERRACE", 53, 23.3, 4.4, color=GREY)
+            self.text("STEEL POSTS CARRY THE ROOF OVER THE TERRACE", 53, 17.2, 4.4, color=GREY)
             for key, label in (("gable", "FRONT GABLE ROOF BELOW"), ("wing", "KITCHEN WING ROOF BELOW")):
                 gx1, gx2, ya, yb = ROOF[key]
                 self.rect(61.4, gx2, ya, yb, stroke=GREY, lw=0.4, dash=(3, 2))

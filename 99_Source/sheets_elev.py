@@ -212,7 +212,8 @@ def elevation(e, face):
                     e.rect(u(px, 0) - 0.33, u(px, 0) + 0.33, LEVELS["poomukham"], PILLAR_TOP, lw=0.5, fill=TEAK)
         ua, ub = sorted((u(up[0] - 0.375, 0), u(up[1] + 0.375, 0)))
         e.rect(ua, ub, U, UT, lw=0.6, fill=WALLC)
-        if face in ("S", "N"):  # back wall of the covered terrace, seen through the open front half
+        terrace_open = up[1] < 60  # this side of the front half is open terrace, not the lounge wall
+        if terrace_open:  # back wall of the covered terrace, seen through the open front half
             a, b = sorted((u(42.375, 0), u(61, 0)))
             e.rect(a, b, U, UT - 0.75, lw=0.3, fill=DARK)
         e.line(min(ga, ua), F + H, max(gb, ub), F + H, lw=0.4, color=GREY)  # band at first-floor level
@@ -222,7 +223,8 @@ def elevation(e, face):
                     a, b = sorted((u(s_ - (0.375 if s_ < 40 else 0), 0), u(e_ + (0.4 if e_ > 60 else 0), 0)))
                     _rail_band(e, a, b, U, UT - 0.75, (ax, cc) in JALI_RAILS)
         _posts(e, lambda x, y: u(x, 0), [p for p in TERRACE_POSTS if abs(p[1] - c0) < 0.5])
-        e.rect(*sorted((u(42.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
+        if terrace_open:
+            e.rect(*sorted((u(42.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
         _openings_on(face, u, True)
         _roof_long(e, u, face)
         _levels(e, min(u(10, 0), u(71, 0)) - 1.0)
@@ -233,10 +235,17 @@ def elevation(e, face):
         lo, hi = sorted((u(0, 3 - 0.375), u(0, 25 + 0.375)))
         e.rect(lo, hi, 0, F, lw=0.6, fill=PLINTH)
         if east:
-            e.rect(lo, hi, U, UT, lw=0.4, fill=DARK)  # covered terrace, open to the east behind its railing
-            _rail_band(e, *sorted((u(0, 2.6), u(0, 25.4))), U, UT - 0.75)
+            ly = max(w[3] for w in WALLS_F1 if (w[0], w[1]) == ("Y", 61)) if any((w[0], w[1]) == ("Y", 61) for w in WALLS_F1) else 3 - 0.375
+            ta, tb = sorted((u(0, ly), u(0, 25.375)))
+            e.rect(ta, tb, U, UT, lw=0.4, fill=DARK)  # covered terrace, open to the east behind its railing
+            _rail_band(e, *sorted((u(0, ly), u(0, 25.4))), U, UT - 0.75)
+            e.rect(ta, tb, UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))
+            if ly > 3:  # the family lounge's east wall and window
+                e.rect(*sorted((u(0, 3 - 0.375), u(0, ly))), U, UT, lw=0.6, fill=WALLC)
+                for w in WINDOWS_F1:
+                    if (w[1], w[2]) == ("Y", 61):
+                        _window(e, *sorted((u(0, w[3]), u(0, w[4]))), w, U, True)
             _posts(e, lambda x, y: u(0, y), [p for p in TERRACE_POSTS if p[0] > 60])
-            e.rect(lo, hi, UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))
             a, b = sorted((u(0, 3 - 0.375), u(0, 12.5)))
             e.rect(a, b, F, F + H, lw=0.6, fill=LAT)
             a, b = sorted((u(0, 12.5), u(0, 25.375)))
@@ -295,9 +304,9 @@ def sheet_elev_short(c):
         e = Elev(s, 100, (60 + i * 140) * mm, 112 * mm)
         elevation(e, face)
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
-    tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. The covered terrace sits 6 ft back behind them, open to the road behind a railing, with closed jali parapets on the north and south sides.",
+    tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. Upstairs, 6 ft back behind them: the family lounge (south half, walled and glazed) and the covered terrace (north half), open to the road behind a railing with a jali parapet on the north side.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
-            "West wall: upstairs, small high windows (afternoon sun) and Bedroom 2's balcony in the middle third, under the main eave. The creeper pergola shades the ground floor.",
+            "West wall: the first floor has only small high windows on the west (afternoon sun). The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
     s.bullets(tips, 40 * mm, 80 * mm, 285 * mm, 7)
     c.showPage()

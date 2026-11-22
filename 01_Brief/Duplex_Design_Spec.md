@@ -21,7 +21,7 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 - **The whole plot:** 170 ft deep from the back (west) boundary to the east road, 27 ft wide at the back, 30 ft half-way and 40 ft at the road (the south side is straight, the north side slants); about 5,400 sq ft. The house keeps 8 ft behind it; the 109 ft of front land holds the forecourt, a car porch and drive on the north side (vastu: the way in on the right as you face the house), a vegetable garden, a carpentry workshop and two rental shops on the road front. A compound wall runs right round. See **Site** below and sheet A-101.
 - 3 bedrooms (two down, one up):
   - **Ground floor:** the master bedroom across the full depth of the west bay (14 × 22) with its bath off the sitting zone; a small single-bed room; the common bath beside the stair hall; dining by the kitchen hatch.
-  - **First floor:** Bedroom 2 in the south-west with its bath, a closable study in the north-west, a toilet off the landing and a box room; the stair in the middle of the south side.
+  - **First floor:** Bedroom 2 in the south-west with its bath, a fun room (theatre and work room) in the north-west, a toilet off the landing and a box room; the stair in the middle of the south side.
 - **First floor, front half:** a covered terrace under the main roof, carried on a light steel frame.
 - No double height. A slab covers the whole two-storey block, so every ground-floor room has a flat ceiling at about 9'-5".
 
@@ -35,7 +35,7 @@ Current version, 2 Nov 2026: a clean redesign on the same wall grid, master down
 | Side walkways | 3 ft south; 2'-3" to 4'-2" north (the boundary slants) |
 | Ground floor | 1,166 sq ft |
 | First floor, enclosed | about 525 sq ft (master suite with sitting zone, bath, study, landing, passage, stair) |
-| First floor, covered terrace | 19 × 22 ft, about 420 sq ft |
+| First floor, family lounge and covered terrace | lounge 19 × 13 ft (about 245 sq ft, enclosed) and terrace 19 × 9 ft (about 170 sq ft, open) |
 
 ## Site (sheet A-101)
 
@@ -122,20 +122,21 @@ x: 14            28       34.5    42                 53  57   61      67
 
 | Room | Extent | Size | Clear | Notes |
 |---|---|---|---|---|
-| Bedroom 2 | 14–28 × 3–14 | 14 × 11 | 13'-4" × 10'-5" | king bed head south between two 3 ft south windows, each with an 18 in planter box grille outside; door from the landing; a glazed teak door on the west wall to a private balcony 6 × 3'-6" over the back garden (in the middle third of the west wall, so the south-west corner stays solid for vastu; steel railing with a teak cap, under the main eave); 7 ft sliding wardrobe on the north wall, 2'-6" off the west wall to clear the balcony door; dresser on the east wall; its bath straight off the bedroom; high west window stacked over the master window below; AC on solid wall |
+| Bedroom 2 | 14–28 × 3–15 | 14 × 12 | 13'-4" × 11'-5" | king bed head south between two 3 ft south windows, each with an 18 in planter box grille outside; door from the landing; 8 ft sliding wardrobe on the north wall; dresser on the east wall; its bath straight off the bedroom; high west window stacked over the master window below; the wall to the fun room stands on the ground-floor wall between the master and the den |
 | Bedroom 2 bath | 28–34.5 × 3–10.5 | 6.5 × 7.5 | 6'-1" × 6'-11" | over the master bath, every fitting stacked: shower in the south-west corner, WC on the east wall (one stack), basin on the north wall; door from the bedroom opening inward; frosted south window W35 over W02 |
-| Study | 14–28 × 14–25 | 14 × 11 | 13'-4" × 10'-5" | closable home office: one 9 ft two-station desk under the 6 ft north window (a 15 in planter box grille outside for shade plants), a full-height library wall on the south (call backdrop, sound buffer), sofa-cum-bed for guests in front of it; glazed door; coolest room by day |
+| Fun room | 14–28 × 15–25 | 14 × 10 | 13'-4" × 9'-5" | a small home theatre and work room: 65 in screen (or projector) on a floating console on the east wall, a three-seat sofa-cum-bed facing it about 8 ft away (guest bed), a 5'-6" two-station desk under the 6 ft north window (15 in planter grille outside), a low games and book cupboard on the south wall; blackout blinds, acoustic panels, a dimmer |
 | Upper toilet | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | door at the east end of the landing, opening inward; the WC is never the first view; shower about 3 × 3 with the north window centred on it; WC over the guest bath WC (one stack) |
-| Landing | 28–34.5 × 10.5–18 | 6.5 × 7.5 | | west of the stair head: doors to Bedroom 2, the study and the upper toilet |
-| Stair head | 34.5–42 × 12.33–16 | 7.5 × 3'-8" | | the stair arrives here facing north to a lit teak lamp shelf; the 3'-6" terrace door to the east, the box room door to the north |
-| Box room | 34.5–42 × 16–25 | 7.5 × 9 | | linen, suitcases and festival things on open shelving; north window W45; a spare socket so it can take the washer later (over the powder room: wet over wet if it ever becomes a laundry) |
-| Covered terrace | 42–61 × 3–25 | 19 × 22 | | under the main roof on galvanised steel posts set on wall corners below (x 53 and 61); closed teak jali parapets on the north and south, an open railing on the road side; zoned: laundry in the south-west (washing machine against the stair wall, with its points cast in stage 1, and the drying rails beside it), lounge in the north-west (diwan facing the view, chairs either side), festival floor in the middle, planters along the whole east edge |
+| Landing | 28–34.5 × 10.5–18 | 6.5 × 7.5 | | west of the stair head: doors to Bedroom 2, the fun room and the upper toilet |
+| Stair head | 34.5–42 × 12.33–16 | 7.5 × 3'-8" | | the stair arrives here facing north to a lit teak lamp shelf; the 3'-6" glazed door east into the family lounge, the laundry door north |
+| Laundry + store | 34.5–42 × 16–25 | 7.5 × 9 | | washing machine and a laundry sink on the north wall, over the powder room below (wet over wet); linen, suitcases and festival things on open shelving on the west wall; north window W45; clothes dry on rails on the terrace next door |
+| Family lounge | 42–61 × 3–16 | 19 × 13 | 18'-5" × 12'-5" | upstairs family sitting room, entered straight from the stair head: a 7 ft sofa under the south window facing north, two armchairs and a coffee table, a teak oonjal by the east window looking to the road, the stair's teak jali on its west wall; insulated false ceiling under the tiled roof; one AC; glazed sliding doors (9 ft) onto the covered terrace |
+| Covered terrace | 42–61 × 16–25 | 19 × 9 | | open, under the main roof on galvanised steel posts (x 53 and 61), in the north-east (vastu: open); a teak jali parapet on the north (the neighbour is close), an open railing to the road; diwan, cane chairs and a low table; clothes-drying rails along the north parapet; planters on the east edge; a tap and a drain |
 
 ## Levels and stair
 
 - Ground FFL +2 ft above ground. Floor-to-floor height 10 ft, so the first floor is at +12 ft above ground.
 - **Stair:** dog-leg, 3'-6" flights, 16 risers of 7.5 in, 10 in treads, 8 + 8 risers with a 3'-6" half landing against the south wall (7'-6" x 9'-4" overall, x 34.5–42 × 3–12.33), rising clockwise (up the east flight going south, right turn, up the west flight going north); a 7'-6" × 3'-8" stair hall in front of it. A clerestory W33 on the south wall over the stair well, under the main roof's 2 ft eave, opens as the hot-air outlet.
-- **Terrace:** waterproofed slab falling 1:80 to a drain in the south-east corner. Steel posts stand on RCC stubs 6 in above the tiles.
+- **Terrace:** waterproofed slab falling 1:80 to a drain at its east edge (the family lounge covers the south half). Steel posts stand on RCC stubs 6 in above the tiles.
 
 ## Roof
 
@@ -167,7 +168,7 @@ Rough 2026 village rates around Guntur. Built in one go the house is about Rs 43
 |---|---|---|
 | 1. Move in | Ground floor with basic finishes (vitrified tiles, one coat of paint, granite counter with open shelves, ceilings only in baths); footings, columns, slab and stair for two floors; frame to roof level; tiled roof, front gable and covered terrace; whole first-floor slab waterproofed; upstairs an open covered deck with temporary railings and a grille gate at the stair head; site works | Rs 30-34 lakh |
 | 2. Upstairs shell and upgrades (1-2 years later) | First-floor outer walls and windows; kitchen cabinets, wardrobes, jali screens; room ceilings, final paint, floor upgrades | Rs 7-11 lakh |
-| 3. First-floor fit-out | Inner walls (Bedroom 2, bath, study, toilet, box room), doors, wet-room waterproofing and fittings, floors, plaster and paint, ceilings, wiring, ACs, wardrobes, desks | Rs 7-10 lakh |
+| 3. First-floor fit-out | Inner walls (Bedroom 2, bath, fun room, toilet, box room), doors, wet-room waterproofing and fittings, floors, plaster and paint, ceilings, wiring, ACs, wardrobes, desks | Rs 7-10 lakh |
 
 Build in stage 1 so the later stages are easy:
 - Plan approval for the full two-storey house.

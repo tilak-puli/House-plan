@@ -108,10 +108,10 @@ FLOOR_FINISH = {  # room: floor finish key
     "R01": "Matt vitrified 2x2", "R04": "Red oxide / Kota stone", "R31": "Matt vitrified 2x2", "R32": "Matt vitrified 2x2",
     "R40": "Anti-skid ceramic, waterproofed", "R42": "Matt vitrified 2x2", "R08": "Anti-skid ceramic, waterproofed", "R20": "Red oxide / Kota stone", "R33": "Anti-skid ceramic, waterproofed",
     "R13": "Anti-skid ceramic, waterproofed", "R19": "Red oxide / Kota stone", "R15": "Anti-skid ceramic, waterproofed",
-    "R17": "Flamed granite", "R18": "Flamed granite (shoes-on zone, one step below the living)", "R36": "Matt vitrified 2x2", "R37": "Terracotta anti-skid tile, waterproofed",
+    "R17": "Flamed granite", "R18": "Flamed granite (shoes-on zone, one step below the living)", "R36": "Matt vitrified 2x2", "R37": "Terracotta anti-skid tile, waterproofed", "R44": "Red oxide (IPS) or polished Kota stone, like the living below",
 }
 ROOM_LABEL_AT = {"R19": (44.2, 7.0), "R13": (49.4, 7.0), "R01": (21.0, 11.0), "R42": (21.0, 17.6), "R06": (38.25, 4.75), "R11": (59.0, 23.4), "R18": (59.0, 17.5), "R16": (50.0, 16.6), "R17": (64, 19.0), "R10": (48.0, 10.6),
-                 "R31": (21, 11.0), "R37": (51, 14.0)}  # label points for rooms whose centre is crowded
+                 "R31": (21, 11.0), "R37": (55.5, 21.0), "R44": (51.5, 13.6)}  # label points for rooms whose centre is crowded
 ROOM_FLOOR = {"R08": -0.04, "R07": -0.04, "R40": -0.04, "R39": -0.04, "R33": -0.04, "R11": 0.25, "R18": -0.5, "R13": -0.25, "R17": -0.5, "R37": -0.25}  # offset from the floor level
 # ceiling: ("flat", height above the room's floor level) or ("sloped", note)
 CEILINGS = {
@@ -120,7 +120,7 @@ CEILINGS = {
     "R10": ("flat", 9.4), "R18": ("flat", 9.4), "R16": ("flat", 9.4), "R11": ("flat", 9.0),
     "R17": ("sloped", "exposed rafters"),
     "R31": ("flat", 9.5), "R32": ("flat", 9.5), "R33": ("flat", 8.5), "R34": ("sloped", "follows roof"), "R41": ("sloped", "follows roof"),
-    "R35": ("flat", 9.5), "R36": ("flat", 9.5), "R37": ("sloped", "steel trusses, tiled roof above"),
+    "R35": ("flat", 9.5), "R36": ("flat", 9.5), "R37": ("sloped", "steel trusses, tiled roof above"), "R44": ("flat", 9.5),
 }
 ROOF = {
     "pitch": 30,          # degrees
@@ -129,7 +129,7 @@ ROOF = {
     "gable": (61.0, 69.0, 10.5, 27.0),  # front mukhappu gable over the poomukham only, centred on the main door (y 18.75), ridge E-W
     "wing": (61.0, 69.0, 1.0, 10.5),    # low hipped roof over the kitchen front: hips to the east, north and south; eaves level with the gable's, ridge lower, kept plain (no finial or vents)
     "gablet": 3.5,        # Kerala gablet at both hip ends of the main roof: a jali triangle this high under the ridge lets the hot roof air out
-    "chaipu": [(12.0, 61.0, 1.0, 3.0, "S"), (12.0, 14.0, 1.0, 10.5, "W"), (12.0, 14.0, 16.5, 25.375, "W")],  # low lean-to roofs on the south and west walls, eaves level with the front roofs; the west one stops under the balcony
+    "chaipu": [(12.0, 61.0, 1.0, 3.0, "S"), (12.0, 14.0, 1.0, 25.375, "W")],  # low lean-to roofs on the south and west walls, eaves level with the front roofs
     "gable_lift": 0.24,   # gable eaves sit just above a plain eave line at ground-floor wall top
     "downpipes": [(12.0, 1.0), (38.0, 1.0), (69.0, 1.0), (69.0, 10.5), (12.0, 26.9), (38.0, 26.9), (69.0, 26.9)],  # (69, 10.5): the valley between gable and wing
 }
@@ -289,25 +289,25 @@ EXTRA_DRAW = [("F11", 24.0, 25.0, 3.4, 4.4)]
 
 # ---------- first floor: rooms over the back half, a covered terrace over the front half ----------
 ROOMS_F1 = [
-    ("R31", "Bedroom 2", 14, 28, 3, 14, "Upper suite"),
+    ("R31", "Bedroom 2", 14, 28, 3, 15, "Upper suite"),
     ("R41", "Stair head", 34.5, 42, 12.33, 16, "Circulation"),
-    ("R32", "Box room", 34.5, 42, 16, 25, "Service"),
+    ("R32", "Laundry + store", 34.5, 42, 16, 25, "Service"),
     ("R33", "Bedroom 2 bath", 28, 34.5, 3, 10.5, "Upper suite"),
     ("R34", "Landing", 28, 34.5, 10.5, 18, "Circulation"),
     ("R39", "Upper toilet", 28, 34.5, 18, 25, "Service"),
-    ("R36", "Study", 14, 28, 14, 25, "Work"),
-    ("R37", "Covered terrace", 42, 61, 3, 25, "Terrace"),
+    ("R36", "Fun room", 14, 28, 15, 25, "Family"),
+    ("R44", "Family lounge", 42, 61, 3, 16, "Family"),
+    ("R37", "Covered terrace", 42, 61, 16, 25, "Terrace"),
 ]
 WALLS_F1 = [
     ("X", 3, 14, 42), ("X", 25, 14, 42), ("Y", 14, 3, 25), ("Y", 42, 3, 25),
-    ("X", 14, 14, 28), ("Y", 28, 3, 25), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
+    ("X", 15, 14, 28), ("Y", 28, 3, 25), ("X", 3, 42, 61), ("Y", 61, 3, 16), ("X", 16, 42, 61), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
 ]
-EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42)}
+EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42), ("Y", 61)}
 WET_WALLS_F1 = {("Y", 34.5, 3, 10.5), ("X", 10.5, 28, 34.5), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}
 # Railings at the first floor (axis, c, s, e): open sides of the terrace, edges of the stair well. 3'-6" high.
 RAILS_F1 = [("X", 12.33, 38, 42), ("Y", 34.5, 10.5, 12.33),
-            ("X", 3, 42, 61), ("X", 25, 42, 61), ("Y", 61, 3, 25),
-            ("Y", 10.5, 10.5, 16.5), ("X", 10.5, 10.5, 14), ("X", 16.5, 10.5, 14)]  # Bedroom 2's balcony
+            ("X", 25, 42, 61), ("Y", 61, 16, 25)]
 # Terrace sides that face the neighbours a few feet away: closed teak jali parapets 3'-6" high (privacy, breeze), not open balusters.
 # The road side stays an open railing behind the front gable.
 JALI_RAILS = {("X", 3), ("X", 25)}
@@ -324,9 +324,9 @@ STAIR = {
     "core": (38.0, 38.5, 6.5, 12.33),          # wall between the flights
 }
 # First-floor slab outline (pieces) and the voids it leaves
-SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 25), (10.5, 14, 10.5, 16.5)]  # the last is Bedroom 2's balcony
-# Bedroom 2's balcony (x1, x2, y1, y2): 6 x 3'-6" in the middle third of the west wall (y 10.33-17.67), clear of the south-west third
-BALCONY = (10.5, 14.0, 10.5, 16.5)
+SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 25)]
+# A west balcony was tried and dropped (22 Nov 2026); kept as None so the drawing code skips it
+BALCONY = None
 # Planter box grilles outside windows: window id -> depth in ft (galvanised MS box grille with a planter tray, watered from inside)
 PLANTER_GRILLES = {"W07": 1.0, "W31": 1.5, "W37": 1.5, "W34": 1.25}
 # Light well over the dining table (slab void): rail round it, walk-on jali grating and a closable glazed lid for AC and monsoon
@@ -334,12 +334,12 @@ LIGHT_WELL = None  # the light well over the dining was dropped (the dining has 
 
 DOORS_F1 = [
     ("D31", "Y", 28, 11.0, 13.5, -1, "Bedroom 2 (from the landing)", "Flush, teak veneer"),
-    ("D47", "Y", 14, 10.7, 13.3, -1, "Balcony (from Bedroom 2, opens out onto it)", "Teak frame, glazed upper two-thirds with a jali panel below, steel grille shutter inside, weather bar and a 2 in drop to the balcony"),
     ("D33", "Y", 28, 7.9, 10.2, 1, "Bedroom 2 bath (from the bedroom, opens inward; the open leaf screens the WC)", "Flush, waterproof (WPC/FRP)"),
     ("D37", "X", 16, 38.9, 41.3, 1, "Box room (from the stair head, opens inward)", "Flush, teak veneer, louvred top"),
-    ("D35", "Y", 28, 14.6, 17.2, -1, "Study (from the landing)", "Teak frame, glazed upper panel (frosted), acoustic seals"),
+    ("D35", "Y", 28, 15.35, 17.95, -1, "Fun room (from the landing)", "Teak frame, glazed upper panel (frosted), acoustic seals"),
     ("D39", "X", 18, 31.6, 34.0, 1, "Upper toilet (from the landing, east end, opens inward; the leaf screens the WC: the first view is the shower, never the WC)", "Flush, waterproof (WPC/FRP)"),
-    ("D36", "Y", 42, 12.4, 15.9, 1, "Covered terrace (from the stair head, opens outward; the main threshold upstairs)", "Teak frame, glazed, 3'-6\", jali vent above"),
+    ("D36", "Y", 42, 12.4, 15.9, 1, "Family lounge (from the stair head, opens into it; the main threshold upstairs)", "Teak frame, glazed, 3'-6\", jali vent above"),
+    ("D49", "X", 16, 46.0, 55.0, 0, "Covered terrace (from the family lounge)", "Teak-framed glazed sliding doors, four panels, 9 ft, with a sliding mesh shutter; the terrace is a step of 3 in down"),
 ]
 WINDOWS_F1 = [
     ("W31", "X", 3, 14.9, 17.5, 3, 7, "Bedroom 2", "Timber jali + glazed shutters, west of the bed head; an 18 in planter box grille outside (full south sun)"),
@@ -347,9 +347,12 @@ WINDOWS_F1 = [
     ("W36", "Y", 14, 7.2, 9.8, 5, 7, "Bedroom 2", "High window on the west wall, glazed shutters + grille (on the y 8.5 axis over W01)"),
     ("W35", "X", 3, 31.25, 33.25, 5, 7, "Bedroom 2 bath", "Frosted casement, top-hung vent (over the master bath window W02)"),
     ("W33", "X", 3, 36.25, 40.25, 6, 9, "Stair", "Glazed clerestory over the stair well, top-hung, under the main roof's 2 ft eave: the hot-air outlet of the stair chimney"),
-    ("W34", "X", 25, 18.0, 24.0, 3, 7, "Study", "Teak casement, glazed (6 ft, even north light for screens); a 15 in planter box grille outside for shade plants (money plant, ferns, snake plant)"),
-    ("W41", "Y", 14, 18.5, 20.5, 5, 7, "Study", "High jali vent on the y 19.5 axis, over the den's garden door"),
-    ("W40", "Y", 42, 6.0, 11.8, 1, 8, "Stair", "Timber jali screen between the stair well and the covered terrace (light and air for the stair), glazed shutters behind it for driving rain and a steel grille inside for security"),
+    ("W34", "X", 25, 18.0, 24.0, 3, 7, "Fun room", "Teak casement, glazed (6 ft, even north light for the desks), blackout blind for films; a 15 in planter box grille outside for shade plants (money plant, ferns, snake plant)"),
+    ("W41", "Y", 14, 18.5, 20.5, 5, 7, "Fun room", "High jali vent on the y 19.5 axis, over the den's garden door; blackout blind"),
+    ("W40", "Y", 42, 6.0, 11.8, 1, 8, "Stair", "Timber jali screen between the stair well and the family lounge (light and air for the stair), glazed shutters behind it and a steel grille inside for security"),
+    ("W52", "X", 3, 43.5, 49.5, 3, 7, "Family lounge", "Timber jali + glazed shutters, 6 ft, south (shaded by the main roof's eave), behind the sofa"),
+    ("W53", "X", 3, 55.0, 59.0, 3, 7, "Family lounge", "Timber jali + glazed shutters, 4 ft, south, by the swing"),
+    ("W54", "Y", 61, 4.5, 10.5, 3, 7, "Family lounge", "Teak casement, glazed, 6 ft, east over the front roofs to the road (morning light)"),
     ("W42", "X", 25, 32.0, 34.0, 5, 7, "Upper toilet", "Frosted casement, top-hung vent (centred on the shower)"),
     ("W45", "X", 25, 37.25, 39.25, 3, 7, "Box room", "Timber jali + glazed shutters (air for linen and stored things)"),
 ]
@@ -357,25 +360,32 @@ FURNITURE_F1 = [
     ("F71", "Bedroom 2", "King bed 6' x 6'6\" + headboard, head to the south wall between the two windows", 18.0, 24.0, 3.4, 9.9, 1, "Teak", "rect"),
     ("F72", "Bedroom 2", "Floating bedside shelf with a drawer, reading light and charging point above", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
     ("F74", "Bedroom 2", "Dresser with a mirror and drawers on the east wall, south of the bath door", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
-    ("F75", "Bedroom 2", "Built-in sliding wardrobe 7' on the north wall, 2'-6\" off the west wall to leave the balcony door clear, doors facing the bed, lofts above", 16.5, 23.5, 12.1, 13.75, 1, "Ply + laminate, sliding shutters", "rect"),
+    ("F75", "Bedroom 2", "Built-in sliding wardrobe 8' on the north wall from the west wall, doors facing the bed, lofts above", 14.5, 22.5, 13.1, 14.75, 1, "Ply + laminate, sliding shutters", "rect"),
     ("F77", "Bedroom 2 bath", "WC (EWC) on the east wall, over the master bath WC (one stack)", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
     ("F78", "Bedroom 2 bath", "Wash basin with a mirror cabinet above on the north wall (clear of the door swing)", 31.0, 32.5, 9.6, 10.25, 1, "Wall-hung", "rect"),
     ("F79", "Bedroom 2 bath", "Shower glass partition (shower 3' x 3'-4\" in the south-west corner, over the master shower)", 31.2, 31.35, 3.4, 6.4, 1, "8 mm toughened glass", "glass"),
-    ("F91", "Study", "Linear two-station desk 9' x 2' under the north window W34 (even north light, cameras face the room, not each other)", 16.5, 25.5, 22.6, 24.6, 1, "Teak / ply, cable tray", "rect"),
-    ("F92", "Study", "Sofa-cum-bed 6' in front of the library wall (guest bed)", 16.5, 22.5, 15.4, 17.8, 1, "Teak frame, upholstered", "rect"),
-    ("F95", "Study", "Full-height library wall on the south wall (call backdrop and sound buffer to Bedroom 2)", 14.5, 25.0, 14.2, 15.2, 1, "Teak / ply, open shelves", "rect"),
+    ("F91", "Fun room", "Work desk 5'-6\" x 2' under the north window W34 (two stations; even north light, screens face the room)", 20.0, 25.5, 22.6, 24.6, 1, "Teak / ply, cable tray", "rect"),
+    ("F92", "Fun room", "Three-seat sofa-cum-bed 6' facing the screen on the east wall (guest bed)", 16.6, 19.4, 15.6, 21.6, 1, "Teak frame, upholstered", "rect"),
+    ("F95", "Fun room", "Low games and book cupboard 3 ft high on the south wall (board games, consoles, books)", 20.0, 25.0, 15.4, 16.4, 1, "Teak / ply", "rect"),
+    ("F55", "Fun room", "Media wall on the east wall: 65 in screen (or a projector screen) over a floating console, speakers either side; viewed from the sofa about 8 ft away; acoustic panels and blackout blinds make it a small theatre", 26.6, 27.6, 18.6, 24.2, 1, "Teak veneer console, fabric acoustic panels", "rect"),
     ("F98", "Upper toilet", "WC (EWC) on the west wall, over the guest bath WC (one stack)", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
     ("F99", "Upper toilet", "Wash basin with a mirror cabinet above (south wall, beside the door)", 28.6, 30.1, 18.3, 19.0, 1, "Wall-hung", "rect"),
     ("F70", "Upper toilet", "Shower glass partition (shower in the north-east corner, about 3' x 3')", 31.2, 34.2, 21.4, 21.55, 1, "8 mm toughened glass", "glass"),
-    ("F84", "Covered terrace", "Built-in diwan 6' against the box room wall (cushions, bolsters, storage below)", 42.4, 44.4, 16.0, 22.0, 1, "Teak, weatherproof cushions", "rect"),
-    ("F85", "Covered terrace", "Low coffee table", 46.0, 48.5, 17.5, 20.5, 1, "Teak", "rect"),
-    ("F86", "Covered terrace", "Cane armchair (north of the table, facing it)", 46.35, 48.15, 21.2, 23.0, 1, "Cane", "circle"),
-    ("F87", "Covered terrace", "Cane armchair (south of the table, facing it)", 46.35, 48.15, 15.0, 16.8, 1, "Cane", "circle"),
-    ("F88", "Covered terrace", "Clothes-drying rails beside the washer, laundry corner in the south-west (out of sight from the road)", 45.0, 52.0, 3.5, 6.8, 1, "Aluminium rails on pulleys", "glass"),
-    ("F30", "Covered terrace", "Washing machine 2' x 2' in the laundry corner against the stair wall, its supply, socket and floor trap cast in stage 1 (fallback: a front-loader under the utility counter)", 42.5, 44.5, 3.4, 5.4, 1, "Splash-proof socket, floor trap", "rect"),
+    ("F84", "Covered terrace", "Built-in diwan 6' against the laundry wall (cushions, bolsters, storage below)", 42.4, 44.4, 17.4, 23.4, 1, "Teak, weatherproof cushions", "rect"),
+    ("F85", "Covered terrace", "Low coffee table", 45.8, 48.3, 19.2, 21.7, 1, "Teak", "rect"),
+    ("F86", "Covered terrace", "Cane armchair (north of the table, facing it)", 46.15, 47.95, 22.4, 24.2, 1, "Cane", "circle"),
+    ("F87", "Covered terrace", "Cane armchair (east of the table, facing it)", 49.0, 50.8, 19.55, 21.35, 1, "Cane", "circle"),
+    ("F88", "Covered terrace", "Clothes-drying rails on pulleys along the north jali parapet (out of sight from the road behind the planters), next to the laundry", 52.0, 59.0, 21.6, 24.5, 1, "Aluminium rails on pulleys", "glass"),
+    ("F30", "Laundry + store", "Washing machine 2' x 2' on the north wall, over the powder room below (wet over wet), with its supply, socket and floor trap", 37.3, 39.3, 22.6, 24.6, 1, "Splash-proof socket, floor trap", "rect"),
+    ("F32", "Laundry + store", "Laundry sink with a drainboard beside the washer (hand wash, soaking)", 37.5, 39.3, 20.6, 22.3, 1, "SS sink on a ply base", "rect"),
     ("F80", "Stair head", "Teak lamp shelf with a picture light, on the wall you face at the top of the stair (walls too thin for a recess)", 35.4, 37.1, 15.4, 15.79, 1, "Carved teak, brass lamp", "rect"),
-    ("F82", "Box room", "Shelving on the west wall for linen, suitcases and festival things (the room can take a washer later)", 34.8, 36.3, 16.5, 24.6, 1, "Ply + laminate, open", "rect"),
-    ("F89", "Covered terrace", "Planter boxes along the whole east edge", 59.4, 60.6, 3.5, 24.5, 1, "Ferrocement, drained to the terrace drain", "rect"),
+    ("F82", "Laundry + store", "Shelving on the west wall for linen, suitcases and festival things", 34.8, 36.3, 16.5, 24.6, 1, "Ply + laminate, open", "rect"),
+    ("F89", "Covered terrace", "Planter boxes along the terrace's east edge", 59.4, 60.6, 16.5, 24.5, 1, "Ferrocement, drained to the terrace drain", "rect"),
+    ("F40", "Family lounge", "Three-seat sofa 7' against the south wall under the window, facing north to the terrace", 45.5, 52.5, 3.5, 6.3, 1, "Teak frame, upholstered", "rect"),
+    ("F43", "Family lounge", "Coffee table on a rug", 47.0, 51.0, 7.4, 9.4, 1, "Teak", "rect"),
+    ("F101", "Family lounge", "Armchair facing the sofa", 45.6, 47.8, 10.6, 12.8, 1, "Teak and cane", "circle"),
+    ("F102", "Family lounge", "Armchair facing the sofa", 50.2, 52.4, 10.6, 12.8, 1, "Teak and cane", "circle"),
+    ("F103", "Family lounge", "Teak oonjal (swing) 5 ft hung on chains from the steel truss, facing west into the room, by the east window", 57.0, 59.4, 5.0, 10.0, 1, "Teak, brass chains", "rect"),
 ]
 EXTRA_DRAW_F1 = [("F72", 24.0, 25.0, 3.4, 4.4)]
 
@@ -388,15 +398,14 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
     ("Wet area", "Rough Cuddapah / Kota stone, falls to drain", "4 ft stone or tile dado", "Board at 9'-6\"", "Service door to the walkway with a 6 in kerb"),
     ("Stair", "Granite or Kota treads with a rounded nosing and anti-slip grooves, 10 in treads, 7 in risers", "Teak handrail at 3 ft on the open side, timber jali to the dining", "Open to the roof", "Light at the half landing and at the top; 2-way switches"),
     ("Hall, landing, passage", "Red oxide or vitrified", "4 in flush skirting; washable paint", "Slab soffit / board", ""),
-    ("Covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "Teak jali parapets 3'-6\" on the north and south sides (neighbours close by); an open railing on the road side (teak cap, MS or teak balusters); bamboo chiks on the south and east", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: it sits over the living, dining and kitchen"),
+    ("Family lounge (first floor)", "Red oxide (IPS) or polished Kota stone, like the living below", "4 in skirting in the floor stone; lime-finish or mineral paint; teak jali to the stair", "Insulated false ceiling at 9'-6\" under the tiled roof (the room sits under the roof, not a slab)", "Its walls and glazing go in at stage 2 (the slab, roof and posts are stage 1); the steel posts at x 53 and x 61 are boxed into its walls"),
+    ("Covered terrace (first floor)", "Terracotta anti-skid tile on a waterproofed slab, falls 1:80 to a drain", "A teak jali parapet 3'-6\" on the north side (the neighbour is close); an open railing on the road side (teak cap, MS or teak balusters); bamboo chiks on the east; glazed sliding doors to the family lounge on the south", "Steel trusses and the tiled roof above, painted; galvanised steel posts at the terrace edge", "Slab waterproofing and a 48 h flood test before tiling: it sits over the living, dining and kitchen"),
     ("Poomukham, steps", "Flamed / leather-finish granite (not polished)", "Granite skirting; plinth face clad 2 ft (splash zone)", "Exposed rafters + board", "Polished stone is slippery when wet"),
     ("Exterior", "Plinth apron: PCC 3 ft wide sloped away", "AAC + 20 mm plaster with waterproof additive; elastomeric paint", "-", "Drip grooves under every sill and sunshade"),
     ("Roof (all)", "Mangalore clay tiles, every edge tile clipped / screwed", "Membrane + 50 mm insulation on cement-fibre deck", "Steel truss on RCC ring beams (first-floor walls for the main roof, ground-floor walls for the front gable and the kitchen wing)", "Cyclone winds: tie trusses down with holding-down bolts"),
 ]
 
 OPEN_ISSUES = [
-    ("Vastu", "Bedroom 2's balcony on the west wall: kept to the middle third (y 10.5-16.5, the south-west third stays solid wall), light steel and teak (no masonry), its floor 2 in below the room, and the open terrace on the east is far larger; confirm with the vastu consultant", "Vastu consultant", "To confirm"),
-    ("Structure", "Bedroom 2's balcony: 3'-6\" RCC cantilever off the first-floor slab (back-span into the bedroom slab), sloped 1:100 to a spout, waterproofed; it brings the house to 4'-6\" from the back boundary at that point, so check the rear setback", "Structural engineer / architect", "Open"),
     ("Roof", "Front gable junction: " + 'with the gable now over the poomukham only, its ridge (+15\'-10") stands about 3\'-10" above the terrace floor (+12\'), so its back end meets the terrace\'s east edge as a low triangle just above the railing. (1) Close that triangle with a timber jali on the terrace edge beam (the railing stops against it). (2) Flash the line where the gable and the kitchen wing meet the terrace edge, over a small RCC upstand, so rain cannot run under the slab or into the kitchen ceiling. (3) Put a gutter on the main roof\'s front eave so monsoon run-off does not pour onto the front tiles. (4) Line the valley between the gable and the kitchen wing with a 12 in GI / aluminium valley gutter, draining east to its own downpipe', "Architect / contractor", "Open"),
     ("Option", "Duplex on the full plot (8 ft behind the house, 109 ft of front land): decide between this and the single-storey plan (main branch) before structural design", "Owner", "Open"),
     ("Finishes", "Colour and material scheme to choose: five looks to compare in the 3D model (As drawn, Classic Kerala refined, Chettinad ochre, Modern tropical, Lime and green); decide before ordering floor tiles, paint and door finishes", "Owner", "Open"),
@@ -420,6 +429,10 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "First floor re-planned, option A (22 Nov 2026, owner): the south half of the covered terrace becomes an enclosed family lounge, 19 x 13 (sofa, armchairs, a teak oonjal, south and east windows, a jali to the stair), entered straight from the stair head; glazed sliding doors open from it onto the north half, which stays an open covered terrace in the north-east, 19 x 9 (vastu: the north-east open), with the diwan, chairs and drying rails. The box room becomes the laundry and store (the washer moves in from the terrace and sits over the powder room). Bedroom 2 (14 x 12, with its bath) and the fun room (14 x 10, theatre and work) stay as they are, and so does the upper toilet.",
+    "Balcony dropped (22 Nov 2026, owner): after trying a west balcony (middle third, then 10 ft, then the full wall) it is removed for now because a west balcony sits badly with vastu and the north side is only 2 ft from the neighbour; the west wall, its windows, the chaipu and the pergola go back to how they were. The planter grilles, the fun room and the partition on y 15 stay. The first floor is to be re-planned next (a more spacious family living, one big bedroom, one work and theatre room).",
+    "Full-length west balcony and a fun room (22 Nov 2026, owner): the balcony runs the whole first-floor west wall from the north-west corner to 3'-6\" short of the south-west corner (18'-6\" x 4'-6\"), shared by Bedroom 2 (glazed door and window) and the study, which becomes a fun room (a small theatre with a 65 in screen on the east wall and a sofa-cum-bed, a work desk under the north window, a games cupboard, its own glazed door to the balcony). The partition between them moves 1 ft north to y 15, so it stands on the ground-floor wall between the master and the den and Bedroom 2 becomes 14 x 12. The balcony roofs the den's garden sit-out and shades all the ground-floor west openings; the west chaipu now covers only the south-west corner and the pergola shrinks to that corner, creepers hanging from the balcony instead.",
+    "Bigger balcony (22 Nov 2026, owner): Bedroom 2's balcony grows to 10 x 4'-6\" (y 6.5-16.5), reaching a little into the south-west third so that it shades the master's west window below; the master's west window widens to 4 ft and Bedroom 2's high west window becomes a 3 ft window onto the balcony; the west chaipu now runs only from the south-west corner to the balcony and from the balcony to the north-west corner.",
     "Planter grilles and a balcony (22 Nov 2026, owner): galvanised box grilles with planter trays outside the kitchen's south window (1 ft, herbs), Bedroom 2's two south windows (18 in) and the study's north window (15 in); not on the ground-floor bedroom or living windows (they would block the 2-3 ft side passages) or the baths, stair and vents. A private balcony for Bedroom 2, 6 x 3'-6\", on the west wall in its middle third (y 10.5-16.5) so the south-west corner stays solid for vastu: a glazed teak door from the bedroom, steel railing with a teak cap, the main roof's eave over most of it, overlooking the back garden; the west chaipu stops under it; the wardrobe shortens to 7 ft and moves 2 ft east.",
     "Permaculture food system on the front land (3 Nov 2026, owner): zone 1 is a kitchen garden south of the forecourt (a herb spiral and daily greens under the coconut palms) with a banana circle fed by the kitchen's grey water; zone 2 is fruit guilds south of the car porch (guava, sapota, lemon, pomegranate, custard apple, drumstick, each with pigeon pea, vegetables, ground cover and turmeric under it) round the compost pits and a worm bin, and the four raised beds, now mulched, on drip and under a shade net in April-May; vegetable creepers on the car porch pergola; a gliricidia and pigeon-pea living fence along the south boundary; the drip lines run from the sump, which already takes the roof rain through a first-flush filter (rainwater spares the greens the hard, high-fluoride bore water). About 800-900 sq ft of growing space and ten fruit trees; roughly Rs 40,000-70,000 to set up.",
     "No light well (3 Nov 2026, owner): the dining now has daylight from the wash alcove's south window and the stair jali, so the 5 x 4'-6\" light well over the dining table is dropped; the terrace floor is one unbroken waterproofed slab and the dining a flat 9'-5\" ceiling.",
@@ -637,18 +650,21 @@ ELECTRICAL_F1 = [
     # Bedroom 2 bath
     ("L", 31.5, 7.5, "R33", ""), ("EF", 30.0, 3.4, "R33", "out through the south wall"), ("G", 28.4, 6.0, "R33", "over the shower"),
     ("PC", 32.5, 10.2, "R33", "by basin"), ("S", 27.6, 10.6, "R31", "bath switches outside the door"),
-    # Study (north-west)
-    ("F", 21.0, 19.5, "R36", ""), ("L", 16.5, 23.0, "R36", ""), ("L", 25.5, 16.0, "R36", ""), ("S", 27.6, 17.5, "R36", "at the door"),
-    ("P", 17.5, 24.6, "R36", "desk 1"), ("U", 18.5, 24.6, "R36", "desk 1"), ("D", 19.5, 24.6, "R36", "desk 1"),
-    ("P", 22.5, 24.6, "R36", "desk 2"), ("U", 23.5, 24.6, "R36", "desk 2"), ("D", 24.5, 24.6, "R36", "desk 2"), ("P", 25.8, 14.4, "R36", "sofa-cum-bed"),
+    # Fun room (north-west)
+    ("F", 21.0, 19.5, "R36", ""), ("L", 16.5, 23.0, "R36", ""), ("L", 25.5, 16.0, "R36", ""), ("S", 27.6, 18.4, "R36", "at the door, dimmer for the theatre"),
+    ("P", 20.8, 24.6, "R36", "desk 1"), ("U", 21.6, 24.6, "R36", "desk 1"), ("D", 22.4, 24.6, "R36", "desk 1"),
+    ("P", 23.2, 24.6, "R36", "desk 2"), ("U", 24.0, 24.6, "R36", "desk 2"), ("D", 24.8, 24.6, "R36", "desk 2"), ("P", 17.0, 15.4, "R36", "sofa lamp"),
+    ("TV", 27.6, 21.4, "R36", "screen: power, HDMI conduit to a projector point on the ceiling, Cat6"), ("P", 27.6, 19.0, "R36", "console"),
     ("AC", 14.4, 16.6, "R36", "west wall, on solid wall south of W41, 1 ton"), ("ODU", 13.6, 16.6, "R36", "west wall, under the eave (stacked over the master unit)"),
     # Upper toilet and landing
     ("L", 31.2, 21.5, "R39", ""), ("EF", 33.4, 24.7, "R39", "out through the north wall"), ("G", 34.2, 24.0, "R39", "over shower, east wall"), ("PC", 30.4, 18.4, "R39", "by basin"),
     ("S", 31.4, 17.8, "R34", "toilet switches outside the door, beside it"), ("L", 31.25, 14.0, "R34", ""),
     ("L", 38.25, 14.2, "R41", ""), ("WL", 36.25, 15.6, "R41", "picture light over the lamp shelf facing the stair top"), ("S", 34.3, 12.6, "R34", "landing and stair, 2-way with the stair hall"),
-    ("L", 38.25, 20.5, "R32", ""), ("S", 41.7, 16.3, "R32", "at the door"), ("P", 41.6, 22.0, "R32", "spare (washer later)"),
-    ("F", 48.0, 19.0, "R37", "wet-rated, hung from the steel truss"), ("L", 53.5, 10.0, "R37", "wet-rated"), ("L", 56.0, 9.0, "R37", "wet-rated"),
-    ("L", 56.0, 21.0, "R37", "wet-rated"), ("P", 42.4, 15.2, "R37", "weatherproof"), ("P16", 42.4, 5.8, "R37", "washing machine, splash-proof"),
+    ("L", 38.25, 20.5, "R32", ""), ("S", 41.7, 16.3, "R32", "at the door"), ("P", 41.6, 22.0, "R32", "iron"), ("P16", 39.8, 24.6, "R32", "washing machine, splash-proof"),
+    ("F", 48.0, 20.5, "R37", "wet-rated, hung from the steel truss"), ("L", 56.0, 21.0, "R37", "wet-rated"), ("P", 44.6, 16.4, "R37", "weatherproof"),
+    ("F", 49.0, 9.0, "R44", ""), ("L", 45.0, 13.5, "R44", ""), ("L", 56.0, 13.5, "R44", ""), ("S", 42.4, 11.9, "R44", "at the stair-head door, 2-way with the terrace"),
+    ("P", 45.0, 3.4, "R44", "lamp by the sofa"), ("P", 53.0, 3.4, "R44", "lamp by the sofa"), ("P", 60.6, 11.5, "R44", "reading light by the swing"),
+    ("AC", 60.6, 14.0, "R44", "east wall, north of the window, 1.5 ton"), ("ODU", 61.4, 14.0, "R44", "on a bracket over the front gable roof"),
     ("S", 41.6, 16.2, "R41", "terrace switches by the door, stair-head side"),
 ]
 
@@ -676,7 +692,7 @@ PLUMBING_F1 = [
     ("SH", 28.4, 4.9, "R33", "west wall, over the master shower"), ("FT", 29.7, 4.9, "R33", "shower drain"), ("FT", 31.5, 7.8, "R33", "floor trap"),
     ("WC", 29.1, 21.6, "R39", "over the guest bath WC (one stack)"), ("HF", 28.4, 22.4, "R39", ""), ("BS", 29.35, 18.4, "R39", "south wall, west of the door"),
     ("SH", 34.2, 23.4, "R39", "east wall"), ("FT", 32.8, 24.4, "R39", "shower drain"), ("FT", 30.6, 19.6, "R39", "dry zone trap"),
-    ("FT", 60.4, 3.6, "R37", "terrace drain, to a downpipe at the south-east corner"), ("TAP", 42.4, 4.2, "R37", "terrace tap (plants, cleaning)"), ("WM", 42.6, 4.4, "R37", "washer inlet + drain, cast in stage 1, external grey pipe down the south wall to IC-5"), ("FT", 44.9, 3.8, "R37", "washer floor trap"),
+    ("FT", 60.4, 16.6, "R37", "terrace drain, to a downpipe at the east edge"), ("TAP", 42.4, 16.6, "R37", "terrace tap (plants, cleaning)"), ("WM", 38.3, 24.4, "R32", "washer inlet + drain, out through the north wall and down it to the north grey line"), ("FT", 44.9, 3.8, "R37", "washer floor trap"),
 ]
 # Pipe runs (schematic): kind, list of points. South walkway: grey y=1.0, soil y=1.8, supply y=2.3 (on plinth face).
 PIPES = [
@@ -686,7 +702,7 @@ PIPES = [
     ("soil", [(33.7, 7.8), (33.7, 1.8), (12.6, 1.8), (12.6, 26.0), (83.8, 26.0)]), ("soil", [(35.6, 23.0), (35.6, 26.0)]),
     ("soil", [(29.1, 21.6), (29.1, 26.0)]), ("soil", [(87.0, 22.5), (89.0, 7.6)]),
     ("soil", [(155.2, 11.0), (155.2, 18.0), (92.0, 18.0), (92.0, 25.5), (90.0, 25.5)]),  # the shared site toilet to the septic tank
-    ("grey", [(57.6, 3.5), (57.6, 1.0), (88.4, 1.0), (89.2, 4.5)]), ("grey", [(12.0, 26.4), (12.0, 1.0), (57.6, 1.0)]),
+    ("grey", [(57.6, 3.5), (57.6, 1.0), (88.4, 1.0), (89.2, 4.5)]), ("grey", [(38.3, 24.4), (38.3, 26.4), (12.0, 26.4)]), ("grey", [(12.0, 26.4), (12.0, 1.0), (57.6, 1.0)]),
     ("grey", [(48.5, 3.6), (48.5, 1.0)]), ("grey", [(51.75, 4.3), (48.5, 3.6)]), ("grey", [(45.7, 6.15), (45.7, 1.0)]),
     ("grey", [(36.6, 21.6), (36.6, 26.4), (32.8, 26.4)]), ("grey", [(29.7, 4.9), (29.7, 1.0)]),
     ("grey", [(32.8, 24.4), (32.8, 26.4), (12.0, 26.4)]),
@@ -710,7 +726,7 @@ PHASES = [
         "False ceilings in the rooms; final paint and any floor upgrades.",
         "Compound wall, poomukham finishes and landscaping (outside the estimate)."], "Rs 7-11 lakh"),
     ("Stage 3: first-floor fit-out", [
-        "Inner walls upstairs: Bedroom 2 and its bath, the study, the toilet and the box room.",
+        "Inner walls upstairs: Bedroom 2 and its bath, the fun room, the toilet and the box room.",
         "Doors, wet-room waterproofing and fittings, floors, inside plaster and paint, false ceilings.",
         "Wiring and lights from the sub-board, ACs, wardrobes and desks."], "Rs 7-10 lakh"),
 ]
@@ -731,7 +747,7 @@ PHASE1_LIVING = [
     "Splitting into three stages costs about Rs 2-4 lakh more overall (coming back, price rises, some repainting).",
     "Never defer: structure, anti-termite treatment, plinth, waterproofing, the roof, or pipes and conduits buried in walls and slabs.",
 ]
-PHASE2_ROOMS = ("R31", "R32", "R33", "R36", "R39")
+PHASE2_ROOMS = ("R31", "R32", "R33", "R36", "R39", "R44")
 
 HOLD_POINTS = [
     ("Before design freeze", "Soil test report, level survey of plot and road, water quality test (TDS, hardness, fluoride)", "Owner, engineer"),
