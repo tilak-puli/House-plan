@@ -168,7 +168,7 @@ def sheet_plan(c, num="A-102", title="Ground floor plan"):
     s.legend([(sw(WALL_FILL[k]), f"{k}: {v[1]}") for k, v in WALL_TYPES.items()], 150 * mm, 44 * mm)
     s.note("Door swings dashed. D = door, W = window (A-401).", 32 * mm, 20 * mm, 7, GREY)
     s.note(("Section lines and clear sizes on A-106; levels on A-108." if ground else
-            f"First floor at {fmt_lvl(floor_base('F1'))}. Railings 3'-6\" high (double lines). The front half is a covered terrace under the main roof, on steel posts."), 32 * mm, 16 * mm, 7, GREY)
+            f"First floor at {fmt_lvl(floor_base('F1'))}. Railings 4'-0\" high, vertical bars at 100 mm or less (double lines). The north-east is a covered terrace under the main roof, on steel posts."), 32 * mm, 16 * mm, 7, GREY)
     c.showPage()
 
 

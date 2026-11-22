@@ -75,9 +75,9 @@ def _wall_span(fl, axis, c0):
 def _rail_band(e, a, b, base, top, jali=False):
     """Open side of the terrace: dark opening above a railing (or a closed teak jali parapet)."""
     e.rect(a, b, base, top, lw=0.4, fill=DARK)
-    e.rect(a, b, base, base + 3.5, lw=0.5, fill=colors.HexColor("#C8A97E") if jali else WALLC)
+    e.rect(a, b, base, base + RAIL_H, lw=0.5, fill=colors.HexColor("#C8A97E") if jali else WALLC)
     n = max(2, int((b - a) / (0.35 if jali else 0.5)))
-    for i in range(1, n): e.line(a + i * (b - a) / n, base + 0.3, a + i * (b - a) / n, base + 3.2, lw=0.25, color=TEAK)
+    for i in range(1, n): e.line(a + i * (b - a) / n, base + 0.3, a + i * (b - a) / n, base + RAIL_H - 0.3, lw=0.25, color=TEAK)
     if jali:
         for k in range(1, 6): e.line(a, base + 0.3 + k * 0.5, b, base + 0.3 + k * 0.5, lw=0.25, color=TEAK)
     e.line(a, base + 3.5, b, base + 3.5, lw=1.0, color=TEAK)

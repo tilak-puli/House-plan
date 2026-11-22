@@ -121,7 +121,7 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Put cabinets on 4 in legs or a granite plinth.  
    *Shown on: A-502/6*
 35. **Avoid:** Gas cylinder in a closed cabinet under the hob.  
-   **Do:** Keep the cylinder in the wet area with a fixed copper / steel line and a valve through the wall.  
+   **Do:** Keep the cylinders in a louvred, shaded, locked cage outside the kitchen's east wall, with a fixed copper line through the wall and an isolation valve at the counter.  
    *Shown on: A-104*
 36. **Avoid:** Kitchen drain without a grease trap: chokes within a year.  
    **Do:** Put a grease trap outside, before any junction.  

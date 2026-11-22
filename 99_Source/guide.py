@@ -80,7 +80,7 @@ GUIDE = [
         ('Base cabinets standing on the floor: rot and termites.',
          'Put cabinets on 4 in legs or a granite plinth.', 'A-502/6'),
         ('Gas cylinder in a closed cabinet under the hob.',
-         'Keep the cylinder in the wet area with a fixed copper / steel line and a valve through the wall.', 'A-104'),
+         'Keep the cylinders in a louvred, shaded, locked cage outside the kitchen\'s east wall, with a fixed copper line through the wall and an isolation valve at the counter.', 'A-104'),
         ('Kitchen drain without a grease trap: chokes within a year.',
          'Put a grease trap outside, before any junction.', 'P-101'),
         ('Fridge beside the hob or in direct sun.',

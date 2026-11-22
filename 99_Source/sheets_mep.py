@@ -2,12 +2,12 @@
 from collections import Counter
 from sheetlib import *
 
-LIGHTING = {"L", "WL", "F", "EF", "S", "BELL", "CAM", "GL"}
+LIGHTING = {"L", "WL", "F", "EF", "S", "BELL", "CAM", "GL", "SA", "HA"}
 POWER = {"P", "PC", "P16", "U", "D", "TV", "AC", "ODU", "G", "DB", "INV", "MTR", "EP", "CH"}
 ECOL = {"L": colors.HexColor("#C28A00"), "WL": colors.HexColor("#C28A00"), "F": ACC, "EF": ACC, "S": INK, "BELL": INK,
         "CAM": INK, "GL": colors.HexColor("#C28A00"), "P": BLUE, "PC": BLUE, "P16": RED, "U": colors.HexColor("#7B3FA0"),
         "D": colors.HexColor("#7B3FA0"), "TV": colors.HexColor("#7B3FA0"), "AC": RED, "ODU": RED, "G": RED, "DB": INK,
-        "INV": colors.HexColor("#7B3FA0"), "MTR": INK, "EP": INK, "CH": RED}
+        "INV": colors.HexColor("#7B3FA0"), "MTR": INK, "EP": INK, "CH": RED, "SA": RED, "HA": RED}
 CEILING_ITEMS = {"L", "F"}
 
 
