@@ -147,6 +147,16 @@ def _roof_end(e, u, east):
                 top = cz + (cx2 - cx1) * TAN
                 _poly(e, [(u(0, cy1), cz), (u(0, cy2), cz), (u(0, cy2), top), (u(0, cy1 + (cx2 - cx1)), top)], TILE, lw=0.5)
                 e.line(u(0, cy1), cz, u(0, cy2), cz, lw=1.0, color=BROWN)
+        if BALCONY:  # Bedroom 2's balcony, seen face on: slab edge, railing with a teak cap
+            bx1, bx2, by1, by2 = BALCONY
+            bz = LEVELS["FFL"] + LEVELS["upper_ffl"]
+            _poly(e, [(u(0, by1), bz - LEVELS["slab"]), (u(0, by2), bz - LEVELS["slab"]), (u(0, by2), bz), (u(0, by1), bz)], colors.HexColor("#D9D4C8"), lw=0.6)
+            n = int((by2 - by1) / 0.4)
+            for k in range(n + 1):
+                yy = by1 + k * (by2 - by1) / n
+                e.line(u(0, yy), bz, u(0, yy), bz + 3.5, lw=0.3, color=INK)
+            e.line(u(0, by1), bz + 3.5, u(0, by2), bz + 3.5, lw=1.4, color=BROWN)
+            e.line(u(0, by1), bz + 0.3, u(0, by2), bz + 0.3, lw=0.4, color=INK)
 
 
 def _front_gable(e, u):
@@ -287,7 +297,7 @@ def sheet_elev_short(c):
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
     tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. The covered terrace sits 6 ft back behind them, open to the road behind a railing, with closed jali parapets on the north and south sides.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
-            "West wall: the first floor has only small high windows on the west (afternoon sun). The creeper pergola shades the ground floor.",
+            "West wall: upstairs, small high windows (afternoon sun) and Bedroom 2's balcony in the middle third, under the main eave. The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]
     s.bullets(tips, 40 * mm, 80 * mm, 285 * mm, 7)
     c.showPage()

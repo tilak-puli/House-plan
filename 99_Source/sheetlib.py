@@ -164,9 +164,15 @@ class Plan:
                     self.rect(x1, x2, y1, y2, lw=0.4)
                     if axis == "X": self.line(a, cc, b, cc, lw=0.3)
                     else: self.line(cc, a, cc, b, lw=0.3)
+                    dp = PLANTER_GRILLES.get(rec[0])
+                    if dp and axis == "X":  # planter box grille outside the window
+                        sg = 1 if cc >= 25 else -1
+                        y0 = cc + sg * 0.375
+                        self.rect(a - 0.15, b + 0.15, min(y0, y0 + sg * dp), max(y0, y0 + sg * dp), lw=0.35, fill=colors.HexColor("#E3EDD6"))
+                        self.line(a - 0.15, y0 + sg * dp * 0.5, b + 0.15, y0 + sg * dp * 0.5, lw=0.2, color=GREY)
                 if tags:
                     if axis == "X":
-                        tx, ty = (a + b) / 2, cc + (1.25 if cc >= 25 else -1.25)
+                        tx, ty = (a + b) / 2, cc + (1.25 if cc >= 25 else -1.25) * (1 + PLANTER_GRILLES.get(rec[0], 0) / 1.25 * 0.9)
                     else:
                         tx, ty = cc + (1.5 if cc >= 61 else -1.5), (a + b) / 2
                     self.text(rec[0], tx, ty, 5.5, color=ACC)
@@ -280,6 +286,10 @@ class Plan:
             self.text("LIGHT WELL ABOVE", (lx1 + lx2) / 2, ly2 - 0.6, 4.0, color=GREY)
         if FLOOR[0] == "F1":
             self.rails()
+            if BALCONY:
+                bx1, bx2, by1, by2 = BALCONY
+                px, py = self.p((bx1 + bx2) / 2 + 0.2, (by1 + by2) / 2); c = self.c; c.saveState(); c.translate(px, py); c.rotate(90)
+                c.setFillColor(INK); c.setFont("Helvetica-Bold", 4.6); c.drawCentredString(0, 0, "BALCONY"); c.restoreState()
             for x, y in TERRACE_POSTS:
                 self.rect(x - 0.17, x + 0.17, y - 0.17, y + 0.17, stroke=INK, fill=INK, lw=0.3)
             self.text("STEEL POSTS CARRY THE ROOF OVER THE TERRACE", 53, 23.3, 4.4, color=GREY)

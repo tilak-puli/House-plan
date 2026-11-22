@@ -129,7 +129,7 @@ ROOF = {
     "gable": (61.0, 69.0, 10.5, 27.0),  # front mukhappu gable over the poomukham only, centred on the main door (y 18.75), ridge E-W
     "wing": (61.0, 69.0, 1.0, 10.5),    # low hipped roof over the kitchen front: hips to the east, north and south; eaves level with the gable's, ridge lower, kept plain (no finial or vents)
     "gablet": 3.5,        # Kerala gablet at both hip ends of the main roof: a jali triangle this high under the ridge lets the hot roof air out
-    "chaipu": [(12.0, 61.0, 1.0, 3.0, "S"), (12.0, 14.0, 1.0, 25.375, "W")],  # low lean-to roofs on the south and west walls, eaves level with the front roofs
+    "chaipu": [(12.0, 61.0, 1.0, 3.0, "S"), (12.0, 14.0, 1.0, 10.5, "W"), (12.0, 14.0, 16.5, 25.375, "W")],  # low lean-to roofs on the south and west walls, eaves level with the front roofs; the west one stops under the balcony
     "gable_lift": 0.24,   # gable eaves sit just above a plain eave line at ground-floor wall top
     "downpipes": [(12.0, 1.0), (38.0, 1.0), (69.0, 1.0), (69.0, 10.5), (12.0, 26.9), (38.0, 26.9), (69.0, 26.9)],  # (69, 10.5): the valley between gable and wing
 }
@@ -218,7 +218,7 @@ WINDOWS = [
     ("W48", "X", 3, 14.9, 17.5, 3, 7, "Master bedroom", "Timber jali + glazed shutters, west of the bed head (stacked under W31)"),
     ("W49", "X", 3, 24.5, 27.1, 3, 7, "Master bedroom", "Timber jali + glazed shutters, east of the bed head (stacked under W37)"),
     ("W12", "X", 3, 49.95, 51.95, 5, 7, "Wet area", "Jali vent over the utility sink (2 ft vent window)"),
-    ("W07", "X", 3, 54.6, 60.6, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (clear of the terrace post over x 61; the sink centred under it)"),
+    ("W07", "X", 3, 54.6, 60.6, 3.5, 7, "Kitchen", "Timber jali + glazed shutters (clear of the terrace post over x 61; the sink centred under it); a 1 ft planter box grille outside for kitchen herbs (curry leaf, coriander, mint, chilli), kept shallow for the side passage"),
     ("W08", "Y", 67, 10.4, 12.0, 6, 8, "Kitchen", "High ventilator, jali + louvres above the counter (smoke and hot air out; the hob wall below stays solid)"),
     ("W09", "X", 25, 44.5, 50.5, 3, 7, "Living", "Teak casement, glazed (6 ft), fixed jali on the lower 2 ft (privacy from the neighbour), hood above"),
     ("W43", "X", 25, 32.0, 34.0, 5, 7, "Guest bath", "Frosted casement, top-hung vent"),
@@ -306,7 +306,8 @@ EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42)}
 WET_WALLS_F1 = {("Y", 34.5, 3, 10.5), ("X", 10.5, 28, 34.5), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}
 # Railings at the first floor (axis, c, s, e): open sides of the terrace, edges of the stair well. 3'-6" high.
 RAILS_F1 = [("X", 12.33, 38, 42), ("Y", 34.5, 10.5, 12.33),
-            ("X", 3, 42, 61), ("X", 25, 42, 61), ("Y", 61, 3, 25)]
+            ("X", 3, 42, 61), ("X", 25, 42, 61), ("Y", 61, 3, 25),
+            ("Y", 10.5, 10.5, 16.5), ("X", 10.5, 10.5, 14), ("X", 16.5, 10.5, 14)]  # Bedroom 2's balcony
 # Terrace sides that face the neighbours a few feet away: closed teak jali parapets 3'-6" high (privacy, breeze), not open balusters.
 # The road side stays an open railing behind the front gable.
 JALI_RAILS = {("X", 3), ("X", 25)}
@@ -323,12 +324,17 @@ STAIR = {
     "core": (38.0, 38.5, 6.5, 12.33),          # wall between the flights
 }
 # First-floor slab outline (pieces) and the voids it leaves
-SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 25)]
+SLAB_F1 = [(14, 28, 3, 25), (28, 34.5, 3, 25), (34.5, 42, 12.33, 25), (42, 61, 3, 25), (10.5, 14, 10.5, 16.5)]  # the last is Bedroom 2's balcony
+# Bedroom 2's balcony (x1, x2, y1, y2): 6 x 3'-6" in the middle third of the west wall (y 10.33-17.67), clear of the south-west third
+BALCONY = (10.5, 14.0, 10.5, 16.5)
+# Planter box grilles outside windows: window id -> depth in ft (galvanised MS box grille with a planter tray, watered from inside)
+PLANTER_GRILLES = {"W07": 1.0, "W31": 1.5, "W37": 1.5, "W34": 1.25}
 # Light well over the dining table (slab void): rail round it, walk-on jali grating and a closable glazed lid for AC and monsoon
 LIGHT_WELL = None  # the light well over the dining was dropped (the dining has its own south window)
 
 DOORS_F1 = [
     ("D31", "Y", 28, 11.0, 13.5, -1, "Bedroom 2 (from the landing)", "Flush, teak veneer"),
+    ("D47", "Y", 14, 10.7, 13.3, -1, "Balcony (from Bedroom 2, opens out onto it)", "Teak frame, glazed upper two-thirds with a jali panel below, steel grille shutter inside, weather bar and a 2 in drop to the balcony"),
     ("D33", "Y", 28, 7.9, 10.2, 1, "Bedroom 2 bath (from the bedroom, opens inward; the open leaf screens the WC)", "Flush, waterproof (WPC/FRP)"),
     ("D37", "X", 16, 38.9, 41.3, 1, "Box room (from the stair head, opens inward)", "Flush, teak veneer, louvred top"),
     ("D35", "Y", 28, 14.6, 17.2, -1, "Study (from the landing)", "Teak frame, glazed upper panel (frosted), acoustic seals"),
@@ -336,12 +342,12 @@ DOORS_F1 = [
     ("D36", "Y", 42, 12.4, 15.9, 1, "Covered terrace (from the stair head, opens outward; the main threshold upstairs)", "Teak frame, glazed, 3'-6\", jali vent above"),
 ]
 WINDOWS_F1 = [
-    ("W31", "X", 3, 14.9, 17.5, 3, 7, "Bedroom 2", "Timber jali + glazed shutters, west of the bed head"),
-    ("W37", "X", 3, 24.5, 27.1, 3, 7, "Bedroom 2", "Timber jali + glazed shutters, east of the bed head"),
+    ("W31", "X", 3, 14.9, 17.5, 3, 7, "Bedroom 2", "Timber jali + glazed shutters, west of the bed head; an 18 in planter box grille outside (full south sun)"),
+    ("W37", "X", 3, 24.5, 27.1, 3, 7, "Bedroom 2", "Timber jali + glazed shutters, east of the bed head; an 18 in planter box grille outside (full south sun)"),
     ("W36", "Y", 14, 7.2, 9.8, 5, 7, "Bedroom 2", "High window on the west wall, glazed shutters + grille (on the y 8.5 axis over W01)"),
     ("W35", "X", 3, 31.25, 33.25, 5, 7, "Bedroom 2 bath", "Frosted casement, top-hung vent (over the master bath window W02)"),
     ("W33", "X", 3, 36.25, 40.25, 6, 9, "Stair", "Glazed clerestory over the stair well, top-hung, under the main roof's 2 ft eave: the hot-air outlet of the stair chimney"),
-    ("W34", "X", 25, 18.0, 24.0, 3, 7, "Study", "Teak casement, glazed (6 ft, even north light for screens)"),
+    ("W34", "X", 25, 18.0, 24.0, 3, 7, "Study", "Teak casement, glazed (6 ft, even north light for screens); a 15 in planter box grille outside for shade plants (money plant, ferns, snake plant)"),
     ("W41", "Y", 14, 18.5, 20.5, 5, 7, "Study", "High jali vent on the y 19.5 axis, over the den's garden door"),
     ("W40", "Y", 42, 6.0, 11.8, 1, 8, "Stair", "Timber jali screen between the stair well and the covered terrace (light and air for the stair), glazed shutters behind it for driving rain and a steel grille inside for security"),
     ("W42", "X", 25, 32.0, 34.0, 5, 7, "Upper toilet", "Frosted casement, top-hung vent (centred on the shower)"),
@@ -351,7 +357,7 @@ FURNITURE_F1 = [
     ("F71", "Bedroom 2", "King bed 6' x 6'6\" + headboard, head to the south wall between the two windows", 18.0, 24.0, 3.4, 9.9, 1, "Teak", "rect"),
     ("F72", "Bedroom 2", "Floating bedside shelf with a drawer, reading light and charging point above", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
     ("F74", "Bedroom 2", "Dresser with a mirror and drawers on the east wall, south of the bath door", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
-    ("F75", "Bedroom 2", "Built-in sliding wardrobe 8' on the north wall from the west wall, doors facing the bed, lofts above", 14.5, 22.5, 12.1, 13.75, 1, "Ply + laminate, sliding shutters", "rect"),
+    ("F75", "Bedroom 2", "Built-in sliding wardrobe 7' on the north wall, 2'-6\" off the west wall to leave the balcony door clear, doors facing the bed, lofts above", 16.5, 23.5, 12.1, 13.75, 1, "Ply + laminate, sliding shutters", "rect"),
     ("F77", "Bedroom 2 bath", "WC (EWC) on the east wall, over the master bath WC (one stack)", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
     ("F78", "Bedroom 2 bath", "Wash basin with a mirror cabinet above on the north wall (clear of the door swing)", 31.0, 32.5, 9.6, 10.25, 1, "Wall-hung", "rect"),
     ("F79", "Bedroom 2 bath", "Shower glass partition (shower 3' x 3'-4\" in the south-west corner, over the master shower)", 31.2, 31.35, 3.4, 6.4, 1, "8 mm toughened glass", "glass"),
@@ -389,6 +395,8 @@ FINISHES = [  # spaces, floor, walls (incl. skirting / dado), ceiling, notes
 ]
 
 OPEN_ISSUES = [
+    ("Vastu", "Bedroom 2's balcony on the west wall: kept to the middle third (y 10.5-16.5, the south-west third stays solid wall), light steel and teak (no masonry), its floor 2 in below the room, and the open terrace on the east is far larger; confirm with the vastu consultant", "Vastu consultant", "To confirm"),
+    ("Structure", "Bedroom 2's balcony: 3'-6\" RCC cantilever off the first-floor slab (back-span into the bedroom slab), sloped 1:100 to a spout, waterproofed; it brings the house to 4'-6\" from the back boundary at that point, so check the rear setback", "Structural engineer / architect", "Open"),
     ("Roof", "Front gable junction: " + 'with the gable now over the poomukham only, its ridge (+15\'-10") stands about 3\'-10" above the terrace floor (+12\'), so its back end meets the terrace\'s east edge as a low triangle just above the railing. (1) Close that triangle with a timber jali on the terrace edge beam (the railing stops against it). (2) Flash the line where the gable and the kitchen wing meet the terrace edge, over a small RCC upstand, so rain cannot run under the slab or into the kitchen ceiling. (3) Put a gutter on the main roof\'s front eave so monsoon run-off does not pour onto the front tiles. (4) Line the valley between the gable and the kitchen wing with a 12 in GI / aluminium valley gutter, draining east to its own downpipe', "Architect / contractor", "Open"),
     ("Option", "Duplex on the full plot (8 ft behind the house, 109 ft of front land): decide between this and the single-storey plan (main branch) before structural design", "Owner", "Open"),
     ("Finishes", "Colour and material scheme to choose: five looks to compare in the 3D model (As drawn, Classic Kerala refined, Chettinad ochre, Modern tropical, Lime and green); decide before ordering floor tiles, paint and door finishes", "Owner", "Open"),
@@ -412,6 +420,7 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "Planter grilles and a balcony (22 Nov 2026, owner): galvanised box grilles with planter trays outside the kitchen's south window (1 ft, herbs), Bedroom 2's two south windows (18 in) and the study's north window (15 in); not on the ground-floor bedroom or living windows (they would block the 2-3 ft side passages) or the baths, stair and vents. A private balcony for Bedroom 2, 6 x 3'-6\", on the west wall in its middle third (y 10.5-16.5) so the south-west corner stays solid for vastu: a glazed teak door from the bedroom, steel railing with a teak cap, the main roof's eave over most of it, overlooking the back garden; the west chaipu stops under it; the wardrobe shortens to 7 ft and moves 2 ft east.",
     "Permaculture food system on the front land (3 Nov 2026, owner): zone 1 is a kitchen garden south of the forecourt (a herb spiral and daily greens under the coconut palms) with a banana circle fed by the kitchen's grey water; zone 2 is fruit guilds south of the car porch (guava, sapota, lemon, pomegranate, custard apple, drumstick, each with pigeon pea, vegetables, ground cover and turmeric under it) round the compost pits and a worm bin, and the four raised beds, now mulched, on drip and under a shade net in April-May; vegetable creepers on the car porch pergola; a gliricidia and pigeon-pea living fence along the south boundary; the drip lines run from the sump, which already takes the roof rain through a first-flush filter (rainwater spares the greens the hard, high-fluoride bore water). About 800-900 sq ft of growing space and ten fruit trees; roughly Rs 40,000-70,000 to set up.",
     "No light well (3 Nov 2026, owner): the dining now has daylight from the wash alcove's south window and the stair jali, so the 5 x 4'-6\" light well over the dining table is dropped; the terrace floor is one unbroken waterproofed slab and the dining a flat 9'-5\" ceiling.",
     "Screen at the hall mouth (3 Nov 2026, owner): a tall teak display unit (2'-11\" x 1'-5\", 7 ft high) stands beside the TV bay at the hall mouth, open niches to the living and a closed back to the hall, so someone coming in at the main door does not look straight down the hall at the bedroom doors; a 2'-7\" way into the hall (a door's width) stays beside it.",

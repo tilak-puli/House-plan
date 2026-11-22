@@ -75,7 +75,8 @@ def model_data():
             "gate2": list(feat["GATE2"][2:]) if "GATE2" in feat else None,
             "features": {"SEPTIC": list(feat["SEPTIC"]), "SUMP": list(feat["SUMP"]), "TULSI": list(feat["TULSI"][:2]), "STEPS": list(feat["STEPS"]), "WSTEP": list(feat["WSTEP"]),
                          "SOAK": list(feat["SOAK"]), **{k: list(feat[k]) for k in ("PATH", "PATH2", "HEDGE1", "OTTA", "GSTEP", "CARPORT", "WORKSHOP", "WVERANDAH", "COMPOST", "RECHARGE", "BORE", "SHOP1", "SHOP2", "SITEWC", "HERBS", "SPIRAL", "BANANA", "GUILD", "WORM", "FENCE", "RAINTANK") if k in feat}},
-            "trees": [list(t) for t in TREES], "food": [list(t) for t in FOOD_TREES]}
+            "trees": [list(t) for t in TREES], "food": [list(t) for t in FOOD_TREES],
+            "planters": [[w[3], w[4], w[2], 1 if w[2] >= 25 else -1, d, w[5], w[6], fl] for fl, ws in (("G", WINDOWS), ("F1", WINDOWS_F1)) for w in ws for k, d in PLANTER_GRILLES.items() if w[0] == k]}
 
 
 def make(path):
