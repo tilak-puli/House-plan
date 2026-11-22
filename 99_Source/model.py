@@ -69,7 +69,7 @@ ROOMS = [  # id, name, x1, x2, y1, y2, zone
 # Walls: (axis, coordinate, start, end). axis "X" = runs along x at y=c; "Y" = runs along y at x=c.
 WALLS = [
     ("X", 3, 14, 67), ("Y", 14, 3, 25), ("X", 25, 14, 61), ("Y", 67, 3, 12.5), ("Y", 61, 12.5, 25),
-    ("Y", 28, 3, 11.5), ("Y", 28, 11.5, 18), ("Y", 28, 18, 25), ("X", 11.5, 28, 34.5), ("X", 15, 14, 28),  # master grows north to y 15; master bath 6'-6" x 8'-6"
+    ("Y", 28, 3, 11.5), ("Y", 28, 11.5, 18), ("Y", 28, 18, 25), ("X", 11.5, 28, 34.5), ("X", 15, 14, 17.5), ("X", 15, 23.5, 28),  # master grows north to y 15; master bath 6'-6" x 8'-6"
     ("Y", 34.5, 3, 12.33), ("Y", 34.5, 18, 25), ("Y", 42, 3, 12.33), ("X", 18, 34.5, 42), ("Y", 39.5, 18, 25), ("X", 18, 28, 34.5),  # stair in the south band (vastu); powder room north of the stair hall on the guest bath's line (y 18), a 7 ft TV bay open to the living beside it; hall opening to the living = the hall's width
     ("X", 7.5, 46, 53), ("Y", 46, 3, 7.5),  # utility 46-53; the dining's wash alcove 42-46, open to the dining
     ("Y", 53, 3, 12.5), ("X", 12.5, 53, 67),  # kitchen: west wall (wet-area door, serving hatch) and north wall (living door, poomukham side)
@@ -186,7 +186,6 @@ DOORS = [
     ("D04", "Y", 28, 12.0, 14.5, -1, "Master bedroom (from the hall)", "Flush, teak veneer"),
     ("D45", "Y", 14, 18.25, 20.75, 1, "Garden door from the den to the back garden sit-out (opens inward)", "Teak frame, glazed upper half, steel grille shutter outside"),
     ("D42", "Y", 28, 8.9, 11.2, 1, "Master bath (from the bedroom into its dry zone, opens inward; the leaf screens the WC and shower)", "Flush, waterproof (WPC/FRP)"),
-    ("D43", "X", 15, 24.2, 26.5, 0, "Connecting door, master bedroom to the den, a pocket door (shut it and the den is a guest suite)", "Teak veneer pocket door, acoustic seals"),
     ("D08", "X", 18, 35.2, 37.6, 1, "Powder room (from the stair hall, opens inward; the first view is the window, the WC to the side at the far end)", "Flush, waterproof (WPC/FRP), door closer"),
     ("D07", "Y", 28, 18.6, 20.85, 1, "Guest bath (from the den, opens inward on lift-off hinges)", "Flush, waterproof (WPC/FRP)"),
     ("D11", "Y", 57, 21.55, 24.35, 1, "Pooja (north-east corner of the living)", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
@@ -201,7 +200,7 @@ TRANSOM_TYPES = {
     "louvre": "Fixed louvres angled down: air for the exhaust fan, no view in",
     "glazed": "Top-hung glazed vent with seals: open for air, closed for calls",
 }
-TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D43": "jali_closable", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
+TRANSOMS = {"D11": "jali", "D01": "jali", "D02": "jali_closable", "D42": "louvre", "D04": "jali_closable", "D07": "louvre", "D08": "louvre",
             "D31": "jali_closable", "D35": "jali_closable", "D33": "louvre", "D39": "louvre", "D36": "jali"}  # rooms breathe into the stair well with doors shut
 HINGE_AT_END = {"D36"}  # D36 hinged at its north jamb so the open leaf lies along the wall  # doors hinged at their far (e) jamb
 TRANSOM_LABELS = {"jali": "Open jali", "jali_closable": "Closable jali", "louvre": "Louvres", "glazed": "Sealed glazed flap"}
@@ -239,20 +238,22 @@ FURNITURE = [
     ("F10", "Master bedroom", "King bed 6' x 6'6\" + headboard, head to the south wall between two windows (true south-west; stacked under Bedroom 2's bed)", 18.0, 24.0, 3.4, 9.9, 1, "Teak, head to south", "rect"),
     ("F12", "Master bath", "WC (EWC) on the x 34.5 wet wall, under Bath 2's WC (one stack); the open door leaf screens it", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
     ("F13", "Master bath", "Shower glass partition (shower 3' x 3' in the south-west corner, on the bedroom wet wall)", 31.2, 31.35, 3.4, 6.4, 1, "8 mm toughened glass", "glass"),
-    ("F14", "Master bath", "Wash basin on the north wall, mirror cabinet above (clear of the door swing)", 31.0, 32.5, 10.55, 11.25, 1, "Wall-hung", "rect"),
+    ("F14", "Master bath", "Wash basin on the north wall, mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) (clear of the door swing)", 31.0, 32.5, 10.55, 11.25, 1, "Wall-hung", "rect"),
     ("F19", "Master bedroom", "Dressing table with a mirror and drawers on the east wall, beside the dressing bay", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
     ("F11", "Master bedroom", "Floating bedside shelf with a drawer, reading light and charging point above (against the south wall)", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
-    ("F06", "Master bedroom", "Built-in sliding wardrobe 8' on the north wall (y 15) from the west wall, doors facing the bed, lofts above", 14.5, 22.5, 13.1, 14.8, 1, "Ply + laminate, sliding shutters", "rect"),
+    ("F06", "Master bedroom", "Built-in wardrobe 9', full height with lofts, on the north side set into the wall line: between x 17.5 and 23.5 it and the den's media wall stand back to back in place of the wall (a 2 in mineral-wool board between them for sound); sliding doors facing the bed", 14.4, 23.5, 13.0, 15.0, 1, "Ply + laminate, sliding shutters, acoustic board at the back", "rect"),
     ("F16", "Powder room", "WC (EWC) on the west wet wall at the far end, back to back with the guest bath shower", 34.8, 36.4, 22.4, 23.6, 1, "Wall-hung on the wet wall, concealed cistern", "wc"),
     ("F17", "Powder room", "Wash basin with a mirror and a feature tile wall on the east wall, past the door swing", 38.6, 39.25, 20.9, 22.1, 1, "Wall-hung", "rect"),
     ("F20", "Guest room / den", "Sofa-cum-bed 6'-6\" x 3' under the north window W04 (guest bed), facing the TV, drawers below", 17.75, 24.25, 21.6, 24.6, 1, "Teak, cotton mattress and bolsters", "rect"),
     ("F67", "Guest room / den", "Armchair facing the TV", 14.7, 17.2, 15.9, 18.15, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F66", "Guest room / den", "Coffee table 2' x 1'-6\"", 20.0, 22.0, 18.8, 20.3, 1, "Teak", "rect"),
-    ("F23", "Guest room / den", "Low TV unit on the south wall, TV above, centred on the sofa-bed and the north window", 18.5, 23.5, 15.25, 16.25, 1, "Teak / ply", "rect"),
+    ("F23", "Guest room / den", "Media wall, set into the wall line back to back with the master's wardrobe: a 50 in TV in a 3'-6\" niche over a floating console, centred on the sofa-bed", 18.75, 22.25, 15.0, 16.0, 1, "Teak veneer, cable conduit to the TV point", "rect"),
+    ("F104", "Guest room / den", "Full-height flush cupboard beside the TV niche (guests' clothes, bedding)", 17.5, 18.75, 15.0, 16.0, 1, "Teak veneer flush shutters", "rect"),
+    ("F105", "Guest room / den", "Full-height flush cupboard beside the TV niche (books, games)", 22.25, 23.5, 15.0, 16.0, 1, "Teak veneer flush shutters", "rect"),
     ("F57", "Stair and passage", "Cupboard under the upper flight where it rises above 7 ft (DB, inverter, brooms), doors facing the stair hall", 34.7, 37.8, 9.6, 12.15, 1, "Ply + laminate, ventilated", "rect"),
     ("F58", "Stair and passage", "Low store under the half landing (about 4'-3\" clear) for grain bins and festival vessels, reached from the stair side", 34.8, 41.7, 3.4, 6.2, 1, "Ply + laminate", "rect"),
     ("F48", "Guest bath", "WC (EWC) on the bedroom wall", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F49", "Guest bath", "Wash basin with a mirror cabinet above", 32.3, 33.8, 18.3, 19.0, 1, "Wall-hung", "rect"),
+    ("F49", "Guest bath", "Wash basin with a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there)", 32.3, 33.8, 18.3, 19.0, 1, "Wall-hung", "rect"),
     ("F50", "Guest bath", "Shower glass partition (shower in the north-east corner, about 3' x 3')", 31.2, 34.2, 21.4, 21.55, 1, "8 mm toughened glass", "glass"),
     ("F24", "Dining", "Dining table 5'-6\" x 2'-6\" (4 daily: the bench and a chair at the east end; its west end stays open as the way to the wash alcove; extends west to about 7'-6\" with stools for festivals, 8 seats)", 44.5, 50.0, 9.0, 11.5, 1, "Teak, extending", "rect"),
     ("F27", "Dining", "Dining chair at the east end of the table", 50.1, 51.5, 9.55, 10.95, 1, "Teak, cane seat", "rect"),
@@ -277,7 +278,7 @@ FURNITURE = [
     ("F45", "Living", "Armchair facing north to the sofa group (with F46, a soft edge to the seating, not a sofa back)", 44.8, 46.6, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F46", "Living", "Armchair facing north to the sofa group", 47.4, 49.2, 17.8, 19.6, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F59", "TV bay", "Vilakku madam: slim carved teak lamp niche with a light inside on the bay's back wall, at the end of the entry axis (facing the main door)", 39.71, 40.05, 18.3, 19.2, 1, "Carved teak, brass lamp", "glass"),
-    ("F54", "Stair hall", "Tall teak display unit 2'-11\" x 1'-5\", 7 ft high, standing beside the TV bay at the hall mouth: open niches for lamps, brass and books facing the living, a closed back to the hall; it screens the bedroom doors from the main door and leaves a 2'-7\" way into the hall (a door's width)", 40.6, 42.0, 15.1, 18.0, 1, "Teak, oiled, fixed to the floor and the TV bay wall", "rect"),
+    ("F54", "Stair hall", "Slim teak display and book unit 2'-5\" x 10\", 7 ft high, standing beside the TV bay at the hall mouth: open niches for lamps, brass and books facing the living, a closed back to the hall; it screens the den's door from the main door and leaves a 3'-1\" way into the hall (was 2'-7\")", 41.2, 42.0, 15.6, 18.0, 1, "Teak, oiled, fixed to the floor and the TV bay wall", "rect"),
     ("F52", "Genkan (shoe-off foyer)", "Shoe bench 3'-3\" in the genkan (sit to take shoes off), louvred shoe shelves below, hooks and a keys niche above", 59.4, 60.6, 13.0, 16.3, 1, "Teak top, ply + laminate, 14 in deep", "rect"),
     ("F26", "Pooja", "Pooja mandapam on the east wall (idols face west; family faces east)", 60.0, 60.6, 21.6, 24.4, 1, "Carved teak", "rect"),
     ("F41", "Poomukham (verandah)", "Oonjal (swing) 3'6\", north side of the verandah, hung from the gable beam, its arc clear of the entrance walk and the pillars", 62.0, 65.3, 22.2, 23.7, 1, "Teak, chains to beam", "rect"),
@@ -301,7 +302,7 @@ ROOMS_F1 = [
 ]
 WALLS_F1 = [
     ("X", 3, 14, 42), ("X", 25, 14, 42), ("Y", 14, 3, 25), ("Y", 42, 3, 25),
-    ("X", 15, 14, 28), ("Y", 28, 3, 25), ("X", 3, 42, 61), ("Y", 61, 3, 16), ("X", 16, 42, 61), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
+    ("X", 15, 14, 19.6), ("X", 15, 25.3, 28), ("Y", 28, 3, 25), ("X", 3, 42, 61), ("Y", 61, 3, 16), ("X", 16, 42, 61), ("X", 10.5, 28, 34.5), ("Y", 34.5, 3, 10.5), ("X", 18, 28, 34.5), ("Y", 34.5, 16, 25), ("X", 16, 34.5, 42),
 ]
 EXTERIOR_F1 = {("X", 3), ("Y", 14), ("X", 25), ("Y", 42), ("Y", 61)}
 WET_WALLS_F1 = {("Y", 34.5, 3, 10.5), ("X", 10.5, 28, 34.5), ("Y", 28, 18, 25), ("X", 18, 28, 34.5)}
@@ -360,16 +361,16 @@ FURNITURE_F1 = [
     ("F71", "Bedroom 2", "King bed 6' x 6'6\" + headboard, head to the south wall between the two windows", 18.0, 24.0, 3.4, 9.9, 1, "Teak", "rect"),
     ("F72", "Bedroom 2", "Floating bedside shelf with a drawer, reading light and charging point above", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
     ("F74", "Bedroom 2", "Dresser with a mirror and drawers on the east wall, south of the bath door", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
-    ("F75", "Bedroom 2", "Built-in sliding wardrobe 8' on the north wall from the west wall, doors facing the bed, lofts above", 14.5, 22.5, 13.1, 14.75, 1, "Ply + laminate, sliding shutters", "rect"),
+    ("F75", "Bedroom 2", "Built-in wardrobe 8', full height with lofts, set into the wall line: between x 19.6 and 25.3 it and the fun room's cupboard stand back to back in place of the wall (a 2 in mineral-wool board between them for sound); sliding doors facing the bed", 17.3, 25.3, 13.0, 15.0, 1, "Ply + laminate, sliding shutters, acoustic board at the back", "rect"),
     ("F77", "Bedroom 2 bath", "WC (EWC) on the east wall, over the master bath WC (one stack)", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F78", "Bedroom 2 bath", "Wash basin with a mirror cabinet above on the north wall (clear of the door swing)", 31.0, 32.5, 9.6, 10.25, 1, "Wall-hung", "rect"),
+    ("F78", "Bedroom 2 bath", "Wash basin with a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) on the north wall (clear of the door swing)", 31.0, 32.5, 9.6, 10.25, 1, "Wall-hung", "rect"),
     ("F79", "Bedroom 2 bath", "Shower glass partition (shower 3' x 3'-4\" in the south-west corner, over the master shower)", 31.2, 31.35, 3.4, 6.4, 1, "8 mm toughened glass", "glass"),
     ("F91", "Fun room", "Work desk 5'-6\" x 2' under the north window W34 (two stations; even north light, screens face the room)", 20.0, 25.5, 22.6, 24.6, 1, "Teak / ply, cable tray", "rect"),
     ("F92", "Fun room", "Three-seat sofa-cum-bed 6' facing the screen on the east wall (guest bed)", 16.6, 19.4, 15.6, 21.6, 1, "Teak frame, upholstered", "rect"),
-    ("F95", "Fun room", "Low games and book cupboard 3 ft high on the south wall (board games, consoles, books)", 20.0, 25.0, 15.4, 16.4, 1, "Teak / ply", "rect"),
+    ("F95", "Fun room", "Full-height flush cupboard 5'-8\" x 1', set into the wall line back to back with Bedroom 2's wardrobe (board games, consoles, books, projector kit, blankets for the sofa-bed)", 19.6, 25.3, 15.0, 16.0, 1, "Teak veneer flush shutters, push latches", "rect"),
     ("F55", "Fun room", "Media wall on the east wall: 65 in screen (or a projector screen) over a floating console, speakers either side; viewed from the sofa about 8 ft away; acoustic panels and blackout blinds make it a small theatre", 26.6, 27.6, 18.6, 24.2, 1, "Teak veneer console, fabric acoustic panels", "rect"),
     ("F98", "Upper toilet", "WC (EWC) on the west wall, over the guest bath WC (one stack)", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F99", "Upper toilet", "Wash basin with a mirror cabinet above (south wall, beside the door)", 28.6, 30.1, 18.3, 19.0, 1, "Wall-hung", "rect"),
+    ("F99", "Upper toilet", "Wash basin with a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) (south wall, beside the door)", 28.6, 30.1, 18.3, 19.0, 1, "Wall-hung", "rect"),
     ("F70", "Upper toilet", "Shower glass partition (shower in the north-east corner, about 3' x 3')", 31.2, 34.2, 21.4, 21.55, 1, "8 mm toughened glass", "glass"),
     ("F84", "Covered terrace", "Built-in diwan 6' against the laundry wall (cushions, bolsters, storage below)", 42.4, 44.4, 17.4, 23.4, 1, "Teak, weatherproof cushions", "rect"),
     ("F85", "Covered terrace", "Low coffee table", 45.8, 48.3, 19.2, 21.7, 1, "Teak", "rect"),
@@ -429,6 +430,9 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "Storage wall between the master and the den (22 Nov 2026, owner): with the pocket door gone, the wall between them becomes a storage wall for 6 ft (x 17.5-23.5): the master's wardrobe grows to 9 ft and stands back to back with the den's media wall (a 50 in TV in a niche between two full-height flush cupboards), a mineral-wool board between them for sound. The upstairs wall is no longer over a masonry wall here, which is fine in the RCC frame (it is light and the floor beam carries it).",
+    "No connecting door between the master and the den (22 Nov 2026, owner): the pocket door is removed and the wall between them is solid; both rooms open only from the hall, so the den is a separate guest room with its own bath and the master gets a quieter, fully private wall.",
+    "Cupboards into the walls and a slimmer display unit (22 Nov 2026, owner): upstairs, the wall between Bedroom 2 and the fun room becomes a storage wall for 5'-8\": Bedroom 2's 8 ft wardrobe and a full-height 1 ft cupboard in the fun room stand back to back in the wall line (a mineral-wool board between them), so neither sticks into its room as before and the fun room gains about 7 in. All four bathroom mirror cabinets are recessed 4 in into 9 in walls. Full wardrobes cannot go inside 6-9 in walls, and the ground-floor wall between the master and the den keeps its masonry for the pocket door and the den's TV. The display unit at the hall mouth slims from 2'-11\" x 1'-5\" to 2'-5\" x 10\", widening the way into the hall from 2'-7\" to 3'-1\"; the den's door stays screened from the main door (the master's door was always partly visible through the way in).",
     "First floor re-planned, option A (22 Nov 2026, owner): the south half of the covered terrace becomes an enclosed family lounge, 19 x 13 (sofa, armchairs, a teak oonjal, south and east windows, a jali to the stair), entered straight from the stair head; glazed sliding doors open from it onto the north half, which stays an open covered terrace in the north-east, 19 x 9 (vastu: the north-east open), with the diwan, chairs and drying rails. The box room becomes the laundry and store (the washer moves in from the terrace and sits over the powder room). Bedroom 2 (14 x 12, with its bath) and the fun room (14 x 10, theatre and work) stay as they are, and so does the upper toilet.",
     "Balcony dropped (22 Nov 2026, owner): after trying a west balcony (middle third, then 10 ft, then the full wall) it is removed for now because a west balcony sits badly with vastu and the north side is only 2 ft from the neighbour; the west wall, its windows, the chaipu and the pergola go back to how they were. The planter grilles, the fun room and the partition on y 15 stay. The first floor is to be re-planned next (a more spacious family living, one big bedroom, one work and theatre room).",
     "Full-length west balcony and a fun room (22 Nov 2026, owner): the balcony runs the whole first-floor west wall from the north-west corner to 3'-6\" short of the south-west corner (18'-6\" x 4'-6\"), shared by Bedroom 2 (glazed door and window) and the study, which becomes a fun room (a small theatre with a 65 in screen on the east wall and a sofa-cum-bed, a work desk under the north window, a games cupboard, its own glazed door to the balcony). The partition between them moves 1 ft north to y 15, so it stands on the ground-floor wall between the master and the den and Bedroom 2 becomes 14 x 12. The balcony roofs the den's garden sit-out and shades all the ground-floor west openings; the west chaipu now covers only the south-west corner and the pergola shrinks to that corner, creepers hanging from the balcony instead.",
@@ -593,7 +597,7 @@ ELEC_TYPES = {  # code: (description, mounting height)
 ELECTRICAL = [
     # Master bedroom (ground, south-west)
     ("F", 21.0, 7.0, "R01", ""), ("L", 16.0, 11.0, "R01", ""), ("L", 26.0, 7.5, "R01", ""),
-    ("S", 27.6, 14.7, "R01", "at the door, latch side, 2-way"), ("S", 25.2, 3.4, "R01", "bedside, 2-way"), ("S", 26.9, 14.7, "R01", "by the connecting door"),
+    ("S", 27.6, 14.7, "R01", "at the door, latch side, 2-way"), ("S", 25.2, 3.4, "R01", "bedside, 2-way"),
     ("P", 17.4, 3.4, "R01", "bedside"), ("P", 24.6, 3.4, "R01", "bedside"),
     ("AC", 14.4, 11.5, "R01", "west wall, on solid wall north of W01, throws east across the bed foot"), ("ODU", 13.6, 11.5, "R01", "west wall, under the eave and pergola"),
     # Master bath and vestibule
@@ -607,7 +611,7 @@ ELECTRICAL = [
     # Master bedroom (north-west)
     ("F", 21.0, 19.5, "R42", ""), ("L", 17.0, 22.0, "R42", ""), ("L", 25.5, 23.0, "R42", ""),
     ("S", 27.4, 15.3, "R42", "at the door, on the cross wall"), ("S", 27.6, 21.3, "R42", "guest bath switches outside the door"), ("TV", 21.0, 15.3, "R42", "TV and data"),
-    ("P", 19.0, 24.6, "R42", "reading light by the sofa-bed"), ("S", 26.9, 15.3, "R42", "by the connecting door"),
+    ("P", 19.0, 24.6, "R42", "reading light by the sofa-bed"),
     ("AC", 14.4, 16.6, "R42", "west wall, on solid wall south of the garden door"), ("ODU", 13.6, 16.6, "R42", "west wall, under the eave (one stacked column with the study unit)"),
     # Hall, stair, under-stair cupboard
     ("L", 38.25, 14.2, "R09", ""), ("S", 41.6, 13.6, "R09", "hall and stair, 2-way with the landing"),

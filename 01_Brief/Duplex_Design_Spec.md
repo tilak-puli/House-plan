@@ -90,7 +90,7 @@ x: 14            28       34.5    42                 53  57   61      67
    │ Guest room /│ G.bath │ Stair │   LIVING             │Pooj│       │
    │ den         │        │dogleg │                      ├────┤ POOM- │
    │             ├────────┤ clock-│                      │Gen-│ UKHAM │◄ main door
-   ├─pocket door─┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
+   ├─────────────┤  Lobby │ wise  │                      │kan │       │   (y 18.75)
    │ Master      │        ├───────┤   (opening)          │    │       │
    │ bedroom     ├─vest.──┬──────┤ DINING               ├────┴───────┤ y 12.5
    │ (bed, head  │ M.bath │C.bath├──────────────────────┤  KITCHEN   │ y 11.5 / 7.5
@@ -102,7 +102,7 @@ x: 14            28       34.5    42                 53  57   61      67
 |---|---|---|---|---|
 | Master bedroom | 14–28 × 3–15 | 14 × 12 | 13'-5" × 11'-5" | the largest bedroom, in the true south-west (vastu): king bed head south between two windows stacked under Bedroom 2's; 8 ft sliding wardrobe on the north wall; dressing table on the east wall; door straight from the lobby; a pocket door to the den; its bath (with a dry dressing zone) to the east |
 | Master bath | 28–34.5 × 3–11.5 | 6.5 × 8.5 | 6'-1" × 7'-11" | entered from the bedroom (door opens inward, its leaf screening the WC); 3 × 3'-4" shower in the south-west corner under the frosted window, WC on the x 34.5 wet wall under Bath 2's WC (one stack), basin with a mirror cabinet on the north wall |
-| Guest room / den | 14–28 × 15–25 | 14 × 10 | 13'-5" × 9'-5" | the parents' sitting / TV room most days (pocket door to the master); shut it and it is a guest suite with its own bath: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby; garden door to the back sit-out |
+| Guest room / den | 14–28 × 15–25 | 14 × 10 | 13'-5" × 9'-5" | the parents' sitting / TV room most days (entered from the hall, no door to the master); a guest room with its own bath when needed: sofa-cum-bed under the north window, TV on the south wall, armchair; door from the lobby; garden door to the back sit-out |
 | Powder room | 34.5–39.5 × 18–25 | 5 × 7 | 4'-6" × 6'-6" | WC and basin, no shower (anyone who needs a bath uses the guest room's bath); its south wall on the guest bath's line (y 18); door from the stair hall opening inward; basin and a feature tile wall on the east wall past the door swing, WC at the far end on the wet wall back to back with the guest bath shower; frosted north window W51 |
 | TV bay | 39.5–42 × 18–25 | 2.5 × 7 | | the living's focal wall: a 7 ft bay on the powder room and guest bath line, its back wall a plain matt mid-tone (no slats or pattern around the screen) with a dim bias light behind the TV; a 5 ft floating console at 1'-3" (set-top box and router inside, floor clear below) and a 65 in TV centred on the sofa about 10'-9" away; a slim lamp niche at the end of the entry axis |
 | Guest bath | 28–34.5 × 18–25 | 6.5 × 7 | 6'-0" × 6'-4" | the old master bath, now off the den, opening inward; shower about 3 × 3; north window centred on the shower; drains along the north walkway |
