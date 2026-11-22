@@ -90,7 +90,7 @@ This branch tests a two-level house on the full plot: 170 ft deep to the east ro
 
 ## Built-in ideas, borrowed and adapted
 Rule: borrow the function, not the style; build it in Kerala materials (teak, lime plaster, laterite, granite, the chosen tiles); prefer the Indian version where one exists; one answer per need.
-- **Baths:** recessed, tiled shower niche with a sloped sill (in the thicker outer or 7 in wet walls); mirror cabinet over each basin; towel and clothes hooks at the dry end.
+- **Baths:** recessed, tiled shower niche with a sloped sill (in the thicker outer or 7 in wet walls); every basin and mirror straight opposite its door, the WC never in line with the door or in a mirror; mirror cabinet over each basin; towel and clothes hooks at the dry end.
 - **Entrance (genkan):** shoe bench with louvred shoe shelves, hooks and a keys niche; a 3 ft granite band inside the main door marks where outdoor shoes stop.
 - **Living:** vilakku madam, a carved teak lamp niche with a light, on the wall facing the main door.
 - **Bedrooms:** floating teak bedside shelves with a drawer, reading light and charging point (the 5 in walls are too thin for recessed niches); wardrobe insides planned with saree hangers, drawers and a locker drawer.

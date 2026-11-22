@@ -186,7 +186,7 @@ DOORS = [
     ("D04", "Y", 28, 11.75, 14.75, -1, "Master bedroom (from the hall), 3 ft for a walker or wheelchair later", "Flush, teak veneer"),
     ("D45", "Y", 14, 18.25, 20.75, 1, "Garden door from the den to the back garden sit-out (opens inward)", "Teak frame, glazed upper half, steel grille shutter outside"),
     ("D42", "Y", 28, 8.4, 11.2, -1, "Master bath (from the bedroom, 2'-9\", opens outward into the bedroom so a fall behind it never blocks it)", "Flush, waterproof (WPC/FRP), lift-off hinges, emergency-release lock"),
-    ("D08", "X", 18, 35.2, 37.6, 1, "Powder room (from the stair hall, opens inward; the first view is the window, the WC to the side at the far end)", "Flush, waterproof (WPC/FRP), door closer"),
+    ("D08", "X", 18, 35.2, 37.6, 1, "Powder room (from the stair hall, opens inward; the first view is the basin and mirror, the WC behind the open leaf)", "Flush, waterproof (WPC/FRP), door closer"),
     ("D07", "Y", 28, 18.6, 20.85, 1, "Guest bath (from the den, opens inward on lift-off hinges)", "Flush, waterproof (WPC/FRP)"),
     ("D11", "Y", 57, 21.55, 24.35, 1, "Pooja (north-east corner of the living)", "Carved teak, double leaf (opens inward, clear of the living; faces west, family faces east)"),
     ("D55", "Y", 34.5, 12.4, 15.15, -1, "Bedroom-wing door, south leaf (from the stair hall into the hall to the master and the den; the powder room and the stair stay outside)", "Teak frame, jali upper panel, solid lower, lockable: closes the bedrooms off from guests and at night, and keeps TV sound out"),
@@ -223,7 +223,7 @@ WINDOWS = [
     ("W08", "Y", 67, 10.4, 12.0, 6, 8, "Kitchen", "High ventilator, jali + louvres above the counter (smoke and hot air out; the hob wall below stays solid)"),
     ("W09", "X", 25, 44.5, 50.5, 3, 7, "Living", "Teak casement, glazed (6 ft), fixed jali on the lower 2 ft (privacy from the neighbour), hood above"),
     ("W43", "X", 25, 32.0, 34.0, 5, 7, "Guest bath", "Frosted casement, top-hung vent"),
-    ("W51", "X", 25, 36.0, 38.0, 5, 7, "Powder room", "Frosted casement, top-hung vent"),
+    ("W51", "X", 25, 37.5, 39.1, 5, 7, "Powder room", "Frosted casement, top-hung vent, beside the mirror (side light on the face)"),
     ("W44", "Y", 53, 7.9, 12.1, 3.0, 7, "Kitchen / dining", "Serving hatch over a granite counter, glazed sliding shutters (close while cooking)"),
     ("W17", "Y", 61, 21.6, 24.4, 7.5, 8.75, "Pooja", "High vent above the mandapam (lamp smoke out at the ceiling), jali + glazed flap"),
     ("W50", "X", 3, 54.6, 60.6, 7.5, 9.0, "Kitchen", "High jali ventilator above the window W07 (hot air out under the ceiling)"),
@@ -238,14 +238,14 @@ PILLARS = [(66.4, 13.1), (66.4, 16.05), (66.4, 21.45), (66.4, 24.4)]  # on the e
 # Furniture: id, room, item, x1, x2, y1, y2, qty, material / spec, shape ("rect"|"circle"|"wc"|"glass")
 FURNITURE = [
     ("F10", "Master bedroom", "King bed 6' x 6'6\" + headboard, head to the south wall between two windows (true south-west; stacked under Bedroom 2's bed)", 18.0, 24.0, 3.4, 9.9, 1, "Teak, head to south", "rect"),
-    ("F12", "Master bath", "WC (EWC) on the x 34.5 wet wall, under Bath 2's WC (one stack); the open door leaf screens it", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
+    ("F12", "Master bath", "WC (EWC) on the x 34.5 wet wall, south of the basin, on the mirror's own wall so it is never reflected", 32.9, 34.5, 7.2, 8.4, 1, "Wall-hung, concealed cistern", "wc"),
     ("F13", "Master bath", "Glass screen of the walk-in shower across the whole south end (6' x 3'), open at the west end, a linear drain along the south wall", 30.3, 34.2, 6.25, 6.4, 1, "8 mm toughened glass", "glass"),
-    ("F14", "Master bath", "Wash basin on the north wall, mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) (clear of the door swing)", 31.0, 32.5, 10.55, 11.25, 1, "Wall-hung", "rect"),
+    ("F14", "Master bath", "Wash basin on the east wall, straight opposite the door (the first thing you see), mirror cabinet recessed 4 in into the wet wall above with a light over it", 33.8, 34.5, 9.05, 10.55, 1, "Wall-hung", "rect"),
     ("F19", "Master bedroom", "Dressing table with a mirror and drawers on the east wall, beside the dressing bay", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
     ("F11", "Master bedroom", "Floating bedside shelf with a drawer, reading light and charging point above (against the south wall)", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
     ("F06", "Master bedroom", "Built-in wardrobe 8'-4\", full height with lofts, on the north side set into the wall line (starts 10 in off the west wall so the AC has room)", 15.2, 23.5, 13.0, 15.0, 1, "Ply + laminate, sliding shutters, acoustic board at the back", "rect"),
-    ("F16", "Powder room", "WC (EWC) on the west wet wall at the far end, back to back with the guest bath shower", 34.8, 36.4, 22.4, 23.6, 1, "Wall-hung on the wet wall, concealed cistern", "wc"),
-    ("F17", "Powder room", "Wash basin with a mirror and a feature tile wall on the east wall, past the door swing", 38.6, 39.25, 20.9, 22.1, 1, "Wall-hung", "rect"),
+    ("F16", "Powder room", "WC (EWC) on the west wet wall just past the door leaf's swing (screened from the stair hall by the open leaf), 2 ft clear of the basin, back to back with the guest bath", 34.8, 36.4, 20.6, 21.8, 1, "Wall-hung on the wet wall, concealed cistern", "wc"),
+    ("F17", "Powder room", "Wash basin on the north wall straight opposite the door, a mirror and a feature tile panel above it, the window beside it lighting your face", 35.65, 37.15, 23.95, 24.6, 1, "Wall-hung", "rect"),
     ("F20", "Guest room / den", "Sofa-cum-bed 6'-6\" x 3' under the north window W04 (guest bed), facing the TV, drawers below", 17.75, 24.25, 21.6, 24.6, 1, "Teak, cotton mattress and bolsters", "rect"),
     ("F67", "Guest room / den", "Armchair facing the TV", 22.4, 24.4, 18.6, 20.4, 1, "Teak frame, cane, cotton cushion", "rect"),
     ("F66", "Guest room / den", "Coffee table 2' x 1'-6\"", 20.0, 22.0, 18.8, 20.3, 1, "Teak", "rect"),
@@ -255,8 +255,8 @@ FURNITURE = [
     ("F105", "Guest room / den", "Full-height flush cupboard beside the TV niche (books, games)", 22.25, 23.5, 15.0, 16.0, 1, "Teak veneer flush shutters", "rect"),
     ("F57", "Stair and passage", "Cupboard under the upper flight where it rises above 7 ft (DB, inverter, brooms), doors facing the stair hall", 34.7, 37.8, 9.6, 12.15, 1, "Ply + laminate, ventilated", "rect"),
     ("F58", "Stair and passage", "Low store under the half landing (about 4'-3\" clear) for grain bins and festival vessels, reached from the stair side", 34.8, 41.7, 3.4, 6.2, 1, "Ply + laminate", "rect"),
-    ("F48", "Guest bath", "WC (EWC) on the bedroom wall", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F49", "Guest bath", "Wash basin with a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there)", 32.3, 33.8, 18.3, 19.0, 1, "Wall-hung", "rect"),
+    ("F48", "Guest bath", "WC (EWC) in the north-west corner on the north wall (you sit facing south), out of the door's line and out of the mirror's view", 29.0, 30.2, 23.0, 24.6, 1, "Wall-hung, concealed cistern", "wc"),
+    ("F49", "Guest bath", "Wash basin on the east wet wall, straight opposite the door, a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) with a light over it", 33.8, 34.5, 18.95, 20.45, 1, "Wall-hung", "rect"),
     ("F50", "Guest bath", "Fixed glass panel of the walk-in shower (open at its west end): leaves 2 ft clear in front of the WC", 32.0, 34.2, 21.4, 21.55, 1, "8 mm toughened glass", "glass"),
     ("F24", "Dining", "Dining table 5'-6\" x 2'-6\", apron set back so the stools slide under (4 daily: two on the bench, two on stools on the north side; its west end stays open as the way to the wash alcove; extends west to about 7'-6\" with stools for festivals, 8 seats)", 44.5, 50.0, 9.0, 11.5, 1, "Teak, extending", "rect"),
     ("F27", "Dining", "Backless stool 1'-4\" square on the north side, slides fully under the table when not in use (shown half in), so nothing stands in the living", 45.6, 46.9, 11.0, 12.3, 1, "Teak, woven cane seat", "rect"),
@@ -353,7 +353,7 @@ DOORS_F1 = [
     ("D33", "Y", 20.5, 15.8, 18.1, -1, "Bedroom 2 bath (from the walk-in, hotel-style: bedroom, then dressing, then bath; opens into the bath and the open leaf lies against its south wall, clear of the WC and the basin counter)", "Flush, waterproof (WPC/FRP), drop seal at the foot, no louvre (bath air leaves by the fan, not into the clothes)"),
     ("D51", "X", 15.5, 23.0, 25.6, -1, "Suite door from Bedroom 2 into the walk-in, the only way to the bath (centred on the aisle; opens into the bedroom so the dressing floor stays clear)", "Flush, teak veneer, a louvred top panel for air"),
     ("D35", "X", 11.5, 29.0, 31.4, -1, "Store room (from the lobby, opens inward; on your left at the top of the stair)", "Flush, teak veneer, louvred top"),
-    ("D39", "X", 18, 31.6, 34.0, 1, "Upper toilet (from the lobby, east end, opens inward; the leaf screens the WC: the first view is the shower, never the WC)", "Flush, waterproof (WPC/FRP)"),
+    ("D39", "X", 18, 31.6, 34.0, 1, "Upper toilet (from the lobby, east end, opens inward; the first view is the basin and mirror, the open leaf hides the WC)", "Flush, waterproof (WPC/FRP)"),
     ("D50", "X", 12.33, 34.6, 37.9, 0, "Stair door at the top of the stair: a sliding leaf on a top track that parks east in front of the stair-well screen W58, so the arrival stays clear; a key lock from the stair side and a thumb-turn (no key) on the upstairs side so nobody is ever locked in upstairs; the handrail runs right up to it", "Teak frame with a carved teak jali sliding leaf and a glazed sliding sash behind it (closed when the upstairs AC runs), on a concealed top track, a fixed jali panel with a closable glazed flap above it up to the ceiling: built in stage 1, it closes the house off from the open upstairs deck while air still rises through it; it stays as a permanent feature (AC and child safety)"),
     ("D36", "X", 12.33, 43.6, 46.2, -1, "Theatre + work room (from the upstairs living, opens in)", "Solid-core teak, acoustic seals and a drop seal (sound stays in)"),
     ("D49", "Y", 49, 14.6, 19.4, 0, "Covered terrace (from the upstairs living)", "Teak-framed glazed sliding doors, two panels, a sliding mesh shutter and an MS security grille shutter; the terrace is 1 in down with a linear drain outside the track"),
@@ -368,7 +368,7 @@ WINDOWS_F1 = [
     ("W33", "X", 3, 36.25, 40.25, 6, 9, "Stair", "Glazed clerestory over the stair well, top-hung, under the main roof's 2 ft eave: the hot-air outlet of the stair chimney"),
     ("W41", "X", 25, 16.2, 19.2, 5, 7, "Bedroom 2 bath", "Frosted casement, top-hung, over the shower (north light, steam out)"),
     ("W45", "X", 25, 22.0, 26.6, 6, 7.5, "Walk-in wardrobe", "High jali strip 4'-7\" over the drawers, top-hung glazed shutters worked by a rod from the floor: light and air without sun on the clothes"),
-    ("W42", "X", 25, 32.0, 34.0, 5, 7, "Upper toilet", "Frosted casement, top-hung vent (centred on the shower)"),
+    ("W42", "X", 25, 28.8, 30.8, 5, 7, "Upper toilet", "Frosted casement, top-hung vent, over the shower (steam out)"),
     ("W55", "X", 25, 38.0, 43.0, 3, 7, "Upstairs living", "Teak casement, glazed, 5 ft, with jali shutters: even north light"),
     ("W56", "Y", 49, 19.8, 24.4, 1.5, 8, "Upstairs living", "Fixed teak-framed glazing behind the sofa, its top panel a top-hung vent: from the top of the stair you see through the living to the terrace; a ceiling-recessed curtain track along the whole glazed wall cuts the morning glare"),
     ("W52", "X", 3, 43.5, 49.5, 3, 7, "Theatre + work room", "Timber jali + glazed shutters, 6 ft, south (shaded by the main roof's eave), over the desks; blackout blinds"),
@@ -377,8 +377,8 @@ FURNITURE_F1 = [
     ("F71", "Bedroom 2", "King bed 6' x 6'6\" + headboard, head to the south wall between the two windows", 18.0, 24.0, 3.4, 9.9, 1, "Teak", "rect"),
     ("F72", "Bedroom 2", "Floating bedside shelf with a drawer, reading light and charging point above", 17.0, 18.0, 3.4, 4.4, 2, "Teak, wall-hung", "rect"),
     ("F74", "Bedroom 2", "Dresser with a mirror and drawers on the east wall, south of the bath door", 27.1, 27.75, 4.5, 7.0, 1, "Teak", "rect"),
-    ("F77", "Bedroom 2 bath", "WC (EWC) on the west wall; its soil pipe goes straight out through the wall and down to the soil line outside", 14.4, 16.0, 18.6, 19.8, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F78", "Bedroom 2 bath", "Basin counter 2'-10\" on the east wall: a counter basin, drawers below, a mirror cabinet recessed into the 7 in wet wall above", 18.6, 20.2, 18.2, 21.0, 1, "Granite top on a wall-hung WPC base", "rect"),
+    ("F77", "Bedroom 2 bath", "WC (EWC) on the west wall north of the basin counter (the mirror's own wall, so never reflected); its soil pipe goes straight out through the wall and down to the soil line outside", 14.4, 16.0, 19.4, 20.6, 1, "Wall-hung, concealed cistern", "wc"),
+    ("F78", "Bedroom 2 bath", "Basin counter 2'-6\" on the west wall straight opposite the door: a counter basin, drawers below, a mirror cabinet recessed into the 9 in outer wall above with a light over it", 14.4, 16.0, 15.9, 18.4, 1, "Granite top on a wall-hung WPC base", "rect"),
     ("F79", "Bedroom 2 bath", "Glass screen of the walk-in shower across the north end (6' x 3'-2\", under the frosted window); open at the west end, beside the mixer", 16.4, 20.2, 21.3, 21.45, 1, "8 mm toughened glass", "glass"),
     ("F75", "Walk-in wardrobe", "Hanging run 2' deep on the west wall (the bath's wet wall), north of the bath door: long rail for saris and kurtas, a short rail, a shelf above; ventilated back held 1 in off the waterproofed wall", 20.8, 22.8, 18.6, 22.9, 1, "Ply + laminate, open front, LED strip", "rect"),
     ("F95", "Walk-in wardrobe", "Hanging run 2' deep on the east wall (the toilet's wet wall): double short rails, a long-hang section, shoe racks; ventilated back held 1 in off the waterproofed wall", 25.7, 27.7, 16.0, 22.9, 1, "Ply + laminate, open front, LED strip", "rect"),
@@ -387,9 +387,9 @@ FURNITURE_F1 = [
     ("F82", "Store room", "Shelving on the west wall (linen, suitcases, festival things)", 28.4, 30.0, 3.4, 8.8, 1, "Ply + laminate, open", "rect"),
     ("F80", "Store room", "Deep shelving on the south wall under the high vent (bulk groceries, spare bedding)", 30.0, 34.1, 3.4, 5.0, 1, "Ply + laminate, open", "rect"),
     ("F111", "Store room", "Shelving on the east wall (tools, cleaning things, the vacuum)", 32.6, 34.1, 5.0, 11.0, 1, "Ply + laminate, open", "rect"),
-    ("F98", "Upper toilet", "WC (EWC) on the west wall, over the guest bath WC (one stack)", 28.3, 29.9, 21.0, 22.2, 1, "Wall-hung, concealed cistern", "wc"),
-    ("F99", "Upper toilet", "Wash basin with a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) (south wall, beside the door)", 28.6, 30.1, 18.3, 19.0, 1, "Wall-hung", "rect"),
-    ("F70", "Upper toilet", "Glass screen on the west side of the shower (north-east corner, about 3' x 3'), entered from the south: the WC stays dry", 31.2, 31.35, 21.55, 24.6, 1, "8 mm toughened glass", "glass"),
+    ("F98", "Upper toilet", "WC (EWC) on the south wall west of the door (you sit facing north), hidden behind the open door leaf; its soil pipe drops inside the 7 in wall to the guest bath's soil line below", 29.0, 30.2, 18.3, 19.9, 1, "Wall-hung, concealed cistern", "wc"),
+    ("F99", "Upper toilet", "Wash basin on the north wall straight opposite the door, a mirror cabinet recessed 4 in into the wall above (the wall built 9 in thick there) with a light over it", 32.05, 33.55, 23.95, 24.6, 1, "Wall-hung", "rect"),
+    ("F70", "Upper toilet", "Glass screen on the east side of the shower (north-west corner, 3' x 3'-2\"), keeping the spray off the basin; entered from the south", 31.0, 31.15, 22.3, 24.6, 1, "8 mm toughened glass", "glass"),
     ("F107", "Upstairs living", "Floor-to-ceiling bookshelf 6'-2\" on the west wall, on your left as you come up the stair: closed cupboards 2 ft high at the base, open shelves 12 in deep above with LED strips under each shelf, a library ladder rail; ventilated back held 1 in off the upper toilet's waterproofed wet wall", 34.8, 36.0, 18.4, 24.6, 1, "Teak veneer, solid teak shelf edges", "rect"),
     ("F40", "Upstairs living", "Three-seat sofa 6'-2\" facing the bookshelf wall, its back to the glazed wall and the terrace", 44.0, 46.8, 18.4, 24.6, 1, "Teak frame, upholstered", "rect"),
     ("F43", "Upstairs living", "Coffee table on a rug", 39.8, 41.6, 19.2, 21.4, 1, "Teak", "rect"),
@@ -448,6 +448,7 @@ OPEN_ISSUES = [
 ]
 
 DUPLEX_DECISIONS = [
+    "Bathrooms re-planned round the door (23 Nov 2026, owner, after a look at bathroom sightline guidance: the vanity faces the door, the WC never in line with it, a mirror never reflecting the WC; vastu: mirrors on north or east walls, WC seats facing north or south): every basin and mirror now sits straight opposite its door. Master bath: basin to the east wall, the WC stays beside it on the same wall, the geyser to the north wall. Guest bath: basin to the east wall, WC to the north-west corner facing south. Powder room: basin to the north wall, the window moved beside it, the WC behind the door leaf. Bath 2: the basin counter to the west wall, the WC stays on that wall a little north (the 4 in sunk slab keeps the soil pipe on the outer wall). Upper toilet: basin on the north wall, shower to the north-west corner under the moved window behind an east glass screen, WC on the south wall facing north behind the door leaf, its soil pipe down inside the wall; no plumbing now on the bookshelf wall. Bath 2's mirror is on the west wall (its door is on the east); some vastu sources also dislike a mirror facing the door, to confirm with the vastu consultant.",
     "Dining stools (23 Nov 2026, owner, instead of a table folding to the wall: that saves floor only while folded, is folded three times a day, is weaker under hot vessels and loses the festival extension): the two north chairs become backless teak stools that slide fully under the table, so between meals the bench, table and stools stay inside the dining and nothing stands in the living.",
     "Upstairs living becomes a reading room (23 Nov 2026, owner): the TV upstairs goes (the theatre next door and the living below both have screens); its west wall takes a floor-to-ceiling teak bookshelf 6'-2\" long with closed cupboards at the base and lit open shelves above, its back held off the upper toilet's wet wall; the sofa now faces the books, the armchair under the north window is the reading chair.",
     "Hotel-style suite (22 Nov 2026, owner): Bedroom 2's bath is now reached through the walk-in (bedroom, then dressing, then bath, so you bathe, dress and come out ready); the bedroom-to-bath door goes and that wall is solid; a 2'-4\" bath door in the walk-in's west wall at its south end, opening into the bath, with a drop seal and no louvre; the west hanging run is shortened to 4'-4\" to clear the path; a full-length mirror on the walk-in's south wall; the bath fan on a run-on timer and the walk-in fan on a humidistat keep steam off the clothes; a motion footlight and 2-way switching for night use; bath switches on the walk-in side. Guests use the upper toilet off the lobby.",
@@ -630,12 +631,12 @@ ELECTRICAL = [
     ("P", 17.4, 3.4, "R01", "bedside"), ("P", 24.6, 3.4, "R01", "bedside"),
     ("AC", 14.4, 11.5, "R01", "west wall, on solid wall north of W01, throws east across the bed foot"), ("ODU", 13.6, 11.5, "R01", "west wall, under the eave and pergola"),
     # Master bath and vestibule
-    ("L", 31.5, 6.0, "R40", ""), ("EF", 30.0, 3.4, "R40", "out through the south wall"), ("G", 34.2, 9.6, "R40", "high on the east wall over the WC, out of the shower spray; double-pole switch outside the door, on a 30 mA RCD"), ("PC", 32.5, 11.2, "R40", "by basin"),
-    ("L", 31.5, 9.8, "R40", ""), ("S", 27.6, 8.0, "R01", "master bath switches outside the door"), ("WL", 27.6, 10.2, "R01", "night footlight on the bed-to-bath route"), ("BELL", 23.0, 3.4, "R01", "call-bell push by the bed (elderly parent)"), ("WL", 31.75, 11.2, "R40", "mirror light over the basin"), ("P", 27.75, 5.75, "R01", "dressing table"),
+    ("L", 31.5, 6.0, "R40", ""), ("EF", 30.0, 3.4, "R40", "out through the south wall"), ("G", 33.4, 11.2, "R40", "high on the north wall, out of the shower spray; double-pole switch outside the door, on a 30 mA RCD"), ("PC", 34.2, 10.9, "R40", "by basin"),
+    ("L", 31.5, 9.8, "R40", ""), ("S", 27.6, 8.0, "R01", "master bath switches outside the door"), ("WL", 27.6, 10.2, "R01", "night footlight on the bed-to-bath route"), ("BELL", 23.0, 3.4, "R01", "call-bell push by the bed (elderly parent)"), ("WL", 34.2, 9.8, "R40", "mirror light over the basin"), ("P", 27.75, 5.75, "R01", "dressing table"),
     # Master bath
     # Powder room and store
-    ("L", 37.0, 21.5, "R08", ""), ("EF", 36.6, 24.7, "R08", "out through the north wall"), ("WL", 39.2, 21.5, "R08", "mirror light"),
-    ("PC", 39.2, 22.6, "R08", "by basin"), ("S", 34.8, 17.7, "R09", "powder room switches outside the door"),
+    ("L", 37.0, 21.5, "R08", ""), ("EF", 35.0, 24.7, "R08", "out through the north wall, high over the WC"), ("WL", 36.4, 24.7, "R08", "mirror light"),
+    ("PC", 37.3, 24.6, "R08", "by basin"), ("S", 34.8, 17.7, "R09", "powder room switches outside the door"),
     ("L", 31.5, 14.0, "R05", ""),
     # Master bedroom (north-west)
     ("F", 21.0, 19.5, "R42", ""), ("L", 17.0, 22.0, "R42", ""), ("L", 25.5, 23.0, "R42", ""),
@@ -648,7 +649,7 @@ ELECTRICAL = [
     ("P16", 46.6, 7.3, "R13", "second washer, splash-proof"), ("INV", 52.4, 6.6, "R13", "lithium inverter + battery in a ventilated steel cabinet in the wet area, out of the stair (the only way down from upstairs)"), ("SA", 40.0, 15.0, "R09", "smoke alarm, interlinked with the others"), ("HA", 56.0, 10.4, "R15", "heat alarm (not smoke: cooking), interlinked"),
     ("WL", 38.25, 3.4, "R06", "at the half landing"),
     ("L", 31.2, 21.5, "R07", ""), ("EF", 33.4, 24.7, "R07", "out through the north wall"), ("G", 30.8, 18.3, "R07", "high on the south wall beside the door, out of the shower spray; switch outside, 30 mA RCD"),
-    ("PC", 33.6, 18.4, "R07", "by basin"),
+    ("PC", 34.2, 18.4, "R07", "by basin"), ("WL", 34.2, 19.7, "R07", "mirror light"),
     # Store, wet area, dining
     ("L", 44.0, 5.0, "R19", ""), ("WL", 45.7, 6.15, "R19", "mirror light over the hand-wash basin"), ("PC", 45.6, 3.4, "R19", "RO purifier"),
     ("L", 50.0, 5.0, "R13", ""), ("P", 52.4, 3.4, "R13", "utility, weatherproof"),
@@ -683,12 +684,12 @@ ELECTRICAL_F1 = [
     ("S", 20.75, 18.35, "R45", "bath light, fan and geyser switches on the walk-in side of the bath door, geyser with an indicator lamp"), ("S", 25.9, 15.3, "R31", "walk-in light beside the suite door, 2-way with the bedside"), ("WL", 23.4, 15.75, "R45", "motion-sensor footlight for the night trip to the bath"),
     # Bedroom 2 bath
     ("L", 17.4, 19.0, "R33", ""), ("EF", 19.6, 24.6, "R33", "out through the north wall, on a 10-minute run-on timer so steam leaves by the window side and not into the walk-in"), ("G", 15.4, 15.8, "R33", "high on the south wall, out of the shower spray; switch on the walk-in side of the door, 30 mA RCD"),
-    ("PC", 20.2, 18.6, "R33", "south end of the basin counter, shuttered, 30 mA RCD (clear of the shower zone)"),
+    ("PC", 16.4, 15.8, "R33", "south wall beside the basin counter, shuttered, 30 mA RCD (clear of the shower zone)"), ("WL", 14.4, 17.15, "R33", "mirror light"),
     # Walk-in wardrobe and store
     ("L", 24.3, 20.5, "R45", "and LED strips inside both hanging runs"), ("EF", 27.4, 24.6, "R45", "small extract fan high on the north wall on a humidistat (monsoon damp)"), ("P", 25.6, 22.6, "R45", "over the drawers (iron, steamer)"),
     ("L", 31.25, 7.5, "R46", ""), ("S", 31.7, 11.8, "R34", "store light, outside its door"),
     # Upper toilet and lobby
-    ("L", 31.2, 21.5, "R39", ""), ("EF", 33.4, 24.7, "R39", "out through the north wall"), ("G", 30.8, 18.3, "R39", "high on the south wall beside the door, out of the shower spray; switch outside, 30 mA RCD"), ("PC", 30.4, 18.4, "R39", "by basin"),
+    ("L", 31.2, 21.5, "R39", ""), ("EF", 31.4, 24.7, "R39", "out through the north wall, between the window and the mirror"), ("G", 28.4, 20.6, "R39", "high on the west wall, out of the shower spray; switch outside, 30 mA RCD"), ("PC", 34.0, 24.4, "R39", "by basin"), ("WL", 32.8, 24.7, "R39", "mirror light"),
     ("S", 31.4, 17.8, "R34", "toilet switches outside the door, beside it"), ("L", 31.25, 14.0, "R34", ""),
     ("L", 38.25, 13.2, "R41", "over the top step"), ("S", 34.3, 12.6, "R34", "lobby and stair, 2-way with the stair hall"),
     # Upstairs living
@@ -716,11 +717,11 @@ PLUMB_TYPES = {
     "TAP": "Tap", "GY": "Geyser connection", "IC": "Inspection chamber", "GT": "Grease trap", "DP": "Rain downpipe",
 }
 PLUMBING = [
-    ("WC", 35.6, 23.0, "R08", "on the west wet wall, far end"), ("HF", 34.8, 23.8, "R08", ""), ("BS", 39.2, 21.5, "R08", "east wall"),
-    ("FT", 36.6, 21.6, "R08", "floor trap"),
-    ("WC", 33.7, 7.8, "R40", "on the x 34.5 wet wall, under Bath 2's WC (one stack)"), ("HF", 34.2, 8.5, "R40", ""), ("BS", 31.75, 11.2, "R40", "north wall"),
+    ("WC", 35.6, 21.2, "R08", "on the west wet wall, behind the door leaf"), ("HF", 34.8, 22.1, "R08", ""), ("BS", 36.4, 24.5, "R08", "north wall, opposite the door"),
+    ("FT", 37.6, 21.0, "R08", "floor trap"),
+    ("WC", 33.7, 7.8, "R40", "on the x 34.5 wet wall, under Bath 2's WC (one stack)"), ("HF", 34.2, 6.8, "R40", ""), ("BS", 34.2, 9.8, "R40", "east wall, opposite the door"),
     ("SH", 34.2, 4.6, "R40", "east wet wall (off the bedroom wall)"), ("FT", 29.7, 3.4, "R40", "linear shower drain along the south wall"), ("FT", 31.5, 7.8, "R40", "floor trap"),
-    ("WC", 29.1, 21.6, "R07", "on the den wall"), ("HF", 28.4, 22.4, "R07", ""), ("BS", 33.0, 18.4, "R07", ""),
+    ("WC", 29.6, 24.4, "R07", "north wall, north-west corner; soil pipe straight out to the north soil line"), ("HF", 30.5, 24.4, "R07", ""), ("BS", 34.2, 19.7, "R07", "east wall, opposite the door"),
     ("SH", 34.2, 23.4, "R07", "east wall"), ("FT", 32.8, 24.4, "R07", "shower drain"), ("FT", 30.6, 19.6, "R07", "dry zone trap"),
     ("SK", 50.95, 4.3, "R13", "utility sink"), ("WM", 47.3, 7.2, "R13", "second washer point on the wet wall (inlet + drain)"), ("BS", 45.7, 6.15, "R19", "hand-wash basin, plumbed from the utility side"), ("RO", 45.0, 3.5, "R19", ""), ("FT", 48.5, 3.6, "R13", "floor falls to the trap"), ("TAP", 49.8, 3.4, "R13", "bucket tap, low"),
     ("SK", 57.6, 3.5, "R15", "single bowl + drainboard, centred under the window"), ("RO", 59.0, 3.5, "R15", ""), ("FT", 63.0, 12.0, "R15", "cleaning trap"),
@@ -729,10 +730,10 @@ PLUMBING = [
     ("GT", 57.6, 1.0, "SITE", "grease trap"), ("IC", 48.5, 1.0, "SITE", "IC-4 grey"), ("IC", 39.0, 1.0, "SITE", "IC-5 grey"), ("IC", 12.6, 26.0, "SITE", "IC-7 soil bend to the north side"), ("IC", 83.8, 26.0, "SITE", "IC-8 at the septic tank inlet"), ("IC", 12.0, 1.0, "SITE", "IC-6 grey, to the soak pit"), ("IC", 12.6, 22.2, "SITE", "IC-9 at the upstairs Bath 2 drop"),
 ]
 PLUMBING_F1 = [
-    ("WC", 14.6, 19.2, "R33", "west wall; its soil pipe runs north in the sunk floor and drops at y 22.2 in a boxed duct on the outside of the west wall (clear of the den door D45), to the soil line at x 12.6, with a vent above the eave"), ("HF", 14.4, 20.0, "R33", ""), ("BS", 19.4, 19.6, "R33", "counter basin, east wall"),
+    ("WC", 14.6, 20.0, "R33", "west wall, north of the basin; its soil pipe runs north in the sunk floor and drops at y 22.2 in a boxed duct on the outside of the west wall (clear of the den door D45), to the soil line at x 12.6, with a vent above the eave"), ("HF", 14.4, 20.8, "R33", ""), ("BS", 14.4, 17.15, "R33", "counter basin, west wall opposite the door; its waste runs north in the sunk floor to the boxed duct"),
     ("SH", 14.4, 23.0, "R33", "west wall"), ("FT", 15.0, 24.4, "R33", "shower drain, to the same boxed duct at y 22.7 and the grey line"), ("FT", 17.0, 18.2, "R33", "floor trap"),
-    ("WC", 29.1, 21.6, "R39", "over the guest bath WC (one stack)"), ("HF", 28.4, 22.4, "R39", ""), ("BS", 29.35, 18.4, "R39", "south wall, west of the door"),
-    ("SH", 33.0, 24.4, "R39", "north wall (off the TV wall behind)"), ("FT", 32.8, 24.4, "R39", "shower drain"), ("FT", 30.6, 19.6, "R39", "dry zone trap"),
+    ("WC", 29.6, 18.4, "R39", "south wall; soil pipe down inside the wall to the guest bath soil line"), ("HF", 30.5, 18.4, "R39", ""), ("BS", 32.8, 24.4, "R39", "north wall, opposite the door"),
+    ("SH", 28.4, 23.2, "R39", "west wall (waterproofed full height: the walk-in is behind it)"), ("FT", 28.7, 24.4, "R39", "shower drain"), ("FT", 31.0, 20.6, "R39", "dry zone trap"),
     ("FT", 60.5, 24.4, "R37", "terrace floor outlet in the north-east corner, down the north wall to the north grey line (floor-washing water never reaches the sump; only the roof gutters feed it)"), ("TAP", 49.4, 23.6, "R37", "terrace tap (plants, cleaning)"),
     ("WM", 56.4, 3.4, "R47", "washer inlet + drain: its own 50 mm grey pipe, never the terrace or rain drain (the roof rain feeds the sump)"), ("SK", 56.3, 6.5, "R47", "laundry sink, on the same grey pipe as the washer"),
     ("FT", 55.8, 3.6, "R47", "laundry floor trap; the balcony floor falls here (a fall ridge at y 12 keeps it apart from the terrace); its grey pipe runs west along the theatre's south wall face and drops at x 53.6, on the solid wall between the kitchen and wet-area windows, to the south grey line"),
@@ -742,15 +743,16 @@ PIPES = [
     ("supply", [(157.0, 19.5), (157.0, 17.6), (84.0, 17.6), (68.2, 13.6), (68.2, 2.3), (42.3, 2.3), (42.3, 3.0)]),
     ("supply", [(68.2, 13.6), (69.6, 13.6)]), ("supply", [(57.6, 2.3), (57.6, 3.0)]), ("supply", [(51.75, 2.3), (51.75, 3.0)]),
     ("supply", [(42.3, 2.3), (30.0, 2.3), (30.0, 3.0)]), ("supply", [(33.5, 2.3), (33.5, 3.0)]), ("supply", [(157.0, 17.6), (155.2, 11.0)]),
-    ("soil", [(33.7, 7.8), (33.7, 1.8), (12.6, 1.8), (12.6, 26.0), (83.8, 26.0)]), ("soil", [(35.6, 23.0), (35.6, 26.0)]),
-    ("soil", [(29.1, 21.6), (29.1, 26.0)]), ("soil", [(87.0, 22.5), (89.0, 7.6)]),
+    ("soil", [(33.7, 7.8), (33.7, 1.8), (12.6, 1.8), (12.6, 26.0), (83.8, 26.0)]), ("soil", [(35.6, 21.2), (35.6, 26.0)]),
+    ("soil", [(29.6, 18.4), (29.6, 26.0)]), ("soil", [(87.0, 22.5), (89.0, 7.6)]),
     ("soil", [(155.2, 11.0), (155.2, 18.0), (92.0, 18.0), (92.0, 25.5), (90.0, 25.5)]),  # the shared site toilet to the septic tank
     ("grey", [(57.6, 3.5), (57.6, 1.0), (88.4, 1.0), (89.2, 4.5)]), ("grey", [(12.0, 26.4), (12.0, 1.0), (57.6, 1.0)]),
     ("grey", [(48.5, 3.6), (48.5, 1.0)]), ("grey", [(51.75, 4.3), (48.5, 3.6)]), ("grey", [(45.7, 6.15), (45.7, 1.0)]),
-    ("grey", [(36.6, 21.6), (36.6, 26.4), (32.8, 26.4)]), ("grey", [(29.7, 3.4), (29.7, 1.0)]),
+    ("grey", [(37.6, 21.0), (37.6, 26.4), (32.8, 26.4)]), ("grey", [(29.7, 3.4), (29.7, 1.0)]),
     ("grey", [(32.8, 24.4), (32.8, 26.4), (12.0, 26.4)]),
     ("grey", [(55.8, 2.6), (53.6, 2.6), (53.6, 1.0)]),
     ("soil", [(13.6, 22.2), (12.6, 22.2)]), ("grey", [(13.6, 22.7), (12.0, 22.7)]),  # Bath 2 upstairs: both drops in one boxed duct on the west wall at y 22-23, clear of the den door, flashed through the chaipu
+    ("grey", [(28.7, 24.4), (28.7, 26.4)]),  # upper toilet shower, north-west corner
     ("grey", [(60.6, 25.4), (60.6, 26.4), (36.6, 26.4)]),  # terrace floor outlet to the north grey line  # the upstairs washer and laundry sink: their own grey downpipe down the south wall
     ("rain", [(12.0, 0.4), (68.5, 0.4), (68.5, 11.2), (82.0, 17.2), (147.5, 17.6), (150.0, 21.0)]),
     ("rain", [(12.0, 26.8), (66.0, 26.8), (68.5, 26.0), (68.5, 11.2)]),
