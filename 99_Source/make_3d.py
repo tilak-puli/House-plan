@@ -38,7 +38,7 @@ def floor_data():
                         "dir": -1 if c == lo else 1, "cut": w[5] < FULL_HEIGHT_SILL,
                         "shade": ext and (axis, c) not in COVERED and "clerestory" not in w[7].lower() and w[5] < 6
                                  and ((axis == "X" and c == max(ys)) == (FLOOR[0] == "G") or (axis, c) == ("Y", 67)),  # ground: north hoods (the chaipu covers south and west); upstairs: south and west (the eave covers north)
-                        "mat": "win" if (axis == "X" and c == max(ys)) or "glazed clerestory" in w[8].lower() or ("glazed" in w[8].lower() and "jali" not in w[8].lower() and not ext) else "jali"})
+                        "mat": "win" if (axis == "X" and c == max(ys)) or "glazed clerestory" in w[8].lower() or "fixed teak-framed glazing" in w[8].lower() or ("glazed" in w[8].lower() and "jali" not in w[8].lower() and not ext) else "jali"})
     floor_keys = (("Red oxide", "redoxide"), ("Matt vitrified 2x2", "vitrified"), ("Marble", "marble"), ("Anti-skid matt", "antiskid"),
                   ("Anti-skid ceramic", "ceramic"), ("Cuddapah", "cuddapah"), ("Flamed granite", "granite"), ("Terracotta", "antiskid"))
     room_rects = []

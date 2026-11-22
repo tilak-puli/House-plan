@@ -101,7 +101,7 @@ def sheet_plumbing(c):
     pl.room_names(4.2, GREY, corner=True)
     pl.stair()
     site_features(pl, size=4.5)
-    pl.text("Upper bath fixtures (first floor) shown over the common bath", 42, 27.6, 4.4, color=GREY)
+    pl.text("First-floor fixtures shown over the rooms below", 42, 27.6, 4.4, color=GREY)
     for kind, pts in PIPES:
         col, dash, lw, _ = PIPE_STYLE[kind]
         pl.poly(pts, lw=lw, color=col, dash=dash)
@@ -133,6 +133,7 @@ def sheet_plumbing(c):
         "Septic tank (sealed) and a lined soak pit in the spare rear land, behind the baths and about 15 ft from the house, far from the sump; if that land is ever sold, move them or switch to a bio-digester with treated outflow.",
         "Upper WC stack runs down inside the 7 in wet wall between the common bath and the store, with a vent pipe above the main roof eaves.",
         "Rain from both gutters to the sump through a first-flush filter; overflow to the road drain.",
+        "The upstairs washer and laundry sink (south end of the east balcony) drain through their own grey downpipe straight down the south wall to the south grey line: never into a terrace or rain drain, which feed the sump.",
         "Test the bore / supply water: RO for drinking, softener for bathrooms if hardness is high; matt or PVD fittings.",
     ]
     s.bullets(tips, 205 * mm, 74 * mm, 125 * mm, 6.4, title="Plumbing notes")

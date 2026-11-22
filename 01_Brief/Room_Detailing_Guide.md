@@ -209,18 +209,18 @@ expansive black cotton soil, hard and often fluoride-rich groundwater, seismic z
    **Do:** Use light matt tiles and matt / PVD fittings, plus a softener if hardness is high.  
    *Shown on: A-108, P-101*
 61. **Avoid:** Bath over a bedroom or the living: a leak shows on the ceiling below.  
-   **Do:** The upper bath sits exactly over the common bath (wet over wet); waterproof its slab, flood-test it and keep its WC stack in the wet wall.  
+   **Do:** The upper bath sits over the den, a dry room: cast its slab sunk 9 in, waterproof it with upturns, flood-test it 48 h before tiling, and run its WC pipe straight out through the west wall to the soil line outside.  
    *Shown on: A-109, P-101*
 62. **Avoid:** No backing for grab bars later.  
    **Do:** Fix blocking in the walls beside the WC and shower now.  
    *Shown on: A-502/5*
 
-## Fun room (first floor)
+## Theatre + work room (first floor)
 63. **Avoid:** A TV room that is too bright to watch in the day.  
-   **Do:** Blackout blinds on the north window and the high west window, a dimmer at the door, and the screen on the solid east wall so no window faces it.  
+   **Do:** Blackout blinds on the south window and a curtain on the balcony door, a dimmer at the door, and the screen on the solid west wall (the stair side) so no window faces it.  
    *Shown on: A-104*
 64. **Avoid:** Window behind the desk screen (silhouette on video calls) or in front of it (glare).  
-   **Do:** The desk sits under the north window, so screens face the room and get even daylight without glare.  
+   **Do:** The desks sit under the south window, lit from the side, so screens face the room without glare or a silhouette on calls; the deep eave keeps the sun off.  
    *Shown on: A-104*
 65. **Avoid:** Not enough power or data.  
    **Do:** Fit a UPS socket, a normal socket and a Cat6 point at the desk, with the router on the inverter.  

@@ -108,8 +108,8 @@ def sheet_windows_f1(c):
         wins = list(WINDOWS)
     _window_rows(s, c, st, k, wins, (196, 122), "WINDOWS, FIRST FLOOR (viewed from inside; sill and head heights above the first floor)")
     notes = [
-        "The stair-well jali (W40) faces the covered terrace: light and air for the stair, no glass to clean.",
-        "The terrace door (D36) off the landing is glazed teak, opening outward with a weather bar.",
+        "From the top of the stair the living is open ahead; the fixed glazing (W56) behind its sofa shows the terrace and the trees.",
+        "The terrace and balcony doors (D49 from the living, D53 from the theatre) are teak-framed glazed sliders with mesh shutters and a weather bar."
         "Upper windows sit under the main roof's 2 ft eave; sunshades only on the south windows.",
     ]
     s.bullets(notes, 18 * mm, 70 * mm, 300 * mm, 6.4)

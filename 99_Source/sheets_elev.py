@@ -212,9 +212,9 @@ def elevation(e, face):
                     e.rect(u(px, 0) - 0.33, u(px, 0) + 0.33, LEVELS["poomukham"], PILLAR_TOP, lw=0.5, fill=TEAK)
         ua, ub = sorted((u(up[0] - 0.375, 0), u(up[1] + 0.375, 0)))
         e.rect(ua, ub, U, UT, lw=0.6, fill=WALLC)
-        terrace_open = up[1] < 60  # this side of the front half is open terrace, not the lounge wall
-        if terrace_open:  # back wall of the covered terrace, seen through the open front half
-            a, b = sorted((u(42.375, 0), u(61, 0)))
+        terrace_open = up[1] < 60  # this side of the front is open terrace, not wall
+        if terrace_open:  # back wall of the covered terrace, seen through the open front
+            a, b = sorted((u(up[1] + 0.375, 0), u(61, 0)))
             e.rect(a, b, U, UT - 0.75, lw=0.3, fill=DARK)
         e.line(min(ga, ua), F + H, max(gb, ub), F + H, lw=0.4, color=GREY)  # band at first-floor level
         with on_floor("F1"):
@@ -224,7 +224,7 @@ def elevation(e, face):
                     _rail_band(e, a, b, U, UT - 0.75, (ax, cc) in JALI_RAILS)
         _posts(e, lambda x, y: u(x, 0), [p for p in TERRACE_POSTS if abs(p[1] - c0) < 0.5])
         if terrace_open:
-            e.rect(*sorted((u(42.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
+            e.rect(*sorted((u(up[1] + 0.375, 0), u(61.4, 0))), UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))  # steel edge beam
         _openings_on(face, u, True)
         _roof_long(e, u, face)
         _levels(e, min(u(10, 0), u(71, 0)) - 1.0)
@@ -240,7 +240,7 @@ def elevation(e, face):
             e.rect(ta, tb, U, UT, lw=0.4, fill=DARK)  # covered terrace, open to the east behind its railing
             _rail_band(e, *sorted((u(0, ly), u(0, 25.4))), U, UT - 0.75)
             e.rect(ta, tb, UT - 0.75, UT, lw=0.5, fill=colors.HexColor("#7A7A7A"))
-            if ly > 3:  # the family lounge's east wall and window
+            if ly > 3:  # the theatre's east wall and window
                 e.rect(*sorted((u(0, 3 - 0.375), u(0, ly))), U, UT, lw=0.6, fill=WALLC)
                 for w in WINDOWS_F1:
                     if (w[1], w[2]) == ("Y", 61):
@@ -304,7 +304,7 @@ def sheet_elev_short(c):
         e = Elev(s, 100, (60 + i * 140) * mm, 112 * mm)
         elevation(e, face)
         s.note(FACES[face]["title"].upper(), (40 + i * 140) * mm, 225 * mm, 9, INK, "Helvetica-Bold")
-    tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. Upstairs, 6 ft back behind them: the family lounge (south half, walled and glazed) and the covered terrace (north half), open to the road behind a railing with a jali parapet on the north side.",
+    tips = ["Front gable (mukhappu) over the verandah only, centred on the main door; a lower hipped wing over the kitchen front. Upstairs, 6 ft back behind them: the theatre + work room (south, walled), a 6 ft east balcony along the road side and the covered terrace (north-east), with the upstairs living behind it, open to the road behind a railing with a jali parapet on the north side.",
             "Plinth face clad 2 ft in rough stone: the splash zone stays clean and does not erode.",
             "West wall: the first floor has only small high windows on the west (afternoon sun). The creeper pergola shades the ground floor.",
             "Entrance: 3 risers of 6 in, 12 in treads, flamed granite with a nosing; foot-wash tap beside the steps."]

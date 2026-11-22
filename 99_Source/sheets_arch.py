@@ -204,7 +204,7 @@ def sheet_furniture(c, num="A-103", title="Furniture layout, ground floor"):
     rows = [[Paragraph(f"<b>{f[0]}</b>", st), Paragraph(short(f[2]) + (f" (x{f[7]})" if f[7] > 1 else ""), st)] for f in FURNITURE]
     n = 3; per = (len(rows) + n - 1) // n
     for i in range(n):
-        t = Table(rows[i * per:(i + 1) * per], colWidths=[8 * mm, 58 * mm])
+        t = Table(rows[i * per:(i + 1) * per], colWidths=[9.5 * mm, 56.5 * mm])
         t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("BOTTOMPADDING", (0, 0), (-1, -1), 0.5), ("TOPPADDING", (0, 0), (-1, -1), 0.5)]))
         w, h = t.wrap(0, 0); t.drawOn(c, (118 + i * 70) * mm, 66 * mm - h)
     s.note("Furniture key (full specs in schedules)", 118 * mm, 68 * mm, 7, INK, "Helvetica-Bold")
