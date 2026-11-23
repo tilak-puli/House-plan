@@ -2,12 +2,12 @@
 from collections import Counter
 from sheetlib import *
 
-LIGHTING = {"L", "WL", "F", "EF", "S", "BELL", "CAM", "GL", "SA", "HA"}
+LIGHTING = {"L", "WL", "F", "EF", "S", "BELL", "CAM", "GL", "SA", "HA", "LS"}
 POWER = {"P", "PC", "P16", "U", "D", "TV", "AC", "ODU", "G", "DB", "INV", "MTR", "EP", "CH"}
 ECOL = {"L": colors.HexColor("#C28A00"), "WL": colors.HexColor("#C28A00"), "F": ACC, "EF": ACC, "S": INK, "BELL": INK,
         "CAM": INK, "GL": colors.HexColor("#C28A00"), "P": BLUE, "PC": BLUE, "P16": RED, "U": colors.HexColor("#7B3FA0"),
         "D": colors.HexColor("#7B3FA0"), "TV": colors.HexColor("#7B3FA0"), "AC": RED, "ODU": RED, "G": RED, "DB": INK,
-        "INV": colors.HexColor("#7B3FA0"), "MTR": INK, "EP": INK, "CH": RED, "SA": RED, "HA": RED}
+        "INV": colors.HexColor("#7B3FA0"), "MTR": INK, "EP": INK, "CH": RED, "SA": RED, "HA": RED, "LS": colors.HexColor("#C28A00")}
 CEILING_ITEMS = {"L", "F"}
 
 
@@ -56,7 +56,7 @@ def sheet_lighting(c, num="E-101", title="Lighting, fans and ceilings"):
         "Switchboards on the latch side of every door at 4 ft; 2-way switches at both bedroom beds and both ends of the hall.",
         "Bathroom switches outside the door; geyser switch with indicator lamp outside too.",
         "Fans at least 7 ft clear of the floor; long downrods in sloped ceilings; fan hooks cast or bolted, never in false ceiling board. Terrace fan and lights are wet-rated, hung from the steel trusses.",
-        "Warm 2700-3000 K light in living and bedrooms, 4000 K in kitchen and offices; no downlights directly over the bed head.",
+        "Layered, warm light: in the living rooms and bedrooms most evening light comes from lamps on switched lamp sockets (LS) wired to the door switch, the ceiling lights dimmable; 2700 K there, 4000 K in the kitchen and offices; no downlights over the bed head; low wall lights on the stair.",
         "False ceilings (blue) with 50 mm insulation above; access panel near every light cluster and near AC pipe runs.",
         "Lights, fans, office sockets and router on the inverter circuit; outdoor lights on a timer or photocell.",
     ]
