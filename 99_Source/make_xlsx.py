@@ -13,6 +13,22 @@ thin = Side(style="thin", color="C8C8C8")
 BOX = Border(bottom=thin)
 
 
+def window_face(w, upper=False):
+    """The way a window's wall faces, from the courtyard house's grid: the four outer walls, the upper wing's east wall over the ring
+    roof (x RING[0]) and the north arm's south wall over the ring roof (y RING[3]), and the walls round the walkway."""
+    ax, c = w[1], w[2]
+    outer = {("X", HY1): "South", ("X", HY2): "North", ("Y", HX1): "West", ("Y", HX2): "East"}
+    if (ax, c) in outer:
+        return outer[(ax, c)]
+    if upper and (ax, c) == ("Y", RING[0]):
+        return "East (over ring roof)"
+    if upper and (ax, c) == ("X", RING[3]):
+        return "Courtyard (over ring roof)"
+    if (ax == "X" and c in (RING[2], RING[3])) or (ax == "Y" and c in (RING[0], RING[1])):
+        return "Walkway"
+    return "Inside"
+
+
 def sheet(wb, title, headers, widths):
     ws = wb.create_sheet(title)
     ws.append(headers)
@@ -70,19 +86,21 @@ def make(path):
 
     ws = sheet(wb, "Rooms", ["ID", "Room", "Zone", "E-W (ft)", "N-S (ft)", "Area (sq ft)", "Area (sq m)", "Clear E-W (ft)", "Clear N-S (ft)", "Clear area (sq ft)", "Floor level", "Ceiling", "Notes"],
                [7, 24, 14, 9, 9, 11, 11, 10, 10, 11, 11, 16, 34])
-    notes = {"R10": "Open to the living; daylight from the wash alcove window", "R16": "Slab above is the covered terrace", "R17": "Open verandah", "R37": "Under the main roof on steel posts; jali parapets north and south, railing on the road side",
-             "R06": "Dog-leg stair in the middle of the south side, rising clockwise, jali to the dining", "R01": "Master suite: entered from the hall, its bath beside it", "R42": "Parents' sitting room / guest room with its own bath (shut the connecting door)",
-             "R31": "Door from the lobby; hotel-style suite: the walk-in off the bedroom, the bath through the walk-in", "R33": "Over the den; reached through the walk-in", "R40": "On the south stack, under Bedroom 2's bath", "R18": "One step below the living, shoes off"}
+    notes = {"R16": "Family room: the living, open to the console nook, the oonjal link and the dining end (one L); slab above is the roof terrace", "R16D": "Family room: dining end beside the kitchen", "R17": "Thinnai: one raised platform on the door axis, red oxide floor, turned teak pillars; the ramp arrives at its south edge", "R37": "Light tiled canopy on steel posts; teak jali parapet on the north, railings south and east",
+             "R06": "Dog-leg stair against the west wall, rising clockwise, 3'-6\" clear flights; arrives facing south", "R01": "Master suite: bath beside it to the east; the wardrobe in the room", "R42": "Den / guest room off the north walkway, with its own bath and an alcove open to it",
+             "R31": "SW corner over the master, bed head south; hotel-style suite: the stair head, the walk-in / dressing lobby, then the bedroom one way and the bath the other", "R33": "North of Bedroom 2, over the master's wardrobe end (sunk slab, not over its bed); reached from the walk-in; WC on the west outer wall", "R40": "On the south wet wall: basin opposite the door, door opens outward", "R18": "Foyer at the thinnai level, 6 in below the house, shoes off; one step up through a 4 ft opening to the oonjal link",
+             "R47": "The den's walk-in wardrobe, door from the den; a hatch through to the low store", "R48": "DB and linen cupboard under flight 2, off the stair lobby: the main DB (the inverter is outside the south wall)", "R09": "Stair foot lobby off the west walkway (sliding door D09), 3'-6\" clear to the first riser", "R46": "Low hatch store under the half landing; kept clear of battery risk", "R34": "Gallery beside the stair well (4 ft guard), the stair-head jharokha on its east wall", "R36": "Upstairs family room over the den: bookshelf wall, screen, sofa-bed, jharokha seat over the courtyard; door to the roof terrace", "R36A": "Desk nook of the upstairs family room, open to it; the upper toilet off it", "R39": "Over the den bath R07 (same rect); entered from the family room's desk nook", "R41": "Stair head: the 3'-6\" arrival strip, facing the Bedroom 2 door", "R50": f"Open to the sky; sunk {round((LEVELS['walkway'] - LEVELS['courtyard']) * 12)} in below the walkway (6 in below the rooms); tulsi bed at the centre"}
     upper = {r[0] for r in ROOMS_F1}
+    ar = floor_areas()
     for i, r in enumerate(both("ROOMS"), start=2):
         L, W = room_dims(r)
         with on_floor("F1" if r[0] in upper else "G"):
             cl, cw = clear_dims(r)
         ck, cv = CEILINGS[r[0]]
         ws.append([r[0], r[1] + (" (1st floor)" if r[0] in upper else ""), r[6], L, W, f"=D{i}*E{i}", f"=F{i}*0.092903", round(cl, 2), round(cw, 2), f"=H{i}*I{i}",
-                   fmt_lvl(floor_level(r[0])), f"Flat {fmt_ft(cv)}" if ck == "flat" else f"Sloped ({cv})", notes.get(r[0], "")])
+                   fmt_lvl(floor_level(r[0])), (f"Slab soffit {fmt_ft(cv)} (no false ceiling)" if r[0] in SLAB_CEILINGS else f"Flat {fmt_ft(cv)}") if ck == "flat" else f"Open ({cv})" if ck == "open" else f"Sloped ({cv})", notes.get(r[0], "")])
     n = ws.max_row
-    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", "Footprint 53' x 22' = 1,166 sq ft (ground); first floor about 525 sq ft enclosed + 420 sq ft covered terrace"])
+    ws.append(["", "Total", "", "", "", f"=SUM(F2:F{n})", f"=SUM(G2:G{n})", "", "", f"=SUM(J2:J{n})", "", "", f"House {fmt_ft(HX2 - HX1)} x {fmt_ft(HY2 - HY1)}: about {ar['ground']:,.0f} sq ft enclosed on the ground floor, {ar['walkway']:,.0f} of walkway and the {ar['court']:,.0f} sq ft open courtyard, plus the {ar['thinnai']:,.0f} sq ft thinnai; the upper wing about {ar['upper']:,.0f} sq ft (stair well included) and the roof terrace {ar['terrace']:,.0f} sq ft; centre-line areas. The total above adds every rect."])
     style_rows(ws, 13)
     for c in ws[ws.max_row]: c.font = Font(name=F, bold=True); c.fill = TOTAL
     for row in ws.iter_rows(min_row=2, min_col=6, max_col=10):
@@ -92,16 +110,15 @@ def make(path):
     ws = sheet(wb, "Doors", ["ID", "Location", "Width (ft)", "Height (ft)", "Operation", "Type / material", "Vent above (7'-6\" to 9'-0\")", "Chosen product", "Status"], [7, 26, 10, 10, 14, 40, 44, 26, 14])
     for d in both("DOORS"):
         op = "Sliding" if d[5] == 0 else "Hinged, single" if "double" not in d[7] else "Hinged, double"
-        ws.append([d[0], d[6], round(d[4] - d[3], 2), 7, op, d[7], TRANSOM_TYPES[TRANSOMS[d[0]]] if d[0] in TRANSOMS else "-", "", ""])
+        ws.append([d[0], d[6], round(d[4] - d[3], 2), DOOR_HEIGHTS.get(d[0], 7), op, d[7], TRANSOM_TYPES[TRANSOMS[d[0]]] if d[0] in TRANSOMS else "-", "", ""])
     style_rows(ws, 9)
     for row in ws.iter_rows(min_row=2, min_col=8, max_col=9):
         for c in row: c.fill = INPUT
 
     ws = sheet(wb, "Windows", ["ID", "Room", "Wall faces", "Width (ft)", "Sill (ft)", "Head (ft)", "Height (ft)", "Type", "Status"], [7, 18, 10, 10, 9, 9, 10, 52, 14])
-    face = {("X", 3): "South", ("X", 25): "North", ("Y", 23): "West", ("Y", 67): "East", ("Y", 61): "East"}
     upper_w = {w[0] for w in WINDOWS_F1}
     for i, w in enumerate(both("WINDOWS"), start=2):
-        ws.append([w[0], w[7] + (" (1st floor)" if w[0] in upper_w else ""), face.get((w[1], w[2]), "Inside"), round(w[4] - w[3], 2), w[5], w[6], f"=F{i}-E{i}", w[8], ""])
+        ws.append([w[0], w[7] + (" (1st floor)" if w[0] in upper_w else ""), window_face(w, w[0] in upper_w), round(w[4] - w[3], 2), w[5], w[6], f"=F{i}-E{i}", w[8], ""])
     for o in OTHER_OPENINGS:
         ws.append([o[0], "Roof", "Up", "", "", "", "", o[1], ""])
     style_rows(ws, 9)

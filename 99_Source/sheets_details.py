@@ -21,6 +21,7 @@ class D:
         self.ox = x0 + 8 * mm + (aw - (bx2 - bx1) * self.k) / 2 - bx1 * self.k
         self.oy = y0 + (notes_h + 2) * mm + (ah - (by2 - by1) * self.k) / 2 - by1 * self.k
         self.notes = []
+        self.notes_h = notes_h
         self.box = (x0, y0, w, h)
         s.c.setStrokeColor(LIGHT); s.c.setLineWidth(0.4); s.c.rect(x0, y0, w, h)
         s.c.setFillColor(ACC); s.c.circle(x0 + 6 * mm, y0 + h - 6 * mm, 3.5 * mm, stroke=0, fill=1)
@@ -58,7 +59,7 @@ class D:
 
     def finish(self):
         x0, y0, w, h = self.box
-        y = y0 + 30 * mm
+        y = y0 + (self.notes_h - 4) * mm
         st = ParagraphStyle("n", fontName="Helvetica", fontSize=5.6, leading=6.6)
         col_w = (w - 10 * mm) / 2
         half = (len(self.notes) + 1) // 2
@@ -245,9 +246,50 @@ def det_threshold(d):
     d.call(-12, 18, "Open wet area: floor 3 in lower and sloping out to the walkway, so rain drains away from the kitchen door.")
 
 
+def det_jharokha(d):
+    """Jharokha bay over the walkway roof: a roof penetration on a flashed kerb (section across the bay, east to the right)."""
+    sl = math.tan(math.radians(ROOF["pitch"]))
+    roof = lambda x: -(x - 9) * sl                                   # ring roof surface, falling east from the wing wall
+    kerb = ROOF["jharokha_kerb"] * 12
+    base = kerb + 1                                                  # underside of the bay: on the kerb
+    seat = base + JHAROKHA_DECK * 12                                 # seat deck, 2'-0" above the room floor
+    fl = seat - JHAROKHAS[0][4] * 12                                 # the room floor inside
+    d.r(0, 9, fl - 6, 92, fill=AAC)                                  # wing east wall
+    d.r(-14, 0, fl - 6, fl, fill=CONC)                               # first-floor slab
+    d.r(-6, -2, fl, fl + 6, fill=WOOD, lw=0.3)                       # the 6 in step up into the bay
+    d.l([(9, roof(9)), (44, roof(44)), (44, roof(44) - 3), (9, roof(9) - 3)], fill=colors.HexColor("#C98B6B"), close=True)   # tiles
+    d.l([(9, roof(9) - 3), (44, roof(44) - 3), (44, roof(44) - 7), (9, roof(9) - 7)], fill=colors.HexColor("#E7E2D5"), close=True)  # deck
+    d.l([(11, roof(11)), (33, roof(33)), (33, base), (11, base)], fill=CONC, close=True)                       # kerb
+    d.l([(9, roof(9) + 0.3), (11, roof(11) + 0.3), (11, base + 0.5)], lw=1.0, color=WATERP)                  # back-gutter at the wall
+    d.l([(33, base - 1), (33.8, roof(33.8) + 0.4), (38, roof(38) + 0.4)], lw=1.0, color=WATERP)             # apron over the tiles
+    d.l([(9, base + 4), (13, roof(13) + 1.5)], lw=0.5, color=WATERP, dash=(1, 1))                           # saddle (cricket) line
+    d.r(9, 33, base, seat, fill=WOOD, lw=0.4)                        # bracket frame and seat deck
+    d.r(10, 32, seat, seat + 3, fill=colors.HexColor("#E8DCC8"), lw=0.3)   # cushion
+    d.r(31, 33, seat, seat + 36, fill=WOOD, lw=0.4)                  # fixed jali, 3 ft above the seat
+    for k in range(1, 9): d.l([(31, seat + k * 4), (33, seat + k * 4)], lw=0.3, color=WHITE)
+    d.r(32, 33, seat + 36, fl + 90, fill=colors.HexColor("#C9DCE3"), lw=0.4)   # glazing to the head
+    # no roof of its own: the teak frame is carried up to the wing's eave soffit and closed with a sealed timber soffit board
+    soff = fl + (wing_eave_z() - (LEVELS["FFL"] + LEVELS["upper_ffl"]) - 0.45) * 12   # underside of the wing's 2 ft east eave
+    d.r(9, 33, fl + 90, soff, fill=WOOD, lw=0.4)                     # teak frame and head panel up to the soffit
+    d.r(9, 37, soff, soff + 1, fill=colors.HexColor("#D8C3A0"), lw=0.4)   # timber soffit board, sealed to the fascia
+    d.l([(9, soff + 1), (37, soff + 1), (37, soff + 3), (9, soff + 3 + 28 * sl)], fill=colors.HexColor("#C98B6B"), close=True)   # wing eave (tiles)
+    d.r(36, 37, soff - 0.5, soff + 3.5, fill=WOOD, lw=0.3)           # fascia
+    d.r(37.6, 40.6, soff + 0.4, soff + 3, lw=0.8, stroke=WATERP)   # gutter on fascia brackets, outboard
+    d.t("WING WALL", -1, 60, 5, GREY, "r"); d.t("ROOM", -8, fl + 10, 5, GREY, "c"); d.t("WALKWAY ROOF", 40, roof(40) - 12, 5, GREY, "c")
+    d.call(22, (roof(22) + base) / 2, "6 in RCC or treated-timber kerb on the roof deck, the bay's steel brackets bolted through it to the wing's ring band.")
+    d.call(10, base + 2, "GI back-gutter along the wall, up-slope of the kerb, with a saddle (cricket) to turn the water round the kerb's sides; step flashing up both sides.")
+    d.call(36, roof(36) + 2, "Lead or GI apron on the down-slope side, dressed over the tiles.")
+    w37 = next(w for w in WINDOWS_F1 if w[0] == "W37")
+    gap = floor_base("F1") + w37[5] - max(ring_z(w37[2] + 0.001, w37[3] + (w37[4] - w37[3]) * k / 20) for k in range(21))
+    d.call(4.5, base + 22, f"W37 on the same wall (no bay): a 6 in flashed apron upstand on the wall, dressed over the tiles with lead counter-flashing in a chase, under a granite sub-sill; its 3'-0\" sill stands {round(gap * 12)} in above the tiles at the high jamb.")
+    d.call(-4, fl + 3, "A 6 in teak step up into the bay; the seat deck is 2'-0\" above the room floor.")
+    d.call(32, seat + 18, "Fixed jali with gaps of 100 mm or less up to 3 ft above the seat; glazed above.")
+    d.call(20, soff - 2, "No roof of its own: the teak frame is carried up to the wing's eave soffit and closed with a timber soffit board sealed to the fascia; the 2 ft eave is the bay's roof, its gutter on fascia brackets 2 in+ above the casement head.")
+
+
 BOUNDS = {det_plinth: (-8, 62, -31, 62), det_skirting: (-2, 42, -3, 42), det_sill: (-24, 16, -2, 80),
           det_eaves: (-10, 64, -2, 76), det_bath: (-16, 104, -4, 86), det_kitchen: (-10, 42, -6, 98),
-          det_basin: (-8, 42, -2, 86), det_aac: (-2, 62, -2, 68), det_threshold: (-32, 38, -8, 62)}
+          det_basin: (-8, 42, -2, 86), det_aac: (-2, 62, -2, 68), det_threshold: (-32, 38, -8, 62), det_jharokha: (-16, 44, -30, 108)}
 
 
 def _place(s, fn, title, num, x, y, w, h, notes_h=34):
@@ -256,10 +298,11 @@ def _place(s, fn, title, num, x, y, w, h, notes_h=34):
 
 
 def sheet_details_1(c):
-    s = Sheet(c, "A-501", "Typical details 1: plinth, floor, window, eaves", "NTS")
+    s = Sheet(c, "A-501", "Typical details 1: plinth, window, eaves, jharokha", "NTS")
     W, H = 158 * mm, 128 * mm
     _place(s, det_plinth, "Plinth, DPC, floor and apron", 1, 14 * mm, 147 * mm, W, H)
-    _place(s, det_skirting, "Flush skirting at floor-wall joint", 2, 176 * mm, 147 * mm, W, H)
+    _place(s, det_skirting, "Flush skirting at floor-wall joint", 2, 176 * mm, 147 * mm, 77 * mm, H)
+    _place(s, det_jharokha, "Jharokha kerb over the walkway roof", 10, 257 * mm, 147 * mm, 77 * mm, H, notes_h=50)
     _place(s, det_sill, "Window sill, frame and sunshade", 3, 14 * mm, 15 * mm, W, H)
     _place(s, det_eaves, "Eaves, gutter and roof build-up", 4, 176 * mm, 15 * mm, W, H)
     c.showPage()

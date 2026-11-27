@@ -31,13 +31,13 @@ def take_off():
         q.append(("Walls", f"AAC blocks, {dict(EXT='200 mm outer', WET='150 mm wet', INT='100 mm inner')[wt]} walls", round(v * 0.0283, 2), "cu m", "Both floors, net of openings, floor to beam soffit"))
     q.append(("Frame", "Lintel band / ring beam (each, running length, both floors)", round(wall_len * 0.3048, 1), "m", "Along all walls; sizes by engineer"))
     slab = sum((x2 - x1) * (y2 - y1) for x1, x2, y1, y2 in SLAB_F1)
-    q.append(("Frame", "First-floor RCC slab (about 5 in)", round(slab * 0.0929, 1), "sq m", "Over the back half, less the stair well"))
+    q.append(("Frame", "First-floor RCC slab (about 5 in)", round(slab * 0.0929, 1), "sq m", "Over the west wing and the roof terrace, less the stair well"))
     q.append(("Frame", "RCC dog-leg stair", STAIR["risers"], "risers", "3'-6\" flights, half landing 7'-6\" x 3'-6\", 16 risers of 7.5 in"))
-    q.append(("Frame", "Galvanised steel posts for the terrace roof (about 100 mm SHS, 9 ft)", len(TERRACE_POSTS), "no.", "On RCC column stubs; trusses over the terrace in steel"))
-    q.append(("Frame", "Railings, teak or MS with teak cap, 3'-6\" high", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) not in JALI_RAILS) * 0.3048, 1), "m", "Terrace road side and stair well"))
-    q.append(("Frame", "Teak jali parapet panels, 3'-6\" high, on a low RCC upstand", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) in JALI_RAILS) * 0.3048, 1), "m", "Terrace north and south sides (neighbours close by)"))
+    q.append(("Frame", f"Galvanised steel posts for the terrace canopy (about 100 mm SHS, {fmt_ft(ROOF['canopy'])})", len(TERRACE_POSTS), "no.", "On RCC column stubs; the light tiled canopy on a steel frame"))
+    q.append(("Frame", "Railings, teak or MS with teak cap, 4'-0\" high", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) not in JALI_RAILS) * 0.3048, 1), "m", "Terrace south and east sides and the stair well"))
+    q.append(("Frame", "Teak jali parapet panels, 4'-0\" high, on a steel core", round(sum(e - s for a, c, s, e in RAILS_F1 if (a, c) in JALI_RAILS) * 0.3048, 1), "m", "Terrace north side (towards the neighbour)"))
     q.append(("Walls", "Internal plaster", round(plaster_in * 0.0929, 1), "sq m", "Both faces of inner walls, inner face of outer walls"))
-    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (53.75 + 22.75) * 2 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the 20 ft walls"))
+    q.append(("Walls", "External plaster (waterproof)", round((plaster_out + (HX2 - HX1 + T) * 4 * LEVELS["FFL"]) * 0.0929, 1), "sq m", "Outer walls (both floors) + plinth face; add scaffolding for the two-storey west wing"))
     finishes = {}
     skirting = 0
     for fl in ("G", "F1"):
@@ -57,21 +57,39 @@ def take_off():
         q.append(("Wet rooms", f"Waterproofing, {nm}", round((L * W + 2 * (L + W) * 1 + 6 * 6) * 0.0929, 1), "sq m", "Floor + 12 in upturn + shower walls to 7 ft"))
     with on_floor("F1"):
         L, W = clear_dims(room_of("R37"))
-    q.append(("Wet rooms", "Waterproofing, covered terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
+    q.append(("Wet rooms", "Waterproofing, roof terrace slab", round((L * W + 2 * (L + W)) * 0.0929, 1), "sq m", "Floor + 12 in upturn; flood test 48 h"))
     q.append(("Kitchen", "Granite counter, 2 ft deep", round((11.0 + 6.5) * 0.3048, 1), "m", "South and east runs (F34, F35)"))
     q.append(("Kitchen", "Dado between counter and wall cabinets", round((11.0 + 6.5) * 2 * 0.0929, 1), "sq m", "2 ft high"))
-    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Main hip + front gable + kitchen wing + chaipu / cos {ROOF['pitch']} deg; add ~8% for laps"))
-    x1, x2, y1, y2 = ROOF["hip"]
-    gx1, gx2, _, _ = ROOF["gable"]
-    wx1, wx2, wa, wb = ROOF["wing"]
-    q.append(("Roof", "Gutters", round((2 * ((x2 - x1) + (gx2 - x2)) + (wb - wa)) * 0.3048, 1), "m", "Both long eaves of the main roof and the front roofs, plus the wing's east eave"))
-    q.append(("Roof", "Chaipu gutters (low south and west roofs)", round(sum(c[1] - c[0] if c[4] == "S" else c[3] - c[2] for c in ROOF["chaipu"]) * 0.3048, 1), "m", "Eaves at +11'-1\"; main-roof downpipes pass through with collars"))
-    q.append(("Roof", "Valley gutter, GI / aluminium, 12 in wide", round((wx2 - x2) * 0.3048, 1), "m", "Where the kitchen wing meets the front gable, draining east"))
-    q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "About 22 ft (main roof) or 12 ft (front roofs) each"))
-    q.append(("Roof", "Ridge and hip tiles", round(((x2 - x1) - (y2 - y1) + 4 * ((y2 - y1) / 2) * 1.414) * 0.3048, 1), "m", "Approximate"))
+    q.append(("Roof", "Sloped roof area (tiles, deck, insulation, membrane)", round(roof_area() * 0.0929, 1), "sq m", f"Ring roof + the upper wing's L-shaped hip, less the court and the terrace slab, / cos {ROOF['pitch']} deg; add ~8% for laps"))
+    ox1, ox2, oy1, oy2 = ROOF["ring"]; wb = wing_bbox(); t_ = ROOF["terrace"]; th = ROOF["thinnai"]
+    def _eave_len(pts):   # length of the ring's outer eave where the ring roof is the top roof (sampled at 0.25 ft)
+        return sum(0.25 for x, y in pts if ring_z(x, y) is not None and wing_roof_z(x, y) is None)
+    n = lambda a, b: [a + 0.125 + 0.25 * k for k in range(int((b - a) / 0.25))]
+    ring_eave = (_eave_len([(x, oy1 + 0.05) for x in n(ox1, ox2)]) + _eave_len([(x, oy2 - 0.05) for x in n(ox1, ox2)])
+                 + _eave_len([(ox2 - 0.05, y) for y in n(oy1, oy2) if not th[2] < y < th[3]]))
+    q.append(("Roof", "Gutters, ring outer eaves", round(ring_eave * 0.3048, 1), "m", "Where the ring is the top roof: the south, the east (the thinnai front apart) and the north beside the pooja"))
+    q.append(("Roof", "Gutters, upper wing eaves", round(2 * ((wb[1] - wb[0]) + (wb[3] - wb[2])) * 0.3048, 1), "m", f"All round the L (its east eave over the terrace included); the courtyard-side gutters' {len(ROOF['wing_spreaders'])} spreader downpipes discharge onto the ring roof"))
+    (gx1, gx2), (gy1, gy2) = corner_guard_runs()
+    q.append(("Roof", f"Terrace south edge: {fmt_ft(ROOF['upstand'])} RCC upstand, then the level corner guard ({fmt_ft(ROOF['corner_guard'])})", round(verge_south_area() * 0.0929, 1), "sq m", f"Face area of the {t_[1] - t_[0]:.1f} ft long edge; the guard runs x {gx1:.1f}-{gx2:.1f}; apron, step and counter-flashing"))
+    q.append(("Roof", f"Terrace east edge: the corner guard, then a verge wall 6 in over the roof", round(verge_east_area() * 0.0929, 1), "sq m", f"Face area of the {t_[3] - t_[2]:.1f} ft long edge; the guard runs y {gy1:.1f}-{gy2:.1f}, the verge north of it"))
+    q.append(("Roof", "RCC edge beams under the terrace's south-east corner guard (no wall below)", round(((gx2 - RING[1]) + (__import__('model')._NY - gy1)) * 0.3048, 1), "m", "The south edge east of the walkway and the east edge over the console nook, over the open family room"))
+    ch = ROOF["terrace_chajja"]
+    q.append(("Roof", "RCC chajja, 2 ft, off the terrace's north edge beam", round((ch[1] - ch[0]) * 0.3048, 1), "m", "Over the living's north windows W75/W76; the terrace downpipe passes in a sleeve"))
+    ww = ROOF["wing_walls"]
+    apron = (RING[3] - HY1) + (ww[1][1] - RING[0]) + (t_[1] - t_[0]) + (t_[3] - t_[2])
+    q.append(("Roof", "Apron / step flashing at walls", round(apron * 0.3048, 1), "m", "Where the ring roof meets the wing's east and south walls and the terrace's edge walls (counter-flashed in a chase at the corner guard)"))
+    q.append(("Roof", "Spreader downpipes, wing courtyard-side eaves", len(ROOF["wing_spreaders"]), "no.", "Short, onto the ring roof, clear of the jharokhas"))
+    q.append(("Roof", "Thinnai lean-to roof (tiles on exposed rafters)", round(thinnai_roof_area() * 0.0929, 1), "sq m", f"The ring's east slope carried on over the pillars, past the ring eave, / cos {ROOF['pitch']} deg"))
+    q.append(("Roof", "Jharokha kerbs with back-gutter and apron flashing", len(JHAROKHAS), "no.", "6 in kerb per bay where it passes through the walkway roof"))
+    q.append(("Roof", "Lead-lined pocket gutter beside a jharokha kerb", len(ROOF["saddles"]), "no.", "Bay J2's west kerb on the ring's north-west valley: falls south past the kerb corner to the valley"))
+    q.append(("Roof", "Soldered internal box gutter, 300 x 300 x 150 mm, with a 50 mm overflow spout", 1, "no.", "The wing's re-entrant corner: the high point of its courtyard-side gutters"))
+    q.append(("Roof", "Downpipes, 100 mm", len(ROOF["downpipes"]), "no.", "The wing's three corners, the south and east sides, the north-east corner and the terrace outlet's; about 12 ft each (the wing's 22 ft)"))
+    ll = roof_line_lengths()
+    q.append(("Roof", "Ridge and hip tiles", round((ll["ridge"] + ll["hip"] * HIP_K) * 0.3048, 1), "m", "Measured on the roof plan, hips to their true length (x HIP_K): ring and wing ridges and hips"))
+    q.append(("Roof", "Valley gutters, 12 in GI / aluminium", round(ll["valley"] * HIP_K * 0.3048, 1), "m", "The ring's inner valleys and the wing's re-entrant valley, on the slope"))
     feat_gate = next(f[3] for f in SITE_FEATURES if f[0] == "GATE")[2:]
-    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((plot_perimeter() - (feat_gate[1] - feat_gate[0]) - (SHOP_WALL[0][1] - next(f[3] for f in SITE_FEATURES if f[0] == "SHOP1")[2])) * 0.3048, 1), "m", "Plot perimeter less the gate and the shop frontage; the road face in exposed brick or local stone to match the kitchen front"))
-    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((53.75 + 22.75) * 2 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
+    q.append(("Site", "Compound wall, precast RCC post and panel, 5 ft high", round((plot_perimeter() - (feat_gate[1] - feat_gate[0]) - (SHOP_WALL[0][1] - next(f[3] for f in SITE_FEATURES if f[0] == "SHOP1")[2])) * 0.3048, 1), "m", "Plot perimeter less the gate and the shop frontage; the road face in exposed brick or local stone"))
+    q.append(("Site", "Plinth protection apron, 3 ft wide", round(((HX2 - HX1 + T) * 4 * 3 + 4 * 9) * 0.0929, 1), "sq m", "PCC with slope away"))
     q.append(("Openings", "Doors", len(both("DOORS")), "no.", "See Doors tab"))
     q.append(("Openings", "Windows and vents", len(both("WINDOWS")), "no.", "See Windows tab"))
     q.append(("Openings", "Window area (for mesh and grills)", round(sum((w[4] - w[3]) * (w[6] - w[5]) for w in both("WINDOWS")) * 0.0929, 1), "sq m", ""))

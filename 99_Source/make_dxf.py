@@ -4,7 +4,12 @@ from ezdxf import units
 from geom import *
 
 MM = 304.8  # mm per ft
-OFF = [0.0]  # north offset of the floor being drawn (first floor is drawn 40 ft north of the ground floor)
+OFF = [0.0]  # north offset of the floor being drawn (the first floor is drawn north of the whole plot: see F1_OFFSET)
+
+
+def f1_offset():
+    """North offset (ft) of the first-floor drawing: the plot's width plus a 15 ft gap, so its plot outline clears the ground floor's."""
+    return max(p[1] for p in PLOT) - min(p[1] for p in PLOT) + 15.0
 
 
 def P(x, y):
@@ -38,12 +43,9 @@ def make(path):
 
     # site
     msp.add_lwpolyline([P(x, y) for x, y in PLOT], close=True, dxfattribs={"layer": "C-PROP"})
-    rect(*ROOF["hip"], "A-ROOF-OTLN")
-    rect(*ROOF["gable"], "A-ROOF-OTLN")
-    rect(*ROOF["wing"], "A-ROOF-OTLN")
-    for c in ROOF["chaipu"]:
-        rect(*c[:4], "A-ROOF-OTLN")
-    text(f"PLOT {PLOT_X2 - PLOT_X1:.0f}' DEEP, 27' TO 40' WIDE", 90, 1.2, 150, "A-ANNO-TEXT")
+    for k in ("ring", "court_eave", "wing", "wing_ext", "terrace", "thinnai"):
+        rect(*ROOF[k], "A-ROOF-OTLN")
+    text(f"PLOT {PLOT_X2 - PLOT_X1:.0f}' DEEP x {max(p[1] for p in PLOT) - min(p[1] for p in PLOT):.0f}' WIDE", 90, 1.2, 150, "A-ANNO-TEXT")
     text("EAST ROAD", PLOT_X2 + 4, 20, 200)
     for b in GARDEN_BEDS:
         rect(*b, "L-PLNT")
@@ -60,7 +62,7 @@ def make(path):
     for x, y, r, k in FOOD_TREES:
         msp.add_circle(P(x, y), r * MM, dxfattribs={"layer": "L-PLNT"})
 
-    for fl, dy in (("G", 0.0), ("F1", 40.0)):
+    for fl, dy in (("G", 0.0), ("F1", f1_offset())):
         OFF[0] = dy
         with on_floor(fl):
             _floor(msp, rect, text, fl)
@@ -70,7 +72,7 @@ def make(path):
 
 def _floor(msp, rect, text, fl):
     if fl == "F1":
-        text("FIRST FLOOR PLAN (drawn 40 ft north of the ground floor)", 45, -2.5, 220)
+        text(f"FIRST FLOOR PLAN (drawn {f1_offset():.0f} ft north of the ground floor)", 45, -2.5, 220)
         msp.add_lwpolyline([P(x, y) for x, y in PLOT], close=True, dxfattribs={"layer": "C-PROP-SETB"})
     # services (schematic points and runs)
     for code, x, y, rid, note in ELECTRICAL:

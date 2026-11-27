@@ -1,4 +1,5 @@
 """Writes the room-by-room detailing guide (Markdown) from guide.py."""
+import geom  # noqa: F401  (fills the numbers into the model's prose)
 from model import PROJECT, HOLD_POINTS
 from guide import GUIDE
 

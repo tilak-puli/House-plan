@@ -9,8 +9,8 @@ from sheets_mep import sheet_lighting, sheet_power, sheet_plumbing
 
 SHEETS = [  # number, title, scale, function
     ("A-001", "Design basis and general notes", "-", sheet_basis),
-    ("A-002", "Construction phasing (roof first, three stages)", "1:100", sheet_phasing),
-    ("A-101", "Site plan: the whole plot", "1:200", sheet_site),
+    ("A-002", "Construction phasing (roof first, three stages)", "1:150", sheet_phasing),
+    ("A-101", "Site plan: the whole plot", "1:150", sheet_site),
     ("A-102", "Ground floor plan", "1:75", floor_sheet(sheet_plan, "G", "A-102", "Ground floor plan")),
     ("A-103", "First floor plan", "1:75", floor_sheet(sheet_plan, "F1", "A-103", "First floor plan")),
     ("A-104", "Furniture layout, ground floor", "1:75", floor_sheet(sheet_furniture, "G", "A-104", "Furniture layout, ground floor")),
@@ -23,16 +23,16 @@ SHEETS = [  # number, title, scale, function
     ("A-201", "North and south elevations", "1:100", sheet_elev_long),
     ("A-202", "East and west elevations", "1:100", sheet_elev_short),
     ("A-301", "Sections A-A and B-B", "1:100", sheet_sections),
-    ("A-401", "Door details and ground-floor windows", "1:75", sheet_doors_windows),
-    ("A-402", "Window details, first floor", "1:75", sheet_windows_f1),
-    ("A-501", "Typical details 1: plinth, floor, window, eaves", "NTS", sheet_details_1),
+    ("A-401", "Door details", "1:75", sheet_doors_windows),
+    ("A-402", "Window details, both floors", "1:100", sheet_windows_f1),
+    ("A-501", "Typical details 1: plinth, window, eaves, jharokha", "NTS", sheet_details_1),
     ("A-502", "Typical details 2: bath, kitchen, basin, AAC", "NTS", sheet_details_2),
     ("A-601", "Schedules", "-", sheet_schedules),
     ("E-101", "Lighting, fans and ceilings, ground floor", "1:75", floor_sheet(sheet_lighting, "G", "E-101", "Lighting, fans and ceilings, ground floor")),
     ("E-102", "Lighting, fans and ceilings, first floor", "1:75", floor_sheet(sheet_lighting, "F1", "E-102", "Lighting, fans and ceilings, first floor")),
     ("E-103", "Power, AC and data, ground floor", "1:75", floor_sheet(sheet_power, "G", "E-103", "Power, AC and data, ground floor")),
     ("E-104", "Power, AC and data, first floor", "1:75", floor_sheet(sheet_power, "F1", "E-104", "Power, AC and data, first floor")),
-    ("P-101", "Water supply and drainage", "1:100", sheet_plumbing),
+    ("P-101", "Water supply and drainage", "1:150", sheet_plumbing),
 ]
 
 
